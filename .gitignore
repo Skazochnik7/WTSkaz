@@ -1,2 +1,5 @@
 *.rpyc
 /Witch Trainer.exe
+/log.txt
+/errors.txt
+/traceback.txt

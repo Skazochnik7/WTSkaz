@@ -1,9 +1,0 @@
-﻿I'm sorry, but errors were detected in your script. Please correct the
-errors listed below, and try again.
-
-
-File "game/14_personal_requests.rpy", line 29: expected statement.
-    heartsDict['first_act'] = 3
-                            ^
-
-Ren'Py Version: Ren'Py 6.18.3.761
