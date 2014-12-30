@@ -1,0 +1,328 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/01_hp.rpy", line 860, in script call
+    call event_03
+  File "game/01_hp.rpy", line 862, in script call
+    call event_05
+  File "game/01_hp.rpy", line 864, in script call
+    call event_07
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/01_hp.rpy", line 868, in script call
+    call event_12
+  File "game/18_events.rpy", line 2823, in script call
+    call day_start
+  File "game/01_hp.rpy", line 870, in script call
+    call event_13
+  File "game/18_events.rpy", line 2946, in script call
+    call day_start
+  File "game/12_desk.rpy", line 1668, in script call
+    call chapter_check_book_08 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/01_hp.rpy", line 872, in script call
+    call event_15
+  File "game/12_desk.rpy", line 1349, in script call
+    call chapter_check_book_06 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 1043, in script call
+    call chapter_check_book_05 #Checks if the chapter just finished was the last one.
+  File "game/12_desk.rpy", line 1744, in script call
+    call chapter_check_book_09 #Checks if the chapter just finished was the last one.
+  File "game/12_desk.rpy", line 581, in script call
+    call chapter_check_book_01 #Checks if the chapter just finished was the last one.
+  File "game/12_desk.rpy", line 2076, in script call
+    call chapter_check_book_12 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 720, in script call
+    call chapter_check_book_02 #Checks if the chapter just finished was the last one.
+  File "game/12_desk.rpy", line 2163, in script call
+    call chapter_check_book_13 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 845, in script call
+    call chapter_check_book_03 #Checks if the chapter just finished was the last one.
+  File "game/12_desk.rpy", line 2269, in script call
+    call chapter_check_book_14 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 1229, in script call
+    call chapter_check_book_05_b #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 948, in script call
+    call chapter_check_book_04 #Checks if the chapter just finished was the last one.
+  File "game/12_desk.rpy", line 2395, in script call
+    call chapter_check_book_15 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 1519, in script call
+    call chapter_check_book_07 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 1500, in script call
+    call chapter_check_book_07 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 1519, in script call
+    call chapter_check_book_07 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 1519, in script call
+    call chapter_check_book_07 #Checks if the chapter just finished was the last one.
+  File "game/12_desk.rpy", line 1519, in script call
+    call chapter_check_book_07 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/01_hp.rpy", line 622, in script call
+    call against_the_rule
+  File "game/14_personal_requests.rpy", line 33, in script
+    "Услуга: \"Поговори со мной\" {image=heart_0[heartsDict['first_act']].png}":
+  File "game/screens.rpy", line 68, in execute
+    screen choice:
+  File "game/screens.rpy", line 70, in execute
+    window:
+  File "game/screens.rpy", line 75, in execute
+    vbox:
+  File "game/screens.rpy", line 79, in execute
+    for caption, action, chosen in items:
+  File "game/screens.rpy", line 81, in execute
+    if action:
+  File "game/screens.rpy", line 83, in execute
+    button:
+  File "game/screens.rpy", line 87, in execute
+    text caption style "menu_choice"
+KeyError: u"'first_act'"
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/01_hp.rpy", line 860, in script call
+    call event_03
+  File "game/01_hp.rpy", line 862, in script call
+    call event_05
+  File "game/01_hp.rpy", line 864, in script call
+    call event_07
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/01_hp.rpy", line 868, in script call
+    call event_12
+  File "game/18_events.rpy", line 2823, in script call
+    call day_start
+  File "game/01_hp.rpy", line 870, in script call
+    call event_13
+  File "game/18_events.rpy", line 2946, in script call
+    call day_start
+  File "game/12_desk.rpy", line 1668, in script call
+    call chapter_check_book_08 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/01_hp.rpy", line 872, in script call
+    call event_15
+  File "game/12_desk.rpy", line 1349, in script call
+    call chapter_check_book_06 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 1043, in script call
+    call chapter_check_book_05 #Checks if the chapter just finished was the last one.
+  File "game/12_desk.rpy", line 1744, in script call
+    call chapter_check_book_09 #Checks if the chapter just finished was the last one.
+  File "game/12_desk.rpy", line 581, in script call
+    call chapter_check_book_01 #Checks if the chapter just finished was the last one.
+  File "game/12_desk.rpy", line 2076, in script call
+    call chapter_check_book_12 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 720, in script call
+    call chapter_check_book_02 #Checks if the chapter just finished was the last one.
+  File "game/12_desk.rpy", line 2163, in script call
+    call chapter_check_book_13 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 845, in script call
+    call chapter_check_book_03 #Checks if the chapter just finished was the last one.
+  File "game/12_desk.rpy", line 2269, in script call
+    call chapter_check_book_14 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 1229, in script call
+    call chapter_check_book_05_b #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 43, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 948, in script call
+    call chapter_check_book_04 #Checks if the chapter just finished was the last one.
+  File "game/12_desk.rpy", line 2395, in script call
+    call chapter_check_book_15 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 1519, in script call
+    call chapter_check_book_07 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 1500, in script call
+    call chapter_check_book_07 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 1519, in script call
+    call chapter_check_book_07 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/12_desk.rpy", line 1519, in script call
+    call chapter_check_book_07 #Checks if the chapter just finished was the last one.
+  File "game/12_desk.rpy", line 1519, in script call
+    call chapter_check_book_07 #Checks if the chapter just finished was the last one.
+  File "game/09_summon_snape.rpy", line 47, in script call
+    call not_today #Snape says: "I am busy tonight."
+  File "game/01_hp.rpy", line 622, in script call
+    call against_the_rule
+  File "game/14_personal_requests.rpy", line 33, in script
+    "Услуга: \"Поговори со мной\" {image=heart_0[heartsDict['first_act']].png}":
+  File "E:\Programing\RenPy-6.18.3-sdk\renpy\ast.py", line 1405, in execute
+    choice = renpy.exports.menu(choices, self.set)
+  File "E:\Programing\RenPy-6.18.3-sdk\renpy\exports.py", line 711, in menu
+    rv = renpy.store.menu(items)
+  File "E:\Programing\RenPy-6.18.3-sdk\renpy\exports.py", line 859, in display_menu
+    show_screen(screen, items=item_actions, _widget_properties=props, _transient=True, _layer=renpy.config.choice_layer, **scope)
+  File "E:\Programing\RenPy-6.18.3-sdk\renpy\display\screen.py", line 826, in show_screen
+    renpy.exports.show(name, tag=_tag, what=d, layer=_layer, zorder=d.zorder, transient=_transient, munge_name=False)
+  File "E:\Programing\RenPy-6.18.3-sdk\renpy\exports.py", line 510, in show
+    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=renpy.config.default_transform, transient=transient)
+  File "E:\Programing\RenPy-6.18.3-sdk\renpy\display\core.py", line 845, in add
+    self.hide_or_replace(layer, remove_index, "replaced")
+  File "E:\Programing\RenPy-6.18.3-sdk\renpy\display\core.py", line 867, in hide_or_replace
+    d = oldsle.displayable._hide(now - st, now - at, prefix)
+  File "E:\Programing\RenPy-6.18.3-sdk\renpy\display\screen.py", line 423, in _hide
+    self.update()
+  File "E:\Programing\RenPy-6.18.3-sdk\renpy\display\screen.py", line 555, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 68, in execute
+    screen choice:
+  File "game/screens.rpy", line 70, in execute
+    window:
+  File "game/screens.rpy", line 75, in execute
+    vbox:
+  File "game/screens.rpy", line 79, in execute
+    for caption, action, chosen in items:
+  File "game/screens.rpy", line 81, in execute
+    if action:
+  File "game/screens.rpy", line 83, in execute
+    button:
+  File "game/screens.rpy", line 87, in execute
+    text caption style "menu_choice"
+  File "E:\Programing\RenPy-6.18.3-sdk\renpy\text\text.py", line 1174, in __init__
+    self.set_text(text, scope, substitute)
+  File "E:\Programing\RenPy-6.18.3-sdk\renpy\text\text.py", line 1241, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)
+  File "E:\Programing\RenPy-6.18.3-sdk\renpy\substitutions.py", line 229, in substitute
+    s = formatter.vformat(s, (), kwargs)
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 549, in vformat
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 571, in _vformat
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 640, in get_field
+KeyError: u"'first_act'"
+
+Windows-7-6.1.7601-SP1
+Ren'Py 6.18.3.761
+Witch Trainer 0.1
