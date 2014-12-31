@@ -20,7 +20,7 @@ label phoenix:
         jump day_main_menu
     
     menu:
-        "-Исследовать-" if not bird_examined:
+        "- Исследовать -" if not bird_examined:
             $ bird_examined = True
             hide screen genie
             $ tt_xpos=270
@@ -40,13 +40,13 @@ label phoenix:
             
             
             
-        "-Покормить птицу-" if not phoenix_is_feed and bird_examined:
+        "- Покормить птицу -" if not phoenix_is_feed and bird_examined:
             $ phoenix_is_feed = True
             jump feeding
             
-        "-Погладить птицу-" if bird_examined:
+        "- Погладить птицу -" if bird_examined:
             jump petting
-        "-Ничего-":
+        "- Ничего -":
             call screen main_menu_01    
             
             

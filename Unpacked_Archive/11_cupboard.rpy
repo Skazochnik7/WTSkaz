@@ -1,6 +1,6 @@
 label cupboard:
     menu:
-        "-Осмотреть шкаф-" if not cupboard_examined:
+        "- Осмотреть шкаф -" if not cupboard_examined:
             $ cupboard_examined = True
             show screen chair_02 #Empty chair near the desk.
             hide screen genie
@@ -21,17 +21,17 @@ label cupboard:
             
             
             
-        "-Рыться в шкафу-" if not searched and not day == 1:
+        "- Рыться в шкафу -" if not searched and not day == 1:
             jump rummaging
-        "{color=#858585}-Рыться в шкафу-{/color}" if searched and not day == 1:
+        "{color=#858585}- Рыться в шкафу -{/color}" if searched and not day == 1:
             call already_did #Message that says that you have searched the cupboard today already.
             jump cupboard
-        "-Ваши вещи-" if not day == 1:
+        "- Ваши вещи -" if not day == 1:
             label possessions:
             menu:
 
                 
-                "-Чупа-чупс-([candy])" if candy >= 1:
+                "- Чупа-чупс -([candy])" if candy >= 1:
                     $ the_gift = "03_hp/18_store/11.png" # CANDY.
                     show screen gift
                     with d3
@@ -40,7 +40,7 @@ label cupboard:
                     with d3
                     jump possessions
                     
-                "-Шоколад-([chocolate])" if chocolate >= 1:
+                "- Шоколад -([chocolate])" if chocolate >= 1:
                     $ the_gift = "03_hp/18_store/12.png" # CHOCOLATE.
                     show screen gift
                     with d3
@@ -49,7 +49,7 @@ label cupboard:
                     with d3
                     jump possessions
                 
-                "-Плюшевая сова-([owl])" if owl >= 1:
+                "- Плюшевая сова -([owl])" if owl >= 1:
                     $ the_gift = "03_hp/18_store/22.png" # PLUSH OWL.
                     show screen gift
                     with d3
@@ -58,7 +58,7 @@ label cupboard:
                     with d3
                     jump possessions
                 
-                "-Сливочное пиво-([beer])" if beer >= 1:
+                "- Сливочное пиво -([beer])" if beer >= 1:
                     $ the_gift = "03_hp/18_store/21.png" # BUTTERBEER
                     show screen gift
                     with d3
@@ -67,7 +67,7 @@ label cupboard:
                     with d3
                     jump possessions
                 
-                "-Обучающий журнал-([mag1])" if mag1 >= 1:
+                "- Обучающий журнал -([mag1])" if mag1 >= 1:
                     $ the_gift = "03_hp/18_store/17.png" #MAGAZINE # 1
                     show screen gift
                     with d3
@@ -76,7 +76,7 @@ label cupboard:
                     with d3
                     jump possessions
                 
-                "-Женский журнал-([mag2])" if mag2 >= 1:
+                "- Женский журнал -([mag2])" if mag2 >= 1:
                     $ the_gift = "03_hp/18_store/18.png" #MAGAZINE # 2
                     show screen gift
                     with d3
@@ -85,7 +85,7 @@ label cupboard:
                     with d3
                     jump possessions
                 
-                "-Журнал для взрослых-([mag3])" if mag3 >= 1:
+                "- Журнал для взрослых -([mag3])" if mag3 >= 1:
                     $ the_gift = "03_hp/18_store/19.png" #MAGAZINE # 3
                     show screen gift
                     with d3
@@ -94,7 +94,7 @@ label cupboard:
                     with d3
                     jump possessions
                     
-                "-Порно журнал-([mag4])" if mag4 >= 1:
+                "- Порно журнал -([mag4])" if mag4 >= 1:
                     $ the_gift = "03_hp/18_store/20.png" #MAGAZINE # 4
                     show screen gift
                     with d3
@@ -103,25 +103,25 @@ label cupboard:
                     with d3
                     jump possessions
                 
-                "-Постер Виктора Крама-([krum])" if krum >= 1:
+                "- Постер Виктора Крама -([krum])" if krum >= 1:
                     $ the_gift = "03_hp/18_store/26.png" # KRUM POSTER.
                     show screen gift
                     with d3
-                    ">Мастер по ловле квиддича, Виктор был выбран, чтобы играть за национальную сборную Болгарии по квиддичу. Несмотря на то, что он все еще ходит в школу, он по праву считается одним из лучших игроков в мире."
+                    ">Мастер по квиддичу, Виктор был выбран, чтобы играть за национальную сборную Болгарии по квиддичу. Несмотря на то, что он все еще ходит в школу, он по праву считается одним из лучших игроков в мире."
                     hide screen gift
                     with d3
                     jump possessions
 
-                "-Сексуальное нижнее белье-([lingerie])" if lingerie >= 1:
+                "- Сексуальное нижнее белье -([lingerie])" if lingerie >= 1:
                     $ the_gift = "03_hp/18_store/24.png" # LENGERIE.
                     show screen gift
                     with d3
-                    ">Сексуальное нижнее белье \"Добрая Фея\". Ее шарм в постели как у императрицы или сестер Саббат."
+                    ">Сексуальное нижнее белье \"Добрая Фея\". В постели она станет подобна императрице или сестрам Саббат."
                     hide screen gift
                     with d3
                     jump possessions
 
-                "-Упаковка презервативов-([condoms])" if condoms >= 1:
+                "- Упаковка презервативов -([condoms])" if condoms >= 1:
                     $ the_gift = "03_hp/18_store/10.png" # CONDOMS.
                     show screen gift
                     with d3
@@ -130,7 +130,7 @@ label cupboard:
                     with d3
                     jump possessions
                     
-                "-Вибратор-([vibrator])" if vibrator >= 1:
+                "- Вибратор -([vibrator])" if vibrator >= 1:
                     $ the_gift = "03_hp/18_store/13.png" # VIBRATOR.
                     show screen gift
                     with d3
@@ -139,7 +139,7 @@ label cupboard:
                     with d3
                     jump possessions
                     
-                "-Банка лубриканта-([anal_lube])" if anal_lube >= 1:
+                "- Банка лубриканта -([anal_lube])" if anal_lube >= 1:
                     $ the_gift = "03_hp/18_store/09.png" # Anal lubricant.
                     show screen gift
                     with d3
@@ -148,7 +148,7 @@ label cupboard:
                     with d3
                     jump possessions
                     
-                "-Кляп и наручники-([ballgag])" if ballgag >= 1:
+                "- Кляп и наручники -([ballgag])" if ballgag >= 1:
                     $ the_gift = "03_hp/18_store/15.png" # BALL GAG.
                     show screen gift
                     with d3
@@ -157,7 +157,7 @@ label cupboard:
                     with d3
                     jump possessions
                 
-                "-Анальная пробка-([plug])" if plug >= 1:
+                "- Анальная пробка -([plug])" if plug >= 1:
                     $ the_gift = "03_hp/18_store/16.png" # ANAL PLUG.
                     show screen gift
                     with d3
@@ -166,7 +166,7 @@ label cupboard:
                     with d3
                     jump possessions
 
-                "- Страпон \"Thestral\" -([strapon])" if strapon >= 1:
+                "- Страпон \"Фестрал\" -([strapon])" if strapon >= 1:
                     $ the_gift = "03_hp/18_store/14.png" # STRAP-ON.
                     show screen gift
                     with d3
@@ -175,25 +175,25 @@ label cupboard:
                     with d3
                     jump possessions
                     
-                "- Lady Speed Stick-2000 -([broom])" if broom >= 1:
+                "- Леди Спид Стик-2000 -([broom])" if broom >= 1:
                     $ the_gift = "03_hp/18_store/25.png" # BROOM.
                     show screen gift
                     with d3
-                    ">\"Lady Speed Stick-2000\", элегантный способ передвижения для страстных ведьм. Торговой маркой гарантируется полное удовлетворение от эффекта. Закажите одну штуку для вашей ведьмы, и она больше не будет использовать ее скучную старую метлу!"
+                    ">\"Леди Спид Стик-2000\", элегантный способ передвижения для страстных ведьм. Торговой маркой гарантируется полное удовлетворение от эффекта. Закажите одну штуку для вашей ведьмы, и она больше не будет использовать ее скучную старую метлу!"
                     hide screen gift
                     with d3
                     jump possessions
                     
-                "- Секс-кукла \"Joanne\" -([sexdoll])" if sexdoll >= 1:
+                "- Секс-кукла \"Джуаннf\" -([sexdoll])" if sexdoll >= 1:
                     $ the_gift = "03_hp/18_store/23.png" # SEX DOLL.
                     show screen gift
                     with d3
-                    ">Секс-кукла \"Joanne\"... Очень реалистичная. Выглядит почти как настоящий человек под каким-то заклинанием."
+                    ">Секс-кукла \"Джуаннf\"... Очень реалистичная. Выглядит почти как настоящий человек под каким-то заклинанием."
                     hide screen gift
                     with d3
                     jump possessions
                     
-                "-Бальное платье-" if "ball_dress" in gifts12 and not gave_the_dress:
+                "- Бальное платье -" if "ball_dress" in gifts12 and not gave_the_dress:
                     $ the_gift = "03_hp/18_store/01.png" # DRESS.
                     show screen gift
                     with d3
@@ -203,7 +203,7 @@ label cupboard:
                     with d3
                     jump possessions
                     
-                "-\"А.В.Н.Э.\" знак-" if badge_01 == 1:
+                "- \"А.В.Н.Э.\" знак -" if badge_01 == 1:
                     $ the_gift = "03_hp/18_store/29.png" # S.P.E.W. BADGE
                     show screen gift
                     with d3
@@ -212,7 +212,7 @@ label cupboard:
                     with d3
                     jump possessions
                     
-                "-Ажурные чулки-" if nets == 1:
+                "- Ажурные чулки -" if nets == 1:
                     $ the_gift = "03_hp/18_store/30.png" # FISHNETS.
                     show screen gift
                     with d3
@@ -221,16 +221,16 @@ label cupboard:
                     with d3
                     jump possessions
                     
-                "-Школьная мини-юбка-" if have_miniskirt:
+                "- Школьная мини-юбка -" if have_miniskirt:
                     $ the_gift = "03_hp/18_store/07.png" # MINISKIRT.
                     show screen gift
                     with d3
-                    m "A school miniskirt... Improves grades drastically."
+                    m "Просто школьная мини-юбка...поможет в поднятии оценок."
                     hide screen gift
                     with d3
                     jump possessions
                 
-                "-Вино Дамблдора-([wine])" if wine >= 1:
+                "- Вино Дамблдора -([wine])" if wine >= 1:
                     $ the_gift = "03_hp/18_store/27.png" # WINE.
                     show screen gift
                     with d3
@@ -240,7 +240,7 @@ label cupboard:
                     jump possessions
                     
                     
-                "-Неизвестное зелье-([potions])" if  potions >= 1:
+                "- Неизвестное зелье -([potions])" if  potions >= 1:
                     $ the_gift = "03_hp/18_store/32.png" # HEALING POTION.
                     show screen gift
                     with d3
@@ -249,13 +249,13 @@ label cupboard:
                     with d3
                     jump possessions
                     
-                "-Ничего-":
+                "- Ничего -":
                     jump cupboard
 
-        "-Священные свитки. Часть I-" if not day == 1 and cataloug_found:
+        "- Священные свитки. Часть I -" if not day == 1 and cataloug_found:
             label sc_col_men:
             menu:
-                "-С.01: [scroll_01_name]-" if sscroll_01 or persistent.ss_01:
+                "- С.01: [scroll_01_name] -" if sscroll_01 or persistent.ss_01:
                     $ the_gift = "03_hp/19_extras/01.png" # SACRED SCROLL 01.
                     show screen gift
                     show screen ctc
@@ -266,7 +266,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.02: [scroll_02_name]-" if sscroll_02 or persistent.ss_02:
+                "- С.02: [scroll_02_name] -" if sscroll_02 or persistent.ss_02:
                     $ the_gift = "03_hp/19_extras/02.png" # SACRED SCROLL 02.
                     show screen gift
                     show screen ctc
@@ -277,7 +277,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.03: [scroll_03_name]-" if sscroll_03 or persistent.ss_03:
+                "- С.03: [scroll_03_name] -" if sscroll_03 or persistent.ss_03:
                     $ the_gift = "03_hp/19_extras/03.png" # SACRED SCROLL 03.
                     show screen gift
                     show screen ctc
@@ -288,7 +288,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.04: [scroll_04_name]-" if sscroll_04 or persistent.ss_04:
+                "- С.04: [scroll_04_name] -" if sscroll_04 or persistent.ss_04:
                     $ the_gift = "03_hp/19_extras/04.png" # SACRED SCROLL 04.
                     show screen gift
                     show screen ctc
@@ -299,7 +299,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.05: [scroll_05_name]-" if sscroll_05 or persistent.ss_05:
+                "- С.05: [scroll_05_name] -" if sscroll_05 or persistent.ss_05:
                     $ the_gift = "03_hp/19_extras/05.png" # SACRED SCROLL 05.
                     show screen gift
                     show screen ctc
@@ -310,7 +310,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.06: [scroll_06_name]--" if sscroll_06 or persistent.ss_06:
+                "- С.06: [scroll_06_name] -" if sscroll_06 or persistent.ss_06:
                     $ the_gift = "03_hp/19_extras/06.png" # SACRED SCROLL 06.
                     show screen gift
                     show screen ctc
@@ -321,7 +321,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.07: [scroll_07_name]-" if sscroll_07 or persistent.ss_07:
+                "- С.07: [scroll_07_name] -" if sscroll_07 or persistent.ss_07:
                     $ the_gift = "03_hp/19_extras/07.png" # SACRED SCROLL 07.
                     show screen gift
                     show screen ctc
@@ -332,7 +332,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.08: [scroll_08_name]--" if sscroll_08 or persistent.ss_08:
+                "- С.08: [scroll_08_name] -" if sscroll_08 or persistent.ss_08:
                     $ the_gift = "03_hp/19_extras/08.png" # SACRED SCROLL 08.
                     show screen gift
                     show screen ctc
@@ -343,7 +343,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.09: [scroll_09_name]-" if sscroll_09 or persistent.ss_09:
+                "- С.09: [scroll_09_name] -" if sscroll_09 or persistent.ss_09:
                     $ the_gift = "03_hp/19_extras/09.png" # SACRED SCROLL 09.
                     show screen gift
                     show screen ctc
@@ -354,7 +354,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.10: [scroll_10_name]-" if sscroll_10 or persistent.ss_10:
+                "- С.10: [scroll_10_name] -" if sscroll_10 or persistent.ss_10:
                     $ the_gift = "03_hp/19_extras/10.png" # SACRED SCROLL 10.
                     show screen gift
                     show screen ctc
@@ -365,7 +365,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                 
-                "-С.11: [scroll_11_name]-" if sscroll_11 or persistent.ss_11:
+                "- С.11: [scroll_11_name] -" if sscroll_11 or persistent.ss_11:
                     $ the_gift = "03_hp/19_extras/11.png" # SACRED SCROLL 10.
                     show screen gift
                     show screen ctc
@@ -376,7 +376,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                 
-                "-С.02: [scroll_12_name]-" if sscroll_12 or persistent.ss_12:
+                "- С.02: [scroll_12_name] -" if sscroll_12 or persistent.ss_12:
                     $ the_gift = "03_hp/19_extras/12.png" # SACRED SCROLL 10.
                     show screen gift
                     show screen ctc
@@ -387,7 +387,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                 
-                "-С.03: [scroll_13_name]-" if sscroll_13 or persistent.ss_10:
+                "- С.03: [scroll_13_name] -" if sscroll_13 or persistent.ss_10:
                     $ the_gift = "03_hp/19_extras/10.png" # SACRED SCROLL 10.
                     show screen gift
                     show screen ctc
@@ -398,7 +398,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                 
-                "-С.04: [scroll_14_name]-" if sscroll_14 or persistent.ss_14:
+                "- С.04: [scroll_14_name] -" if sscroll_14 or persistent.ss_14:
                     $ the_gift = "03_hp/19_extras/14.png" # SACRED SCROLL 10.
                     show screen gift
                     show screen ctc
@@ -409,7 +409,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                 
-                "-С.05: [scroll_15_name]-" if sscroll_15 or persistent.ss_15:
+                "- С.05: [scroll_15_name] -" if sscroll_15 or persistent.ss_15:
                     $ the_gift = "03_hp/19_extras/15.png" # SACRED SCROLL 15.
                     show screen gift
                     show screen ctc
@@ -420,14 +420,14 @@ label cupboard:
                     with d3
                     jump sc_col_men
 
-                "-Ничего-":
+                "- Ничего -":
                     jump cupboard
             
             
-        "-Священные свитки. Часть II-" if not day == 1 and cataloug_found:
+        "- Священные свитки. Часть II -" if not day == 1 and cataloug_found:
             label sc_col_men:
             menu:
-                "-С.16: [scroll_16_name]-" if sscroll_16 or persistent.ss_16:
+                "- С.16: [scroll_16_name] -" if sscroll_16 or persistent.ss_16:
                     $ the_gift = "03_hp/19_extras/16.png" # SACRED SCROLL 01.
                     show screen gift
                     show screen ctc
@@ -438,7 +438,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.17: [scroll_17_name]-" if sscroll_17 or persistent.ss_17:
+                "- С.17: [scroll_17_name] -" if sscroll_17 or persistent.ss_17:
                     $ the_gift = "03_hp/19_extras/17png" # SACRED SCROLL 02.
                     show screen gift
                     show screen ctc
@@ -449,7 +449,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.18: [scroll_18_name]-" if sscroll_18 or persistent.ss_18:
+                "- С.18: [scroll_18_name] -" if sscroll_18 or persistent.ss_18:
                     $ the_gift = "03_hp/19_extras/18.png" # SACRED SCROLL 03.
                     show screen gift
                     show screen ctc
@@ -460,7 +460,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.19: [scroll_19_name]-" if sscroll_19 or persistent.ss_19:
+                "- С.19: [scroll_19_name] -" if sscroll_19 or persistent.ss_19:
                     $ the_gift = "03_hp/19_extras/19.png" # SACRED SCROLL 04.
                     show screen gift
                     show screen ctc
@@ -471,7 +471,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.20: [scroll_20_name]-" if sscroll_20 or persistent.ss_20:
+                "- С.20: [scroll_20_name] -" if sscroll_20 or persistent.ss_20:
                     $ the_gift = "03_hp/19_extras/20.png" # SACRED SCROLL 05.
                     show screen gift
                     show screen ctc
@@ -482,7 +482,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.21: [scroll_21_name]--" if sscroll_12 or persistent.ss_12:
+                "- С.21: [scroll_21_name] -" if sscroll_12 or persistent.ss_12:
                     $ the_gift = "03_hp/19_extras/21.png" # SACRED SCROLL 21.
                     show screen gift
                     show screen ctc
@@ -493,7 +493,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.22: [scroll_22_name]-" if sscroll_22 or persistent.ss_22:
+                "- С.22: [scroll_22_name] -" if sscroll_22 or persistent.ss_22:
                     $ the_gift = "03_hp/19_extras/22.png" # SACRED SCROLL 22.
                     show screen gift
                     show screen ctc
@@ -504,7 +504,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.23: [scroll_23_name]--" if sscroll_23 or persistent.ss_23:
+                "- С.23: [scroll_23_name] -" if sscroll_23 or persistent.ss_23:
                     $ the_gift = "03_hp/19_extras/23.png" # SACRED SCROLL 23.
                     show screen gift
                     show screen ctc
@@ -515,7 +515,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.24: [scroll_24_name]-" if sscroll_24 or persistent.ss_24:
+                "- С.24: [scroll_24_name] -" if sscroll_24 or persistent.ss_24:
                     $ the_gift = "03_hp/19_extras/24.png" # SACRED SCROLL 24.
                     show screen gift
                     show screen ctc
@@ -526,7 +526,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                     
-                "-С.25: [scroll_25_name]-" if sscroll_25 or persistent.ss_25:
+                "- С.25: [scroll_25_name] -" if sscroll_25 or persistent.ss_25:
                     $ the_gift = "03_hp/19_extras/25.png" # SACRED SCROLL 25.
                     show screen gift
                     show screen ctc
@@ -537,7 +537,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                 
-                "-С.26: [scroll_26_name]-" if sscroll_26 or persistent.ss_26:
+                "- С.26: [scroll_26_name] -" if sscroll_26 or persistent.ss_26:
                     $ the_gift = "03_hp/19_extras/26.png" # SACRED SCROLL 26.
                     show screen gift
                     show screen ctc
@@ -548,7 +548,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                 
-                "-С.27: [scroll_27_name]-" if sscroll_27 or persistent.ss_27:
+                "- С.27: [scroll_27_name] -" if sscroll_27 or persistent.ss_27:
                     $ the_gift = "03_hp/19_extras/27.png" # SACRED SCROLL 27.
                     show screen gift
                     show screen ctc
@@ -559,7 +559,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                 
-                "-С.28: [scroll_28_name]-" if sscroll_28 or persistent.ss_28:
+                "- С.28: [scroll_28_name] -" if sscroll_28 or persistent.ss_28:
                     $ the_gift = "03_hp/19_extras/28.png" # SACRED SCROLL 28.
                     show screen gift
                     show screen ctc
@@ -570,7 +570,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                 
-                "-С.29: [scroll_29_name]-" if sscroll_29 or persistent.ss_29:
+                "- С.29: [scroll_29_name] -" if sscroll_29 or persistent.ss_29:
                     $ the_gift = "03_hp/19_extras/29.png" # SACRED SCROLL 29.
                     show screen gift
                     show screen ctc
@@ -581,7 +581,7 @@ label cupboard:
                     with d3
                     jump sc_col_men
                 
-                "-С.05: [scroll_30_name]-" if sscroll_30 or persistent.ss_30:
+                "- С.05: [scroll_30_name] -" if sscroll_30 or persistent.ss_30:
                     $ the_gift = "03_hp/19_extras/30.png" # SACRED SCROLL 30.
                     show screen gift
                     show screen ctc
@@ -592,10 +592,10 @@ label cupboard:
                     with d3
                     jump sc_col_men
 
-                "-Ничего-":
+                "- Ничего -":
                     jump cupboard
             
-        "-Ничего-":
+        "- Ничего -":
             jump day_main_menu
  
 label rummaging:  
@@ -640,7 +640,7 @@ label rummaging:
         $ the_gift = "03_hp/18_store/dahr2.png" # DAHR's oddities catalog. 
         show screen gift
         with d3
-        ">Вы нашли каталог \"Приблуды Дахра\"... \п>Теперь вы можете использовать каталог для заказа товаров с помощью совы."
+        ">Вы нашли каталог \"Приблуды Дахра\"... \n>Теперь вы можете использовать каталог для заказа товаров с помощью совы."
         hide screen gift
         with d3
         show screen cupboard
@@ -664,7 +664,7 @@ label rummaging:
                 $ the_gift = "03_hp/18_store/23.png" # SEX DOLL.
                 show screen gift
                 with d3
-                ">Вы нашли секс-куклу \"Joanne\"!" 
+                ">Вы нашли секс-куклу \"Джуанну\"!" 
                 hide screen gift
                 with d3
             elif one_of_tw == 1 or one_of_tw == 2:
@@ -722,7 +722,7 @@ label rummaging:
                 $ the_gift = "03_hp/18_store/23.png" # SEX DOLL.
                 show screen gift
                 with d3
-                ">Вы нашли секс-куклу \"Joanne\"!" 
+                ">Вы нашли секс-куклу \"Джуанну\"!" 
                 hide screen gift
                 with d3
             elif one_of_tw == 1 or one_of_tw ==2:
@@ -791,7 +791,7 @@ label rummaging:
                 $ the_gift = "03_hp/18_store/23.png" # SEX DOLL.
                 show screen gift
                 with d3
-                ">Вы нашли секс-куклу \"Joanne\"!" 
+                ">Вы нашли секс-куклу \"Джуанну\"!" 
                 hide screen gift
                 with d3
             elif one_of_tw >= 1 and one_of_tw <= 4:
@@ -848,7 +848,7 @@ label rummaging:
                 $ the_gift = "03_hp/18_store/23.png" # SEX DOLL.
                 show screen gift
                 with d3
-                ">Вы нашли секс-куклу \"Joanne\"!" 
+                ">Вы нашли секс-куклу \"Джуанну\"!" 
                 hide screen gift
                 with d3
             elif one_of_tw >= 1 and one_of_tw <= 4:
@@ -934,7 +934,7 @@ label rummaging:
 label already_did:
     show screen bld1
     with d3
-    m "Я уже занимался этим сегодня..."
+    m "Я сегодня уже занимался этим..."
     hide screen bld1
     with d3
     return

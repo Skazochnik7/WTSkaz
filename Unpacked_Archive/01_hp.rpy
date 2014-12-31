@@ -355,7 +355,7 @@ $ fireplace_examined = False
 screen statistics: #более подробно см. здесь http://www.renpy.org/doc/html/screens.html
     hbox: #горизонтальный «контейнер», где будет изображение золота и его количество
         spacing 10 xpos 630 ypos 20#отступ для текста, если надо прямо в левом углу — убираем его        
-        text "{size=-3}День: [day]\nWhoring: [whoring]\nУровень: [level]\nЗнания: [knowledge]\nСлизенир [slytherin]\nГриффиндор [gryffindor]\nСнейп Дружба: [snape_friendship]\nДень недели: [day_of_week]\nКонцентрация: [concentration]\nСкорописание: [speedwriting]{/size}" #сумма текстом
+        text "{size=-3}День: [day]\nРаспутство: [whoring]\nУровень: [level]\nЗнания: [knowledge]\nСлизерин: [slytherin]\nГриффиндор: [gryffindor]\nДружба со Снейпом: [snape_friendship]\nДень недели: [day_of_week]\nКонцентрация: [concentration]\nСкорописание: [speedwriting]{/size}" #сумма текстом
 
 
 
@@ -942,7 +942,7 @@ init -2:
     $ config.autoreload = False
     
      ### SACRED SCROLLS ###
-    
+    #
     $ sscroll_01 = False # Turns TRUE if the scroll had been bought.
     $ sscroll_02 = False
     $ sscroll_03 = False
@@ -953,7 +953,7 @@ init -2:
     $ sscroll_08 = False
     $ sscroll_09 = False
     $ sscroll_10 = False
-    
+    #
     $ sscroll_11 = False # Turns TRUE if the scroll had been bought.
     $ sscroll_12 = False
     $ sscroll_13 = False
@@ -964,7 +964,7 @@ init -2:
     $ sscroll_18 = False
     $ sscroll_19 = False
     $ sscroll_20 = False
-    
+    #
     $ sscroll_21 = False # Turns TRUE if the scroll had been bought.
     $ sscroll_22 = False
     $ sscroll_23 = False
@@ -975,7 +975,7 @@ init -2:
     $ sscroll_28 = False
     $ sscroll_29 = False
     $ sscroll_30 = False
-
+    #
     $ scroll_01_name = "Свиток #1"
     $ scroll_02_name = "Свиток #2"
     $ scroll_03_name = "Свиток #3"
@@ -986,7 +986,7 @@ init -2:
     $ scroll_08_name = "Свиток #8"
     $ scroll_09_name = "Свиток #9"
     $ scroll_10_name = "Свиток #10"
-#
+    #
     $ scroll_11_name = "Свиток #11"
     $ scroll_12_name = "Свиток #12"
     $ scroll_13_name = "Свиток #13"
@@ -1066,24 +1066,6 @@ init -2:
         linear 50.0 xpos 50 # linear — скорость движения. Чем больше значение , тем медленнее. xpos — координата x, куда облако движется
         pause 2
         repeat # повтор движения   
-        
-        
-        
-        
-   
-    
-  
-  
-  
+
     label assmenu: # Sent here from "EXTRAS" menu. Basically just jumps to the title screen. 
         return
-  
-  
-  
-    
-        
-       
-      
-           
-      
-        

@@ -37,7 +37,17 @@ init:
     $ config.adv_nvl_transition = dissolve
     $ config.nvl_adv_transition = dissolve
     
- 
+    $ layout.ARE_YOU_SURE = _("Вы уверены?")
+    $ layout.DELETE_SAVE = _("Вы уверены, что хотите удалить сохранение?")
+    $ layout.OVERWRITE_SAVE = _("Вы уверены, что хотите перезаписать это сохранение?")
+    $ layout.LOADING = _("После загрузки вы потеряете весь текущий прогресс.\nВы уверены, что хотите сделать это?")
+    $ layout.QUIT = _("Вы уверены, что хотите выйти?")
+    $ layout.MAIN_MENU = _("Вы уверены, что хотите выйти в главное меню?\nЭто приведет к утере текущего прогресса.")
+    $ layout.SLOW_SKIP = _("Вы уверены, что хотите начать пропуск текста?")
+    $ layout.FAST_SKIP_UNSEEN = _("Вы уверены, что хотите пропустить следующий выбор?")
+    $ layout.FAST_SKIP_SEEN = _("Вы уверены, что хотите пропустить следующий диалог или выбор?")
+    # $ config.language = 'russian'
+    
     # $ config.keymap['hide_windows'].remove('mouseup_2')
     # $ config.keymap['hide_windows'].remove('h')
     # $ config.keymap['hide_windows'].remove('joy_hide')
@@ -4001,7 +4011,7 @@ define sch900 = Character('Dahlia the whore',
 
 
 
-define sch1000 = Character('Lola',
+define sch1000 = Character('Лола',
     color="#402313",
     window_right_padding=70,
     show_two_window=True,
@@ -4018,7 +4028,7 @@ define aka1 = Character('none',
     ctc="ctc3",
     ctc_position="fixed")
 
-define sch10 = Character('Lola',
+define sch10 = Character('Лола',
     color="#402313",
     window_right_padding=270,
     show_side_image=Image("slavem/school00.png", xalign=1.0, yalign=0.0),
@@ -4029,7 +4039,7 @@ define sch10 = Character('Lola',
 
 
 
-define sch10_1 = Character('Lola',
+define sch10_1 = Character('Лола',
     color="#402313",
     window_right_padding=270,
     show_side_image=Image("slavem/school00_1.png", xalign=1.0, yalign=0.0),
@@ -4038,7 +4048,7 @@ define sch10_1 = Character('Lola',
     ctc="ctc3",
     ctc_position="fixed")
 
-define sch10_2 = Character('Lola',
+define sch10_2 = Character('Лола',
     color="#402313",
     window_right_padding=270,
     show_side_image=Image("slavem/school00_2.png", xalign=1.0, yalign=0.0),
@@ -4047,7 +4057,7 @@ define sch10_2 = Character('Lola',
     ctc="ctc3",
     ctc_position="fixed")
 
-define sch10_3 = Character('Lola',
+define sch10_3 = Character('Лола',
     color="#402313",
     window_right_padding=270,
     show_side_image=Image("slavem/school00_3.png", xalign=1.0, yalign=0.0),
@@ -4056,7 +4066,7 @@ define sch10_3 = Character('Lola',
     ctc="ctc3",
     ctc_position="fixed")
 
-define sch10_4 = Character('Lola',
+define sch10_4 = Character('Лола',
     color="#402313",
     window_right_padding=270,
     show_side_image=Image("slavem/school00_4.png", xalign=1.0, yalign=0.0),
@@ -4065,7 +4075,7 @@ define sch10_4 = Character('Lola',
     ctc="ctc3",
     ctc_position="fixed")
 
-define sch10_5 = Character('Lola',
+define sch10_5 = Character('Лола',
     color="#402313",
     window_right_padding=270,
     show_side_image=Image("slavem/school00_5.png", xalign=1.0, yalign=0.0),
@@ -4079,7 +4089,7 @@ define sch10_5 = Character('Lola',
 
 
 
-define dah = Character('Dahlia',
+define dah = Character('Лола',
     color="#402313",
     window_right_padding=90,
     show_two_window=True,
@@ -4772,12 +4782,12 @@ init-2:
     $ j = Character('Jasmine', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ bj = Character('Evil Jasmine', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ gj = Character('Good Jasmine', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
-    $ cr1 = Character('Somebody from the crowd', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
-    $ cr2 = Character('Another voice from the crowd', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
+    $ cr1 = Character('Кто-то из толпы', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
+    $ cr2 = Character('Другой голос из толпы', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ cr3 = Character('Женский голос', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ cr4 = Character('somebody named mustafa', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
-    $ cr5 = Character('the crowd', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
-    $ cr6 = Character('many voices at once', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
+    $ cr5 = Character('Толпа', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
+    $ cr6 = Character('Несколько голосов сразу', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ ej = Character('Evil Jasmine', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ gj = Character('Good Jasmine', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ a = Character('Aladdin', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
@@ -5469,18 +5479,6 @@ define her_45 = Character('Гермиона',
     ctc="ctc3",
     ctc_position="fixed")
 
-
-
-
-    
-    
-    
-
-
-    
-    
-    
-    
 ## TRANSFORMATION
 
 
@@ -5901,15 +5899,15 @@ label start:
                     
                 if persistent.strap >= 1:
                     $ strapon = strapon + persistent.strap # STRAP-ON.
-                    ">[persistent.strap] страпонов \"Thestral\" было добавлено в ваще имущество."
+                    ">[persistent.strap] страпонов \"Фестрал\" было добавлено в ваще имущество."
                 
                 if persistent.broom >= 1:
                     $ broom = broom + persistent.broom # BROOM.
-                    ">[persistent.broom] метел \"Lady Speed Stick-2000\" было добавлено в ваще имущество."
+                    ">[persistent.broom] метел \"Леди Спид Стик-2000\" было добавлено в ваще имущество."
                     
                 if persistent.doll >= 1:
                     $ sexdoll = sexdoll + persistent.doll # SEXDOLL.
-                    ">[persistent.doll] секс-кукол \"Joanne\" было добавлено в ваще имущество."
+                    ">[persistent.doll] секс-кукол \"Джуанна\" было добавлено в ваще имущество."
                     
                 if persistent.wine >= 1:
                     $ wine = wine + persistent.wine # WINE.

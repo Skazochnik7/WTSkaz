@@ -9,10 +9,6 @@ label sexy_tutoring:
 #            "Touch her thigh."
 #            "Touch yourself."
 #            "Touch her tits."
-            
-        
-        
-        
     "Вы обучаете Гермиону."
     jump day_start 
     
@@ -28,7 +24,7 @@ label date_01:
 ###DATE - 2#######
 label date_02:
     menu:
-        "Тронуть ее ногу свой ногой.":
+        "Дотронуться своей ногой до ее ноги.":
             if whoring < 3:
                 "Гермиона вообще не обращает внимания на ваши прикосновения..."
             elif whoring >= 3 and whoring < 6:
@@ -38,7 +34,7 @@ label date_02:
             "Обучения законечно. Гермиона уходит."
             $ whoring +=1
             jump day_start 
-        "Touch her leg with your hand." if whoring >= 7:
+        "Коснуться ее ноги рукой." if whoring >= 7:
             pass
         "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if whoring <=7:
             jump locked
@@ -46,7 +42,7 @@ label date_02:
             pass
         "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if whoring <=14:
             jump locked
-        "Подроить." if whoring >= 21:
+        "Подрочить." if whoring >= 21:
             pass
         "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if whoring <=21:
             jump locked
@@ -70,11 +66,11 @@ label date_02:
             pass
         "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if whoring <=56:
             jump locked
-        "-Отмена-":
+        "- Отмена -":
             jump home_assignment
             
             
 ###LOCKED MASSAGE###
 label locked:
-    "Не хватает порочности."
+    "Не хватает распутства."
     jump sexy_tutoring

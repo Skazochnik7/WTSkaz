@@ -3,7 +3,7 @@ label new_request_24: #LV.7 (Whoring = 18 - 20)
     
     hide screen hermione_main 
     with d3
-    m "{size=-4}(Сказать ей сделать минет одному из ее одноклассников?){/size}"
+    m "{size=-4}(Попросить её сделать минет одному из ее одноклассников?){/size}"
     $ menu_x = 0.5 #Default position of the menu (0.5). Version B is $ menu_x = 0.2
     menu:
         "\"(Да, давай сделаем это!)\"":
@@ -48,7 +48,7 @@ label new_request_24: #LV.7 (Whoring = 18 - 20)
         $ h_body = "03_hp/13_hermione_main/body_186.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Я отказываюсь продавать вам такие развратные услуги как эта, сэр."
+        her "Я отказываюсь от настолько развратной услуги как эта, сэр."
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_131.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -72,7 +72,7 @@ label new_request_24: #LV.7 (Whoring = 18 - 20)
         $ h_body = "03_hp/13_hermione_main/body_187.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Тц..."
+        her "Пф..."
         her "............................"
         m ".........................................."
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -210,7 +210,7 @@ label new_request_24_complete:  # <=============================================
     if whoring >= 18 and whoring <= 20: # LEVEL 07                    
         if one_out_of_three == 1: ### EVENT (A)
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-            m "Ты знаешь правила, девочка. Начинай говорить."
+            m "Ты знаешь правила, девочка. Начинай рассказывать."
             show screen blktone
             with d3
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -322,7 +322,7 @@ label new_request_24_complete:  # <=============================================
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Конечно... Я и не ждала этого, сэр."
-            her "Я провлила свое задание и не заслуживаю никакой награды..."
+            her "Я провалила свое задание и не заслуживаю никакой награды..."
             her "И вы не должны платить мне из жалости..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -560,7 +560,7 @@ label new_request_24_complete:  # <=============================================
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Как неловко..."
-            her "Думаю, что то действие в мужском туалете несколько разрослось..."
+            her "Думаю,что то действие в мужском туалете несколько разрослось..."
             her "Прежде чем я поняла, что происхожит я была окружена большими пульсирующими членами..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1077,7 +1077,7 @@ label new_request_30_complete_a: #Hermione does not show up. This is label where
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "Да, извините, сэр, мне жаль... *зевает*..."
-    m "Вы не жеалете объясниться?"
+    m "Вы не желаете объясниться?"
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     $ h_body = "03_hp/13_hermione_main/body_190.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -1174,4 +1174,4 @@ label new_request_30_complete_a: #Hermione does not show up. This is label where
     
     return
 
-    
+  

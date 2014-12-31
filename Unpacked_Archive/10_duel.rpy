@@ -82,7 +82,7 @@ label duel:
     m "Это глупо...ты мне не ровня..."
     sna_01 "Забавно..."
     m "{size=-4}(Вообще-то мой человеческий сосуд довольно слаб...){/size}"
-    m "{size=-4}(Но все равно, я должен быть сильнее любого \"человеческого\" магистра...){/size}"
+    m "{size=-4}(Но все равно, я должен быть сильнее любого \"человеческого\" мага...){/size}"
     sna_01 "Да начнется битва!"
     hide screen bld1
     show screen hp_bar
@@ -99,7 +99,7 @@ label duel_main:
     if genie_hp <= 300 and not d_flag_01:
         $ d_flag_01 = True
         sna_01 "Уже готов сдаться?"
-        g4 "Ц..."
+        g4 "Пф..."
         
     if snape_hp <= 400 and not d_flag_02:
         $ d_flag_02 = True
@@ -112,7 +112,7 @@ label duel_main:
 
     
     menu:
-        "-Атака-":
+        "- Атака -":
             $ blocking = False #To stop the game treating Genie as being in a block stance.
             if snape_blocking:
                 $ snape_blocking = False
@@ -120,12 +120,12 @@ label duel_main:
                 jump snape_defends
             else:
                 jump genie_attack
-        "-Защита-":
+        "- Защита -":
             $ blocking = True #Genie is guard.
             show ch_gen guard at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
             pause 1
             jump snapes_turn
-        "-Зелье (x[potions])-":
+        "- Зелье (x[potions])-":
             if potions >= 1:
                 jump potion
             else:
@@ -511,7 +511,7 @@ label genie_lost:
     pause
     hide screen ctc
     menu:
-        "-Попробовать снова-":
+        "- Попробовать снова -":
             stop music 
             $ renpy.play('sounds/glass_break.mp3') #Sound of a door opening.
             play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1
@@ -524,7 +524,7 @@ label genie_lost:
                 pass
             jump duel
             
-        "-Сдаться-":
+        "- Сдаться -":
             pass
 
     

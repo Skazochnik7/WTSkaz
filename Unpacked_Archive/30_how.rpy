@@ -17,7 +17,7 @@ label howtoplay:
         show screen l_head
         l "Привет интернет-извращугам!"
         hide screen l_head
-        a5 "Следи за языком, сука!"
+        a5 "Следи за языком, сучка!"
         $ l_things = False
         $ lola_face = "03_hp/22_lola/02.png"
         show screen l_head
@@ -36,7 +36,7 @@ label howtoplay:
         $ l_drop = True
         $ lola_face = "03_hp/22_lola/04.png"
         show screen l_head
-        l "гх!"
+        l "Гх!"
         hide screen l_head
         pause.01
         with hpunch
@@ -53,7 +53,7 @@ label howtoplay:
         show screen l_head
         l "Лучшее событие в моей жизни!"
         hide screen l_head
-        a1 "Хочешь попасть в \"золотое издание\"?"
+        a1 "Хочешь попасть в \"Золотое издание\"?"
         $ l_hearts = False
         $ lola_face = "03_hp/22_lola/05.png"
         show screen l_head
@@ -75,7 +75,7 @@ label howtoplay:
         $ lola_face = "03_hp/22_lola/09.png"
         l "Хм...."
         $ lola_face = "03_hp/22_lola/11.png"
-        l "You are not very bright, are you?"
+        l "Ты не смущен?"
         $ lola_face = "03_hp/22_lola/10.png"
         l "Хм..."
         $ l_things = True
@@ -132,7 +132,7 @@ label howtoplay:
     $ renpy.play('sounds/boing02.mp3') 
     if d_flag_01: # TOPLESS.
         $ lola_face = "03_hp/22_lola/07.png"
-    l "Чтение образовательных книг позволит тебе зарабатыва, но это по желанию."
+    l "Чтение образовательных книг позволит тебе зарабатывать, но это по желанию."
 
     with hpunch
     $ end_u_1_pic =  "03_hp/22_lola/tut_04.png" #<---- SCREEN
@@ -152,8 +152,8 @@ label howtoplay:
     $ end_u_1_pic =  "03_hp/22_lola/tut_05.png" #<---- SCREEN
 
     $ renpy.play('sounds/boing02.mp3') 
-    l "Если обрщаться с ней плохо, то настроение Гермиона может обидеться и стать очень неподатливой..."
-    l "Она остынет со временем, но ты можешь ускорить процесс, если купишб ей что-нибудь..."
+    l "Если обращаться с ней плохо, то настроение Гермиона ухудшится, она может обидеться и стать очень неподатливой..."
+    l "Она остынет со временем, но ты можешь ускорить процесс, если купишь ей что-нибудь..."
     
     with hpunch
     $ end_u_1_pic =  "03_hp/22_lola/tut_06.png" #<---- SCREEN
@@ -180,7 +180,7 @@ label howtoplay:
         $ l_things = True
         $ lola_face = "03_hp/22_lola/08.png"
         show screen l_head
-        l "Ме-хе-хе. Лола хорошая девочка!"
+        l "Хе-хе-хе. Лола хорошая девочка!"
         $ l_things = False
         $ lola_face = "03_hp/22_lola/01.png"
         show screen l_head
@@ -236,11 +236,10 @@ label howtoplay:
             l "Хе-хе! Ты попался!"
         else:
             $ lola_face = "03_hp/22_lola/09.png"
-            l "And that's that..."
+            l "И, это..."
             $ lola_face = "03_hp/22_lola/13.png"
-            l "Did you get it this time?"
+            l "Может быть в следующий раз?"
             
-        
 return
 
 ### ABOUT GAME ####
@@ -320,7 +319,7 @@ label faq2:
             a7 "Я! {size=+3}Я! {size=+3}Я создал все! {size=+3}me!{/size}"
             a2 "Хех..."
             a1 "Ну, по правде, я сделал большую часть работу. Но мне много помогали."
-            a1 "Мой друг и коллега Dahr беспечил меня благородно (и бесплатно) разными художествами (помимо всего прочего)."
+            a1 "Мой друг и коллега Dahr обеспечил меня благородно (и бесплатно) разными художествами (помимо всего прочего)."
             a1 "Не бойтись кинуть парню монетки или две на {a=http://www.patreon.com/DAHR}www.patreon.com/DAHR{/a}"
             a1 "Xaljio всегда был рядом, когда у меня были проблемы с коддингом. (частенько). Посетите его страничку - {a=http://www.patreon.com/xaljio}www.patreon.com/xaljio{/a}"
             a1 "И, конечно, сообщества на patreon и hentaiunited. Парни, вы шикарны."

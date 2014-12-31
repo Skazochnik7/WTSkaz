@@ -1,38 +1,38 @@
 label desk:
     menu:
-        "-Осмотреть-" if not desk_examined:
+        "- Осмотреть -" if not desk_examined:
             $ desk_examined = True
             m "Обычный стол..."
             jump day_main_menu
-        "-Делать бумажную работу-" if finished_report < 6 and not got_paycheck and not day == 1 and work_unlock2:
+        "- Делать бумажную работу -" if finished_report < 6 and not got_paycheck and not day == 1 and work_unlock2:
             jump paperwork
-        "{color=#858585}-Делать бумажную работу-{/color}" if finished_report >= 6 and not got_paycheck:
+        "{color=#858585}- Делать бумажную работу -{/color}" if finished_report >= 6 and not got_paycheck:
             m "Я уже завершил шесть отчетов на этой неделе."
             jump desk
-        "{color=#858585}-Делать бумажную работу-{/color}" if got_paycheck: # When TRUE paycheck is in the mail.
+        "{color=#858585}- Делать бумажную работу -{/color}" if got_paycheck: # When TRUE paycheck is in the mail.
             m "Сначала мне нужно получить оплату."
             jump desk
          
-        #"-Book collection- {image=book.png}" if not day == 1 and cataloug_found: 
-        "-Книжная коллекция-" if not day == 1 and cataloug_found: 
+        #"- Book collection- {image=book.png}" if not day == 1 and cataloug_found: 
+        "- Книжная коллекция -" if not day == 1 and cataloug_found: 
             label books_list:
                 menu:
-                    "-Обучающие книги-":
+                    "- Обучающие книги -":
                         label books_on_improvement:
                         menu:
                             #"\"Copper book of spirit\""
-                            "-Книга: [book01]-" if "book_01" in books and book_01_units <= 9:
+                            "- Книга: [book01] -" if "book_01" in books and book_01_units <= 9:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
                                 "\"[book01]\"" "Эта книга содержит различные советы о том, как улучшить свою эффективность. Вы хотите прочитать ее сегодня?"
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         jump reading_book_01
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump books_on_improvement
-                            "-Книга [book01]-{image=check_08.png}" if "book_01" in books and book_01_units == 10:
+                            "- Книга [book01] -{image=check_08.png}" if "book_01" in books and book_01_units == 10:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
@@ -43,22 +43,22 @@ label desk:
                                 jump books_on_improvement
                                 
                             #"\"Bronze book of spirit\""   
-                            "-Книга [book02]-" if "book_02" in books and book_02_units <= 9:
+                            "- Книга [book02] -" if "book_02" in books and book_02_units <= 9:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
                                 ">Эта книга содержит различные советы о том, как улучшить свою эффективность. Вы хотите прочитать ее сейчас?"
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         if "book_01" in books and book_01_units == 10:
                                             jump reading_book_02
                                         else:
                                             call gal_proper
                                             jump books_on_improvement
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump books_on_improvement
-                            "-Книга [book02]-{image=check_08.png}" if "book_02" in books and book_02_units == 10:
+                            "- Книга [book02] -{image=check_08.png}" if "book_02" in books and book_02_units == 10:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
@@ -69,22 +69,22 @@ label desk:
                                 jump books_on_improvement
                             
                             #"\"Silver book of spirit\""  
-                            "-Книга [book03]-" if "book_03" in books and book_03_units <= 9:
+                            "- Книга [book03] -" if "book_03" in books and book_03_units <= 9:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
                                 ">Эта книга содержит различные советы о том, как улучшить свою эффективность. Вы хотите прочитать ее сегодня?"
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         if "book_02" in books and book_02_units == 10:
                                             jump reading_book_03
                                         else:
                                             call gal_proper
                                             jump books_on_improvement
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump books_on_improvement
-                            "-Книга [book03]-{image=check_08.png}" if "book_03" in books and book_03_units == 10:
+                            "- Книга [book03] -{image=check_08.png}" if "book_03" in books and book_03_units == 10:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
@@ -95,22 +95,22 @@ label desk:
                                 jump books_on_improvement
                                 
                             #"\"Golden book of spirit\"" 
-                            "-Книга [book04]-" if "book_04" in books and book_04_units <= 9:
+                            "- Книга [book04] -" if "book_04" in books and book_04_units <= 9:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
                                 ">Эта книга содержит различные советы о том, как улучшить свою эффективность."
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         if "book_03" in books and book_03_units == 10:
                                             jump reading_book_04
                                         else:
                                             call gal_proper
                                             jump books_on_improvement
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump books_on_improvement
-                            "-Книга [book04]-{image=check_08.png}" if "book_04" in books and book_04_units == 10:
+                            "- Книга [book04] -{image=check_08.png}" if "book_04" in books and book_04_units == 10:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
@@ -123,22 +123,22 @@ label desk:
                                 jump books_on_improvement
                             
                             #"\"Platinum book of spirit\""
-                            "-Книга [book10]-" if "book_10" in books and book_10_units <= 9:
+                            "- Книга [book10] -" if "book_10" in books and book_10_units <= 9:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
                                 ">Эта книга содержит различные советы о том, как улучшить свою эффективность."
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         if "book_04" in books and book_04_units == 10:
                                             jump reading_book_10
                                         else:
                                             call gal_proper
                                             jump books_on_improvement
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump books_on_improvement
-                            "-Книга [book10]-{image=check_08.png}" if "book_10" in books and book_10_units == 10:
+                            "- Книга [book10] -{image=check_08.png}" if "book_10" in books and book_10_units == 10:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
@@ -149,22 +149,22 @@ label desk:
                                 jump books_on_improvement
                                 
                             #"\"Adamantium book of spirit\""
-                            "-Книга [book11]-" if "book_11" in books and book_11_units <= 9:
+                            "- Книга [book11] -" if "book_11" in books and book_11_units <= 9:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
                                 ">Эта книга содержит различные советы о том, как улучшить свою эффективность."
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         if "book_10" in books and book_10_units == 10:
                                             jump reading_book_11
                                         else:
                                             call gal_proper
                                             jump books_on_improvement
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump books_on_improvement
-                            "-Книга [book11]-{image=check_08.png}" if "book_11" in books and book_11_units == 10:
+                            "- Книга [book11] -{image=check_08.png}" if "book_11" in books and book_11_units == 10:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
@@ -176,18 +176,18 @@ label desk:
                                 jump books_on_improvement
                             
                             #"\"Speedwriting for dummies\""
-                            "-Книга [book12]-" if "book_12" in books and book_12_units <= 9:
+                            "- Книга [book12] -" if "book_12" in books and book_12_units <= 9:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
                                 ">Эта книга содержит несколько элементарных принципов, позволяющих улучшить скорость моего умение писать."
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         jump reading_book_12
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump books_on_improvement
-                            "-Книга [book12]-{image=check_08.png}" if "book_12" in books and book_12_units == 10:
+                            "- Книга [book12] -{image=check_08.png}" if "book_12" in books and book_12_units == 10:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
@@ -198,22 +198,22 @@ label desk:
                                 jump books_on_improvement
                                 
                             #"\"Speedwriting for beginners\""
-                            "-Книга [book13]-" if "book_13" in books and book_13_units <= 9:
+                            "- Книга [book13] -" if "book_13" in books and book_13_units <= 9:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
                                 ">Эта книга содержит несколько элементарных принципов, позволяющих улучшить скорость моего умение писать."
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                          if "book_12" in books and book_12_units == 10:
                                             jump reading_book_13
                                          else:
                                             call gal_proper
                                             jump books_on_improvement
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump books_on_improvement
-                            "-Книга [book13]-{image=check_08.png}" if "book_13" in books and book_13_units == 10:
+                            "- Книга [book13] -{image=check_08.png}" if "book_13" in books and book_13_units == 10:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
@@ -224,22 +224,22 @@ label desk:
                                 jump books_on_improvement
                         
                             #"\"Speedwriting for amateurs\""
-                            "-Книга [book14]-" if "book_14" in books and book_14_units <= 9:
+                            "- Книга [book14] -" if "book_14" in books and book_14_units <= 9:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
                                 ">Эта книга содержит несколько любительских методов, позволяющих улучшить скорость моего умение писать."
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         if "book_13" in books and book_13_units == 10:
                                             jump reading_book_14
                                         else:
                                             call gal_proper
                                             jump books_on_improvement
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump books_on_improvement
-                            "-Книга [book14]-{image=check_08.png}" if "book_14" in books and book_14_units == 10:
+                            "- Книга [book14] -{image=check_08.png}" if "book_14" in books and book_14_units == 10:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
@@ -250,22 +250,22 @@ label desk:
                                 jump books_on_improvement
                                 
                             #"\"Speedwriting for advanced writers\""
-                            "-Книга [book15]-" if "book_15" in books and book_15_units <= 9:
+                            "- Книга [book15] -" if "book_15" in books and book_15_units <= 9:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
                                 ">Эта книга содержит несколько расширенных методов, позволяющих улучшить скорость моего умение писать."
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         if "book_14" in books and book_14_units == 10:
                                             jump reading_book_15
                                         else:
                                             call gal_proper
                                             jump books_on_improvement
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump books_on_improvement
-                            "-Книга [book15]-{image=check_08.png}" if "book_15" in books and book_15_units == 10:
+                            "- Книга [book15] -{image=check_08.png}" if "book_15" in books and book_15_units == 10:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
@@ -279,22 +279,22 @@ label desk:
                                 jump books_on_improvement
                                 
                             #"\"Speedwriting for experts.\""
-                            "-Книга [book16]-" if "book_16" in books and book_16_units <= 9:
+                            "- Книга [book16] -" if "book_16" in books and book_16_units <= 9:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
                                 ">Эта книга содержит несколько продвинутых принципов, позволяющих улучшить скорость моего умение писать."
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         if "book_15" in books and book_15_units == 10:
                                             jump reading_book_16
                                         else:
                                             call gal_proper
                                             jump books_on_improvement
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump books_on_improvement
-                            "-Книга [book16]-{image=check_08.png}" if "book_16" in books and book_16_units == 10:
+                            "- Книга [book16] -{image=check_08.png}" if "book_16" in books and book_16_units == 10:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
@@ -305,23 +305,23 @@ label desk:
                                 jump books_on_improvement
                             
                             #"\"Speedwriting for maniacs.\""
-                            "-Книга [book17]-" if "book_17" in books and book_17_units <= 9:
+                            "- Книга [book17] -" if "book_17" in books and book_17_units <= 9:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
                                 ">Эта книга содержит методы, которые позволяют вам полностью овладеть искусством скорописания."
                                 #">This book contains techniques for those obsessed with writing quickly."
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         if "book_16" in books and book_16_units == 10:
                                             jump reading_book_17
                                         else:
                                             call gal_proper
                                             jump books_on_improvement
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump books_on_improvement
-                            "-Книга [book17]-{image=check_08.png}" if "book_17" in books and book_17_units == 10:
+                            "- Книга [book17] -{image=check_08.png}" if "book_17" in books and book_17_units == 10:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
@@ -333,18 +333,18 @@ label desk:
                                 
                                 
                             ###08 "SPEED READING FOR DUMMIES" #1/4 chance to complete an extra chapter during reading.   
-                            "-Книга [book08]-" if "book_08" in books and book_08_units <= 9:
+                            "- Книга [book08] -" if "book_08" in books and book_08_units <= 9:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
                                 "\"[book08]\"" ">Эта книга содержит начальные методы, используемые для улучшения способностей к скорочтению."
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         jump reading_book_08
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump books_on_improvement
-                            "-Книга [book08]-{image=check_08.png}" if "book_08" in books and book_08_units == 10:
+                            "- Книга [book08] -{image=check_08.png}" if "book_08" in books and book_08_units == 10:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
@@ -355,22 +355,22 @@ label desk:
                                 jump books_on_improvement
                                 
                             ###09 "SPEED READING FOR EXPERTS" #1/2 chance to complete an extra chapter during reading.   
-                            "-Книга [book09]-" if "book_09" in books and book_09_units <= 9:
+                            "- Книга [book09] -" if "book_09" in books and book_09_units <= 9:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
                                 "\"[book09]\"" "Эта книга содержит продвинутые методы, используемые для улучшения способности  к скорочтению."
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         if "book_08" in books and book_08_units == 10:
                                             jump reading_book_09
                                         else:
                                             call gal_proper
                                             jump books_on_improvement
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump books_on_improvement
-                            "-Книга [book09]-{image=check_08.png}" if "book_09" in books and book_09_units == 10:
+                            "- Книга [book09] -{image=check_08.png}" if "book_09" in books and book_09_units == 10:
                                 $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
                                 show screen gift
                                 with d3
@@ -379,25 +379,25 @@ label desk:
                                 m "Она дала мне способность: большой шанс освоить дополнительную главу, во время чтения."
                                 hide screen gift
                                 jump books_on_improvement
-                            "-Ничего-":
+                            "- Ничего -":
                                 jump books_list
-                    "-Фантастика-":#FICTION==============================================================================
+                    "- Фантастика -":#FICTION==============================================================================
                         label fiction_books:
                         menu:
                             ###05"\"The Tale of Galadriel\""    
-                            "-Книга [book05]-" if "book_05" in books and book_05_units <= 19:
+                            "- Книга [book05] -" if "book_05" in books and book_05_units <= 19:
                                 $ the_gift = "03_hp/18_store/04.png" # THE TALE OF GALADRIEL. BOOK ONE.
                                 show screen gift
                                 ">Эта книга содержит довольно длинную историю, описывающую в мельчайших подробностях жизнь и приключения молодой эльфийки по имени Галадриэль."
                                 with d3
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         hide screen gift
                                         jump reading_book_05
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump  fiction_books
-                            "-Книга [book05]-{image=check_08.png}" if "book_05" in books and book_05_units == 20:
+                            "- Книга [book05] -{image=check_08.png}" if "book_05" in books and book_05_units == 20:
                                 $ the_gift = "03_hp/18_store/04.png" # THE TALE OF GALADRIEL. BOOK ONE.
                                 show screen gift
                                 ">Эта книга содержит довольно длинную историю, описывающую в мельчайших подробностях жизнь и приключения молодой эльфийки по имени Галадриэль."
@@ -406,13 +406,13 @@ label desk:
                                 jump  fiction_books
                             
                             ###05_b"\"The Tale of Galadriel. BOOK TWO.\""    
-                            "-Книга [book05b]-" if "book_05_b" in books and book_05_b_units <= 19:
+                            "- Книга [book05b] -" if "book_05_b" in books and book_05_b_units <= 19:
                                 $ the_gift = "03_hp/18_store/05.png" # THE TALE OF GALADRIEL. BOOK TWO.
                                 show screen gift
                                 ">Эта книга содержит довольно длинную историю, описывающую в мельчайших подробностях жизнь и приключения молодой эльфийки по имени Галадриэль."
                                 with d3
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         if "book_05" in books and book_05_units == 20: # MAKES SURE YOU DON'T READ PART II BEFORE PART I.
                                             hide screen gift
                                             jump reading_book_05_b      
@@ -420,10 +420,10 @@ label desk:
                                             call gal_proper
                                             jump  fiction_books
                                             
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump  fiction_books
-                            "-Книга [book05b]-{image=check_08.png}" if "book_05_b" in books and book_05_b_units == 20:
+                            "- Книга [book05b] -{image=check_08.png}" if "book_05_b" in books and book_05_b_units == 20:
                                 $ the_gift = "03_hp/18_store/05.png" # THE TALE OF GALADRIEL. BOOK TWO.
                                 show screen gift
                                 ">Эта книга содержит довольно длинную историю, описывающую в мельчайших подробностях жизнь и приключения молодой эльфийки по имени Галадриэль."
@@ -432,64 +432,64 @@ label desk:
                                 jump  fiction_books
                                 
                             ###06"\"The game of chairs\""    
-                            "-Книга [book06]-" if "book_06" in books and book_06_units <= 19:
+                            "- Книга [book06] -" if "book_06" in books and book_06_units <= 19:
                                 $ the_gift = "03_hp/18_store/02.png" # GAME OF THRONES.
                                 show screen gift
                                 with d3
                                 "[book06]\nЭпический рассказ о предательстве, убийствах и изнасилованиях, а затем еще несколько убийств, немного больше предательства и еще больше изнасилований."
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         hide screen gift
                                         jump reading_book_06
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump fiction_books
-                            "-Книга [book06]-{image=check_08.png}" if "book_06" in books and book_06_units == 20:
+                            "- Книга [book06] -{image=check_08.png}" if "book_06" in books and book_06_units == 20:
                                 "[book06]\nЭпический рассказ о предательстве, убийствах и изнасилованиях, а затем еще несколько убийств, немного больше предательства и еще больше изнасилований."
                                 m "Почему мне нужно снова читать это?"
                                 jump fiction_books
                                 
                             ###07"\"My dear waifu\""
-                            "-Книга [book07]-" if "book_07" in books and book_07_units <= 19 and not waifu_book_completed:
+                            "- Книга [book07] -" if "book_07" in books and book_07_units <= 19 and not waifu_book_completed:
                                 $ the_gift = "03_hp/18_store/03.png" # MY DEAR WAIFU.
                                 show screen gift
                                 with d3
-                                "\"[book07]\" {size=-4}BY AKABUR{/size}" "Переживите славные дни в вашей школе. Ваша сводная сестра Ши, учитель Мисс Стивенс или таинственная девушка из библиотеки? Кто станет ваша окончательной \"вайфу\"?"
+                                "\"[book07]\" {size=-4}От Акабура{/size}" "Переживите славные дни в вашей школе. Ваша сводная сестра Ши, учитель Мисс Стивенс или таинственная девушка из библиотеки? Кто станет вашей окончательной \"вайфу\"?"
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         if dear_waifu_completed_once and book_07_units == 0:
                                             m "Я не думаю, что повторное чтение этой книги даст мне хоть что-то. Прочесть ее просто ради удовольствия?"
                                             menu:
-                                                "-Читать книгу again-":
+                                                "- Читать книгу again -":
                                                     hide screen gift
                                                     jump reading_book_07
-                                                "-Ничего-":
+                                                "- Ничего -":
                                                     hide screen gift
                                                     jump fiction_books
                                         else:
                                             hide screen gift
                                             jump reading_book_07
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump fiction_books
-                            "-Книга [book07]-{image=check_08.png}" if "book_07" in books and waifu_book_completed:
+                            "- Книга [book07] -{image=check_08.png}" if "book_07" in books and waifu_book_completed:
                                 $ the_gift = "03_hp/18_store/03.png" # MY DEAR WAIFU.
                                 show screen gift
                                 with d3
-                                "\"[book07]\" {size=-4}BY AKABUR{/size}" "Переживите славные дни в вашей школе. Ваша сводная сестра Ши, учитель Мисс Стивенс или таинственная девушка из библиотеки? Кто станет ваша окончательной \"вайфу\"?"
+                                "\"[book07]\" {size=-4}От Акабура{/size}" "Переживите славные дни в вашей школе. Ваша сводная сестра Ши, учитель Мисс Стивенс или таинственная девушка из библиотеки? Кто станет вашей окончательной \"вайфу\"?"
                                 menu:
-                                    "-Читать книгу-":
+                                    "- Читать книгу -":
                                         if dear_waifu_completed_once and book_07_units == 0:
                                             m "Я не думаю, что повторное чтение этой книги даст мне хоть что-то."
                                             hide screen gift
                                             jump fiction_books
-                                    "-Ничего-":
+                                    "- Ничего -":
                                         hide screen gift
                                         jump fiction_books
                                 
-                            "-Ничего-":
+                            "- Ничего -":
                                 jump books_list
-                    "-Ничего-":
+                    "- Ничего -":
                         jump desk
             
           
@@ -500,8 +500,8 @@ label desk:
                     
                     
                     
-        #"-The muggle oddities-" if have_catalogue: #Real thing
-        "-Приблуды Дахра-" if cataloug_found: 
+        #"- The muggle oddities -" if have_catalogue: #Real thing
+        "- Приблуды Дахра -" if cataloug_found: 
             if order_placed or package_is_here:
                 show screen bld1
                 with d3
@@ -515,9 +515,9 @@ label desk:
         
         
 
-        "-Подрочить на трусики Гермионы-" if request_03: #True when Hermione has no panties on.
+        "- Подрочить на трусики Гермионы -" if request_03: #True when Hermione has no panties on.
             jump jerk_off
-        "-Состояние Гермионы-":
+        "- Состояние Гермионы -" if summoning_hermione_unlocked and buying_favors_from_hermione_unlocked: 
             "> Распутство: {color=#B40000}{size=+4}{b}[whoring]{/b}{/size}{/color}-я степень."
             "> Злость: {color=#B40000}{size=+4}{b}[mad]{/b}{/size}{/color}-я степень"
             if mad >=1 and mad < 3:
@@ -537,13 +537,13 @@ label desk:
             else:
                 "> Гермиона {b}не злится{/b} на вас"
             jump desk
-        "-Дремать-" if daytime and not day == 1:
+        "- Дремать -" if daytime and not day == 1:
             jump night_start
-        "-Спать-" if not daytime and not day == 1:
+        "- Спать -" if not daytime and not day == 1:
             jump day_start
             
 
-        "-Ничего-":
+        "- Ничего -":
             call screen main_menu_01
             
             
@@ -633,12 +633,12 @@ label chap_finished:
     return
 ###
 label no_fire: #Message you see that says you are reading a book during rain.
-    ">Дождь за окном успокаивает вас и вы отлично себя чувствуете читая книгу..."
+    ">Дождь за окном успокаивает вас и вы отлично себя чувствуете за чтением этой книги..."
     ">Вы пытаетесь продолжить читать, но через некоторое время понимаете, что воздух в комнате слишком влажный."
     return
 ###
 label yes_fire: #Message you see that says you are reading a book during rain near fireplace.
-    ">Дождь за окном успокаивает вас и вы отлично себя чувствуете читая книгу..."
+    ">Дождь за окном успокаивает вас и вы отлично себя чувствуете за чтением этой книги..."
     return
 
 ###
@@ -1095,7 +1095,7 @@ label chap_finished_05:
     if book_05_units == 3:
         "Глава [book_05_units]" "Король Метис объявляет о помолвке его дочери, принцессы Галадриэль и канцлера Мофоселиса."
     if book_05_units == 4:
-        "Глава [book_05_units]" "Галадриэль отказывается выйти замуж за человека, который три раза старше ее и кого, до этой поры, она считала своим дядей."
+        "Глава [book_05_units]" "Галадриэль отказывается выйти замуж за человека, который в три раза старше ее и кого, до этой поры, она считала своим дядей."
     if book_05_units == 5:
         "Глава [book_05_units]" "Король Метис не слушает \"глупые\" жалобы дочери. Галадриэль решает бежать."
     if book_05_units == 6:
@@ -1107,7 +1107,7 @@ label chap_finished_05:
     if book_05_units == 9:
         "Глава [book_05_units]" "Галадриэль едет вместе с дворянином. Они обмениваются бессмысленными шутками. Он очень веселит ее. Вдруг дворянин нападает на принцессу и вырубает ее!..."
     if book_05_units == 10:
-        "Глава [book_05_units]" "Галадриэль приходит в себя. К своему ужасу, она понимает, что дворянин, использует ее. Галадриэль кричит о помощи, но красавчик сдерживает ее жестоко насилуя."
+        "Глава [book_05_units]" "Галадриэль приходит в себя. К своему ужасу, она понимает, что дворянин, насилует ее. Галадриэль кричит о помощи, но красавчик сдерживает ее жестоко насилуя."
     if book_05_units == 11:
         "Глава [book_05_units]" "Галадриэль пытается бороться с мужчиной. Но не тут-то было. Вдруг она замечает, что ее окружают десятки мужчин, которые злобно ухмыляются."
     if book_05_units == 12:
@@ -1127,7 +1127,7 @@ label chap_finished_05:
     if book_05_units == 19:
         "Глава [book_05_units]" "Слава о молодой и красивой эльфийской шлюхе распространяется. Галадриэль принимает ее новую жизнь в борделе."
     if book_05_units == 20:
-        "Глава [book_05_units]" "Вдруг все резко меняется. Галадриэль узнает, что она беременна. -Конец первой книги-"
+        "Глава [book_05_units]" "Вдруг все резко меняется. Галадриэль узнает, что она беременна. - Конец первой книги -"
 
 
      
@@ -1245,7 +1245,7 @@ label chap_finished_05_b:
     $ book_05_b_units +=1
     
     if book_05_b_units == 1:
-        "Глава [book_05_b_units]" "Галадриэль уже беременна в течение нескольких месяцев. У принцессы, к ее удивлению, популярность растет, казалось бы, в прямой зависимости от размера ее живот."
+        "Глава [book_05_b_units]" "Галадриэль уже беременна в течение нескольких месяцев. У принцессы, к ее удивлению, популярность растет, казалось бы, в прямой зависимости от размера ее живота."
     if book_05_b_units == 2:
         "Глава [book_05_b_units]" "Хотя Галадриэль и выглядит как послушная шлюха, по правде, она продумывает побег из борделя."
     if book_05_b_units == 3:
@@ -1265,26 +1265,26 @@ label chap_finished_05_b:
     if book_05_b_units == 10:
         "Глава [book_05_b_units]" "Галадриэль снова тепло, чисто и хорошо кормят. Она рада вернуться и популярна, как никогда."
     if book_05_b_units == 11:
-        "Глава [book_05_b_units]" "Галадриэль обслуживает клиентов на протяжении всей беременности.Ребенок вот-вот родиться..."
+        "Глава [book_05_b_units]" "Галадриэль обслуживает клиентов на протяжении всей беременности.Ребенок вот-вот родится..."
     if book_05_b_units == 12:
-        "Глава [book_05_b_units]" "Богатый человек в маске заказал Галадриэль на весь день. Галадриэль задается вопросом, о то, кто это на самом деле,  лениво ублажая его."
+        "Глава [book_05_b_units]" "Богатый человек в маске заказал Галадриэль на весь день. Галадриэль задается вопросом, о том, кто это на самом деле, лениво ублажая его."
     if book_05_b_units == 13:
         "Глава [book_05_b_units]" "Таинственный человек целый день развлекается, трахая беременную Галадриэль. Из ее наполненных грудей капает молоко, в то время как человек трахает ее."
     if book_05_b_units == 14:
         "Глава [book_05_b_units]" "Человек в маске кончает на лицо Галадриэль во второй раз за сегодня. Затем он решает снять свою маску, чтобы показать лицо."
     if book_05_b_units == 15:
-        "Глава [book_05_b_units]" "Галадриэль понимает, что этот человек -- ее отец, король Methis. Теперь он понимает, что беременна шлюха, которую он трахал в течение нескольких часов его дочь."
+        "Глава [book_05_b_units]" "Галадриэль понимает, что этот человек - ее отец, король Метис. Теперь он понимает, что беременна шлюха, которую он трахал в течение нескольких часов его дочь."
     # Only now he realizes that the pregnant whore he fucked for hours is his daughter.
     if book_05_b_units == 16:
-        "Глава [book_05_b_units]" "Он обнимает его лишенного речи ребенка. В глазах Галадриэль опустошены. Сперма ее отца капает с лица..."
+        "Глава [book_05_b_units]" "Он обнимает его лишенного речи ребенка. Глаза Галадриэль опустошены. Сперма ее отца капает с лица..."
     if book_05_b_units == 17:
         "Глава [book_05_b_units]" "Галадриэль в ужасе кричит. К ее удивлению, она приходит в себя в королевских покоях, в своей постели."
     if book_05_b_units == 18:
-        "Глава [book_05_b_units]" "Он приходит в себя несколько минут, до того, как понять, что она никогда не была беременна.Вся приключение лишь сон."
+        "Глава [book_05_b_units]" "Она приходит в себя несколько минут, до того, как понять, что она никогда не была беременна.Все приключения, это лишь сон."
     if book_05_b_units == 19:
-        "Глава [book_05_b_units]" "Галадриэль бросается к отцу и обнимает его. Девушка пережила, чтобы ее прежнюю жизнь. Она счастлива и соглашается выйти замуж за канцлером Мофоселиса."
+        "Глава [book_05_b_units]" "Галадриэль бросается к отцу и обнимает его. Девушка пережила слишком многое в \"прошлой жизни\". Она счастлива и соглашается выйти замуж за канцлера Мофоселиса."
     if book_05_b_units == 20:
-        "Глава [book_05_b_units]" "{size=-1}Галадриэль находится у алтаря. Она довольна и счастлива. Вдруг она замечает то, что наполняет ее сердце ужасом. Она обнаружила шрам на руке. Место укуса собаки. -Конец-{/size}"
+        "Глава [book_05_b_units]" "{size=-1}Галадриэль находится у алтаря. Она довольна и счастлива. Вдруг она замечает то, что наполняет ее сердце ужасом. Она обнаружила шрам на руке. Место укуса собаки. - Конец -{/size}"
     
      
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
@@ -1410,7 +1410,7 @@ label chap_finished_06:
     if book_06_units == 8:
         "\"Глава [book_06_units]\"\nКороля отравили и он умирает. Инцест между братом и сестрой."
     if book_06_units == 9:
-        "\"Глава [book_06_units]\"\nA certain character you've been especially rooting for gets executed." # НЕ ПЕРЕВЕДЕНо
+        "\"Глава [book_06_units]\"\nКазнили некоторых персонажей, за которых вы болели." # НЕ ПЕРЕВЕДЕНо
     if book_06_units == 10:
         "\"Глава [book_06_units]\"\nПоявилось несколько персонажей."
     if book_06_units == 11:
@@ -1420,11 +1420,11 @@ label chap_finished_06:
     if book_06_units == 13:   
         "\"Глава [book_06_units]\"\nНекоторых женщин насилуют еще больше. Некоторым из них удается выжить. (Конечно, их изнасилуют чуть позже)." 
     if book_06_units == 14:
-        "\"Глава [book_06_units]\"\nПерсонажи, которыъ вы ненавидите сталкиваются в эпической битве против персонажей за которых вы болели."
+        "\"Глава [book_06_units]\"\nПерсонажи, которых вы ненавидите сталкиваются в эпической битве против персонажей за которых вы болели."
     if book_06_units == 15:
         "\"Глава [book_06_units]\"\nБольшинство персонажей, которых вы ненавидите пережили сражение. Все, за кого вы болели мертвы."
     if book_06_units == 16:
-        "\"Глава [book_06_units]\"\nЕще несколько изнасилований и убийств... (Вас даже не трогает уже...)" 
+        "\"Глава [book_06_units]\"\nЕще несколько изнасилований и убийств... (Вас это уже не задевает...)" 
     if book_06_units == 17:
         "\"Глава [book_06_units]\"\nНовые персонажи появляются в истории. Вы вроде начинаете болеть за одного из них."
     if book_06_units == 18:
@@ -1574,7 +1574,7 @@ label chapter_check_book_07: #Checks if the chapter just finished was the last o
                 show screen gift
                 with d3
                 $ renpy.play('sounds/win2.mp3') #Sound of finding an item.
-                ">Вы нушли ваучер Дахра."
+                ">Вы нашли ваучер Дахра."
                 hide screen gift
                 with d3
                 m "Хм..."
@@ -1598,14 +1598,14 @@ label chapter_check_book_07: #Checks if the chapter just finished was the last o
                 m "Хм... Может быть, я должен попробовать и выбирать другие варианты в следующий раз...?"
         elif leena_waifu and leena >= 8:
             if not complited_leena_already: #Finished with Leena for the first time.
-                g9 "Sweet! I love happy endings!"
+                g9 "Славненько! Обожаю хэппи энды!"
                 $ complited_leena_already = True
             else: #Finished with Shea for the second time.
                 m "Значит в конце я снова со светленькой девахой?"
                 m "Hm... Может быть, я должен попробовать и выбирать другие варианты в следующий раз...?"
 
         else:
-            m "Хм ... Конеч очень разочаровал..."
+            m "Хм ... Конец очень разочаровал..."
             #m "Maybe I should read it again sometime."
         
         if not dear_waifu_completed_once:
@@ -2668,61 +2668,6 @@ label chapter_check_book_17: #Checks if the chapter just finished was the last o
     
     
     
-    
-    
-    
-    
-    
-    
-        
-    
-    
-    
-    
-    
-    
-        
- 
-     
-    
-    
-    
-            
-    
-    
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 ### PAPERWORK ###
 label paperwork:
     stop music fadeout 1.0
@@ -2844,7 +2789,7 @@ label concentration_label:
     hide screen notes
     show screen notes
     $ report_chapters += 1
-    ">Во время работы в идеально сконцентрированы.\n>И заканчиваете дополнительную главу.\n>Вы закончили [report_chapters] глав."
+    ">Во время работы вы идеально сконцентрированы.\n>И заканчиваете дополнительную главу.\n>Вы закончили [report_chapters] глав."
     return
 ### SPEEDWRITING
 label speedwriting_label:
@@ -2885,5 +2830,3 @@ label reading_block:
         play weather "sounds/rain.mp3" fadeout 1.0 fadein 1.0 #Quiet...
     
     return
-       
-    

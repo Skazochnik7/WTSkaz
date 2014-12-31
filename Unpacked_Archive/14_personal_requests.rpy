@@ -5,7 +5,7 @@ label new_personal_request:
         
         label not_now:
         menu:
-            "-Личные услуги-":
+            "- Личные услуги -":
                 label not_now2:
                 ### LEVEL 01 ###
                 menu:
@@ -28,7 +28,7 @@ label new_personal_request:
                         jump new_request_02
                   
                     ### LEVEL 02 ###
-                    "{color=#858585}--Не открытое действие-{/color}-" if imagination == 1:
+                    "{color=#858585}--Не открытое действие-{/color} -" if imagination == 1:
                         call vague_idea
                         jump not_now2
                     "Услуга: \"Вор трусиков\" {image=heart_00.png}" if not new_request_03_01 and not new_request_03_02 and not new_request_03_03 and daytime and imagination >= 2:
@@ -40,7 +40,7 @@ label new_personal_request:
                     "Услуга: \"Вор трусиков\" {image=heart_03.png}" if new_request_03_03 and daytime and imagination >= 2:
                         jump new_request_03
                     
-                    "{color=#858585}--Не открытое действие-{/color}-" if imagination == 1:
+                    "{color=#858585}--Не открытое действие-{/color} -" if imagination == 1:
                         call vague_idea
                         jump not_now2
                     "Услуга: \"Полапать грудь!\" {image=heart_00.png}" if not new_request_04_01 and not new_request_04_02 and not new_request_04_03 and imagination >= 2: 
@@ -52,7 +52,7 @@ label new_personal_request:
                     "Услуга: \"Полапать грудь!\" {image=heart_03.png}" if new_request_04_03 and imagination >= 2: 
                         jump new_request_04
                         
-                    "{color=#858585}--Не открытое действие-{/color}-" if imagination == 1:
+                    "{color=#858585}--Не открытое действие-{/color} -" if imagination == 1:
                         call vague_idea
                         jump not_now2
                     "Услуга: \"Полапать попку!\" {image=heart_00.png}" if not new_request_05_01 and not new_request_05_02 and not new_request_05_03 and imagination >= 2:
@@ -65,7 +65,7 @@ label new_personal_request:
                         jump new_request_05
                         
                     ### LEVEL 03 ### IMAGINATION == 3
-                    "{color=#858585}--Не открытое действие-{/color}-" if imagination < 3:
+                    "{color=#858585}--Не открытое действие-{/color} -" if imagination < 3:
                         call vague_idea
                         jump not_now2
                     "Услуга: \"Покажи их мне!\" {image=heart_00.png}" if not new_request_08_01 and not new_request_08_02 and not new_request_08_03 and imagination >= 3:
@@ -81,7 +81,7 @@ label new_personal_request:
 #                        jump new_request_09
                     
                     ### LEVEL 04 ### IMAGINATION == 3
-                    "{color=#858585}--Не открытое действие-{/color}-" if imagination < 3:
+                    "{color=#858585}--Не открытое действие-{/color} -" if imagination < 3:
                         call vague_idea
                         jump not_now2
                     "Услуга: \"Станцуй для меня!\" {image=heart_00.png}" if not new_request_11_01 and not new_request_11_02 and not new_request_11_03 and imagination >= 3:
@@ -93,7 +93,7 @@ label new_personal_request:
                     "Услуга: \"Станцуй для меня!\" {image=heart_03.png}" if new_request_11_03 and imagination >= 3: 
                         jump new_request_11
                     
-                    "{color=#858585}--Не открытое действие-{/color}-" if imagination < 3:
+                    "{color=#858585}--Не открытое действие-{/color} -" if imagination < 3:
                         call vague_idea
                         jump not_now2
                     "Услуга: \"Дай мне потрогать их!\" {image=heart_00.png}" if not new_request_12_01 and not new_request_12_02 and not new_request_12_03 and daytime and imagination >= 3: # LEVEL 4
@@ -106,7 +106,7 @@ label new_personal_request:
                         jump new_request_12
                     
                     ### LEVEL 05 ### IMAGINATION == 4
-                    "{color=#858585}--Не открытое действие-{/color}-" if imagination < 4:
+                    "{color=#858585}--Не открытое действие-{/color} -" if imagination < 4:
                         call vague_idea
                         jump not_now2
                     "Услуга: \"Потрогай меня!\" {image=heart_00.png}" if not new_request_16_01 and not new_request_16_02 and not new_request_16_03 and imagination >= 4: # LEVEL 5
@@ -119,7 +119,7 @@ label new_personal_request:
                         jump new_request_16
                        
                     ### LEVEL 06 ### IMAGINATION == 4
-                    "{color=#858585}--Не открытое действие-{/color}-" if imagination < 4:
+                    "{color=#858585}--Не открытое действие-{/color} -" if imagination < 4:
                         call vague_idea
                         jump not_now2
                     "Услуга: \"Соси его!\" {image=heart_00.png}" if not new_request_22_01 and not new_request_22_02 and not new_request_22_03 and imagination >= 4: # LEVEL 6
@@ -132,7 +132,7 @@ label new_personal_request:
                         jump new_request_22
                     
                     ### LEVEL 07 ### IMAGINATION == 5
-                    "{color=#858585}--Не открытое действие-{/color}-" if imagination < 5:
+                    "{color=#858585}--Не открытое действие-{/color} -" if imagination < 5:
                         call vague_idea
                         jump not_now2
                     "Услуга: \"Давай займемся сексом!\" {image=heart_00.png}" if not new_request_29_01 and not new_request_29_02 and not new_request_29_03 and imagination >= 5: # LEVEL 7
@@ -145,7 +145,7 @@ label new_personal_request:
                         jump new_request_29
                         
                     ### LEVEL 08 ###
-                    "{color=#858585}--Не открытое действие-{/color}-" if imagination < 5:
+                    "{color=#858585}--Не открытое действие-{/color} -" if imagination < 5:
                         call vague_idea
                         jump not_now2
                     "Услуга:  \"Время для анала!\" {image=heart_00.png}" if not new_request_31_01 and not new_request_31_02 and not new_request_31_03 and imagination >= 5: # LEVEL 8
@@ -157,7 +157,7 @@ label new_personal_request:
                     "Услуга:  \"Время для анала!\" {image=heart_03.png}" if new_request_31_03 and imagination >= 5: # LEVEL 8
                         jump new_request_31
                             
-                    "-Отмена-":
+                    "- Отмена -":
                         jump new_personal_request
                 
             "{color=#858585}-Публичные услуги-{/color}" if not daytime:
@@ -169,7 +169,7 @@ label new_personal_request:
                 show screen hermione_main
                 with d3
                 jump not_now
-            "-Публичные услуги-" if daytime:
+            "- Публичные услуги -" if daytime:
                 if lock_public_favors:
                     her "Эм... Сэр..."
                     her "Я согласна обменивать очки за всякие услуги..."
@@ -183,21 +183,21 @@ label new_personal_request:
                             jump new_request_02_b
                             
                         ### LEVEL 02 ### IMAGINATION == 2
-                        "{color=#858585}--Не открытое действие-{/color}-" if imagination < 2:
+                        "{color=#858585}--Не открытое действие-{/color} -" if imagination < 2:
                             call vague_idea
                             jump not_now3
                         "Услуга: \"Флиртуй с учителем\"" if daytime  and imagination >= 2:
                             jump new_request_02_c
                         
                         ### LEVEL 03 ### IMAGINATION == 3
-                        "{color=#858585}--Не открытое действие-{/color}-" if imagination < 3:
+                        "{color=#858585}--Не открытое действие-{/color} -" if imagination < 3:
                             call vague_idea
                             jump not_now3
                         "Услуга: \"Дай однокласснику поприставать к тебе.\"" if imagination >= 3: # LEVEL 3
                             jump new_request_10
                         
                         ### LEVEL 04 ### IMAGINATION == 3
-                        "{color=#858585}--Не открытое действие-{/color}-" if imagination < 3:
+                        "{color=#858585}--Не открытое действие-{/color} -" if imagination < 3:
                             call vague_idea
                             jump not_now3
                         "Услуга: \"Посвети сиськами перед одноклассниками.\"" if imagination >= 3: # LEVEL 4
@@ -205,38 +205,38 @@ label new_personal_request:
                         
                         
                         ### LEVEL 05 ### IMAGINATION == 4
-                        "{color=#858585}--Не открытое действие-{/color}-" if imagination < 4:
+                        "{color=#858585}--Не открытое действие-{/color} -" if imagination < 4:
                             call vague_idea
                             jump not_now3
                         "Услуга: \"Поцелуй девченку.\"" if imagination >= 4: # LEVEL 5
                             jump new_request_20
                             
                         ### LEVEL 06 ### IMAGINATION == 4
-                        "{color=#858585}--Не открытое действие-{/color}-" if imagination < 4:
+                        "{color=#858585}--Не открытое действие-{/color} -" if imagination < 4:
                             call vague_idea
                             jump not_now3
                         "Услуга: \"Вздрочни однокласснику.\"" if imagination >= 4: # LEVEL 6
                             jump new_request_23
                             
                         ### LEVEL 07 ### IMAGINATION == 5
-                        "{color=#858585}--Не открытое действие-{/color}-" if imagination < 5:
+                        "{color=#858585}--Не открытое действие-{/color} -" if imagination < 5:
                             call vague_idea
                             jump not_now3
                         "Услуга: \"Отсоси однокласснику\"" if imagination >= 5:# LEVEL 7
                             jump new_request_24
                                 
                          ### LEVEL 08 ### IMAGINATION == 5
-                        "{color=#858585}--Не открытое действие-{/color}-" if imagination < 5:
+                        "{color=#858585}--Не открытое действие-{/color} -" if imagination < 5:
                             call vague_idea
                             jump not_now3
                         "Услуга: \"Трахнись с одноклассником\"" if imagination >= 5:# LEVEL 8
                             jump new_request_30
                         
-                        "-Отмена-":
+                        "- Отмена -":
                             jump new_personal_request
                 
                 
-            "-Ничего-":
+            "- Ничего -":
                 jump day_time_requests
     
         
@@ -382,7 +382,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
         her "Кроме того дня, когда я завалила тест..."
         her "Все еще не могу поверить в это..."
         menu: 
-            "-Дрочить пока она говорит-":
+            "- Дрочить пока она говорит -":
                 $ d_flag_01 = True #If TRUE genie jerks off under the desk.    
                 hide screen hermione_main
                 hide screen blktone
@@ -410,7 +410,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                 show screen hermione_main
                 with d3
                 her "Да... Ну, тот тест я провалила..."
-            "-Слушать ее-":
+            "- Слушать ее -":
                 $ d_flag_01 = False #NOT JERKING OFF.
                 m "Да, это такая трагедия..."
                 her "Именно! я рада, что вы понимаете меня, профессор."
@@ -529,7 +529,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
         with d3
         her "Спасибо мне за помощь, профессор."
         menu: 
-            "-Начать дрочить-":
+            "- Начать дрочить -":
                 $ d_flag_01 = True #If TRUE genie jerks off under the desk.    
                 hide screen hermione_main
                 hide screen blktone
@@ -565,7 +565,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                 with d3
                 her "Хм..."
                 m "{size=-4}(Он что-то заподозрила? Да не...){/size}"
-            "-Внимательно выслушать ее-":
+            "- Внимательно выслушать ее -":
                 $ d_flag_01 = False #NOT JERKING OFF.
                 m "Не стоит благодарности."
                 pass
@@ -892,7 +892,7 @@ label new_request_02: #SHOW ME YOUR Трусики
         
         her "....................."
         menu:
-            "-Смотреть на ее лицо-":
+            "- Смотреть на ее лицо -":
                 ">Вы внимательно смотрите на лицо Гермионы..."
                 pause
                 ">Вы задаетесь вопрос о том, что происходит у нее в голове сейчас."
@@ -903,7 +903,7 @@ label new_request_02: #SHOW ME YOUR Трусики
                 with d3
                 her "......................."
                 pause
-            "-Смотреть на ее трусики-":
+            "- Смотреть на ее трусики -":
                 ">Просто женское белье..."
                 pause
                 hide screen hermione_main
@@ -951,7 +951,7 @@ label new_request_02: #SHOW ME YOUR Трусики
                 show screen hermione_main
                 with d3
                 her "Спасибо, профессор..."
-            "-Продолжать смотреть в ее глаза-":
+            "- Продолжать смотреть в ее глаза -":
                 hide screen hermione_main
                 with d3
                 $ h_body = "03_hp/13_hermione_main/body_55.png" #Flashing Трусики
@@ -3884,7 +3884,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
     menu:
         "\"Вот твои трусики.\"":
             if have_cum_soaced_panties:
-                jump Трусики_soaked_in_cum
+                jump panties_soaked_in_cum
             else:
                 her "Спасибо, сэр."
                 her "И моя оплата?"
@@ -3926,7 +3926,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                 with d3
                 ">Вы отдаете Гермионее ее трусики..."
                 if have_cum_soaced_panties:
-                    jump Трусики_soaked_in_cum
+                    jump panties_soaked_in_cum
                 else:
                     hide screen hermione_main
                     with d3
@@ -4000,7 +4000,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                         with d3
                         her "Ох, их, конечно же тоже..." 
                         if have_cum_soaced_panties:
-                            jump Трусики_soaked_in_cum
+                            jump panties_soaked_in_cum
                         else:
                             pass
                     "\"Это для блага...\"":
@@ -4022,7 +4022,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                         with d3
                         her "Могу я получить свои трусики обратно, пожалуйста?"
                         if have_cum_soaced_panties:
-                            jump Трусики_soaked_in_cum
+                            jump panties_soaked_in_cum
                         else:
                             her "И мои очки."
             elif whoring >= 9: #LEVEL 04. EVENT LEVEL 03.
@@ -4056,7 +4056,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                 with d3
                 ">Вы отдаете Гермионее ее трусики..."
                 if have_cum_soaced_panties:
-                    jump Трусики_soaked_in_cum
+                    jump panties_soaked_in_cum
                 else:
                     hide screen hermione_main
                     with d3
@@ -4101,7 +4101,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
 
     return    
 ### Трусики SOAKED IN CUM ###
-label Трусики_soaked_in_cum:
+label panties_soaked_in_cum:
     $ have_cum_soaced_panties = False #TRUE when you have the Трусики in your possession (before you return them to Hermione).
     
     if whoring >= 3 and whoring <= 5: # LEVEL 02
@@ -4441,7 +4441,7 @@ label new_request_04:
                 her_03 "Что? Что вы имеете в виду, профессор--?"
                 ">Гермиона чуть отходит назад..."
                 ">Вы притягиваете ее и хватаетесь за грудки..."
-                "-Просто протягиваете руку и хватаетесь за них.-"
+                "- Просто протягиваете руку и хватаетесь за них. -"
                 ">Вы протягиваете вторую и руку и вот уже держите обе сиськи!"
         stop music fadeout 1.0
         with hpunch
@@ -4473,7 +4473,7 @@ label new_request_04:
         pause
         her_13 "............................"
         menu:
-            "-Сжать ее груди со всей силой-":
+            "- Сжать ее груди со всей силой -":
                 show screen blktone
                 with d5
                 ">Вы собираетесь с силами..."
@@ -4491,7 +4491,7 @@ label new_request_04:
                 m "Ты будешь в порядке..."
                 her_04 "........."
 
-            "-Массировать грудь-":
+            "- Массировать грудь -":
                 show screen blktone
                 with d5
                 ">Вы начинаете массировать грудь Гермионы..."
@@ -4506,7 +4506,7 @@ label new_request_04:
                 ">Ваши попытки оказались напрасны. Ткань униформы слишком толстая..."
                 her_15 "\"Гриффиндор\" ............"
 
-            "-Отпустить ее и дать очки-":
+            "- Отпустить ее и дать очки -":
                 show screen blktone
                 with d5
                 m "Ну, если ты собираешься так драматизировать, то можешь просто уйти..."
@@ -4542,7 +4542,7 @@ label new_request_04:
         m "Нет, не стоит. Я хочу делать это пока ты полностью одета..."
         her_14 "Ох, хорошо..."
         ">Гермиона стоит перед вами в ожидании..."
-        ">Вы хватаете ее больший сиськи..."
+        ">Вы хватаете ее большие сиськи..."
         ">И усиленно начинаете их массировать..."
 
         hide screen hermione_walk_01
@@ -4567,7 +4567,7 @@ label new_request_04:
                 her_16 "То есть, это не такая большая плата за то, что я получу в конце..."
                 ">Вы продолжаете мять ее грудки через униформу..."
                 her_01 "Небольшая цена для чести моего факультета......{image=textheart.png}"
-            "-Резко потянуть их с силой-":
+            "- Резко потянуть их с силой -":
                 show screen blktone8
                 with d3
                 ">Внезапно вы сильно оттягиваете ее сиськи..."
@@ -4743,9 +4743,9 @@ label new_request_05:
                 her_04 "............................."
                 menu:
                     m "Хм..."
-                    "-Сжать ее булочки-":
+                    "- Сжать ее булочки -":
                         pass
-                    "-Шлепнуть по попке-":
+                    "- Шлепнуть по попке -":
                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                         show screen white
                         with hpunch
@@ -4758,7 +4758,7 @@ label new_request_05:
                             "\"Ладно, ладно... Я просто не смогу устоять....\"":
                                 her_25 "......................."
                                 pass
-                            "-Шлепнуть еще раз-":
+                            "- Шлепнуть еще раз -":
                                 $ renpy.play('sounds/slap_02.mp3') #SLAP!
                                 show screen white
                                 with hpunch
@@ -4772,7 +4772,7 @@ label new_request_05:
                                     "\"Ладно, ладно... Я просто не смог устоять....\"":
                                         her_25 "......................."
                                         pass
-                                    "-Шлепнуть еще раз-":
+                                    "- Шлепнуть еще раз -":
                                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                                         show screen white
                                         with hpunch
@@ -4893,7 +4893,7 @@ label new_request_05:
                         m "Ну, тебе не понять, это некоторые довольно продвинутые магические штуки..."
                         her_03 "Понятно..."
                         her_02 "Ну, если это для науки, то я рада помочь..."
-                    "-Сжать её ягодицы жестче-":
+                    "- Сжать её ягодицы жестче -":
                         ">Вы мнете ягодицы Гермионы с удвоеной силой."
                         her_05 "...................."
                         her_12 "(Должна ли я промолчать.....?)"
@@ -4904,44 +4904,44 @@ label new_request_05:
                 her_15 "................"
                 label connection_of_rapes:
                 menu:
-                    "-Залесть к ней в трусики-":
+                    "- Залесть к ней в трусики -":
                         ">Вы медленно запускаете свою руку в  ее трусики..."
                         her_07 "Профессор... Что вы...?"
                         m "Это нормально, просто подумай о тех 15 баллах, которые ты можешь получить..."
                         her_12 "............."
                         menu:
-                            "-Поласкать её киску пальцем-":
+                            "- Поласкать её киску пальцем -":
                                 show screen blkfade
                                 with d3
                                 ">Вы проникаете пальцами вниз и засовываете в ее маленькую щель..."
                                 her_07 "Про? Нет! Что вы...?"
                                 ">Гермиона пытается вырваться..."
                                 menu:
-                                    "-Засунуть пальцы силой!-":
+                                    "- Засунуть пальцы силой! -":
                                         ">Вы силой суете палец ей в киску..."
                                         ">Там очень тепло и узко..."
                                         ">Но там очень суха... Не похоже, что Гермиона получила от этого удоволствие..."
                                         jump screams_of_rapings
-                                    "-Продолжить...-":
+                                    "- Продолжить... -":
                                         pass
-                            "-Поласкать пальцем ее попку-":
+                            "- Поласкать пальцем ее попку -":
                                 show screen blkfade
                                 with d3
                                 ">Вы всовывайте свой палец в её узенькую дырочку..."
                                 her_07 "Профессор? Нет! Что вы делаете!?"
                                 ">Гермиона пытается вырваться..."
                                 menu:
-                                    "-Силой засунуть палец-":
+                                    "- Силой засунуть палец -":
                                         ">Вы силой всовывайте палец в её дырочку..."
                                         with hpunch
                                         her_30 "!!?"
                                         ">Там очень узко и тепло..."
                                         jump screams_of_rapings
-                                    "-Умерить пыл...-":
+                                    "- Умерить пыл... -":
                                         pass
-                            "- Перестать испытовать удачу.-":
+                            "- Перестать испытовать удачу. -":
                                 pass
-                    "-Нет. На сегодня хватит. Отпустить её-":
+                    "- Нет. На сегодня хватит. Отпустить её -":
                         pass
             "\"Нет. Просто стойте, Мисс Грейнджер.\"":
                 her_04 "Как вы скажите, сэр..."
@@ -5038,9 +5038,9 @@ label new_request_05:
                 her_35 "............."
                 menu:
                     m "Хм..."
-                    "-Сжать ее булочки-":
+                    "- Сжать ее булочки -":
                         pass
-                    "-Шлепнуть по попке-":
+                    "- Шлепнуть по попке -":
                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                         show screen white
                         with hpunch
@@ -5053,7 +5053,7 @@ label new_request_05:
                             "\"Ладно,ладно... Я просто не смог удержаться....\"":
                                 her_18 "Хорошо..."
                                 pass
-                            "-Шлепнуть еще раз-":
+                            "- Шлепнуть еще раз -":
                                 $ renpy.play('sounds/slap_02.mp3') #SLAP!
                                 show screen white
                                 with hpunch
@@ -5067,7 +5067,7 @@ label new_request_05:
                                     "\"Ладно,ладно... Я просто не смог удержаться....\"":
                                         her_18 "Это ведь не так трудно..."
                                         pass
-                                    "-Шлепнуть еще раз-":
+                                    "- Шлепнуть еще раз -":
                                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                                         show screen white
                                         with hpunch
@@ -5096,42 +5096,42 @@ label new_request_05:
                 her_18 "................"
                 label connection_of_rapes_02:
                 menu:
-                    "-Залесть к ней в трусики-":
+                    "- Залесть к ней в трусики -":
                         ">Вы медленно запускаете свою руку в  девочкины трусики... "
                         her_17"Профессор... Что вы...?"
                         m "Это нормально, просто подумай о тех 15 баллов которые ты можешь получить.."
                         her_17 "Как вы скажите..."
                         menu:
-                            "-Поласкать её киску пальцем-":
+                            "- Поласкать её киску пальцем -":
                                 show screen blkfade
                                 with d3
                                 ">Вы проникаете пальцами вниз и засовываете в ее маленькую щель..."
                                 her_18 "Профессор?" 
                                 menu:
-                                    "-Засунуть палец силой в её киску!-":
+                                    "- Засунуть палец силой в её киску! -":
                                         ">-Вы силой всовывайте свой палец в её маленькую щель-..."
                                         ">Там очень тепло и узко...."
                                         ">Там немного влажно, похоже она получает немного удовольствия от этого..."
                                         jump screams_of_pleasure
-                                    "-Продолжить...-":
+                                    "- Продолжить... -":
                                         pass
-                            "-Prod her butt-hole instead-":
+                            "- Поласкать ее попку своим пальцем -":
                                 show screen blkfade
                                 with d3
                                 ">Вы всовывайте свой палец в её узенькую дырочку..."
                                 her_18 "Профессор? Что вы пытаетесь сделать?"
                                 menu:
-                                    "-Силой заусунуть палец в её узкую попку-":
+                                    "- Силой заусунуть палец в её узкую попку -":
                                         ">Вы всовывайте свой палец в её узенькую дырочку..."
                                         with hpunch
                                         her_36 "aх... ваш палец в моей ..."
                                         ">Там тепло и узко..."
                                         jump screams_of_pleasure
-                                    "-Продожить...-":
+                                    "- Продожить... -":
                                         pass
-                            "-Перестать испытовать удачу.Отпустить девочку-":
+                            "- Перестать испытовать удачу.Отпустить девочку -":
                                 pass
-                    "-Нет. На сегодня хватит. Отпустить девочку-":
+                    "- Нет. На сегодня хватит. Отпустить девочку -":
                         pass
             "\"Нет. Просто стойте, Мисс Грейнджер.\"":
                 her_04 "Как вы скажите, сэр..."
@@ -5842,7 +5842,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 with d3
                 show screen blkfade
                 with d3
-                ">Вы протягиваете руку и вставляете свой палец в Гермиону..."
+                ">Вы протягиваете руки и хватаете грудь Гермионы..."
                 her_07 "Профессор, что вы делаете?"
                 hide screen blkfade
                 hide screen blktone8
@@ -5893,7 +5893,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 $ only_upper = False #No lower body displayed. 
                 show screen blkfade
                 with d3
-                ">Вы протягиваете свои руки и вставляете палец в Гермиону..."
+                ">Вы протягиваете свои руки и хватаете сиськи Гермионы..."
                 her_07 "Профессор, что вы делаете?"
                 hide screen blkfade
                 hide screen blktone8
@@ -5942,7 +5942,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 $ only_upper = False #No lower body displayed. 
                 show screen blkfade
                 with d3
-                ">Вы протягиваете свои руки и вставляете палец в Гермиону..."
+                ">Вы протягиваете свои руки и хватаете грудь Гермионы..."
                 her_07 "Профессор, что вы делаете?"
                 hide screen blkfade
                 hide screen blktone8
@@ -5954,7 +5954,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 pause
                 show screen bld1
                 with d3
-                m "Расслабься, девочка. Просто стойте!"
+                m "Расслабься, девочка. Просто стой!"
                 her_12 "Но..."
                 her_13 "ах...{image=textheart.png}"
                 her_12 " Я не соглашалась на это..."
@@ -6011,22 +6011,22 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 her_35 "Могу я получить свои очки?"
                 $ mad +=7
    
-        "\"Сдержать обещания. Просто смотреть.\"":
+        "\"Сдержать обещание. Просто смотреть.\"":
             ">Вы долго всматриваетесь в грудь Гермионы..."
             if whoring >= 6 and whoring <= 8: # LEVEL 03 # <=================================================================================== FIRST EVENT.
                 pause
                 menu:
-                    "-Одобрительно кивнуть-":
+                    "- Одобрительно кивнуть -":
                         ">Вы смотрите на ее сиськи и киваете в знак одобрения..."
                         her "......................"
-                    "-Отрицательно трясти головой-":
+                    "- Отрицательно трясти головой -":
                         $ mad += 3
                         ">Вы посмотрите на сиськи девушки, а затем в разочаровании трясете головой..."
                         her ".....................?"
             elif whoring >= 9 and whoring <= 11: # LEVEL 04 # <=================================================================================== SECOND EVENT.
                 pause
                 menu:
-                    "\"У тебя отличный сиськи.\"":
+                    "\"У тебя отличные сиськи.\"":
                         hide screen hermione_main
                         with d3
                         $ h_body = "03_hp/13_hermione_main/body_83.png" #Sprite of Hermione's upper body.
@@ -6074,7 +6074,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         show screen hermione_main
                         with d3
                         her "Мне приятно,что вам они нравятся, сэр..."
-                    "\"Your tits are alright I suppose...\"":
+                    "\"Ну, так себе сиськи...\"":
                         hide screen hermione_main
                         with d3
                         $ h_body = "03_hp/13_hermione_main/body_82.png" #Sprite of Hermione's upper body.
@@ -6090,7 +6090,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         show screen hermione_main
                         with d3
                         her "Мне жаль..."
-            ">Вы смотрите на ее грудь немного подольше..."
+            ">Вы смотрите на ее грудь немного дольше..."
             pause
             m "Ладно,ты можешь прикрыться, девочка..."
             her "............."
@@ -6166,7 +6166,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         $ mad +=9
                         $ only_upper = False
                         pass
-                    "-Дрочить быстрее-":
+                    "- Дрочить быстрее -":
                         $ mad += 35
                         $ only_upper = False
                         ">Вы начали дрочить очень быстро!"
@@ -6229,12 +6229,12 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 with d3
                 ">Вы собираетесь кончить..."
                 menu:
-                    "-Держите его, как обещали-":
+                    "- Держите его, как обещали -":
                         g4 "Ох,отлично..."
                         g4 "Я думаю стоит остановиться..."
                         her_15 "..............."
                         ">Гермиона прикрыла груди..."
-                    "-Кончить-":
+                    "- Кончить -":
                         #play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                         g4 "Aргх! Ты шлюшка!"
                         her_21 "Профе-- ??"
@@ -6351,9 +6351,9 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 show screen blkfade 
                 with d3
                  # SAME AS PREVIOUS EVENT^^^
+                g4 "Aргх! (Я кончаю!)"
                 menu:
-                    g4 "Aргх! (Я кончаю!)"
-                    "-Сдержать обещание-":
+                    "- Сдержать обещание -":
                         g4 "Ох,ладно..."
                         g4 "Думаю лучше остановиться..."
                         her_12 "..............."
@@ -6434,7 +6434,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         her "Ну, это следует сделать сейчас..."
                         hide screen hermione_main
                         with d3
-                    "-Кончить-":
+                    "- Кончить -":
                         g4 "Aргх! Ты шлюшка!"
                         her_07 "???"
                         show screen white 
@@ -7004,13 +7004,13 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                 her_40 "Мне жаль, сэр..."
                 her_40 "Она застраляа..."
                 her_40 "Не сдвигается..."
-                her_40 "Почему она не двигается *плачет*"
-                her_41 "Нет, Я не могу, сэр! *плачет*"
+                her_40 "Почему она не двигается *всхлип*"
+                her_41 "Нет, Я не могу, сэр! *всхлип*"
                 m "Что?"
                 her_41 "Я думала, что смогу, но..."
                 her_41 "Стриптиз за очки, сэр?"
                 her_41 "Люди ровняются на меня в этой школе!"
-                her_41 "У меня есть репутация...*плачет*"
+                her_41 "У меня есть репутация...*всхлип*"
                 her_42 "И если я это сделаю..."
                 
         show screen blkfade 
@@ -7021,7 +7021,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         show screen hermione_02 #Hermione stands still.
         hide screen blkfade
         with d3
-        her_31 "сэр, я думаю мне стоит уйти... *плачет!*"
+        her_31 "сэр, я думаю мне стоит уйти... *всхлип!*"
         menu:
             "\"Ладно. Мне было весело. Вот твои очки.\"":
                 $ hermione_main_zorder = 8 #Zorder of the screen hermione_main. 5 puts it on top of everything but behind the speech box.
@@ -7299,18 +7299,18 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         ">Пока вы смотрите как сиськи этой девочки расскачиваются то влево, то в право, вам приходится бороться с сильным желанием..."
         menu:
             m "..."
-            "-Схватить их!-":
+            "- Схватить их! -":
                 g9 "{size=-4}(Да, просто положить свои руки на эти милые сиськи, именно!){/size}"
                 g9 "{size=-4}(Может чуть подергать их...){/size}"
-            "-Шлепнуть!-":
+            "- Шлепнуть! -":
                 m "{size=-4}(О да, хочу шлепнуть их.){/size}"
                 g9 "{size=-4}(Да, просто немного шлепнуть...){/size}"
-            "-Укусить!":
+            "- Укусить!":
                 m "{size=-4}(Это странно, что я хочу впиться в них зубами?){/size}"
                 m "{size=-4}(Нет, это не странно!){/size}"
                 m "{size=-4}(Просто пара нежных укусов с любовью!){/size}"
                 g9 "{size=-4}(Да... Может быть больше чем пара...){/size}"
-            "-Забуриться в них лицом!-":
+            "- Забуриться в них лицом! -":
                 m "{size=-4}(Я просто хочу залезть лицом между ними!){/size}"
                 g9 "{size=-4}(Да, забуриться в них лицом это лучшее, что можно сделать!){/size}"
         ">Пока вы думаете, Гермиона продолжает танцевать..."
@@ -8127,7 +8127,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     hide screen h_head2   
                     menu:
                         m "..."
-                        "-Начать дрочить-":
+                        "- Начать дрочить -":
                             play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
                             
                             hide screen bld1
@@ -8669,7 +8669,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         her "...Могу ли я получить оплату... сэр...?"
                                         hide screen h_head2   
 
-                        "-Продолжать смотреть-":
+                        "- Продолжать смотреть -":
                             label civil_with_snape:
                                 play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
                             # JUST WATCHING.
@@ -9165,7 +9165,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     her "Вам обязательно быть настолько пошлым, сэр?"
                     hide screen h_head2
                     menu: 
-                        "-Достать член и начать дрочить-":
+                        "- Достать член и начать дрочить -":
                             hide screen bld1
                             show screen ctc
                             with d3
@@ -9219,13 +9219,13 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         hide screen h_head2
                                         menu:
                                             m "..."
-                                            "-Пообещать сдержаться-":
+                                            "- Пообещать сдержаться -":
                                                     $ d_flag_07 = True #Promised to hold it.
                                                     show screen h_head2
                                                     $ h_body = "03_hp/13_hermione_main/body_102.png"
                                                     her "Ну, тогда ладно..."
                                                     hide screen h_head2
-                                            "-Не давать такого обещания-":
+                                            "- Не давать такого обещания -":
                                                 $ d_flag_07 = False #Did not promise to hold it.
                                                 m "\"Не кончать\"? Это похоже на пытку!"
                                                 m "Пожалуйста, сдержите свои садистские наклонности, Мисс Грейнджер."
@@ -9374,7 +9374,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                             m "Теперь, просто оденься и уходи, пока кто-нибудь не застукал нас тут."
                                             show screen h_head2                                                              # HERMIONE
                                             $ h_body = "03_hp/13_hermione_main/body_114.png" # HERMIONE
-                                            her "*плачет!*........................"
+                                            her "*всхлип!*........................"
                                             hide screen h_head2        
                                             $ mad += 50
                                             show screen blkfade 
@@ -9654,7 +9654,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                     with d3
                                     pass
 
-                        "-Показать хорошие манеры и просто смотреть-":
+                        "- Показать хорошие манеры и просто смотреть -":
                             pass
                     # JUST WATCHING.
                     show screen blktone
@@ -10030,7 +10030,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
         m "Отлично. Теперь дрочи его."
         show screen h_head2                                                             # HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_34.png" # HERMIONE
-        her "Верно..."
+        her "Ага..."
         hide screen h_head2 
         #Stroking the cock.
         $ genie_chibi_xpos = 60 #-185 behind the desk.
@@ -10050,7 +10050,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
             show screen h_head2                                                             # HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_48.png" # HERMIONE
             her "!!!"
-            her "Как насчет кончитьы, сэр?!"
+            her "Как насчет кончить, сэр?!"
             hide screen h_head2 
             m "Кончить?"
             m "Не будь глупа, мы только начали."
@@ -10084,7 +10084,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
             "\"Я и сам не всегда уверен...\"":
                 show screen h_head2                                                             # HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_31.png" # HERMIONE
-                her "Правда? Но я думалаы..."
+                her "Правда? Но я думала..."
                 show screen h_head2                                                             # HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_33.png" # HERMIONE
                 her "Ну, тогда ладно..."
@@ -10163,7 +10163,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 show screen h_head2                                                             # HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_69.png" # HERMIONE
                 her "Да! Я шлюха!"
-                her "Я жажду о членах постоянно."
+                her "Я постоянно жажду о членах."
                 hide screen h_head2 
                 m "Очень хорошо!"
                 m "Но,как я уже сказал, не нужно быть честной."
@@ -10254,7 +10254,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 $ h_body = "03_hp/13_hermione_main/body_115.png" # HERMIONE
                 her ".................."
                 hide screen h_head2
-                g4 "Ох... Я хочу проскользнуть своим членом в твой влажный ротик!"
+                g4 "Ох... Я хочу проскользнуть членом в твой влажный ротик!"
                 show screen h_head2                                                             # HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_40.png" # HERMIONE
                 her "................."
@@ -10289,7 +10289,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 $ h_body = "03_hp/13_hermione_main/body_48.png" # HERMIONE
                 her "...губами?"
                 hide screen h_head2 
-                m "Конечно... это очень ускорит приблежение конца."
+                m "Конечно... это очень ускорит приближение конца."
                 show screen h_head2                                                             # HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_87.png" # HERMIONE
                 her "*вздох!*.............."
@@ -10299,7 +10299,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 
                 $ g_c_u_pic = "kiss_ani"
                 $ renpy.play('sounds/kiss.mp3') 
-                with kisсэрis
+                with kissiris
                 pause
                 show screen blkfade
                 with d3
@@ -10329,7 +10329,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 ">Гермиона еще раз целует головку вашего члена..."
                 $ g_c_u_pic = "kiss_ani"
                 $ renpy.play('sounds/kiss.mp3') 
-                with kisсэрis
+                with kissiris
                 pause
                 ">В этот раз поцелуй длится чуть дольше..."
                 show screen blkfade
@@ -10347,17 +10347,17 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 $ h_body = "03_hp/13_hermione_main/body_29.png" # HERMIONE
                 her "Нет, я выгляжу глупо..."
                 hide screen h_head2 
-                m "Не глупи, девочка. Никто не смотрет."
+                m "Не глупи, девочка. Никто не смотрит."
                 show screen h_head2                                                             # HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_87.png" # HERMIONE
                 her "Вы, сэр."
                 hide screen h_head2 
-                m "Но в этом весь смыслс!"
+                m "Но в этом весь смысл!"
                 show screen h_head2                                                             # HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_79.png" # HERMIONE
                 her "......"
                 hide screen h_head2 
-                m "Это поможем мне кончить почти сразу же!"
+                m "Это поможет мне кончить почти сразу же!"
                 show screen h_head2                                                             # HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_69.png" # HERMIONE
                 her "..............."
@@ -10374,7 +10374,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 ">Она косается головки вашего члена своими губами и остается в таком положении..."
                 $ g_c_u_pic = "kiss_ani"
                 $ renpy.play('sounds/kiss.mp3') 
-                with kisсэрis
+                with kissiris
                 pause
                 hide screen h_head2 
                 show screen blktone
@@ -10404,7 +10404,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 hide screen blktone
         menu:
             m "..."
-            "-Предупредить ее-":
+            "- Предупредить ее -":
                 g4 "Почти кончил! Тебе лучше подготовиться!"
                 show screen h_head2                                                             # HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_48.png" # HERMIONE
@@ -10569,7 +10569,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
 #                m "What possessed you to put my cock there, м?"
                 
 
-            "-Просто начать кончать-":
+            "- Просто начать кончать -":
                 hide screen ctc
                 with hpunch
                 g4 "АРГХ!"
@@ -10710,7 +10710,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                         $ h_body = "03_hp/13_hermione_main/body_79.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
                         show screen hermione_main                                                                                                                                                                                 #HERMIONE
                         her "Профессор!!!"
-                        m "Ладно, хорошо. Просто вытри ее и се."
+                        m "Ладно, хорошо. Просто вытри ее и все."
                         m "Никто и не заметит."
                         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                         with d3                                                                                                                                                                                                                        #HERMIONE
@@ -10804,10 +10804,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
         pause.1
         show screen blkfade
         with Dissolve(1)
-        pause.3
-
-        
-                                                                                                                                                                               #HERMIONE
+        pause.3                                                                                                                                                                      #HERMIONE
         hide screen genie
         $ genie_chibi_xpos = 5 #-185 behind the desk.
         $ genie_chibi_ypos = 10
@@ -10891,7 +10888,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
         with d3
 
         m "Да, да, вот так..."
-        m "Хм... Ты, однако,Ты наловчилась."
+        m "Хм... Ты, однако, наловчилась."
         show screen h_head2                                                             # HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_74.png" # HERMIONE
         her "Спасибо, сэр."
@@ -10933,7 +10930,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 show screen h_head2                                                             # HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_121.png" # HERMIONE
                 her "И конечно же я жажду его..."
-                her2 "Любая женщина была бы рада, чтобы ощутить его в себе!"
+                her2 "Любая женщина была бы рада ощутить его в себе!"
                 hide screen h_head2         
                 m "...а ты хороша!"
                 show screen h_head2                                                             # HERMIONE
@@ -10952,7 +10949,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 her2 "Я считаю, что стоит установить статуи в каждом городе на земле, посвященные вашему члену!"
                 her2 "Так, чтобы люди всео мира могли поклоняться вашему члену!"
                 hide screen h_head2         
-                m "Ладно, Я услугыла достаточно."
+                m "Ладно, Я услышал достаточно."
                 show screen h_head2                                                             # HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_122.png" # HERMIONE
                 her "Слишком?"
@@ -11029,7 +11026,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                         $ h_body = "03_hp/13_hermione_main/body_122.png" # HERMIONE
                         her "Я люблю... Эм... глотать сперму."
                         hide screen h_head2  
-                        m "Вы некоторое время колеблетесь."
+                        m "Вы как-то неуверенно это произносите."
                         show screen h_head2                                                             # HERMIONE
                         $ h_body = "03_hp/13_hermione_main/body_122.png" # HERMIONE
                         her "Да, я знаю...."
@@ -11111,7 +11108,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 her "Палец нужно вставит сюда! Какая же я глупая!"
                 hide screen h_head2    
                 with hpunch
-                with kisсэрis
+                with kissiris
                 g4 "О!!! Во имя великих песков пустыни, да!"
                 show screen h_head2                                                             # HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_80.png" # HERMIONE
@@ -11145,7 +11142,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
         m "Теперь я хочу чтобы ты кое-что сказала..."
         menu:
             m "..."
-            "{size=-4}\"Я мечтаю, чтоб меня изнасиловал отец.\"{/size}":
+            "{size=-4}\"Я мечтаю, чтобы меня изнасиловал отец.\"{/size}":
                 $ mad += 11
                 show screen h_head2                                                             # HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_77.png" # HERMIONE
@@ -11258,7 +11255,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 her "Потому что у нас даже собаки нет!"
                 hide screen h_head2
                 m "Да все равно, просто продолжай..."
-            "{size=-4}\"-Manual user input-\"{/size}":
+            "{size=-4}\"- Ввести вручную то, что нужно сказать -\"{/size}":
 
                 # The phrase in the brackets is the text that the game will display to prompt 
                 # the player to enter the name they've chosen.
@@ -11280,7 +11277,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 if one_out_of_three == 1:
                     show screen h_head2                                                             # HERMIONE
                     $ h_body = "03_hp/13_hermione_main/body_29.png" # HERMIONE
-                    her "Я не хочу этог говорить..."
+                    her "Я не хочу этого говорить..."
                     hide screen h_head2
                     m "О, просто сделай это, девочка."
                     show screen h_head2                                                             # HERMIONE
@@ -11316,7 +11313,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                     her "..........."
                     her2 "Я должна сделать это?"
                     hide screen h_head2
-                    m "Просто скажиt."
+                    m "Просто скажи."
                     show screen h_head2                                                             # HERMIONE
                     $ h_body = "03_hp/13_hermione_main/body_30.png" # HERMIONE
                     her2 "[jasname]"
@@ -11547,7 +11544,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 with d5
                 pause
                 her ".........."
-                m "Well, I think that's about it..."
+                m "Ну, кажется это все..."
                 show screen hermione_01 
                 hide screen chair_02
                 hide screen desk_02
@@ -11637,7 +11634,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     hide screen blkfade
     with d3
     
-    m "Yes, Да, мисс Грейнджер. [current_payout]  \"Гриффиндору\"." 
+    m "Да, мисс Грейнджер. [current_payout]  \"Гриффиндору\"." 
     $ gryffindor +=current_payout
     $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
     $ h_body = "03_hp/13_hermione_main/body_13.png" #Flashing Трусики
@@ -11846,7 +11843,7 @@ label new_request_17: #LV.5 (Whoring = 12 - 14)
         ">Гермиона беззаботно соглашается."
     elif request_17_points >= 3: #Master.
         her "Вот, профессор."
-        ">Гермиона горячо соглашается."
+        ">Гермиона резво соглашается."
         
     "Вы отпустили Гермиону."
         
@@ -11886,7 +11883,7 @@ label new_request_18: #LV.5 (Whoring = 12 - 14)
         ">Гермиона беззаботно соглашается."
     elif request_18_points >= 3: #Master.
         her "Вот, профессор."
-        ">Гермиона горячо соглашается."
+        ">Гермиона резво соглашается."
         
     "Вы отпускаете Гермиону."
         
@@ -11997,14 +11994,14 @@ label new_request_21: #LV.6 (Whoring = 15 - 17)
                 her "Что? Но..."
                 her "Хорошо, но только если вы дадите мне дополнительные баллы."
                 menu:
-                    "-Дать дополнительные баллы-":
+                    "- Дать дополнительные баллы -":
                         m "Хорошо..."
                         her "Тогда ладно..."
                         ">Гермиона застегивает свою блузку."
                         $ gryffindor +=10
                         "Гриффиндор получает 10 очков."
                         $ request_21 = True
-                    "-Забудь-":
+                    "- Забудь -":
                         ">Вы даете Гермионе полотенце и она вытирает вашу сперму."
             
     "Вы отпускаете Гермиону."
@@ -12036,7 +12033,7 @@ label new_request_21_complete:
     if request_21_points == 3: #One star.
         her "Эм... В классе я сидела и чувствовала как мои сиськи полностью покрыты спермой. Это было так неприятно..."
     elif request_21_points >= 4: #Two stars.
-        her "В классе я сидела и чувствовала как мои сиськи полностью покрыты спермой. Это просто лучше всего."
+        her "В классе я сидела и чувствовала как мои сиськи полностью покрыты спермой. Это просто улет."
              
 
     
@@ -12092,14 +12089,14 @@ label new_request_25: #LV.7 (Whoring = 18 - 20)
                 her "Что? Но..."
                 her "Хорошо, но только если вы дадите мне дополнительные баллы."
                 menu:
-                    "-Дать дополнительные баллы-":
+                    "- Дать дополнительные баллы -":
                         m "Хорошо..."
                         her "Тогда ладно..."
                         ">Гермиона не трогает свое обкончанное лицо."
                         $ gryffindor +=30
                         "Гриффиндор получает 30 очков."
                         $ request_25 = True
-                    "-Забудь-":
+                    "- Забудь -":
                         ">Вы даете Гермионе полотенце и она стирает с лица вашу сперму."
             
     "Вы отпускаете Гермиону."

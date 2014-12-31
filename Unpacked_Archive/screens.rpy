@@ -201,7 +201,7 @@ screen main_menu:
         textbutton _("Загрузить") action ShowMenu("load")
         textbutton _("Настройки") action ShowMenu("preferences")
         textbutton _("Экстра") action ShowMenu("extras")
-        textbutton _("Выход") action Quit(confirm=False)
+        textbutton _("Выход") action Quit(confirm=True)
 
 init -2:
 
@@ -227,12 +227,12 @@ screen extras:
         
         
         
-        textbutton _("О игре...") action Start("abouttrainer")
+        textbutton _("Об игре...") action Start("abouttrainer")
         textbutton _("F.A.Q.") action Start("faq")
         if not persistent.game_complete:
-            textbutton _("{color=#858585}Галлерея{/color}") action Start("gallery_locked")
+            textbutton _("{color=#858585}Галерея{/color}") action Start("gallery_locked")
         if persistent.game_complete:
-            textbutton _("Галлерея") action Start("gallery")
+            textbutton _("Галерея") action Start("gallery")
         textbutton _("Назад") action Start("assmenu") # Sent here from "EXTRAS" menu. Basically just jumps to the title screen. 
 
 init -2 python:
@@ -425,7 +425,7 @@ screen preferences:
                 style_group "pref"
                 has vbox
 
-                textbutton _("Джойстик...") action Preference("joystick")
+                textbutton _("Джойстик") action Preference("joystick")
 
 
         vbox:
