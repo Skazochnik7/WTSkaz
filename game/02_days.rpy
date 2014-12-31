@@ -44,10 +44,8 @@ label day_09_02:
     elif test_passed:
         her "Ну, я не провалила..."
     elif test_failed:
-        her "Я провалила тест! Как ужасно!"
+        her "Я провалила тест! Это ужасно!"
     $ test_aced = False
     $ test_passed = False
     $ test_failed = False
     jump home_assignment
-
-        

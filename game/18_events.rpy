@@ -20,8 +20,8 @@ label event_00:
     pause 1
     show screen bld1
     with d3
-    m "{size=-3}(выглядит как человек...){/size}"
-    m "{size=-3}(Может быть, если я буду вести себя тихо, он уйдет...?){/size}"
+    m "{size=-3}(Выглядит как человек...){/size}"
+    m "{size=-3}(Может быть, если я буду вести себя тихо, оно уйдет...?){/size}"
     hide screen bld1
     with d3
     hide screen thought 
@@ -108,7 +108,7 @@ label event_00:
             show screen snape_main
             with d3
             sna "Хм...?"
-            sna "Ты имел в виду министра магии?"
+            sna "Вы имели в виду министра магии?"
             hide screen snape_main
             with d3
             $ s_sprite = "03_hp/10_snape_main/snape_03.png"
@@ -137,7 +137,7 @@ label event_00:
     with d2
     m "......?"
     show screen snape_main
-    sna "Нечастные Уизли, шумная Грейнджер и, конечно же, герой всех несовершеннолетних правонарушителей...."
+    sna "Несчастные Уизли, шумная Грейнджер и, конечно же, герой всех несовершеннолетних правонарушителей...."
     $ s_sprite = "03_hp/10_snape_main/snape_08.png"
     sna "{size=+3}Мальчишка Поттер!{/size}"
     $ s_sprite = "03_hp/10_snape_main/snape_01.png"
@@ -218,7 +218,7 @@ label event_00:
 #    who2 "No! You sniveling maggot! we hate that name!"
 #    who2 "We want to be called Lord Voldemort!"
 #    who2 "Forgive me, master..."
-#    m "Эм... mr. Lord--"
+#    m "Эм... mr. Lord- -"
 #    with hpunch
 #    who2 "No! No! \"lord\" is not master's name, \"lord\" is master's title, you idiot!"
 #    who2 "Watch your tone, worm! That is an immortal being before you."
@@ -283,7 +283,7 @@ label event_01: #First event in the game. Gennie finds himself at the desk.
     m "Да... магия, я чувствую. Такая мощная и в свою очередь..."
     m "....чужая."
     m "Интересно..."
-    m "Я думаю, осмотрюсь здесь..."
+    m "Я думаю, необходимо осмотреться здесь..."
     hide screen bld1
     with d3
     return
@@ -403,7 +403,7 @@ label event_03:
     with d3                                                                                                                                                                  #SNAPE
     who2 "Может быть мне лучше вздремнуть."
     who2 "Мне нужно быть в отличной форме завтра утром..."
-    who2 "Если вы дадите слабину с этими дедьми, то они сожрут вас целиком..."
+    who2 "Если вы дадите слабину с этими детьми, то они сожрут вас целиком..."
     hide screen snape_main                                                                                                                                  #SNAPE
     with d3                                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/24.png"                                                                               #SNAPE
@@ -482,7 +482,7 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
             with d3                                                                                                                                                                  #SNAPE
             who2 "Ну, все же ты прав..."
         "{size=-2}\"Эта сова приносит мне письма, чувак!\"{/size}":
-            who2 "An owl? What about it?"
+            who2 "Сова? Что-то не так?"
             hide screen snape_main                                                                                                                                  #SNAPE
             with d3                                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_25.png"                                                                               #SNAPE
@@ -524,11 +524,11 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
     $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                                                               #SNAPE
     show screen snape_main                                                                                                                                #SNAPE
     with d3                                                                                                                                                                  #SNAPE
-    who2 "Говоря об этом, она не присылала вам какие-либо письма недавно?"
+    who2 "Кстати, она не присылала вам какие-либо письма недавно?"
     menu:
         m "..."
         "\"Гермиона Грейнджер? Нет, ничего не было.\"":
-            who2 "Я вижу... Видимо она блефует."
+            who2 "Понятно... Видимо она блефует."
             hide screen snape_main                                                                                                                                  #SNAPE
             with d3                                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_16.png"                                                                               #SNAPE
@@ -538,7 +538,7 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
         "\"Да... Каждый чертов день...\"":
             who2 "Действительно?"
             who2 "Есть что-то обо мне в частности?"
-            who2 "Я надеюсь вы знаете меня хорошо и не послушаете ее..."
+            who2 "Я надеюсь вы знаете меня хорошо и не будете слушать ее..."
     
     hide screen snape_main                                                                                                                                  #SNAPE
     with d3                                                                                                                                                                  #SNAPE
@@ -571,7 +571,7 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
     $ s_sprite = "03_hp/10_snape_main/snape_01.png"                                                                               #SNAPE
     show screen snape_main                                                                                                                                #SNAPE
     with d3                                                                                                                                                                  #SNAPE
-    who2 "Ну, я хотел бы убедиться, что ты не принимаешь слухи в серьез..."
+    who2 "Ну, я хотел бы убедиться, что ты не принимаешь слухи всерьез..."
     who2 "Эту скверную ложь распространяют дети."
     
 
@@ -613,7 +613,7 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
             with d3                                                                                                                                                                  #SNAPE
             who2 "Альбус, в последнее время у вас весьма своеобразное чувство юмора..."
             who2 "Вероятно, тебе стоит тратить меньше времени в компании с этим здоровяком Хагридом."
-        "-\{Использовать магию для получения правильного ответа\}-":
+        "- \{Использовать магию для получения правильного ответа\} -":
             $ d_flag_01 = True
             hide screen snape_main
             with d3
@@ -680,7 +680,7 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
     with d3
     if d_flag_01:
         sna_06 "Кто ты такой, сволочь!"
-        g4 "ЧТо? Это я... эм... Абиус! То есть, Альбус!"
+        g4 "Что? Это я... эм... Абиус! То есть, Альбус!"
         sna_04 "Ты не надуришь меня."
         sna_04 "Только что ты использовал какую-то чужеродную магию!"
         sna_06 "Яви для меня свою истинную сущность, дьявол! Кто ты такой?!"
@@ -736,7 +736,7 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
             $ d_points +=1
             sna_01 "\"Человек\"?"
             sna_01 "Ты намекаешь на то, что ты {size=+5}не{/size} один из нас?"
-            sna_01 "Что ты такое!? Немедленно отвечай иначе я применю чары для снятия твоей маскировки!"
+            sna_01 "Что ты такое!? Немедленно отвечай, иначе я применю чары для снятия твоей маскировки!"
         "\"Я не причиню тебе вреда, клянусь!\"" if not d_flag_03:
             $ d_flag_03 = True
             $ d_points +=1
@@ -753,7 +753,7 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
     sna_01 "Я услышал достаточно!"
     g4 "Во имя великих песков пустыни! Человек, ты дашь мне объясниться?!"
     sna_01 "Уже нечего объяснять!"
-    sna_01 "Пока вы отказываетесь сотрудничать, я отдам вас под стражу!"
+    sna_01 "Пока вы отказываетесь сотрудничать, вы будете под стражей!"
     g4 "Что?! Подожди!"
     
     
@@ -792,7 +792,7 @@ label event_06: #THE TALK AFTER THE DUEL ENDS.
     with d3
     m "Хотя, ты оказался неплох..."
     sna_01 "Ты колдовал заклинания голыми руками..."
-    sna_01 "Если не человек, то... кто--"
+    sna_01 "Если ты не человек, то... кто- -"
     sna_04 "{size=+5}Что ты такое?{/size}"
     sna_01 "Какой-то демон, призванный \"сам знаешь кем\"?"
     m "Призванный кем?"
@@ -839,13 +839,13 @@ label event_06: #THE TALK AFTER THE DUEL ENDS.
     sna_01 "\"Шайка Поттера\"?"
     sna_07 "Ах, точно, эти пидерасты..."
     menu:
-        "-Отменить заклинание-":
+        "- Отменить заклинание -":
             pass
     menu:
-        "-Отменить заклинание-":
+        "- Отменить заклинание -":
             pass
     menu:
-        "-Отменить заклинание-":
+        "- Отменить заклинание -":
             pass
 
     sna_01 "Сработало? Это ты, Альбус?"
@@ -865,7 +865,7 @@ label event_06: #THE TALK AFTER THE DUEL ENDS.
                 "\"У меня нет брата, Северус.\"":
                      sna_01 "........................"
                      sna_01 "У вас может и нет, но у настоящего Альбуса Дамблдора он есть."
-                "-Использовать магию, для получения правильного ответа-":
+                "- Использовать магию, для получения правильного ответа -":
                     show screen bld1
                     with d3
                     ">Вы используете свою космическу силу, чтобы заглянуть в саму материю Вселенной и узнать правильный ответ."
@@ -976,7 +976,7 @@ label event_07: #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
     show screen snape_main                                                                                                                                #SNAPE
     with d3                                                                                                                                                                  #SNAPE
     sna "Давай просто продолжим эту игру..."
-    m "Прости?"
+    m "Что?"
     hide screen snape_main                                                                                                                                  #SNAPE
     with d3                                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                                                               #SNAPE
@@ -1032,7 +1032,7 @@ label event_07: #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
     with d3                                                                                                                                                                  #SNAPE
     sna "Ну, а что вы скажете насчет этого?"
     sna "Может быть прислать вам парочку девок из Слизерина?"
-    g9 "Понятия не имею, что такое \"Слизерин\", но думаю, что это сработает..."
+    g9 "Понятия не имею, что такое \"Слизерин\", но думаю, это поможет..."
     hide screen snape_main                                                                                                                                  #SNAPE
     with d3                                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_04.png"                                                                               #SNAPE
@@ -1256,7 +1256,7 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     "*Тук-тук-тук*"
     pause.7
     m "Кто-то стучит в дверь..."
-    m "Дерьмо... Я должен избегать любых контактов с людьми!"
+    m "Черт... Я должен избегать любых контактов с людьми!"
     m "Хм... Каковы шансы, что это стучится не человек?"
     m "Ага, достаточно малы..."
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
@@ -1346,7 +1346,7 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
             her "{size=-4}(\"Дитя\"...?){/size}"
         "\"................................\"":
             pass
-    her "Я была очень занята расписанием своих занятий, но сегодня утром у меня есть немного времени, чтобы встретится с вами, профессор."
+    her "Я была очень занята , но сегодня утром у меня есть немного времени, чтобы встретится с вами, профессор."
     her "Вы, наверное, знаете почему я здесь."
     hide screen hermione_main
     with d3
@@ -1355,7 +1355,7 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     with d3
     her "Тот вопрос, который я безуспешно пыталась довести до вашего внимания в последнее время."
     her "Я не могу понять, почему вы ничего не предпринимаете, чтобы остановить это!"
-    her "Это не может более продолжаться!"
+    her "Это не может больше продолжаться!"
     hide screen hermione_main
     with d3
     $ h_body = "03_hp/13_hermione_main/body_02.png" #Sprite of Hermione's upper body.
@@ -1370,7 +1370,7 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     $ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
     show screen hermione_main
     with d3
-    m "{size=-4}(Вы только посмотрите на это миленькую мелочь){/size}"
+    m "{size=-4}(Вы только посмотрите на эту миленькую девчушку){/size}"
     m "{size=-4}(Только посмотрите ... Она восхитительна.){/size}"
     m "{size=-4}(Черт, я не видел женщину целую неделю){/size}"
     menu:
@@ -1675,58 +1675,58 @@ label event_08_02:
         "\"Доброе утро, мисс Грейнджер.\"":
             pass
         "\"Доброе утро, дитя.\"":
-            her "{size=-5}(\"Child\"? Must you be so condescending all the time?){/size}"
-            m "What was that?"
-            her "It's nothing sir..."
-        "\"Good morning, whore.\"":
-            her "Em... What?"
-            g4 "{size=-4}(OK, that was stupid. Damage control, damage control!){/size}"
-            m "*Khem* Excuse me, something stuck in my throat... Доброе утро, мисс Грейнджер."
-            her "{size=-5}(Did he just called me a.... no, no way.){/size}"
+            her "{size=-5}(\"Дитя\"? Почему он настолько снисходительный все время?){/size}"
+            m "Что-то не так?"
+            her "Нет, ничего сэр..."
+        "\"Доброе утро, шлюха.\"":
+            her "Eм... Что?"
+            g4 "{size=-4}(ОК, это было глупо. Контролировать гнев, контролировать гнев !){/size}"
+            m "*Кхм* Извините, что-то застряло в горле... Доброе утро, мисс Грейнджер."
+            her "{size=-5}(Он назвал меня.... нет, показалось.){/size}"
             
-    her "Профессор Дамблдор, I am here to talk to you as the \"MRM\" president..."
+    her "Профессор Дамблдор, Я здесь, чтобы поговорить с вами, как  президент \"ОПЗМП\"..."
     m "............."
-    her "We held an emergency assembly yesterday..."
-    her "The matter in question was the \"Hogwarts\" uniform for girls..."
-    her "We came to the conclusion that the currently employed dress-code is highly inappropriate for an educational institution..." 
+    her "Мы провели чрезвычайное собрание вчера..."
+    her "Главным вопросом была \"Хогвартская\"униформа для девочек..."
+    her "Мы пришли к выводу, что в настоящее время дресс-код является весьма нецелесообразным для образовательного учреждения..." 
     show screen ctc
     pause
-    her "///////"
-    m "Seriously?"
+    her "..."
+    m "Серьезно?"
     hide screen ctc
-    her "Yes, professor, I assure you, we are very serious."
-    her "The way you force our poor girls to dress is unacceptable..."
-    her "Such frivolous attire distracts male students from studying, putting them at a disadvantage..."
-    her "All those distractions they have to deal with..."
-    her "The poor souls..."
-    m "Did any of the boys actually complain about this?"
-    her "We won't wait for the issue to manifest, sir! We'll prevent it!"
-    her "No individual shall be at a disadvantage based on his or her gender."
-    her "This is what they call \"Sexism\" in the muggle world, sir."
-    m "Your explanations are getting way too convoluted for my liking, мисс Грейнджер."
-    m "Tell me what you are proposing exactly, to Put every woman in the school in a burqa?"
-    her "Officially doubling the length of the girls' skirts in the school regulations would suffice..."
+    her "Да, профессор, Уверяю вас, я очень серьезна."
+    her "Мы ищем способ заставить наших бедных девочек носить  платье ..."
+    her "Сейчас они носят легкомысленные наряды и отвлекает мужчин от учебы, ставя их в невыгодное положение..."
+    her "Все это отвлекающие факторы..."
+    her "Бедные души..."
+    m "Кто-нибудь из ребят жалуется на это?"
+    her "Мы не будем ждать, пока проблема существует, сэр! Мы будем бороться с ней!"
+    her "Ни один человек не должен находиться в невыгодном положении, в зависимости от пола."
+    her "Это называется \"Сексизм\" в мире Маглов, сэр."
+    m "Ваши объяснения  слишком запутанные, на мой взгляд, мисс Грейнджер."
+    m "Скажите мне, что вы предлагаете , заставить каждую женщину носить паранджу в школе?"
+    her "Удвоение длины юбки для девочек в школе было бы достаточно..."
     menu:
 
-        "{size=-4}\"That is laughable. Request refused!\"{/size}":
+        "{size=-4}\"Это смешно. Отказано!\"{/size}":
             $ d_flag_05 = True #Notion refused. Will take affect in the next event.
-            her "What... B-but? We made a decision..."
-            m "мисс Грейнджер, I'm sorry to break this to you, but I am still the headmaster of this school..."
-            m "And the only decisions that matter are mine!"
-            her "So you ignore the voice of the people, sir?"
-            m "The only voice I hear is yours, мисс Грейнджер."
-            her "Don't You know what happens to tyrants who underestimate the power of the masses?"
-            her "They get overthrown!"
-            m "Careful, now. Your words smell of treason, young lady."
-            m "Don't You know what happens to traitors?"
-            m "The get hung!"
+            her "Что... Н-но? Мы приняли решение..."
+            m "Мисс Грейнджер, Мне жаль , но я все еще директор этой школы..."
+            m "И все решения  зависят от моего слова!"
+            her "Значит вы игнорируете выбор народа, сэр?"
+            m "Единственный голос, который я слышу ваш, мисс Грейнджер."
+            her "Разве вы не знаете, что происходит с тиранами, которые недооценивают силы народа?"
+            her "Их свергают!"
+            m "Осторожно. Ваши слова пахнут изменой, юная леди."
+            m "Разве вы не знаете, что происходит с предателями?"
+            m "Их вешают!"
             her "!!!"
-            her "Tsk!"
-            her "I will make you take me seriously, professor!"
+            her "Тцк!"
+            her "Я добьюсь,чтобы вы восприняли наше решение всерьез, профессор!"
         
-        "{size=-4}\"Boys must study in peace. request approved!\"{/size}":
-            her "Splendid. I will everyone know."
-            her "Спасибо professor."
+        "{size=-4}\"Нет сексизму. Просьба удовлетворена!\"{/size}":
+            her "Великолепно. Я все сделаю."
+            her "Спасибо профессор."
             hide screen bld1
             hide screen hermione_main
             with Dissolve(.3)
@@ -1754,14 +1754,14 @@ label event_08_02:
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     pause.5
-    m "I'm Starting to enjoy our meetings less and less..."
+    m "Я начинаю наслаждаться нашими встречами все меньше и меньше..."
     return
 #NOT IN USE###############################################################################################################################################################    
 label event_08_03:
     "EVENT_08_03"
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
     "*Тук-тук-тук!*"
-    m "Who is--"
+    m "Кто..."
     her "Профессор, я вхожу..."
     $ walk_xpos=610 #Animation of walking chibi. (From)
     $ walk_xpos2=400 #Coordinates of it's movement. (To)
@@ -1788,76 +1788,76 @@ label event_08_03:
         "\"Доброе утро, мисс Грейнджер.\"":
             pass
         "\"Доброе утро, дитя.\"":
-            her "{size=-5}(\"Child\"? Must you be so condescending all the time? Nasty old prick!){/size}"
-            m "What was that?"
-            her "nothing sir..."
-        "\"Good morning, miss president.\"":
-            her "{size=-4}(Is he being sarcastic?){/size}"
+            her "{size=-5}(\"Дитя\"? Он должны быть настолько снисходительной все время? Противный старый хер!){/size}"
+            m "Что-то не так?"
+            her "Ничего сэр..."
+        "\"Доброе утро, мисс президент.\"":
+            her "{size=-4}(Это звучало как сарказм?){/size}"
             
 
     if not d_flag_05:
-        her "You promised me to take action, professor..."
-        her "But nothing changed since our last conversation..."
+        her "Вы мне обещали принять меры, профессор..."
+        her "Но ничего не изменилось с момента нашего последнего разговора..."
         menu:
 
-            "\"I lied...\"":
-                her "B-but..."
-                her "But you are the headmaster, sir. You word should mean something..."
+            "\"Я солгал...\"":
+                her "Н-но..."
+                her "Но вы директор школы, сэр. Вы слово должно означать что-то..."
 
-            "\"I forgot\"":
-                her "You forgot, sir?"
-                her "Did you really?"
-                her "Or Maybe you just didn't care enough to remember?"
-            "\"I just don't care.\"":
-                her "B-but....?"
-                her "Профессор Дамблдор, this is a serious matter!"
+            "\"Я забыл\"":
+                her "Вы забыли, сэр?"
+                her "Вы это серьезно?"
+                her "Или, может быть, вы просто не хотите заниматься этим?"
+            "\"Меня просто это не волнует.\"":
+                her "Н-но....?"
+                her "Профессор Дамблдор, это серьезный вопрос!"
 
     else:
-        her "Профессор Дамблдор, you rejected the offer I made you last time we met..."
-        her "And now we reap the results..."
-    her "The boys are still having a hard time concentrating on their studies..."
-    m "Oh, I do have a cure for that!"
-    m "Lets put a paper bag over every girl's head!"
-    her "That would be mistreatment of a human being based on her gender..."
-    her "Another example of sexism..."
-    her "Or better yet \"Misogyny\"."
-    m "\"Misogyny\" is a general dislike towards women, мисс Грейнджер."
-    m "A healthy male is biologically incapable of disliking all the females of his kind..."
-    m "Otherwise humanity would've gone extinct a long time ago already..."
-    her "Professor, we have no time for semantics."
-    her "The entire school is in peril!"
-    m "Is it...?"
-    her "The \"MRM\" had another meeting yesterday, and--"
-    m "No, not again..."
-    m "are there are any male members in your little \"Men's rights movement\"?"
-    her "That is beside the point..."
-    m "Right..."
+        her "Профессор Дамблдор,вы отвергли предложение которое я дала вам когда мы прошлый раз мы встретились..."
+        her "И теперь мы пожинаем результаты..."
+    her "Ребятам все  еще трудно сосредоточиться на учебе..."
+    m "О, у меня есть решение,!"
+    m "Давай наденем на головы девушке бумажные пакеты!"
+    her "Это тоже плохое обращение человека на основе ее пола..."
+    her "Другой пример сексизма..."
+    her "Это называется \"Женоненавистничество\"."
+    m "\"Женоненавистничество\" - это общая неприязнь к женщинам, мисс Грейнджер."
+    m "Здоровый мужчина  биологически неспособны нравится все самки его вида..."
+    m "В противном случае человечество бы вымерло давным-давно уже..."
+    her "Профессор, у нас нет времени для семантики."
+    her "Вся школа находится в опасности!"
+    m "Неужели..?"
+    her "\"MRM\" встретились еще вчера, и- -"
+    m "Нет, опять..."
+    m "Существуют ли какие-либо мужские члены в вашей маленькой группе  \"Men's rights movement\"?"
+    her "Это не относиться к дела"
+    m "Ладно..."
 #    her "That is irrelevant..."
 #    m "How is it irrelavant? That's the only thing that {size=+7}IS{/size} relevant!"
-    her "Let me finish my sentence, please."
-    her "I am officially addressing you as the \"MRM\" president now..."
-    her "And as a representative of this school's student body..."
-    her "We demand these new regulations to be enforced..."
-    her "Number one..."
-    her "No teacher is allowed to raise a voice towards a student or call the said student an unflattering name..."
-    m "What?"
-    her "Number two..."
-    her "All the school ghosts have to be confined to the abandoned tower in the north wing of the school."
-    m "You have school ghosts? That's pretty cool!"
-    her "Number three..."
-    her "Every teacher, and especially Professor Severus Snape need to take a qualification test every three months..."
-    m "Is that all?"
-    her "That is all, sir."
+    her "Позвольте мне закончить мое предложение, пожалуйста."
+    her "Я официально к вам обращаюсь, как президент \"ОПЗМП\"..."
+    her "И как представитель этой школы ..."
+    her "Мы требуем чтобы эти новые нормы, подлежали соблюдению..."
+    her "Во-первых..."
+    her "Чтобы ни один школьный учитель не позволял повышать голос в сторону студента или обзывать студента..."
+    m "Что?"
+    her "Во-вторых..."
+    her "Все школьные призраки должны быть заключены только в заброшенной башни в Северном крыле школы."
+    m "У Вас есть привидения? Это очень круто!"
+    her "В-третьих..."
+    her "Каждый учитель, и особенно профессор Северус Снейп должны проходить проверку квалификации каждые три месяца..."
+    m "Это все?"
+    her "Это все, сэр."
     menu:
         m "..."
-        "\"Fine. Your demands shall be satisfied.\"":
+        "\"Хорошо. Ваши требования будут удовлетворены.\"":
             her "Спасибо, профессор."
-            her "I, as a representative of the student's will, Спасибо for your cooperation."
-        "\"Sounds like bullshit. You're dismissed.\"":
-            her "What? I..."
-            her "But this is... you can't..."
-            m "Dismissed!"
-            her "Tsk..."       
+            her "Я, как представитель студентов , благодарю за ваше сотрудничество."
+        "\"Звучит как бред. Вы свободны\"":
+            her "Что? Я..."
+            her "Но это ... вы не можете..."
+            m "Свободны!"
+            her "Тцк..."       
     hide screen bld1
     hide screen hermione_main
     with Dissolve(.3)
@@ -1891,7 +1891,7 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
     menu:
         "\"Кто это?\"":
             her "Это я, Гермиона Грейнджер." 
-            m "Снова эта маленькая ведьма...)" 
+            m "Снова эта маленькая ведьма..." 
             her "Могу я войти, сэр?"
             menu:
                 m "..."
@@ -1984,7 +1984,7 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
     m "Ты что...?"
     her "Да! Мы, гордые студенты Хогвартса терпеть не можем сексизм..."
     her "Не следует думать, что какой-то пол в чем-то лучше другого."
-    m "Но--"
+    m "Но-"
     hide screen hermione_main
     with d3
     $ h_body = "03_hp/13_hermione_main/body_05.png" #Sprite of Hermione's upper body.
@@ -1998,7 +1998,7 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
     with d3
     her "Я организовала \"Организацию по защите мужских прав\" в нашей школе!"
     g4 "Ох, как это типично для вас."
-    g4 "Винить во всем--"
+    g4 "Винить во всем-"
     stop music fadeout 1.0
     m "Стоп, ты сказала {size=+5}МУЖСКИХ{/size} прав?"
     hide screen hermione_main
@@ -2016,7 +2016,7 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
             show screen hermione_main
             with d3
             her "Нет, вы не сделали этого, потому что просто отказываетесь слушать нас, сэр!"
-            her "но теперь вы услышите нас..."
+            her "Но теперь вы услышите нас..."
         "{size=-3}\"Эта самая глупая идея, которую я когда-либо слышал.\"{/size}":
             hide screen hermione_main
             with d3
@@ -2039,8 +2039,8 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
     show screen hermione_main
     with d3
     her "В \"Гриффиндоре\" никто этим не занимается, конечно же..."
-    her "И вот что ставит нас в невыгодное положение - наша честность!"
-    her "Что насчет мальчиков - они должны трудиться в десять раз лучше, чем девочки, которым пройти тест не составит труда..."
+    her "И вот, что ставит нас в невыгодное положение - наша честность!"
+    her "Что насчет мальчиков - они должны трудиться в десять раз лучше, чем девочки, которым сдать тест не составит труда..."
     her "Или, если они достаточно удачны, получить какое-то ничтожное одно очко..."
     hide screen hermione_main
     with d3
@@ -2132,19 +2132,19 @@ label event_09_2: #Takes place after second special event with Snape, where he j
     menu:
         "\"Кто это?\"":
             her "Это я, Гермиона Грейнджер." 
-            m "(Снвоа эта молоденькая ведьма...)" 
+            m "(Снова эта молоденькая ведьма...)" 
             her "Могу я войти, сэр?"
             menu:
                 m "..."
                 "\"Категорически нет! Я занят! Возвращайся позднее!\"":
-                    her "But..."
-                    her "Alright... I'll come back tomorrow then..."
+                    her "Но..."
+                    her "Хорошо... Я вернусь завтра..."
                     return
                 "\"Конечно, входи.\"":
                     pass
         "\"Я занят. Приходи позже.\"":
-            her "But..."
-            her "Well alright..."
+            her "Но..."
+            her "Хорошо..."
             return
         "\"Да, входи.\"":
             pass
@@ -2153,7 +2153,7 @@ label event_09_2: #Takes place after second special event with Snape, where he j
             "*Тук-тук-тук!*"
             m "............................."
             her "Профессор, я вхожу..."
-            m "{size=-4}(Crap!){/size}"
+            m "{size=-4}(Дерьмо!){/size}"
 
     $ event09 = True #You let Hermione in. This event will stop looping now.
     $ walk_xpos=610 #Animation of walking chibi. (From)
@@ -2180,60 +2180,60 @@ label event_09_2: #Takes place after second special event with Snape, where he j
         "\"Доброе утро, мисс Грейнджер.\"":
             pass
         "\"Доброе утро, дитя.\"":
-            her "{size=-5}(\"Child\"? Must you be so condescending all the time? Nasty old prick!){/size}"
-            m "What was that?"
-            her "nothing sir..."
+            her "{size=-5}(\"Дитя\"? Он должнен быть настолько снисходительной все время? Противный старый хрен!){/size}"
+            m "Что-то не так?"
+            her "Ничего, сэр..."
         "\"...............\"":
             her "...................."
             
             
-    her "My classes are about to start so I don't have much time..."
-    her "Being a top student is not easy, so I hope you understand that the Other kids in our school are looking up to me."
+    her "Мои занятия скоро начнуться, так что у меня не так много времени..."
+    her "Быть отличником-это не легко, поэтому я надеюсь, вы понимаете, что другие ученики в нашей школе берут пример с меня."
     #m "{size=-4}(Is that so...?){/size}"
-    her "I realize that you are a important very person as well..."
-    her "But do you think you could spare a little of your time to actually perform your duties as the headmaster of this school?"
+    her "Я понимаю, что вы очень важно персона..."
+    her "Но немогли бы вы  уделить немного своего времени, чтобы выполнять ваши обязанности как директора школы?"
     menu:
-        "\"Excuse me?\"":
-            her "Yes, I refuse to sugarcoat this any longer!"
+        "\"Прости,я не понял?\"":
+            her "Да, я отказываюсь потакать вам больше!"
         "\"...................\"":
             pass
-    her "I brought so many problems this school has to your attention..."
-    her "And you, sir, ignored every single one of them!"
-    her "Did you know that some of the girls from \"Slytherin\" offer sexual favours in exchange for house points?"
-    m "Do they?"
-    her "What message does it send to the rest of the houses?"
-    her "Students don't have to work hard anymore, don't have to study, all they need to do is show a little skin..."
-    her "This is deplorable!"
-    her "I'm warning, professor..."
+    her "Я принесла столько идей для школы ..."
+    her "И вы, сэр, игнорируете, каждый из них!"
+    her "Знаете ли вы, что некоторые девочки из \"Слизерина\" предлогают сексуальные услуги в обмен на очки факультета?"
+    m "Что они?"
+    her "Вы не понимаете что происходит?"
+    her "Студенты не должны больше работать, не надо учиться, все, что им нужно делать, это показать свои тела..."
+    her "Это ужасно!"
+    her "Я предупреждаю, профессор..."
     menu:
-        "\" You are \"Warning me\" Мисс Грейнджер?\"":
-            her "Yes, professor. I am warning you."
-            her "If you are not willing to listen to me, I will find someone who will!"
+        "\" Вы \"Пердупреждаете меня\" Мисс Грейнджер?\"":
+            her "Да, профессор. Я предупреждаю вас."
+            her "Если Вы не готовы выслушать меня, я найду кого-то, кто выслушает!"
         "\"..............................................................\"":
             pass
-    her "If you will not take action soon you will be leaving me no choice, professor..."
-    her "I will have to contact the ministry of magic..."
-    m "{size=-4}(The ministry of magic? Should I care?){/size}"
+    her "Если Вы не примите меры, тогда вы не оставивите мне выбора, профессор..."
+    her "Мне придется обратиться в Министерство магии..."
+    m "{size=-4}(Министерство магии? Меня это так волнует?){/size}"
     menu:
 
-        "\"Calm down, мисс Грейнджер, please.\"":
-            her "I cannot stay calm in the face of your ignorance, sir!"
-        "\"I hear you. I will take action, I promise.\"":
-            her "Really? Well I am glad we finally came to an understanding, sir."
-            her "Or are you just going to ignore my pleas as usual?"
-        "\"Out of my office, girl! Out, I said!!!\"":
-            her "What?"
-            m "Get out of my office!"
-            her "B-but..."
+        "\"Успокойтесь пожалуйста, мисс Грейнджер.\"":
+            her "Я не могу оставаться спокойной, смотря на  ваше невежество, сэр!"
+        "\"Я услышал, вас. Я приму меры, я обещаю.\"":
+            her "В самом деле? Ну, я рада, что мы наконец пришли к пониманию, сэр."
+            her "Или вы просто будете игнорировать мои просьбы, как обычно?"
+        "\"Из моего кабинета, девушка! Вон, я сказал!!!\"":
+            her "Что?"
+            m "Вон из моего кабинета!"
+            her "Н-но..."
             with hpunch
-            g4 "{size=+7}OUT I SAID!!!{/size}"
-            her "{size=-6}(Wow... Never seen old man lose it like that...){/size}"
-            her "{size=-6}(I'd better leave before he has a hart attack or something...){/size}"
+            g4 "{size=+7}ВЫШЛА Я СКАЗАЛ!!!{/size}"
+            her "{size=-6}(Оу... никогда не видел его таким грозным...){/size}"
+            her "{size=-6}(Мне лучше уйти, прежде чем он поймает инсульт или что-то подобное...){/size}"
             her "..............."
             jump pissed_me_off
 
-    her "Oh... I am already late for my classes. I must go now."
-    m "You have a nice day... {size=-5}witch!{/size}"
+    her "Ох... я уже опаздываю на занятия. Я должна идти."
+    m "Хорошего дня... {size=-5}ведьма!{/size}"
     her "Спасибо, профессор."
     label pissed_me_off:
     hide screen bld1
@@ -2271,15 +2271,15 @@ label event_10: #Takes place after second special even with Snape where Ginie is
             her "Могу я войти, сэр?"
             menu:
                 m "..."
-                "\"Absolutely not! I'm busy! Come by later!\"":
-                    her "But..."
-                    her "Alright... Тогда я вернусь позднее..."
+                "\"Абсолютно нет! Я занят! Приходите по позже!\"":
+                    her "Но..."
+                    her "Хорошо... Тогда я вернусь позднее..."
                     return
                 "\"Конечно, входи.\"":
                     pass
-        "\"I'm busy. Come by later.\"":
-            her "But..."
-            her "Well alright..."
+        "\"Я занят. Приходите по позже.\"":
+            her "Но..."
+            her "Хорошо..."
             return
         "\"Да, входи.\"":
             pass
@@ -2288,7 +2288,7 @@ label event_10: #Takes place after second special even with Snape where Ginie is
             "*Тук-тук-тук!*"
             m "............................."
             her "Профессор, я вхожу..."
-            m "{size=-4}(Crap!){/size}"
+            m "{size=-4}(Дерьмо!){/size}"
 
     $ event10 = True #You let Hermione in. This event will stop looping now.
     $ walk_xpos=610 #Animation of walking chibi. (From)
@@ -2313,16 +2313,16 @@ label event_10: #Takes place after second special even with Snape where Ginie is
     her "Доброе утро, профессор Дамблдор."
     menu:
         "\"Доброе утро, дитя.\"":
-            her "{size=-4}(Again with the \"child\"...){/size}"
-            her "Sir, I would appreciate it if you could treat me as an equal..."
-            m "{size=-4}(I'm literally millions years older then you, witch. We are anything but equal.){/size}"
+            her "{size=-4}(Опять \"дитя\"...){/size}"
+            her "Сэр, я был бы очень признателен, если вы могли бы относиться ко мне как к ровне..."
+            m "{size=-4}(Я на миллионы лет старше тебя, ведьма. Ты мне не ровня.){/size}"
         "\"Доброе утро, мисс Грейнджер.\"":
-            her "Em... so, to the reason of me being here today then..."
-        "\"Yeah, yeah, whatever...\"":
-            her "Em..."
-    her "I see that no matter what I do I simply cannot get through to you, sir."
-    her "So in light of your negligence towards your duties as a headmaster of this school..."
-    her "I decided to take initiative in my own hands!"
+            her "Эм... та, причина, по которой я здесь сегодня..."
+        "\"Да, Да, выкладывай...\"":
+            her "Eм..."
+    her "Я вижу, что вам не  неважно, чтобы я не делала, я просто не могу достучаться до вас, сэр."
+    her "Так что в свете вашей халатности и по отношению к вашим обязанностям в качестве директора школы..."
+    her "Я решила взять инициативу в свои руки!"
 #    m "Did you now...?"
 #    her "Yes! And since I detest sexism..."
 #    m "You do, do you?"
@@ -2330,7 +2330,7 @@ label event_10: #Takes place after second special even with Snape where Ginie is
 #    m "This doesn't make any sence, girl!"
 #    her "Let me finish, professor!"
 #    her "I'm organizing a \"Men's rights movement\" in our school!"
-#    m "Oh, this is just typical! Blame everything on--"
+#    m "Oh, this is just typical! Blame everything on- -"
 #    m "Wait, did you say {size=+5}MEN'S{/size} rights?"
 #    her "You have no idea how hard it is to be a boy in our school these days..."
 #    menu:
@@ -2338,27 +2338,27 @@ label event_10: #Takes place after second special even with Snape where Ginie is
 #            her "No, you did not, because you refuse to listen to me, sir!"
 #        "\"Literally stupidest thing I've ever heard.\"":
 #            her "I knew you will say something like that..."
-    her "Half of the girls in this school are now selling favours for house points..."
-    her "Sometimes even for good grades..."
-    her "Nobody from the \"Gryffindor\" house of course..."
-    her "And that's what puts us into disadvantage - our integrity!"
-    her "Unthinkable..."
-    her "As for the boys - they have to work ten times harder then the girls simply to pass a test..."
-    her "Or, if they are lucky enough, get one meager house-point..."
-    her "This is sexism in it's purest form!"
+    her "Половина девочек в этой школе сейчас продают себя ради очков факультета..."
+    her "Иногда даже за хорошие отметки..."
+    her "Никто из \"Гриффиндора\" не занимается, конечно..."
+    her "И это то, что ставит нас в невыгодное положение - наша честность!"
+    her "Немыслимо..."
+    her "Мальчикам намного труднее, - они должны работать в десять раз упорнее, тогда как  девочкам достаточно просто пройти тест..."
+    her "Или, если им повезет, получить одно очко факультета..."
+    her "Это сексизм в чистом виде!"
     menu:
-        "\"What you want {size=+7}me{/size} to do?\"":
-            her "Nothing!"
-        "\"Not sure what to say...\"":
-            her "You do not need to say anything anymore, professor."
-        "\"You are being ridiculous!\"":
-            her "Am I? Well, we'll see..."
-    her "I already sent a letter to the ministry of magic."
+        "\"Что вы хотите чтобы {size=+7}Я{/size} сделал?\"":
+            her "Ничего!"
+        "\"Не уверен, что сказать...\"":
+            her "Вам не нужно ничего говорить , профессор."
+        "\"Вы смешны!\"":
+            her "Я?Вот увидете..."
+    her "Я уже направила письмо в Министерство магии."
     with hpunch
-    g4 "{size=+7}You did what?!{/size}"
-    m "{size=-4}(Wait, do I really give a damn about that?){/size}"
-    her "I am sorry, but you left me no choice, professor."
-    her "Now, if you excuse me I must get to my classes..."
+    g4 "{size=+7}Вы сделали, что?!{/size}"
+    m "{size=-4}(Подожди, меня действительно это волнует?){/size}"
+    her "Я сожалею, но Вы не оставили мне выбора, профессор."
+    her "Теперь, если вы простите меня, я должна успеть на мои занятия..."
 
     hide screen bld1
     hide screen hermione_main
@@ -2372,7 +2372,7 @@ label event_10: #Takes place after second special even with Snape where Ginie is
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     pause.5
-    m "The little woman quite literary sucks out all the happiness out of me..."
+    m "Эта девушка тихо высасывает всю радость из меня..."
    
     $ hermione_takes_classes = True
    
@@ -2423,7 +2423,7 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
     her "Добрый вечер, профессор."
     hide screen ctc
     menu:
-        "\"-взгляд полный ненависти-\"":
+        "\"- Взгляд полный ненависти -\"":
             hide screen hermione_main
             with d3
             $ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
@@ -2437,7 +2437,7 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
             $ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
             show screen hermione_main
             with d3
-            her "Не во время?"
+            her "Не вовремя?"
             hide screen hermione_main
             with d3
             $ h_body = "03_hp/13_hermione_main/body_02.png" #Sprite of Hermione's upper body.
@@ -2463,7 +2463,7 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
     $ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
     show screen hermione_main
     with d3
-    her "Я не знаю, как объяснить..."
+    her "Я не знаю, как это объяснить..."
     hide screen hermione_main
     with d3
     $ h_body = "03_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
@@ -2508,8 +2508,8 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
         "\"Расскажи мне почему?\"":
             her "Потому что... это не обычный тест!"
 
-    her "Я не уверена, что здесь происходит..."
-    m "Все зло настроилось против вас, мисс Грейнджер?"
+    her "Я не уверена, что происходит..."
+    m "Все зло настроено против вас, мисс Грейнджер?"
     hide screen hermione_main
     with d3
     $ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
@@ -2578,7 +2578,7 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
             with d3
             her "Спасибо, профессор."
         "\"Тебе нужно взять мой член в свой ротик.\"":
-            m "Тебе нужно взять мой чле--"
+            m "Тебе нужно взять мой чле- "
             hide screen hermione_main
             with d3
             $ h_body = "03_hp/13_hermione_main/body_15.png" #Sprite of Hermione's upper body.
@@ -2644,7 +2644,7 @@ label event_12: # Hermione complains that she did failed a test. (EVENING EVENT!
     show screen hermione_02 #Hermione stands still.
     with d3
     her "Профессор! Мне нужно поговорить с вами!"
-    m "(Теперь она даже не потрудилась постучаться?)"
+    m "(Теперь она даже не удосужилась постучаться?)"
     show screen bld1
     with Dissolve(.3)
     $ h_xpos=370 #Defines position of the Hermione's full length sprite.
@@ -2678,14 +2678,14 @@ label event_12: # Hermione complains that she did failed a test. (EVENING EVENT!
             $ h_body = "03_hp/13_hermione_main/body_20.png" #Sprite of Hermione's upper body.
             show screen hermione_main
             with d3 
-            her "Нет ведь! Это катастрофа!" 
+            her "Нет! Это катастрофа!" 
 
     hide screen hermione_main
     with d3
     $ h_body = "03_hp/13_hermione_main/body_21.png" #Sprite of Hermione's upper body.
     show screen hermione_main
     with d3 
-    her "И хуже того, мне кажется, что я единственная его завалила..."
+    her "И хуже того, мне кажется, что я единственная кто его завалила..."
     hide screen hermione_main
     with d3
     $ h_body = "03_hp/13_hermione_main/body_22.png" #Sprite of Hermione's upper body.
@@ -2703,7 +2703,7 @@ label event_12: # Hermione complains that she did failed a test. (EVENING EVENT!
     $ h_body = "03_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.
     show screen hermione_main
     with d3 
-    her "Да, я уверена, что кто-нибудь еще точно завалил его..."
+    her "Да, я уверена, что кто-нибудь еще завалил его..."
     hide screen hermione_main
     with d3
     $ h_body = "03_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
@@ -2974,7 +2974,7 @@ label event_14: # Hermione comes after her breakdown (when she failed the test).
     with Dissolve(.3)   
 
     her "Доброе утро, Профессор."
-    m "Я могу вам помочь, Мисс Грейнджер?"
+    m "Я могу чем-то вам помочь, Мисс Грейнджер?"
     hide screen hermione_main
     with d3
     $ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
@@ -3134,7 +3134,7 @@ label event_14: # Hermione comes after her breakdown (when she failed the test).
     $ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
     show screen hermione_main
     with d3     
-    her "но это не все..."
+    her "Но это не все..."
     her "В \"ОЗМП\" мы исседуем нашу систему образования более детально..."
     her "Я думаю, кто-то играет не совсем честно..."
     m "Не может быть!"
@@ -3495,7 +3495,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
         show screen hermione_main
         with d3
         her "И так, я просто буду стоять здесь...?"
-        m "тлично... Теперь повернись... Медленно."
+        m "Отлично... Теперь повернись... Медленно."
         her "Ух... Ладно..."
         hide screen hermione_main
         hide screen bld1
@@ -3511,7 +3511,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
                 her_01 "............"
                 her_05 "Спасибо, Профессор Дамблдор..."
             "\"У вас отличное тело, мисс Грейнджер...\"":
-                her_03 "!!?"
+                her_03 "!?"
                 her_04 ".............."
                 her_04 "Спасибо, профессор..."
             "\"Достаточно. Вот твои очки...\"":
@@ -3607,7 +3607,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
         menu:
             "\"Отлично! Очень смешно!\"":
                 jump stupid_enogh
-            "\"не достаточно глупо.\"":
+            "\"Не достаточно глупо.\"":
                 jump stupid_faces
     
     if d_flag_04: #BAD GIRL
@@ -3705,13 +3705,13 @@ label event_15: # Hermione comes and asks to buy a favour from her.
                 $ h_body = "03_hp/13_hermione_main/body_05.png" #Sprite of Hermione's upper body.
                 show screen hermione_main
                 with d3
-                her "Ц!"
+                her "?!"
                 hide screen hermione_main
                 with d3
                 $ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
                 show screen hermione_main
                 with d3
-                her "Профессор, мне не очень уютно при таких вопросах--"
+                her "Профессор, мне не очень уютно от таких вопросах- -"
                 m "Извиняюсь, позволь мне перефразировать вопрос..."
                 m "Как сильно тебе нужны эти очки?"
                 hide screen hermione_main

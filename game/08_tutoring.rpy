@@ -78,7 +78,7 @@ label tutoring:
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "Но сэр, вы обещали!"
     m "Нет, ты не поняла..."
-    m "Я буквально {size=+7}не могу{/size} делать этого."
+    m "Я фактически {size=+7}не могу{/size} делать этого."
     m "Акабур не доделал эту часть игры..."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE

@@ -16,7 +16,7 @@ label date_with_snape_01:
     $ s_head_xpos = 330 # x = 330,                                                                              # SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_13.png"                                        # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "Великолепно... Слушай сюда..."
+    sna "Великолепно... Слушай..."
     hide screen s_head2  
     pause.1
     show screen blktone
@@ -165,7 +165,7 @@ label date_with_snape_04:
     m "И мы вместе обучаем шлюху Гермиону быть хорошим студентом и нормальной девушкой?"
     $ s_sprite = "03_hp/10_snape_main/snape_28.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "Ха-ха-ха! Это очень весело!"
+    sna "Ха-ха-ха! Это очень забавно!"
     hide screen s_head2
     pause.1
     show screen blktone
@@ -206,7 +206,7 @@ label date_with_snape_05:
             sna "Интересно..."
     $ s_sprite = "03_hp/10_snape_main/snape_01.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna2 "Но ты уверен, что в состаянии сломить ее волю??"
+    sna2 "Но ты уверен, что в состаянии сломить ее волю?"
     hide screen s_head2    
     m "О, абсолютно."
     m "Хотя это и займет некоторое время..."
@@ -257,7 +257,7 @@ label date_with_snape_06:
     g9 "Круто!"
     $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna2 "Да. Благодаря тебе, я могу, черт возьми, делать что душе угодно!"
+    sna2 "Да. Благодаря тебе, я могу, черт возьми, делать что угодно!"
     sna2 "И что более важно..."
     $ s_sprite = "03_hp/10_snape_main/snape_13.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
@@ -273,7 +273,7 @@ label date_with_snape_06:
     sna2 "Ты не представляешь, что некоторые из девок готовы сделать за очки для факультета!"
     $ s_sprite = "03_hp/10_snape_main/snape_22.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "Или даже просто обещание о хорошей оценке..."
+    sna "Или даже просто за обещание хорошей оценке..."
     hide screen s_head2  
     pause.1
     show screen blktone
@@ -342,7 +342,7 @@ label date_with_snape_07:
     m "Просто огонь..."
     $ s_sprite = "03_hp/10_snape_main/23.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "Тото же."
+    sna "То-то же."
     hide screen s_head2  
     pause.1
     show screen blktone
@@ -375,7 +375,7 @@ label date_with_snape_08:
     sna "*Вздыхает* Было время..."
     $ s_sprite = "03_hp/10_snape_main/snape_16.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "В эти дни у студентов просто отсутствует дисциплина..."
+    sna "В наши дни у студентов просто отсутствует дисциплина..."
     sna2 "Мне было бы достаточно даже этого..."
     $ s_sprite = "03_hp/10_snape_main/snape_22.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
@@ -460,7 +460,7 @@ label date_with_snape_09:
     show screen s_head2                                                                                                 # SNAPE
     sna "Что?"
     hide screen s_head2  
-    m "Just ignore the whole thing."
+    m "..."
     m "Глупости, замечтался, не более."
     $ s_sprite = "03_hp/10_snape_main/snape_29.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
@@ -549,8 +549,8 @@ label date_with_snape_10:
     g9 "Я знаю! Было очень трудно устоять..."
     show screen blktone
     with d3
-    ">вы проводите вечер ловко избегая подобные вопросы."
-    ">Несмотря на ваши подколы, дружба между вами все таки крепнет."
+    ">Вы проводите вечер ловко избегая подобные вопросы."
+    ">Несмотря на ваши подколы, дружба между вами крепнет."
     call sly_plus
     hide screen blktone
     hide screen bld1
@@ -594,7 +594,7 @@ label date_with_snape_11:
     sna2 "Вы уверены, что хотите вернуться туда?"
     hide screen s_head2  
     m "Конечно."
-    m "Там  все немного варварское...но это мой дом."
+    m "Там все немного варварское...но это мой дом."
     show screen blktone 
     with d3
     ">Вы с профессором Снейпом переходите на следующий уровень дружбы..."
@@ -631,7 +631,7 @@ label date_with_snape_12:
     sna "Аграба?"
     hide screen s_head2
     m "Да... Очень большой город."
-    m "Один из, которые появились после катастрофы."
+    m "Один из тех, которые появились после катастрофы."
     m "Вероятно, самый большой..."
     m "Сердце человеческой цивилизации, если вам угодно."
     $ s_sprite = "03_hp/10_snape_main/23.png"                                         # SNAPE
@@ -713,7 +713,7 @@ label date_with_snape_13:
     with d3
     ">Профессор Снейп действительно стал немного веселее в последнее время..."
     ">Даже выглядит моложе, чем при вашей первой встрече..."
-    ">Чувство благосклонности профессора Снейпа  укрепляет узы вашей дружбы."
+    ">Чувство благосклонности профессора Снейпа укрепляет узы вашей дружбы."
     call sly_plus
     hide screen blktone
     hide screen bld1
@@ -818,7 +818,7 @@ label date_with_snape_15:
     $ s_sprite = "03_hp/10_snape_main/24.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
     sna "В это время года обычно я очень занят делами..."
-    sna2 "Особенно сейчас, когда мне приходится прикрывать отстутствие Альбуса."
+    sna2 "Особенно сейчас, когда мне приходится прикрывать отсутствие Альбуса."
     hide screen s_head2
     m "..................."
     $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                         # SNAPE
@@ -837,7 +837,7 @@ label date_with_snape_15:
     show screen s_head2                                                                                                 # SNAPE
     sna "Я уверен, что мисс Грейнджер будет рада мне помочь."
     hide screen s_head2
-    m "Да, до тех пор пока \"Злизерин\" лидирует."
+    m "Да, до тех пор пока \"Слизерин\" лидирует."
     $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
     sna "Серьезно? Ее до сих пор это волнует?"

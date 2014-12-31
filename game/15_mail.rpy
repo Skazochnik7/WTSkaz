@@ -37,30 +37,6 @@ label mail:
         hide screen letter
         hide screen bld1
         hide screen ctc
-
-            
-#            ">Благодарим Вас за выполненые два доклада на этой недели. Здесь ваша оплата (40 gold)."
-#            $ gold += 40
-
-#        if finished_report >= 3:
-#            "Благодарим Вас за выполненые три доклада на этой недели. Здесь ваша оплата  (60 gold)."
-#            $ gold += 60
-            
-#        if finished_report >= 4:
-#            "Благодарим Вас за выполненые четыре доклада на этой недели. Здесь ваша оплата (80 золотых)."
-#            $ gold += 80
-        
-#        if finished_report >= 5: #Maximum amount per week.
-#            "Благодарим Вас за выполненые пять докладов на этой недели. Здесь ваша оплата (100 золотых)."
-#            $ gold += 100
-        
-#        if finished_report >= 6:
-#            "Благодарим Вас за выполненые шесть докладов на этой недели. Здесь ваша оплата (20 золотых)."
-#            $ gold += 20
-            
-#        if finished_report >= 7:
-#            "Благодарим Вас за выполненые семь докладов на этой недели. Здесь ваша оплата (20 золотых)."
-#            $ gold += 20
             
         $ finished_report = 0
 
@@ -70,7 +46,7 @@ label mail:
 ### MAIL FROM HERMIONE ###
 if day == 1:
     #$ letter_text = "{size=-4}-Для профессора Дамблдора-\n\nЯ пишу Вам, что бы довести до Вашего внимания текущию ситуацию в нашей школе .\n Я боюсь мне будет нужна Ваша помощь, чтобы разобраться в этом.\n\n\n-С уважениям Ваша Гермиона Грейнджер-{/size}"
-    $ letter_text = "{size=-7}От: Гермионы Грейнджер\nКому: Профессору Дамблдору\n\n{/size}{size=-4}Я уверена вы помните причину, почему я писала вам письмо в последний , сэр.\n\nЯ прошу вас, пожалуйста, услышьте мою просьбу в этот раз. Эта несправедливость не может продолжаться...\nНе в этот день или год, не в нашей школе.\n\nПожалуйста примите меры.\n\n{size=-3}С уважением,\nГермиона Грейнджер{/size}"    
+    $ letter_text = "{size=-7}От: Гермионы Грейнджер\nКому: Профессору Дамблдору\n\n{/size}{size=-4}Я уверена вы помните причину, по которой я написала вам письмо в последний , сэр.\n\nЯ прошу вас, пожалуйста, услышьте мою просьбу в этот раз. Эта несправедливость не может продолжаться...\nНе в этот день или год и не в нашей школе.\n\nПожалуйста примите меры.\n\n{size=-3}С уважением,\nГермиона Грейнджер{/size}"    
     hide screen owl
     show screen owl_02
     #$ mail_from_her = False #Comented out because replaced with $ letters += 1
@@ -82,9 +58,9 @@ if day == 1:
     with Dissolve(.3)
     pause
     menu:
-        "-Закончить чтение-":
+        "- Закончить чтение -":
             pass    
-        "-Пока что нет-":
+        "- Пока что нет -":
             jump letter01_agagin
     hide screen letter
     hide screen ctc
@@ -117,9 +93,9 @@ if letter_from_hermione_02: #Letter from Hermione #02.
     with Dissolve(.3)
     pause
     menu:
-        "-Закончить чтение -":
+        "- Закончить чтение -":
             pass    
-        "-Пока что нет-":
+        "- Пока что нет -":
             jump letter02_agagin
     hide screen letter
     hide screen ctc
@@ -146,9 +122,9 @@ if work_unlock: # Send a letter that will unlock an ability to write reports
     with Dissolve(.3)
     pause
     menu:
-        "-Закончить чтение-":
+        "- Закончить чтение -":
             pass    
-        "-Еще нет-":
+        "- Еще нет -":
             jump letter_work
     hide screen letter
     hide screen ctc
@@ -162,26 +138,6 @@ if work_unlock: # Send a letter that will unlock an ability to write reports
     hide screen blktone8
     with d3
     call screen main_menu_01
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     
@@ -615,7 +571,7 @@ label mail_02: #Packages only. <================================================
         $ the_gift = "03_hp/18_store/18.png" # MAGAZINE # 2
         show screen gift
         with d3
-        ">Ассортинт женских журналов был добавлен в вашу собственность."
+        ">Ассортимент женских журналов был добавлен в вашу собственность."
         hide screen gift
         with d3
         call screen main_menu_01
@@ -690,7 +646,7 @@ label mail_02: #Packages only. <================================================
         $ the_gift = "03_hp/18_store/29.png" # S.P.E.W. Badge.
         show screen gift
         with d3
-        ">знак \"А.В.Н.Э.\" был добавлен в вашу собственность."
+        ">Знак \"А.В.Н.Э.\" был добавлен в вашу собственность."
         hide screen gift
         with d3
         call screen main_menu_01
@@ -710,5 +666,3 @@ label mail_02: #Packages only. <================================================
         hide screen gift
         with d3
         call screen main_menu_01
- 
-    

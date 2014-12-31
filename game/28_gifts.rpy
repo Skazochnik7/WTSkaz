@@ -60,7 +60,7 @@ label mini_on:
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         her "Вы вероятно не в серьез, сэр!"
-        her "Эта короткая юбка?!"
+        her "Эта мини юбка?!"
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_79.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -113,7 +113,7 @@ label mini_on:
         her "Но она очень короткая..."
         menu:
             m "..."
-            "\"Просто надень его!\"":
+            "\"Просто надень её!\"":
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -253,7 +253,7 @@ label mini_off:
         $ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Я рада, что вы просите об этом. "
+        her "Я рада, что вы попросили меня об этом. "
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE 
@@ -363,7 +363,7 @@ label nets_put:
                 $ h_body = "03_hp/13_hermione_main/body_69.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
                 show screen hermione_main                                                                                                                                                                                 #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
-                her "Gladly..."
+                her "С радостью..."
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
                 show screen hermione_main                                                                                                                                                                                 #HERMIONE
@@ -474,7 +474,7 @@ label nets_put:
         her "Я не уверена насчет этого, сэр..."
         menu:
             m "..."
-            "\"Просто надень это!\"":
+            "\"Просто надень их!\"":
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_69.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -568,7 +568,7 @@ label nets_take:
         $ h_body = "03_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Как вы пожелаете, сэр."
+        her "Как пожелаете, сэр."
     
     if whoring >= 18: # Lv 7+
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -646,7 +646,7 @@ label giving_lube: # JAR OF Анальный лубрикант.
         $ h_body = "03_hp/13_hermione_main/body_66.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Мне кажется, я знаю что это такое..."
+        her "Мне кажется, я знаю, что это такое..."
         her "Но почему бы вам дать что-то вроде этого одному из ваших учеников, сэр?"
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
@@ -739,7 +739,7 @@ label giving_condoms: # A PACK OF CONDOMS
         $ h_body = "03_hp/13_hermione_main/body_30.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Сэр, я даже не знаю что с этим делать..."
+        her "Сэр, я даже не знаю, что с этим делать..."
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         call upset #Message saying that Hermione became upset with you.
@@ -763,7 +763,7 @@ label giving_condoms: # A PACK OF CONDOMS
         $ h_body = "03_hp/13_hermione_main/body_189.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "ет, сэр ... Мне кажется, что неправильно принимать этот подарок от вас..."
+        her "Нет, сэр ... Мне кажется, что неправильно принимать этот подарок от вас..."
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         call no_change 
@@ -776,7 +776,7 @@ label giving_condoms: # A PACK OF CONDOMS
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d5                                                                                                                                                                                                                        #HERMIONE
         her "Пачка презервативов?"
-        her "Сэр, как ме использовать их?"
+        her "Сэр, как мне использовать их?"
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -921,7 +921,7 @@ label giving_candy: # CANDY.
         $ h_body = "03_hp/13_hermione_main/body_46.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Умные девушки используют конфеты как \"оружие\"."
+        her "Умные девушки используют конфеты как \"орудие\"."
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3    
         $ the_gift = "03_hp/18_store/11.png" # CANDY
@@ -1129,7 +1129,7 @@ label giving_vibrator: # VIBRATOR.
         $ h_body = "03_hp/13_hermione_main/body_120.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Этот подарок подходит для \"слизеринских\" шлюх, сэр."
+        her "Этот подарок подходит для \"Слизеринских\" шлюх, сэр."
         call upset
 
     if whoring >= 12 and whoring <= 17: # Lv 5-6.
@@ -1151,9 +1151,9 @@ label giving_vibrator: # VIBRATOR.
         $ h_body = "03_hp/13_hermione_main/body_30.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Это неуместноы..."
+        her "Это неуместно."
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
+        with d3                                                                                                                                                                                                                              #HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1347,12 +1347,12 @@ label giving_strapon: # STRAP-ON.
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         her "Это реквизит для какого-то розыгрыша?"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        hide screen hermione_main                                                                                                                                                                                  #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_118.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Оно неплохо продумано, но..."
+        her "Оно неплохо сделано "
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_33.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -1656,7 +1656,7 @@ label giving_plug:
         $ h_body = "03_hp/13_hermione_main/body_120.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Подлец!"
+        her "Козел!"
         call upset
 
         
@@ -2033,7 +2033,7 @@ label giving_mag3:
         $ h_body = "03_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Я определенно я не стану брать их..."
+        her "Я определенно не стану брать их..."
         call upset
         
 
@@ -2054,7 +2054,7 @@ label giving_mag3:
         $ h_body = "03_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "И это не очень уместный подарок для одного из ваших студентов?"
+        her "И это не очень уместный подарок для одного из ваших студентов."
         call upset
         $ h_body = "03_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         
@@ -2185,7 +2185,7 @@ label giving_mag4:
         $ h_body = "03_hp/13_hermione_main/body_86.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Подлец!"
+        her "Козел!"
         call upset
         $ h_body = "03_hp/13_hermione_main/body_120.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         
@@ -2955,7 +2955,7 @@ label giving_broom:
         $ h_body = "03_hp/13_hermione_main/body_190.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Оно было разработано специально для ведь, не так ли?"
+        her "Оно было разработано специально для меня, не так ли?"
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_185.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -3010,7 +3010,7 @@ label giving_krum:
         $ h_body = "03_hp/13_hermione_main/body_184.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Нет, Спасибо вам."
+        her "Нет, Спасибо."
         call no_change
         $ h_body = "03_hp/13_hermione_main/body_71.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
        
@@ -3114,7 +3114,7 @@ label giving_krum:
         $ h_body = "03_hp/13_hermione_main/body_64.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Девушки обзавидуются..."
+        her "Девченки обзавидуются..."
         call happy
 
 

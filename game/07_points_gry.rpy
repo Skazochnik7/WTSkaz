@@ -27,10 +27,10 @@ label points_changes_gryffindor:
         show screen g_p_u
 
         
-    elif generating_points_gryffindor == 10: 
-        $ gryffindor +=11
+    elif generating_points_gryffindor == 7: 
+        $ gryffindor +=7
         hide screen g_p_u
-        $ g_p_u_pic = "what_11_points"
+        $ g_p_u_pic = "what_07_points"
         show screen g_p_u
 
 
@@ -107,18 +107,6 @@ label points_changes_gryffindor:
         hide screen r_p_u
         $ r_p_u_pic = "what_13_points"
         show screen r_p_u
-
-
-
-
-
-
-
-
-
-
-
-
 
 return 
 

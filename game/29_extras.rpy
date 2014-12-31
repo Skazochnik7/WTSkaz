@@ -7,68 +7,68 @@ label gallery:
     #a1 "Welcome to the \"Hermione Trainer\" gallery. Here you can have a look at some of the production artwork."
     label after_cam:
     menu:
-        "-Музыкальная комната-":
+        "- Музыкальная комната -":
             jump music_room
         
-        "-Священные свитки. Часть I-":
+        "- Священные свитки. Часть I -":
             jump volone
         
-        "-Священные свитки. Часть II-":
+        "- Священные свитки. Часть II -":
             jump voltwo
             
-#        "-Gallery volume 02-":
+#        "- Gallery volume 02 -":
 #            jump volumetwo
         
-#        "-Gallery volume 03-":
+#        "- Gallery volume 03 -":
 #            jump volume_three
         
-        "-Окрестности Хогвартса-":
+        "- Окрестности Хогвартса -":
             jump out_hog
         
-        "{color=#858585}-Концовка 01-{/color}" if not persistent.ending_01:
+        "{color=#858585}- Концовка 01 -{/color}" if not persistent.ending_01:
             jump after_cam
-        "-Концовка 01-" if persistent.ending_01:
+        "- Концовка 01 -" if persistent.ending_01:
             label end_01_men:
             menu:
-                "-First act-":
+                "- Первый акт -":
                     jump end01_01
-                "-The speech-":
+                "- Речь -":
                     jump end01_02
-                "-Finishing act-":
+                "- Последний акт -":
                     jump end01_03
-                "-Cancel-":
+                "- Отмена -":
                     jump after_cam
         
-        "{color=#858585}-Концовка 02-{/color}" if not persistent.ending_02:
+        "{color=#858585}- Концовка 02 -{/color}" if not persistent.ending_02:
             jump after_cam
-        "-Концовка 02-" if persistent.ending_02:
+        "- Концовка 02 -" if persistent.ending_02:
             label end_02_men:
             menu:
-                "-Первый акт-":
+                "- Первый акт -":
                     jump end02_01
-                "-Речь-":
+                "- Речь -":
                     jump end02_02
-                "-Последний акт-":
+                "- Последний акт -":
                     jump end02_03
-                "-Cancel-":
+                "- Отмена -":
                     jump after_cam
         
             
-        "-Комментарии (on)-" if commentaries:
+        "- Комментарии (вкл.) -" if commentaries:
             $ commentaries = False # In the GALLERY turns commentaries ON and OFF. 
             jump after_cam
         
-        "-Комментарии (off)-" if not commentaries:
+        "- Комментарии (выкл.) -" if not commentaries:
             $ commentaries = True # In the GALLERY turns commentaries ON and OFF. 
             jump after_cam
             
-        "-Отмена-":
+        "- Отмена -":
             return 
             
             
 label volone:
     menu:
-        "-S.01: [scroll_01_name]-" if persistent.ss_01:
+        "- С.01: [scroll_01_name] -" if persistent.ss_01:
             show image "03_hp/19_extras/01.png" with d3
             if commentaries:
                 a1 "Это самый первый эскиз офиса Дамблдора."
@@ -78,21 +78,21 @@ label volone:
             hide screen ctc
             hide image "03_hp/19_extras/01.png" with d3
             pass
-        "-S.02: [scroll_02_name]-" if persistent.ss_02:
+        "- С.02: [scroll_02_name] -" if persistent.ss_02:
             show image "03_hp/19_extras/02.png" with d3
             if commentaries:
                 a1 "Календарь..."
                 a1 "На ранних этапах разработки я планировал сделать внутриигровой календарь и завязать на нем геймплей..."
-                a1 "До тех пор, покаа не понял, насколько сложнее делать такую игру..."
+                a1 "До тех пор, пока не понял, насколько сложнее сделать такую игру..."
                 a1 "К тому же мне кажется, что любые временные рамки в любой игре мешают веселью. Так что, я бросил эту затею..."
-                a1 " Позже я использовал этот рисунок как пергамент для писем..."
+                a1 "Позже я использовал этот рисунок как пергамент для писем..."
 
             show screen ctc
             pause
             hide screen ctc
             hide image "03_hp/19_extras/02.png" with d3
             pass
-        "-S.03: [scroll_03_name]-" if persistent.ss_03:
+        "- С.03: [scroll_03_name] -" if persistent.ss_03:
             show image "03_hp/19_extras/03.png" with d3
             if commentaries:
                 a1 "Несколько самых ранних набросков Гермионы..."
@@ -102,7 +102,7 @@ label volone:
             hide image "03_hp/19_extras/03.png" with d3
             pass
             
-        "-S.04: [scroll_04_name]-" if persistent.ss_04:
+        "- С.04: [scroll_04_name] -" if persistent.ss_04:
             show image "03_hp/19_extras/04.png" with d3
             if commentaries:
                 a1 "Сцена с глубоким заглотом..."
@@ -114,7 +114,7 @@ label volone:
             hide image "03_hp/19_extras/04.png" with d3
             pass
             
-        "-S.05: [scroll_05_name]-" if persistent.ss_05:
+        "- С.05: [scroll_05_name] -" if persistent.ss_05:
             show image "03_hp/19_extras/05.png" with d3
             if commentaries:
                 a1 "Постер игры..."
@@ -125,7 +125,7 @@ label volone:
             hide image "03_hp/19_extras/05.png" with d3
             pass
             
-        "-S.06: [scroll_06_name]-" if persistent.ss_06:
+        "- С.06: [scroll_06_name] -" if persistent.ss_06:
             show image "03_hp/19_extras/06.png" with d3
             if commentaries:
                 a1 "Альтернативный постер игры."
@@ -136,7 +136,7 @@ label volone:
             hide image "03_hp/19_extras/06.png" with d3
             pass
             
-        "-S.07: [scroll_07_name]-" if persistent.ss_07:
+        "- С.07: [scroll_07_name] -" if persistent.ss_07:
             show image "03_hp/19_extras/07.png" with d3
             if commentaries:
                 a1 "Несколько чибиков крупным планом."
@@ -147,7 +147,7 @@ label volone:
             hide image "03_hp/19_extras/07.png" with d3
             pass
             
-        "-S.08: [scroll_08_name]-" if persistent.ss_08:
+        "- С.08: [scroll_08_name] -" if persistent.ss_08:
             show image "03_hp/19_extras/08.png" with d3
             if commentaries:
                 a1 "Куча вещей, которых я так и не использовал..."
@@ -159,7 +159,7 @@ label volone:
             hide image "03_hp/19_extras/08.png" with d3
             pass
             
-        "-S.09: [scroll_09_name]-" if persistent.ss_09:
+        "- С.09: [scroll_09_name] -" if persistent.ss_09:
             show image "03_hp/19_extras/09.png" with d3
             if commentaries:
                 a1 "Рисунок Гермионы с постера. (by Dahr)"
@@ -170,7 +170,7 @@ label volone:
             hide image "03_hp/19_extras/09.png" with d3
             pass
             
-        "-S.10: [scroll_10_name]-" if persistent.ss_10:
+        "- С.10: [scroll_10_name] -" if persistent.ss_10:
             show image "03_hp/19_extras/10.png" with d3
             if commentaries:
                 a1 "Опять вещи, что так и не вошли в игру..."
@@ -183,7 +183,7 @@ label volone:
             hide image "03_hp/19_extras/10.png" with d3
             pass
             
-        "-S.11: [scroll_11_name]-" if persistent.ss_11:
+        "- С.11: [scroll_11_name] -" if persistent.ss_11:
             show image "03_hp/19_extras/11.png" with d3
             if commentaries:
                 a1 "Бордель домовых... Еще одна вещь, которая так и не сбылась."
@@ -193,7 +193,7 @@ label volone:
             hide image "03_hp/19_extras/11.png" with d3
             pass
             
-        "-S.12: [scroll_12_name]-" if persistent.ss_12:
+        "- С.12: [scroll_12_name] -" if persistent.ss_12:
             show image "03_hp/19_extras/12.png" with d3
             if commentaries:
                 a1 "Рисунок, где ты очень похож на мага из Дурмстранга, а Лола - на ученицу..."
@@ -205,11 +205,11 @@ label volone:
             pass
         
         
-        "-S.13: [scroll_13_name]-" if persistent.ss_13:
+        "- С.13: [scroll_13_name] -" if persistent.ss_13:
             show image "03_hp/19_extras/13.png" with d3
             if commentaries:
                 a1 "Еще один побочный квест, так и не увидевший свет..."
-                a1 "В общем, там--"
+                a1 "В общем, там- -"
                 a1 "Нет, пожалуй, нет. Кто знает, быть может мы все-таки введем эти квесты."
             show screen ctc
             pause
@@ -217,7 +217,7 @@ label volone:
             hide image "03_hp/19_extras/13.png" with d3
             pass
         
-        "-S.14: [scroll_14_name]-" if persistent.ss_14:
+        "- С.14: [scroll_14_name] -" if persistent.ss_14:
             show image "03_hp/19_extras/14.png" with d3
             if commentaries:
                 a1 "Еще один побочный квест..."
@@ -228,19 +228,19 @@ label volone:
             hide image "03_hp/19_extras/14.png" with d3
             pass
         
-        "-S.15: [scroll_15_name]-" if persistent.ss_15:
+        "- С.15: [scroll_15_name] -" if persistent.ss_15:
             show image "03_hp/19_extras/15.png" with d3
             if commentaries:
                 a1 "Существует множество способов того, как симпатичная девушка может держать книгу."
                 a1 "Я думал, что было бы круто, если бы Гермиона начинала носить держать книги по-другому по мере того, как она учится все новому."
-                a1 "Так как вся арка с репетиторством была отменена, я выкладываю это здесь..."
+                a1 "Так как вся ветка с репетиторством была отменена, я выкладываю это здесь..."
             show screen ctc
             pause
             hide screen ctc
             hide image "03_hp/19_extras/15.png" with d3
             pass
         
-        "\"Ничего\"":
+        "Ничего":
             jump after_cam
         
     jump volone
@@ -250,7 +250,7 @@ label volone:
         
 label voltwo:
     menu:
-        "-S.16: [scroll_16_name]-" if persistent.ss_16:
+        "- С.16: [scroll_16_name] -" if persistent.ss_16:
             show image "03_hp/19_extras/16.png" with d3
             if commentaries:
                 a1 "Парочка вещей, что не попали в финальную версию..."
@@ -262,7 +262,7 @@ label voltwo:
             hide screen ctc
             hide image "03_hp/19_extras/16.png" with d3
             pass
-        "-S.17: [scroll_17_name]-" if persistent.ss_17:
+        "- С.17: [scroll_17_name] -" if persistent.ss_17:
             show image "03_hp/19_extras/17.png" with d3
             if commentaries:
                 #17.
@@ -274,7 +274,7 @@ label voltwo:
             hide screen ctc
             hide image "03_hp/19_extras/17.png" with d3
             pass
-        "-S.18: [scroll_18_name]-" if persistent.ss_18:
+        "- С.18: [scroll_18_name] -" if persistent.ss_18:
             show image "03_hp/19_extras/18.png" with d3
             if commentaries:
                  #18.
@@ -286,19 +286,19 @@ label voltwo:
             hide image "03_hp/19_extras/18.png" with d3
             pass
             
-        "-S.19: [scroll_19_name]-" if persistent.ss_19:
+        "- С.19: [scroll_19_name] -" if persistent.ss_19:
             show image "03_hp/19_extras/19.png" with d3
             if commentaries:
                 #19.
                 a1 "Известная певица."
-                a1 "Не имеет отношения игре, добавлена сюда без причины, простотак."
+                a1 "Не имеет отношения игре, добавлена сюда без причины, просто так."
             show screen ctc
             pause
             hide screen ctc
             hide image "03_hp/19_extras/19.png" with d3
             pass
             
-        "-S.20: [scroll_20_name]-" if persistent.ss_20:
+        "- С.20: [scroll_20_name] -" if persistent.ss_20:
             show image "03_hp/19_extras/20.png" with d3
             if commentaries:
                 #20.
@@ -312,7 +312,7 @@ label voltwo:
             hide image "03_hp/19_extras/20.png" with d3
             pass
             
-        "-S.21: [scroll_21_name]-" if persistent.ss_21:
+        "- С.21: [scroll_21_name] -" if persistent.ss_21:
             show image "03_hp/19_extras/21.png" with d3
             if commentaries:
                 #21 
@@ -326,7 +326,7 @@ label voltwo:
             hide image "03_hp/19_extras/21.png" with d3
             pass
             
-        "-S.22: [scroll_22_name]-" if persistent.ss_22:
+        "- С.22: [scroll_22_name] -" if persistent.ss_22:
             show image "03_hp/19_extras/22.png" with d3
             if commentaries:
                 #22
@@ -339,7 +339,7 @@ label voltwo:
             hide image "03_hp/19_extras/22.png" with d3
             pass
             
-        "-S.23: [scroll_23_name]-" if persistent.ss_23:
+        "- С.23: [scroll_23_name] -" if persistent.ss_23:
             show image "03_hp/19_extras/23.png" with d3
             if commentaries:
                 #23. 
@@ -351,7 +351,7 @@ label voltwo:
             hide image "03_hp/19_extras/23.png" with d3
             pass
             
-        "-S.24: [scroll_24_name]-" if persistent.ss_24:
+        "- С.24: [scroll_24_name] -" if persistent.ss_24:
             show image "03_hp/19_extras/24.png" with d3
             if commentaries:
                 #24.
@@ -363,7 +363,7 @@ label voltwo:
             hide image "03_hp/19_extras/24.png" with d3
             pass
             
-        "-S.25: [scroll_25_name]-" if persistent.ss_25:
+        "- С.25: [scroll_25_name] -" if persistent.ss_25:
             show image "03_hp/19_extras/25.png" with d3
             if commentaries:
                 #25.
@@ -376,7 +376,7 @@ label voltwo:
             hide image "03_hp/19_extras/25.png" with d3
             pass
             
-        "-S.26: [scroll_26_name]-" if persistent.ss_26:
+        "- С.26: [scroll_26_name] -" if persistent.ss_26:
             show image "03_hp/19_extras/26.png" with d3
             if commentaries:
                 #26.
@@ -389,7 +389,7 @@ label voltwo:
             hide image "03_hp/19_extras/26.png" with d3
             pass
             
-        "-S.27: [scroll_27_name]-" if persistent.ss_27:
+        "- С.27: [scroll_27_name] -" if persistent.ss_27:
             show image "03_hp/19_extras/27.png" with d3
             if commentaries:
                 #27.
@@ -402,7 +402,7 @@ label voltwo:
             pass
 
         
-        "-S.28: [scroll_28_name]-" if persistent.ss_28:
+        "- С.28: [scroll_28_name] -" if persistent.ss_28:
             show image "03_hp/19_extras/28.png" with d3
             if commentaries:
                 #28.
@@ -413,7 +413,7 @@ label voltwo:
             hide image "03_hp/19_extras/28.png" with d3
             pass
         
-        "-S.29: [scroll_29_name]-" if persistent.ss_29:
+        "- С.29: [scroll_29_name] -" if persistent.ss_29:
             show image "03_hp/19_extras/29.png" with d3
             if commentaries:
                 #29.
@@ -424,7 +424,7 @@ label voltwo:
             hide image "03_hp/19_extras/29.png" with d3
             pass
         
-        "-S.30: [scroll_30_name]-" if persistent.ss_30:
+        "- С.30: [scroll_30_name] -" if persistent.ss_30:
             show image "03_hp/19_extras/30.png" with d3
             if commentaries:
                 #30.
@@ -1427,7 +1427,7 @@ label end02_03:
     label intro:
         play music "music/TheKiss.mp3" fadein 1 fadeout 1 
         
-        centered "{size=+7}{color=#cbcbcb}Previously in the AKABUR's \"MAGIC SHOP\"...{/color}{/size}"
+        centered "{size=+7}{color=#cbcbcb}Ранее в  \"МАГИЧЕСКОЙ ЛАВКЕ\"...{/color}{/size}"
         show intro_01 with flashbb # WHITE FLASH.
         pause
         hide intro_01 
@@ -1453,7 +1453,7 @@ label end02_03:
         hide intro_06 
         with flashbulb # WHITE FLASH.
         
-        centered "{size=+7}{color=#cbcbcb}And now akabur's \"Witch Trainer\"...{/color}{/size}"
+        centered "{size=+7}{color=#cbcbcb}И теперь в \"Воспитании Ведьмы\"...{/color}{/size}"
         jump hp
         
         
@@ -1816,10 +1816,10 @@ label music_room:
             
             
             
-        "-No music-":
+        "- Остановить мелодию -":
             stop music fadeout 1.0
             jump music_room
-        "-Keep the current tune-":
+        "- Продолжать проигрывать текущию мелодию -":
             jump gallery
     jump music_room2
         

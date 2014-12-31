@@ -111,7 +111,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Эта совиная почта немного нелепа, разве не так?"
+            sna "Эта совиная почта нелепа, разве не так?"
             sna "Я бы предпочёл использовать воронов."
             
         elif one_of_ten == 8:
@@ -129,7 +129,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_04.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Быть волшебником это работа 24 часа в сутки..."
+            sna "Быть волшебником это значит работать 24 часа в сутки..."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_03.png"                                                                            #SNAPE
@@ -180,7 +180,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Ты уверен что ты знаешь что ты делаешь?"
+            sna "Ты уверен, что знаешь, что ты делаешь?"
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_09.png"                                                                            #SNAPE
@@ -194,7 +194,7 @@ label snape_chitchat:
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
             sna "Я чувствую власть, награждая факультеты очками или отнимая их когда захочу."
-            sna "Мой авторитет среди студентов ростёт с каждым днём..."
+            sna "Мой авторитет среди студентов растёт с каждым днём..."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                                                            #SNAPE
@@ -215,7 +215,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_28.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                    #SNAPE
-            sna "Но кому это нужно, верно?"
+            sna "Но кого это волнует, верно?"
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_29.png"                                                                            #SNAPE
@@ -228,13 +228,13 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Мои дрогаценные Слизеринцы делают эту пытку стоящей..."
+            sna "Мои драгоценные Слизеринки делают эту пытку стоящей..."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_19.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Их юбки становятся кароче с каждой неделей, честно."
+            sna "Их юбки становятся короче с каждой неделей, честно."
   
         elif one_of_ten == 5:
             hide screen snape_main                                                                                                                   #SNAPE
@@ -276,7 +276,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_04.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Что дальше? ассоциация по восстановлению независимости эльфов?"
+            sna "Что дальше? Ассоциация по восстановлению независимости эльфов?"
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                                                            #SNAPE
@@ -372,7 +372,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/24.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Однажды девченка продола мне свои трусы за пять очков факультета."
+            sna "Однажды девченка продала мне свои трусы за пять очков факультета."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_14.png"                                                                            #SNAPE
@@ -384,7 +384,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_19.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Я считаю что она отдала бы их бесплатно лишь бы задобрить меня."
+            sna "Я считаю, что она отдала бы их бесплатно лишь бы задобрить меня."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_09.png"                                                                            #SNAPE
@@ -397,7 +397,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/23.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Покачто я наблюдаю очень хорошее начало дня..."
+            sna "Я думаю это очень хорошее начало дня..."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                                                            #SNAPE
@@ -445,7 +445,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Сожеления? Я не знаю значения этого слова!"
+            sna "Сожалеть? Я не знаю значения этого слова!"
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                                                            #SNAPE
@@ -566,7 +566,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Надеюсь ты знаешь что ты делаешь..."
+            sna "Надеюсь ты знаешь, что делаешь..."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_09.png"                                                                            #SNAPE
@@ -585,7 +585,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Если бы ты видел как некоторые из этих девченок носят форму..."
+            sna "Если бы ты видел какую некоторые из этих девченок носят форму..."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_13.png"                                                                            #SNAPE
@@ -610,7 +610,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Думаю мне нравится такая погода потому что она делает других печальнее..."
+            sna "Думаю мне нравится такая погода, потому что она делает других печальнее..."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/23.png"                                                                            #SNAPE
@@ -623,13 +623,13 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/24.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Благодаря последним наблюдениям я уверен что 9 из 10 девочек мечтают что бы их соблазнил учитель."
+            sna "Благодаря последним наблюдениям я уверен, что 9 из 10 девочек мечтают, что бы их соблазнил учитель."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_03.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Я так же уверен что 10я это Гермиона Греинджер ."
+            sna "Я так же уверен, что десятая - это Гермиона Греинджер ."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_01.png"                                                                            #SNAPE
@@ -642,7 +642,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/24.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "В такие дни мне нужно стараться что бы быть в плохом настроение."
+            sna "В такие дни мне нужно стараться, что бы быть в плохом настроение."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/23.png"                                                                            #SNAPE
@@ -667,13 +667,13 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            her "...они коньчились год назад..."
+            her "...они кончились год назад..."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            her "Мне нравится как ты изменил мою жизнь, приятель."
+            her "Мне нравится, как ты изменил мою жизнь, приятель."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/23.png"                                                                            #SNAPE
@@ -698,7 +698,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_13.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Это было бы идеально... не щитая Локхарта."
+            sna "Это было бы идеально... не считая Локхарта."
 
         elif one_of_ten == 8:
             hide screen snape_main                                                                                                                   #SNAPE
@@ -799,7 +799,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_22.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "а как на счет сразу нескольких?"
+            sna "А как на счет сразу нескольких?"
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_20.png"                                                                            #SNAPE
@@ -812,7 +812,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_20.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Прошлой ночью между мной и одной из Слизеринских шлюх произошло что то невероятное."
+            sna "Прошлой ночью между мной и одной из Слизеринских шлюх произошло что-то невероятное."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_22.png"                                                                            #SNAPE
@@ -837,7 +837,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/23.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Зима идет..."
+            sna "Зима близко..."
          
         elif one_of_ten == 5:
             hide screen snape_main                                                                                                                   #SNAPE
@@ -845,7 +845,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/24.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Ты когда нибудь видел как магловские женьщины одеваются ведьмами?"
+            sna "Ты когда нибудь видел как магловские женщины одеваются в ведьм?"
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_19.png"                                                                            #SNAPE
@@ -865,13 +865,13 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Оно позволяет тебе \" быть внутри сети \" и смотреть магические фотографии голых женьщин маглов." # SNAPE SAYS "ON THE LINE" ON PURPOSE. I KNOW THAT WAS REALLY OBVIOUS MAESTRO
+            sna "Он позволяет тебе \" быть внутри сети \" и смотреть магические фотографии голых женщин маглов." # SNAPE SAYS "ON THE LINE" ON PURPOSE. I KNOW THAT WAS REALLY OBVIOUS MAESTRO
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_26.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Жаль что у нас нет этого в Хогвартсе."
+            sna "Жаль, что у нас нет этого в Хогвартсе."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_09.png"                                                                            #SNAPE
@@ -948,7 +948,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_03.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Я уверен она замышляет что то..."
+            sna "Я уверен она замышляет что-то..."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_01.png"                                                                            #SNAPE
@@ -961,14 +961,14 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/24.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Написать книгу и убить почти всех персонажей ради драмотической сцены очень легко..."
+            sna "Написать книгу и убить почти всех персонажей ради драматической сцены очень легко..."
             sna "Но поставить своих персонажей в не выгодное положение и помочь им выжить звучит убедительнее..."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Now {size=+7}that{/size} requires skill."
+            sna "Сейчас {size=+7}это{/size} требует навыка."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/23.png"                                                                            #SNAPE
@@ -1160,7 +1160,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/24.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "В последнее воремя ты слишком щедр с очками Гриффиндора, приятель."
+            sna "В последнее время ты слишком щедр с очками Гриффиндора, приятель."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_25.png"                                                                            #SNAPE
@@ -1192,7 +1192,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_10.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Но не смотря на это она все еще боль в моей заднице!"
+            sna "Но не смотря на это, она все еще заноза в моей заднице!"
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_01.png"                                                                            #SNAPE
@@ -1237,7 +1237,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_21.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Просто что бы завести этих сумасшедших шлюх."
+            sna "Просто, что бы завести этих сумасшедших шлюх."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                                                            #SNAPE
@@ -1274,7 +1274,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_29.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Я не думаю что я когда либо использовал слова \"Люблю\" и \"Жизнь\" в одном предложение."
+            sna "Я не думаю, что я когда либо использовал слова \"Люблю\" и \"Жизнь\" в одном предложение."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                                                            #SNAPE
@@ -1340,7 +1340,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_14.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "То чуство когда ты кончил девушке в рот а она произносит: \"Спасибо, профессор\"?"
+            sna "То чуство, когда ты кончил девушке в рот, а она произносит: \"Спасибо, профессор\"."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_13.png"                                                                            #SNAPE
@@ -1365,7 +1365,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_13.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Если бы я был призраком я бы так и сделал."
+            sna "Если бы я был призраком я бы так и делал."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/23.png"                                                                            #SNAPE
@@ -1378,7 +1378,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_19.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Однажды девченка поведала мне что она хочет быть изнасилована этим сквибом мр.Филтчем."
+            sna "Однажды девченка поведала мне, что она хочет быть изнасилована этим сквибом Мистером Филтчем."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_14.png"                                                                            #SNAPE
@@ -1409,7 +1409,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_03png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "А теперь, не пойми меня не правильно - я все еще не навижу ее."
+            sna "А теперь, не пойми меня не правильно - я все еще ненавижу ее."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                                                            #SNAPE
@@ -1443,9 +1443,9 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/24.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Ты знаешь что такое \"букаке\" а?"
+            sna "Ты знаешь что такое \"буккакэ\" а?"
             sna "А как на счет \"глубокого заглота\"?"
-            sna "Так же есть \"секс с ненавистью\"."
+            sna "Так же есть \"изнасилование\"."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                                                            #SNAPE
@@ -1458,7 +1458,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Так или иначе \"секс с ненавистью\" был всегда..."
+            sna "Так или иначе \"изнасилование\" был всегда..."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                                                            #SNAPE
@@ -1563,8 +1563,8 @@ label snape_chitchat:
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
             sna "Ее горячие подружки занимались моим задом..."
-            sna "В это время третья девченка ждала меня на коленях с открытым ртом, ожидая что я сеичас кончу..."
-            sna "Каждый раз когда я извергался, она говорила: \"Благодорю вас, профессор Снейп\"."
+            sna "В это время третья девченка ждала меня на коленях с открытым ртом, ожидая что я сейчас кончу..."
+            sna "Каждый раз когда я извергался, она говорила: \"Благодарю вас, профессор Снейп\"."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_22.png"                                                                            #SNAPE
@@ -1583,7 +1583,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Одна из девченок меня приследует и умоляет что бы я мочился ей в рот..."
+            sna "Одна из девченок меня приследует и умоляет, что бы я мочился ей в рот..."
             sna "Настойчивая маленькая шлюха..."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
@@ -1603,7 +1603,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_04.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Я одинакого доминирую над всеми студентами..."
+            sna "Я одинаково доминирую над всеми студентами..."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_22.png"                                                                            #SNAPE
@@ -1634,7 +1634,7 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_14.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Еслиб я мог забросить преподавание, но продолжать веселится."
+            sna "Если бы я мог забросить преподавание, но продолжать веселится."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/23.png"                                                                            #SNAPE
@@ -1705,13 +1705,13 @@ label chitchat_event_01: #Snape says: so you tutor her now?". Happens after tuto
     hide screen snape_main
     with d3
     sna_01 "Итак..."
-    sna_01 "Я слышал что мисс Греинджер начала заниматься с вами на едине?"
-    m "Да, пологаю это так..."
+    sna_01 "Я слышал что мисс Греинджер начала заниматься с вами наедине?"
+    m "Да, полагаю это так..."
     m "Не думаю что это входит в наш план."
     sna_09 "Что ты имеешь в виду? Все идет отлично."
     sna_09 "Я лично и пара учителей делаем ее занятия не выносимыми!"
     sna_09 "И в результате она стала заниматься больше..."
-    sna_09 "Даже заниматся на едине..."
+    sna_09 "Даже заниматся наедине..."
     sna_18 "И теперь у нее все меньше и меньше времени докучать мне."
     m "Понятно..."
     sna_10 "Да, да... ну, что бы ты знал..."
@@ -1777,7 +1777,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Вобщето мне нравится когда меня зовут \"Всезнайка\"."
+            her "Вобщем-то мне нравится когда меня зовут \"Всезнайка\"."
             her "Возможно я даже краснею от этого..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1791,7 +1791,7 @@ label chit_chat:
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Василиск, также известен как король змей."
-            her "Herpo the Foul was the first to breed a Basilisk."
+            her "Герпо фол первый осеменил Василиска."
             her "Он сделал это с помощью--"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1799,7 +1799,7 @@ label chit_chat:
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Ой, Извините, профессор, у нас еще один тест завтра..."
-            her "Я просто хочу знать что я готова..."
+            her "Я просто хочу знать, что я готова..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -1811,7 +1811,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_10.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Если бы мое тело не требовало сон..."
+            her "Если бы мое тело не требовало сна..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_18.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -1836,7 +1836,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "So far professor Trelawney did not taught me a single piece of any actual knowledge, sir."
+            her "Пока профессор Трелони не обучил меня хотябы капелькой каких-либо фактических знаний, сэр."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -1863,7 +1863,7 @@ label chit_chat:
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Как люди могу быть такими безразличными к мировым проблемам?"
-            her "Лично я считаю, что мы все должны работать вместе что бы мир стал лучше."
+            her "Лично я считаю, что мы все должны работать вместе, чтобы мир стал лучше."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -1949,7 +1949,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_10.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Есть слух что профессор Снейп что то замышляет в школе..."
+            her "Есть слух что профессор Снейп что-то замышляет в школе..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_15.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -1968,7 +1968,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Не смотря на сомнительность услуг что я вам оказывала, сэр..."
+            her "Не смотря на сомнительность услуг, которые я вам оказывала, сэр..."
             her "Я благодарна вам за вашу помощь..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2002,7 +2002,7 @@ label chit_chat:
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Наше \"Движение прав человека\" набирает популярность."
-            her "Это очень успакаевающе знать что вы помогаете развивать наше общество."
+            her "Это очень важно знать, что вы помогаете развивать наше общество."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -2021,7 +2021,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_08.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Но я все еще хочу что бы она была больше..."
+            her "Но я все еще хочу, чтобы она была больше..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -2041,7 +2041,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "...я очень ценю что вы пресматриваете за мной, сэр."
+            her "...я очень ценю, что вы присматриваете за мной, сэр."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -2054,7 +2054,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Услуги что я вам оказала тогда, сэр..."
+            her "Услуги которые я вам оказала тогда, сэр..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_33.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -2066,13 +2066,13 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_87.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Я согласилась на это только иза моего факультета."
+            her "Я согласилась на это только изза моего факультета."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_120.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Я просто хотела что бы вы знали это, сэр..."
+            her "Я просто хотела, чтобы вы знали это, сэр..."
             
         elif one_of_ten == 10:
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -2129,7 +2129,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_05.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Я думаю профессор Снеёп стоит за этим."
+            her "Я думаю профессор Снейп стоит за этим."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -2174,7 +2174,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_77.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Я ненавижу весь факультет слизерина всем своим сердцем, сэр."
+            her "Я ненавижу весь факультет Слизерина всем своим сердцем, сэр."
             
         elif one_of_ten == 5:
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -2208,13 +2208,13 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_70.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "*Зевок!* Я прочитала о технике которая помогает сократить сон в полавину..."
+            her "*Зевок!* Я прочитала о технике которая помогает сократить сон на половину..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_73.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Но кажется она не работает.... *Yawn!*"
+            her "Но кажется она не работает.... *Зевок!*"
 
         elif one_of_ten == 7:
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -2255,7 +2255,7 @@ label chit_chat:
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Некоторые школьные корридоры пыльные и грязные..."
-            her "Пожалуйста позабодтесь об этом, сэр..."
+            her "Пожалуйста позаботьтесь об этом, сэр..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -2289,7 +2289,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Мое \"общество по защите прав мужчик\" последнее время теряет популярность..."
+            her "Мое \"общество по защите прав мужчин\" последнее время теряет популярность..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -2309,7 +2309,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Некоторые, конечно, достали весьма странным образом, но ..."
+            her "Некоторые, конечно, достались весьма странным образом, но ..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -2360,7 +2360,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "ух... Ничего..."
+            her "Ух... Ничего..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -2684,7 +2684,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_02.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Не имеет згачения, сколько раз вы спрсите меня..."
+            her "Не имеет значения, сколько раз вы спросите меня..."
             her "Ответ будет один и тот же..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2830,7 +2830,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Мй любимый предмет?"
+            her "Мой любимый предмет?"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -2902,7 +2902,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_64.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Я бы не смогла отказаться от бутылки сливчного пива сейчас..."
+            her "Я бы не отказалась от бутылки сливочного пива ..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_68.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -3094,7 +3094,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_80.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Смелый и удалые, красные и золотые!"
+            her "Смелые, удалые, красно и золотые!"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_06.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -3167,7 +3167,7 @@ label chit_chat:
             $ h_body = "03_hp/13_hermione_main/body_127.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Прочла стать, в которой говорится о положительном влиянии спермы на кожу женщины..."
+            her "Прочитала статью, в которой говорится о положительном влиянии спермы на кожу женщины..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_128.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE

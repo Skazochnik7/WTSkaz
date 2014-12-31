@@ -36,7 +36,7 @@ label new_request_15: #LV.4 (Whoring = 9 - 11)
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         her "...?"
-        m "Ну, знаешь, оголить груть перед парнями..."
+        m "Ну, знаешь, оголила грудь перед парнями..."
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_48.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -63,14 +63,14 @@ label new_request_15: #LV.4 (Whoring = 9 - 11)
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         her "................"
-        m "Ты знаешь, никакого давления..."
+        m "Ты ведь знаешь, никакого давления..."
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_69.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         her "Профессор..."
-        her "Судьба моего дома важна для меня, но..."
+        her "Судьба моего факультета важна для меня, но..."
         m "Да ты что?"
         m "Почему тогда я этого не вижу?"
         m "Точно. Покажите мне насколько сильно это значит для вас, мисс Грейнджер."
@@ -79,7 +79,7 @@ label new_request_15: #LV.4 (Whoring = 9 - 11)
         $ h_body = "03_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Но ведь это непримемлимо..."
+        her "Но ведь это неприемлимо..."
         m "А в том ли мы положении, чтобы обсуждать что приемлимо, а что - нет?"
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
@@ -94,16 +94,16 @@ label new_request_15: #LV.4 (Whoring = 9 - 11)
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         her ".............."
-        m "Все что я прошу тебя сделать, это дать одному счастливцу взглянуть одним глазком..."
+        m "Все, что я прошу тебя сделать, это дать всего лишь одному счастливцу взглянуть одним глазком..."
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_69.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         her "Но почему? Почему я должна делать это?"
-        m "Минута твоего времени за 25 очков..."
+        m "Минута твоего времени за 35 очков..."
         m "Отличная сделка, ты не находишь?"
-        her "Наврное..."
+        her "Наверное..."
         her "Ладно, я посмотрю, что я могу сделать..."
         
     else: # <================================================================================ NOT FIRST TIME
@@ -123,7 +123,7 @@ label new_request_15: #LV.4 (Whoring = 9 - 11)
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Ох..."
-            m "Да, иди и сделай это и приходи ко мне с отчетом..."
+            m "Точно, иди и сделай это и приходи ко мне с отчетом..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_69.png" #Sprite of Hermione's upper body.                                                                 #HERMIONE
@@ -210,7 +210,7 @@ label new_request_15: #LV.4 (Whoring = 9 - 11)
             her ".............."
             
         elif whoring >= 15: # LEVEL 06+
-            m "Девочка, мне нужно чтобы ты вышла отсюда и показала сиськи одному из одноклассников."
+            m "Девочка, мне нужно чтобы ты вышла отсюда и показала сиськи какому-нибудь однокласснику."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
@@ -231,7 +231,7 @@ label new_request_15: #LV.4 (Whoring = 9 - 11)
             $ h_body = "03_hp/13_hermione_main/body_127.png" #Sprite of Hermione's upper body.                                                                 #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Тогда почему я должна отказываться от такого простого как это?"
+            her "Тогда почему я должна отказываться от такого простого задания, как это?"
             her "Тридцать пять очков - честная цена за пару секунд удовольствия... эммм..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -333,7 +333,7 @@ label new_request_15_complete:
                 with d3                                                                                                                                                                                                                        #HERMIONE
                 her "Я просто не смогла заставить себя сделать это..."
                 m "Понятно..."
-                m "Ну, я не могу давать вам очки просто так, сударыня."
+                m "Ну, я не могу раздавать очки просто так, сударыня."
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_16.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -377,7 +377,7 @@ label new_request_15_complete:
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Да... эм..."
-            her "Ну, я решила поробовать показать их тму парню из \"Пуффендуя\"..."
+            her "Ну, я решила поробовать показать их тому парню из \"Пуффендуя\"..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_87.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -396,7 +396,7 @@ label new_request_15_complete:
             $ h_body = "03_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3   
-            her "Когда я попыталась паздеться перед ним..."
+            her "Когда я попыталась раздеться перед ним..."
             her "Сначала я подняла свою жилетку..."
             her "Затем, когда я попыталась поднять мою рубашку..."
             her "Одна из грудей застряла в ткани и поднялась вместе с рубашкой..."
@@ -416,14 +416,14 @@ label new_request_15_complete:
             with d3             
             her "............"
             m "Хм..."
-            m "Что насчет парня? Он увидел твои сиськи, или нет?"
+            m "Что насчет того парня? Он увидел твои сиськи, или нет?"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3             
             her "Ну, я думаю, что он мог увидеть одну..."
-            her "Ну судя по его взгляду..."
+            her "Но судя по выражению его лица..."
             her "Я сомневаюсь, что он понял, что вся эта сцена была для его же блага."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -437,7 +437,7 @@ label new_request_15_complete:
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3             
             her "Простите, сэр..."
-            m "Всех хорошо..."
+            m "Все хорошо..."
             m "Я и не ожидал, что у тебя будет все получаться идеально в начале твоей тренировки..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -466,7 +466,7 @@ label new_request_15_complete:
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Эм... На самом деле, тут особо нечего рассказывать..."
             her "Первую половину дня я провела в библиотеке..."
-            her "Обычно там почти никого нет в такое время..."
+            her "Обычно в такое время там почти никого нет..."
             her "Кроме меня там был толлько один ученик..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -474,7 +474,7 @@ label new_request_15_complete:
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Какой-то парень из \"Когтеврана\"..."
-            her "Я помахала ему и когда он посмотрел на меня..."
+            her "Я помахала ему, и когда он посмотрел на меня..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_117.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -583,7 +583,7 @@ label new_request_15_complete:
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Наверное..."
-            m "Но вы по прежнему продолжаете приходить..."
+            m "Но вы по-прежнему продолжаете приходить снова и снова..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_118.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -603,8 +603,8 @@ label new_request_15_complete:
             $ h_body = "03_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Сэр, я никогда...!"
-            m "Хватит этого. Вы выполнили задание, или нет?"
+            her "Сэр, я бы никогда...!"
+            m "Хватит. Вы выполнили задание, или нет?"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_120.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -680,7 +680,7 @@ label new_request_15_complete:
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Я правда обязана рассказывать об этом, сэр?"
             m "Когда ты вот так выворачиваешься..."
-            m "Ты еще больше будишь мое любопытство. Ты же знаешь об этом, ведь так?"
+            m "Ты только будишь мое любопытство. Ты же знаешь об этом, ведь так?"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_117.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -734,7 +734,7 @@ label new_request_15_complete:
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Вот видите, почему я ненавижу \"Слизеринских\" парней, сэр..."
-            her "У них нет ни тени чести.."
+            her "У них нет и тени чести.."
             her "..."
             m "Ты сдержала свое обещание?"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -745,7 +745,7 @@ label new_request_15_complete:
             her "Нет, еще нет..."
             her "Я собираюсь встретиться с этим отвратительным парнем после того как мы закончим здесь, сэр."
             m "Понятно..."
-            m "Ну, тогда я не должен заставлять тебя долго ждать, ведь так?"
+            m "Ну, тогда мы не должны заставлять того парня долго ждать, ведь так?"
             
         elif one_out_of_three == 3: ### EVENT (C)
             m "Мисс Грейнджер, вы выполнили свое задание?"
@@ -777,7 +777,7 @@ label new_request_15_complete:
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "...и просто подняла рубашку и прижалась обнаженной грудью к стеклу..."
             her "И простояла так несколько секунд..."
-            her "Чтобы убедиться, что по крайней мере кто-нибудь увидит меня снаружи..."
+            her "Чтобы убедиться, что хоть кто-нибудь увидит меня снаружи..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_117.png" #Sprite of Hermione's upper body.                                                                  #HERMIONE
@@ -791,7 +791,7 @@ label new_request_15_complete:
             $ h_body = "03_hp/13_hermione_main/body_118.png" #Sprite of Hermione's upper body.                                                                  #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Я не уверена, сэр... Наверное оди или два...?"
+            her "Я не уверена, сэр... Наверное один или два...?"
             m "\"Наверное\"?"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -882,7 +882,7 @@ label new_request_15_complete:
             $ h_body = "03_hp/13_hermione_main/body_121.png" #Sprite of Hermione's upper body.                                                                  #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Лди кричали и подбадривали меня, показывали но мою обнаженную грудь..."
+            her "Люди кричали и подбадривали меня, показывали на мою обнаженную грудь..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_87.png" #Sprite of Hermione's upper body.                                                                  #HERMIONE
@@ -983,13 +983,13 @@ label new_request_15_complete:
             $ h_body = "03_hp/13_hermione_main/body_111.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "целовать и сосать мои соски..."
+            her "Покрывать поцелуями и сосать мои соски..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_128.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "И я не могла сдержаться - я начала стонать..."
+            her "И я не смогла сдержаться - я начала стонать..."
             m ".............."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1043,7 +1043,7 @@ label new_request_15_complete:
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "И это все что произошло, сэр..."
             m "Понятно..."
-            m "И все таки мне это нравится больше, чем какие-то вдуманные истории..."
+            m "И все таки это мне нравится больше, чем какие-то выдуманные истории..."
             
         elif one_out_of_three == 3: ### EVENT (C)
            
@@ -1113,7 +1113,7 @@ label new_request_15_complete:
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Ох...?"
-            m "Вы просто получите ващу обычную плату, вот и все."
+            m "Вы просто получите вашу обычную плату, вот и все."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -1175,15 +1175,15 @@ label new_request_15_complete:
         $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390                                # HERMIONE HEAD
         $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.       # HERMIONE HEAD
         show screen h_head2                                                                                                                                                                                                                    # HERMIONE HEAD         
-        her "(Я не могу поверить, что я сделала это сегодня...)"
+        her "(Я не могу поверить, что я делала это сегодня...)"
         $ h_body = "03_hp/13_hermione_main/body_119.png"                                                                                                                                                         # HERMIONE HEAD
         her "(Что если бы Гарри или Рон увидели бы меня такой?)"
         her "(Стоящей там...)"
         her "(Прижимающейся грудью к оконному стеклу...)"
         $ h_body = "03_hp/13_hermione_main/body_118.png"      
-        her2 "(Наверное, я бы просто умерла от стыда на том же месте...)"
+        her2 "(Наверное, я бы просто умерла от стыда на том самом месте...)"
         $ h_body = "03_hp/13_hermione_main/body_120.png"                                                                                                                                                         # HERMIONE HEAD
-        her2 "(Нет. Защита чести \"Гриффиндора\" мой приоритет номер один.)"
+        her2 "(Нет. Защита чести \"Гриффиндора\" - мой приоритет номер один.)"
         her2 "(Мы должны получить кубок в этом году, не важно какой ценой...)"
         $ h_body = "03_hp/13_hermione_main/body_118.png"                                                                                                                                                         # HERMIONE HEAD
         her "(........)"
@@ -1269,7 +1269,7 @@ label new_request_20: #LV.5 (Whoring = 12 - 14)
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         her "Я не... лесбиянка, сэр."
-        m "Глупая девочка... Тебе не надо быть лесбианкой, чтобы целовать девушек."
+        m "Глупая девочка... Тебе не надо быть лесбиянкой, чтобы целовать девушек."
         m "Например, я регулярно занимаюсь этим, но я ведь не лесбиянка."
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1330,7 +1330,7 @@ label new_request_20: #LV.5 (Whoring = 12 - 14)
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Ох, и все?" # :(
             m "Да, ничего необычного для тебя, ведь так?"
-            m "А вечером ты конено же получишь свои сорок пять очков."
+            m "А вечером ты, конено же, получишь свои сорок пять очков."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
@@ -1402,7 +1402,7 @@ label new_request_20: #LV.5 (Whoring = 12 - 14)
             $ h_body = "03_hp/13_hermione_main/body_64.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Я знаю парочку девенок, которые жаждут внимания и не будут возвражать против небольшого представления."
+            her "Я знаю парочку девченок, которые жаждут внимания и не будут возвражать против небольшого представления."
             m "Отлично. Тогда, встретимся после занятий."
 
     
@@ -1487,7 +1487,7 @@ label new_request_20_complete: # <==============================================
             her "Ну..."
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
             her "Мне было стыдно и неловко..."
-            m "ты это сделала, или нет?"
+            m "Ты это сделала, или нет?"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_69.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -1558,7 +1558,7 @@ label new_request_20_complete: # <==============================================
             $ h_body = "03_hp/13_hermione_main/body_17.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Ну, я поцеловала девочку. Так как вы мне и велели."
+            her "Ну, я поцеловала девочку. Так, как вы мне и велели."
             m "Ты была смущена?"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1587,8 +1587,8 @@ label new_request_20_complete: # <==============================================
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Да..."
-            her "Это был настоящий поцелуй взасос, если вы хотите знать."
-            her "Теперь я могу просто получить сво плату?"
+            her "Это был настоящий поцелуй взасос, если вам интересно."
+            her "Теперь я могу получить свою плату?"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_69.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -1668,8 +1668,8 @@ label new_request_20_complete: # <==============================================
                     show screen hermione_main                                                                                                                                                                                 #HERMIONE
                     with d3                                                                                                                                                                                                                        #HERMIONE
                     her "Какая жалость, сэр."
-                    m "Это тоно..."
-                    m "Потому что тебе ничего никто не заплатит, нахальная мелкая ведьма."
+                    m "Это точно..."
+                    m "Потому что тебе никто ничего не заплатит, нахальная мелкая ведьма."
                     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                     with d3                                                                                                                                                                                                                        #HERMIONE
                     $ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -1745,7 +1745,7 @@ label new_request_20_complete: # <==============================================
             $ h_body = "03_hp/13_hermione_main/body_16.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "И она сказала мне, что ни разу ни целовалась..."
+            her "И она сказала мне, что ни разу не целовалась..."
             her "И что она боится, что у нее, наверное, будет плохо получаться..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1766,7 +1766,7 @@ label new_request_20_complete: # <==============================================
             $ h_body = "03_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Она довольно быстро приноровилась... Думаю, что после небольшоц практики она будет по настоящему хороша в этом..."
+            her "Она довольно быстро приноровилась... Думаю, что после небольшой практики она будет по настоящему хороша в этом..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_45.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -1801,7 +1801,7 @@ label new_request_20_complete: # <==============================================
             $ h_body = "03_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "У меня даже появилось чувство, что она воспользовалась мной..."
+            her "У меня даже появилось чувство, что она просто воспользовалась мной..."
             m "Ох... Ну, в таком случае..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1831,14 +1831,14 @@ label new_request_20_complete: # <==============================================
             her "Ну... Эм..."
             her "Есть одна девушка, которая любит... девушек..."
             her "Я подумала, что она будет идеальным кандидатом для моего задания..."
-            her "и я спросила, могу ли я ее поцеловать..."
+            her "И я спросила, могу ли я ее поцеловать..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_87.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Она сказала, что для этого мы должны пойти в женскую уборную..."
-            her "Но я поцеловала ее прямо там, в корридоре..."
+            her "Но я поцеловала ее прямо там, в коридоре..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -1850,7 +1850,7 @@ label new_request_20_complete: # <==============================================
             $ h_body = "03_hp/13_hermione_main/body_118.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Вскоре это стало странным..."
+            her "Вскоре это начало казаться мне странным..."
             her "То, как она целовала меня..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1896,7 +1896,7 @@ label new_request_20_complete: # <==============================================
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Она одна из тех непопулярных ребят..."
-            her "Я знаю, что остальные ученики могут забавляться над ней время от времени..."
+            her "Я знаю, что остальные ученики могли издеваться над ней..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_129.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -1952,7 +1952,7 @@ label new_request_20_complete: # <==============================================
             $ h_body = "03_hp/13_hermione_main/body_66.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Поему парни так любят наблюдать за целующимися девушками, сэр?"
+            her "Почему парни так любят наблюдать за целующимися девушками, сэр?"
             menu:
                 m "..."
                 "\"Кто знает? Парни странные.\"":
@@ -1976,7 +1976,7 @@ label new_request_20_complete: # <==============================================
                     $ h_body = "03_hp/13_hermione_main/body_79.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
                     show screen hermione_main                                                                                                                                                                                 #HERMIONE
                     with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "Это не то что я имела в виду, сэр..."
+                    her "Это не то, что я имела в виду, сэр..."
                 "\"Ты не поймешь.\"":
                     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                     with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2054,7 +2054,7 @@ label new_request_20_complete: # <==============================================
             $ h_body = "03_hp/13_hermione_main/body_45.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Конечно, я выбрала девушку из \"Гриффиндор\"..."
+            her "Конечно, я выбрала девушку из \"Гриффиндора\"..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -2122,13 +2122,13 @@ label new_request_20_complete: # <==============================================
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "...\"факультистом\", сэр?"
             m "Ну, знаешь... Как \"сексист\" или \"расист\"..."
-            m "Просто поставь \"ист\" после чего-нибудь и это сразу жэ станет плохой штукой..."
+            m "Просто поставь \"ист\" после какого-нибудь слова и это сразу же станет плохой штукой..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Нет слова\"факультист\", сэр..."
+            her "Слова \"факультист\" не существует, сэр..."
             m "Нету? Тогда подожди..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2179,7 +2179,7 @@ label new_request_20_complete: # <==============================================
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Именно сегодня..."
-            her "если честно..."
+            her "Если честно..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_79.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -2303,7 +2303,7 @@ label new_request_20_complete: # <==============================================
             $ h_body = "03_hp/13_hermione_main/body_124.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "В любом случае, после этого мы целовались езе немного..."
+            her "В любом случае, после этого мы целовались еще некоторое время..."
             her "И перемена закончилась..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2371,44 +2371,44 @@ label new_request_20_complete: # <==============================================
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-            her "И тогда я вроде как поцеловала ее..."
+            her "И тогда я, вроде как, поцеловала ее..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_128.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "And Ginny returned my kiss with such passion..."
-            her "that we sort of ended up doing more than just kissing..."
-            g9 "And afterwards you had a pillow fight in lingerie?"
+            her "И Джинни вернула мой поцелуй с такой страстью..."
+            her "Что у нас все кончилось больше, чем просто поцелуями..."
+            g9 "После этого у вас была битва подушками в одном лишь нижнем белье?"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_190.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Err... No..."
-            m "What did you do then?"
+            her "Эмм... Нет..."
+            m "Тогда что вы сделали?"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_188.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "I am not telling you, sir." # :)
-            her "You sent me out to kiss a girl..."
-            her "And I did just that."
+            her "Я не скажу вам, сэр." # :)
+            her "Вы посылали меня поцеловать девушку..."
+            her "И я имеено это и сделала."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_122.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "The rest shall remain private."
-            m "Now you are just being cruel, you little witch."
+            her "Остальные происшетствия могут быть моими маленькими тайнами."
+            m "Это жестоко, маленькая ты ведьма."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_64.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "My points please." # :)
-            m "Fine..."
+            her "Мои очки, пожалуйста." # :)
+            m "Ладно..."
 
             
         elif one_out_of_three == 3: ### EVENT (C) Only takes place once
@@ -2624,7 +2624,7 @@ label new_request_23: #LV.6 (Whoring = 15 - 17)
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         her "........."
-        m "Давайте мы весто этого попробуем что-нибудь менее... увлекательное?"
+        m "Давайте мы вместо этого попробуем что-нибудь менее... увлекательное?"
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_120.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -2665,7 +2665,7 @@ label new_request_23: #LV.6 (Whoring = 15 - 17)
         $ h_body = "03_hp/13_hermione_main/body_79.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Я рада что вы пришли в чувство, сэр."
+        her "Я рада, что вы пришли в чувство, сэр."
         m "Ох, конечно. Спасибо за заботу."
         m "Это значит, что вы согласны?"
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -2673,7 +2673,7 @@ label new_request_23: #LV.6 (Whoring = 15 - 17)
         $ h_body = "03_hp/13_hermione_main/body_69.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Я хочу дать попробовать..."
+        her "Я хочу попробовать..."
         m "Отлично... Тогда увидимся вечером."
 
     else: # <================================================================================ NOT FIRST TIME
@@ -2739,7 +2739,7 @@ label new_request_23: #LV.6 (Whoring = 15 - 17)
             $ h_body = "03_hp/13_hermione_main/body_79.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "хм.........."
+            her "Хм.........."
             her "Пятьдесят пять очков?"
             m "Естественно."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -2885,7 +2885,7 @@ label new_request_23_complete: # <==============================================
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Ну, да... конечно же я это и имела в виду..."
-            m "Раз так, то вы заставили его конить?"
+            m "Раз так, то вы заставили его кончить?"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -2960,7 +2960,7 @@ label new_request_23_complete: # <==============================================
                     show screen hermione_main                                                                                                                                                                                 #HERMIONE
                     with d3                                                                                                                                                                                                                        #HERMIONE
                     her "Ох...?"
-                    m "Это Проблема, мисс Грейнджер?"
+                    m "Это проблема, мисс Грейнджер?"
                     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                     with d3                                                                                                                                                                                                                        #HERMIONE
                     $ h_body = "03_hp/13_hermione_main/body_118.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -3074,7 +3074,7 @@ label new_request_23_complete: # <==============================================
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "Сэр, я не проститутка!"
-            m "Чтож, в таком случаеWell, in that case..."
+            m "Что ж, в таком случае..."
             
         elif one_out_of_three == 3: ### EVENT (C) Event level: 01.
             # HERMIONE HAVE A CUM-STAIN ON HER SHOULDER.
@@ -3190,7 +3190,7 @@ label new_request_23_complete: # <==============================================
             $ h_body = "03_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "хм... Ну..."
+            her "Хм... Ну..."
             her "Я дрочила тому парню в одном из пустых классов..."
             her "И тут вошел тот противный призрак - Пивз..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -3205,7 +3205,7 @@ label new_request_23_complete: # <==============================================
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "И как только он понял, что я делала тому парню..."
-            her "Он начал орать и бранить нас..."
+            her "Он начал орать и ругаться на нас..."
             her "Так что нам пришлось быстро уйти..."
             m "Ясно..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -3272,7 +3272,7 @@ label new_request_23_complete: # <==============================================
                     $ h_body = "03_hp/13_hermione_main/body_118.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
                     show screen hermione_main                                                                                                                                                                                 #HERMIONE
                     with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "И теперь мне прийдется дрочить ему ни на что..."
+                    her "И теперь мне прийдется дрочить ему не смотря ни на что..."
                     m "Ну, я не заставлял тебя давать это обещание, ведь так?"
                     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                     with d3                                                                                                                                                                                                                        #HERMIONE
@@ -3323,7 +3323,7 @@ label new_request_23_complete: # <==============================================
             $ h_body = "03_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Хотя я все еще не уверена, как мне к этому носиться..."
+            her "Хотя я все еще не уверена, как мне к этому относиться..."
             m "Ваши личные чувства меня не волнуют, мисс Грейнджер."
             m "Просто расскажите мне, как все прошло."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -3345,7 +3345,7 @@ label new_request_23_complete: # <==============================================
             $ h_body = "03_hp/13_hermione_main/body_118.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Бесплатно дрочила парням в школьном туалете..."
+            her "Бесплатно дрочу парням в школьном туалете..."
             m "Стоп. Что ты имеешь в виду под \"бесплатно\"?"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -3372,7 +3372,7 @@ label new_request_23_complete: # <==============================================
             $ h_body = "03_hp/13_hermione_main/body_190.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "В думаете я шлюха, сэр?"
+            her "Вы думаете, что я шлюха, сэр?"
             menu:
                 "\"Что? Конечно нет!\"":
                     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -3406,7 +3406,7 @@ label new_request_23_complete: # <==============================================
                     $ h_body = "03_hp/13_hermione_main/body_118.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
                     show screen hermione_main                                                                                                                                                                                 #HERMIONE
                     with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "А я нет..."
+                    her "А я - нет..."
                     her "......"
                     her "Я не шлюха..."
                 "\"Шлюха? Нет... Еще нет.\"":
@@ -3476,7 +3476,7 @@ label new_request_23_complete: # <==============================================
             $ h_body = "03_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Сэр, могу я пожалуйста просто получить плату, пожалуйста?"
+            her "Сэр, могу я просто получить плату, пожалуйста?"
             m "Получить плату? Но ведь вы мне еще ничего не рассказали."
             her "Разве нет?"
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -3524,7 +3524,7 @@ label new_request_23_complete: # <==============================================
             play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
             her "Ну, сегодня был довольно занятой день..."
             her "Я была завалена учебой..."
-            her "Так что у меня не было времени тщательно это продумать, как я делала раньше..."
+            her "Так что у меня не было времени тщательно это спланировать, как я делала раньше..."
             her "Я просто подошла к первому парню, которого увидела..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
@@ -3532,8 +3532,8 @@ label new_request_23_complete: # <==============================================
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             her "И спросила, хочет ли он, чтобы я сняла его напряжение."
-            her "Спустя пару минут я уже дроила его твердый член в туалетной кабинке..."
-            m "Какая еффективность..."
+            her "Спустя пару минут я уже дрочила его твердый член в туалетной кабинке..."
+            m "Какая эффективность..."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_79.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -3644,7 +3644,7 @@ label new_request_23_complete: # <==============================================
                     her "Профессор, вы только что сказали \"Все идет точно по плану\"?"
                     m "Я сказал?"
                     m "Ах, да, конечно."
-                    m "тот самый план, где \"Гриффиндор\" точно получит в этом году кубок школы."
+                    m "Тот самый план, где \"Гриффиндор\" точно получит в этом году кубок школы."
                     m "И благодаря твоим стараниям..."
                     m "Все идет согласно пик-... В смысле, плана..."
                     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -3692,7 +3692,7 @@ label new_request_23_complete: # <==============================================
                 $ h_body = "03_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
                 show screen hermione_main                                                                                                                                                                                 #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
-                her "Оень плохую и дурацкую вещь..."
+                her "Очень плохую и дурацкую вещь..."
                 her "..."
                 m "...................."
                 her "......................"
@@ -3722,7 +3722,7 @@ label new_request_23_complete: # <==============================================
                 show screen hermione_main                                                                                                                                                                                 #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
                 her "Скорее всего она бы меня убила..."
-                m "Подрочила, хах? Ты уверена, что это все что ты делала?"
+                m "Подрочила, хах? Ты уверена, что это все что ты сделала?"
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_21.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -3774,10 +3774,10 @@ label new_request_23_complete: # <==============================================
                 $ h_body = "03_hp/13_hermione_main/body_143.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
                 show screen hermione_main                                                                                                                                                                                 #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
-                her "А если не убьет, то скорее всего, я сама умру от стыда."
+                her "А если не убьет, то, скорее всего, я сама умру от стыда."
                 her "Нет, нет, нет... Как я взгляну ей в глаза...?"
                 m "Успокойся, девочка."
-                m "Уверяю тебя это не та вещь, о какой парень с радостью растреплет своей сестре."
+                m "Уверяю тебя это не та вещь, о какой парень с радостью растрепет своей сестре."
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_140.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -3796,14 +3796,14 @@ label new_request_23_complete: # <==============================================
                 $ h_body = "03_hp/13_hermione_main/body_19.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
                 show screen hermione_main                                                                                                                                                                                 #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
-                her "Пожалуй вы правы, сэр..."
-                her "И я заставила Рона дать мне слово, то он сохранит все это в секрете..."
+                her "Пожалуй, вы правы, сэр..."
+                her "И я заставила Рона дать мне слово, что он сохранит все это в секрете..."
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_10.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
                 show screen hermione_main                                                                                                                                                                                 #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
-                her "Так то я должна просто поверить, что он сдержит свое слово..."
+                her "Так что я должна просто поверить, что он сдержит свое слово..."
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
                 $ h_body = "03_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -3882,13 +3882,13 @@ label new_request_23_complete: # <==============================================
             $ h_body = "03_hp/13_hermione_main/body_128.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Если быть совершенно откровенной с вами... Да.To be completely honest with you, sir... I did."
+            her "Если быть совершенно откровенной с вами... Да."
             hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
             $ h_body = "03_hp/13_hermione_main/body_111.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             show screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Было так возбуждающе заниматься чем-то подобным перед носом у всех..."
+            her "Было так возбуждающе заниматься чем-то подобным у всех под носом..."
             her "Закаляет характер!"
             m "Эм... конечно, OK."
          

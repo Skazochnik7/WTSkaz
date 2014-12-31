@@ -43,7 +43,7 @@ if cum_on_the_floor:
     ">Вы кончили на пол."
 if cum_on_panties:
     $ have_cum_soaced_panties = True #TRUE when you have the panties in your possession (before you return them to Hermione).
-    ">Вы кончили на трусики Гермионы, а затем протерли пол ими..."
+    ">Вы кончили на трусики Гермионы, а затем протерли ими пол..."
     ">Вы получили предмет: \"Трусики пропитанные спермой\"."
  
 hide screen blkfade

@@ -62,7 +62,7 @@ label your_whore:
     if public_whore_ending: #Students talking. Ending "Public whore".
         mal "Вы слышали что говорят о Гермионе Грейнджер"
         mal2 "Что она стала первоклассной сосалкой?"
-        mal "Ась? Не, это не слухи, это факт."
+        mal "Хах? Не, это не слухи, это факт."
         mal "Говорят, что она за это получала оплату очками факультета."
         mal2 "Хм...я в это не верю, я думаю что она просто потаскуха."
         fem "Кто потаскуха?"
@@ -108,8 +108,8 @@ label your_whore:
         mal "(Это лишь слухи!)"
         fem "(Я думаю, что это больше чем просто...)"
         mal "(Да заткнись уже. Ты просто ревнуешь!)"
-        mal2 "(Да! Ты просто хочешь быть на месте Гермионы!Yeah, you wish you had Hermione's courage!)"
-        mal "(Верно! Она верна \"Гриффиндору\" как никто другой! Exactly!)"
+        mal2 "(Да! Ты просто хочешь быть на месте Гермионы! Да, ты просто мечаешь стать такой же как она!)"
+        mal "(Верно! Она верна \"Гриффиндору\" как никто другой! Точно!)"
         mal "(И даже если это правда, что с того?)"
         mal "(Благодаря ей, наш факультет получит кубок в этом году!)"
         mal2 "(Именно! А что сделала ты для нашего факультета?)"
@@ -151,7 +151,7 @@ label your_whore:
     $ no_upper = True #Skirt not displayed.
     her "О, привет!"
     hide screen h_head2     
-    mal "Ты выглядишь...просто превосходно сегодня вечером, Гермиона. You look... so beautiful tonight, Hermione."
+    mal "Ты выглядишь...просто превосходно сегодня вечером, Гермиона. Ты выглядишь... просто безупречно, Гермиона."
     show screen h_head2                                                             # HERMIONE
     $ h_body = "03_hp/13_hermione_main/body_160.png" # HERMIONE
     her "Спасибо, ты тоже мило выглядишь."
@@ -213,7 +213,7 @@ label your_whore:
     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
     her "Да, сэр"
     hide screen h_head2
-    m "Хорошо, вот одна штука...Well, here is the thing then..."
+    m "Хорошо, вот одна штука...Ну, это..."
     m "Кое-что, что ты должна зна--"
     show screen h_head2                                                             # HERMIONE
     $ h_body = "03_hp/13_hermione_main/body_166.png" # HERMIONE
@@ -222,7 +222,7 @@ label your_whore:
     m "Что?"
     show screen h_head2                                                             # HERMIONE
     $ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
-    her "Позвольте толькко сделать это быстро, хорошо?"
+    her "Позвольте только сделать это быстро, хорошо?"
     hide screen h_head2
     g4 "Позволить сделать что?"
     show screen h_head2                                                             # HERMIONE
@@ -237,12 +237,12 @@ label your_whore:
     m "Слушай меня, девочка! Я не тот, кем ты меня считае--"
     show screen h_head2                                                             # HERMIONE
     $ h_body = "03_hp/13_hermione_main/body_167.png" # HERMIONE
-    her "Пожалуйста, сэр, позвольте мне немного приласкать вашего петушка."
+    her "Пожалуйста, сэр, позвольте мне немного приласкать ваш член."
     hide screen h_head2
     g4 "Гх--!!!"
     show screen h_head2                                                             # HERMIONE
     $ h_body = "03_hp/13_hermione_main/body_167.png" # HERMIONE
-    her "Совсем чуть-чуть. Пожалуйста, я умоля вас..."
+    her "Совсем чуть-чуть. Пожалуйста, я умоляю вас..."
     hide screen h_head2
     g4 "Черт, проклятая ведьма!"
     g4 "Прекрати! Мне действительно нужно поговорить с тобой!"
@@ -252,7 +252,7 @@ label your_whore:
     show screen h_head2                                                             # HERMIONE
     $ h_body = "03_hp/13_hermione_main/body_167.png" # HERMIONE
     her "Засунье ваш член мне в рот и говорите со мной."
-    her "Поговорите со мнйо о грязных делишках."
+    her "Поговорите со мной о грязных делишках."
     hide screen h_head2
     g4 "*рычит!*"
     m "*Вздох....*"
@@ -284,7 +284,7 @@ label your_whore:
     show screen end_u_2                                             #<---- SCREEN
     with d7                                                                        #<---- SCREEN
     # LOOKING BACK
-    her "Ась?.........."
+    her "Хах?.........."
     her "...................."
     $ end_u_1_pic =  "03_hp/17_ending/03.png" #<---- SCREEN
     show screen end_u_1                                             #<---- SCREEN
@@ -301,7 +301,7 @@ label your_whore:
     m "Я скажу тебе, если кто-то будет идти..."
     her "Ох... не в этом дело, сэр..."
     m "Хм?"
-    her "Скоро должы сделать объявление..."
+    her "Скоро должны сделать объявление..."
     $ end_u_1_pic =  "03_hp/17_ending/03.png" #<---- SCREEN
     show screen end_u_1                                             #<---- SCREEN
     with d7
@@ -364,7 +364,7 @@ label your_whore:
     show screen bld1
     with d5
     sna "*Кхм!*"
-    sna "Внимание, лечинки!" 
+    sna "Внимание, личинки!" 
     m "(Снейп?)"
     sna "Я сказал, успокоиться всем!"
     sna "Время объявить, кто в этом году будет королевой в ежегодном \"Осеннем бале Хогвартса\"."
@@ -390,7 +390,7 @@ label your_whore:
     her "Но... Но вы подарили мне это платье, сэр. И..."
     her ".........."
     her "Нет, я просто не могу оставить вас сейчас, сэр."
-    m "Отлично! Тогда закончи начитое."
+    m "Отлично! Тогда закончи начатое."
     m "Если ты немного постараешься, мы закончим очень быстро."
     m "Я верю в тебя."
     her "Хм..."
@@ -421,8 +421,8 @@ label your_whore:
         $ end_u_1_pic =  "03_hp/17_ending/91.png" #<---- SCREEN
         show screen end_u_1                                           #<---- SCREEN
         with d7                                                                       #<---- SCREEN
-        her "Сэр, вы думаете это правильно, угощать ЭТИМ свою студентку? Sir, is this really the proper way to treat one of your students?"
-        m "Huh?"
+        her "Сэр, вы думаете это правильно, угощать ЭТИМ свою студентку?"
+        m "А?"
         $ end_u_2_pic =  "03_hp/17_ending/08.png" #<---- SCREEN
         show screen end_u_2                                           #<---- SCREEN
         with d7                                                                       #<---- SCREEN
@@ -439,7 +439,7 @@ label your_whore:
         her "Вы должны были обращаться со мной \"хорошо\", сэр..."
         her "И что же вы сейчас делаете?"
         m "*Кхм!* Позволь мне повториться:..."
-        m "{size=+7}\"Хах?\"{/size}"
+        m "{size=+7}\"А?\"{/size}"
         $ end_u_1_pic =  "03_hp/17_ending/94.png" #<---- SCREEN
         show screen end_u_1                                           #<---- SCREEN
         with d7                                                                       #<---- SCREEN
@@ -469,7 +469,7 @@ label your_whore:
         with d7                                                                       #<---- SCREEN
         her "Вы воспользовались мной, профессор!"
         her "Обманом заставили сосать ваш большой член!"
-        g4 "О...Да! Отлично! Oh... Yes! You're good!"
+        g4 "О...Да! Отлично! Ох... Да! Ты великолепна!"
         $ end_u_1_pic =  "03_hp/17_ending/96.png" #<---- SCREEN
         show screen end_u_1                                           #<---- SCREEN
         with d7                                                                       #<---- SCREEN
@@ -491,7 +491,7 @@ label your_whore:
         $ end_u_1_pic =  "03_hp/17_ending/98.png" #<---- SCREEN
         show screen end_u_1                                           #<---- SCREEN
         with d7                                                                       #<---- SCREEN
-        her "Я стою на коленях и отсасываю совему директору!"
+        her "Я стою на коленях и отсасываю своему директору!"
         $ end_u_2_pic =  "03_hp/17_ending/97.png" #<---- SCREEN
         show screen end_u_2                                           #<---- SCREEN
         with d7                                                                       #<---- SCREEN
@@ -499,7 +499,7 @@ label your_whore:
         m "О, да! Ты маленькая сучка!"
         her "*Чавк!* *Чавк!* *Чавк!*"
         her "*Чавк!* *Чавк!* *Глоть!*"
-        g4 "Ты и правда умеешь говрить похотливые вещи...You are really good at this dirty talk stuff..."
+        g4 "Ты и правда умеешь говорить похотливые вещи..."
         g9 "Ты должна попробовать писать детские книжки, или что-то типа..."
         $ end_u_1_pic =  "03_hp/17_ending/07.png" #<---- SCREEN
         show screen end_u_1                                           #<---- SCREEN
@@ -522,8 +522,8 @@ label your_whore:
         show screen bld1
         with d5
         sna "Мисс Грейнджер?"
-        sna "{size=-4}(Where is that girl?){/size}"
-        ">A murmur is running though the crowd of students..."
+        sna "{size=-4}(Где эта девченка?){/size}"
+        ">Ропот расходится по толпе студентов..."
         hide screen bld1
         with d5
         
@@ -563,7 +563,7 @@ label your_whore:
         show screen end_u_1                                           #<---- SCREEN
         with d7                                                                       #<---- SCREEN
         her "Я бы хотела в качестве награды вашу сперму. Что бы вы спустили все до последней капли в мой ротик"
-        g4 "Grh!"
+        g4 "Агх!"
         $ end_u_2_pic =  "03_hp/17_ending/97.png" #<---- SCREEN
         show screen end_u_2                                           #<---- SCREEN
         with d7                                                                       #<---- SCREEN
@@ -590,9 +590,9 @@ label your_whore:
         show screen ctc
         pause
         hide screen ctc
-        her "{size=+5}Cum for me. sir! Cum for me!{/size}"
+        her "{size=+5}Кончите для меня, сэр! Кончите для меня!{/size}"
         with hpunch
-        g4 "{size=+5}What the hell is this?!{/size}"
+        g4 "{size=+5}Что это за чертовщина?!{/size}"
         $ end_u_1_pic =  "03_hp/17_ending/103.png" #<---- SCREEN
         show screen end_u_1                                           #<---- SCREEN
         with d7                                                                       #<---- SCREEN
@@ -605,7 +605,7 @@ label your_whore:
         her "{size=+5}Именно, я голодная до спермы шлюха, сэр!{/size}"
         with hpunch
         g4 "{size=+7}Аргх!!!{/size}"
-        g4 "{size=+7}Возьми это, сейчас!!!{/size}"
+        g4 "{size=+7}Получай!!!{/size}"
         show screen white 
         pause .1
         hide screen white
@@ -646,7 +646,7 @@ label your_whore:
         
         # CUMMING
         pause.5
-        m "Что на земле только что произошло, девочка?"
+        m "Что это только что было, девочка?"
         $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
         $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
         show screen h_head2                                                             # HERMIONE
@@ -658,7 +658,7 @@ label your_whore:
         hide screen blkfade
         with d7
         m "Мне действительно нужно показывать на это?"
-        g4 "{size=+5}Do I really?{/size}"
+        g4 "{size=+5}Прям вот так?{/size}"
         show screen h_head2                                                             # HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
         her "Oх... Вы имеете ввиду волосы?"
@@ -688,13 +688,13 @@ label your_whore:
         stop music fadeout 1.0
         sna "Мисс Грейнджер..................?"
         sna "Вы собираетесь пропустить свою коронацию, девченка?"
-        sna "(Не то, чо бы для меня это было важно...)"
+        sna "(Не то, что бы для меня это было важно...)"
         hide screen bld1
         with d5
         
         show screen h_head2                                                             # HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_161.png" # HERMIONE
-        her "The coronation! I must go now!"
+        her "Коронация! Мне нужно идти!"
         hide screen h_head2
         $ renpy.play('sounds/run_03.mp3')    #<--------------------Sound of running off.
         pause 3
@@ -703,7 +703,7 @@ label your_whore:
         m "................"
         m "..."
         with hpunch
-        g4 "{size=+9}WHAT THE HELL...?!!{/size}"
+        g4 "{size=+9}Что за чертовщина...?!!{/size}"
         show screen ctc
         pause
         hide screen ctc
@@ -736,7 +736,7 @@ label your_whore:
         m "Да! Отлично, шлюха!"
         her "{size=+5}*Глотает--Глотает--Глотает!!!*{/size}"
         m "Да. Теперь поработай своим язычком."
-        m "Полижи мои шарики. сучка. Ну!"
+        m "Полижи мои шарики сучка. Ну!"
         $ end_u_2_pic =  "03_hp/17_ending/10.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
@@ -786,7 +786,7 @@ label your_whore:
         hide screen ctc
         her "!!!!!!!!!!!"
         her "......................................?"
-        m "Что-то случилось? Почему остановилась, сосуд для спермы?!"
+        m "Что-то случилось? Почему остановилась, спермоглотка?!"
         m "Продолжай сосать мои яйца!"
         $ end_u_1_pic =  "03_hp/17_ending/15.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
@@ -843,7 +843,7 @@ label your_whore:
         show screen bld1
         with d5
         sna "Мисс Грейнджер?"
-        sna "{size=-4}(Where is that girl?){/size}"
+        sna "{size=-4}(Где эта девченка?){/size}"
         ">Среди студентов раздается ропот..."
         hide screen bld1
         with d5
@@ -911,7 +911,7 @@ label your_whore:
         show screen end_u_1                                         #<---- SCREEN
         with d7                                                                        #<---- SCREEN
         her "{size=+9}!!!!!!!!!!!!!!!!........................{/size}"
-        m "Сотри, сука!"
+        m "Смотри, сука!"
         her "{size=+3}........................{/size}"
         g4 "Я сказал, смотри на меня!"
         $ end_u_2_pic =  "03_hp/17_ending/28.png" #<---- SCREEN
@@ -932,7 +932,7 @@ label your_whore:
         show screen end_u_2                                        #<---- SCREEN
         with d7                                                                        #<---- SCREEN
         her "...................................................................................."
-        g4 "Вот это неплохо. Неплохой взгялд."
+        g4 "Вот это неплохо. Неплохой взгляд."
         $ end_u_1_pic =  "03_hp/17_ending/31.png" #<---- SCREEN
         show screen end_u_1                                        #<---- SCREEN
         with d7                                                                        #<---- SCREEN
@@ -940,7 +940,7 @@ label your_whore:
         with hpunch
         g4 "Гхр!"
         g4 "Надвигается!"
-        g4 "Я знаю, ты пытаешься взхдохнуть..."
+        g4 "Я знаю, ты пытаешься вздохнуть..."
         $ end_u_2_pic =  "03_hp/17_ending/32.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
@@ -965,14 +965,14 @@ label your_whore:
         show screen end_u_1                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
         her "{size=-4}*Глоть!* *Глоть!* *Глоть...*{/size}"
-        m "Oh, yes..."
+        m "О, да..."
         $ end_u_2_pic =  "03_hp/17_ending/36.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
         her "...................................................."
         m "Ну...я думаю, что это всё--"
         with hpunch
-        g4 "{size=+5}Huh?!!{/size}"
+        g4 "{size=+5}А?!!{/size}"
         show screen blkfade
         with d3
         stop music fadeout 1.0
@@ -1047,7 +1047,7 @@ label your_whore:
         $ end_u_1_pic =  "03_hp/17_ending/110.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
-        her "Я хотел бы посвятить свое выступление каждой девушки в этой комнате ..."
+        her "Я хотела бы посвятить свое выступление каждой девушке в этой комнате ..."
         
         show screen blktone
         show screen bld1
@@ -1060,7 +1060,7 @@ label your_whore:
         $ end_u_2_pic =  "03_hp/17_ending/111.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
-        her "Я не собираюсь гвоорить громкие слова о том, что я не заслуживаю такой чести..."
+        her "Я не собираюсь говорить громкие слова о том, что я не заслуживаю такой чести..."
         her "Потому что я думаю, что заслуживаю..."
         $ end_u_1_pic =  "03_hp/17_ending/112.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
@@ -1086,16 +1086,16 @@ label your_whore:
         show screen bld1
         with d3
         g4 "Разве она не чувствует этого?"
-        g4 "Лучше бы ей закрылиться побыстрее."
+        g4 "Лучше бы ей закругляться побыстрее."
         hide screen blktone
         hide screen bld1
         with d3
         
-        her "Хогвартс стала поистине вторым домом для всех нас..."
+        her "Хогвартс стал поистине вторым домом для всех нас..."
         $ end_u_1_pic =  "03_hp/17_ending/114.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
-        her "Я знаю, что я говорю о каждого студента в этом зале, когда я говорю так."
+        her "Я уверена, что говорю за каждого студента в этом зале."
         
         show screen blktone
         show screen bld1
@@ -1113,7 +1113,7 @@ label your_whore:
         fem "(Должно быть какой-то парень засунул член в её прическу, и спустил всё туда.)"
         mal "(Хм... Трахать волосы? Это сейчас модно?)"
         mal2 "(Вы, девченки, делаете абсолютно сумасшедшие вещи!)"
-        fem "(*Хмпф!* Не все мы шлюхи, вы должны знать.)"
+        fem "(*Пф!* Не все мы шлюхи, вы должны знать.)"
         mal "(К сожалению, нет...)"
         fem "(\"К сожалению\"?!)"
         fem "(Пф! Вы, мужчины, абсолютно невежественны.)"
@@ -1138,7 +1138,7 @@ label your_whore:
         show screen blktone
         show screen bld1
         with d3
-        m "Ась?"
+        m "Хах?"
         hide screen blktone
         hide screen bld1
         with d3
@@ -1276,7 +1276,7 @@ label your_whore:
         $ end_u_2_pic =  "03_hp/17_ending/121.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
-        her "{size=-3}Ah...{/size}{image=textheart.png}"
+        her "{size=-3}Ах...{/size}{image=textheart.png}"
         her "...............................А-ха...{image=textheart.png}{image=textheart.png}{image=textheart.png}"
         show screen ctc
         pause
@@ -1348,7 +1348,7 @@ label your_whore:
         with d7
         cr1 "Шлюха!"
         cr2 "Гриффиндорская сосалка!"
-        cr1 "Я люблю ебя, Гермиона!"
+        cr1 "Я люблю тебя, Гермиона!"
         cr2 "Гриффиндор рулит!!!"
         
         $ s_sprite = "03_hp/10_snape_main/snape_18.png"
@@ -1492,7 +1492,7 @@ label your_whore:
         # SLAP!
         
         her "Ах! Профссор!"
-        g4 "Я скахал, тихо!"
+        g4 "Я сказал, тихо!"
         
         $ renpy.play('sounds/slap.mp3')
         show screen white 
@@ -1507,10 +1507,10 @@ label your_whore:
         $ end_u_2_pic =  "03_hp/17_ending/124.png" #<---- SCREEN
         show screen end_u_2                                               #<---- SCREEN
         with d5                                                                         #<---- SCREEN
-        her "Да! Жесче, трахайте меня жесче!"
+        her "Да! Жестче, трахайте меня жестче!"
         m "Ты специально стонешь погромче, маленькая шлюшка?"
         g4 "Хочешь быть пойманной?"
-        g4 "На профессорсокм члене?"
+        g4 "На профессорском члене?"
         $ end_u_1_pic =  "03_hp/17_ending/125.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with d5                                                                        #<---- SCREEN
@@ -1618,7 +1618,7 @@ label your_whore:
         sly1 "Мы уже уходим..."
         m "Что? Не тупи, парень."
         m "Присоединяйтесь!"
-        sly1 "Среьезно?"
+        sly1 "Серьезно?"
         $ end_u_2_pic =  "03_hp/17_ending/128.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d5                                                                        #<---- SCREEN
@@ -1694,7 +1694,7 @@ label your_whore:
         with d5                                                                        #<---- SCREEN
 
         her "Сэр! Прекратите трахать меня!"
-        m "Ась? Разве тебе не нравится?"
+        m "Хах? Разве тебе не нравится?"
         with hpunch
         pause.3
         her "Ах-аха! Нет, прекратите, профессор!"
@@ -1732,7 +1732,7 @@ label your_whore:
         her "Ах... Аха..."
         sly1 "Да... Я так давно ждал этого..."
         her "Профессор!"
-        m "Ась? О, не думай обр мне, девочка."
+        m "Хах? О, не думай обо мне, девочка."
         m "Представь, что меня тут нет..."
         
         # SPIT!
@@ -1784,7 +1784,7 @@ label your_whore:
         with d5                                                                        #<---- SCREEN
         her "Это было случайно!"
         sly1 "Правда? Давай посмотрим!"
-        her "Ась?"
+        her "Хах?"
         
         # SPIT!
         
@@ -1933,7 +1933,7 @@ label your_whore:
         sly2 "..................."
         her "*Чавк-Чавк-Чавк-Чавк-Чавк!!*"
         with hpunch
-        sly2 "{size=+7}I'm cummiiiiiiiiing!{/size}"
+        sly2 "{size=+7}Кончаааааююю!{/size}"
         
         show screen white 
         pause.1
@@ -1972,7 +1972,7 @@ label your_whore:
         $ end_u_1_pic =  "03_hp/17_ending/153.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with d5                                                                        #<---- SCREEN
-        her "Иди на хер!"
+        her "Иди нахер!"
         
         # Spit!
         
@@ -2006,7 +2006,7 @@ label your_whore:
         $ end_u_2_pic =  "03_hp/17_ending/154.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d5                                                                        #<---- SCREEN
-        her "Вы слабаки...\"slythe-"
+        her "Вы слабаки...\"слизери -"
         $ end_u_1_pic =  "03_hp/17_ending/155.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with d5                                                                   #<---- SCREEN
@@ -2035,8 +2035,8 @@ label your_whore:
         sly1 "И тебе тоже нравится каждое мгновения, пока я делаю это, верно?"
         sly1 "Верно, грязнокровка?"
         her "*Чавк!* *Чавк!* *Глоть!*"
-        m "Агась... Каждый раз когда ты называл её..."
-        m "Ась?"
+        m "Ага... Каждый раз когда ты называл её..."
+        m "Хах?"
         m "Что это? Её ноги трясутся!"
         m "Ты уже кончила, сучка?"
         $ end_u_1_pic =  "03_hp/17_ending/157.png" #<---- SCREEN
@@ -2101,7 +2101,7 @@ label your_whore:
         with d7                                                                        #<---- SCREEN
         her "Г-ха..."
         sly2 "Вычисти мой яйца, девка..."
-        m "Отлично, парни! Давайте как закончим эту вечернку эпическим концом."
+        m "Отлично, парни! Давайте-ка закончим эту вечеринку эпическим концом."
         her "{size=+7}Я кончаю!{/size}"
         m "Да, кончай, шлюшка."
         m "Давайте парни, обкончайте её, залейте её целиком, хорошо?"
@@ -2254,9 +2254,9 @@ label your_whore:
         
         # Character sprites.
         
-        m "Что ж, спаисбо за ваше участие, парни."
+        m "Что ж, спасибо за ваше участие, парни."
         sly1 "Конечно, сэр, проффесор Дамблодор."
-        sly2 "Рады были помоч, сэр."
+        sly2 "Рады были помочь, сэр."
         sly1 "Спасибо вам, профессор."
         sly2 "Ну что, вернемся на бал?"
         sly1 "Да, пошли!"
@@ -2334,11 +2334,11 @@ label your_whore:
         $ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
         her "Нет! Я королева бала! Я должна...."
         hide screen h_head2
-        m "О.К., как хочешь."
+        m "Ладно, как хочешь."
         m "Я ухожу..."
         show screen h_head2                                                             # HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
-        her "Досвиданья... сэр..."
+        her "До свидания... сэр..."
         hide screen h_head2
         m "............."
         m "Прощай, девочка."
@@ -2371,60 +2371,9 @@ label your_whore:
         show screen blkfade 
         with d7
         pause.5
-
         
         
-        
-        
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-             
-             
-             
-             
-             
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
+                
         
 
     else: # Ending "Your whore".
@@ -2475,7 +2424,7 @@ label your_whore:
         with d5
         m "Это...?"
         m "остатки моей спермы у её рта?"
-        g4 "Какого черта она тварит?"
+        g4 "Какого черта она творит?"
         hide screen bld1
         with d5
         
@@ -2511,7 +2460,7 @@ label your_whore:
         $ end_u_1_pic =  "03_hp/17_ending/41.png" #<---- SCREEN
         show screen end_u_1                                            #<---- SCREEN
         with d3                                                                        #<---- SCREEN
-        $ renpy.play('sounds/Глоть.mp3') #Sound of Глотьing down a liqui
+        $ renpy.play('sounds/gulp.mp3') #Sound of Глотьing down a liqui
         her "{size=+5}*Глоть!!!*{/size}"
         $ end_u_2_pic =  "03_hp/17_ending/42.png" #<---- SCREEN
         show screen end_u_2                                            #<---- SCREEN
@@ -2538,7 +2487,7 @@ label your_whore:
         ">Громкие крики и свист..."
         hide screen bld1
         with d3
-        her "И конечно же учитилей..."
+        her "И конечно же учителей..."
         $ end_u_2_pic =  "03_hp/17_ending/44.png" #<---- SCREEN
         show screen end_u_2                                            #<---- SCREEN
         with d3                                                                        #<---- SCREEN
@@ -2612,11 +2561,11 @@ label your_whore:
         $ end_u_2_pic =  "03_hp/17_ending/43.png" #<---- SCREEN
         show screen end_u_2                                            #<---- SCREEN
         with d3                                                                        #<---- SCREEN
-        her "{size=+5}Go gryffindor!{/size}"
+        her "{size=+5}Вперед Гриффиндор!{/size}"
         show screen bld1
         with d5
         $ renpy.play('sounds/applause01.ogg') # APPLAUSE
-        ">Толпа взрывается громки апплодисментами и свистом..."
+        ">Толпа взрывается громкими апплодисментами и свистом..."
         hide screen bld1
         with d5
         show screen ctc
@@ -2627,7 +2576,7 @@ label your_whore:
         pause.7
         stop music fadeout 1.0
         m "Отличная речь..."
-        m "Очень возбуждающая...Кхс, я имел ввиду вдохновляющая."
+        m "Очень возбуждающая...Кхм, я имел ввиду вдохновляющая."
         $ tiara = True #Tiara is displayed.
         show screen h_head2                                                             # HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
@@ -2684,7 +2633,7 @@ label your_whore:
         $ h_body = "03_hp/13_hermione_main/body_164.png" # HERMIONE
         her "Конечно, сэр..."
         hide screen h_head2
-        m "Ась?"
+        m "Хах?"
         show screen h_head2                                                             # HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_167.png" # HERMIONE
         her "Просто постарайтесь не запачкать мне платье, хорошо?"
@@ -2735,7 +2684,7 @@ label your_whore:
         her "Это случилось чуть раньше..."
         m "Чуть раньше?"
         m "Имеешь ввиду, когда ты задыхалась от моего члена в своей глотке?"
-        her "Ah...{image=textheart.png} Yes, sir..."
+        her "Ах...{image=textheart.png} Yes, sir..."
         m "Это может заставить тебя кончить?"
         $ end_u_2_pic =  "03_hp/17_ending/48.png" #<---- SCREEN
         show screen end_u_2                                            #<---- SCREEN
@@ -2802,7 +2751,7 @@ label your_whore:
         show screen end_u_2                                            #<---- SCREEN
         with d5                                                                        #<---- SCREEN
         her ".............."
-        g4 "Отвечай мен, сучка!"
+        g4 "Отвечай мне, сучка!"
         $ renpy.play('sounds/slap.mp3')
         show screen white 
         pause.3
@@ -2893,7 +2842,7 @@ label your_whore:
         show screen blktone
         with d3
         sna "Внимание, лечинки!"
-        sna "Начинается вальст\"Осеннего Бала Хогвартса\"..."
+        sna "Начинается вальс \"Осеннего Бала Хогвартса\"..."
         hide screen blktone 
         with d3
         
@@ -2921,7 +2870,7 @@ label your_whore:
         her "Сэр?"
         m "Вместо того, что бы идти..."
         m "Я трахну тебя в задницу."
-        m "Ась? Что-то не так?"
+        m "Хах? Что-то не так?"
         her "Что? Н-но..."
         m "Я думаю, что это отличный план!"
         her "Сэр, нет! Я--"
@@ -2970,7 +2919,7 @@ label your_whore:
         show screen end_u_1                                          #<---- SCREEN
         with d5                                                                        #<---- SCREEN
         her "{size=+5}Ваш член просто огромен!{/size}"
-        g4 "Нас поймают из-за тебя, тупаясучка!"
+        g4 "Нас поймают из-за тебя, тупая сучка!"
         m "Может быть это поможет тебе заткнуться..." 
         
         # Fishhooking.
@@ -2987,7 +2936,7 @@ label your_whore:
         $ end_u_2_pic =  "03_hp/17_ending/67.png" #<---- SCREEN
         show screen end_u_2                                          #<---- SCREEN
         with d5                                                                        #<---- SCREEN
-        her "Ах... блах... ah..."
+        her "Ах... блах... ах..."
         g4 "Твои слюни стекают по моей руке, грязная шлюшка!"
         her "Ах... Блах-блах... ах... бла-aх..."
         
@@ -3076,7 +3025,7 @@ label your_whore:
         $ end_u_1_pic =  "03_hp/17_ending/75.png" #<---- SCREEN
         show screen end_u_1                                            #<---- SCREEN
         with d5                                                                        #<---- SCREEN
-        her "Ась?"
+        her "Хах?"
         # POP
         
         show screen blkfade
@@ -3149,7 +3098,7 @@ label your_whore:
 
                     
         menu:
-            "-Кончить в киску Гермионы-":
+            "- Кончить в киску Гермионы -":
                 $ d_flag_01 = True #Came into pussy
                 g4 "Как думаешь, твоя киска готова к этому, шлюшка!?"
                 her "Сэр?!"
@@ -3191,11 +3140,11 @@ label your_whore:
                 $ end_u_1_pic =  "03_hp/17_ending/87.png" #<---- SCREEN
                 show screen end_u_1                                             #<---- SCREEN
                 with d5                                                                        #<---- SCREEN
-                her "{size=+5}Извините! Ваша шлюха просит прощенья!!!!{/size}"
+                her "{size=+5}Извините! Ваша шлюха просит прощения!!!!{/size}"
                 g4 "Да! Так-то лучше!"
                 g4 "Ох......."
         
-            "-Кончить в задницу Гермионы-":
+            "- Кончить в задницу Гермионы -":
                 $ d_flag_02 = True #Came into asshole.
                 g4 "Твоя задница должна быть уже готова к этом, шлюха!"
                 her "Что?!"
@@ -3254,7 +3203,7 @@ label your_whore:
                 $ end_u_2_pic =  "03_hp/17_ending/85.png" #<---- SCREEN
                 show screen end_u_2                                             #<---- SCREEN
                 with d5                                                                        #<---- SCREEN
-                her "{size=+5}Извините! Ваша шлюха просит прощенья!!!!{/size}"
+                her "{size=+5}Извините! Ваша шлюха просит прощения!!!!{/size}"
                 g4 "Да! Так-то лучше!"
         
                 
@@ -3311,7 +3260,7 @@ label your_whore:
         g4 "Иди девочка! Мне кажется ты опаздывала на какой-то танец!"
         show screen h_head2                                                               # HERMIONE
         $ h_body = "03_hp/13_hermione_main/body_180.png" # HERMIONE
-        her "ТАНЦЕ!"
+        her "ТАНЕЦ!"
         her "Извините, я должна бежать!"
         her "Увидимся позже, сэр!"
         hide screen h_head2     
@@ -3480,13 +3429,13 @@ label your_whore:
     
     show screen credits_chibi
     centered "{cps=20}{size=+5}{color=#ea91b0}-Тренер Ведьмы-{/color}{/size}\n\n\
-    {color=#e5e297}-\{Written and directed by\}-{/color}\n{size=+5}{color=#cbcbcb}AKABUR{/color}{/size}\n\n\
-    {color=#e5e297}-\{Head programmer\}-{/color}\n {size=+5}{color=#cbcbcb}AKABUR{/color}{/size}\n\n\
-    {color=#e5e297}-\{Artwork by\}-{/color}\n   {size=+5}{color=#cbcbcb}AKABUR{/color}{/size}\n\n\
-    {color=#e5e297}-\{Additional Artwork\}-{/color}\n   {size=+5}{color=#cbcbcb}DAHR{/color}{/size}\n\n\
-    {color=#e5e297}-\{Texts proofread and edited by\}-{/color}\n   {size=+5}{color=#cbcbcb}LYK.D9{/color}{/size}\n\n\
-    {color=#e5e297}-\{Technical advisor\}-{/color}\n   {size=+5}{color=#cbcbcb}XALJIO{/color}{/size}\n\n\
-    {color=#e5e297}-\{Game testers\}-{/color}\n   {size=+5}{color=#cbcbcb}XALJIO\nLYK.D9\nDAHR\nAKABUR{/color}{/size}\n\n{/cps}"
+    {color=#e5e297}-\{Сценарист и продюссер\}-{/color}\n{size=+5}{color=#cbcbcb}AKABUR{/color}{/size}\n\n\
+    {color=#e5e297}-\{Главный программист\}-{/color}\n {size=+5}{color=#cbcbcb}AKABUR{/color}{/size}\n\n\
+    {color=#e5e297}-\{Арты\}-{/color}\n   {size=+5}{color=#cbcbcb}AKABUR{/color}{/size}\n\n\
+    {color=#e5e297}-\{Дополнитеьный арты\}-{/color}\n   {size=+5}{color=#cbcbcb}DAHR{/color}{/size}\n\n\
+    {color=#e5e297}-\{Тексты\}-{/color}\n   {size=+5}{color=#cbcbcb}LYK.D9{/color}{/size}\n\n\
+    {color=#e5e297}-\{Технический менеджер\}-{/color}\n   {size=+5}{color=#cbcbcb}XALJIO{/color}{/size}\n\n\
+    {color=#e5e297}-\{Тестеры\}-{/color}\n   {size=+5}{color=#cbcbcb}XALJIO\nLYK.D9\nDAHR\nAKABUR{/color}{/size}\n\n{/cps}"
     
 
     
@@ -3508,27 +3457,19 @@ label your_whore:
     
     
     
-    centered "{cps=40}{size=+5}{color=#e5e297}-\{Sound Effects\}-{/color}{/size}\n    {color=#cbcbcb}http://www.freesound.org/{/color}\n\n\
-    \
-    {size=+5}{color=#e5e297}Перевод для вас пилили \n\
-        {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a} \n\
-        {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15155170}Discordnk90{/a} \n\
-        {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=8041771}maniac4a{/a} \n\
-        {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=4472572}Rio-Violente{/a} \n\
-        {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16957111}MrFrost1991{/a} \n\
-        {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=18304384}babaylolxz{/a} \n\
-        {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16733487}Nyarkohotep{/a} \n\
-        Если кого-то забыли -- простите ;) \
+    centered "{cps=40}{size=+5}{color=#e5e297}-\{Звуковые эффекты\}-{/color}{/size}\n{color=#cbcbcb}http://www.freesound.org/{/color}\n\n\
+    {color=#e5e297}-\{Переводом занимались\}-{/color}\n\n\
+    {color=#fff}\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16733487}Nyarkohotep{/a}\n\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15155170}Discordnk90{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=8041771}maniac4a{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=4472572}Rio-Violente{/a}\n\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16957111}MrFrost1991{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=18304384}babaylolxz{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15281703}Borzsama{/a}\n\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=11908608}sn0rk95{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15179745}qcerb1880{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=4472572}Rio-Violente{/a}\n\n\
+    Если кого-то забыли - простите ;){/color} \
     \n\n\
-    {size=+5}{color=#e5e297}-\{Music provided by\}-{/color}{/size}\n    {color=#cbcbcb}http://incompetech.com/{/color}\n\n\
-    \
-    \
-    \
-    \
-    {size=+5}{color=#e5e297}-\{MUSIC\}-{/color}{/size}\n\
-    \
-    \
-    \
+    {size=+5}{color=#e5e297}-\{Музыка предоставленна\}-{/color}{/size}\n\
+    {color=#cbcbcb}http://incompetech.com/{/color}{/cps}\n\n"
+
+    centered "{cps=40}{size=+5}{color=#e5e297}-\{Музыка\}-{/color}{/size}\n\n\
     {color=#e5e297}\"(Orchestral) Playful Tension\" {/color}{color=#cbcbcb}by Shadow16nh.{/color}\n\
     {color=#e5e297}\"Prologue\" {/color}{color=#cbcbcb}Harry Potter OST.{/color}\n\
     {color=#e5e297}\"Shanghai Honey\"{/color} {color=#cbcbcb}by orange range.{/color}\n\
@@ -3555,7 +3496,7 @@ label your_whore:
     #$ dermo = "no_shirt_dance_ani"
     nvl clear
 
-    centered "{cps=40}{size=+2}{color=#e5e297}-\{CREATOR OF THIS GAME WOULD ALSO LIKE TO PERSONALLY THANK\}-{/color}{/size}\n\n{color=#cbcbcb} \
+    centered "{cps=40}{size=+2}{color=#e5e297}-\{Создатели этой игры так же выражают благодарность\}-{/color}{/size}\n\n{color=#cbcbcb} \
     {size=+5}Dahr{/size}{/color}\n{color=#e5e297}for still working for me pretty much free of charge, for inspiring me to keep on going and simply for being a good friend and colleague. {/color}\n\n\
     {color=#cbcbcb}{size=+5}Xaljio{/size}{/color}\n{color=#e5e297} for not only being my personal \"Ren'Py\" consultant but also an extremely thorough game-tester.\n\n\
     {color=#cbcbcb}{size=+5}Lyk.D9 (a.k.a. Silentchill){/size}{/color}\n {color=#e5e297}for toiling tirelessly over my texts full of typos and broken grammar. {/color}\n\n\
@@ -3714,14 +3655,14 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         sna "........................................."
         $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                         # SNAPE
         show screen s_head2                                                                                                 # SNAPE
-        sna "Кто контролирует?"
+        sna "Это еше ты?"
         hide screen s_head2     
         dum2 "Извини?"
         $ s_sprite = "03_hp/10_snape_main/snape_26.png"                                         # SNAPE
         show screen s_head2                                                                                                 # SNAPE
-        sna "Кто контролирует?" # T_T
+        sna "Кто управляет?" # T_T
         hide screen s_head2     
-        dum2 "...кто контролирует что?"
+        dum2 "...кто управляет чем?"
         $ s_sprite = "03_hp/10_snape_main/snape_26.png"                                         # SNAPE
         show screen s_head2                                                                                                 # SNAPE
         sna "А...?"
@@ -3830,9 +3771,9 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         with Dissolve(.3)
         pause
         menu:
-            "-Закончить чтение-":
+            "- Закончить чтение -":
                 pass    
-            "-Продолжить чтение-":
+            "- Продолжить чтение -":
                 jump last_letter
         hide screen letter
         hide screen ctc
@@ -4102,13 +4043,3 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         $ persistent.ss_29 = True # Sacred Scroll 29 will be unlocked in the gallery.
     if sscroll_30:
         $ persistent.ss_30 = True # Sacred Scroll 12 will be unlocked in the gallery.
-        
-        
-        
-        
-        
-        
-        
-
-        
-        
