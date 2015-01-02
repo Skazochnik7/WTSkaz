@@ -1,22 +1,25 @@
-﻿init -999 python:
-    
+﻿label main_ex_HermioneItem_constants:
     # main zOrders
-    G_Z_UNDERLEGS = 0
-    G_Z_LEGS = 20
-    G_Z_PANTIES = 40
-    G_Z_SKIRT = 60
-    G_Z_HANDS = 80
-    G_Z_BODY = 100
-    G_Z_FACE = 200
+    define G_Z_UNDERLEGS = 0
+    define G_Z_LEGS = 20
+    define G_Z_PANTIES = 40
+    define G_Z_SKIRT = 60
+    define G_Z_HANDS = 80
+    define G_Z_BODY = 100
+    define G_Z_FACE = 200
     
     # additional zOrders
-    G_Z_POSE = 110
-    G_Z_HEADWEAR = 120
+    define G_Z_POSE = 110
+    define G_Z_HEADWEAR = 120
 
     # here is the keys for additional items
-    G_N_SKIRT = "skirt"
-    G_N_BADGE = "badge"
-    G_N_NETS = "nets"
+    define G_N_SKIRT = "skirt"
+    define G_N_BADGE = "badge"
+    define G_N_NETS = "nets"
+    
+    return
+
+init -999 python:
     
     class HermioneItem:
         # create hermione item's description, if aPos == None, created item counts as NOT ADDITIONAL

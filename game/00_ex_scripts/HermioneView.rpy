@@ -15,22 +15,21 @@
 init -998 python:
   
     class HermioneView:
-        
-        # GlobalClassVariables
-        mBodyFolder = "00_ex/00_hermione/body/"
-        mClothesFolder = "00_ex/00_hermione/clothes/"
-        mFaceFolder = "00_ex/00_hermione/face/"
-        mPoseFolder = "00_ex/00_hermione/pose/"
-
-        # here we'll save all items on Hermione
-        mSavedItems = {}
-
         # constructor - memorizing Character object
         def __init__( self, aCharacter1, aCharacter2 ):
             self.mCh = aCharacter1
             self.mCh2 = aCharacter2
             self.mChActive = 0
+            # currenlty dressed things
             self.mStuff = {}
+            # here we'll save all items on Hermione
+            self.mSavedItems = {}
+            
+            # memorize default pathes
+            self.mBodyFolder = "00_ex/00_hermione/body/"
+            self.mClothesFolder = "00_ex/00_hermione/clothes/"
+            self.mFaceFolder = "00_ex/00_hermione/face/"
+            self.mPoseFolder = "00_ex/00_hermione/pose/"
             
         # need for using as simple character dialogue
         def __call__( self, what, interact = True ):

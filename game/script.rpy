@@ -4593,19 +4593,6 @@ init-2:
     $ vol = Character('Лорд Волдеморт', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ l = Character('Лола', color="#402313", window_right_padding=230, show_two_window=True, ctc="ctc3", ctc_position="fixed") #Text box used for "head only" speech. (Because it has padding).
     
-    #now we'll try to change hermione sprite
-    $ herView = HermioneView( her, her2 )
-    $ herView.clearState()
-    
-    # lets use saved stuff system, so now fill hermione items
-    $ herView.addLegs( HermioneItem( herView.mBodyFolder, "legs_universal.png", G_Z_LEGS ) )
-    $ herView.addPanties( HermioneItem( herView.mClothesFolder, "panties_normal.png", G_Z_PANTIES ) )
-    $ herView.addSkirt( HermioneItem( herView.mClothesFolder, "skirt_normal.png", G_Z_SKIRT ) )
-    $ herView.addHands( HermioneItem( herView.mBodyFolder, "hands_universal.png", G_Z_HANDS ) )
-    $ herView.addBody( HermioneItem( herView.mBodyFolder, "body_dressed.png", G_Z_BODY ) )
-    $ herView.addFace( HermioneItem( herView.mFaceFolder, "body_01.png", G_Z_FACE ) )
-
-    
 ### SNAPE HEAD ###
 define sna_01 = Character('Северус Снейп',
     color="#402313",
@@ -5300,6 +5287,24 @@ transform basicfade4:
             
             
 label start:
+    call main_ex_HermioneItem_constants
+    python:
+        # it's the fucking magick = make custom class variable being saved by Ren'Py...
+        # global keyword says to python that this variable will be global
+        # and because it's defined after 'start' label - it'll be saved by Ren'Py, great!
+        global herView
+    $ herView = HermioneView( her, her2 )        
+    $ herView.clearState()
+    
+    # lets use saved stuff system, so now fill hermione items
+    $ herView.addLegs( HermioneItem( herView.mBodyFolder, "legs_universal.png", G_Z_LEGS ) )
+    $ herView.addPanties( HermioneItem( herView.mClothesFolder, "panties_normal.png", G_Z_PANTIES ) )
+    $ herView.addSkirt( HermioneItem( herView.mClothesFolder, "skirt_normal.png", G_Z_SKIRT ) )
+    $ herView.addHands( HermioneItem( herView.mBodyFolder, "hands_universal.png", G_Z_HANDS ) )
+    $ herView.addBody( HermioneItem( herView.mBodyFolder, "body_dressed.png", G_Z_BODY ) )
+    $ herView.addFace( HermioneItem( herView.mFaceFolder, "body_01.png", G_Z_FACE ) )
+    
+    
     $ gold = 0
     
     $ rum_times = 0 # Counts how many times have you rummaged the cupboard. +1 every time you do that. Needed to make to grand 2 potions before the fight.
