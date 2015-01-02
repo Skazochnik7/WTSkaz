@@ -135,13 +135,17 @@ init -998 python:
         def addSkirt( self, aData ):
             self._addItem( 'skirt', aData )
         def delSkirt( self ):
-            self._delItem( 'panties' )
+            self._delItem( 'skirt' )
             
         def addBody( self, aData ):
             self._addItem( 'body', aData )
         def delBody( self ):
             self._delItem( 'body' )
-            
+        
+        #additional function for face to pass only file name
+        def addFaceName( self, aFace ):
+            self._addItem( 'face', HermioneItem( self.mFaceFolder, aFace, G_Z_FACE ) )
+        
         def addFace( self, aData ):
             self._addItem( 'face', aData )
         def delFace( self ):

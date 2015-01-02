@@ -13,9 +13,9 @@
     define G_Z_HEADWEAR = 120
 
     # here is the keys for additional items
-    define G_N_SKIRT = "skirt"
-    define G_N_BADGE = "badge"
-    define G_N_NETS = "nets"
+    define G_N_SKIRT = 'skirt'
+    define G_N_BADGE = 'badge'
+    define G_N_NETS = 'nets'
     
     return
 
