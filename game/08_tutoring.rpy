@@ -2,18 +2,23 @@ label tutoring:
 
     $ tut_happened = True # Turns TRUE after you click the tutoring button and see th message that tutoring is not a part of this game. Make sure the tutoring button will not be visible after that.
     
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.change( 0 )
+    #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $herView.hideSelf( d3 )
     $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
+    $pos = gMakePos( h_xpos, h_ypos )
+    #__#$ h_body = "03_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $herView.showQ( "body_14.png", pos, d3 )
     
-    her "Конечно, сэр."
-    her "Тогда я возьму свои книги."
+    herView "Конечно, сэр."
+    herView "Тогда я возьму свои книги."
     
     
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    $herView.hideQ( d3 )
 
     show screen blkfade
     with d3
@@ -26,12 +31,19 @@ label tutoring:
     $ only_upper = True
     $ ne = False # Desplays a fishnets in hermione_main screen.
 
-
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_199.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
+    #__## memorize current state, because we're switching to pose with book
+    #__#$ herView.saveState()
+    $ herView.addPose( HermioneItemPoseBook( herView.mPoseFolder, "pose_with_book.png", G_Z_POSE ) )
+    #__#$ herView.delHands()
     
+    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    $ pos = gMakePos( h_xpos, h_ypos )
+    #__#$ h_body = "03_hp/13_hermione_main/body_199.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    #__#$ herView.addAdditional( "full", HermioneItem( "03_hp/13_hermione_main/body_199.png", 0 ) )
+    
+    #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.showQ( "body_199.png", pos, d3 )
     
     hide screen blkfade
     with d3
@@ -40,76 +52,100 @@ label tutoring:
     pause
     hide screen ctc
     
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_198.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
+    #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.hideQ( d3 )
+    #__#$ h_body = "03_hp/13_hermione_main/body_198.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    #__#$ herView.addAdditional( "full", HermioneItem( "03_hp/13_hermione_main/body_198.png", 0 ) )
+
+    $ herView.showQ( "body_198.png", pos, d3 )
+    #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
     
-    her "Еще раз спасибо, за то, что делаете это для меня, сэр..."
+    herView "Еще раз спасибо, за то, что делаете это для меня, сэр..."
     m "..........."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_200.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Сэр?"
+    #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.hideQ( d3 )
+    
+    #__#$ h_body = "03_hp/13_hermione_main/body_200.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    #__#$ herView.addAdditional( "full", HermioneItem( "03_hp/13_hermione_main/body_200.png", 0 ) )
+    #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.showQ( "body_200.png", pos, d3 )
+    herView "Сэр?"
     m "...................."
     stop music fadeout 1.0
     g4 "Я не могу сделать этого."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_198.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "А?"
+    #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.hideQ( d3 )
+    #__#$ h_body = "03_hp/13_hermione_main/body_198.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    #__#$ herView.addAdditional( "full", HermioneItem( "03_hp/13_hermione_main/body_198.png", 0 ) )
+    #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.showQ( "body_198.png", pos, d3 )
+    herView "А?"
     m "Я не могу учить вас, мисс Грейнджер..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_198.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
+    #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.hideQ( d3 )
+    #__#$ h_body = "03_hp/13_hermione_main/body_198.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    #__#$ herView.addAdditional( "full", HermioneItem( "03_hp/13_hermione_main/body_198.png", 0 ) )
+    #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.showQ( "body_198.png", pos, d3 )
     play music "music/Music for Manatees.mp3" fadein 1 fadeout 1
-    her "Н-но..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_201.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Но сэр, вы обещали!"
+    herView "Н-но..."
+    #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.hideQ( d3 )
+    #__#$ h_body = "03_hp/13_hermione_main/body_201.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    #__#$ herView.addAdditional( "full", HermioneItem( "03_hp/13_hermione_main/body_201.png", 0 ) )
+    #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    herView "Но сэр, вы обещали!"
     m "Нет, ты не поняла..."
     m "Я фактически {size=+7}не могу{/size} делать этого."
     m "Акабур не доделал эту часть игры..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_202.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "???"
+    #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.hideQ( d3 )
+    #__#$ h_body = "03_hp/13_hermione_main/body_202.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.showQ( "body_202.png", pos, d3 )
+    herView "???"
     m "Да, согласен..."
     m "Все, что сделано для обучения выглядит неуместно..."
     m "И я надеялся, что смогу контролировать твой уровень интеллекта или вроде того..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_203.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "(Уровень моего интеллекта?)"
+    #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.hideQ( d3 )
+    #__#$ h_body = "03_hp/13_hermione_main/body_203.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.showQ( "body_203.png", pos, d3 )
+    herView "(Уровень моего интеллекта?)"
     m "Может быть приставать к тебе, пока ты учишься..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_204.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "(Что?!)"
+    #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.hideQ( d3 )
+    #__#$ h_body = "03_hp/13_hermione_main/body_204.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.showQ( "body_204.png", pos, d3 )
+    herView "(Что?!)"
     m "Может быть, трахать тебя в то время как ты читаешь книгу..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_205.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
+    #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.hideQ( d3 )
+    #__#$ h_body = "03_hp/13_hermione_main/body_205.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.showQ( "body_205.png", pos, d3 )
     stop music
-    her "{size=+7}ЧТО?!{/size}"
+    herView "{size=+7}ЧТО?!{/size}"
     show screen blktone8
     with d3
     ">Гермиона огорчена из-за вас."
@@ -117,22 +153,26 @@ label tutoring:
     with d3
     $ mad = +10
     m "*Вздох* Я очень много прошу...?"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_206.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Сэр, я думаю мне стоит уйти..."
+    #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.hideQ( d3 )
+    #__#$ h_body = "03_hp/13_hermione_main/body_206.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    $ herView.showQ( "body_206.png", pos, d3 )
+    herView "Сэр, я думаю мне стоит уйти..."
     show screen blkfade
-    hide screen hermione_main
-    with d3
+    #__#hide screen hermione_main
+    #__#with d3
+    $ herView.hideQ( d3 )
     m "Я сказал что-то не то?"
   
     $ only_upper = False
     $ ne = True # Desplays a fishnets in hermione_main screen.
     
-    
-    
+    #__## now we'll restore saved state
+    #__#$ herView.loadState()
+    $ herView.delPose();
     
     
     
