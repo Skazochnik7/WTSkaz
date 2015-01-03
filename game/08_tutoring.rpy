@@ -2,12 +2,11 @@ label tutoring:
 
     $ tut_happened = True # Turns TRUE after you click the tutoring button and see th message that tutoring is not a part of this game. Make sure the tutoring button will not be visible after that.
     
-    $ herView.change( 0 )
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
     $herView.hideSelf( d3 )
     $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $pos = gMakePos( h_xpos, h_ypos )
+    $pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -33,11 +32,11 @@ label tutoring:
 
     #__## memorize current state, because we're switching to pose with book
     #__#$ herView.saveState()
-    $ herView.addPose( HermioneItemPoseBook( herView.mPoseFolder, "pose_with_book.png", G_Z_POSE ) )
+    $ herView.addPose( CharacterExItemPoseBook( herView.mPoseFolder, "pose_with_book.png", G_Z_POSE ) )
     #__#$ herView.delHands()
     
     $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_140
     #__#$ h_body = "03_hp/13_hermione_main/body_199.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     #__#$ herView.addAdditional( "full", HermioneItem( "03_hp/13_hermione_main/body_199.png", 0 ) )
     

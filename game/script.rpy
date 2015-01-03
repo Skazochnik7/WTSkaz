@@ -4593,7 +4593,31 @@ init-2:
     $ vol = Character('Лорд Волдеморт', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ l = Character('Лола', color="#402313", window_right_padding=230, show_two_window=True, ctc="ctc3", ctc_position="fixed") #Text box used for "head only" speech. (Because it has padding).
     
+    
+
+#-----------------------___HEADS___---------------------------------#
+    
+init python:
+  def conditional_portrait( status_var, filename_prefix, startIndex, endIndex, **kwargs ):
+        args = []
+        for s in range( startIndex, endIndex + 1 ):
+            args.append( "%s == %d" % (status_var, s) )
+            args.append( Image( "%s%02d.png" % ( filename_prefix, s ) ) )
+        return ConditionSwitch( *args, **kwargs )    
+    
+    
 ### SNAPE HEAD ###
+define sna_head_state = 1
+define sna_head_main = Character('Северус Снейп',
+    color="#402313",
+    window_right_padding=270,
+    show_side_image=conditional_portrait( "sna_head_state", "03_hp/12_snape_head/head_", 1, 26, xalign=1.0, yalign=0.0 ),
+    show_two_window=True,
+    show_who_xalign=0.5,
+    ctc="ctc3",
+    ctc_position="fixed")
+
+# and this one is from duel.rpy
 define sna_01 = Character('Северус Снейп',
     color="#402313",
     window_right_padding=270,
@@ -4603,138 +4627,7 @@ define sna_01 = Character('Северус Снейп',
     ctc="ctc3",
     ctc_position="fixed")
 
-define sna_02 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_02.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-define sna_03 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_03.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-define sna_04 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_04.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-define sna_05 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_05.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_06 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_06.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_07 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_07.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_08 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_08.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_09 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_09.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_10 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_10.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_11 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_11.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_12 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_12.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_13 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_13.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_14 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_14.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_15 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_15.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_16 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_16.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
+# for now it's used only in final_event.rpy
 define sna_17 = Character('Северус Снейп',
     color="#402313",
     window_right_padding=270,
@@ -4744,513 +4637,20 @@ define sna_17 = Character('Северус Снейп',
     ctc="ctc3",
     ctc_position="fixed")
 
-define sna_18 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_18.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_19 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_19.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_20 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_20.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_21 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_21.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_22 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_22.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_23 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_23.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_24 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_24.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_25 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_25.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define sna_26 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_26.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-
-
-
 
 
 
 ### HERMIONE HEAD ###
-
-define her_01 = Character('Гермиона',
+define her_head_state = 1
+define her_head_main = Character('Гермиона',
     color="#402313",
     window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/01.png", xalign=1.0, yalign=0.0),
+    show_side_image=conditional_portrait( "her_head_state", "03_hp/15_hermione_head/", 1, 45, xalign=1.0, yalign=0.0 ),
     show_two_window=True,
     show_who_xalign=0.5,
     ctc="ctc3",
-    ctc_position="fixed")
+    ctc_position="fixed" )
 
-define her_02 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/02.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_03 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/03.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_04 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/04.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_05 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/05.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_06 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/06.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_07 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/07.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_08 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/08.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_09 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/09.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_10 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/10.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_11 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/11.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_12 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/12.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_13 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/13.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_14= Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/14.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_15 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/15.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_16 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/16.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_17 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/17.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_18 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/18.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_19 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/19.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_20 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/20.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_21 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/21.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_22 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/22.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-    
-define her_23 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/23.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_24 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/24.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_25 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/25.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_26 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/26.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_27 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/27.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_28 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/28.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_29 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/29.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_30 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/30.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_31 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/31.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-
-define her_32 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/32.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_33 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/33.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-
-define her_34 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/34.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_35 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/35.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-
-define her_35 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/35.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-
-define her_36 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/36.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-
-define her_37 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/37.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_38 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/38.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_39 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/39.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_40 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/40.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_41 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/41.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_42 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/42.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_43 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/43.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_44 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/44.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-define her_45 = Character('Гермиона',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/15_hermione_head/45.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
 
 ## TRANSFORMATION
 
@@ -5287,23 +4687,22 @@ transform basicfade4:
             
             
 label start:
-    call main_ex_HermioneItem_constants
+    call main_ex_CharacterExItem_constants
     python:
         # it's the fucking magick = make custom class variable being saved by Ren'Py...
         # global keyword says to python that this variable will be global
         # and because it's defined after 'start' label - it'll be saved by Ren'Py, great!
         global herView
-    $ herView = HermioneView( her, her2 )        
+    $ herView = CharacterEx( 5, her, 'hermione' )
     $ herView.clearState()
     
     # lets use saved stuff system, so now fill hermione items
-    $ herView.addLegs( HermioneItem( herView.mBodyFolder, "legs_universal.png", G_Z_LEGS ) )
-    $ herView.addPanties( HermioneItem( herView.mClothesFolder, "panties_normal.png", G_Z_PANTIES ) )
-    $ herView.addSkirt( HermioneItem( herView.mClothesFolder, "skirt_normal.png", G_Z_SKIRT ) )
-    $ herView.addHands( HermioneItem( herView.mBodyFolder, "hands_universal.png", G_Z_HANDS ) )
-    $ herView.addBody( HermioneItem( herView.mBodyFolder, "body_dressed.png", G_Z_BODY ) )
-    $ herView.addFace( HermioneItem( herView.mFaceFolder, "body_01.png", G_Z_FACE ) )
-    
+    $ herView.addLegs( CharacterExItem( herView.mBodyFolder, "legs_universal.png", G_Z_LEGS ) )
+    $ herView.addPanties( CharacterExItem( herView.mClothesFolder, "panties_normal.png", G_Z_PANTIES ) )
+    $ herView.addSkirt( CharacterExItem( herView.mClothesFolder, "skirt_normal.png", G_Z_SKIRT ) )
+    $ herView.addHands( CharacterExItem( herView.mBodyFolder, "hands_universal.png", G_Z_HANDS ) )
+    $ herView.addBody( CharacterExItem( herView.mBodyFolder, "body_dressed.png", G_Z_BODY ) )
+    $ herView.addFace( CharacterExItem( herView.mFaceFolder, "body_01.png", G_Z_FACE ) )
     
     $ gold = 0
     

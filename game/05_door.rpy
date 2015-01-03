@@ -1,8 +1,5 @@
 label door:
 
-    #switch to first character
-    $herView.change( 0 )
-
     menu:
         "- Исследовать дверь -" if not door_examined:
             $ door_examined = True
@@ -103,7 +100,7 @@ label door:
                 $ h_xpos=410 #Defines position of the Hermione's full length sprite.
                 $ h_ypos=0
 
-                $h_pos = gMakePos( h_xpos, h_ypos )
+                $h_pos = POS_410
 
                 $ renpy.play('sounds/door.mp3') #Sound of a door opening.
                 $ hermione_chibi_xpos = 400 #Near the desk.
@@ -1284,7 +1281,7 @@ label too_much:
     #__#with d3
     
     $ h_xpos=120 #Defines position of the Hermione's full length sprite. center: 120. Right: 370.
-    $pos = gMakePos( h_xpos, h_ypos )
+    $pos = POS_120
     #__#$ h_body = "03_hp/13_hermione_main/body_48.png" #Flashing panties  
     #__#show screen hermione_main
     #__#with d3

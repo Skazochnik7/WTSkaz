@@ -679,20 +679,32 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
     show screen bld1
     with d3
     if d_flag_01:
-        sna_06 "Кто ты такой, сволочь!"
+        #__#sna_06 "Кто ты такой, сволочь!"
+        $sna_head_state = 6
+        sna_head_main "Кто ты такой, сволочь!"
         g4 "Что? Это я... эм... Абиус! То есть, Альбус!"
-        sna_04 "Ты не надуришь меня."
-        sna_04 "Только что ты использовал какую-то чужеродную магию!"
-        sna_06 "Яви для меня свою истинную сущность, дьявол! Кто ты такой?!"
+        #__#sna_04 "Ты не надуришь меня."
+        $sna_head_state = 4
+        sna_head_main "Ты не надуришь меня."
+        #__#sna_04 "Только что ты использовал какую-то чужеродную магию!"
+        sna_head_main "Только что ты использовал какую-то чужеродную магию!"
+        #__#sna_06 "Яви для меня свою истинную сущность, дьявол! Кто ты такой?!"
+        $sna_head_state = 6
+        sna_head_main "Яви для меня свою истинную сущность, дьявол! Кто ты такой?!"
     else:
-        sna_01 "Мое имя Северус Снейп!"
-        sna_01 "Теперь твоя очередь...?"
+        #__#sna_01 "Мое имя Северус Снейп!"
+        $sna_head_state = 1
+        sna_head_main "Мое имя Северус Снейп!"
+        #__#sna_01 "Теперь твоя очередь...?"
+        sna_head_main "Теперь твоя очередь...?"
         
     g4 "!!!"
-    sna_01 "Полегче... Просто ответь на мой вопрос."
+    #__#sna_01 "Полегче... Просто ответь на мой вопрос."
+    sna_head_main "Полегче... Просто ответь на мой вопрос."
     
     m "Ладно, ладно. Можешь просто успокоиться?..."
-    sna_01 "........"
+    #__#sna_01 "........"
+    sna_head_main "........"
     $ d_points = 0
     $ d_flag_01 = False
     $ d_flag_02 = False
@@ -703,22 +715,27 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
         "\"Я тебе не враг.\"" if not d_flag_01:
             $ d_flag_01 = True
             $ d_points +=1
-            sna_01 "Это первое, что сказал бы враг."
+            #__#sna_01 "Это первое, что сказал бы враг."
+            sna_head_main "Это первое, что сказал бы враг."
         "\"Я просто турист. Я уже ухожу.\"" if not d_flag_02:
             $ d_flag_02 = True
             $ d_points +=1
-            sna_01 "У тебя ничего не выйдет."
+            #__#sna_01 "У тебя ничего не выйдет."
+            sna_head_main "У тебя ничего не выйдет."
         "\"Я работаю на Альбиса Думблдора!\"" if not d_flag_03:
             $ d_flag_03 = True
             $ d_points +=1
-            sna_01 "Его зовут Альбус Дамблдор, ты, придурок!"
+            #__#sna_01 "Его зовут Альбус Дамблдор, ты, придурок!"
+            sna_head_main "Его зовут Альбус Дамблдор, ты, придурок!"
     if d_points == 2:
         pass
     else:
         jump no_wait
 
-    sna_01 "Кто тебя послал сюда? Что ты сделал с настоящим Альбусом?"
-    sna_01 "Покажи свои истинную сущность, последнее предупреждение!"
+    #__#sna_01 "Кто тебя послал сюда? Что ты сделал с настоящим Альбусом?"
+    sna_head_main "Кто тебя послал сюда? Что ты сделал с настоящим Альбусом?"
+    #__#sna_01 "Покажи свои истинную сущность, последнее предупреждение!"
+    sna_head_main "Покажи свои истинную сущность, последнее предупреждение!"
     $ d_points = 0
     $ d_flag_01 = False
     $ d_flag_02 = False
@@ -730,18 +747,24 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
         "\"Я не могу. Это сложно объяснить...\"" if not d_flag_01:
             $ d_flag_01 = True
             $ d_points +=1
-            sna_01 "У меня нет малейшего интереса к твоим объяснениям. Я бы все равно не поверил ни единому слову!"
+            #__#sna_01 "У меня нет малейшего интереса к твоим объяснениям. Я бы все равно не поверил ни единому слову!"
+            sna_head_main "У меня нет малейшего интереса к твоим объяснениям. Я бы все равно не поверил ни единому слову!"
         "\"Хватит угрожать мне, человек!\"" if not d_flag_02:
             $ d_flag_02 = True
             $ d_points +=1
-            sna_01 "\"Человек\"?"
-            sna_01 "Ты намекаешь на то, что ты {size=+5}не{/size} один из нас?"
-            sna_01 "Что ты такое!? Немедленно отвечай, иначе я применю чары для снятия твоей маскировки!"
+            #__#sna_01 "\"Человек\"?"
+            sna_head_main "\"Человек\"?"
+            #__#sna_01 "Ты намекаешь на то, что ты {size=+5}не{/size} один из нас?"
+            sna_head_main "Ты намекаешь на то, что ты {size=+5}не{/size} один из нас?"
+            #__#sna_01 "Что ты такое!? Немедленно отвечай, иначе я применю чары для снятия твоей маскировки!"
+            sna_head_main "Что ты такое!? Немедленно отвечай, иначе я применю чары для снятия твоей маскировки!"
         "\"Я не причиню тебе вреда, клянусь!\"" if not d_flag_03:
             $ d_flag_03 = True
             $ d_points +=1
-            sna_01 "Точно?"
-            sna_01 "Докажи это. Сними свою маскировку немедленно!"
+            #__#sna_01 "Точно?"
+            sna_head_main "Точно?"
+            #__#sna_01 "Докажи это. Сними свою маскировку немедленно!"
+            sna_head_main "Докажи это. Сними свою маскировку немедленно!"
 
     if d_points == 2:
         pass
@@ -750,10 +773,13 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
 
             
             
-    sna_01 "Я услышал достаточно!"
+    #__#sna_01 "Я услышал достаточно!"
+    sna_head_main "Я услышал достаточно!"
     g4 "Во имя великих песков пустыни! Человек, ты дашь мне объясниться?!"
-    sna_01 "Уже нечего объяснять!"
-    sna_01 "Пока вы отказываетесь сотрудничать, вы будете под стражей!"
+    #__#sna_01 "Уже нечего объяснять!"
+    sna_head_main "Уже нечего объяснять!"
+    #__#sna_01 "Пока вы отказываетесь сотрудничать, вы будете под стражей!"
+    sna_head_main "Пока вы отказываетесь сотрудничать, вы будете под стражей!"
     g4 "Что?! Подожди!"
     
     
@@ -780,7 +806,9 @@ label event_06: #THE TALK AFTER THE DUEL ENDS.
     stop music fadeout 2.0
     g4 "*Задыхаясь*"
     g4 "Теперь ты готов поговорить?!"
-    sna_08 "(...н-невероятно...)"
+    #__#sna_08 "(...н-невероятно...)"
+    $sna_head_state = 8
+    sna_head_main "(...н-невероятно...)"
     
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 
     
@@ -791,53 +819,88 @@ label event_06: #THE TALK AFTER THE DUEL ENDS.
     show screen bld1
     with d3
     m "Хотя, ты оказался неплох..."
-    sna_01 "Ты колдовал заклинания голыми руками..."
-    sna_01 "Если ты не человек, то... кто- -"
-    sna_04 "{size=+5}Что ты такое?{/size}"
-    sna_01 "Какой-то демон, призванный \"сам знаешь кем\"?"
+    #__#sna_01 "Ты колдовал заклинания голыми руками..."
+    $sna_head_state = 1
+    sna_head_main "Ты колдовал заклинания голыми руками..."
+    #__#sna_01 "Если ты не человек, то... кто- -"
+    sna_head_main "Если ты не человек, то... кто- -"
+    #__#sna_04 "{size=+5}Что ты такое?{/size}"
+    $sna_head_state = 4
+    sna_head_main "{size=+5}Что ты такое?{/size}"
+    #__#sna_01 "Какой-то демон, призванный \"сам знаешь кем\"?"
+    $sna_head_state = 1
+    sna_head_main "Какой-то демон, призванный \"сам знаешь кем\"?"
     m "Призванный кем?"
-    sna_02 "\"Сам знаешь кем\"!"
+    #__#sna_02 "\"Сам знаешь кем\"!"
+    $sna_head_state = 2
+    sna_head_main "\"Сам знаешь кем\"!"
     m "Что?"
-    sna_07 "......................"
+    #__#sna_07 "......................"
+    $sna_head_state = 7
+    sna_head_main "......................"
     m "............................"
     m "Послушай, я не демон..."
     m "И само собой я не работаю на  \"сам не знаю кого\"!"
-    sna_01 "............................."
+    #__#sna_01 "............................."
+    $sna_head_state = 1
+    sna_head_main "............................."
     m "Я был хм..."
     m "...Я проводил эксперимент в своем мире и что-то пошло не так, вот я и здесь."
     m "Это все..."
-    sna_01 ".........................."
-    sna_01 "Тогда, что же стало с настоящим Альбусом Дамблдором?"
+    #__#sna_01 ".........................."
+    sna_head_main ".........................."
+    #__#sna_01 "Тогда, что же стало с настоящим Альбусом Дамблдором?"
+    sna_head_main "Тогда, что же стало с настоящим Альбусом Дамблдором?"
     m "Я уверен, он в порядке."
     m "Он, вероятно, очень удивлен, оказавшись в чужом мире, собственно как и я..."
-    sna_01 "...................................."
-    sna_01 "Когда это произошло?"
+    #__#sna_01 "...................................."
+    sna_head_main "...................................."
+    #__#sna_01 "Когда это произошло?"
+    sna_head_main "Когда это произошло?"
     m "Дня четыре назад..."
-    sna_01 "Ты можешь вернуться назад?"
+    #__#sna_01 "Ты можешь вернуться назад?"
+    sna_head_main "Ты можешь вернуться назад?"
     m "Я думаю, что..."
-    sna_02 "Почему ты еще не сделал этого?"
+    #__#sna_02 "Почему ты еще не сделал этого?"
+    $sna_head_state = 2
+    sna_head_main "Почему ты еще не сделал этого?"
     m "Не уверен..."
     m "В этом мире очень странная магия... Мне просто стало любопытно."
-    sna_01 "..................."
-    sna_01 "Тебе нужно все исправить..."
+    #__#sna_01 "..................."
+    $sna_head_state = 1
+    sna_head_main "..................."
+    #__#sna_01 "Тебе нужно все исправить..."
+    sna_head_main "Тебе нужно все исправить..."
     m "Исправить что?"
-    sna_04 "Все. Тебе нужно вернуть Альбуса и самому вернуться обратно."
+    #__#sna_04 "Все. Тебе нужно вернуть Альбуса и самому вернуться обратно."
+    $sna_head_state = 4
+    sna_head_main "Все. Тебе нужно вернуть Альбуса и самому вернуться обратно."
     menu:
         m "..."
 
         "\"Да, да, знаю. Тогда я пойду.\"":
             m "Да, да, я знаю..."
             m "Ну, тогда я пойду. Извини за все это."
-            sna_01 "Хорошо, что никто не пострадал..."
+            #__#sna_01 "Хорошо, что никто не пострадал..."
+            $sna_head_state = 1
+            sna_head_main "Хорошо, что никто не пострадал..."
         "\"Но мне нравится здесь! Могу я остаться?\"":
-            sna_01 "Категорически нет."
-            sna_01 "Кем бы ты не был, ты не из этого мира."
-            sna_01 "Твое присутствие здесь сильно нарушает порядок вещей в мире."
-            sna_01 "И в эти дни школа нуждается в хорошем директоре, как никогда ранее."
-    sna_01 "Безопаснее всего венуться обратно именно сейчас."
+            #__#sna_01 "Категорически нет."
+            sna_head_main "Категорически нет."
+            #__#sna_01 "Кем бы ты не был, ты не из этого мира."
+            sna_head_main "Кем бы ты не был, ты не из этого мира."
+            #__#sna_01 "Твое присутствие здесь сильно нарушает порядок вещей в мире."
+            sna_head_main "Твое присутствие здесь сильно нарушает порядок вещей в мире."
+            #__#sna_01 "И в эти дни школа нуждается в хорошем директоре, как никогда ранее."
+            sna_head_main "И в эти дни школа нуждается в хорошем директоре, как никогда ранее."
+    #__#sna_01 "Безопаснее всего венуться обратно именно сейчас."
+    sna_head_main "Безопаснее всего венуться обратно именно сейчас."
     m "Хм ... Спасибо, господин Северус. Удачи с вашими студентами и \"шайкой Поттера\"."
-    sna_01 "\"Шайка Поттера\"?"
-    sna_07 "Ах, точно, эти пидерасты..."
+    #__#sna_01 "\"Шайка Поттера\"?"
+    sna_head_main "\"Шайка Поттера\"?"
+    #__#sna_07 "Ах, точно, эти пидерасты..."
+    $sna_head_state = 7
+    sna_head_main "Ах, точно, эти пидерасты..."
     menu:
         "- Отменить заклинание -":
             pass
@@ -848,23 +911,32 @@ label event_06: #THE TALK AFTER THE DUEL ENDS.
         "- Отменить заклинание -":
             pass
 
-    sna_01 "Сработало? Это ты, Альбус?"
+    #__#sna_01 "Сработало? Это ты, Альбус?"
+    $sna_head_state = 1
+    sna_head_main "Сработало? Это ты, Альбус?"
     menu:
         m "..."
         "\"Да, это Я. Как хорошо вернуться обратно!\"":
-            sna_01 "Рад, что ты здесь. Ты в порядке?"
+            #__#sna_01 "Рад, что ты здесь. Ты в порядке?"
+            sna_head_main "Рад, что ты здесь. Ты в порядке?"
             m "Я в порядке, Северус, спасибо."
-            sna_01 "Как там, в другом мире?"
+            #__#sna_01 "Как там, в другом мире?"
+            sna_head_main "Как там, в другом мире?"
             m "Очень много песка и довольно жарко, но все таки относительно неплохо."
-            sna_01 "Понимаю... Ты соскучился по своему брату?"
+            #__#sna_01 "Понимаю... Ты соскучился по своему брату?"
+            sna_head_main "Понимаю... Ты соскучился по своему брату?"
             menu:
                 m "..."
                 "\"Да, я соскучился по тебе очень сильно!\"":
-                    sna_01 "......................."
-                    sna_01 "Да, точно...."
+                    #__#sna_01 "......................."
+                    sna_head_main "......................."
+                    #__#sna_01 "Да, точно...."
+                    sna_head_main "Да, точно...."
                 "\"У меня нет брата, Северус.\"":
-                     sna_01 "........................"
-                     sna_01 "У вас может и нет, но у настоящего Альбуса Дамблдора он есть."
+                     #__#sna_01 "........................"
+                     sna_head_main "........................"
+                     #__#sna_01 "У вас может и нет, но у настоящего Альбуса Дамблдора он есть."
+                     sna_head_main "У вас может и нет, но у настоящего Альбуса Дамблдора он есть."
                 "- Использовать магию, для получения правильного ответа -":
                     show screen bld1
                     with d3
@@ -872,66 +944,112 @@ label event_06: #THE TALK AFTER THE DUEL ENDS.
                     hide screen bld1
                     with d3
                     m "Мой младший брат Аберфорт? Почему я должен соскучиться по нему?"
-                    sna_01 "Я каждый раз чувствую, когда ты используешь свою странную магию..."
+                    #__#sna_01 "Я каждый раз чувствую, когда ты используешь свою странную магию..."
+                    sna_head_main "Я каждый раз чувствую, когда ты используешь свою странную магию..."
         "\"Не-а. Это все еще я. Не человеческий-чувак.\"":
             pass
 
 
-    sna_01 "Почему ты все еще здесь, существо?"
+    #__#sna_01 "Почему ты все еще здесь, существо?"
+    sna_head_main "Почему ты все еще здесь, существо?"
     m "Я не уверен... Я пытался обратить заклинание, но ничего не вышло..."
 
 
-    sna_07 "Чудеса..."
-    sna_01 "Что это значит? Ты собрался остаться здесь навсегда?"
+    #__#sna_07 "Чудеса..."
+    $sna_head_state = 7
+    sna_head_main "Чудеса..."
+    #__#sna_01 "Что это значит? Ты собрался остаться здесь навсегда?"
+    $sna_head_state = 1
+    sna_head_main "Что это значит? Ты собрался остаться здесь навсегда?"
     m "Конечно нет..."
     m "Я здесь, возможно, только по тому, что заклинание компенсации дисбаланса вызвало само себя..."
     m "Если отменить заклинание, то я должен вернуться обратно в свой мир."
     m "Кроме того, твой друг Дамблдор тоже должен будет вернуться обратно сюда."
-    sna_01 "Понимаю..."
-    sna_01 "Как долго заклинание будет действовать?"
+    #__#sna_01 "Понимаю..."
+    sna_head_main "Понимаю..."
+    #__#sna_01 "Как долго заклинание будет действовать?"
+    sna_head_main "Как долго заклинание будет действовать?"
     menu:
         m "..."
         "\"Пару дней.\"":
-            sna_01 "Понятно..."
+            #__#sna_01 "Понятно..."
+            sna_head_main "Понятно..."
         "\"Неделя или...\"":
-            sna_01 "Хм.... Неделя, хух..."
+            #__#sna_01 "Хм.... Неделя, хух..."
+            sna_head_main "Хм.... Неделя, хух..."
         "\"Может быть месяцы...\"":
-             sna_01 "Так долго?"
-             sna_01 "Почему все настолько \"плохо\"?"
+             #__#sna_01 "Так долго?"
+             sna_head_main "Так долго?"
+             #__#sna_01 "Почему все настолько \"плохо\"?"
+             sna_head_main "Почему все настолько \"плохо\"?"
         "\"Я понятия не имею...\"":
-            sna_01 "....................."
-            sna_02 "Великолепно..."
+            #__#sna_01 "....................."
+            sna_head_main "....................."
+            #__#sna_02 "Великолепно..."
+            $sna_head_state = 2
+            sna_head_main "Великолепно..."
 
     m "Хорошо, если честно, я не уверен, куда идти теперь..."
     m "Все это время, я думал, что смогу отметить заклинание когда захочу..."
-    sna_01 "..................................................."
-    sna_01 ".................................."
-    sna_01 "..................."
+    #__#sna_01 "..................................................."
+    $sna_head_state = 1
+    sna_head_main "..................................................."
+    #__#sna_01 ".................................."
+    sna_head_main ".................................."
+    #__#sna_01 "..................."
+    sna_head_main "..................."
     m "Снейп?"
-    sna_01 "..................................................."
+    #__#sna_01 "..................................................."
+    sna_head_main "..................................................."
     m "Северус?"
-    sna_06 "Да, да ..."
-    sna_01 "Слушай, уже поздно и очень многое успело произойти..."
-    sna_07 "Мне следует обдумать все это."
-    sna_01 "Увидимся завтра, я зайду после занятий."
-    sna_06 "до тех пор, держи свою истинную личность и наш разговор в тайне, идет?"
+    #__#sna_06 "Да, да ..."
+    $sna_head_state = 6
+    sna_head_main "Да, да ..."
+    #__#sna_01 "Слушай, уже поздно и очень многое успело произойти..."
+    $sna_head_state = 1
+    sna_head_main "Слушай, уже поздно и очень многое успело произойти..."
+    #__#sna_07 "Мне следует обдумать все это."
+    $sna_head_state = 7
+    sna_head_main "Мне следует обдумать все это."
+    #__#sna_01 "Увидимся завтра, я зайду после занятий."
+    $sna_head_state = 1
+    sna_head_main "Увидимся завтра, я зайду после занятий."
+    #__#sna_06 "до тех пор, держи свою истинную личность и наш разговор в тайне, идет?"
+    $sna_head_state = 6
+    sna_head_main "до тех пор, держи свою истинную личность и наш разговор в тайне, идет?"
     m "Без проблем."
-    sna_01 "Отлично, тогда..."
-    sna_01 "Но перед тем, как я уйду, один вопрос..."
+    #__#sna_01 "Отлично, тогда..."
+    $sna_head_state = 1
+    sna_head_main "Отлично, тогда..."
+    #__#sna_01 "Но перед тем, как я уйду, один вопрос..."
+    sna_head_main "Но перед тем, как я уйду, один вопрос..."
     m "Я слушаю..."
-    sna_02 "........"
-    sna_01 "Если ты не человек, тогда..."
-    sna_07 "Что ты?"
+    #__#sna_02 "........"
+    $sna_head_state = 2
+    sna_head_main "........"
+    #__#sna_01 "Если ты не человек, тогда..."
+    $sna_head_state = 1
+    sna_head_main "Если ты не человек, тогда..."
+    #__#sna_07 "Что ты?"
+    $sna_head_state = 7
+    sna_head_main "Что ты?"
     m "...Я джинн."
-    sna_01 "Джинн?"
+    #__#sna_01 "Джинн?"
+    $sna_head_state = 1
+    sna_head_main "Джинн?"
     m "Да, я обладаю крутой космической силой и все такое..."
-    sna_01 "Серьезно?"
+    #__#sna_01 "Серьезно?"
+    sna_head_main "Серьезно?"
     m "О, да."
-    sna_01 "Невероятно..."
-    sna_01 "Ну, увидимся завтра.... джинн."
+    #__#sna_01 "Невероятно..."
+    sna_head_main "Невероятно..."
+    #__#sna_01 "Ну, увидимся завтра.... джинн."
+    sna_head_main "Ну, увидимся завтра.... джинн."
     m "Я буду здесь..."
 
-    sna_07 "(Джинн? Что-то новое...)"
+    #__#sna_07 "(Джинн? Что-то новое...)"
+    $sna_head_state = 7
+    sna_head_main "(Джинн? Что-то новое...)"
     jump day_start
 ###############################################################################################################################################################        
 label event_07: #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
@@ -1256,8 +1374,7 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     "*Тук-тук-тук*"
     pause.7
     
-    $ herView.change( 0 )
-    
+
     m "Кто-то стучит в дверь..."
     m "Черт... Я должен избегать любых контактов с людьми!"
     m "Хм... Каковы шансы, что это стучится не человек?"
@@ -1326,7 +1443,7 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     
     $ h_xpos=370 #Defines position of the Hermione's full length sprite.
     $ h_ypos=0
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     $ herView.showQ( "body_01.png", pos )
@@ -1719,7 +1836,7 @@ label event_08_02:
     
     $ h_xpos=370 #Defines position of the Hermione's full length sprite.
     $ h_ypos=0
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     $ herView.showQ( "body_01.png", pos )
@@ -1817,7 +1934,6 @@ label event_08_02:
 #NOT IN USE###############################################################################################################################################################    
 label event_08_03:
     "EVENT_08_03"
-    $ herView.change( 0 )
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
     "*Тук-тук-тук!*"
     m "Кто..."
@@ -1838,7 +1954,7 @@ label event_08_03:
     
     $ h_xpos=370 #Defines position of the Hermione's full length sprite.
     $ h_ypos=0
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     $ herView.showQ( "body_01.png", pos, d3 )
@@ -1951,7 +2067,6 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
     stop music fadeout 3.0
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
     "*Тук-тук-тук!*"
-    $ herView.change( 0 )
     menu:
         "\"Кто это?\"":
             herView "Это я, Гермиона Грейнджер." 
@@ -1997,7 +2112,7 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
 
     $ h_xpos=370 #Defines position of the Hermione's full length sprite.
     $ h_ypos=0
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     $ herView.showQ( "body_03.png", pos, d3 )
@@ -2229,7 +2344,6 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
 label event_09_2: #Takes place after second special event with Snape, where he just complains about Hermione.
     "EVENT_09"
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
-    $ herView.change( 0 )
     "*Тук-тук-тук!*"
     menu:
         "\"Кто это?\"":
@@ -2273,7 +2387,7 @@ label event_09_2: #Takes place after second special event with Snape, where he j
     
     $ h_xpos=370 #Defines position of the Hermione's full length sprite.
     $ h_ypos=0
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     $ herView.showQ( "body_01.png", pos )
@@ -2368,12 +2482,11 @@ label event_10: #Takes place after second special even with Snape where Ginie is
     #Hermione says that she sent the letter to the Ministry of Magic."
     "EVENT_10"
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
-    $ herView.change( 0 )
     "*Тук-тук-тук!*"
     menu:
         "\"Кто это?\"":
             herView "Это я, Гермиона Грейнджер." 
-            m "(Снвоа эта молоденькая ведьма...)" 
+            m "(Снова эта молоденькая ведьма...)" 
             herView "Могу я войти, сэр?"
             menu:
                 m "..."
@@ -2412,7 +2525,7 @@ label event_10: #Takes place after second special even with Snape where Ginie is
     
     $ h_xpos=370 #Defines position of the Hermione's full length sprite.
     $ h_ypos=0
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     $ herView.showQ( "body_01.png", pos )
@@ -2494,7 +2607,6 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
     #"EVENT_11"
     stop music fadeout 1.0
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
-    $ herView.change( 0 )
     "*Тук-тук-тук!*"
     herView "Профессор, я вхожу!"
     m "...."
@@ -2516,11 +2628,11 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
     
     #__#$ robeon = True #Hermione is wearing a robe.
     #__#$ only_upper = True #Otherwise skirt shows up under the robe.
-    $ herView.addAdditional( 'robe', HermioneItemRobe( herView.mClothesFolder, "robe.png", G_Z_BODY + 1 ) )
+    $ herView.addAdditional( 'robe', CharacterExItemRobe( herView.mClothesFolder, "robe.png", G_Z_BODY + 1 ) )
     
     $ h_xpos=370 #Defines position of the Hermione's full length sprite.
     $ h_ypos=0
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     $ herView.showQ( "body_09.png", pos )
@@ -2798,7 +2910,6 @@ label event_12: # Hermione complains that she did failed a test. (EVENING EVENT!
     #"EVENT_12"
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ herView.change( 0 )
     
     $ walk_xpos=570 #Animation of walking chibi. (From)
     $ walk_xpos2=400 #Coordinates of it's movement. (To)
@@ -2816,7 +2927,7 @@ label event_12: # Hermione complains that she did failed a test. (EVENING EVENT!
     with Dissolve(.3)
     $ h_xpos=370 #Defines position of the Hermione's full length sprite.
     $ h_ypos=0
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_370
     #__#hide screen hermione_main
     #__#with d3
     $ herView.hideQ( d3 )
@@ -3038,7 +3149,6 @@ label event_12: # Hermione complains that she did failed a test. (EVENING EVENT!
 label event_13: # Hermione complains that she almost failed a test. (EVENING EVENT!)
     #"EVENT_13"
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ herView.change( 0 )
 
 
     $ walk_xpos=570 #Animation of walking chibi. (From)
@@ -3170,7 +3280,6 @@ label event_13: # Hermione complains that she almost failed a test. (EVENING EVE
 label event_14: # Hermione comes after her breakdown (when she failed the test). She is asking for tutoring. Tutoring unlocked.
     #"EVENT_14"
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ herView.change( 0 )
     
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
 
@@ -3188,7 +3297,7 @@ label event_14: # Hermione comes after her breakdown (when she failed the test).
     with Dissolve(.3)
     $ h_xpos=370 #Defines position of the Hermione's full length sprite.
     $ h_ypos=0
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     $ herView.showQ( "body_01.png", pos )
@@ -3463,7 +3572,6 @@ label event_15: # Hermione comes and asks to buy a favour from her.
 #    $ s_p_u_pic = "what_49_points"
 #    show screen s_p_u
     
-    $ herView.change( 0 )
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
     "*Тук-тук-тук!*"
     menu:
@@ -3508,7 +3616,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
     
     $ h_xpos=370 #Defines position of the Hermione's full length sprite.
     $ h_ypos=0
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     $ herView.showQ( "body_13.png", pos )
@@ -3688,7 +3796,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
         #__#with d3
         $ herView.hideQQ()
         $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
-        $ pos = gMakePos( h_xpos, h_ypos )
+        $ pos = POS_140
         #__#$ h_body = "03_hp/13_hermione_main/body_24.png" #Sprite of Hermione's upper body.
         #__#show screen hermione_main
         #__#with d3
@@ -3812,7 +3920,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
         $ herView.hideQQ()
         
         $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
-        $ pos = gMakePos( h_xpos, h_ypos )
+        $ pos = POS_140
         #__#$ h_body = "03_hp/13_hermione_main/body_06.png" #Sprite of Hermione's upper body.
         #__#show screen hermione_main
         #__#with d3
@@ -3828,16 +3936,27 @@ label event_15: # Hermione comes and asks to buy a favour from her.
         show screen hermione_01_f #Hermione stands still.
         with Dissolve(.7)
 
-        her_02 "................................."
+        #__#her_02 "................................."
+        $her_head_state = 2
+        her_head_main "................................."
         menu:
             m "Hm..."
             "\"Униформа очень идет вам, мисс Грейнджер...\"":
-                her_01 "............"
-                her_05 "Спасибо, Профессор Дамблдор..."
+                #__#her_01 "............"
+                $her_head_state = 1
+                her_head_main "............"
+                #__#her_05 "Спасибо, Профессор Дамблдор..."
+                $her_head_state = 5
+                her_head_main "Спасибо, Профессор Дамблдор..."
             "\"У вас отличное тело, мисс Грейнджер...\"":
-                her_03 "!?"
-                her_04 ".............."
-                her_04 "Спасибо, профессор..."
+                #__#her_03 "!?"
+                $her_head_state = 3
+                her_head_main "!?"
+                #__#her_04 ".............."
+                $her_head_state = 4
+                her_head_main ".............."
+                #__#her_04 "Спасибо, профессор..."
+                her_head_main "Спасибо, профессор..."
             "\"Достаточно. Вот твои очки...\"":
                
                 
@@ -3878,7 +3997,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
         #__#with d3
         $ herView.hideQQ()
         $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
-        $ pos = gMakePos( h_xpos, h_ypos )
+        $ pos = POS_140
         #__#$ h_body = "03_hp/13_hermione_main/body_24.png" #Sprite of Hermione's upper body.
         #__#show screen hermione_main
         #__#with d3
@@ -3953,7 +4072,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
         #__#with d3
         $ herView.hideQQ()
         $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
-        $ pos = gMakePos( h_xpos, h_ypos )
+        $ pos = POS_140
         
         #__#$ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
         #__#show screen hermione_main
@@ -4133,7 +4252,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
     $ herView.hideQQ()
     
     $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_140
     
     #__#$ h_body = "03_hp/13_hermione_main/body_24.png" #Sprite of Hermione's upper body.    
     #__#show screen hermione_main
@@ -4254,3 +4373,5 @@ label event_15: # Hermione comes and asks to buy a favour from her.
 
 
     
+
+

@@ -1,24 +1,27 @@
-﻿init -999:
-    screen HermioneViewScreen( aData, aPos ):
-        python:
-            dataToSort = aData.values()
-            sorted_data = sorted( dataToSort, key = lambda item: item.mZOrder )
-        for element in sorted_data:
-            if element.mIsVisible == True:
-                if element.mIsAdditional == False:
-                    add element.mPath at aPos
-                else:
-                    add element.mPath at gSumPos( aPos, element.mItemPos )
-                
-        zorder hermione_main_zorder
+﻿screen CharacterExViewScreen( aData, aPos ):   
+    python:
+        dataToSort = aData.values()
+        sorted_data = sorted( dataToSort, key = lambda item: item.mZOrder )
+    for element in sorted_data:
+        if element.mIsVisible == True:
+            if element.mIsAdditional == False:
+                add element.getImage() at aPos
+            else:
+                add element.getImage() at gSumPos( aPos, element.mItemPos )
+    
+    #this variable is defined below, it's changed from the CharacterEx class
+    zorder _CharacterExViewScreenZOrder
+
+init -999 python:
+    _CharacterExViewScreenZOrder = 0
 
 init -998 python:
   
-    class HermioneView:
+    class CharacterEx:
         # constructor - memorizing Character object
-        def __init__( self, aCharacter1, aCharacter2 ):
-            self.mCh = aCharacter1
-            self.mCh2 = aCharacter2
+        def __init__( self, zOrder, aCharacter, aUniqName = 'default' ):
+            self.mCh = aCharacter
+            self.mUniqName = aUniqName
             self.mChActive = 0
             # currenlty dressed things
             self.mStuff = {}
@@ -30,6 +33,9 @@ init -998 python:
             self.mClothesFolder = "00_ex/00_hermione/clothes/"
             self.mFaceFolder = "00_ex/00_hermione/face/"
             self.mPoseFolder = "00_ex/00_hermione/pose/"
+            # z odrder of called screen
+            self.mZOrderScreen = zOrder
+            self.mTagScreen = self.__class__.__name__ + '_' + self.mUniqName;
             
         # need for using as simple character dialogue
         def __call__( self, what, interact = True ):
@@ -47,6 +53,15 @@ init -998 python:
         
         #-----------------------------#
         
+        # sets/get zOrder of called screen
+        def setZOrder( self, zOrder ):
+            self.mZOrderScreen = zOrder
+            
+        def getZOrder( self ):
+            return self.mZOrderScreen
+
+        #-----------------------------#
+        
         # call this to switch from first character to second and reverse
         def change( self, aCharNum ):
             self.mChActive = aCharNum
@@ -55,13 +70,15 @@ init -998 python:
         
         # show hermione screen with data parameters
         def showSelf( self, aData, aPos, aTransition = None ):
-            renpy.show_screen( "HermioneViewScreen", aData, aPos )
+            #renpy.show_screen( "CharacterExViewScreen", aData, aPos )
+            self._showView( aData, aPos )
             if aTransition is not None:
                 renpy.with_statement( aTransition )            
         
         # hide hermione screen
         def hideSelf( self, aTransition = None ):
-            renpy.hide_screen( "HermioneViewScreen" )
+            #renpy.hide_screen( self.mTagScreen )
+            self._hideView()
             if aTransition is not None:
                 renpy.with_statement( aTransition )            
             
@@ -70,8 +87,9 @@ init -998 python:
         # show hermione screen with saved parameters
         def showQ( self, aFace, aPos, aTransition = None ):
             if aFace is not None:
-                self.addFace( HermioneItem( self.mFaceFolder, aFace, G_Z_FACE ) )
-            renpy.show_screen( "HermioneViewScreen", self.mStuff, aPos )
+                self.addFace( CharacterExItem( self.mFaceFolder, aFace, G_Z_FACE ) )
+            #renpy.show_screen( "CharacterExViewScreen", self.mStuff, aPos )
+            self._showView( self.mStuff, aPos )
             if aTransition is not None:
                 renpy.with_statement( aTransition, None, True )
         
@@ -94,8 +112,8 @@ init -998 python:
         #------------------------------#
             
         # add additional stuff on hermione ( permanent )
-        def addAdditional( self, aKey, aHermioneItem ):
-            self._addItem( aKey, aHermioneItem )
+        def addAdditional( self, aKey, aCharacterExItem ):
+            self._addItem( aKey, aCharacterExItem )
         
         # del additional stuff on hermione ( permanent )
         def delAdditional( self, aKey ):
@@ -144,7 +162,7 @@ init -998 python:
         
         #additional function for face to pass only file name
         def addFaceName( self, aFace ):
-            self._addItem( 'face', HermioneItem( self.mFaceFolder, aFace, G_Z_FACE ) )
+            self._addItem( 'face', CharacterExItem( self.mFaceFolder, aFace, G_Z_FACE ) )
         
         def addFace( self, aData ):
             self._addItem( 'face', aData )
@@ -158,7 +176,7 @@ init -998 python:
 
         #------------------------------#
         
-        #DO NOT CALL CALL THESE METHODS DIRECTLY, THEY'RE INNER!
+        #DO NOT CALL CALL THESE METHODS FROM THE OUTER CODE< ONLY FROM THE CLASS, THEY'RE INNER!
         def _addItem( self, aName, aData ):
             aData.onSelfAdded( self.mStuff, self )
             for item in self.mStuff.values():
@@ -170,7 +188,16 @@ init -998 python:
             data.onSelfRemoved( self.mStuff, self )
             del self.mStuff[ aName ]
             for item in self.mStuff.values():
-                item.onItemRemoved( data, self )          
+                item.onItemRemoved( data, self )        
+    
+        def _showView( self, aData, aPos ):
+            oldOrder = store._CharacterExViewScreenZOrder
+            store._CharacterExViewScreenZOrder = self.mZOrderScreen
+            renpy.show_screen( "CharacterExViewScreen", aData, aPos, _tag = self.mTagScreen )
+            
+        def _hideView( self ):
+            renpy.hide_screen( self.mTagScreen )
+        
                 
         ##
         # MAYBE OBSOLETE, USE WITH CARE
@@ -181,21 +208,21 @@ init -998 python:
         
         def getDataDressed( self, aFace ): #aSkirtType = "normal"
             dicRes = {}
-            dicRes[ 'legs' ] = HermioneItem( self.mBodyFolder + "legs_universal.png", G_Z_LEGS )
-            dicRes[ 'panties' ] = HermioneItem( self.mClothesFolder + "panties_normal.png", G_Z_PANTIES )          
-            dicRes[ 'hands' ] = HermioneItem( self.mBodyFolder + "hands_universal.png", G_Z_HANDS )
-            dicRes[ 'body' ] = HermioneItem( self.mBodyFolder + "body_dressed.png", G_Z_BODY )
-            dicRes[ 'face' ] = HermioneItem( self.mFaceFolder + aFace, G_Z_FACE )
+            dicRes[ 'legs' ] = CharacterExItem( self.mBodyFolder + "legs_universal.png", G_Z_LEGS )
+            dicRes[ 'panties' ] = CharacterExItem( self.mClothesFolder + "panties_normal.png", G_Z_PANTIES )          
+            dicRes[ 'hands' ] = CharacterExItem( self.mBodyFolder + "hands_universal.png", G_Z_HANDS )
+            dicRes[ 'body' ] = CharacterExItem( self.mBodyFolder + "body_dressed.png", G_Z_BODY )
+            dicRes[ 'face' ] = CharacterExItem( self.mFaceFolder + aFace, G_Z_FACE )
             
             dicRes.update( self.mStuff )
             return dicRes
 
         def getDataNaked( self, aFace ):
             dicRes = {}
-            dicRes[ 'legs' ] = HermioneItem( self.mBodyFolder + "legs_universal.png", G_Z_LEGS )
-            dicRes[ 'hands' ] = HermioneItem( self.mBodyFolder + "hands_universal.png", G_Z_HANDS )
-            dicRes[ 'body' ] = HermioneItem( self.mBodyFolder + "body_naked.png", G_Z_BODY )
-            dicRes[ 'face' ] = HermioneItem( self.mFaceFolder + aFace, G_Z_FACE )
+            dicRes[ 'legs' ] = CharacterExItem( self.mBodyFolder + "legs_universal.png", G_Z_LEGS )
+            dicRes[ 'hands' ] = CharacterExItem( self.mBodyFolder + "hands_universal.png", G_Z_HANDS )
+            dicRes[ 'body' ] = CharacterExItem( self.mBodyFolder + "body_naked.png", G_Z_BODY )
+            dicRes[ 'face' ] = CharacterExItem( self.mFaceFolder + aFace, G_Z_FACE )
 
             if G_N_NETS in self.mStuff:
                 dicRes[ G_N_NETS ] = self.mStuff[ G_N_NETS ]
@@ -203,15 +230,15 @@ init -998 python:
             
         def getDataDressedSkirtUp( self, aWithPants = "with" ):
             dicRes = {}
-            dicRes[ 'legs' ] = HermioneItem( self.mBodyFolder + "legs_universal.png", G_Z_LEGS )
+            dicRes[ 'legs' ] = CharacterExItem( self.mBodyFolder + "legs_universal.png", G_Z_LEGS )
             if aWithPants == "with":
-                dicRes[ 'panties' ] = HermioneItem( self.mClothesFolder + "panties_normal.png", G_Z_PANTIES )
-                dicRes[ 'panties_shadow' ] = HermioneItem( self.mPoseFolder + "shadow_" + aWithPants + "_pants.png", G_Z_PANTIES + 1 )
+                dicRes[ 'panties' ] = CharacterExItem( self.mClothesFolder + "panties_normal.png", G_Z_PANTIES )
+                dicRes[ 'panties_shadow' ] = CharacterExItem( self.mPoseFolder + "shadow_" + aWithPants + "_pants.png", G_Z_PANTIES + 1 )
             elif aWithPants == "no":
-                dicRes[ 'panties_shadow' ] = HermioneItem( self.mPoseFolder + "shadow_" + aWithPants + "_pants.png", G_Z_PANTIES + 1 )
-            dicRes[ 'body' ] = HermioneItem( self.mBodyFolder + "body_dressed.png", G_Z_BODY )
-            dicRes[ 'pose' ] = HermioneItem( self.mPoseFolder + "pose_skirt_up.png", G_Z_POSE )
-            dicRes[ 'face' ] = HermioneItem( self.mFaceFolder + "body_01.png", G_Z_FACE )
+                dicRes[ 'panties_shadow' ] = CharacterExItem( self.mPoseFolder + "shadow_" + aWithPants + "_pants.png", G_Z_PANTIES + 1 )
+            dicRes[ 'body' ] = CharacterExItem( self.mBodyFolder + "body_dressed.png", G_Z_BODY )
+            dicRes[ 'pose' ] = CharacterExItem( self.mPoseFolder + "pose_skirt_up.png", G_Z_POSE )
+            dicRes[ 'face' ] = CharacterExItem( self.mFaceFolder + "body_01.png", G_Z_FACE )
             
             dicRes.update( self.mStuff )
             del dicRes[ G_N_SKIRT ]
@@ -219,10 +246,10 @@ init -998 python:
             
         def getDataDressedDressUp( self ):
             dicRes = {}
-            dicRes[ 'legs' ] = HermioneItem( self.mBodyFolder + "legs_universal.png", G_Z_LEGS )
-            dicRes[ 'body' ] = HermioneItem( self.mBodyFolder + "body_naked.png", G_Z_BODY )
-            dicRes[ 'pose' ] = HermioneItem( self.mPoseFolder + "pose_dress_up.png", G_Z_POSE )
-            dicRes[ 'face' ] = HermioneItem( self.mFaceFolder + "body_01.png", G_Z_FACE )
+            dicRes[ 'legs' ] = CharacterExItem( self.mBodyFolder + "legs_universal.png", G_Z_LEGS )
+            dicRes[ 'body' ] = CharacterExItem( self.mBodyFolder + "body_naked.png", G_Z_BODY )
+            dicRes[ 'pose' ] = CharacterExItem( self.mPoseFolder + "pose_dress_up.png", G_Z_POSE )
+            dicRes[ 'face' ] = CharacterExItem( self.mFaceFolder + "body_01.png", G_Z_FACE )
 
             dicRes.update( self.mStuff )
             del dicRes[ G_N_BADGE ]

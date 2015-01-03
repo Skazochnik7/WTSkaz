@@ -1,4 +1,4 @@
-﻿label main_ex_HermioneItem_constants:
+﻿label main_ex_CharacterExItem_constants:
     # main zOrders
     define G_Z_UNDERLEGS = 0
     define G_Z_LEGS = 20
@@ -21,12 +21,12 @@
 
 init -999 python:
     
-    class HermioneItem:
+    class CharacterExItem:
         # create hermione item's description, if aPos == None, created item counts as NOT ADDITIONAL
         def __init__( self, aFolder, aName, aOrder, aPos = None ):
             self.mName = aName
             self.mFileFolder = aFolder
-            self.mPath = aFolder + aName
+            self.mImage = aFolder + aName
             self.mZOrder = aOrder
             self.mItemPos = Transform( pos = ( 0, 0 ) )
             self.mIsVisible = True
@@ -38,24 +38,31 @@ init -999 python:
             # items, stored here change the visibility to FALSE
             self.mDirectors = set()
 
-        def onSelfAdded( self, aItems, aHermioneView ):
+        def updateImage( self, aImage ):
+            # here we can change image ( for example, make im.Flip action to the image, and save it here )
+            self.mImage = aImage
+        
+        def getImage( self ):
+            return self.mImage
+
+        def onSelfAdded( self, aItems, aCharacterEx ):
             # this called when THIS item is added to Hermione
             # we can add additional items, needed for this item, to HermioneView
             # do nothing in base class
             None
             
-        def onSelfRemoved( self, aItems, aHermioneView ):
+        def onSelfRemoved( self, aItems, aCharacterEx ):
             # this called just before deleting SELF from Hermione
             # do nothing in base class
             None
         
-        def onItemAdded( self, aItem, aHermioneView ):
+        def onItemAdded( self, aItem, aCharacterEx ):
             # this called when other new item added to Hermione, and THIS item is existed before it
             # we can add additional items, needed for this item, to HermioneView
             # do nothing in base class
             None
             
-        def onItemRemoved( self, aItem, aHermioneView ):
+        def onItemRemoved( self, aItem, aCharacterEx ):
             # this called when other new item added to Hermione, and THIS item is existed before it
             # we can add additional items, needed for this item, to HermioneView
             # do nothing in base class
