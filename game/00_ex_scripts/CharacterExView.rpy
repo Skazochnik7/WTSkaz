@@ -32,6 +32,7 @@ init -998 python:
             self.mClothesFolder = "00_ex/00_hermione/clothes/"
             self.mFaceFolder = "00_ex/00_hermione/face/"
             self.mPoseFolder = "00_ex/00_hermione/pose/"
+            self.mMiscFolder = "00_ex/00_hermione/misc/"
             # z odrder of called screen
             self.mZOrderScreen = zOrder
             self.mTagScreen = self.__class__.__name__ + '_' + self.mUniqName;
@@ -131,11 +132,13 @@ init -998 python:
         
         # save/load/clear current items set
         def saveState( self ):
-            self.mSavedItems = deepcopy( self.mStuff )
+            self.mSavedItems = {}# deepcopy( self.mStuff )
+            for key in self.mStuff.keys():
+                self.mSavedItems[ key ] = deepcopy( self.mStuff[ key ] )
     
         def loadState( self ):
             self.mStuff.clear()
-            for key in self.mSavedItems:
+            for key in self.mSavedItems.keys():
                 self.mStuff[ key ] = deepcopy( self.mSavedItems[ key ] )
             
         def clearState( self ):
