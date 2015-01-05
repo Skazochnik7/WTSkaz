@@ -4,7 +4,7 @@ label tutoring:
     
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
-    $herView.hideSelf( d3 )
+    $herView.hideQ( d3 )
     $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE

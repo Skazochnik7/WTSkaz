@@ -4093,7 +4093,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
                 #__#$ h_body = "03_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_1.png", pos )
+                $ herView.showQQ( "body_11.png", pos )
                 herView "Нужно ли меня... наказать?"
                 #__#hide screen hermione_main
                 #__#with d3
@@ -4145,7 +4145,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
                 #__#$ h_body = "03_hp/13_hermione_main/body_33.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_3.png", pos )
+                $ herView.showQQ( "body_33.png", pos )
                 herView "{size=-5}(И я действительно так думаю иногда...){/size}"
                 m "Хорошая девочка."
                 #__#hide screen hermione_main
@@ -4154,7 +4154,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
                 #__#$ h_body = "03_hp/13_hermione_main/body_44.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_4.png", pos )
+                $ herView.showQQ( "body_44.png", pos )
                 herView "................??"
                 m "Это было так трудно?"
                 #__#hide screen hermione_main

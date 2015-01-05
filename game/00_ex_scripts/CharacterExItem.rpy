@@ -66,7 +66,7 @@ init -999 python:
             
         def onItemRemoved( self, aItemKey, aItem, aCharacterEx ):
             if aItemKey == self.mParent:
-                self.show( 'parent' )
+                self._showInner( 'parent' )
             self.innerOnItemRemoved( aItemKey, aItem, aCharacterEx )
             
         def onItemHidden( self, aKey ):
@@ -123,8 +123,7 @@ init -999 python:
                 aCharacterEx.hideItem( key, self.__class__.__name__ )                  
             
         def innerOnSelfRemoved( self, aItems, aCharacterEx ):
-            # this called just before deleting SELF from Hermione
-            # do nothing in base class
+            # this called just after deleting SELF from Hermione
             for key in self.mHideList:
                 aCharacterEx.showItem( key, self.__class__.__name__ )                  
         

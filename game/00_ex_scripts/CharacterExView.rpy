@@ -206,8 +206,8 @@ init -998 python:
         def _delItem( self, aName ):
             if aName in self.mStuff.keys():
                 data = self.mStuff[ aName ]
-                data.onSelfRemoved( self.mStuff, self )
                 del self.mStuff[ aName ]
+                data.onSelfRemoved( self.mStuff, self )
                 for item in self.mStuff.values():
                     item.onItemRemoved( aName, data, self )        
     
