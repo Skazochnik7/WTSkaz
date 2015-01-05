@@ -4701,7 +4701,9 @@ label start:
     $ herView.addPanties( CharacterExItem( herView.mClothesFolder, "panties_normal.png", G_Z_PANTIES ) )
     $ herView.addSkirt( CharacterExItem( herView.mClothesFolder, "skirt_normal.png", G_Z_SKIRT ) )
     $ herView.addHands( CharacterExItem( herView.mBodyFolder, "hands_universal.png", G_Z_HANDS ) )
-    $ herView.addBody( CharacterExItem( herView.mBodyFolder, "body_dressed.png", G_Z_BODY ) )
+    $ herView.addBody( CharacterExItem( herView.mBodyFolder, "body.png", G_Z_BODY ) )
+    $ herView.addTits( CharacterExItem( herView.mBodyFolder, "tits.png", G_Z_TITS ) )
+    $ herView.addDress( CharacterExItemDress( herView.mClothesFolder, "dress_normal.png", G_Z_DRESS ) )
     $ herView.addFace( CharacterExItem( herView.mFaceFolder, "body_01.png", G_Z_FACE ) )
     
     $ gold = 0

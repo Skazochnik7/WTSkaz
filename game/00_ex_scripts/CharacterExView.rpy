@@ -16,13 +16,12 @@ init -999 python:
     _CharacterExViewScreenZOrder = 0
 
 init -998 python:
-  
+    from copy import deepcopy 
     class CharacterEx:
         # constructor - memorizing Character object
         def __init__( self, zOrder, aCharacter, aUniqName = 'default' ):
             self.mCh = aCharacter
             self.mUniqName = aUniqName
-            self.mChActive = 0
             # currenlty dressed things
             self.mStuff = {}
             # here we'll save all items on Hermione
@@ -39,17 +38,11 @@ init -998 python:
             
         # need for using as simple character dialogue
         def __call__( self, what, interact = True ):
-            if self.mChActive == 0:
-                return self.mCh( what, interact = interact )
-            else:
-                return self.mCh2( what, interact = interact )
-                
+            return self.mCh( what, interact = interact )
+
         # need for using as simple character dialogue
         def predict( self, what ):
-            if self.mChActive == 0:
-                return self.mCh.predict( what )
-            else:
-                return self.mCh2.predict( what )
+            return self.mCh.predict( what )
         
         #-----------------------------#
         
@@ -59,29 +52,23 @@ init -998 python:
             
         def getZOrder( self ):
             return self.mZOrderScreen
-
+       
         #-----------------------------#
         
-        # call this to switch from first character to second and reverse
-        def change( self, aCharNum ):
-            self.mChActive = aCharNum
+        ## show hermione screen with data parameters
+        #def showSelf( self, aData, aPos, aTransition = None ):
+        #    #renpy.show_screen( "CharacterExViewScreen", aData, aPos )
+        #    self._showView( aData, aPos )
+        #    if aTransition is not None:
+        #        renpy.with_statement( aTransition )            
         
-        #-----------------------------#
-        
-        # show hermione screen with data parameters
-        def showSelf( self, aData, aPos, aTransition = None ):
-            #renpy.show_screen( "CharacterExViewScreen", aData, aPos )
-            self._showView( aData, aPos )
-            if aTransition is not None:
-                renpy.with_statement( aTransition )            
-        
-        # hide hermione screen
-        def hideSelf( self, aTransition = None ):
-            #renpy.hide_screen( self.mTagScreen )
-            self._hideView()
-            if aTransition is not None:
-                renpy.with_statement( aTransition )            
-            
+        ## hide hermione screen
+        #def hideSelf( self, aTransition = None ):
+        #    #renpy.hide_screen( self.mTagScreen )
+        #    self._hideView()
+        #    if aTransition is not None:
+        #        renpy.with_statement( aTransition )            
+        #    
         #-----------------------------#
         
         # show hermione screen with saved parameters
@@ -95,8 +82,10 @@ init -998 python:
         
         # hide hermione screen
         def hideQ( self, aTransition = None ):
-            self.hideSelf( aTransition )
-
+            self._hideView()
+            if aTransition is not None:
+                renpy.with_statement( aTransition )
+                
         # below is two methods to simplifying typing
         def showQQ( self, aFace, aPos ):
             self.showQ( aFace, aPos, d3 )
@@ -111,29 +100,50 @@ init -998 python:
         
         #------------------------------#
             
+        # return Item if Hermione get the item with given key, otherwise - None
+        def getItem( self, aKey ):
+            if aKey in self.mStuff.keys():
+                return self.mStuff[ aKey ]
+            else:
+                return None
+                
         # add additional stuff on hermione ( permanent )
-        def addAdditional( self, aKey, aCharacterExItem ):
+        def addItem( self, aKey, aCharacterExItem ):
             self._addItem( aKey, aCharacterExItem )
         
         # del additional stuff on hermione ( permanent )
-        def delAdditional( self, aKey ):
+        def delItem( self, aKey ):
             self._delItem( aKey )
+
+        # show item on hermione ( make it visible )
+        def showItem( self, aKey, aSource = 'game' ):
+            if aKey in self.mStuff.keys():
+                item = self.mStuff[ aKey ]
+                item.show( aSource, aKey, self )
+
+        # hide item on hermione ( make it invisible )
+        def hideItem( self, aKey, aSource = 'game' ):
+            if aKey in self.mStuff.keys():
+                item = self.mStuff[ aKey ]
+                item.hide( aSource, aKey, self )
             
         #------------------------------#
         
         # save/load/clear current items set
         def saveState( self ):
-            self.mSavedItems = self.mStuff
+            self.mSavedItems = deepcopy( self.mStuff )
     
         def loadState( self ):
-            self.mStuff = self.mSavedItems
+            self.mStuff.clear()
+            for key in self.mSavedItems:
+                self.mStuff[ key ] = deepcopy( self.mSavedItems[ key ] )
             
         def clearState( self ):
             self.mSavedItems = {}
             
         #------------------------------#
 
-        # methods to add/del important parts of clothes, but you still can use addAdditional/delAdditional methods
+        # methods to add/del important parts of clothes, but you still can use addItem/delItem methods
         
         def addLegs( self, aData ):
             self._addItem( 'legs', aData )
@@ -159,7 +169,22 @@ init -998 python:
             self._addItem( 'body', aData )
         def delBody( self ):
             self._delItem( 'body' )
-        
+            
+        def addDress( self, aData ):
+            self._addItem( 'dress', aData )
+        def delDress( self ):
+            self._delItem( 'dress' )
+            
+        def addTits( self, aData ):
+            self._addItem( 'tits', aData )
+        def delTits( self ):
+            self._delItem( 'tits' )
+            
+        def addPose( self, aData ):
+            self._addItem( 'pose', aData )
+        def delPose( self ):
+            self._delItem( 'pose' )
+            
         #additional function for face to pass only file name
         def addFaceName( self, aFace ):
             self._addItem( 'face', CharacterExItem( self.mFaceFolder, aFace, G_Z_FACE ) )
@@ -168,27 +193,23 @@ init -998 python:
             self._addItem( 'face', aData )
         def delFace( self ):
             self._delItem( 'face' )
-            
-        def addPose( self, aData ):
-            self._addItem( 'pose', aData )
-        def delPose( self ):
-            self._delItem( 'pose' )
 
         #------------------------------#
         
-        #DO NOT CALL CALL THESE METHODS FROM THE OUTER CODE< ONLY FROM THE CLASS, THEY'RE INNER!
+        #DO NOT CALL CALL THESE METHODS FROM THE OUTER CODE! ONLY FROM THE CLASS, THEY'RE INNER!
         def _addItem( self, aName, aData ):
             aData.onSelfAdded( self.mStuff, self )
             for item in self.mStuff.values():
-                item.onItemAdded( aData, self )
+                item.onItemAdded( aName, aData, self )
             self.mStuff[ aName ] = aData
 
         def _delItem( self, aName ):
-            data = self.mStuff[ aName ]
-            data.onSelfRemoved( self.mStuff, self )
-            del self.mStuff[ aName ]
-            for item in self.mStuff.values():
-                item.onItemRemoved( data, self )        
+            if aName in self.mStuff.keys():
+                data = self.mStuff[ aName ]
+                data.onSelfRemoved( self.mStuff, self )
+                del self.mStuff[ aName ]
+                for item in self.mStuff.values():
+                    item.onItemRemoved( aName, data, self )        
     
         def _showView( self, aData, aPos ):
             oldOrder = store._CharacterExViewScreenZOrder
@@ -197,60 +218,11 @@ init -998 python:
             
         def _hideView( self ):
             renpy.hide_screen( self.mTagScreen )
-        
-                
-        ##
-        # MAYBE OBSOLETE, USE WITH CARE
-        ##
-        # methods below used for simplifying your life :) they creates data for showing Hermione in some common states
-        # return value is a dictionary, so you can change there whatever you want
-        # define more methods if you want
-        
-        def getDataDressed( self, aFace ): #aSkirtType = "normal"
-            dicRes = {}
-            dicRes[ 'legs' ] = CharacterExItem( self.mBodyFolder + "legs_universal.png", G_Z_LEGS )
-            dicRes[ 'panties' ] = CharacterExItem( self.mClothesFolder + "panties_normal.png", G_Z_PANTIES )          
-            dicRes[ 'hands' ] = CharacterExItem( self.mBodyFolder + "hands_universal.png", G_Z_HANDS )
-            dicRes[ 'body' ] = CharacterExItem( self.mBodyFolder + "body_dressed.png", G_Z_BODY )
-            dicRes[ 'face' ] = CharacterExItem( self.mFaceFolder + aFace, G_Z_FACE )
             
-            dicRes.update( self.mStuff )
-            return dicRes
-
-        def getDataNaked( self, aFace ):
-            dicRes = {}
-            dicRes[ 'legs' ] = CharacterExItem( self.mBodyFolder + "legs_universal.png", G_Z_LEGS )
-            dicRes[ 'hands' ] = CharacterExItem( self.mBodyFolder + "hands_universal.png", G_Z_HANDS )
-            dicRes[ 'body' ] = CharacterExItem( self.mBodyFolder + "body_naked.png", G_Z_BODY )
-            dicRes[ 'face' ] = CharacterExItem( self.mFaceFolder + aFace, G_Z_FACE )
-
-            if G_N_NETS in self.mStuff:
-                dicRes[ G_N_NETS ] = self.mStuff[ G_N_NETS ]
-            return dicRes
+        def _onItemHiden( self, aKey ):
+            for item in self.mStuff.values():
+                item.onItemHidden( aKey )  
             
-        def getDataDressedSkirtUp( self, aWithPants = "with" ):
-            dicRes = {}
-            dicRes[ 'legs' ] = CharacterExItem( self.mBodyFolder + "legs_universal.png", G_Z_LEGS )
-            if aWithPants == "with":
-                dicRes[ 'panties' ] = CharacterExItem( self.mClothesFolder + "panties_normal.png", G_Z_PANTIES )
-                dicRes[ 'panties_shadow' ] = CharacterExItem( self.mPoseFolder + "shadow_" + aWithPants + "_pants.png", G_Z_PANTIES + 1 )
-            elif aWithPants == "no":
-                dicRes[ 'panties_shadow' ] = CharacterExItem( self.mPoseFolder + "shadow_" + aWithPants + "_pants.png", G_Z_PANTIES + 1 )
-            dicRes[ 'body' ] = CharacterExItem( self.mBodyFolder + "body_dressed.png", G_Z_BODY )
-            dicRes[ 'pose' ] = CharacterExItem( self.mPoseFolder + "pose_skirt_up.png", G_Z_POSE )
-            dicRes[ 'face' ] = CharacterExItem( self.mFaceFolder + "body_01.png", G_Z_FACE )
-            
-            dicRes.update( self.mStuff )
-            del dicRes[ G_N_SKIRT ]
-            return dicRes
-            
-        def getDataDressedDressUp( self ):
-            dicRes = {}
-            dicRes[ 'legs' ] = CharacterExItem( self.mBodyFolder + "legs_universal.png", G_Z_LEGS )
-            dicRes[ 'body' ] = CharacterExItem( self.mBodyFolder + "body_naked.png", G_Z_BODY )
-            dicRes[ 'pose' ] = CharacterExItem( self.mPoseFolder + "pose_dress_up.png", G_Z_POSE )
-            dicRes[ 'face' ] = CharacterExItem( self.mFaceFolder + "body_01.png", G_Z_FACE )
-
-            dicRes.update( self.mStuff )
-            del dicRes[ G_N_BADGE ]
-            return dicRes
+        def _onItemShown( self, aKey ):
+            for item in self.mStuff.values():
+                item.onItemShown( aKey )  

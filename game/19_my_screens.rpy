@@ -292,14 +292,31 @@ screen hermione_02: #Hermione stands still and blinks.
 screen hermione_02_b: #Hermione stands still wearing a robe.
     tag hermione
     add "03_hp/animation/01.png" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    
-screen hermione_03: #Hermione lifts her skirt
+
+
+
+# second event - hermione lifts her skirt to show panties
+screen hermione_lift_skirt_angry: #Hermione lifts her skirt
     tag hermione
     add "03_hp/16_hermione_chibi/panties_00.png" at Position(xpos=350, ypos=190)
-    
-screen hermione_03_b: #Hermione lifts her skirt. NO PANTIES.
+
+screen hermione_lift_skirt_normal: #Hermione lifts her skirt
     tag hermione
     add "03_hp/16_hermione_chibi/panties_01.png" at Position(xpos=350, ypos=190)
+    
+screen hermione_lift_skirt_no_panties: #Hermione lifts her skirt
+    tag hermione
+    add "03_hp/16_hermione_chibi/panties_02.png" at Position(xpos=350, ypos=190)
+
+
+# this is stayed because i don't rework the 27_final_events.rpy... yet
+screen hermione_03: #Hermione lifts her skirt
+    tag hermione
+    add "03_hp/16_hermione_chibi/panties_00_old.png" at Position(xpos=350, ypos=190)
+ 
+#__#screen hermione_03_b: #Hermione lifts her skirt. NO PANTIES.
+#__#    tag hermione
+#__#    add "03_hp/16_hermione_chibi/panties_01.png" at Position(xpos=350, ypos=190)
 
 screen hermione_04: #Hermione lifts her shirt. Showing tits.
     tag hermione

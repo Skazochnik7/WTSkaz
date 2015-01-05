@@ -2628,7 +2628,7 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
     
     #__#$ robeon = True #Hermione is wearing a robe.
     #__#$ only_upper = True #Otherwise skirt shows up under the robe.
-    $ herView.addAdditional( 'robe', CharacterExItemRobe( herView.mClothesFolder, "robe.png", G_Z_BODY + 1 ) )
+    $ herView.addItem( 'robe', CharacterExItemRobe( herView.mClothesFolder, "robe.png", G_Z_DRESS + 1, 'body' ) )
     
     $ h_xpos=370 #Defines position of the Hermione's full length sprite.
     $ h_ypos=0
@@ -2893,7 +2893,7 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
     with Dissolve(.3)
     pause.5
     
-    $ herView.delAdditional( 'robe' )
+    $ herView.delItem( 'robe' )
     #__#$ robeon = False #Hermione is NOT wearing a robe.
     #__#$ only_upper = False #Otherwise skirt shows up under the robe.
     

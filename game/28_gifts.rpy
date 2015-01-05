@@ -384,7 +384,7 @@ label badge_put:
     
     $ badges = True
     $ ba_01 = True
-    $ herView.addAdditional( G_N_BADGE, CharacterExItem( herView.mClothesFolder, "badge.png", G_Z_BODY + 1 ) )
+    $ herView.addItem( G_N_BADGE, CharacterExItem( herView.mClothesFolder, "badge.png", G_Z_DRESS + 1, 'dress' ) )
     
     show screen blkfade
     with d3
@@ -411,7 +411,7 @@ label badge_take:
 
     $ badges = False
     $ ba_01 = False
-    $ herView.delAdditional( G_N_BADGE )
+    $ herView.delItem( G_N_BADGE )
     
     show screen blkfade
     with d3
@@ -659,7 +659,7 @@ label nets_put:
                                                                                                                                                                                                                           #HERMIONE
     
      
-    $ herView.addAdditional( G_N_NETS, CharacterExItem( herView.mClothesFolder, "nets.png", G_Z_LEGS + 1 ) )
+    $ herView.addItem( G_N_NETS, CharacterExItem( herView.mClothesFolder, "nets.png", G_Z_LEGS + 1, 'legs' ) )
     $ ne = True # Shows fishnets layer.
     $ ne_01 = True # Shows the fishnets.
     
@@ -727,7 +727,7 @@ label nets_take:
         her "Правда? Ой..."
     
     
-    $ herView.delAdditional( G_N_NETS )
+    $ herView.delItem( G_N_NETS )
     $ ne = False # Shows fishnets layer.
     $ ne_01 = False # Shows the fishnets.
     #$ legs_02 = False
