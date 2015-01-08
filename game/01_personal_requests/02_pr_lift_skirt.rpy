@@ -362,7 +362,7 @@ label new_request_02: #SHOW ME YOUR Трусики
         #__#with d3
         $herView.hideQQ()
         #__#$ h_xpos=300 #Defines position of the Hermione's full length sprite.
-        $ pos = gMakePos( h_xpos, h_ypos )
+        $ pos.xpos = 300
         #__#$ h_body = "03_hp/13_hermione_main/body_13.png" #Flashing Трусики
         #__#show screen hermione_main
         #__#with d3

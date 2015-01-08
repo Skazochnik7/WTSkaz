@@ -21,6 +21,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
     $ current_payout = 35 #Because will have option to pay extra.
 
     $ herView.data().saveState()
+    $ herView.data().addItem( 'splatters', CharacterExItemSplatters( herView.mMiscFolder, "splatters.png", G_Z_POSE - 1 ) )
 
     if request_11_points == 0: #<==============================EVENT 01
         

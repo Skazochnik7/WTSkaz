@@ -523,7 +523,7 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                     #__#hide screen hermione_main
                     #__#with d3
                     $herView.hideQQ()
-                    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center.
+                    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center.
                     $ pos = POS_140
                     #__#$ h_body = "03_hp/13_hermione_main/body_11.png" #Flashing Трусики
                     #__#show screen hermione_main
@@ -888,7 +888,7 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                     #__#hide screen hermione_main
                     #__#with d3
                     $herView.hideQQ()
-                    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center.
+                    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center.
                     $ pos = POS_370
                     #__#$ h_body = "03_hp/13_hermione_main/body_15.png" #Flashing Трусики
                     #__#show screen hermione_main

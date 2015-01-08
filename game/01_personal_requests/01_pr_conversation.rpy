@@ -17,7 +17,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
     #__#hide screen hermione_main
     #__#with d3
     $herView.hideQQ()
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
     $ pos = POS_140
     #__#$ h_body = "03_hp/13_hermione_main/body_08.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main

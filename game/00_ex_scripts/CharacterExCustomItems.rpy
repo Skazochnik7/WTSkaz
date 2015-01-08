@@ -78,3 +78,36 @@
         def _fillHideList( self ):
             self.mHideList.append( 'dress' )
             self.mHideList.append( 'hands' )
+
+    ########################################################################################
+    # we need additional class for splatters (body 97,98,99)
+    class CharacterExItemSplatters( CharacterExItem ):
+        def _fillHideList( self ):
+            None
+
+        def innerOnSelfAdded( self, aItems, aCharacterEx ):
+            # do not forget to call parent method!
+            CharacterExItem.innerOnSelfAdded( self, aItems, aCharacterEx )
+            if 'face' in aItems:
+                faceObj = aItems[ 'face' ]
+                if faceObj.mName == 'body_97.png' or faceObj.mName == 'body_98.png' or faceObj.mName == 'body_99.png':
+                    self._showInner( 'self' )
+                else:
+                    self._hideInner( 'self' )
+                       
+            
+        def innerOnItemAdded( self, aItemKey, aItem, aCharacterEx ):
+            # do not forget to call parent method!
+            CharacterExItem.innerOnItemAdded( self, aItemKey, aItem, aCharacterEx )
+            if aItemKey == 'face':
+                if aItem.mName == 'body_97.png' or aItem.mName == 'body_98.png' or aItem.mName == 'body_99.png':
+                    self._showInner( 'self' )
+                else:
+                    self._hideInner( 'self' )
+            
+            
+        def innerOnItemRemoved( self, aItemKey, aItem, aCharacterEx ):
+            # do not forget to call parent method!
+            CharacterExItem.innerOnItemRemoved( self, aItemKey, aItem, aCharacterEx )
+            if aItemKey == 'face':
+                self._hideInner( 'self' )
