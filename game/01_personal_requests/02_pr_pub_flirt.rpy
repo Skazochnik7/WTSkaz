@@ -1397,37 +1397,3 @@ label new_request_02_b_complete:
         
     call music_block
     return        
-
-
-label could_not_flirt: #Sent here when choose "Задание провалено! Ты не получишь очки!" (Hermione is leaving without getting any points).
-    hide screen blkfade
-    hide screen bld1
-    #__#hide screen hermione_main
-    $herView.hideQ()
-    hide screen blktone 
-    hide screen chair_02
-    hide screen hermione_02
-    hide screen jerking_off_01 #Hermione topless. Genie jerking off.
-    hide screen ctc
-    show screen genie
-    with d3
-
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-    
-    $ request_02_b_points += 1
-    $ request_02_b = False 
-    
-    call music_block
-    
-    if daytime:
-        $ hermione_takes_classes = True
-    else:
-        $ hermione_sleeping = True
-    return

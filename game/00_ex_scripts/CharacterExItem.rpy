@@ -47,13 +47,60 @@ init -999 python:
             # here is the list of keys to hide with this item
             self.mHideList = []
             self._fillHideList()
+            
+            # set with transforms
+            self.mTransforms = set()
 
+        ##########################################################
+        # modify image methods
+        ##########################################################
+        
         def updateImage( self, aImage ):
             # here we can change image ( for example, make im.Flip action to the image, and save it here )
             self.mImage = aImage
         
         def getImage( self ):
             return self.mImage
+            
+        ##########################################################
+        # show/hide methods
+        ##########################################################
+
+        def hide( self, aSource, aKey, aCharacterEx ):
+            prevVis = self.mIsVisible
+            self._hideInner( aSource )
+            if prevVis != self.mIsVisible:
+                aCharacterEx._onItemHiden( aKey )
+                for inKey in self.mHideList:
+                    aCharacterEx.showItem( inKey, self.__class__.__name__ )
+                
+        def show( self, aSource, aKey, aCharacterEx ):
+            prevVis = self.mIsVisible            
+            self._showInner( aSource )
+            if prevVis != self.mIsVisible:
+                aCharacterEx._onItemShown( aKey )
+                for inKey in self.mHideList:
+                    aCharacterEx.hideItem( inKey, self.__class__.__name__ )    
+
+        ##########################################################
+        # methods for proper transform work
+        ##########################################################
+
+        def addTransform( self, aName ):
+            self.mTransforms.add( aName )
+                
+        def delTransform( self, aName ):
+            self.mTransforms.discard( aName )
+
+        def getTransform( self, aName ):
+            if aName in self.mTransforms:
+                return True
+            else:
+                return False
+            
+        ##########################################################
+        # inner callbacks, do not use them directly
+        ##########################################################            
 
         def onSelfAdded( self, aItems, aCharacterEx ):
             self.innerOnSelfAdded( aItems, aCharacterEx )
@@ -78,22 +125,6 @@ init -999 python:
             if aKey == self.mParent:
                 self._showInner( 'parent' )
             self.innerOnItemShown( aKey )
-
-        def hide( self, aSource, aKey, aCharacterEx ):
-            prevVis = self.mIsVisible
-            self._hideInner( aSource )
-            if prevVis != self.mIsVisible:
-                aCharacterEx._onItemHiden( aKey )
-                for inKey in self.mHideList:
-                    aCharacterEx.showItem( inKey, self.__class__.__name__ )
-                
-        def show( self, aSource, aKey, aCharacterEx ):
-            prevVis = self.mIsVisible            
-            self._showInner( aSource )
-            if prevVis != self.mIsVisible:
-                aCharacterEx._onItemShown( aKey )
-                for inKey in self.mHideList:
-                    aCharacterEx.hideItem( inKey, self.__class__.__name__ )
 
         ##########################################################
         # methods to forget about them :D

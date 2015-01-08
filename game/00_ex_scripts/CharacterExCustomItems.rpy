@@ -74,3 +74,7 @@
                     
     ########################################################################################
     # we need additional class for pose with showing tits ( need to hide basic hands, add naked body and hide normal body )
+    class CharacterExItemPoseShowTits( CharacterExItem ):
+        def _fillHideList( self ):
+            self.mHideList.append( 'dress' )
+            self.mHideList.append( 'hands' )

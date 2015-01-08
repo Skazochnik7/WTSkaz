@@ -603,9 +603,9 @@ screen hermione_main: #Screen that shows a full sprite of HERMIONE.
     if autograph:
         add "03_hp/13_hermione_main/auto.png" xpos h_xpos ypos h_ypos #Displays an autograph on her leg.
     if sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
-        add "03_hp/13_hermione_main/auto_02.png" xpos h_xpos ypos h_ypos #Displays sperm.
+        add "03_hp/13_hermione_main/sperm_00.png" xpos h_xpos ypos h_ypos #Displays sperm.
     if aftersperm: #Shows cum stains on Hermione's uniform.
-        add "03_hp/13_hermione_main/auto_03.png" xpos h_xpos ypos h_ypos #Displays sperm.
+        add "03_hp/13_hermione_main/sperm_00_after.png" xpos h_xpos ypos h_ypos #Displays sperm.
     
     if ne: # Desplays a fishnets in hermione_main screen.
         if ne_01:

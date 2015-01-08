@@ -4693,9 +4693,15 @@ label start:
         # global keyword says to python that this variable will be global
         # and because it's defined after 'start' label - it'll be saved by Ren'Py, great!
         global herView
+        # second variable, used in dialogs as portrait, may be used with main variable ( i think so, or what the reason to define one more? )
+        global herViewHead      
     $ herView = CharacterEx( 5, her, 'hermione' )
     $ herView.clearState()
     
+    $ herViewHead = CharacterEx( 8, her2, 'hermione_head' )
+    $ herViewHead.clearState()
+    $ herViewHead.pushScreenTag( 'head' )
+
     # lets use saved stuff system, so now fill hermione items
     $ herView.addLegs( CharacterExItem( herView.mBodyFolder, "legs_universal.png", G_Z_LEGS ) )
     $ herView.addPanties( CharacterExItem( herView.mClothesFolder, "panties_normal.png", G_Z_PANTIES ) )
@@ -4705,7 +4711,11 @@ label start:
     $ herView.addTits( CharacterExItem( herView.mBodyFolder, "tits.png", G_Z_TITS ) )
     $ herView.addDress( CharacterExItemDress( herView.mClothesFolder, "dress_normal.png", G_Z_DRESS ) )
     $ herView.addFace( CharacterExItem( herView.mFaceFolder, "body_01.png", G_Z_FACE ) )
-    
+
+    # copy inited state from main variable
+    $ herViewHead.copyState( herView )
+
+
     $ gold = 0
     
     $ rum_times = 0 # Counts how many times have you rummaged the cupboard. +1 every time you do that. Needed to make to grand 2 potions before the fight.
