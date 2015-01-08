@@ -1,27 +1,8 @@
-﻿screen CharacterExViewScreen( aData, aPos ):   
-    python:
-        dataToSort = aData.values()
-        sorted_data = sorted( dataToSort, key = lambda item: item.mZOrder )
-    for element in sorted_data:
-        if element.mIsVisible == True:
-            if element.mIsAdditional == False:
-                add element.getImage() at aPos
-            else:
-                add element.getImage() at gSumPos( aPos, element.mItemPos )
-    
-    #this variable is defined below, it's changed from the CharacterEx class
-    zorder _CharacterExViewScreenZOrder
-
-init -999 python:
-    _CharacterExViewScreenZOrder = 0
-
-init -998 python:
+﻿init -998 python:
     from copy import deepcopy 
-    class CharacterEx:
+    class CharacterExData:
         # constructor - memorizing Character object
-        def __init__( self, zOrder, aCharacter, aUniqName = 'default' ):
-            self.mCh = aCharacter
-            self.mUniqName = aUniqName
+        def __init__( self ):
             # currenlty dressed things
             self.mStuff = {}
             # dictionary with transforms
@@ -30,46 +11,6 @@ init -998 python:
             self.mSavedItems = {}
             self.mSavedTransforms = {}
             
-            # memorize default pathes
-            self.mBodyFolder = "00_ex/00_hermione/body/"
-            self.mClothesFolder = "00_ex/00_hermione/clothes/"
-            self.mFaceFolder = "00_ex/00_hermione/face/"
-            self.mPoseFolder = "00_ex/00_hermione/pose/"
-            self.mMiscFolder = "00_ex/00_hermione/misc/"
-            # z odrder of called screen
-            self.mZOrderScreen = zOrder
-            self.mTagScreen = self.__class__.__name__ + '_' + self.mUniqName;
-            
-            # stack for view tags
-            self.mTagsStack = []
-            
-            # varaible, to which this is binded
-            self.mBinded = None
-
-            
-        # need for using as simple character dialogue
-        def __call__( self, what, interact = True ):
-            return self.mCh( what, interact = interact )
-
-        # need for using as simple character dialogue
-        def predict( self, what ):
-            return self.mCh.predict( what )
-        
-        ##########################################################
-        # these methods allow you to bind/unbind current object to another
-        # binded object will use mStuff and mTransform from the target one,
-        # all other stuff will be unique
-        # WARNING operations with state will call methods from binded object, so don't mess the things
-        ##########################################################
-        
-        def bindTo( self, aTarget ):
-            self.saveState( True )
-            self.mBinded = aTarget
-            
-        def unbind( self ):
-            self.mBinded = None
-            self.loadState( True )
-
         ##########################################################
         # methods to work with global character transforms
         ##########################################################
@@ -89,62 +30,11 @@ init -998 python:
                     self._discardTr( self.mTransforms[ aKey ], val, aKey )
                 del self.mTransforms[ aKey ]
         
-        # remov all trasnforms
+        # remove all transforms
         def clearTransforms( self ):
             if aKey in self.mTransforms.keys():
                 self.delTransform( aKey )
 
-        ##########################################################
-        # methods to manipulate screen zOrder
-        ##########################################################
-        #-----------------------------#
-        
-        # sets/get zOrder of called screen
-        def setZOrder( self, zOrder ):
-            self.mZOrderScreen = zOrder
-            
-        def getZOrder( self ):
-            return self.mZOrderScreen
-       
-        #-----------------------------#
-        
-        ##########################################################
-        # methods to manipulate with screen tags
-        ##########################################################
-
-        def pushScreenTag( self, aNewScreenTag ):
-            self.mTagsStack.append( self.mTagScreen )
-            self.mTagScreen = aNewScreenTag
-        
-        def pullScreenTag( self ):
-            if self.mTagsStack:
-                self.mTagScreen = self.mTagsStack.pop()
-        
-        #-----------------------------#
-        ##########################################################
-        # show/hide screens
-        ##########################################################              
-        
-        # show hermione screen with saved parameters
-        def showQ( self, aFace, aPos, aTransition = None ):
-            if aFace is not None:
-                self.addFace( CharacterExItem( self.mFaceFolder, aFace, G_Z_FACE ) )
-            #renpy.show_screen( "CharacterExViewScreen", self.mStuff, aPos )
-            self._showView( self.mStuff, aPos )
-            if aTransition is not None:
-                renpy.with_statement( aTransition, None, True )
-        
-        # hide hermione screen
-        def hideQ( self, aTransition = None ):
-            self._hideView()
-            if aTransition is not None:
-                renpy.with_statement( aTransition )
-                
-        # below is two methods to simplifying typing
-        def showQQ( self, aFace, aPos ):
-            self.showQ( aFace, aPos, d3 )
-        def hideQQ( self ):
-            self.hideQ( d3 )
 
         ##########################################################
         # methods to manipulate items of character
@@ -187,53 +77,31 @@ init -998 python:
         
         # save current state to variable
         def saveState( self, aKeepLinks = False ):
-            if self.mBinded != None:
-                self.mBinded.saveState()
-                return
+            self.mSavedItems = {}# deepcopy( self.mStuff )
+            for key in self.mStuff.keys():
+                self.mSavedItems[ key ] = deepcopy( self.mStuff[ key ] )
+            self.mSavedTransforms = {}
+            for key in self.mTransforms.keys():
+                self.mSavedTransforms[ key ] = deepcopy( self.mTransforms[ key ] )
 
-            if aKeepLinks:
-                self.mSavedItems = self.mStuff
-                self.mSavedTransforms = self.mTransforms
-            else:
-                self.mSavedItems = {}# deepcopy( self.mStuff )
-                for key in self.mStuff.keys():
-                    self.mSavedItems[ key ] = deepcopy( self.mStuff[ key ] )
-                self.mSavedTransforms = {}
-                for key in self.mTransforms.keys():
-                    self.mSavedTransforms[ key ] = deepcopy( self.mTransforms[ key ] )
     
         # load saved statet
         def loadState( self, aKeepLinks = False ):
-            if self.mBinded != None:
-                self.mBinded.loadState()
-                return
-                
-            if aKeepLinks:
-                self.mStuff = self.mSavedItems
-                self.mTransforms = self.mSavedTransforms
-            else:
-                self.mStuff.clear()
-                for key in self.mSavedItems.keys():
-                    self.mStuff[ key ] = deepcopy( self.mSavedItems[ key ] )
-                self.mTransforms.clear()
-                for key in self.mSavedTransforms.keys():
-                    self.mTransforms[ key ] = deepcopy( self.mSavedTransforms[ key ] )            
+            self.mStuff.clear()
+            for key in self.mSavedItems.keys():
+                self.mStuff[ key ] = deepcopy( self.mSavedItems[ key ] )
+            self.mTransforms.clear()
+            for key in self.mSavedTransforms.keys():
+                self.mTransforms[ key ] = deepcopy( self.mSavedTransforms[ key ] )  
+                          
             
         # clears the state
         def clearState( self ):
-            if self.mBinded != None:
-                self.mBinded.clearState()
-                return
-
             self.mSavedItems = {}
             self.mSavedTransforms = {}
 
         # call this to copy all items from the other CharacteEx object
         def copyState( self, aCharacterEx ):
-            if self.mBinded != None:
-                self.mBinded.copyState( aCharacterEx )
-                return
-            
             self.mStuff.clear()
             for key in aCharacterEx.mStuff.keys():
                 self.mStuff[ key ] = deepcopy( aCharacterEx.mStuff[ key ] )
@@ -284,10 +152,6 @@ init -998 python:
             self._addItem( 'pose', aData )
         def delPose( self ):
             self._delItem( 'pose' )
-            
-        # additional function for face to pass only file name
-        def addFaceName( self, aFace ):
-            self._addItem( 'face', CharacterExItem( self.mFaceFolder, aFace, G_Z_FACE ) )
         
         def addFace( self, aData ):
             self._addItem( 'face', aData )
@@ -314,15 +178,7 @@ init -998 python:
                 data.onSelfRemoved( self.mStuff, self )
                 for item in self.mStuff.values():
                     item.onItemRemoved( aName, data, self )        
-    
-        def _showView( self, aData, aPos ):
-            oldOrder = store._CharacterExViewScreenZOrder
-            store._CharacterExViewScreenZOrder = self.mZOrderScreen
-            renpy.show_screen( "CharacterExViewScreen", aData, aPos, _tag = self.mTagScreen )
-            
-        def _hideView( self ):
-            renpy.hide_screen( self.mTagScreen )
-            
+                
         def _onItemHiden( self, aKey ):
             for item in self.mStuff.values():
                 item.onItemHidden( aKey )  

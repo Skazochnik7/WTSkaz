@@ -4692,28 +4692,33 @@ label start:
         # it's the fucking magick = make custom class variable being saved by Ren'Py...
         # global keyword says to python that this variable will be global
         # and because it's defined after 'start' label - it'll be saved by Ren'Py, great!
+        
+        # main data of hermione
+        global herData
+        # full-sized view
         global herView
-        # second variable, used in dialogs as portrait, may be used with main variable ( i think so, or what the reason to define one more? )
-        global herViewHead      
-    $ herView = CharacterEx( 5, her, 'hermione' )
-    $ herView.clearState()
+        # dialogue-face view
+        global herViewHead     
+        
+    $ herData = CharacterExData()
+    $ herData.clearState()
     
-    $ herViewHead = CharacterEx( 8, her2, 'hermione_head' )
-    $ herViewHead.clearState()
+    $ herView = CharacterExView( 5, her, 'hermione' )
+    $ herView.attach( herData )
+    
+    $ herViewHead = CharacterExView( 8, her2, 'hermione_head' )
     $ herViewHead.pushScreenTag( 'head' )
+    $ herViewHead.attach( herData )
 
     # lets use saved stuff system, so now fill hermione items
-    $ herView.addLegs( CharacterExItem( herView.mBodyFolder, "legs_universal.png", G_Z_LEGS ) )
-    $ herView.addPanties( CharacterExItem( herView.mClothesFolder, "panties_normal.png", G_Z_PANTIES ) )
-    $ herView.addSkirt( CharacterExItem( herView.mClothesFolder, "skirt_normal.png", G_Z_SKIRT ) )
-    $ herView.addHands( CharacterExItem( herView.mBodyFolder, "hands_universal.png", G_Z_HANDS ) )
-    $ herView.addBody( CharacterExItem( herView.mBodyFolder, "body.png", G_Z_BODY ) )
-    $ herView.addTits( CharacterExItem( herView.mBodyFolder, "tits.png", G_Z_TITS ) )
-    $ herView.addDress( CharacterExItemDress( herView.mClothesFolder, "dress_normal.png", G_Z_DRESS ) )
-    $ herView.addFace( CharacterExItem( herView.mFaceFolder, "body_01.png", G_Z_FACE ) )
-
-    # copy inited state from main variable
-    $ herViewHead.copyState( herView )
+    $ herView.data().addLegs( CharacterExItem( herView.mBodyFolder, "legs_universal.png", G_Z_LEGS ) )
+    $ herView.data().addPanties( CharacterExItem( herView.mClothesFolder, "panties_normal.png", G_Z_PANTIES ) )
+    $ herView.data().addSkirt( CharacterExItem( herView.mClothesFolder, "skirt_normal.png", G_Z_SKIRT ) )
+    $ herView.data().addHands( CharacterExItem( herView.mBodyFolder, "hands_universal.png", G_Z_HANDS ) )
+    $ herView.data().addBody( CharacterExItem( herView.mBodyFolder, "body.png", G_Z_BODY ) )
+    $ herView.data().addTits( CharacterExItem( herView.mBodyFolder, "tits.png", G_Z_TITS ) )
+    $ herView.data().addDress( CharacterExItemDress( herView.mClothesFolder, "dress_normal.png", G_Z_DRESS ) )
+    $ herView.data().addFace( CharacterExItem( herView.mFaceFolder, "body_01.png", G_Z_FACE ) )
 
 
     $ gold = 0

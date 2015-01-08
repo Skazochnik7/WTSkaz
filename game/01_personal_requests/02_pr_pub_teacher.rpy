@@ -825,10 +825,10 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                                     #__#$ h_body = "03_hp/13_hermione_main/body_51.png" #Flashing Трусики
                                     #__#show screen hermione_main
                                     
-                                    $herView.saveState()
+                                    $herView.data().saveState()
                                     # add pose with lifted skirt and authograph
-                                    $herView.addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
-                                    $herView.addItem( 'autograph', CharacterExItem( herView.mMiscFolder, 'autograph.png', G_Z_LEGS + 1 ) )
+                                    $herView.data().addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
+                                    $herView.data().addItem( 'autograph', CharacterExItem( herView.mMiscFolder, 'autograph.png', G_Z_LEGS + 1 ) )
                                     
                                     $herView.showQ( "body_51.png", pos )
                                     hide screen ctc
@@ -861,7 +861,7 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                                     $herView.hideQQ()
                                     
                                     # load before pose
-                                    $herView.loadState()
+                                    $herView.data().loadState()
                                     
                                     #__#$ only_upper = False #Skirt lifted.         WARNING_Z
                                     #__#$ autograph = False #Autograph shown.

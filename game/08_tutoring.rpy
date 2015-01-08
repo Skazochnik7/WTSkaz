@@ -32,7 +32,7 @@ label tutoring:
 
     #__## memorize current state, because we're switching to pose with book
     #__#$ herView.saveState()
-    $ herView.addPose( CharacterExItemPoseBook( herView.mPoseFolder, "pose_with_book.png", G_Z_POSE ) )
+    $ herView.data().addPose( CharacterExItemPoseBook( herView.mPoseFolder, "pose_with_book.png", G_Z_POSE ) )
     #__#$ herView.delHands()
     
     $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
@@ -171,7 +171,7 @@ label tutoring:
     
     #__## now we'll restore saved state
     #__#$ herView.loadState()
-    $ herView.delPose();
+    $ herView.data().delPose();
     
     
     

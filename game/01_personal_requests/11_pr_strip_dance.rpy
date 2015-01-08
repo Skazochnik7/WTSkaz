@@ -20,7 +20,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
 
     $ current_payout = 35 #Because will have option to pay extra.
 
-    $ herView.saveState()
+    $ herView.data().saveState()
 
     if request_11_points == 0: #<==============================EVENT 01
         
@@ -704,7 +704,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         call req11_undress
         #__#$ h_body = "03_hp/13_hermione_main/body_89.png" 
         #__#$ hermione_main_zorder = 8 #Zorder of the screen hermione_main. 5 puts it on top of everything but behind the speech box.
-        $herView.setZOrder( 8 )
+        #__#$herView.setZOrder( 8 )
         #__#$ h_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
         #__#$ h_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340
         $ pos = gMakePos( 390, 235 )
@@ -804,15 +804,14 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         show screen snape_02 #Snape stands still.
         
         $ posHead = gMakePos( pos.xpos, pos.ypos )
-        $ herViewHead.copyState( herView )
         #__#$ herView.showItem( 'dress' )
-        call req11_dress
+        #__#call req11_dress
         
         $ tt_xpos=330 #Defines position of the Snape's full length sprite. (Default 300). 140 - center.
         $ tt_ypos=340#(Default 0). Right bottom corner: 340
         $ s_sprite = "03_hp/10_snape_main/snape_01.png"
         #__#$ hermione_main_zorder = 8 #Zorder of the screen hermione_main. 5 puts it on top of everything but behind the speech box. Works for all full size sprites.
-        $herView.setZOrder( 8 )
+        #__#$herView.setZOrder( 8 )
         show screen s_head
         $ h_c_u_pic = "03_hp/08_animation_02/05_panties_01.png"
         show screen h_c_u
@@ -825,7 +824,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         #__#show screen h_head
         
         # add black-white hermione as a pose, higher then face
-        $herViewHead.addPose( CharacterExItem( herViewHead.mPoseFolder, 'hermione_bw_strip.png', G_Z_FACE + 1 ) )
+        $herViewHead.data().addPose( CharacterExItem( herViewHead.mPoseFolder, 'hermione_bw_strip.png', G_Z_FACE + 1 ) )
         $herViewHead.showQ( "body_96.png", posHead )
         with hpunch
         her "(Профессор Снейп???????!)"
@@ -838,7 +837,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         her "(Нет, нет... Этого не может быть... Пожалуйста...)"
         #__#hide screen h_head
         $herViewHead.hideQ()
-        $herViewHead.delPose()
+        $herViewHead.data().delPose()
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         m "...................................."
         show screen bld1
@@ -918,10 +917,11 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         $herViewHead.hideQ()
         m "Там, у камина..."
         pause 1
+
+        call req11_dress
         #__#$ h_body = "03_hp/13_hermione_main/body_85.png"
         #__#show screen h_head
-        $herViewHead.showItem( 'dress' )
-        $herViewHead.addPose( CharacterExItemPoseShowTits( herViewHead.mPoseFolder, 'pose_dress_up.png', G_Z_POSE ) )
+        $herViewHead.data().addPose( CharacterExItemPoseShowTits( herViewHead.mPoseFolder, 'pose_dress_up.png', G_Z_POSE ) )
         $herViewHead.showQ( "body_85.png", posHead )
         her2 "................................"
         #__#hide screen h_head
@@ -929,7 +929,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         pause 2
         #__#$ h_body = "03_hp/13_hermione_main/body_33.png"
         #__#show screen h_head
-        $herViewHead.delPose()
+        $herViewHead.data().delPose()
         $herViewHead.showQ( "body_33.png", posHead )
         
         #__#$ badges = True # Turns the badges layer back ON.
@@ -1236,7 +1236,6 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     #__#$ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
                     #__#$ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
                     $ posHead = gMakePos( 390, 340 )
-                    $herViewHead.copyState( herView )
                     #__#show screen h_head2
                     $herViewHead.showQ( "body_16.png", posHead )
                     her2 "............."
@@ -1652,8 +1651,9 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     show screen s_head2       
                     sna "Хм..."
                     
+                    call req11_undress
                     #__#$ badges = False # Hides the layer with badges.
-                    $herViewHead.hideItem( 'dress' )
+                    #__#$herViewHead.data().hideItem( 'dress' )
                     
                     #__#$ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
                     #__#$ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
@@ -1974,7 +1974,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         #__#$ h_body = "03_hp/13_hermione_main/body_104.png"
                                         #__#$ u_sperm = "03_hp/13_hermione_main/auto_04.png"
                                         #__#show screen h_head2  
-                                        $herViewHead.addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, 'sperm_01.png', G_Z_FACE + 1 ) )
+                                        $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, 'sperm_01.png', G_Z_FACE + 1 ) )
                                         $herViewHead.showQ( "body_104.png", posHead )
                                         her "??!!!"
                                         #__#hide screen h_head2
@@ -2010,7 +2010,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         #__#$ u_sperm = "03_hp/13_hermione_main/auto_04.png"
                                         #__#show screen h_head2  
                                         $herViewHead.showQ( "body_104.png", posHead )
-                                        $herViewHead.addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, 'sperm_02.png', G_Z_FACE + 1 ) )
+                                        $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, 'sperm_02.png', G_Z_FACE + 1 ) )
                                         #__#$ u_sperm = "03_hp/13_hermione_main/auto_05.png"
                                         her "!!!!!!!!!!!"
                                         $ s_sprite = "03_hp/10_snape_main/snape_21.png" #SNAPE
@@ -2107,7 +2107,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         
                                         # WARNING_Z WATNING_Z
                                         
-                                        $herView.addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_02.png', G_Z_FACE + 1 ) )
+                                        #__#$herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_02.png', G_Z_FACE + 1 ) )
                                         #__#$ u_sperm = im.Flip("03_hp/13_hermione_main/auto_05.png", horizontal=True)
                                         #__#$ h_body = im.Flip("03_hp/13_hermione_main/body_101.png", horizontal=True) #Sprite of Hermione's upper body.
                                         
@@ -2117,8 +2117,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         show screen bld1
                                         with d5
                                         
-                                        call req11_undress
-                                        $herView.addTransform( gTrEx( 'flip', horizontal = True ) )
+                                        
+                                        $herView.data().addTransform( gTrEx( 'flip', horizontal = True ) )
                                         $herView.showQQ( "body_101.png", pos )
                                         #__#show screen hermione_main
                                         #__#with d3
@@ -2170,8 +2170,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         ">После этого он поспешно уходит, до того, как Гермиона сможет найти еще один аргумент..."
                                         hide screen blkfade
                                         with d5
-                                        $herView.delTransform()
-                                        $herView.addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                        $herView.data().delTransform()
+                                        $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
                                         #__#$ flip = False # Flips hermione_main
                                         #__#$ only_upper = False #Show legs.
                                         #__#$ aftersperm = True #Show cum stains.
@@ -2288,7 +2288,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         pause.5
                                         ">.................{w}.................{w}.................{w}................."
                                         #__#show screen h_head2                                                              # HERMIONE
-                                        $herViewHead.showItem( 'dress' )
+                                        call req11_dress
                                         $herViewHead.showQ( "body_33.png", posHead )
                                         
                                         #__#$ badges = True # Turns badges back on.
@@ -2469,7 +2469,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             ">.................{w}.................{w}.................{w}................."
                             #__#$ badges = True
                             #__#show screen h_head2                                                              # HERMIONE
-                            $herViewHead.showItem( 'dress' )
+                            #__#$herViewHead.data().showItem( 'dress' )
+                            call req11_dress
                             $herViewHead.showQ( "body_33.png", posHead )
                             #__#$ h_body = "03_hp/13_hermione_main/body_33.png" # HERMIONE
                             her "Могу я... получить оплату... сэр...?"
@@ -2585,7 +2586,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     #__#$ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
                     #__#$ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
                     $ posHead = gMakePos( 390, 340 )
-                    $herViewHead.copyState( herView )
+
                     #__#show screen h_head2
                     $herViewHead.showQ( "body_16.png", posHead )
                     her2 "Просто для протокола..."
@@ -2906,7 +2907,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     #__#$ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
                     #__#$ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
                     $ posHead = gMakePos( 390, 235 )
-                    $herViewHead.hideItem('dress')
+                    $herViewHead.data().hideItem('dress')
                     $herViewHead.showQ( "body_90.png", posHead )
                     #__#$ h_body = "03_hp/13_hermione_main/body_90.png"
                     her "Вам обязательно быть настолько пошлым, сэр?"
@@ -3125,7 +3126,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         #__#$ h_body = "03_hp/13_hermione_main/body_104.png"
                                         #__#$ u_sperm = "03_hp/13_hermione_main/auto_04.png"
                                         #__#show screen h_head2  
-                                        $herViewHead.addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, 'sperm_01.png', G_Z_FACE + 1 ) )
+                                        $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, 'sperm_01.png', G_Z_FACE + 1 ) )
                                         $herViewHead.showQ( "body_104.png", posHead )
                                         her "??!!!"
                                         #__#hide screen h_head2
@@ -3175,11 +3176,12 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                             #WARNING_Z
                                             #__#$ uni_sperm = False #Sperm layer is not displayed.
                                             #__#$ aftersperm = True #Aftersperm layer is displayed. 
-                                            $herViewHead.addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                            $herViewHead.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
                                             stop music fadeout 5.0
                                             ">.................{w}.................{w}.................{w}................."
                                             #__#show screen h_head2                                                              # HERMIONE
-                                            $herViewHead.showItem( 'dress' )
+                                            #__#$herViewHead.data().showItem( 'dress' )
+                                            call req11_dress
                                             $herViewHead.showQ( "body_12.png", posHead )
                                             #__#$ h_body = "03_hp/13_hermione_main/body_12.png" # HERMIONE
                                             her "...Могу я получить оплату, сэр... пожалуйста?"
@@ -3275,8 +3277,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                                     with d7
                                                     pause.5
                                                     #WARNING_Z
-                                                    $herViewHead.addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
-                                                    $herView.addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                                    #__#$herViewHead.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                                    $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
                                                     #__#$ aftersperm = True #Show cum stains on Hermione's uniform.
                                                     jump done_with_dancing
                                                 "\"Десять дополнительных очков.\"":
@@ -3307,8 +3309,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                                     with d7
                                                     pause.5
                                                     #WARNING_Z
-                                                    $herViewHead.addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
-                                                    $herView.addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                                    #__#$herViewHead.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                                    $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
                                                     #__#$ aftersperm = True #Show cum stains on Hermione's uniform.
                                                     jump done_with_dancing
                                                 "\"Вы получите 25 дополнительных очков.\"":
@@ -3334,8 +3336,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                                     with d7
                                                     pause.5
                                                     #WARNING_Z
-                                                    $herViewHead.addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
-                                                    $herView.addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                                    $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
                                                     #__#$ aftersperm = True #Show cum stains on Hermione's uniform.
                                                     jump done_with_dancing
                                                 "\"Вы получаете 50 дополнительных очков.\"":
@@ -3379,8 +3380,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                                     with d7
                                                     pause.5
                                                     #WARNING_Z
-                                                    $herViewHead.addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
-                                                    $herView.addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                                    #__#$herViewHead.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                                    $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
                                                     #__#$ aftersperm = True #Show cum stains on Hermione's uniform.
                                                     jump done_with_dancing
                                                 "\"Ты ни черта не получишь!\"":
@@ -3408,8 +3409,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                                             with d7
                                                             pause.5
                                                             #WARNING_Z
-                                                            $herViewHead.addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
-                                                            $herView.addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                                            #__#$herViewHead.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                                            $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
                                                             #__#$ aftersperm = True #Show cum stains on Hermione's uniform.
                                                             jump done_with_dancing
                                                         "\"Нет, их тоже не получишь!\"":
@@ -3482,7 +3483,6 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         show screen blkfade
                                         with d7
                                         ">Гермиона спрыгивает со стола и начинает спешно одеваться, посматривая на вас..."
-                                        $herViewHead.showItem( 'dress' )
                                         m "Ох, да ладно! Не оставляй меня так!"
                                         #__#$ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
                                         #__#$ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
@@ -3495,6 +3495,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         $herViewHead.hideQ()
                                         pause 1
                                         #__#show screen h_head2
+                                        call req11_dress
                                         $herViewHead.showQ( "body_79.png", posHead )
                                         #__#$ h_body = "03_hp/13_hermione_main/body_79.png"
                                         her "Я хотела бы получить очки!"
@@ -3657,6 +3658,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         
 
     label done_with_dancing:
+    call req11_dress
     #__#$ uni_sperm = False #Sperm layer is not displayed in hermione screen.
     $ gryffindor += current_payout #35
     
@@ -3716,7 +3718,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
 
-    $herView.loadState()
+    $herView.data().loadState()
     #__#$ aftersperm = False #Show cum stains on Hermione's uniform.
     call music_block
     if daytime:
@@ -3728,17 +3730,17 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
 
 
 label restore_state_could_not_flirt:
-    $herView.loadState()
+    $herView.data().loadState()
     jump could_not_flirt
 
 label req11_undress:
-    $herView.hideItem( 'dress' )
-    $herView.hideItem( 'skirt' )
-    $herView.hideItem( 'panties' )
+    $herView.data().hideItem( 'dress' )
+    $herView.data().hideItem( 'skirt' )
+    $herView.data().hideItem( 'panties' )
     return
     
 label req11_dress:
-    $herView.showItem( 'dress' )
-    $herView.showItem( 'skirt' )
-    $herView.showItem( 'panties' )
+    $herView.data().showItem( 'dress' )
+    $herView.data().showItem( 'skirt' )
+    $herView.data().showItem( 'panties' )
     return

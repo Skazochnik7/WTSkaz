@@ -292,7 +292,7 @@ label mini_on:
     
     
     $ legs_02 = True
-    $ herView.addSkirt( CharacterExItem( herView.mClothesFolder, "skirt_short.png", G_Z_SKIRT ) )
+    $ herView.data().addSkirt( CharacterExItem( herView.mClothesFolder, "skirt_short.png", G_Z_SKIRT ) )
     
     show screen blkfade
     with d3
@@ -356,7 +356,7 @@ label mini_off:
     
     
     $ legs_02 = False
-    $ herView.addSkirt( CharacterExItem( herView.mClothesFolder, "skirt_normal.png", G_Z_SKIRT ) )
+    $ herView.data().addSkirt( CharacterExItem( herView.mClothesFolder, "skirt_normal.png", G_Z_SKIRT ) )
     
     show screen blkfade
     with d3
@@ -384,7 +384,7 @@ label badge_put:
     
     $ badges = True
     $ ba_01 = True
-    $ herView.addItem( G_N_BADGE, CharacterExItem( herView.mClothesFolder, "badge.png", G_Z_DRESS + 1, 'dress' ) )
+    $ herView.data().addItem( G_N_BADGE, CharacterExItem( herView.mClothesFolder, "badge.png", G_Z_DRESS + 1, 'dress' ) )
     
     show screen blkfade
     with d3
@@ -411,7 +411,7 @@ label badge_take:
 
     $ badges = False
     $ ba_01 = False
-    $ herView.delItem( G_N_BADGE )
+    $ herView.data().delItem( G_N_BADGE )
     
     show screen blkfade
     with d3
@@ -659,7 +659,7 @@ label nets_put:
                                                                                                                                                                                                                           #HERMIONE
     
      
-    $ herView.addItem( G_N_NETS, CharacterExItem( herView.mClothesFolder, "nets.png", G_Z_LEGS + 1, 'legs' ) )
+    $ herView.data().addItem( G_N_NETS, CharacterExItem( herView.mClothesFolder, "nets.png", G_Z_LEGS + 1, 'legs' ) )
     $ ne = True # Shows fishnets layer.
     $ ne_01 = True # Shows the fishnets.
     
@@ -727,7 +727,7 @@ label nets_take:
         her "Правда? Ой..."
     
     
-    $ herView.delItem( G_N_NETS )
+    $ herView.data().delItem( G_N_NETS )
     $ ne = False # Shows fishnets layer.
     $ ne_01 = False # Shows the fishnets.
     #$ legs_02 = False
@@ -986,7 +986,7 @@ label giving_condoms: # A PACK OF CONDOMS
         with d3
         call happy #Message that says that Hermione's mood has improved.
         #__#$ h_body = "03_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        $herView.addFace( "body_29.png" )
+        $herView.addFaceName( "body_29.png" )
         
 
         

@@ -29,7 +29,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
     $ pos = POS_140
     
     # we'll undress her, so save the state
-    $herView.saveState()
+    $herView.data().saveState()
 
     if request_08_points == 0 and whoring <= 11: # LEVEL 04 # FIRST TIME.
         m "Мисс Грейнджер?"
@@ -1345,7 +1345,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
     with Dissolve(1)
     
     # remove pose here, because sometimes we need to keep added items even here ( like sperm )
-    $herView.delPose()
+    $herView.data().delPose()
 
     #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite.
     #__#$ h_ypos=0
@@ -1428,7 +1428,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
     #__#$ aftersperm = False #Shows cum stains on Hermione's uniform.
 
     # load from pose with tits and that sperm!
-    $herView.loadState()
+    $herView.data().loadState()
     
     call music_block
     
@@ -1443,20 +1443,20 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
 
 label addTitsPose:
     # add tits pose!
-    $herView.addPose( CharacterExItemPoseShowTits( herView.mPoseFolder, 'pose_dress_up.png', G_Z_POSE ) )
+    $herView.data().addPose( CharacterExItemPoseShowTits( herView.mPoseFolder, 'pose_dress_up.png', G_Z_POSE ) )
     return
     
 label addSperm:
     # add sperm item!
-    $herView.addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00.png', G_Z_FACE + 1 ) )
+    $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00.png', G_Z_FACE + 1 ) )
     return
     
 label addAfterSperm:
     # del pose and add aftersperm
-    $herView.delPose()
-    $herView.addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+    $herView.data().delPose()
+    $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
     return
     
 label loadState_and_could_not_flirt:
-    $herView.loadState()
+    $herView.data().loadState()
     jump could_not_flirt

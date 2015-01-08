@@ -131,8 +131,8 @@ label new_request_02: #SHOW ME YOUR Трусики
 
     # save previous state and add pose
     # add pose with lifted skirt
-    $herView.saveState()
-    $herView.addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
+    $herView.data().saveState()
+    $herView.data().addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
     $ pos = POS_120
     
     if whoring >= 0 and whoring <= 2: #LEVEL 01   <============================= Fist event.
@@ -260,7 +260,7 @@ label new_request_02: #SHOW ME YOUR Трусики
         with d3
         
         # we should remove panties from hermi in this event
-        $herView.delPanties()
+        $herView.data().delPanties()
         
         #__#$ h_xpos=120 #Defines position of the Hermione's full length sprite.
         #__#$ pos = POS_120
@@ -344,7 +344,7 @@ label new_request_02: #SHOW ME YOUR Трусики
     $herView.hideQQ()
       
     # load state before doing mess
-    $herView.loadState()
+    $herView.data().loadState()
 
     #__#$ h_body = "03_hp/13_hermione_main/body_31.png" #Flashing Трусики
     #__#$ only_upper = False #When False legs are displayed in the hermione_main acreen.

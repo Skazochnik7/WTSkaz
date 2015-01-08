@@ -965,9 +965,9 @@ label panties_soaked_in_cum:
             her "Ну, например..."
             $herView.hideQQ()
             
-            $herView.saveState()
-            $herView.addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
-            $herView.addItem( 'panties_cum', CharacterExItem( herView.mMiscFolder, 'panties_soaked.png', G_Z_PANTIES + 1, 'panties' ) )
+            $herView.data().saveState()
+            $herView.data().addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
+            $herView.data().addItem( 'panties_cum', CharacterExItem( herView.mMiscFolder, 'panties_soaked.png', G_Z_PANTIES + 1, 'panties' ) )
             
             $herView.showQQ( "185.png", pos )
             her "...если девушка будет в трусиках, пропитанной спермой?"
@@ -978,7 +978,7 @@ label panties_soaked_in_cum:
                     $herView.showQQ( "body_128.png", pos )
                     her "Я так и думала, профессор."
                     $herView.hideQQ()
-                    $herView.loadState()
+                    $herView.data().loadState()
                     $herView.showQQ( "body_52.png", pos )
                     her "Тогда я пойду?"
                     m "Хм, да да, мисс Грейнджер..."
@@ -992,7 +992,7 @@ label panties_soaked_in_cum:
                 "\"Я думаю, это грязно!\"":
                     $mad += 15
                     $herView.hideQQ()
-                    $herView.loadState()
+                    $herView.data().loadState()
                     $herView.showQQ( "body_51.png", pos )
                     her "Хм!"
                     $herView.hideQQ()
