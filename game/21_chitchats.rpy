@@ -1770,12 +1770,13 @@ label chitchat_event_01: #Snape says: so you tutor her now?". Happens after tuto
 ### CHITCHAT WITH HERMIONE ###
 label chit_chat:
     $ one_of_ten = renpy.random.randint(1, 10) #Generating one number out of three for various porpoises.
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_410
+    
     if whoring >= 0 and whoring <= 2: # WHORING LEVEL 01.
         if one_of_ten == 1:
             #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
-            $ herView.hideQQ()
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1882,7 +1883,7 @@ label chit_chat:
             #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
             $herView.showQQ( "body_03.png", pos )
-            
+       
         elif one_of_ten == 6:
             #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1976,7 +1977,7 @@ label chit_chat:
             #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
             $herView.showQQ( "body_03.png", pos )
-            
+
 
     if whoring >= 3 and whoring <= 5: # WHORING LEVEL 02
         if one_of_ten == 1:
@@ -2208,7 +2209,7 @@ label chit_chat:
             #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
             $herView.showQQ( "body_185.png", pos )
-            
+
   
     if whoring >= 6 and whoring <= 8: # WHORING LEVEL 03.
         if one_of_ten == 1:
@@ -2392,7 +2393,7 @@ label chit_chat:
             #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
             $herView.showQQ( "body_03.png", pos )
-            
+           
         elif one_of_ten == 8:
             #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2427,7 +2428,7 @@ label chit_chat:
             #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
             $herView.showQQ( "body_03.png", pos )
-            
+       
         elif one_of_ten == 10:
             #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2453,7 +2454,7 @@ label chit_chat:
             #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
             $herView.showQQ( "body_17.png", pos )
-
+        
 
     if whoring >= 9 and whoring <= 11: # WHORING LEVEL 04.
         if one_of_ten == 1:
@@ -2506,7 +2507,7 @@ label chit_chat:
             #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
             $herView.showQQ( "body_03.png", pos )
-            
+
         elif one_of_ten == 3:
             #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2517,7 +2518,7 @@ label chit_chat:
             $herView.showQQ( "body_77.png", pos )
             her "Квиддич это глупо!"
             #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-            #__with d3                                                                                                                                                                                                                        #HERMIONE
+            #__#with d3                                                                                                                                                                                                                        #HERMIONE
             $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_17.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
             #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
@@ -2791,7 +2792,7 @@ label chit_chat:
             #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
             $herView.showQQ( "body_13.png", pos )
-
+            
         elif one_of_ten == 5:
             #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2893,7 +2894,7 @@ label chit_chat:
             #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
             $herView.showQQ( "body_15.png", pos )
-
+            
         elif one_of_ten == 10:
             #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
             #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2910,6 +2911,7 @@ label chit_chat:
             #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
             #__#with d3                                                                                                                                                                                                                     
             $herView.showQQ( "body_13.png", pos )
+    
     
     
     

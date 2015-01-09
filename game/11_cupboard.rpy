@@ -184,11 +184,11 @@ label cupboard:
                     with d3
                     jump possessions
                     
-                "- Секс-кукла \"Джуаннf\" -([sexdoll])" if sexdoll >= 1:
+                "- Секс-кукла \"Джуанна\" -([sexdoll])" if sexdoll >= 1:
                     $ the_gift = "03_hp/18_store/23.png" # SEX DOLL.
                     show screen gift
                     with d3
-                    ">Секс-кукла \"Джуаннf\"... Очень реалистичная. Выглядит почти как настоящий человек под каким-то заклинанием."
+                    ">Секс-кукла \"Джуанна\"... Очень реалистичная. Выглядит почти как настоящий человек под каким-то заклинанием."
                     hide screen gift
                     with d3
                     jump possessions
@@ -203,11 +203,11 @@ label cupboard:
                     with d3
                     jump possessions
                     
-                "- \"А.В.Н.Э.\" знак -" if badge_01 == 1:
+                "- \"А.В.Н.Э.\" значок -" if badge_01 == 1:
                     $ the_gift = "03_hp/18_store/29.png" # S.P.E.W. BADGE
                     show screen gift
                     with d3
-                    m "\"А.В.Н.Э.\" Знак..."
+                    m "\"А.В.Н.Э.\" Значок..."
                     hide screen gift
                     with d3
                     jump possessions
@@ -225,7 +225,7 @@ label cupboard:
                     $ the_gift = "03_hp/18_store/07.png" # MINISKIRT.
                     show screen gift
                     with d3
-                    m "Просто школьная мини-юбка...поможет в поднятии оценок."
+                    m "Просто школьная мини-юбка... Поможет в поднятии оценок."
                     hide screen gift
                     with d3
                     jump possessions
@@ -439,7 +439,7 @@ label cupboard:
                     jump sc_col_men
                     
                 "- С.17: [scroll_17_name] -" if sscroll_17 or persistent.ss_17:
-                    $ the_gift = "03_hp/19_extras/17png" # SACRED SCROLL 02.
+                    $ the_gift = "03_hp/19_extras/17.png" # SACRED SCROLL 02.
                     show screen gift
                     show screen ctc
                     with d3
@@ -681,7 +681,7 @@ label rummaging:
                 $ the_gift = "03_hp/18_store/28.png" # GOLD.
                 show screen gift
                 with d3
-                ">ВЫ нашли [gold1] золота..." 
+                ">Вы нашли [gold1] золота..." 
                 $ gold = gold + gold1
                 hide screen gift
                 with d3
@@ -934,7 +934,7 @@ label rummaging:
 label already_did:
     show screen bld1
     with d3
-    m "Я сегодня уже занимался этим..."
+    m "Я сегодня уже рылся в шкафу..."
     hide screen bld1
     with d3
     return

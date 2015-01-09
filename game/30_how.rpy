@@ -104,7 +104,7 @@ label howtoplay:
                 with d7
                 
                 
-            "\"Не интересно.\"":
+            "\"Нет.\"":
                 $ lola_face = "03_hp/22_lola/12.png"
                 show screen l_head
                 l "Ты скучный..."
@@ -126,7 +126,7 @@ label howtoplay:
     with hpunch
     $ end_u_1_pic =  "03_hp/22_lola/tut_01.png" #<---- SCREEN
     $ renpy.play('sounds/boing02.mp3')   
-    l "Дружба с профессором Снейпом  увеличит количество очков, зарабатываемых Слизереном."
+    l "Дружба с профессором Снейпом увеличит количество очков, получаемых Слизереном."
     with hpunch
     $ end_u_1_pic =  "03_hp/22_lola/tut_03.png" #<---- SCREEN
     $ renpy.play('sounds/boing02.mp3') 
@@ -153,7 +153,7 @@ label howtoplay:
 
     $ renpy.play('sounds/boing02.mp3') 
     l "Если обращаться с ней плохо, то настроение Гермиона ухудшится, она может обидеться и стать очень неподатливой..."
-    l "Она остынет со временем, но ты можешь ускорить процесс, если купишь ей что-нибудь..."
+    l "Она остынет со временем, но ты можешь ускорить процесс, если подаришь ей что-нибудь..."
     
     with hpunch
     $ end_u_1_pic =  "03_hp/22_lola/tut_06.png" #<---- SCREEN
@@ -175,7 +175,7 @@ label howtoplay:
         show screen l_head
         l "Как я справилась?"
         hide screen l_head
-        a1 "Ты хорошо поработала. Хорошая девочка."
+        a1 "Ты отлично поработала. Хорошая девочка."
         $ l_question = False
         $ l_things = True
         $ lola_face = "03_hp/22_lola/08.png"

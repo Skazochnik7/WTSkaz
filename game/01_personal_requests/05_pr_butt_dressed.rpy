@@ -153,7 +153,9 @@ label new_request_05:
                                         her_head_main "И так унизительно!"
                                         #__#her_20 "Вы сказали, что будете просто щупать!..."
                                         her_head_main "Вы сказали, что будете просто щупать!..."
-                                        #her_20 "Why are you doing this, профессор?"
+                                        $her_head_state = 20
+                                        her_head_main "Почему вы это делаете, профессор?"
+                                        #__#her_20 "Why are you doing this, профессор?"
                                         g4 "Просто стойте, Мисс Грейнджер!"
                                         #__#her_19 "Я так не думаю, сэр!"
                                         $her_head_state = 19

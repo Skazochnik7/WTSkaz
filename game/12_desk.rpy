@@ -13,7 +13,6 @@ label desk:
             m "Сначала мне нужно получить оплату."
             jump desk
          
-        #"- Book collection- {image=book.png}" if not day == 1 and cataloug_found: 
         "- Книжная коллекция -" if not day == 1 and cataloug_found: 
             label books_list:
                 menu:
@@ -460,7 +459,7 @@ label desk:
                                         if dear_waifu_completed_once and book_07_units == 0:
                                             m "Я не думаю, что повторное чтение этой книги даст мне хоть что-то. Прочесть ее просто ради удовольствия?"
                                             menu:
-                                                "- Читать книгу again -":
+                                                "- Читать книгу снова -":
                                                     hide screen gift
                                                     jump reading_book_07
                                                 "- Ничего -":
@@ -505,7 +504,7 @@ label desk:
             if order_placed or package_is_here:
                 show screen bld1
                 with d3
-                dahr "Пожалуйста, потерпи чуть-чуть. Сова уже в пути."
+                dahr "Пожалуйста, потерпите чуть-чуть. Сова уже в пути."
                 hide screen bld1
                 with d3
                 jump desk
@@ -515,8 +514,10 @@ label desk:
         
         
 
-        "- Подрочить на трусики Гермионы -" if request_03: #True when Hermione has no panties on.
-            jump jerk_off
+        # "- Подрочить на трусики Гермионы -" if request_03: #True when Hermione has no panties on.
+        #     jump jerk_off
+        "- Передернуть -" if not day < 5:
+            jump jerk_off 
         "- Состояние Гермионы -" if summoning_hermione_unlocked and buying_favors_from_hermione_unlocked: 
             "> Распутство: {color=#B40000}{size=+4}{b}[whoring]{/b}{/size}{/color}-я степень."
             "> Злость: {color=#B40000}{size=+4}{b}[mad]{/b}{/size}{/color}-я степень"
@@ -1602,11 +1603,11 @@ label chapter_check_book_07: #Checks if the chapter just finished was the last o
                 $ complited_leena_already = True
             else: #Finished with Shea for the second time.
                 m "Значит в конце я снова со светленькой девахой?"
-                m "Hm... Может быть, я должен попробовать и выбирать другие варианты в следующий раз...?"
+                m "Хм... Может быть, я должен попробовать и выбирать другие варианты в следующий раз...?"
 
         else:
             m "Хм ... Конец очень разочаровал..."
-            #m "Maybe I should read it again sometime."
+            m "Может быть, я должен прочитать ее еще раз когда-нибудь."
         
         if not dear_waifu_completed_once:
             $ dear_waifu_completed_once = True # Turns TRUE when complete the book for the first time with any ending. Makes sure you get +1 imagination only once.
@@ -2773,7 +2774,7 @@ label f_moon_bonus:
     hide screen notes
     show screen notes
     $ report_chapters += 1
-    ">Полнолуние сделало вас более продуктивным.\n>Вы закончили [report_chapters] глав."
+    ">Полнолуние сделало вас более продуктивным.\n>Вы закончили [report_chapters]-ю главу."
     return
 ###
 label finished_working_chapter:
@@ -2781,7 +2782,7 @@ label finished_working_chapter:
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes
     show screen notes
-    ">Вы закончили [report_chapters] глав."
+    ">Вы закончили [report_chapters]-ю главу."
     return
 ### CONCENTRATION
 label concentration_label:
@@ -2789,7 +2790,7 @@ label concentration_label:
     hide screen notes
     show screen notes
     $ report_chapters += 1
-    ">Во время работы вы идеально сконцентрированы.\n>И заканчиваете дополнительную главу.\n>Вы закончили [report_chapters] глав."
+    ">Во время работы вы идеально сконцентрированы.\n>И заканчиваете дополнительную главу.\n>Вы закончили [report_chapters]-ю главу."
     return
 ### SPEEDWRITING
 label speedwriting_label:
@@ -2797,7 +2798,7 @@ label speedwriting_label:
     hide screen notes
     show screen notes
     $ report_chapters += 1
-    ">Вы используете свой навык скорописания.\n>И заканчиваете дополнительную главу.\n>Вы закончили [report_chapters] глав."
+    ">Вы используете свой навык скорописания.\n>И заканчиваете дополнительную главу.\n>Вы закончили [report_chapters]-ю главу."
     return
     
     

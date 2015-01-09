@@ -54,8 +54,12 @@ init:
     
 #define m = Character(None, window_left_padding=200, image="mage", color="#402313", ctc="ctc3", ctc_position="fixed")
 
-    
-    
+    # Ending class initialization
+    call Ending_constants
+    python:
+        global end
+    $ end = Ending ()
+
 label splashscreen:
     $ renpy.pause(0)
     scene black 
@@ -4747,7 +4751,7 @@ label start:
     
     $ tiara = False #When TRUE tiara is displayed on h_head2 and hermione_main screens.
 
-    $ public_whore_ending = False #If TRUE the game will end with "Public Whore Ending".
+#    $ public_whore_ending = False #If TRUE the game will end with "Public Whore Ending".
     
     $ p_level_02_active = False #When turns TRUE public favors of level 02 become available. 
     $ p_level_03_active = False #When turns TRUE public favors of level 03 become available. 
@@ -4777,6 +4781,7 @@ label start:
     
 ### JERKING OFF FLAGS ###
     $ request_03 = False #True when Hermione has no panties on.
+    $ jerking_session = False
     $ have_cum_soaced_panties = False #TRUE when you have the panties in your possession (before you return them to Hermione).
 
     $ jerking_off_to_jasmine = False #Turns TRUE when Princess Jasmine has been chosen as a target for a jerk-off session.
@@ -5082,7 +5087,7 @@ label start:
                     
                 if persistent.lin >= 1:
                     $ lingerie = lingerie + persistent.lin # lin.
-                    ">[persistent.lin] пачек сексуального нижнего белья было добавлено в ваще имущество."
+                    ">[persistent.lin] коробок сексуального нижнего белья было добавлено в ваще имущество."
                 
                 if persistent.con >= 1:
                     $ condoms = condoms + persistent.con # CONDOMS.
@@ -5102,7 +5107,7 @@ label start:
                     
                 if persistent.plug >= 1:
                     $ plug = plug + persistent.plug # ANAL PLUG.
-                    ">[persistent.plug] набор анальных пробок было добавлено в ваще имущество."
+                    ">[persistent.plug] набор(ов) анальных пробок было добавлено в ваще имущество."
                     
                 if persistent.strap >= 1:
                     $ strapon = strapon + persistent.strap # STRAP-ON.
@@ -5126,50 +5131,24 @@ label start:
                     $ dress_code = True # Turns TRUE when you gift the miniskirt. Unlocks the "dress code" button.
                     $ gave_miniskirt = True #Turns True when Hermione has the miniskirt.
                     ">Школьная мини-юбка была добавлена в гардероб Гермионы."
-    
-                            
-                            
-            
-            
-     
-    
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             "\"Не нужно.\"":
                 pass
-    
-    jump intro
-    
+
 #    menu:         
-#        "Would you like to skip the intro?"
-#        "Play the intro.":
-#            jump intro
-#        "Skip the intro.":
-#            jump hp
+#        "Отлаживать":
+#            $ end.SetEndingValue(const_ENDING_PUBLIC_WHORE,2)
+#            $ hermione_main_zorder = 5  
+#            $ hermione_chibi_ypos = 250
+#            $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+#            $ h_ypos=0 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+#            jump test
+
+    menu:         
+        "Вы желаете пропустить интро?"
+        "Начать интро.":
+            jump intro
+        "Пропустить интро.":
+            jump hp
     
    
 label masterstart: 

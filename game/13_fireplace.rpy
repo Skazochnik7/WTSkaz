@@ -27,7 +27,7 @@ label fireplace:
         "- Зажечь огонь -" if not fire_in_fireplace and not day == 1:
             #$ renpy.play('sounds/fire01.ogg')  
             #play bg_sounds "sounds/fire01.ogg" fadeout 1.0 fadein 1.0 #LOUD!
-            #play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
+            play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
             $ fire_in_fireplace = True
             show screen fireplace_fire
             jump day_main_menu

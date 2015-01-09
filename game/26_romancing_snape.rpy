@@ -21,7 +21,7 @@ label date_with_snape_01:
     pause.1
     show screen blktone
     with d3
-    ">Вы проводите вечер, обсуждая с профессором Снейпом всяческие похабные вещи об этих девках."
+    ">Вы проводите вечер, обсуждая с профессором Снейпом всякие похабные вещи об этих девках."
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes
     show screen notes
@@ -206,7 +206,7 @@ label date_with_snape_05:
             sna "Интересно..."
     $ s_sprite = "03_hp/10_snape_main/snape_01.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna2 "Но ты уверен, что в состаянии сломить ее волю?"
+    sna2 "Но ты уверен, что в состоянии сломить ее волю?"
     hide screen s_head2    
     m "О, абсолютно."
     m "Хотя это и займет некоторое время..."
@@ -249,10 +249,10 @@ label date_with_snape_06:
     $ s_head_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.       # SNAPE
     $ s_sprite = "03_hp/10_snape_main/23.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna2 "Что я могу сказать? Для меня жизнь, в последнее время, просто великолепна."
+    sna2 "Что я могу сказать? Моя жизнь, в последнее время, просто великолепна."
     $ s_sprite = "03_hp/10_snape_main/snape_22.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna2 "В последние дни у меня целый гарем из студенток - выбирай что душе угодно."
+    sna2 "В последние дни у меня целый гарем из студенток - выбирай какую душе угодно."
     hide screen s_head2  
     g9 "Круто!"
     $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                         # SNAPE
@@ -273,7 +273,7 @@ label date_with_snape_06:
     sna2 "Ты не представляешь, что некоторые из девок готовы сделать за очки для факультета!"
     $ s_sprite = "03_hp/10_snape_main/snape_22.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "Или даже просто за обещание хорошей оценке..."
+    sna "Или даже просто за обещание хорошей оценки..."
     hide screen s_head2  
     pause.1
     show screen blktone
@@ -319,7 +319,7 @@ label date_with_snape_07:
     sna "Почему тебя тогда это волнует?"
     $ s_sprite = "03_hp/10_snape_main/snape_09.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna2 "Я так понимаю, что она всего своего рода магл ..."
+    sna2 "Я так понимаю, что она скорее всего магл..."
     hide screen s_head2  
     m "Она кто?"
     $ s_sprite = "03_hp/10_snape_main/snape_25.png"                                         # SNAPE
@@ -365,7 +365,7 @@ label date_with_snape_08:
     $ s_head_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.       # SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "Как ты думаешь, нам можно.."
+    sna "Как ты думаешь, нам можно..."
     sna "Вернуть публичную порку?"
     hide screen s_head2  
     m "Что ты имеешь в виду?"
@@ -396,7 +396,7 @@ label date_with_snape_08:
     show screen blktone
     with d3
     ">Профессор Снейп ведет себя вполне не принужденно с вами."
-    ">Важа дружба укрепляется еще больше.\n>\"Слизерин\" получает довольно много очков..."
+    ">Важа дружба укрепляется еще больше.\n>\"Слизерин\" получает много очков..."
     call sly_plus
     hide screen blktone
     hide screen bld1
@@ -418,7 +418,7 @@ label date_with_snape_09:
     g4 "В Россию?"
     $ s_sprite = "03_hp/10_snape_main/snape_01.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "Но постой, это еше хуже."
+    sna "Но постой, это еще хуже."
     $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
     sna "Очевидно, сейчас я говорю по русски."
@@ -544,7 +544,7 @@ label date_with_snape_10:
     g9 "Видел бы ты свое лицо."
     $ s_sprite = "03_hp/10_snape_main/snape_15.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna2 "Ты реально подколо меня, чертов нечеловеческий ублюдок!"
+    sna2 "Ты реально подколол меня, чертов нечеловеческий ублюдок!"
     hide screen s_head2  
     g9 "Я знаю! Было очень трудно устоять..."
     show screen blktone
@@ -569,10 +569,10 @@ label date_with_snape_11:
     show screen s_head2                                                                                                 # SNAPE
     sna2 "И так... Возвращаясь к вашему миру, у вас есть страна под названием Англия?"
     hide screen s_head2  
-    m "Мы привыкли..."
+    m "Нет..."
     $ s_sprite = "03_hp/10_snape_main/snape_26.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "Что происходит?"
+    sna "А что есть?"
     hide screen s_head2  
     m "\"Великая катастрофа\"..."
     m "Она выжигает большую часть населения в течении нескольких часов..."
@@ -591,7 +591,7 @@ label date_with_snape_11:
     sna "Ужасно..."
     $ s_sprite = "03_hp/10_snape_main/snape_25.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna2 "Вы уверены, что хотите вернуться туда?"
+    sna2 "Ты уверен, что хочешь вернуться туда?"
     hide screen s_head2  
     m "Конечно."
     m "Там все немного варварское...но это мой дом."
@@ -615,13 +615,13 @@ label date_with_snape_12:
     $ s_head_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.       # SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_09.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna2 "Я думал о том, что вы сказали на днях..."
+    sna2 "Я думал о том, что ты сказал мне на днях..."
     sna2 "О том, что ваш мир это огромная пустыня..."
     hide screen s_head2
     m "Да?"
     $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "Вы думаете Альбус там в порядке?"
+    sna "Ты думаешь Альбус там в порядке?"
     hide screen s_head2
     m "Ох, конечно!"
     m "Я ведь буквально заменил его на посту..."
@@ -633,13 +633,13 @@ label date_with_snape_12:
     m "Да... Очень большой город."
     m "Один из тех, которые появились после катастрофы."
     m "Вероятно, самый большой..."
-    m "Сердце человеческой цивилизации, если вам угодно."
+    m "Сердце человеческой цивилизации, так сказать."
     $ s_sprite = "03_hp/10_snape_main/23.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
     sna "Это успокаивает..."
     hide screen s_head2
     m "Конечно..."
-    m "Хотя, если ваш друг Альбус появится там же, откуда я телепортировался, читая заклинание..."
+    m "Хотя, если твой друг Альбус появится там же, откуда я телепортировался, читая заклинание..."
     m "Я полагаю, принцесса могла отрубить ему голову..."
     $ s_sprite = "03_hp/10_snape_main/snape_01.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
@@ -706,7 +706,7 @@ label date_with_snape_13:
     sna "Что-то вроде того..."
     $ s_sprite = "03_hp/10_snape_main/snape_28.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "Я растерял свою темную сторону, чувак." # :)
+    sna "Я растерял свою темную сторону, Джинни." # :)
     hide screen s_head2
     pause.1
     show screen blktone
@@ -744,7 +744,7 @@ label date_with_snape_14:
     show screen s_head2                                                                                                 # SNAPE
     sna "И вот, эта сука начинает кончать!"
     hide screen s_head2
-    m "Мило! И тут ты проснулся?"
+    m "Круто! И тут ты проснулся?"
     $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
     sna "Что? Это произошло на самом деле."
@@ -850,7 +850,7 @@ label date_with_snape_15:
     pause.1
     show screen blktone
     with d3
-    ">Уровень вашей дружбы с прфессором Снейпом достиг максимума."
+    ">Уровень вашей дружбы с профессором Снейпом достиг максимума."
     ">Поздравляем. Если бы это был симулятор знакомств, то вы получили бы от Северуса Снейпа \"что-нибудь\"."
     ">\"Слизерину\" начисленно огромное количество очков.\"Слизерин\" получил максимальное количество очков."
     call sly_plus

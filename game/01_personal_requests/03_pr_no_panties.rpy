@@ -545,7 +545,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
     her "Спасибо, сэр..."
     m "Можешь идти."
     her "Доброй ночи, сэр."
-    #m "Да, доброй ночи..."
+    m "Да, доброй ночи..."
 
     hide screen bld1
     #__#hide screen hermione_main

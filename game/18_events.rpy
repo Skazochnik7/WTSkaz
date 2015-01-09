@@ -80,7 +80,7 @@ label event_00:
 #    sna "Didn't we?"
     
 
-    #m "{size=-3}(\"Albus\"? Is that supposed to be my name or is that's just how the humans of this world greet one another?){/size}"
+    m "{size=-3}(\"Альбус\"? Это должно быть мое имя или это так люди этого мира приветствуют друг друга?){/size}"
     menu:
         m "..."
         "\"На самом деле я немного занят.\"":
@@ -118,7 +118,7 @@ label event_00:
             m "Ладно, проехали... Как я могу помочь тебе?"
             
     $ s_sprite = "03_hp/10_snape_main/snape_06.png"
-    sna "У меня есть важный разговор к тебе..."
+    sna "У меня есть важный разговор к вам..."
     sna "Я думаю, нам стоит пересмотреть политику допуска." 
     hide screen snape_main
     with d2
@@ -165,7 +165,7 @@ label event_00:
         "\"Не бывает дыма без огня.\"":
             $ s_sprite = "03_hp/10_snape_main/snape_10.png"
             show screen snape_main
-            sna "Альбус!? Ты можешь быть серьезным!"
+            sna "Альбус!? Вы серьезно?!"
             sna "Я вам говорю, это все грязная ложь!"
     hide screen snape_main
     m "........................."
@@ -281,7 +281,7 @@ label event_01: #First event in the game. Gennie finds himself at the desk.
     m "Оно наполненно...."
     g4 "{size=+5}МАГИЕЙ?!{/size}"
     m "Да... магия, я чувствую. Такая мощная и в свою очередь..."
-    m "....чужая."
+    m "...чужая."
     m "Интересно..."
     m "Я думаю, необходимо осмотреться здесь..."
     hide screen bld1
@@ -323,7 +323,7 @@ label event_03:
     with Dissolve(.3)
     who2 "Альбус!"
     m "Эй.......... ты..."
-    who2 "Тебе что-то нужно сделать с этой девченкой Грейнджер..."
+    who2 "Вам что-то нужно сделать с этой девченкой Грейнджер..."
     hide screen snape_main                                                                                                                                  #SNAPE
     with d3                                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                                                               #SNAPE
@@ -342,12 +342,12 @@ label event_03:
             who2 "Да, она..."
             who2 " Она одна из \"группировки Поттера\"."
         "\"Я на вашей стороне, Джэк, ведьмы просто сумашедшие!\"":
-            who2 "Что...? Альбус, ты ведешь себя странно в последнее время."
+            who2 "Что...? Альбус, вы ведете себя странно в последнее время."
             who2 "Все в порядке?"
             menu:
                 m "..."
                 "\"Да, все отлично. Продолжай.\"":
-                    who2 "Как скажешь..."
+                    who2 "Как скажете..."
                 "\"Ты меня знаешь. Обожаю подкалывать.\"":
                     who2 "Хм....."
 
@@ -380,7 +380,7 @@ label event_03:
             with d3                                                                                                                                                                  #SNAPE
             who2 "...?!"
             who2 "Альбус..."
-            who2 "Ты ведешь себя странно..."
+            who2 "Вы ведете себя странно..."
         "\"Никто не говорил, что будет легко.\"":
             hide screen snape_main                                                                                                                                  #SNAPE
             with d3                                                                                                                                                                  #SNAPE
@@ -388,13 +388,13 @@ label event_03:
             show screen snape_main                                                                                                                                #SNAPE
             with d3                                                                                                                                                                  #SNAPE
             who2 "Иногда мне кажется, что уж лучше оказаться в комнате полной дементоров..."
-        "\"Вам станет лучше сегодня.\"":
+        "\"Вам лучше отдохнуть сегодня.\"":
             hide screen snape_main                                                                                                                                  #SNAPE
             with d3                                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                                                               #SNAPE
             show screen snape_main                                                                                                                                #SNAPE
             with d3                                                                                                                                                                  #SNAPE
-            who2 "Ты как всегда рад..."
+            who2 "Вы как всегда добры..."
     who2 "Хм..."
     hide screen snape_main                                                                                                                                  #SNAPE
     with d3                                                                                                                                                                  #SNAPE
@@ -558,7 +558,7 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
     show screen snape_main                                                                                                                                #SNAPE
     with d3                                                                                                                                                                  #SNAPE
     who2 "Я бы никогда не опустился до того, чтобы обменивать сексуальные утехи за очки для дома."
-    who2 "Я имею в виду, мы используем очки, чтобы мотивировать студентов, чтобы ..."
+    who2 "Я имею в виду, мы используем очки, чтобы мотивировать студентов, чтобы..."
     who2 "Я не могу говорить за других..."
     hide screen snape_main                                                                                                                                  #SNAPE
     with d3                                                                                                                                                                  #SNAPE
@@ -571,12 +571,12 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
     $ s_sprite = "03_hp/10_snape_main/snape_01.png"                                                                               #SNAPE
     show screen snape_main                                                                                                                                #SNAPE
     with d3                                                                                                                                                                  #SNAPE
-    who2 "Ну, я хотел бы убедиться, что ты не принимаешь слухи всерьез..."
+    who2 "Ну, я хотел бы убедиться, что вы не принимаете слухи всерьез..."
     who2 "Эту скверную ложь распространяют дети."
     
 
     who2 "О.... Перед тем, как я уйду..."
-    who2 "Есть один вопрос, который я обязан тебе задать..."
+    who2 "Есть один вопрос, который я обязан вам задать..."
     hide screen snape_main                                                                                                                                  #SNAPE
     with d3                                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_09.png"                                                                               #SNAPE
@@ -597,8 +597,8 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
             $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                                                               #SNAPE
             show screen snape_main                                                                                                                                #SNAPE
             with d3                                                                                                                                                                  #SNAPE
-            who2 "Ты прав..."
-            who2 "Прости меня... Я последнее время слишком параною..."
+            who2 "Вы правы..."
+            who2 "Простите меня... Я последнее время слишком параною..."
             hide screen snape_main                                                                                                                                  #SNAPE
             with d3                                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                                                               #SNAPE
@@ -612,7 +612,7 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
             show screen snape_main                                                                                                                                #SNAPE
             with d3                                                                                                                                                                  #SNAPE
             who2 "Альбус, в последнее время у вас весьма своеобразное чувство юмора..."
-            who2 "Вероятно, тебе стоит тратить меньше времени в компании с этим здоровяком Хагридом."
+            who2 "Вероятно, вам стоит тратить меньше времени в компании с этим здоровяком Хагридом."
         "- \{Использовать магию для получения правильного ответа\} -":
             $ d_flag_01 = True
             hide screen snape_main
@@ -627,7 +627,7 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
             with d3                                                                                                                                                                  #SNAPE
             who2 "!!?"
             m "Что за вопрос, Северус?"
-            who2 "Прости меня...Последнее время я параною, вероятно."
+            who2 "Простите меня... Последнее время я параною, вероятно."
 
 
     hide screen snape_main                                                                                                                                  #SNAPE
@@ -783,19 +783,21 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
     g4 "Что?! Подожди!"
     
     
-    stop music 
-    $ renpy.play('sounds/glass_break.mp3') #Sound of a door opening.
-    play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1
-
-    $ end_u_1_pic =  "glass"
-    pause.1
-    show screen end_u_1
-    hide screen snape_defends
-    pause 3
-
-    
-    
-
+    # Небольшое дополнение
+    translators "Вы можете просто пропустить \"сражение\". Пропускаем?"
+    menu:
+        "- Пропустить дуэль -":
+            $ skip_duel = True 
+        "- Начать дуэль -":
+            $ skip_duel = False
+            stop music 
+            $ renpy.play('sounds/glass_break.mp3') #Sound of a door opening.
+            play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1
+            # $ end_u_1_pic =  "glass"
+            # pause.1
+            # show screen end_u_1
+            hide screen snape_defends
+            # pause 3
     jump duel
 
 ###############################################################################################################################################################
@@ -822,8 +824,8 @@ label event_06: #THE TALK AFTER THE DUEL ENDS.
     #__#sna_01 "Ты колдовал заклинания голыми руками..."
     $sna_head_state = 1
     sna_head_main "Ты колдовал заклинания голыми руками..."
-    #__#sna_01 "Если ты не человек, то... кто- -"
-    sna_head_main "Если ты не человек, то... кто- -"
+    #__#sna_01 "Если ты не человек, то... кто-"
+    sna_head_main "Если ты не человек, то... кто-"
     #__#sna_04 "{size=+5}Что ты такое?{/size}"
     $sna_head_state = 4
     sna_head_main "{size=+5}Что ты такое?{/size}"
@@ -911,20 +913,20 @@ label event_06: #THE TALK AFTER THE DUEL ENDS.
         "- Отменить заклинание -":
             pass
 
-    #__#sna_01 "Сработало? Это ты, Альбус?"
+    #__#sna_01 "Сработало? Это вы, Альбус?"
     $sna_head_state = 1
-    sna_head_main "Сработало? Это ты, Альбус?"
+    sna_head_main "Сработало? Это вы, Альбус?"
     menu:
         m "..."
         "\"Да, это Я. Как хорошо вернуться обратно!\"":
-            #__#sna_01 "Рад, что ты здесь. Ты в порядке?"
-            sna_head_main "Рад, что ты здесь. Ты в порядке?"
+            #__#sna_01 "Рад, что вы здесь. Вы в порядке?"
+            sna_head_main "Рад, что вы здесь. Вы в порядке?"
             m "Я в порядке, Северус, спасибо."
             #__#sna_01 "Как там, в другом мире?"
             sna_head_main "Как там, в другом мире?"
             m "Очень много песка и довольно жарко, но все таки относительно неплохо."
-            #__#sna_01 "Понимаю... Ты соскучился по своему брату?"
-            sna_head_main "Понимаю... Ты соскучился по своему брату?"
+            #__#sna_01 "Понимаю... Вы соскучились по своему брату?"
+            sna_head_main "Понимаю... Вы соскучились по своему брату?"
             menu:
                 m "..."
                 "\"Да, я соскучился по тебе очень сильно!\"":
@@ -1014,9 +1016,9 @@ label event_06: #THE TALK AFTER THE DUEL ENDS.
     #__#sna_01 "Увидимся завтра, я зайду после занятий."
     $sna_head_state = 1
     sna_head_main "Увидимся завтра, я зайду после занятий."
-    #__#sna_06 "до тех пор, держи свою истинную личность и наш разговор в тайне, идет?"
+    #__#sna_06 "До тех пор, держи свою истинную личность и наш разговор в тайне, идет?"
     $sna_head_state = 6
-    sna_head_main "до тех пор, держи свою истинную личность и наш разговор в тайне, идет?"
+    sna_head_main "До тех пор, держи свою истинную личность и наш разговор в тайне, идет?"
     m "Без проблем."
     #__#sna_01 "Отлично, тогда..."
     $sna_head_state = 1
@@ -1084,7 +1086,7 @@ label event_07: #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
     with d3
 
     sna "Понятно..."
-    sna "Прошой ночью я...ломал голову над нашей головоломкой."
+    sna "Прошлой ночью я...ломал голову над нашей головоломкой."
     sna "И мне кажется, у меня есть решение..."
     m "Действительно? Отлично! Я слушаю."
     hide screen snape_main                                                                                                                                  #SNAPE
@@ -1109,7 +1111,7 @@ label event_07: #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
     show screen snape_main                                                                                                                                #SNAPE
     with d3                                                                                                                                                                  #SNAPE
     sna "Кроме того, потеря директора, хоть и временная, может сильно ранить репутацию школы..."
-    sna "А что если ваше заклинание спадет завтра или даже сегодня ночью?"
+    sna "А что если твое заклинание спадет завтра или даже сегодня ночью?"
     hide screen snape_main                                                                                                                                  #SNAPE
     with d3                                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_09.png"                                                                               #SNAPE
@@ -1148,8 +1150,8 @@ label event_07: #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
     $ s_sprite = "03_hp/10_snape_main/snape_03.png"                                                                               #SNAPE
     show screen snape_main                                                                                                                                #SNAPE
     with d3                                                                                                                                                                  #SNAPE
-    sna "Ну, а что вы скажете насчет этого?"
-    sna "Может быть прислать вам парочку девок из Слизерина?"
+    sna "Ну, а что ты скажешь насчет этого?"
+    sna "Может быть прислать тебе парочку девок из Слизерина?"
     g9 "Понятия не имею, что такое \"Слизерин\", но думаю, это поможет..."
     hide screen snape_main                                                                                                                                  #SNAPE
     with d3                                                                                                                                                                  #SNAPE
@@ -1189,14 +1191,14 @@ label event_07: #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
     show screen snape_main                                                                                                                                #SNAPE
     with d3                                                                                                                                                                  #SNAPE
     sna "...."
-    g4 "Очень темно.."
+    g4 "Очень темно..."
     g4 "Ты все еще здесь?"
     hide screen snape_main                                                                                                                                  #SNAPE
     with d3                                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_03.png"                                                                               #SNAPE
     show screen snape_main                                                                                                                                #SNAPE
     with d3                                                                                                                                                                  #SNAPE
-    sna "...."
+    sna "..."
     m "........."
     hide screen snape_main                                                                                                                                  #SNAPE
     with d3                                                                                                                                                                  #SNAPE
@@ -1234,7 +1236,7 @@ label event_07: #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
     with d3                                                                                                                                                                  #SNAPE
     sna "Моей магии?"
     m "Да... Как вы колдуете заклинания..."
-    m "ИНтригует..."
+    m "Интригует..."
     hide screen snape_main                                                                                                                                  #SNAPE
     with d3                                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_04.png"                                                                               #SNAPE
@@ -1273,7 +1275,7 @@ label event_07: #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
     $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                                                               #SNAPE
     show screen snape_main                                                                                                                                #SNAPE
     with d3                                                                                                                                                                  #SNAPE
-    sna "Нет, нет, мои извинения..."
+    sna "Нет, нет, прости..."
     sna "Это просто...ты все еще выглядишь и говоришь для меня как Альбус..."
     sna "Услышать от профессора Дамблода что-то вроде \"Пришли мне этих девок\"..."
     hide screen snape_main                                                                                                                                  #SNAPE
@@ -1320,7 +1322,7 @@ label event_07: #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
     $ s_sprite = "03_hp/10_snape_main/24.png"                                                                               #SNAPE
     show screen snape_main                                                                                                                                #SNAPE
     with d3                                                                                                                                                                  #SNAPE
-    sna "Доброй ночи... джинни."
+    sna "Доброй ночи... Джинн."
     m "Да, доброй ночи, Северус."
 
     hide screen snape_main
@@ -1373,8 +1375,6 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
     "*Тук-тук-тук*"
     pause.7
-    
-
     m "Кто-то стучит в дверь..."
     m "Черт... Я должен избегать любых контактов с людьми!"
     m "Хм... Каковы шансы, что это стучится не человек?"
@@ -1394,9 +1394,9 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
             menu: 
                 m "..."
                 "\"Уходи, пожалуйста. Я занят.\"":
-                    herView "Но, профессор, мне действительно нужно поговорить с вами..."
+                    her "Но, профессор, мне действительно нужно поговорить с вами..."
                     m "..........................................."
-                    herView "Профессор? Я вхожу!"
+                    her "Профессор? Я вхожу!"
                     m "{size=-4}(Дерьмо...){/size}"
                 "\"Да, да. Конечно входи.\"":
                     pass          
@@ -1414,7 +1414,7 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
             m "{size=-4}(Уходи...){/size}"
             who "Но, профессор, мне действительно нужно поговорить с вами..."
             m "..........................................."
-            herView "Профессор? Я вхожу!"
+            her "Профессор? Я вхожу!"
             m "{size=-4}(Дерьмо...){/size}"
 
 
@@ -1441,65 +1441,65 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     show screen bld1
     with Dissolve(.3)
     
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite.
-    $ h_ypos=0
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite.
+    #__#$ h_ypos=0
     $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
-    $ herView.showQ( "body_01.png", pos )
+    $herView.showQ( "body_01.png", pos ) #"WARNING_Z"
     show screen hermione_02
     show screen ctc
     with Dissolve(.3)
     pause
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_03.png", pos, d3 )
-    herView "Доброе утро профессор."
+    $herView.showQQ( "body_03.png", pos )
+    her "Доброе утро профессор."
     hide screen ctc
     menu:
         "\"Доброе утро... девочка.\"":
-            herView "{size=-4}(\"Девочка\"?){/size}"
+            her "{size=-4}(\"Девочка\"?){/size}"
             pass
         "\"Доброе утро, Гермиона.\"" if d_flag_01:
             pass
         "\"Доброе утро, Дитя.\"":
-            herView "{size=-4}(\"Дитя\"...?){/size}"
+            her "{size=-4}(\"Дитя\"...?){/size}"
         "\"................................\"":
             pass
-    herView "Я была очень занята , но сегодня утром у меня есть немного времени, чтобы встретится с вами, профессор."
-    herView "Вы, наверное, знаете почему я здесь."
+    her "Я была очень занята , но сегодня утром у меня есть немного времени, чтобы встретится с вами, профессор."
+    her "Вы, наверное, знаете почему я здесь."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_04.png", pos, d3 )
-    herView "Тот вопрос, который я безуспешно пыталась довести до вашего внимания в последнее время."
-    herView "Я не могу понять, почему вы ничего не предпринимаете, чтобы остановить это!"
-    herView "Это не может больше продолжаться!"
+    $herView.showQQ( "body_04.png", pos )
+    her "Тот вопрос, который я безуспешно пыталась довести до вашего внимания в последнее время."
+    her "Я не могу понять, почему вы ничего не предпринимаете, чтобы остановить это!"
+    her "Это не может больше продолжаться!"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_02.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_02.png", pos, d3 )
-    herView "Такого рода неравенство начинает сказываться на факультетах..."
-    herView "Все потому, что мы более сплоченны, нежели остальные..."
-    herView "Как вы думаете, это справедливо, что те кто заслуживают быть лидерами, отстают от других?"
-    herView "Как вы думаете? Справедливо?"
+    $herView.showQQ( "body_02.png", pos )
+    her "Такого рода неравенство начинает сказываться на факультетах..."
+    her "Все потому, что мы более сплоченны, нежели остальные..."
+    her "Как вы думаете, это справедливо, что те кто заслуживают быть лидерами, отстают от других?"
+    her "Как вы думаете? Справедливо?"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_03.png", pos, d3 )
+    $herView.showQQ( "body_03.png", pos )
     m "{size=-4}(Вы только посмотрите на эту миленькую девчушку){/size}"
     m "{size=-4}(Только посмотрите ... Она восхитительна.){/size}"
     m "{size=-4}(Черт, я не видел женщину целую неделю){/size}"
@@ -1512,7 +1512,7 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
             pass
     if d_flag_01:
         #__#hide screen hermione_main
-        $ herView.hideQ()
+        $herView.hideQ() #"WARNING_Z"
         hide screen bld1
         with d3
         show screen blktone8
@@ -1524,34 +1524,32 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
         show screen genie_jerking_off
         with d3
     m "Да, продолжай, дорогая."
-   
     #__#$ h_body = "03_hp/13_hermione_main/body_05.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
-    $ herView.showQ( "body_05.png", pos, d3 )
-    
+    $herView.showQ( "body_05.png", pos ) #"WARNING_Z"
     show screen bld1
     with d3
-    herView "\"Да\"?! То есть это справедливо?"
+    her "\"Да\"?! То есть это справедливо?"
     m "О, конечно нет, я хотел сказать \"нет\". Но все равно продолжай..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_03.png", pos, d3 )
-    herView "Стало легче на душе. Я рада, что вы согласны со мной, профессор..."
+    $herView.showQQ( "body_03.png", pos )
+    her "Стало легче на душе. Я рада, что вы согласны со мной, профессор..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_04.png", pos, d3 )
-    herView "Как я уже говорила, это просто смешно, и я не могу поверить, что это происходит сейчас и с нами!"
+    $herView.showQQ( "body_04.png", pos )
+    her "Как я уже говорила, это просто смешно, и я не могу поверить, что это происходит сейчас и с нами!"
     if d_flag_01:
         #__#hide screen hermione_main
-        $ herView.hideQ()
+        $herView.hideQ() #"WARNING_Z"
         hide screen bld1
         show screen blktone8
         with d3
@@ -1560,60 +1558,60 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
         hide screen blktone8
         with d3
         #__#show screen hermione_main
-        $ herView.showQ( "body_04.png", pos )
+        $ herView.showQ( None, pos )
         show screen bld1
         with d3
     else:
         m "Понятно..."
-    herView "Я хочу сказать, что поняла, если бы это произошло несколько сотен лет назад..."
-    herView "Но мы давно прошли это, не так ли?"
+    her "Я хочу сказать, что поняла, если бы это произошло несколько сотен лет назад..."
+    her "Но мы давно прошли это, не так ли?"
     if d_flag_01:
         g9 "{size=-4}(Вы только посмотрите на эти розовые щечки? Хочу потыкать в них своим членом.){/size}"
         #__#hide screen hermione_main
-        $ herView.hideQ()
+        $herView.hideQ() #"WARNING_Z"
         show screen blktone8
         with d3
         ">Вы продолжаете дрочить..."
         hide screen blktone8
         #__#show screen hermione_main
-        #__#with d3
-        $ herView.showQ( "body_04.png", pos, d3 )
+        $ herView.showQ( None, pos )
+        with d3
     else:
         m "Эм... Я полагаю, что вы сделаете, то есть мы сделаем все, что нужно."
-    herView "Это навредит системе распределения очков для факультетов."
-    herView "Но и это не конец!"
-    herView "Так же это навредит нашей системе образования..."
-    herView "И что еще более важно - мотивация среди студентов неуклонно сокращается из-за этого!"
+    her "Это навредит системе распределения очков для факультетов."
+    her "Но и это не конец!"
+    her "Так же это навредит нашей системе образования..."
+    her "И что еще более важно - мотивация среди студентов неуклонно сокращается из-за этого!"
     if d_flag_01:
         m "{size=-4}(Посмотрите на эти огромные сиськи.){/size}"
         m "{size=-4}(Да... Я хочу зажать свой член между ними...){/size}"
-    herView "Как вы можете наблюдать, ситуация весьма тяжелая..."
+    her "Как вы можете наблюдать, ситуация весьма тяжелая..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_02.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_02.png", pos, d3 )
-    herView "Но мы все еще можем уладить..."
-    herView "Как сообщил представитель нашего Школьного Студентческого Совета..."
-    herView "У меня есть пара предложений, как сделать это более эффективно."
+    $herView.showQQ( "body_02.png", pos )
+    her "Но мы все еще можем уладить..."
+    her "Как сообщил представитель нашего Школьного Студентческого Совета..."
+    her "У меня есть пара предложений, как сделать это более эффективно."
     if not d_flag_01:
         m ".............."
-    herView "Прежде всего, система очков для факультетов должна стать более сложной!"
+    her "Прежде всего, система очков для факультетов должна стать более сложной!"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_03.png", pos, d3 )
-    herView "Вам нужно контролировать распределение очков чуть лучше, сэр."
+    $herView.showQQ( "body_03.png", pos )
+    her "Вам нужно контролировать распределение очков чуть лучше, сэр."
     if d_flag_01:
         g4 "{size=-4}(Да, шлюха... Грязная шлюха... Бьюсь об заклад, ты обожаешь сосать члены... Не так ли? Да, уверен в этом...){/size}"
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQ( d3 )
+        $herView.hideQQ()
         show screen blktone8
         with d4
         ">Вы неистово надрачиваете свой твердейший член!"
@@ -1621,24 +1619,24 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
         with d4
         #__#show screen hermione_main
         #__#with d3
-        $ herView.showQ( "body_03.png", pos, d3 )
-    herView "Конечно, вы согласны со мной, профессор, не так ли?"
+        $ herView.showQQ( "body_03.png", pos )
+    her "Конечно, вы согласны со мной, профессор, не так ли?"
     if d_flag_01:
         g4 "{size=-4}*Тяжело дыша*{/size}"
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQ( d3 )
+        $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
         #__#show screen hermione_main
         #__#with d3
-        $ herView.showQ( "body_07.png", pos, d3 )
-        herView "Профессор...?"
+        $herView.showQQ( "body_07.png", pos )
+        her "Профессор...?"
         g4 "{size=-4}(Дерьмо. О чем она только что говорила?){/size}"
         g4 "Да, это так. Продолжай..."
-        herView "Эм... И так, как я сказала..."
+        her "Эм... И так, как я сказала..."
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQ( d3 )
+        $herView.hideQQ()
         m "{size=-4}(Ох... Отлично вздрочнул, но я уже близок к \"великому финалу\".){/size}" 
         m "{size=-4}(Может быть мне стоит прекратить пока не произошло чего.){/size}"
         menu:
@@ -1652,52 +1650,52 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     else:
         m "{size=-4}(Должен ли Я? Да плевать...){/size}"
         m "Хм... Предпологаю, что должен..."
-        herView "{size=-4}(\"Пологаете\"?){/size}"
-        herView "{size=-4}(Почему-то профессор Дамблдор такой... равнодушный.){/size}"
+        her "{size=-4}(\"Пологаете\"?){/size}"
+        her "{size=-4}(Почему-то профессор Дамблдор такой... равнодушный.){/size}"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_04.png", pos, d3 )
-    herView "Еще одна мера, которую стоит принять это более жестокий контроль за сотрудниками..."
-    herView "Особенно за учителями..."
+    $herView.showQQ( "body_04.png", pos )
+    her "Еще одна мера, которую стоит принять это более жестокий контроль за сотрудниками..."
+    her "Особенно за учителями..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_03.png", pos, d3 )
-    herView "Я надеюсь, что не переступаю черту, но некоторые учителя действительно требуют надзора..."
+    $herView.showQQ( "body_03.png", pos )
+    her "Я надеюсь, что не переступаю черту, но некоторые учителя действительно требуют надзора..."
     if d_flag_01:
         g4 "{size=-4}(Да! Ты маленькая шлюха! Тупая маленькая шлюха!) *Задыхаясь*{/size}"
     else:
         m "......................."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_04.png", pos, d3 )
-    herView "Я понимаю, что у вас нет времени на все это. Вы деректор нашей школы и очень важный и занятой человек."
-    herView "Временами, оставаться лучшей ученицей довольно трудно для меня..."
+    $herView.showQQ( "body_04.png", pos )
+    her "Я понимаю, что у вас нет времени на все это. Вы деректор нашей школы и очень важный и занятой человек."
+    her "Временами, оставаться лучшей ученицей довольно трудно для меня..."
     if d_flag_01:
         translators "{size=-4}(Здесь была игра слов \"hard on(тяжело)\" и \"hard-on(стояк)\") которую мы не смогли перевести. \nПростите нас :({/size}"
         g4 "{size=-4}(Она сказала \"стояк\"!?) *задыхаясь*{/size}"
-    herView "Но вы могли бы предоставить эту задачу мне..."
-    herView "Просто всадить свою веру в меня." 
+    her "Но вы могли бы предоставить эту задачу мне..."
+    her "Просто всадить свою веру в меня." 
     if d_flag_01: 
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQ( d3 )
+        $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
         #__#show screen hermione_main
         #__#with d3
-        $ herView.showQ( "body_01.png", pos, d3 )
-        herView "Да, вы должны! Просто всадите ее в меня!"
+        $herView.showQQ( "body_01.png", pos )
+        her "Да, вы должны! Просто всадите ее в меня!"
         stop music fadeout 1.0
         show screen white 
         pause.1
@@ -1710,7 +1708,7 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
         g4 "{size=-4}(О дерьмо, что она наделала!) *Аргх!*{/size}"
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQ( d3 )
+        $herView.hideQQ()
         hide screen bld1
         with d3
         show screen genie_jerking_sperm
@@ -1722,12 +1720,12 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
         with d3
         #__#show screen hermione_main
         #__#with d3
-        $ herView.showQ( "body_18.png", pos, d3 )
-        herView "Профессор!? Что происходит...?"
+        $ herView.showQQ( "body_18.png", pos )
+        her "Профессор!? Что происходит...?"
         show screen genie_jerking_sperm_02
         with d3
         g4 "А... ДААААА.....!"
-        herView "???"
+        her "???"
         g4 "*Тяжело дыша* Да! Да...."
         show screen genie
         #show screen genie_jerking_off
@@ -1737,45 +1735,45 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
         m "Хорошо, я подумаю о твоем предложении. Обещаю."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_07.png", pos, d3 )
-    herView "Правда?"
-    herView "Хм..........."
+    $herView.showQQ( "body_07.png", pos )
+    her "Правда?"
+    her "Хм..........."
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_04.png", pos, d3 )
-    herView "Это обнадеживает. Спасибо, Профессор."
+    $herView.showQQ( "body_04.png", pos )
+    her "Это обнадеживает. Спасибо, Профессор."
     if d_flag_01:
         m "Нет, нет. Спасибо тебе..."
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQ( d3 )
+        $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
         #__#show screen hermione_main
         #__#with d3
-        $ herView.showQ( "body_07.png", pos, d3 )
-        herView "Хм..."
+        $herView.showQQ( "body_07.png", pos )
+        her "Хм..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_04.png", pos, d3 )
-    herView "Мои занятия вот-вот начнутся. Мне лучше пойти."
-    herView "Спасибо за уделенное время..."
+    $herView.showQQ( "body_04.png", pos )
+    her "Мои занятия вот-вот начнутся. Мне лучше пойти."
+    her "Спасибо за уделенное время..."
     hide screen bld1
     #__#hide screen hermione_main
-    #__#with Dissolve(.3)
-    $ herView.hideQ( Dissolve(.3) )
+    $herView.hideQ() #"WARNING_Z"
+    with Dissolve(.3)
     $ walk_xpos=400 #Animation of walking chibi. (From)
     $ walk_xpos2=610 #Coordinates of it's movement. (To)
     $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
@@ -1804,12 +1802,11 @@ label event_08_02:
     "EVENT_08_02"
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
     "*Тук-тук-тук!*"
-    $ herView.chose( 0 )
     menu:
         "\"Кто это?\"":
-            herView "Это я, Гермиона Грейнджер." 
+            her "Это я, Гермиона Грейнджер." 
             m "(Снова эта молоденькая ведьма...)" 
-            herView "Профессор, я вхожу..."
+            her "Профессор, я вхожу..."
             m "{size=-4}(Crap!){/size}"
         "\"Да, входи...\"":
             pass
@@ -1817,7 +1814,7 @@ label event_08_02:
             $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
             "*Тук-тук-тук!*"
             m "............................."
-            herView "Профессор, я вхожу..."
+            her "Профессор, я вхожу..."
             m "{size=-4}(Дерьмо!){/size}"
     
     
@@ -1834,76 +1831,76 @@ label event_08_02:
     show screen bld1
     with Dissolve(.3)
     
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite.
-    $ h_ypos=0
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite.
+    #__#$ h_ypos=0
     $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
-    $ herView.showQ( "body_01.png", pos )
+    $herView.showQ( "body_01.png", pos ) #"WARNING_Z"
     show screen hermione_02
     with Dissolve(.3)
 
-    herView "Доброе утро, профессор Дамблдор."
+    her "Доброе утро, профессор Дамблдор."
     menu:
         "\"Доброе утро, мисс Грейнджер.\"":
             pass
         "\"Доброе утро, дитя.\"":
-            herView "{size=-5}(\"Дитя\"? Почему он настолько снисходительный все время?){/size}"
+            her "{size=-5}(\"Дитя\"? Почему он настолько снисходительный все время?){/size}"
             m "Что-то не так?"
-            herView "Нет, ничего сэр..."
+            her "Нет, ничего сэр..."
         "\"Доброе утро, шлюха.\"":
-            herView "Eм... Что?"
+            her "Eм... Что?"
             g4 "{size=-4}(ОК, это было глупо. Контролировать гнев, контролировать гнев !){/size}"
             m "*Кхм* Извините, что-то застряло в горле... Доброе утро, мисс Грейнджер."
-            herView "{size=-5}(Он назвал меня.... нет, показалось.){/size}"
+            her "{size=-5}(Он назвал меня.... нет, показалось.){/size}"
             
-    herView "Профессор Дамблдор, Я здесь, чтобы поговорить с вами, как  президент \"ОПЗМП\"..."
+    her "Профессор Дамблдор, Я здесь, чтобы поговорить с вами, как  президент \"ОПЗМП\"..."
     m "............."
-    herView "Мы провели чрезвычайное собрание вчера..."
-    herView "Главным вопросом была \"Хогвартская\"униформа для девочек..."
-    herView "Мы пришли к выводу, что в настоящее время дресс-код является весьма нецелесообразным для образовательного учреждения..." 
+    her "Мы провели чрезвычайное собрание вчера..."
+    her "Главным вопросом была \"Хогвартская\"униформа для девочек..."
+    her "Мы пришли к выводу, что в настоящее время дресс-код является весьма нецелесообразным для образовательного учреждения..." 
     show screen ctc
     pause
-    herView "..."
+    her "..."
     m "Серьезно?"
     hide screen ctc
-    herView "Да, профессор, Уверяю вас, я очень серьезна."
-    herView "Мы ищем способ заставить наших бедных девочек носить  платье ..."
-    herView "Сейчас они носят легкомысленные наряды и отвлекает мужчин от учебы, ставя их в невыгодное положение..."
-    herView "Все это отвлекающие факторы..."
-    herView "Бедные души..."
+    her "Да, профессор, Уверяю вас, я очень серьезна."
+    her "Мы ищем способ заставить наших бедных девочек носить  платье ..."
+    her "Сейчас они носят легкомысленные наряды и отвлекает мужчин от учебы, ставя их в невыгодное положение..."
+    her "Все это отвлекающие факторы..."
+    her "Бедные души..."
     m "Кто-нибудь из ребят жалуется на это?"
-    herView "Мы не будем ждать, пока проблема существует, сэр! Мы будем бороться с ней!"
-    herView "Ни один человек не должен находиться в невыгодном положении, в зависимости от пола."
-    herView "Это называется \"Сексизм\" в мире Маглов, сэр."
+    her "Мы не будем ждать, пока проблема существует, сэр! Мы будем бороться с ней!"
+    her "Ни один человек не должен находиться в невыгодном положении, в зависимости от пола."
+    her "Это называется \"Сексизм\" в мире Маглов, сэр."
     m "Ваши объяснения  слишком запутанные, на мой взгляд, мисс Грейнджер."
     m "Скажите мне, что вы предлагаете , заставить каждую женщину носить паранджу в школе?"
-    herView "Удвоение длины юбки для девочек в школе было бы достаточно..."
+    her "Удвоение длины юбки для девочек в школе было бы достаточно..."
     menu:
 
         "{size=-4}\"Это смешно. Отказано!\"{/size}":
             $ d_flag_05 = True #Notion refused. Will take affect in the next event.
-            herView "Что... Н-но? Мы приняли решение..."
+            her "Что... Н-но? Мы приняли решение..."
             m "Мисс Грейнджер, Мне жаль , но я все еще директор этой школы..."
             m "И все решения  зависят от моего слова!"
-            herView "Значит вы игнорируете выбор народа, сэр?"
+            her "Значит вы игнорируете выбор народа, сэр?"
             m "Единственный голос, который я слышу ваш, мисс Грейнджер."
-            herView "Разве вы не знаете, что происходит с тиранами, которые недооценивают силы народа?"
-            herView "Их свергают!"
+            her "Разве вы не знаете, что происходит с тиранами, которые недооценивают силы народа?"
+            her "Их свергают!"
             m "Осторожно. Ваши слова пахнут изменой, юная леди."
             m "Разве вы не знаете, что происходит с предателями?"
             m "Их вешают!"
-            herView "!!!"
-            herView "Тцк!"
-            herView "Я добьюсь,чтобы вы восприняли наше решение всерьез, профессор!"
+            her "!!!"
+            her "Тцк!"
+            her "Я добьюсь,чтобы вы восприняли наше решение всерьез, профессор!"
         
         "{size=-4}\"Нет сексизму. Просьба удовлетворена!\"{/size}":
-            herView "Великолепно. Я все сделаю."
-            herView "Спасибо профессор."
+            her "Великолепно. Я все сделаю."
+            her "Спасибо профессор."
             hide screen bld1
             #__#hide screen hermione_main
-            #__#with Dissolve(.3)
-            $ herView.hideQ( Dissolve(.3) )
+            $herView.hideQ() #"WARNING_Z"
+            with Dissolve(.3)
             $ walk_xpos=400 #Animation of walking chibi. (From)
             $ walk_xpos2=610 #Coordinates of it's movement. (To)
             $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
@@ -1918,8 +1915,8 @@ label event_08_02:
 
     hide screen bld1
     #__#hide screen hermione_main
-    #__#with Dissolve(.3)
-    $ herView.hideQ( Dissolve(.3) )
+    $herView.hideQ() #"WARNING_Z"
+    with Dissolve(.3)
     $ walk_xpos=400 #Animation of walking chibi. (From)
     $ walk_xpos2=610 #Coordinates of it's movement. (To)
     $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
@@ -1937,7 +1934,7 @@ label event_08_03:
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
     "*Тук-тук-тук!*"
     m "Кто..."
-    herView "Профессор, я вхожу..."
+    her "Профессор, я вхожу..."
     $ walk_xpos=610 #Animation of walking chibi. (From)
     $ walk_xpos2=400 #Coordinates of it's movement. (To)
     $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
@@ -1948,16 +1945,16 @@ label event_08_03:
     $ hermione_chibi_xpos = 400 #Near the desk.
     show screen hermione_02 #Hermione stands still.
     pause.5
-    herView "Доброе утро, профессор Дамблдор."
+    her "Доброе утро, профессор Дамблдор."
     show screen bld1
     with Dissolve(.3)
     
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite.
-    $ h_ypos=0
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite.
+    #__#$ h_ypos=0
     $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
-    $ herView.showQ( "body_01.png", pos, d3 )
+    $herView.showQ( "body_01.png", pos ) #"WARNING_Z"
     show screen hermione_02
     with Dissolve(.3)
     
@@ -1965,81 +1962,80 @@ label event_08_03:
         "\"Доброе утро, мисс Грейнджер.\"":
             pass
         "\"Доброе утро, дитя.\"":
-            herView "{size=-5}(\"Дитя\"? Он должны быть настолько снисходительной все время? Противный старый хер!){/size}"
+            her "{size=-5}(\"Дитя\"? Он должны быть настолько снисходительной все время? Противный старый хер!){/size}"
             m "Что-то не так?"
-            herView "Ничего сэр..."
+            her "Ничего сэр..."
         "\"Доброе утро, мисс президент.\"":
-            herView "{size=-4}(Это звучало как сарказм?){/size}"
+            her "{size=-4}(Это звучало как сарказм?){/size}"
             
 
     if not d_flag_05:
-        herView "Вы мне обещали принять меры, профессор..."
-        herView "Но ничего не изменилось с момента нашего последнего разговора..."
+        her "Вы мне обещали принять меры, профессор..."
+        her "Но ничего не изменилось с момента нашего последнего разговора..."
         menu:
 
             "\"Я солгал...\"":
-                herView "Н-но..."
-                herView "Но вы директор школы, сэр. Вы слово должно означать что-то..."
+                her "Н-но..."
+                her "Но вы директор школы, сэр. Вы слово должно означать что-то..."
 
             "\"Я забыл\"":
-                herView "Вы забыли, сэр?"
-                herView "Вы это серьезно?"
-                herView "Или, может быть, вы просто не хотите заниматься этим?"
+                her "Вы забыли, сэр?"
+                her "Вы это серьезно?"
+                her "Или, может быть, вы просто не хотите заниматься этим?"
             "\"Меня просто это не волнует.\"":
-                herView "Н-но....?"
-                herView "Профессор Дамблдор, это серьезный вопрос!"
+                her "Н-но....?"
+                her "Профессор Дамблдор, это серьезный вопрос!"
 
     else:
-        herView "Профессор Дамблдор,вы отвергли предложение которое я дала вам когда мы прошлый раз мы встретились..."
-        herView "И теперь мы пожинаем результаты..."
-    herView "Ребятам все  еще трудно сосредоточиться на учебе..."
+        her "Профессор Дамблдор,вы отвергли предложение которое я дала вам когда мы встречались в прошлый раз..."
+        her "И теперь мы пожинаем плоды..."
+    her "Ребятам все  еще трудно сосредоточиться на учебе..."
     m "О, у меня есть решение,!"
-    m "Давай наденем на головы девушке бумажные пакеты!"
-    herView "Это тоже плохое обращение человека на основе ее пола..."
-    herView "Другой пример сексизма..."
-    herView "Это называется \"Женоненавистничество\"."
+    m "Давай наденем на головы девушкам бумажные пакеты!"
+    her "Это тоже сексизм..."
+    her "Другой пример сексизма..."
+    her "Это называется \"Женоненавистничество\"."
     m "\"Женоненавистничество\" - это общая неприязнь к женщинам, мисс Грейнджер."
-    m "Здоровый мужчина  биологически неспособны нравится все самки его вида..."
-    m "В противном случае человечество бы вымерло давным-давно уже..."
-    herView "Профессор, у нас нет времени для семантики."
-    herView "Вся школа находится в опасности!"
+    m "Здоровый мужчина биологически не способен противиться самкам его же вида..."
+    m "В противном случае человечество бы вымерло давным-давно..."
+    her "Профессор, у нас нет времени для семантики."
+    her "Вся школа находится в опасности!"
     m "Неужели..?"
-    herView "\"MRM\" встретились еще вчера, и- -"
-    mView "Нет, опять..."
-    m "Существуют ли какие-либо мужские члены в вашей маленькой группе  \"Men's rights movement\"?"
-    herView "Это не относиться к дела"
-    m "Ладно..."
-#    her "That is irrelevant..."
-#    m "How is it irrelavant? That's the only thing that {size=+7}IS{/size} relevant!"
-    herView "Позвольте мне закончить мое предложение, пожалуйста."
-    herView "Я официально к вам обращаюсь, как президент \"ОПЗМП\"..."
-    herView "И как представитель этой школы ..."
-    herView "Мы требуем чтобы эти новые нормы, подлежали соблюдению..."
-    herView "Во-первых..."
-    herView "Чтобы ни один школьный учитель не позволял повышать голос в сторону студента или обзывать студента..."
+    her "Вчера была встреча \"ОЗМП\", и--"
+    m "Нет, опять..."
+    m "Существуют ли какие-либо мужские члены в вашем маленьком \"Обществе по защите мужских прав\"?"
+    her "Это не относиться к делу"
+    m "А я считаю, что относиться..."
+    her "Это не имеет значения..."
+    m "Как это не имеет значения? {size=+7}Это{/size} единственное, что имеет значение!"
+    her "Позвольте мне закончить мое предложение, пожалуйста."
+    her "Я официально к вам обращаюсь, как президент \"ОЗМП\"..."
+    her "И как представитель этой школы ..."
+    her "Мы требуем чтобы эти новые нормы, подлежали соблюдению..."
+    her "Во-первых..."
+    her "Чтобы ни один школьный учитель не позволял повышать голос в сторону студента или обзывать студента..."
     m "Что?"
-    herView "Во-вторых..."
-    herView "Все школьные призраки должны быть заключены только в заброшенной башни в Северном крыле школы."
+    her "Во-вторых..."
+    her "Все школьные призраки должны быть заключены только в заброшенной башни в Северном крыле школы."
     m "У Вас есть привидения? Это очень круто!"
-    herView "В-третьих..."
-    herView "Каждый учитель, и особенно профессор Северус Снейп должны проходить проверку квалификации каждые три месяца..."
+    her "В-третьих..."
+    her "Каждый учитель, и особенно профессор Северус Снейп должны проходить проверку квалификации каждые три месяца..."
     m "Это все?"
-    herView "Это все, сэр."
+    her "Это все, сэр."
     menu:
         m "..."
         "\"Хорошо. Ваши требования будут удовлетворены.\"":
-            herView "Спасибо, профессор."
-            herView "Я, как представитель студентов , благодарю за ваше сотрудничество."
+            her "Спасибо, профессор."
+            her "Я, как представитель студентов , благодарю за ваше сотрудничество."
         "\"Звучит как бред. Вы свободны\"":
-            herView "Что? Я..."
-            herView "Но это ... вы не можете..."
+            her "Что? Я..."
+            her "Но это ... вы не можете..."
             m "Свободны!"
-            herView "Тцк..."       
+            her "Тцк..."       
     hide screen bld1
     #__#hide screen hermione_main
-    #__#with Dissolve(.3)
-    $ herView.hideQ( Dissolve(.3) )
-    
+    $herView.hideQ() #"WARNING_Z"
+    with Dissolve(.3)
     $ walk_xpos=400 #Animation of walking chibi. (From)
     $ walk_xpos2=610 #Coordinates of it's movement. (To)
     $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
@@ -2069,20 +2065,20 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
     "*Тук-тук-тук!*"
     menu:
         "\"Кто это?\"":
-            herView "Это я, Гермиона Грейнджер." 
+            her "Это я, Гермиона Грейнджер." 
             m "Снова эта маленькая ведьма..." 
-            herView "Могу я войти, сэр?"
+            her "Могу я войти, сэр?"
             menu:
                 m "..."
                 "\"Конечно нет! Я занят! Возвращайся позже!\"":
-                    herView "Но..."
-                    herView "Хорошо... Тогда я зайду к вам завтра..."
+                    her "Но..."
+                    her "Хорошо... Тогда я зайду к вам завтра..."
                     return
                 "\"Конечно. Входи.\"":
                     pass
         "\"Я занят. Приходи позже.\"":
-            herView "Но..."
-            herView "Ладно, хорошо..."
+            her "Но..."
+            her "Ладно, хорошо..."
             return
         "\"Да, входи.\"":
             pass
@@ -2090,7 +2086,7 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
             $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
             "*Тук-тук-тук!*"
             m "............................."
-            herView "Профессор, я вхожу..."
+            her "Профессор, я вхожу..."
             m "{size=-4}(Дерьмо!){/size}"
 
     $ event09 = True #You let Hermione in. This event will stop looping now.
@@ -2109,202 +2105,201 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
     
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
     
-
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite.
-    $ h_ypos=0
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite.
+    #__#$ h_ypos=0
     $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
-    $ herView.showQ( "body_03.png", pos, d3 )
+    $herView.showQ( "body_03.png", pos ) #"WARNING_Z"
     show screen hermione_02
     with Dissolve(.3)
     show screen ctc
     pause
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_04.png", pos, d3 )
+    $herView.showQQ( "body_04.png", pos )
 
-    herView "Доброе утро, профессор Дамблдор."
+    her "Доброе утро, профессор Дамблдор."
     hide screen ctc
     menu:
 
         "\"Доброе утро, дитя.\"":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_09.png", pos, d3 )
-            herView "{size=-4}(Опять назвал меня \"дитя\"...){/size}"
+            $herView.showQQ( "body_09.png", pos )
+            her "{size=-4}(Опять назвал меня \"дитя\"...){/size}"
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
-            #__with d3
-            $ herView.showQ( "body_04.png", pos, d3 )
-            herView "Сэр, я была бы признательна, если бы вы обращались ко мне как к ровне..."
+            #__#with d3
+            $herView.showQQ( "body_04.png", pos )
+            her "Сэр, я была бы признательна, если бы вы обращались ко мне как к ровне..."
             m "{size=-4}(Я фактически старше тебя на миллионы лет, ведьма. Мы вообще не можем быть равны.){/size}"
             m "...................."
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_09.png", pos, d3 )
-            herView "................"
+            $herView.showQQ( "body_09.png", pos )
+            her "................"
         "\"Доброе утро, мисс Грейнджер.\"":
-            herView "Эм... так вот, о причине, по которой я к вам зашла..."
+            her "Эм... так вот, о причине, по которой я к вам зашла..."
         "\"Да, да, пофигу...\"":
             pass
     
-    herView "Я вижу, что независимо от того, что я делаю - я не могу до вас достучаться, сэр."
+    her "Я вижу, что независимо от того, что я делаю - я не могу до вас достучаться, сэр."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_04.png", pos, d3 )
-    herView "В следствии вашего пренебрежительного отношения к своим обязанностям, я решила взять все на себя!"
+    $herView.showQQ( "body_04.png", pos )
+    her "В следствии вашего пренебрежительного отношения к своим обязанностям, я решила взять все на себя!"
     m "Ты что...?"
-    herView "Да! Мы, гордые студенты Хогвартса терпеть не можем сексизм..."
-    herView "Не следует думать, что какой-то пол в чем-то лучше другого."
+    her "Да! Мы, гордые студенты Хогвартса терпеть не можем сексизм..."
+    her "Не следует думать, что какой-то пол в чем-то лучше другого."
     m "Но-"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_05.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_05.png", pos, d3 )
-    herView "Пожалуйста, дайте мне закончить, профессор!"
+    $herView.showQQ( "body_05.png", pos )
+    her "Пожалуйста, дайте мне закончить, профессор!"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_04.png", pos, d3 )
-    herView "Я организовала \"Организацию по защите мужских прав\" в нашей школе!"
+    $herView.showQQ( "body_04.png", pos )
+    her "Я организовала \"Организацию по защите мужских прав\" в нашей школе!"
     g4 "Ох, как это типично для вас."
     g4 "Винить во всем-"
     stop music fadeout 1.0
     m "Стоп, ты сказала {size=+5}МУЖСКИХ{/size} прав?"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_11.png", pos, d3 )
+    $herView.showQQ( "body_11.png", pos )
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
-    herView "Вы понятия не имеете, какого быть мальчиком в нашей школе, особенно в эти дни..."
+    her "Вы понятия не имеете, какого быть мальчиком в нашей школе, особенно в эти дни..."
     menu:
         "\"Сомневаюсь, что это подает надежды...\"":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_04.png", pos, d3 )
-            herView "Нет, вы не сделали этого, потому что просто отказываетесь слушать нас, сэр!"
-            herView "Но теперь вы услышите нас..."
+            $herView.showQQ( "body_04.png", pos )
+            her "Нет, вы не сделали этого, потому что просто отказываетесь слушать нас, сэр!"
+            her "Но теперь вы услышите нас..."
         "{size=-3}\"Эта самая глупая идея, которую я когда-либо слышал.\"{/size}":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_07.png", pos, d3 )
-            herView "Я была уверена, что вы скажете что-то вроде этого..."
+            $herView.showQQ( "body_07.png", pos )
+            her "Я была уверена, что вы скажете что-то вроде этого..."
 
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_09.png", pos, d3 )
-    herView "Вы знаете, что девушки оказывают некоторые услуги, чтобы заработать очки для факультета?"
-    herView "Иногда даже для хороших оценок..."
+    $herView.showQQ( "body_09.png", pos )
+    her "Вы знаете, что девушки оказывают некоторые услуги, чтобы заработать очки для факультета?"
+    her "Иногда даже для хороших оценок..."
     m "Правда?"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_04.png", pos, d3 )
-    herView "В \"Гриффиндоре\" никто этим не занимается, конечно же..."
-    herView "И вот, что ставит нас в невыгодное положение - наша честность!"
-    herView "Что насчет мальчиков - они должны трудиться в десять раз лучше, чем девочки, которым сдать тест не составит труда..."
-    herView "Или, если они достаточно удачны, получить какое-то ничтожное одно очко..."
+    $herView.showQQ( "body_04.png", pos )
+    her "В \"Гриффиндоре\" никто этим не занимается, конечно же..."
+    her "И вот, что ставит нас в невыгодное положение - наша честность!"
+    her "Что насчет мальчиков - они должны трудиться в десять раз лучше, чем девочки, которым сдать тест не составит труда..."
+    her "Или, если они достаточно удачливы, получить какое-то ничтожное одно очко..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_02.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_02.png", pos, d3 )
-    herView "Это сексизм в чистом виде!"
+    $herView.showQQ( "body_02.png", pos )
+    her "Это сексизм в чистом виде!"
     menu:
         m "..."
         "\"Что ты хочешь, чтобы я сделал?\"":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_03.png", pos, d3 )
-            herView "Ничего!"
+            $herView.showQQ( "body_03.png", pos )
+            her "Ничего!"
             m "Отлично. Я рад."
         "\"Я не уверен, что ты хочешь мне донести...\"":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_03.png", pos, d3 )
-            herView "Вам не нужно больше ничего говорить, профессор."
+            $herView.showQQ( "body_03.png", pos )
+            her "Вам не нужно больше ничего говорить, профессор."
         "\"Ты смешна!\"":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_07.png", pos, d3 )
-            herView "Я? Ну, увидим..."
+            $herView.showQQ( "body_07.png", pos )
+            her "Я? Ну, увидим..."
 
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_04.png", pos, d3 )
-    herView "Я уже отправила письмо в министерство магии"
+    $herView.showQQ( "body_04.png", pos )
+    her "Я уже отправила письмо в министерство магии"
     with hpunch
     g4 "{size=+7}Что ты сделала?!{/size}"
     m "{size=-4}(Стоп, меня действительно это так заботит?){/size}"
-    herView "Мне очень жаль, но вы мне оставили мне выбора, профессор."
+    her "Мне очень жаль, но вы мне оставили мне выбора, профессор."
 
-    herView "Теперь, прошу простить меня, мне пора на занятия..."
+    her "Теперь, прошу простить меня, мне пора на занятия..."
     hide screen bld1
     #__#hide screen hermione_main
-    #__#with Dissolve(.3)
-    $ herView.hideQ( Dissolve(.3) )
+    $herView.hideQ() #"WARNING_Z"
+    with Dissolve(.3)
     $ walk_xpos=400 #Animation of walking chibi. (From)
     $ walk_xpos2=610 #Coordinates of it's movement. (To)
     $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
@@ -2339,6 +2334,7 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
             
             
             
+            
 
 #NOT IN USE###############################################################################################################################################################
 label event_09_2: #Takes place after second special event with Snape, where he just complains about Hermione.
@@ -2347,20 +2343,20 @@ label event_09_2: #Takes place after second special event with Snape, where he j
     "*Тук-тук-тук!*"
     menu:
         "\"Кто это?\"":
-            herView "Это я, Гермиона Грейнджер." 
+            her "Это я, Гермиона Грейнджер." 
             m "(Снова эта молоденькая ведьма...)" 
-            herView "Могу я войти, сэр?"
+            her "Могу я войти, сэр?"
             menu:
                 m "..."
                 "\"Категорически нет! Я занят! Возвращайся позднее!\"":
-                    herView "Но..."
-                    herView "Хорошо... Я вернусь завтра..."
+                    her "Но..."
+                    her "Хорошо... Я вернусь завтра..."
                     return
                 "\"Конечно, входи.\"":
                     pass
         "\"Я занят. Приходи позже.\"":
-            herView "Но..."
-            herView "Хорошо..."
+            her "Но..."
+            her "Хорошо..."
             return
         "\"Да, входи.\"":
             pass
@@ -2368,7 +2364,7 @@ label event_09_2: #Takes place after second special event with Snape, where he j
             $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
             "*Тук-тук-тук!*"
             m "............................."
-            herView "Профессор, я вхожу..."
+            her "Профессор, я вхожу..."
             m "{size=-4}(Дерьмо!){/size}"
 
     $ event09 = True #You let Hermione in. This event will stop looping now.
@@ -2385,78 +2381,78 @@ label event_09_2: #Takes place after second special event with Snape, where he j
     show screen bld1
     with Dissolve(.3)
     
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite.
-    $ h_ypos=0
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite.
+    #__#$ h_ypos=0
     $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
-    $ herView.showQ( "body_01.png", pos )
+    $herView.showQ( "body_01.png", pos ) #"WARNING_Z"
     show screen hermione_02
     with Dissolve(.3)
-    herView "Доброе утро, профессор Дамблдор."
+    her "Доброе утро, профессор Дамблдор."
     menu:
         "\"Доброе утро, мисс Грейнджер.\"":
             pass
         "\"Доброе утро, дитя.\"":
-            herView "{size=-5}(\"Дитя\"? Он должнен быть настолько снисходительной все время? Противный старый хрен!){/size}"
+            her "{size=-5}(\"Дитя\"? Он должнен быть настолько снисходительной все время? Противный старый хрен!){/size}"
             m "Что-то не так?"
-            herView "Ничего, сэр..."
+            her "Ничего, сэр..."
         "\"...............\"":
-            herView "...................."
+            her "...................."
             
             
-    herView "Мои занятия скоро начнуться, так что у меня не так много времени..."
-    herView "Быть отличником-это не легко, поэтому я надеюсь, вы понимаете, что другие ученики в нашей школе берут пример с меня."
-    #m "{size=-4}(Is that so...?){/size}"
-    herView "Я понимаю, что вы очень важно персона..."
-    herView "Но немогли бы вы  уделить немного своего времени, чтобы выполнять ваши обязанности как директора школы?"
+    her "Мои занятия скоро начнуться, так что у меня не так много времени..."
+    her "Быть отличником-это не легко, поэтому я надеюсь, вы понимаете, что другие ученики в нашей школе берут пример с меня."
+    m "{size=-4}(Неужели...?){/size}"
+    her "Я понимаю, что вы очень важно персона..."
+    her "Но немогли бы вы  уделить немного своего времени, чтобы выполнять ваши обязанности как директора школы?"
     menu:
         "\"Прости,я не понял?\"":
-            herView "Да, я отказываюсь потакать вам больше!"
+            her "Да, я отказываюсь потакать вам больше!"
         "\"...................\"":
             pass
-    herView "Я принесла столько идей для школы ..."
-    herView "И вы, сэр, игнорируете, каждый из них!"
-    herView "Знаете ли вы, что некоторые девочки из \"Слизерина\" предлогают сексуальные услуги в обмен на очки факультета?"
+    her "Я принесла столько идей для школы ..."
+    her "И вы, сэр, игнорируете, каждый из них!"
+    her "Знаете ли вы, что некоторые девочки из \"Слизерина\" предлогают сексуальные услуги в обмен на очки факультета?"
     m "Что они?"
-    herView "Вы не понимаете что происходит?"
-    herView "Студенты не должны больше работать, не надо учиться, все, что им нужно делать, это показать свои тела..."
-    herView "Это ужасно!"
-    herView "Я предупреждаю, профессор..."
+    her "Вы не понимаете что происходит?"
+    her "Студенты не должны больше работать, не надо учиться, все, что им нужно делать, это показать свои тела..."
+    her "Это ужасно!"
+    her "Я предупреждаю, профессор..."
     menu:
         "\" Вы \"Пердупреждаете меня\" Мисс Грейнджер?\"":
-            herView "Да, профессор. Я предупреждаю вас."
-            herView "Если Вы не готовы выслушать меня, я найду кого-то, кто выслушает!"
+            her "Да, профессор. Я предупреждаю вас."
+            her "Если Вы не готовы выслушать меня, я найду кого-то, кто выслушает!"
         "\"..............................................................\"":
             pass
-    herView "Если Вы не примите меры, тогда вы не оставивите мне выбора, профессор..."
-    herView "Мне придется обратиться в Министерство магии..."
+    her "Если Вы не примите меры, тогда вы не оставивите мне выбора, профессор..."
+    her "Мне придется обратиться в Министерство магии..."
     m "{size=-4}(Министерство магии? Меня это так волнует?){/size}"
     menu:
 
         "\"Успокойтесь пожалуйста, мисс Грейнджер.\"":
-            herView "Я не могу оставаться спокойной, смотря на  ваше невежество, сэр!"
+            her "Я не могу оставаться спокойной, смотря на  ваше невежество, сэр!"
         "\"Я услышал, вас. Я приму меры, я обещаю.\"":
-            herView "В самом деле? Ну, я рада, что мы наконец пришли к пониманию, сэр."
-            herView "Или вы просто будете игнорировать мои просьбы, как обычно?"
+            her "В самом деле? Ну, я рада, что мы наконец пришли к пониманию, сэр."
+            her "Или вы просто будете игнорировать мои просьбы, как обычно?"
         "\"Из моего кабинета, девушка! Вон, я сказал!!!\"":
-            herView "Что?"
+            her "Что?"
             m "Вон из моего кабинета!"
-            herView "Н-но..."
+            her "Н-но..."
             with hpunch
             g4 "{size=+7}ВЫШЛА Я СКАЗАЛ!!!{/size}"
-            herView "{size=-6}(Оу... никогда не видел его таким грозным...){/size}"
-            herView "{size=-6}(Мне лучше уйти, прежде чем он поймает инсульт или что-то подобное...){/size}"
-            herView "..............."
+            her "{size=-6}(Оу... никогда не видел его таким грозным...){/size}"
+            her "{size=-6}(Мне лучше уйти, прежде чем он поймает инсульт или что-то подобное...){/size}"
+            her "..............."
             jump pissed_me_off
 
-    herView "Ох... я уже опаздываю на занятия. Я должна идти."
+    her "Ох... я уже опаздываю на занятия. Я должна идти."
     m "Хорошего дня... {size=-5}ведьма!{/size}"
-    herView "Спасибо, профессор."
+    her "Спасибо, профессор."
     label pissed_me_off:
     hide screen bld1
     #__#hide screen hermione_main
-    $ herView.hideQ()
+    $herView.hideQ() #"WARNING_Z"
     with Dissolve(.3)
     $ walk_xpos=400 #Animation of walking chibi. (From)
     $ walk_xpos2=610 #Coordinates of it's movement. (To)
@@ -2485,20 +2481,20 @@ label event_10: #Takes place after second special even with Snape where Ginie is
     "*Тук-тук-тук!*"
     menu:
         "\"Кто это?\"":
-            herView "Это я, Гермиона Грейнджер." 
-            m "(Снова эта молоденькая ведьма...)" 
-            herView "Могу я войти, сэр?"
+            her "Это я, Гермиона Грейнджер." 
+            m "(Снвоа эта молоденькая ведьма...)" 
+            her "Могу я войти, сэр?"
             menu:
                 m "..."
                 "\"Абсолютно нет! Я занят! Приходите по позже!\"":
-                    herView "Но..."
-                    herView "Хорошо... Тогда я вернусь позднее..."
+                    her "Но..."
+                    her "Хорошо... Тогда я вернусь позднее..."
                     return
                 "\"Конечно, входи.\"":
                     pass
         "\"Я занят. Приходите по позже.\"":
-            herView "Но..."
-            herView "Хорошо..."
+            her "Но..."
+            her "Хорошо..."
             return
         "\"Да, входи.\"":
             pass
@@ -2506,7 +2502,7 @@ label event_10: #Takes place after second special even with Snape where Ginie is
             $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
             "*Тук-тук-тук!*"
             m "............................."
-            herView "Профессор, я вхожу..."
+            her "Профессор, я вхожу..."
             m "{size=-4}(Дерьмо!){/size}"
 
     $ event10 = True #You let Hermione in. This event will stop looping now.
@@ -2523,27 +2519,27 @@ label event_10: #Takes place after second special even with Snape where Ginie is
     show screen bld1
     with Dissolve(.3)
     
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite.
-    $ h_ypos=0
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite.
+    #__#$ h_ypos=0
     $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
-    $ herView.showQ( "body_01.png", pos )
+    $herView.showQ( "body_01.png", pos ) #"WARNING_Z"
     show screen hermione_02
     with Dissolve(.3)    
-    herView "Доброе утро, профессор Дамблдор."
+    her "Доброе утро, профессор Дамблдор."
     menu:
         "\"Доброе утро, дитя.\"":
-            herView "{size=-4}(Опять \"дитя\"...){/size}"
-            herView "Сэр, я был бы очень признателен, если вы могли бы относиться ко мне как к ровне..."
+            her "{size=-4}(Опять \"дитя\"...){/size}"
+            her "Сэр, я был бы очень признателен, если вы могли бы относиться ко мне как к ровне..."
             m "{size=-4}(Я на миллионы лет старше тебя, ведьма. Ты мне не ровня.){/size}"
         "\"Доброе утро, мисс Грейнджер.\"":
-            herView "Эм... та, причина, по которой я здесь сегодня..."
+            her "Эм... та, причина, по которой я здесь сегодня..."
         "\"Да, Да, выкладывай...\"":
-            herView "Eм..."
-    herView "Я вижу, что вам не  неважно, чтобы я не делала, я просто не могу достучаться до вас, сэр."
-    herView "Так что в свете вашей халатности и по отношению к вашим обязанностям в качестве директора школы..."
-    herView "Я решила взять инициативу в свои руки!"
+            her "Eм..."
+    her "Я вижу, что вам не  неважно, чтобы я не делала, я просто не могу достучаться до вас, сэр."
+    her "Так что в свете вашей халатности и по отношению к вашим обязанностям в качестве директора школы..."
+    her "Я решила взять инициативу в свои руки!"
 #    m "Did you now...?"
 #    her "Yes! And since I detest sexism..."
 #    m "You do, do you?"
@@ -2559,31 +2555,31 @@ label event_10: #Takes place after second special even with Snape where Ginie is
 #            her "No, you did not, because you refuse to listen to me, sir!"
 #        "\"Literally stupidest thing I've ever heard.\"":
 #            her "I knew you will say something like that..."
-    herView "Половина девочек в этой школе сейчас продают себя ради очков факультета..."
-    herView "Иногда даже за хорошие отметки..."
-    herView "Никто из \"Гриффиндора\" не занимается, конечно..."
-    herView "И это то, что ставит нас в невыгодное положение - наша честность!"
-    herView "Немыслимо..."
-    herView "Мальчикам намного труднее, - они должны работать в десять раз упорнее, тогда как  девочкам достаточно просто пройти тест..."
-    herView "Или, если им повезет, получить одно очко факультета..."
-    herView "Это сексизм в чистом виде!"
+    her "Половина девочек в этой школе сейчас продают себя ради очков факультета..."
+    her "Иногда даже за хорошие отметки..."
+    her "Никто из \"Гриффиндора\" не занимается, конечно..."
+    her "И это то, что ставит нас в невыгодное положение - наша честность!"
+    her "Немыслимо..."
+    her "Мальчикам намного труднее, - они должны работать в десять раз упорнее, тогда как  девочкам достаточно просто пройти тест..."
+    her "Или, если им повезет, получить одно очко факультета..."
+    her "Это сексизм в чистом виде!"
     menu:
         "\"Что вы хотите чтобы {size=+7}Я{/size} сделал?\"":
-            herView "Ничего!"
+            her "Ничего!"
         "\"Не уверен, что сказать...\"":
-            herView "Вам не нужно ничего говорить , профессор."
+            her "Вам не нужно ничего говорить , профессор."
         "\"Вы смешны!\"":
-            herView "Я?Вот увидете..."
-    herView "Я уже направила письмо в Министерство магии."
+            her "Я? Вот увидите..."
+    her "Я уже направила письмо в Министерство магии."
     with hpunch
     g4 "{size=+7}Вы сделали, что?!{/size}"
     m "{size=-4}(Подожди, меня действительно это волнует?){/size}"
-    herView "Я сожалею, но Вы не оставили мне выбора, профессор."
-    herView "Теперь, если вы простите меня, я должна успеть на мои занятия..."
+    her "Я сожалею, но Вы не оставили мне выбора, профессор."
+    her "Теперь, если вы простите меня, я должна успеть на мои занятия..."
 
     hide screen bld1
     #__#hide screen hermione_main
-    $ herView.hideQ()
+    $herView.hideQ() #"WARNING_Z"
     with Dissolve(.3)
     $ walk_xpos=400 #Animation of walking chibi. (From)
     $ walk_xpos2=610 #Coordinates of it's movement. (To)
@@ -2608,7 +2604,7 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
     stop music fadeout 1.0
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
     "*Тук-тук-тук!*"
-    herView "Профессор, я вхожу!"
+    her "Профессор, я вхожу!"
     m "...."
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
 
@@ -2630,257 +2626,258 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
     #__#$ only_upper = True #Otherwise skirt shows up under the robe.
     $ herView.data().addItem( 'robe', CharacterExItemRobe( herView.mClothesFolder, "robe.png", G_Z_DRESS + 1, 'body' ) )
     
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite.
-    $ h_ypos=0
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite.
+    #__#$ h_ypos=0
     $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
-    $ herView.showQ( "body_09.png", pos )
+    $herView.showQ( "body_09.png", pos ) #"WARNING_Z"
     show screen ctc
     with Dissolve(.3)   
     pause
 
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_12.png", pos, d3 )
-    herView "Добрый вечер, профессор."
+    $herView.showQQ( "body_12.png", pos )
+    her "Добрый вечер, профессор."
     hide screen ctc
     menu:
         "\"- Взгляд полный ненависти -\"":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_07.png", pos, d3 )
-            herView "Можете смотреть на меня как угодно, сэр."
-            herView "Это не поможет решить проблемы школы."
+            $herView.showQQ( "body_07.png", pos )
+            her "Можете смотреть на меня как угодно, сэр."
+            her "Это не поможет решить проблемы школы."
         "*Раздражительный вздох*":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_03.png", pos, d3 )
-            herView "Не вовремя?"
+            $herView.showQQ( "body_03.png", pos )
+            her "Не вовремя?"
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_02.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_02.png", pos, d3 )
-            herView "Ну, я уже здесь..."
+            $herView.showQQ( "body_02.png", pos )
+            her "Ну, я уже здесь..."
         "\"....................................\"":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_02.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_02.png", pos, d3 )
-            herView "Профессор?"
+            $herView.showQQ( "body_02.png", pos )
+            her "Профессор?"
             m "Да, да..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_04.png", pos, d3 )
-    herView "Что-то...странное произошло сегодня..."
+    $herView.showQQ( "body_04.png", pos )
+    her "Что-то...странное произошло сегодня..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_07.png", pos, d3 )
-    herView "Я не знаю, как это объяснить..."
+    $herView.showQQ( "body_07.png", pos )
+    her "Я не знаю, как это объяснить..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_09.png", pos, d3 )
-    herView "................................"
+    $herView.showQQ( "body_09.png", pos )
+    her "................................"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_12.png", pos, d3 )
-    herView "Я почти провалила тест..."
+    $herView.showQQ( "body_12.png", pos )
+    her "Я почти провалила тест..."
     menu:
         "\"Такое бывает со студентами.\"":
             #__#hide screen hermione_main
             #__#with d3
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_12.png", pos, d3 )
-            herView "С другими студентами. Но не со мной, сэр!"
+            $herView.showQQ( "body_12.png", pos )
+            her "С другими студентами. Но не со мной, сэр!"
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_13.png", pos, d3 )
-            herView "Я никогда..."
-        "\"(Уходи, Снейп!)\"":
+            $herView.showQQ( "body_13.png", pos )
+            her "Я никогда..."
+        "\"(Прекращай, Снейп!)\"":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_03.png", pos, d3 )
-            herView "Простите?"
+            $herView.showQQ( "body_03.png", pos )
+            her "Простите?"
             m "Что?"
             m "Ох, Я сказал, что это очень плохо. Как ты себя чувствуешь?"
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_07.png", pos, d3 )
-            herView "................."
+            $herView.showQQ( "body_07.png", pos )
+            her "................."
         "\"Расскажи мне почему?\"":
-            herView "Потому что... это не обычный тест!"
+            her "Потому что... это не обычный тест!"
 
-    herView "Я не уверена, что происходит..."
+    her "Я не уверена, что происходит..."
     m "Все зло настроено против вас, мисс Грейнджер?"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_03.png", pos, d3 )
-    herView "Это не смешно, сэр."
+    $herView.showQQ( "body_03.png", pos )
+    her "Это не смешно, сэр."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_04.png", pos, d3 )
-    herView "Вы должны считать меня \"мерилом\" нашей системы образования."
-    herView "Если я \"почти\" провалила тест, вероятно остальные вообще не сдали его."
+    $herView.showQQ( "body_04.png", pos )
+    her "Вы должны считать меня \"мерилом\" нашей системы образования."
+    her "Если я \"почти\" провалила тест, вероятно остальные вообще не сдали его."
     m "И...?"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_07.png", pos, d3 )
-    herView "Да, профессор. Сегодня что-то пошло не так..."
+    $herView.showQQ( "body_07.png", pos )
+    her "Да, профессор. Сегодня что-то пошло не так..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_12.png", pos, d3 )
-    herView "................................."
+    $herView.showQQ( "body_12.png", pos )
+    her "................................."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_11.png", pos, d3 )
-    herView "Но что, если это не так?"
-    herView "Что, если отныне все тесты будут такие сложные?"
+    $herView.showQQ( "body_11.png", pos )
+    her "Но что, если это не так?"
+    her "Что, если отныне все тесты будут такие сложные?"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_10.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_10.png", pos, d3 )
-    herView "Мне нужно лучше заниматься!"
+    $herView.showQQ( "body_10.png", pos )
+    her "Мне нужно лучше заниматься!"
     label cant_say:
     menu:
         "\"Я могу обучать вас, мисс Грейнджер.\"":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_14.png", pos, d3 )
-            herView "Вы?"
+            $herView.showQQ( "body_14.png", pos )
+            her "Вы?"
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_15.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_15.png", pos, d3 )
-            herView "О, благодарю вас за предложение, но не думаю, что в этом есть необходимость, сэр."
+            $herView.showQQ( "body_15.png", pos )
+            her "О, благодарю вас за предложение, но не думаю, что в этом есть необходимость, сэр."
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_16.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_16.png", pos, d3 )
-            herView "Лучший репетитор это книга и вся библиотека Хогвартса в моем распоряжении."
+            $herView.showQQ( "body_16.png", pos )
+            her "Лучший репетитор это книга и вся библиотека Хогвартса в моем распоряжении."
         "\"Мудрое решение, мисс Грейнджер.\"":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_15.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_15.png", pos, d3 )
-            herView "Спасибо, профессор."
+            $herView.showQQ( "body_15.png", pos )
+            her "Спасибо, профессор."
         "\"Тебе нужно взять мой член в свой ротик.\"":
-            m "Тебе нужно взять мой чле- "
+            m "Тебе нужно взять мой чле-"
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_15.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_15.png", pos, d3 )
-            herView "А?"
+            $herView.showQQ( "body_15.png", pos )
+            her "А?"
             m "{size=-4}(Нет, я не могу этого сказать...){/size}"
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_17.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3
-            $ herView.showQ( "body_17.png", pos, d3 )
-            herView "......?"
+            $herView.showQQ( "body_17.png", pos )
+            her "......?"
             jump cant_say
     m "............"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_16.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3
-    $ herView.showQ( "body_16.png", pos, d3 )
-    herView "Ну, если это все, то мне стоит скорректировать свое расписание."
+    $herView.showQQ( "body_16.png", pos )
+    her "Ну, если это все, то мне стоит скорректировать свое расписание."
     m "Как пожелаете..."
     
     hide screen bld1
     #__#hide screen hermione_main
-    $ herView.hideQ()
+    $herView.hideQ() #"WARNING_Z"
     with Dissolve(.3)
     $ walk_xpos=400 #Animation of walking chibi. (From)
     $ walk_xpos2=610 #Coordinates of it's movement. (To)
@@ -2921,209 +2918,209 @@ label event_12: # Hermione complains that she did failed a test. (EVENING EVENT!
     $ hermione_chibi_xpos = 400 #Near the desk.
     show screen hermione_02 #Hermione stands still.
     with d3
-    herView "Профессор! Мне нужно поговорить с вами!"
+    her "Профессор! Мне нужно поговорить с вами!"
     m "(Теперь она даже не удосужилась постучаться?)"
     show screen bld1
     with Dissolve(.3)
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite.
-    $ h_ypos=0
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite.
+    #__#$ h_ypos=0
     $ pos = POS_370
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQ( "body_11.png", pos, d3 )
+    $herView.showQQ( "body_11.png", pos )
 
-    herView "Профессор, сегодня что-то пошло не так!"
-    herView "Сегодня я завалила тест..."
-    herView "Не могу поверить, что это произошло!"
+    her "Профессор, сегодня что-то пошло не так!"
+    her "Сегодня я завалила тест..."
+    her "Не могу поверить, что это произошло!"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_18.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQ( "body_18.png", pos, d3 )
-    herView "Как это вообще возможно?!"
+    $herView.showQQ( "body_18.png", pos )
+    her "Как это вообще возможно?!"
     menu:
         "\"Тебе стоит лучше учиться, девочка!\"":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_19.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3 
-            $ herView.showQ( "body_19.png", pos, d3 )
-            herView "Но я занималась всю ночь!"
+            $herView.showQQ( "body_19.png", pos )
+            her "Но я занималась всю ночь!"
         "\"Ну же... Все в порядке.\"":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_20.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3 
-            $ herView.showQ( "body_20.png", pos, d3 )
-            herView "Нет! Это катастрофа!" 
+            $herView.showQQ( "body_20.png", pos )
+            her "Нет! Это катастрофа!" 
 
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_21.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQ( "body_21.png", pos, d3 )
-    herView "И хуже того, мне кажется, что я единственная кто его завалила..."
+    $herView.showQQ( "body_21.png", pos )
+    her "И хуже того, мне кажется, что я единственная кто его завалила..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_22.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQ( "body_22.png", pos, d3 )
-    herView "На кого я теперь похожа?"
+    $herView.showQQ( "body_22.png", pos )
+    her "На кого я теперь похожа?"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_23.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQ( "body_23.png", pos, d3 )
-    herView "Нужно узнать результаты, но..."
+    $herView.showQQ( "body_23.png", pos )
+    her "Нужно узнать результаты, но..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQ( "body_13.png", pos, d3 )
-    herView "Да, я уверена, что кто-нибудь еще завалил его..."
+    $herView.showQQ( "body_13.png", pos )
+    her "Да, я уверена, что кто-нибудь еще завалил его..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQ( "body_11.png", pos, d3 )
-    herView "Я имею в виду, как без этого, верно?"
+    $herView.showQQ( "body_11.png", pos )
+    her "Я имею в виду, как без этого, верно?"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQ( "body_13.png", pos, d3 )
-    herView "....................."
+    $herView.showQQ( "body_13.png", pos )
+    her "....................."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQ( "body_11.png", pos, d3 )
-    herView "....верно?"
+    $herView.showQQ( "body_11.png", pos )
+    her "....верно?"
     menu:
         "{size=-3}\"Конечно. В конце концов вы лучший ученик.\"{/size}":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3 
-            $ herView.showQ( "body_09.png", pos, d3 )
-            herView "Именно..."
-            herView "Или по крайней мере была им, до сегодняшнего дня..."
+            $herView.showQQ( "body_09.png", pos )
+            her "Именно..."
+            her "Или, по крайней мере была им, до сегодняшнего дня..."
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_20.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3 
-            $ herView.showQ( "body_20.png", pos, d3 )
-            herView "Не могу поверить, что это произошло!"
+            $herView.showQQ( "body_20.png", pos )
+            her "Не могу поверить, что это произошло!"
         "{size=-3}\"Вы можете стать лучше, если я буду вас обучать.\"{/size}":
             $ tutoring_offer_made = True #Affects conversation in the next event.
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_17.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3 
-            $ herView.showQ( "body_17.png", pos, d3 )
-            herView "Хм..."
+            $herView.showQQ( "body_17.png", pos )
+            her "Хм..."
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3 
-            $ herView.showQ( "body_13.png", pos, d3 )
-            herView "Да, это может помочь мне, я полагаю..."
+            $herView.showQQ( "body_13.png", pos )
+            her "Да, это может мне помочь, я полагаю..."
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3 
-            $ herView.showQ( "body_14.png", pos, d3 )
-            herView "Я благодарна вам за предложение, но..."
-            herView "Могу я подумать над этим?"
+            $herView.showQQ( "body_14.png", pos )
+            her "Я благодарна вам за предложение, но..."
+            her "Могу я подумать над этим?"
             m "Только не затягивай..."
         "{size=-3}\"Я думаю, что мы скоро все узнаем.\"{/size}":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQ( d3 )
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_15.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3 
-            $ herView.showQ( "body_15.png", pos, d3 )
-            herView "Да, думаю так..."
+            $herView.showQQ( "body_15.png", pos )
+            her "Да, думаю так..."
 
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_24.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQ( "body_24.png", pos, d3 )
-    herView "Извините, профессор, возможно я была чересчур эмоциональна..."
+    $herView.showQQ( "body_24.png", pos )
+    her "Извините, профессор, возможно я была чересчур эмоциональна..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQ( "body_14.png", pos, d3 )
-    herView "Но вы должны понимать, что на кону моя репутация!"
+    $herView.showQQ( "body_14.png", pos )
+    her "Но вы должны понимать, что на кону моя репутация!"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQ( d3 )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQQ( "body_12.png", pos )
-    herView "Что-то должно быть не так с этим тестом..."
-    herView "И несмотря на то, что мне не удалось его сдать, скорее всего у меня больше всех баллов..."
-    herView "Как обычно..."
+    $herView.showQQ( "body_12.png", pos )
+    her "Что-то должно быть не так с этим тестом..."
+    her "И несмотря на то, что мне не удалось его сдать, скорее всего у меня больше всех баллов..."
+    her "Как обычно..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQQ( "body_04.png", pos )
+    $herView.showQQ( "body_04.png", pos )
     
 
-    herView "Ну, мне лучше пойти. У нас еще одно \"ОЗМП\" собрание сегодня."
-    herView "Я дам вам знать о новых идеях."
+    her "Ну, мне лучше пойти. У нас еще одно \"ОЗМП\" собрание сегодня."
+    her "Я дам вам знать о новых идеях."
     m "Не могу дождаться..."
 
 
 
     hide screen bld1
     #__#hide screen hermione_main
-    $ herView.hideQ()   
+    $herView.hideQ() #"WARNING_Z"
     with Dissolve(.3)
     $ walk_xpos=400 #Animation of walking chibi. (From)
     $ walk_xpos2=610 #Coordinates of it's movement. (To)
@@ -3149,6 +3146,7 @@ label event_12: # Hermione complains that she did failed a test. (EVENING EVENT!
 label event_13: # Hermione complains that she almost failed a test. (EVENING EVENT!)
     #"EVENT_13"
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    
 
 
     $ walk_xpos=570 #Animation of walking chibi. (From)
@@ -3160,7 +3158,7 @@ label event_13: # Hermione complains that she almost failed a test. (EVENING EVE
     $ hermione_chibi_xpos = 500 #Near the desk.
     show screen hermione_02 #Hermione stands still.
     with d3
-    herView "....................."
+    her "....................."
     m "???"
     
     $ walk_xpos=500 #Animation of walking chibi. (From)
@@ -3172,47 +3170,45 @@ label event_13: # Hermione complains that she almost failed a test. (EVENING EVE
     $ hermione_chibi_xpos = 400 #Near the desk.
     show screen hermione_02 #Hermione stands still.
     with d3
-    herView "............"
+    her "............"
     m "Мисс Грейнджер?" 
-    herView "..............................."
+    her "..............................."
     m "Мисс Грейнджер?!!" 
     show screen bld1
     with d3
-    
-    $ pos = gMakePos( h_xpos, h_ypos )
-
+	$ pos = POS_370
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_26.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQQ( "body_26.png", pos )
+    $herView.showQQ( "body_26.png", pos )
     show screen ctc
     pause
-    herView "А?"
+    her "А?"
     hide screen ctc
-    herView "О, я уже здесь?"
-    herView "Извините, сэр... Я..."
-    herView ".................."
-    herView "Кажется я..."
-    herView "Кажется... ух..."
-    herView "... Я все таки завалила тест."
-    herView "Я..."
+    her "О, я уже здесь?"
+    her "Извините, сэр... Я..."
+    her ".................."
+    her "Кажется я..."
+    her "Кажется... ух..."
+    her "... Я все таки завалила тест."
+    her "Я..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_27.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQQ( "body_27.png", pos )
-    herView "Извините, профессор..."
-    herView "Я не знаю, почему я пришла к вам..."
-    herView "Я думаю лучше мне уйти..."
+    $herView.showQQ( "body_27.png", pos )
+    her "Извините, профессор..."
+    her "Я не знаю, почему я пришла к вам..."
+    her "Я думаю лучше мне уйти..."
     m "..................."
     hide screen bld1
     #__#hide screen hermione_main
-    $ herView.hideQ()
+    $herView.hideQ() #"WARNING_Z"
     with Dissolve(.3)
     
     
@@ -3295,134 +3291,133 @@ label event_14: # Hermione comes after her breakdown (when she failed the test).
     with d3
     show screen bld1
     with Dissolve(.3)
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite.
-    $ h_ypos=0
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite.
+    #__#$ h_ypos=0
     $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
-    $ herView.showQ( "body_01.png", pos )
+    $herView.showQ( "body_01.png", pos ) #"WARNING_Z"
     show screen hermione_02
     with Dissolve(.3)   
 
-    herView "Доброе утро, Профессор."
+    her "Доброе утро, Профессор."
     m "Я могу чем-то вам помочь, Мисс Грейнджер?"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQQ( "body_04.png", pos )
-    herView "Ну, прежде всего я хотела бы извиниться за вчерашнее..."
+    $herView.showQQ( "body_04.png", pos )
+    her "Ну, прежде всего я хотела бы извиниться за вчерашнее..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_08.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQQ( "body_08.png", pos )
-    herView "Я никогда не заваливала тесты и поэтому не знала, как реагировать..."
+    $herView.showQQ( "body_08.png", pos )
+    her "Я никогда не заваливала тесты и поэтому не знала, как реагировать..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQQ( "body_04.png", pos )
-    herView "Но сейчас все намного лучше..."
+    $herView.showQQ( "body_04.png", pos )
+    her "Но сейчас все намного лучше..."
     m "Понятно..." 
-    herView "Я не займу вас надолго, обещаю..."
+    her "Я не займу вас надолго, обещаю..."
     if tutoring_offer_made:
-        herView "Я здесь, чтобы принять ваше предложение."
+        her "Я здесь, чтобы принять ваше предложение."
         menu:
             "\"Какое предложение?\"":
-                herView "Ранее вы предложили обучать меня, сэр..."
+                her "Ранее вы предложили обучать меня, сэр..."
                 menu:
                     "\"Ох...уже поздно.\"":
                         #__#hide screen hermione_main
                         #__#with d3
-                        $ herView.hideQQ()
+                        $herView.hideQQ()
                         #__#$ h_body = "03_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.
                         #__#show screen hermione_main
                         #__#with d3     
-                        $ herView.showQQ( "body_14.png", pos )
-                        herView "Уже..."
-                        herView "Поздно, сэр?"
-                        herView "Н-но...."
+                        $herView.showQQ( "body_14.png", pos )
+                        her "Уже..."
+                        her "Поздно, сэр?"
+                        her "Н-но...."
                         #__#hide screen hermione_main
                         #__#with d3
-                        $ herView.hideQQ()
+                        $herView.hideQQ()
                         #__#$ h_body = "03_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
                         #__#show screen hermione_main
-                        #__#with d3
-                        $ herView.showQQ( "body_11.png", pos )
-                        
-                        herView "Но мне нужны уроки, а вы умнейший волшебник, которого я знаю..."
+                        #__#with d3     
+                        $herView.showQQ( "body_11.png", pos )
+                        her "Но мне нужны уроки, а вы умнейший волшебник, которого я знаю..."
                         #__#hide screen hermione_main
                         #__#with d3
-                        $ herView.hideQQ()
+                        $herView.hideQQ()
                         #__#$ h_body = "03_hp/13_hermione_main/body_28.png" #Sprite of Hermione's upper body.
                         #__#show screen hermione_main
                         #__#with d3     
-                        $ herView.showQQ( "body_28.png", pos )
-                        herView "Пожалуйста, сэр, мне очень нужна ваша помощь."
+                        $herView.showQQ( "body_28.png", pos )
+                        her "Пожалуйста, сэр, мне очень нужна ваша помощь."
                         menu:
                             "\"Покажи мне свои сиськи и мы договорились!\"":
                                 #__#hide screen hermione_main
                                 #__#with d3
-                                $ herView.hideQQ()
+                                $herView.hideQQ()
                                 #__#$ h_body = "03_hp/13_hermione_main/body_18.png" #Sprite of Hermione's upper body.
                                 #__#show screen hermione_main
                                 #__#with d3     
-                                $ herView.showQQ( "body_18.png", pos )
-                                herView "М-мои...?"
+                                $herView.showQQ( "body_18.png", pos )
+                                her "М-мои...?"
                                 #__#hide screen hermione_main
                                 #__#with d3
-                                $ herView.hideQQ()
+                                $herView.hideQQ()
                                 #__#$ h_body = "03_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
                                 #__#show screen hermione_main
                                 #__#with d3     
-                                $ herView.showQQ( "body_29.png", pos )
-                                herView "............"
-                                herView "....."
+                                $herView.showQQ( "body_29.png", pos )
+                                her "............"
+                                her "....."
                                 #__#hide screen hermione_main
                                 #__#with d3
-                                $ herView.hideQQ()
+                                $herView.hideQQ()
                                 #__#$ h_body = "03_hp/13_hermione_main/body_30.png" #Sprite of Hermione's upper body.
                                 #__#show screen hermione_main
                                 #__#with d3     
-                                $ herView.showQQ( "body_30.png", pos )
+                                $herView.showQQ( "body_30.png", pos )
                                 with hpunch
-                                herView "{size=+5}Профессор Дамблдор!!!{/size}"
+                                her "{size=+5}Профессор Дамблдор!!!{/size}"
                                 m "{size=-5}(Ну, я хотя бы попытался...){/size}"
-                                herView "Я вам не \"Слизеринская\" шлюха!"
+                                her "Я вам не \"Слизеринская\" шлюха!"
                                 m "Конечно нет, мисс Грейнджер."
                                 m "Это испытание... Ты прошла его. Хорошая работа."
                                 #__#hide screen hermione_main
                                 #__#with d3
-                                $ herView.hideQQ()
+                                $herView.hideQQ()
                                 #__#$ h_body = "03_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.
                                 #__#show screen hermione_main
                                 #__#with d3  
-                                $ herView.showQQ( "body_31.png", pos )
-                                herView "Что...?"
+                                $herView.showQQ( "body_31.png", pos )
+                                her "Что...?"
                                 #__#hide screen hermione_main
                                 #__#with d3
-                                $ herView.hideQQ()
+                                $herView.hideQQ()
                                 #__#$ h_body = "03_hp/13_hermione_main/body_24.png" #Sprite of Hermione's upper body.
                                 #__#show screen hermione_main
                                 #__#with d3  
-                                $ herView.showQQ( "body_24.png", pos )
-                                herView "О, конечно. Я иногда туплю. Простите за крик, сэр."
+                                $herView.showQQ( "body_24.png", pos )
+                                her "О, конечно. Я иногда туплю. Простите за крик, сэр."
                                 m "Мое предложение в силе, если хотите, чтобы я вас обучал - я займусь этим."
                                 #__#hide screen hermione_main
                                 #__#with d3
-                                $ herView.hideQQ()
+                                $herView.hideQQ()
                                 #__#$ h_body = "03_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
                                 #__#show screen hermione_main
                                 #__#with d3  
-                                $ herView.showQQ( "body_29.png", pos )
-                                herView ".............."
+                                $herView.showQQ( "body_29.png", pos )
+                                her ".............."
                             "\"Ну, ладно, отлично...\"":
                                 pass
                     "\"Ох, Отлично. Превосходно.\"":
@@ -3433,97 +3428,97 @@ label event_14: # Hermione comes after her breakdown (when she failed the test).
     else:
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQQ()
+        $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
         #__#show screen hermione_main
         #__#with d3 
-        $ herView.showQQ( "body_07.png", pos )
-        herView "Я... эм..."
-        herView "Сэр Дамблдор, я надеюсь, что не слишком многого прошу..."
+        $herView.showQQ( "body_07.png", pos )
+        her "Я... эм..."
+        her "Сэр Дамблдор, я надеюсь, что не слишком многого прошу..."
         m "Да?"
-        herView "Эм... было бы неплохо, если..."
-        herView "..............."
+        her "Эм... было бы неплохо, если..."
+        her "..............."
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQQ()
+        $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
         #__#show screen hermione_main
         #__#with d3 
-        $ herView.showQQ( "body_09.png", pos )
-        herView "Вы могли бы немного обучить меня, сэр?"
+        $herView.showQQ( "body_09.png", pos )
+        her "Вы могли бы немного обучить меня, сэр?"
         menu:
             "\"Я уверен, что это возможно.\"":
                 pass
             "\"Хм... Я несколько занят.\"":
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3 
-                $ herView.showQQ( "body_11.png", pos )
-                herView "Сэр, пожалуйста, вы лучший волшебник, которого я знаю!"
+                $herView.showQQ( "body_11.png", pos )
+                her "Сэр, пожалуйста, вы лучший волшебник, которого я знаю!"
                 m "{size=-4}(Ты и представить себе не можешь, маленькая ведьма){/size}"
                 m "Я думаю, можно устроить, да..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3 
-    $ herView.showQQ( "body_01.png", pos )
-    herView "Благодарю, сэр. Я очень признательна вам."
+    $herView.showQQ( "body_01.png", pos )
+    her "Благодарю, сэр. Я очень признательна вам."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_16.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3     
-    $ herView.showQQ( "body_16.png", pos )
+    $herView.showQQ( "body_16.png", pos )
 
-    herView "Просто скажите мне и я принесу свои книжки."
+    her "Просто скажите мне и я принесу свои книжки."
 
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3     
-    $ herView.showQQ( "body_09.png", pos )
-    herView "Теперь я должна учиться еще более усердно..."
+    $herView.showQQ( "body_09.png", pos )
+    her "Теперь я должна учиться еще более усердно..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_06.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3     
-    $ herView.showQQ( "body_06.png", pos )
-    herView "И я буду брать частные уроки у вас как можно чаще, сэр."
+    $herView.showQQ( "body_06.png", pos )
+    her "И я буду брать частные уроки у вас как можно чаще, сэр."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3     
-    $ herView.showQQ( "body_07.png", pos )
-    herView "Но это не все..."
-    herView "В \"ОЗМП\" мы исседуем нашу систему образования более детально..."
-    herView "Я думаю, кто-то играет не совсем честно..."
+    $herView.showQQ( "body_07.png", pos )
+    her "Но это не все..."
+    her "В \"ОЗМП\" мы исседуем нашу систему образования более детально..."
+    her "Я думаю, кто-то играет не совсем честно..."
     m "Не может быть!"
-    herView "У меня есть список подозреваемых, я принесу его позже...."
+    her "У меня есть список подозреваемых, я принесу его позже...."
     m "Эм... ладно..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_10.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3     
-    $ herView.showQQ( "body_10.png", pos )
-    herView "О, занятия уже начинаются. Мне лучше пойти..."
+    $herView.showQQ( "body_10.png", pos )
+    her "О, занятия уже начинаются. Мне лучше пойти..."
     
     hide screen bld1
     #__#hide screen hermione_main
-    $ herView.hideQ()
+    $herView.hideQ() #"WARNING_Z"
     with Dissolve(.3)
     $ walk_xpos=400 #Animation of walking chibi. (From)
     $ walk_xpos2=610 #Coordinates of it's movement. (To)
@@ -3576,20 +3571,20 @@ label event_15: # Hermione comes and asks to buy a favour from her.
     "*Тук-тук-тук!*"
     menu:
         "\"Кто это?\"":
-            herView "Это я, Гермиона Грейнджер." 
+            her "Это я, Гермиона Грейнджер." 
             m "(Снвоа эта молоденькая ведьма...)" 
-            herView "Могу я войти, сэр?"
+            her "Могу я войти, сэр?"
             menu:
                 m "..."
                 "\"Категорически нет! Я занят! Возвращайся позднее!\"":
-                    herView "Но..."
-                    herView "Ладно... Тогда я вернусь позднее..."
+                    her "Но..."
+                    her "Ладно... Тогда я вернусь позднее..."
                     return
                 "\"Конечно, входи.\"":
                     pass
         "\"Я занят. Приходи позже.\"":
-            herView "Но..."
-            herView "Ну, ладно..."
+            her "Но..."
+            her "Ну, ладно..."
             return
         "\"Да, входи.\"":
             pass
@@ -3597,7 +3592,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
             $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
             "*Тук-тук-тук!*"
             m "............................."
-            herView "Профессор, я вхожу..."
+            her "Профессор, я вхожу..."
             m "{size=-4}(Дерьмо!){/size}"
 
    
@@ -3614,105 +3609,105 @@ label event_15: # Hermione comes and asks to buy a favour from her.
     show screen bld1
     with Dissolve(.3)
     
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite.
-    $ h_ypos=0
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite.
+    #__#$ h_ypos=0
     $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
-    $ herView.showQ( "body_13.png", pos )
+    $herView.showQ( "body_13.png", pos ) #"WARNING_Z"
     show screen hermione_02
     with Dissolve(.3)
-    herView "Добрый вечер, профессор..."
-    herView "........................"
+    her "Добрый вечер, профессор..."
+    her "........................"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3   
-    $ herView.showQQ( "body_29.png", pos )
-    herView "........................"
-    herView "........................"
+    $herView.showQQ( "body_29.png", pos )
+    her "........................"
+    her "........................"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.showQQ( "body_29.png", pos )
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3   
-    $ herView.showQQ( "body_31.png", pos )
-    herView "Эм......"
+    $herView.showQQ( "body_31.png", pos )
+    her "Эм......"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3  
-    $ herView.showQQ( "body_29.png", pos )
-    herView "................."
+    $herView.showQQ( "body_29.png", pos )
+    her "................."
     m "Что такое, Мисс Грейнджер?"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3   
-    $ herView.showQQ( "body_31.png", pos )
-    herView "Ну, Эм..."
-    herView "Понимаете ли... \"Гриффиндор\" больше не лидирует..."
+    $herView.showQQ( "body_31.png", pos )
+    her "Ну, Эм..."
+    her "Понимаете ли... \"Гриффиндор\" больше не лидирует..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3   
-    $ herView.showQQ( "body_29.png", pos )
-    herView "И... все очень трудятся..."
-    herView "И они надеятся на мою помощь, но я не знаю что делать..."
+    $herView.showQQ( "body_29.png", pos )
+    her "И... все очень трудятся..."
+    her "И они надеятся на мою помощь, но я не знаю что делать..."
     m "............................"
-    herView "Профессор Дамблдор...."
+    her "Профессор Дамблдор...."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_32.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3   
-    $ herView.showQQ( "body_32.png", pos )
+    $herView.showQQ( "body_32.png", pos )
     stop music fadeout 2.0
-    herView "Я хочу купить очки для факультета за мои услуги!"
+    her "Я хочу купить очки для факультета за мои услуги!"
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_33.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3   
-    $ herView.showQQ( "body_33.png", pos )
+    $herView.showQQ( "body_33.png", pos )
     menu:
         "\"Ты имеешь в виду сексуальные услуги?\"":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQQ()
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_34.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3   
-            $ herView.showQQ( "body_34.png", pos )
-            herView "Эм... Я не уверена..."
-            herView "Те, которые дадут нашему факультету дополнительные очки..."
+            $herView.showQQ( "body_34.png", pos )
+            her "Эм... Я не уверена..."
+            her "Те, которые дадут нашему факультету дополнительные очки..."
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQQ()
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3   
-            $ herView.showQQ( "body_31.png", pos )
-            herView "Я бы могла написать эссе вам или..."
+            $herView.showQQ( "body_31.png", pos )
+            her "Я бы могла написать эссе вам или..."
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQQ()
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_34.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3   
-            $ herView.showQQ( "body_34.png", pos )
-            herView "Или может быть почистить вашу башню..?"
+            $herView.showQQ( "body_34.png", pos )
+            her "Или может быть почистить вашу башню..?"
             m "{size=-4}(Почистить мою башню? Хех... Эта вероятно грязная шуточка или вроде того...){/size}"
             m "Ну, хорошо. Мы что-нибудь придумаем."
         "\"Ну, если вы настаиваете...\"":
@@ -3720,30 +3715,30 @@ label event_15: # Hermione comes and asks to buy a favour from her.
         "\"Я так не думаю, мисс Грейнджер.\"":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQQ()
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.
             #__#show screen hermione_main
             #__#with d3   
-            $ herView.showQQ( "body_31.png", pos )
-            herView "Н-но... Нам нужны очки..."
-            herView "Профессор, пожалуйста, я в безвыходном положении..."
+            $herView.showQQ( "body_31.png", pos )
+            her "Н-но... Нам нужны очки..."
+            her "Профессор, пожалуйста, я в безвыходном положении..."
             m "В безвыходном, вы говорите..?"
             m "Ну, ладно..."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main
     #__#with d3   
-    $ herView.showQQ( "body_01.png", pos )
+    $herView.showQQ( "body_01.png", pos )
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
-    herView "Спасибо, профессор..."
+    her "Спасибо, профессор..."
     label choose_favor_agagin:
     $ d_flag_01 = False
     $ d_flag_02 = False
     $ d_flag_03 = False
     $ d_flag_04 = False
-    herView "И так...Что вы хотите?"
+    her "И так...Что вы хотите?"
     menu:
         "\"Покажи мне свой язык...\"":
             $ d_flag_01 = True
@@ -3758,8 +3753,8 @@ label event_15: # Hermione comes and asks to buy a favour from her.
             $ d_flag_04 = True
             pass
 
-    herView "Эм..."
-    herView "Как много очков вы мне дадите за это...?"
+    her "Эм..."
+    her "Как много очков вы мне дадите за это...?"
     $ d_flag_05 = False # 20 Points.
     $ d_flag_06 = False # 40 Points.
     $ d_flag_07 = False # 10 Points.
@@ -3770,18 +3765,18 @@ label event_15: # Hermione comes and asks to buy a favour from her.
                 $ d_flag_08 = True # 1 Point.
                 pass
             else:
-                herView "Я не думаю, что это стоит того..."
+                her "Я не думаю, что это стоит того..."
                 jump choose_favor_agagin
         "\"10 очков.\"":
             if d_flag_02: #Stand there.
                 $ d_flag_07 = True # 10 Points.
                 pass
             else:
-                herView "Я не думаю, что это стоит того..."
+                her "Я не думаю, что это стоит того..."
                 jump choose_favor_agagin
         "\"20 очков.\"":
             $ d_flag_05 = True
-            herView "Так мало...?"
+            her "Так мало...?"
             pass
         "\"40 очков.\"":
             $ d_flag_06 = True
@@ -3789,14 +3784,15 @@ label event_15: # Hermione comes and asks to buy a favour from her.
 
     
     
-
-    herView "Эм, ладно..."
+    $ pos = POS_140
+    her "Эм, ладно..."
     if d_flag_01: #Show me your tongue.
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQQ()
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
-        $ pos = POS_140
+        $herView.hideQQ()
+        #__#$ h_body = "03_hp/13_hermione_main/body_24.png" #Sprite of Hermione's upper body.
+        #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
+        #__#$ pos = POS_140
         #__#$ h_body = "03_hp/13_hermione_main/body_24.png" #Sprite of Hermione's upper body.
         #__#show screen hermione_main
         #__#with d3
@@ -3805,22 +3801,22 @@ label event_15: # Hermione comes and asks to buy a favour from her.
         m "Да, девочка, открой свой рот и покажи мне свой язычок."
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQQ()
+        $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
         #__#show screen hermione_main
         #__#with d3
-        $ herView.showQQ( "body_14.png", pos )
-        herView "{size=-7}(Что за извращенец...){/size}"
+        $herView.showQQ( "body_12.png", pos )
+        her "{size=-7}(Что за извращенец...){/size}"
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQQ()
+        $herView.hideQQ()
         
         #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
         #__#$ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
         #__#show screen hermione_main
         #__#with d3
         $ herView.showQQ( "body_07.png", pos )
-        herView "Эм...ну, ладно тогда..."
+        her "Эм...ну, ладно тогда..."
         #__#hide screen hermione_main
         #__#with d3
         $ herView.hideQQ()
@@ -3830,25 +3826,26 @@ label event_15: # Hermione comes and asks to buy a favour from her.
         #__#show screen hermione_main
         #__#with d3
         $ herView.showQQ( "body_08.png", pos )
-        herView "Вот..."
+        her "Вот..."
         #__#hide screen hermione_main
         #__#with d3
-        #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).        
+        $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_35.png" #Sprite of Hermione's upper body.
+        #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
         #__#show screen hermione_main
         #__#with d3
         $ herView.showQQ( "body_35.png", pos )
-        herView "............."
-        herView "............."
+        her "............."
+        her "............."
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQQ()
+        $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_36.png" #Sprite of Hermione's upper body.
         #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
         #__#show screen hermione_main
         #__#with d3
         $ herView.showQQ( "body_36.png", pos )
-        herView "................."
+        her "................."
         show screen ctc
         pause
         menu: 
@@ -3857,35 +3854,35 @@ label event_15: # Hermione comes and asks to buy a favour from her.
             "\"Плохо. Ты можешь лучше.\"":
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
                 #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
                 #__#show screen hermione_main
                 #__#with d3
                 $ herView.showQQ( "body_12.png", pos )
-                herView "..............."
-                herView "Ладно, я попробую получше, сэр..."
+                her "..............."
+                her "Ладно, я попробую получше, сэр..."
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
                 #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
                 #__#show screen hermione_main
                 #__#with d3
                 $ herView.showQQ( "body_11.png", pos )
-                herView "Как насчет этого?"
+                her "Как насчет этого?"
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_37.png" #Sprite of Hermione's upper body.
                 #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
                 #__#show screen hermione_main
                 #__#with d3
                 $ herView.showQQ( "body_37.png", pos )
-                herView "А-а-а.................."
+                her "А-а-а.................."
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_38.png" #Sprite of Hermione's upper body.
                 #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
                 #__#show screen hermione_main
@@ -3894,42 +3891,40 @@ label event_15: # Hermione comes and asks to buy a favour from her.
                 "............................"
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_39.png" #Sprite of Hermione's upper body.
                 #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
                 #__#show screen hermione_main
                 #__#with d3
                 $ herView.showQQ( "body_39.png", pos )
-                herView "......................................"
-                herView "..................................................."
-                herView "...................................................................."
+                her "......................................"
+                her "..................................................."
+                her "...................................................................."
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_40.png" #Sprite of Hermione's upper body.
                 #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
                 #__#show screen hermione_main
                 #__#with d3
                 $ herView.showQQ( "body_40.png", pos )
-                herView "......................................................................................................."
+                her "......................................................................................................."
 
     if d_flag_02: #Stand still...
 #    if d_flag_01: #STAND STILL.
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQQ()
-        
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
-        $ pos = POS_140
+        $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_06.png" #Sprite of Hermione's upper body.
+        #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
         #__#show screen hermione_main
         #__#with d3
         $ herView.showQQ( "body_06.png", pos )
-        herView "И так, я просто буду стоять здесь...?"
+        her "И так, я просто буду стоять здесь...?"
         m "Отлично... Теперь повернись... Медленно."
-        herView "Ух... Ладно..."
+        her "Ух... Ладно..."
         #__#hide screen hermione_main
-        $ herView.hideQ()
+        $herView.hideQ() #"WARNING_Z"
         hide screen bld1
         with d3
         pause.5
@@ -3977,10 +3972,10 @@ label event_15: # Hermione comes and asks to buy a favour from her.
         with Dissolve(.7)
         pause.7
         #__#show screen hermione_main
-        $ herView.showQ( "body_06.png", pos )
+        $ herView.showQQ( None, pos )
         show screen bld1
         with d3
-        herView "................."
+        her "................."
    
     
     
@@ -3995,49 +3990,48 @@ label event_15: # Hermione comes and asks to buy a favour from her.
     if d_flag_03: #STUPID FACE
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQQ()
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
-        $ pos = POS_140
+        $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_24.png" #Sprite of Hermione's upper body.
+        #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
         #__#show screen hermione_main
         #__#with d3
         $ herView.showQQ( "body_24.png", pos )
-        
-        herView "Скорчить глупую рожицу, значит..."
-        herView "Посмотрим..."
+
+        her "Скорчить глупую рожицу, значит..."
+        her "Посмотрим..."
         label stupid_faces:
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQQ()
+        $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_41.png" #Sprite of Hermione's upper body.
         #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
         #__#show screen hermione_main
         #__#with d3
         $ herView.showQQ( "body_41.png", pos )
-        herView "Как насчет этого?"
+        her "Как насчет этого?"
         menu:
-            "\"Отлично! Очень тупо! Я имею в виду, глупо.\"":
+            "\"Отлично! очень тупо! Я имею в виду, глупо.\"":
                 jump stupid_enogh
             "\"Не совсем глупая.\"":
                 pass
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQQ()
+        $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
         #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
         #__#show screen hermione_main
         #__#with d3
         $ herView.showQQ( "body_12.png", pos )
-        herView "........."
+        her "........."
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQQ()
+        $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_43.png" #Sprite of Hermione's upper body.
         #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
         #__#show screen hermione_main
         #__#with d3
         $ herView.showQQ( "body_43.png", pos )
-        herView "Как насчет этого?"
+        her "А так?"
         menu:
             "\"Ха-ха! Ты похожа на идиота!\"":
                 jump stupid_enogh
@@ -4045,22 +4039,21 @@ label event_15: # Hermione comes and asks to buy a favour from her.
                 pass
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQQ()
+        $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
         #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
         #__#show screen hermione_main
         #__#with d3
         $ herView.showQQ( "body_12.png", pos )
-        herView "........."
+        her "........."
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQQ()
+        $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_42.png" #Sprite of Hermione's upper body.
         #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
         #__#show screen hermione_main
         #__#with d3
-        $ herView.showQQ( "body_42.png", pos )
-        herView "Что если я сделаю так?"
+        her "А что, если я сделаю так?"
         menu:
             "\"Отлично! Очень смешно!\"":
                 jump stupid_enogh
@@ -4070,162 +4063,160 @@ label event_15: # Hermione comes and asks to buy a favour from her.
     if d_flag_04: #BAD GIRL
         #__#hide screen hermione_main
         #__#with d3
-        $ herView.hideQQ()
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
-        $ pos = POS_140
-        
+        $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
+        #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
         #__#show screen hermione_main
         #__#with d3
         $ herView.showQQ( "body_07.png", pos )
-        herView "Я..."
-        herView "Я была очень плохой девочкой..."
+        her "Я..."
+        her "Я была очень плохой девочкой..."
         g9 "Ты была очень, очень, очень плохой девочкой?"
-        herView "Да, сэр..."
-        herView "Я была очень, очень, очень, очень плохой девочкой..."
+        her "Да, сэр..."
+        her "Я была очень, очень, очень, очень плохой девочкой..."
         label to_early_for_sucking_cocks:
         menu:
             g9 "..."
             "\"Тебя нужно наказать?\"":
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_11.png", pos )
-                herView "Нужно ли меня... наказать?"
+                $herView.showQQ( "body_11.png", pos )
+                her "Нужно ли меня... наказать?"
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_13.png", pos )
-                herView "Эм..."
-                herView "....................."
+                $herView.showQQ( "body_13.png", pos )
+                her "Эм..."
+                her "....................."
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_12.png", pos )
-                herView "Ну, я не идеальная, если вы об этом, сэр..."
+                $herView.showQQ( "body_12.png", pos )
+                her "Ну, я не идеальная, если вы об этом, сэр..."
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_13.png", pos )
-                herView "Но нужно ли меня наказывать... Хм?"
+                $herView.showQQ( "body_13.png", pos )
+                her "Но нужно ли меня наказывать... Хм?"
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_07.png", pos )
-                herView "На самом ли деле это мне решать...? Я имею в виду..."
-                herView "Какое это имеет значение?"
+                $herView.showQQ( "body_07.png", pos )
+                her "На самом ли деле это мне решать...? Я имею в виду..."
+                her "Какое это имеет значение?"
                 m "Ты слишком самокритичная, девочка."
                 m "Просто скажи, что тебя нужно наказать!"
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_05.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_05.png", pos )
-                herView "Ладно. Меня следует наказать!"
+                $herView.showQQ( "body_05.png", pos )
+                her "Ладно. Меня следует наказать!"
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_33.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_33.png", pos )
-                herView "{size=-5}(И я действительно так думаю иногда...){/size}"
+                $herView.showQQ( "body_33.png", pos )
+                her "{size=-5}(И я действительно так думаю иногда...){/size}"
                 m "Хорошая девочка."
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_44.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_44.png", pos )
-                herView "................??"
+                $herView.showQQ( "body_44.png", pos )
+                her "................??"
                 m "Это было так трудно?"
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_29.png", pos )
-                herView "Н-нет , сэр..."
+                $herView.showQQ( "body_29.png", pos )
+                her "Н-нет , сэр..."
                 m "Ладно, значит..."
             "\"Хочешь чтобы тебя отшлепали?\"":
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_11.png", pos )
-                herView "Хочу ли я..."
+                $herView.showQQ( "body_11.png", pos )
+                her "Хочу ли я..."
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_18.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_18.png", pos )
-                herView "Чтобы меня отшлепали??"
+                $herView.showQQ( "body_18.png", pos )
+                her "Чтобы меня отшлепали??"
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_05.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_05.png", pos )
-                herView "?!"
+                $herView.showQQ( "body_05.png", pos )
+                her "?!"
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_04.png", pos )
-                herView "Профессор, мне не очень уютно от таких вопросах- -"
+                $herView.showQQ( "body_04.png", pos )
+                her "Профессор, мне не очень уютно от таких вопросах- -"
                 m "Извиняюсь, позволь мне перефразировать вопрос..."
                 m "Как сильно тебе нужны эти очки?"
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_09.png", pos )
-                herView ".................."
+                $herView.showQQ( "body_09.png", pos )
+                her ".................."
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_04.png", pos )
-                herView "Да, сэр. Я хочу, чтобы меня ошлпепали"
+                $herView.showQQ( "body_04.png", pos )
+                her "Да, сэр. Я хочу, чтобы меня ошлпепали"
                 m "Отлично. Думаю достаточно на сегодня..."
                 #__#hide screen hermione_main
                 #__#with d3
-                $ herView.hideQQ()
+                $herView.hideQQ()
                 #__#$ h_body = "03_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
                 #__#show screen hermione_main
                 #__#with d3
-                $ herView.showQQ( "body_07.png", pos )
-                herView "{size=-4}(На сегодня?){/size}"
+                $herView.showQQ( "body_07.png", pos )
+                her "{size=-4}(На сегодня?){/size}"
             "\"Иди сюда и пососи мой член!\"":
                 m "{size=-5}(Слишком рано для этого... Для начала мне следует цепануть ее.){/size}"
                 jump to_early_for_sucking_cocks
@@ -4249,68 +4240,65 @@ label event_15: # Hermione comes and asks to buy a favour from her.
     
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
-    
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
-    $ pos = POS_140
-    
-    #__#$ h_body = "03_hp/13_hermione_main/body_24.png" #Sprite of Hermione's upper body.    
+    $herView.hideQQ()
+    #__#$ h_body = "03_hp/13_hermione_main/body_24.png" #Sprite of Hermione's upper body.
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
     #__#show screen hermione_main
     #__#with d3
     $ herView.showQQ( "body_24.png", pos )
-    herView "Да!.............."
-    herView "Это было довольно легко..."
-    herView "Вы думаете я могла бы покупать еще очки за подобные услуги в будущем, профессор?"
+    her "Да!.............."
+    her "Это было довольно легко..."
+    her "Вы думаете я могла бы покупать еще очки за подобные услуги в будущем, профессор?"
     menu:
         "\"Я не думаю, что это хорошая идея.\"":
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQQ()
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_28.png" #Sprite of Hermione's upper body.
             #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
             #__#show screen hermione_main
             #__#with d3
             $ herView.showQQ( "body_28.png", pos )
-            herView "Пожалуйста, профессор..."
-            herView "Нам действительно нужны эти очки..."
+            her "Пожалуйста, профессор..."
+            her "Нам действительно нужны эти очки..."
             m "......."
             #__#hide screen hermione_main
             #__#with d3
-            $ herView.hideQQ()
+            $herView.hideQQ()
             #__#$ h_body = "03_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
             #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
             #__#show screen hermione_main
             #__#with d3
             $ herView.showQQ( "body_29.png", pos )
-            herView "Вы очень уважаемый мастер. И, честно говоря..."
-            herView "...единственный человек в этой школе, у которого я могу попросить такое..."
+            her "Вы очень уважаемый мастер честно говоря..."
+            her "Единственный человек в этой школе, у которого я могу попросить такое..."
             m "Ну, если ты настаиваешь..."
         "\"Возможно...\"":
             pass
             
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_06.png" #Sprite of Hermione's upper body.
     #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
     #__#show screen hermione_main
     #__#with d3
     $ herView.showQQ( "body_06.png", pos )
-    herView "Спасибо, профессор. Огромное спасибо."
+    her "Спасибо, профессор. Огромное спасибо."
     #__#hide screen hermione_main
     #__#with d3
-    $ herView.hideQQ()
+    $herView.hideQQ()
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370).
     #__#show screen hermione_main
     #__#with d3
     $ herView.showQQ( "body_01.png", pos )
-    herView "Ну, я думаю мне стоит идти..."
+    her "Ну, я думаю мне стоит идти..."
     m "............"
 
     hide screen bld1
     #__#hide screen hermione_main
-    $ herView.hideQ()
+    $herView.hideQ() #"WARNING_Z"
     with Dissolve(.3)
     $ walk_xpos=400 #Animation of walking chibi. (From)
     $ walk_xpos2=610 #Coordinates of it's movement. (To)
@@ -4323,26 +4311,26 @@ label event_15: # Hermione comes and asks to buy a favour from her.
     with Dissolve(.3)
 
     if d_flag_01: #Show me your tongue
-        herView "{size=-4}(Хм...){/size}"
-        herView "{size=-4}(Студенты все время демонстрируют свои языки учителям...){/size}"
-        herView "{size=-4}(Хотя, учитель в это время обычно не смотрит...){/size}"
-        herView "{size=-4}(Но нет ничего плохо в том, что я сделал сегодня...){/size}"
-        herView "{size=-4}(Я получила свои очки для факультета...){/size}"
+        her "{size=-4}(Хм...){/size}"
+        her "{size=-4}(Студенты все время демонстрируют свои языки учителям...){/size}"
+        her "{size=-4}(Хотя, учитель в это время обычно не смотрит...){/size}"
+        her "{size=-4}(Но нет ничего плохо в том, что я сделал сегодня...){/size}"
+        her "{size=-4}(Я получила свои очки для факультета...){/size}"
         
     if d_flag_02: #Stand still...
-        herView "{size=-4}(Я могу просто стоять здесь, а профессор будет смотреть на меня...){/size}"
-        herView "{size=-4}(В этом нет ничего плохого...вообще ничего...){/size}"
+        her "{size=-4}(Я могу просто стоять здесь, а профессор будет смотреть на меня...){/size}"
+        her "{size=-4}(В этом нет ничего плохого...вообще ничего...){/size}"
 #        her "{size=-4}(ooh ooh ooh... eee eee eee aah aah aah...){/size}"
 #        her "{size=-4}(I'm a monkey... I'm a money... I need to practice more...){/size}"
     if d_flag_03:
-        herView "{size=-4}(Глупое лицо...){/size}"
-        herView "{size=-4}(Глупое лицо...){/size}"
-        herView "{size=-4}(Мне нужно потренироваться с этим.){/size}"
+        her "{size=-4}(Глупое лицо...){/size}"
+        her "{size=-4}(Глупое лицо...){/size}"
+        her "{size=-4}(Мне нужно потренироваться с этим.){/size}"
     if d_flag_04:
-        herView "{size=-4}(Я плохая девченка...){/size}"
-        herView "{size=-4}(Я очень плохая девченка...){/size}"
-        herView "{size=-4}(Да, я могу легко говорить такое...){/size}"
-        herView "{size=-4}(В этом нет ничего плохого...вообще ничего...){/size}"
+        her "{size=-4}(Я плохая девченка...){/size}"
+        her "{size=-4}(Я очень плохая девченка...){/size}"
+        her "{size=-4}(Да, я могу легко говорить такое...){/size}"
+        her "{size=-4}(В этом нет ничего плохого...вообще ничего...){/size}"
 
 
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
@@ -4373,5 +4361,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
 
 
     
+
+
 
 

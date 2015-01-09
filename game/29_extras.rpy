@@ -4,7 +4,7 @@ label gallery:
     with flashbb
 
     
-    #a1 "Welcome to the \"Hermione Trainer\" gallery. Here you can have a look at some of the production artwork."
+    a1 "Добро пожаловать в галерею игры \"Воспитание Ведьмы\". Здесь вы можете посмотреть некоторые работы."
     label after_cam:
     menu:
         "- Музыкальная комната -":
@@ -25,9 +25,11 @@ label gallery:
         "- Окрестности Хогвартса -":
             jump out_hog
         
-        "{color=#858585}- Концовка 01 -{/color}" if not persistent.ending_01:
+#        "{color=#858585}- Концовка 01 -{/color}" if not persistent.ending_01:
+        "{color=#858585}- Концовка 01 -{/color}" if not end.IsPersistent(1):
             jump after_cam
-        "- Концовка 01 -" if persistent.ending_01:
+#        "- Концовка 01 -" if persistent.ending_01:
+        "- Концовка 01 -" if end.IsPersistent(1):
             label end_01_men:
             menu:
                 "- Первый акт -":
@@ -39,9 +41,11 @@ label gallery:
                 "- Отмена -":
                     jump after_cam
         
-        "{color=#858585}- Концовка 02 -{/color}" if not persistent.ending_02:
+#        "{color=#858585}- Концовка 02 -{/color}" if not persistent.ending_02:
+        "{color=#858585}- Концовка 02 -{/color}" if not end.IsPersistent(2):
             jump after_cam
-        "- Концовка 02 -" if persistent.ending_02:
+#        "- Концовка 02 -" if persistent.ending_02:
+        "- Концовка 02 -" if end.IsPersistent(2):
             label end_02_men:
             menu:
                 "- Первый акт -":
@@ -53,6 +57,21 @@ label gallery:
                 "- Отмена -":
                     jump after_cam
         
+#av-2015.01.04 Ссылки на вторую концовку, переделать на третью
+        "{color=#858585}- Концовка 03 -{/color}" if not end.IsPersistent(3):
+            jump after_cam
+        "- Концовка 03 -" if end.IsPersistent(3):
+            label end_02_men:
+            menu:
+                "- Первый акт -":
+                    jump end02_01
+                "- Речь -":
+                    jump end02_02
+                "- Последний акт -":
+                    jump end02_03
+                "- Отмена -":
+                    jump after_cam
+
             
         "- Комментарии (вкл.) -" if commentaries:
             $ commentaries = False # In the GALLERY turns commentaries ON and OFF. 
@@ -209,7 +228,7 @@ label volone:
             show image "03_hp/19_extras/13.png" with d3
             if commentaries:
                 a1 "Еще один побочный квест, так и не увидевший свет..."
-                a1 "В общем, там- -"
+                a1 "В общем, там-"
                 a1 "Нет, пожалуй, нет. Кто знает, быть может мы все-таки введем эти квесты."
             show screen ctc
             pause
@@ -303,9 +322,9 @@ label voltwo:
             if commentaries:
                 #20.
                 a1 "Я потратил прилично времени, чтобы дать Гермионе подходящую внешность..."
-                a1 "Version \"A\" была моей первой попыткой. И она мне нравилась, пока я не начал ее ненавидеть..."
-                a2 "Version \"B\" была моей второй попыткой. И она хороша. Но ее самоуверенные и полуагрессивные черты не совсем подходили героине..."
-                a1 "Version \C\" та, что прошла кастинг. Гермиона которую мы вырастили и о которой будем заботиться, я уверен."
+                a1 "Версия \"A\" была моей первой попыткой. И она мне нравилась, пока я не начал ее ненавидеть..."
+                a2 "Версия \"B\" была моей второй попыткой. И она хороша. Но ее самоуверенные и полуагрессивные черты не совсем подходили героине..."
+                a1 "Версия \C\" та, что прошла кастинг. Гермиона которую мы вырастили и о которой будем заботиться, я уверен."
             show screen ctc
             pause
             hide screen ctc

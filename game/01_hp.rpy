@@ -221,7 +221,7 @@ $ book10 = "\"Платиновая книга души\"" #1/2 (big) chance of i
 #BOOK 11
 $ book_11_units = 0 #Monitors progress with this book.
 $ book_11_complete = False #Turns True when you finish reading book #4.
-$ book11 = "\"Адамантовая книга душиt\"" # 1 (sure) chance of it to pop up. Completes extra chapter during work.
+$ book11 = "\"Адамантовая книга души\"" # 1 (sure) chance of it to pop up. Completes extra chapter during work.
 
 #BOOK 12
 $ book_12_units = 0 #Monitors progress with this book.
@@ -251,7 +251,7 @@ $ book16 = "\"Скорописание для экспертов\"" # 1/2 chance
 #BOOK 17
 $ book_17_units = 0 #Monitors progress with this book.
 $ book_17_complete = False #Turns True when you finish reading book #17.
-$ book17 = "\"Скорописание для маньяк\"" # 1 (sure) chance of it to pop up. Completes extra chapter during work.
+$ book17 = "\"Скорописание для маньяков\"" # 1 (sure) chance of it to pop up. Completes extra chapter during work.
 
 ### MUGGLE ODDITIES ### =========================================================================
 $ order_placed = False #TRUE when and order has been placed on an item.

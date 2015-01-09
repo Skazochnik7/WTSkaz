@@ -2273,7 +2273,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         her "Профессор..."
                                         #__#hide screen h_head2          
                                         $herViewHead.hideQ()
-                                       # her "Я хочу получить свои очки."
+                                        her "Я хочу получить свои очки."
                                         show screen ctc
                                         pause.4
                                         hide screen s_c_u

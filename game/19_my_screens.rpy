@@ -448,6 +448,12 @@ screen letter:
 screen blkfade:
     zorder 5
     add "blackfade.png"
+ 
+screen jerkingimage:
+    zorder jerk_zorder
+    add jerk_image
+    # variant "small"
+    # modal True
     
 screen blktone:
     zorder 5 #Otherwise bird's food will be on top.

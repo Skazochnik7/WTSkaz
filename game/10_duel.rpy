@@ -66,7 +66,8 @@ label duel:
     hide screen snape_defends
     hide screen blkfade
     
-      
+    if skip_duel == True:
+        jump snape_lost
    
     
     
@@ -487,6 +488,7 @@ init -1:
     
 ### SNAPE LOSES ###
 label snape_lost:
+    play music "music/Final Fantasy VII - Victory Fanfare.mp3" fadein 1 fadeout 4
     hide genie_attack at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
     hide pentogram
     show ch_gen duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 

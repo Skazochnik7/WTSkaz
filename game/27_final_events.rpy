@@ -773,15 +773,15 @@ label against_the_rule:
     show screen snape_main                                                                                                                 #SNAPE
     with d3                                                                                                                                                  #SNAPE
     sna "Ох, теперь это неважно..."
-    #sna "The girl is a complete control freak..."
+    sna "Чертова ведьма..."
     sna "Теперь эта девка будет использовать старост или призраков для того чтобы следить за мной..."
     m "Кстати..."
-#    hide screen snape_main                                                                                                                   #SNAPE
-#    with d3                                                                                                                                                  #SNAPE
-#    $ s_sprite = "03_hp/10_snape_main/snape_01.png"                                                              #SNAPE
-#    show screen snape_main                                                                                                                 #SNAPE
-#    with d3                                                                                                                                                  #SNAPE
-#    sna "Huh?"
+    hide screen snape_main                         
+    with d3                                        
+    $ s_sprite = "03_hp/10_snape_main/snape_01.png"
+    show screen snape_main                         
+    with d3                                        
+    sna "Что?"
     m "Я должен буду показаться там?"
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
@@ -803,27 +803,27 @@ label against_the_rule:
     with d3                                                                                                                                                  #SNAPE
     sna "Хм... Возможно мне придется быть ведущим..."
     m "............"
-#    sna ".................."
-#    hide screen snape_main                                                                                                                   #SNAPE
-#    with d3                                                                                                                                                  #SNAPE
-#    $ s_sprite = "03_hp/10_snape_main/snape_03.png"                                                              #SNAPE
-#    show screen snape_main                                                                                                                 #SNAPE
-#    with d3                                                                                                                                                  #SNAPE
-#    sna "Yes! I will do it!"
-#    sna "And I shall be on my best behavior!"
-#    hide screen snape_main                                                                                                                   #SNAPE
-#    with d3                                                                                                                                                  #SNAPE
-#    $ s_sprite = "03_hp/10_snape_main/snape_04.png"                                                              #SNAPE
-#    show screen snape_main                                                                                                                 #SNAPE
-#    with d3                                                                                                                                                  #SNAPE
-#    sna "Yes, that'll show her!"
-#    m "................"
+    sna ".................."
+    hide screen snape_main                         
+    with d3                                        
+    $ s_sprite = "03_hp/10_snape_main/snape_03.png"
+    show screen snape_main                         
+    with d3                                        
+    sna "Да! Я сделаю это!"
+    sna "И в лучшем виде!"
+    hide screen snape_main                         
+    with d3                                        
+    $ s_sprite = "03_hp/10_snape_main/snape_04.png"
+    show screen snape_main                         
+    with d3                                        
+    sna "Да, я покажу ей!"
+    m "................"
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_09.png"                                                              #SNAPE
     show screen snape_main                                                                                                                 #SNAPE
     with d3                                                                                                                                                  #SNAPE
-    sna "Что ж, Осенний бал на носу и Гермиона Грейнджер главная..."
+    sna "Осенний бал на носу и Гермиона Грейнджер главная..."
     sna "Теперь этого не исправить..."
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
@@ -1513,10 +1513,10 @@ label good_bye_snape:
     $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                                               #SNAPE
     show screen snape_main                                                                                                                  #SNAPE
     with d3                                                                                                                                                   #SNAPE
-#    sna "The \"Autumn Ball\" is tonight..."
-#    m "Is it...?"
-#    sna "....................."
-#    m ".....?"
+    sna "\"Осенний бал\" сегодня вечером..."
+    m "Неужели...?"
+    sna "....................."
+    m ".....?"
     sna "Я думаю, что понял, почему твоя магия не работает в полную силу..."
     g4 "Серьезно?!"
     hide screen snape_main                                                                                                                   #SNAPE
@@ -1713,14 +1713,14 @@ label good_bye_snape:
     m "Да... просто спроси меня завтра: \"Кто рулит?\"."
     show screen s_head2
     $ s_sprite = "03_hp/10_snape_main/snape_01.png"
-    sna "\"Кто рулит?\""
+    sna "\"Кто рулит?\" в смысле \"Кто ведет машину?\""
     hide screen s_head2
     g9 "\"Акабур рулит!\""
     show screen s_head2
     $ s_sprite = "03_hp/10_snape_main/snape_05.png"
     sna "Акуба... эм... Что это значит?"
     hide screen s_head2
-    m "Просто фраза, котрую ты сможешь услышать только от настоящего меня..."
+    m "Просто фраза, которую ты сможешь услышать только от настоящего меня..."
     show screen s_head2
     $ s_sprite = "03_hp/10_snape_main/snape_02.png"
     sna "Ясно..."
@@ -1760,7 +1760,8 @@ label good_bye_snape:
     play music "music/Despair_by_erenik.mp3" fadein 1 fadeout 1 # SAD THEME.
     m "Похоже, мое время в этом мире подошло к концу..."
     m "......................."
-    if not public_whore_ending: #YOUR PERSONAL WHORE ENDING. WRITING A LETTER.
+#    if not public_whore_ending: #YOUR PERSONAL WHORE ENDING. WRITING A LETTER.
+    if end.IsEnding(const_ENDING_YOUR_WHORE):
         m "Это значит, что я скорее всего больше никогда не увижу девочку вновь..."
         m "..........."
         m "Когда я встретил ее впервые, она была такой надоедливой..."

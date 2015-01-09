@@ -1,5 +1,5 @@
 label day_01:
-    "*Стук-стук-стук!*"
+    "*Тук-тук-тук!*"
     her "Здравствуйте, профессор. Вы хотели видеть меня?"
     m "Уходи!"
     jump day_main_menu
@@ -14,6 +14,7 @@ label day_02_2:
         "Я поговорю с ним.":
             $ genies_slut = 0
             her "Спасибо!"
+            
         "Ты должна проявлять больше уважения к учителям!":
             pass
             
@@ -30,7 +31,7 @@ label day_07_02:
         $ test_passed = True
     else:
         $ test_failed = True
-    her "Я удивляюсь, как я сдала свой тест..."
+    her "Я удивляюсь, как я сдала тест..."
     jump home_assignment #Moment after all cutscenes, before you sent Hermione home.
     
 label day_09:

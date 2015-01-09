@@ -500,7 +500,7 @@ label the_oddities:
                     with d3
                     dahr "Чупа-чупс. Взрослая конфета для детей или детская конфета для взрослых?"
                     menu:
-                        "- Купить это (20 золота) -":
+                        "- Купить (20 золота) -":
                             if gold >= 20:
                                 $ gold -=20
                                 $ order_placed = True
@@ -520,7 +520,7 @@ label the_oddities:
                     with d3
                     call choco_text
                     menu:
-                        "- Купить это (40 золота) -":
+                        "- Купить (40 золота) -":
                             if gold >= 40:
                                 $ gold -= 40
                                 $ order_placed = True
@@ -540,7 +540,7 @@ label the_oddities:
                     with d3
                     call owl_text
                     menu:
-                        "- Купить это (35 золота) -":
+                        "- Купить (35 золота) -":
                             if gold >= 35:
                                 $ gold -= 35
                                 $ order_placed = True
@@ -568,7 +568,7 @@ label the_oddities:
                     with d3
                     call beer_text
                     menu:
-                        "- Купить это (50 золота) -":
+                        "- Купить (50 золота) -":
                             if gold >= 50:
                                 $ gold -= 50
                                 $ order_placed = True
@@ -590,7 +590,7 @@ label the_oddities:
                     with d3
                     call mag1_text
                     menu:
-                        "- Купить это (30 золота) -":
+                        "- Купить (30 золота) -":
                             if gold >= 30:
                                 $ gold -= 30
                                 $ order_placed = True
@@ -610,7 +610,7 @@ label the_oddities:
                     with d3
                     call mag2_text
                     menu:
-                        "- Купить это (45 золота) -":
+                        "- Купить (45 золота) -":
                             if gold >= 45:
                                 $ gold -= 45
                                 $ order_placed = True
@@ -631,7 +631,7 @@ label the_oddities:
                     with d3
                     call mag3_text
                     menu:
-                        "- Купить это (60 золота) -":
+                        "- Купить (60 золота) -":
                             if gold >= 60:
                                 $ gold -= 60
                                 $ order_placed = True
@@ -659,7 +659,7 @@ label the_oddities:
                     with d3
                     call mag4_text
                     menu:
-                        "- Купить это (80 золота) -":
+                        "- Купить (80 золота) -":
                             if gold >= 80:
                                 $ gold -= 80
                                 $ order_placed = True
@@ -687,7 +687,7 @@ label the_oddities:
                     with d3
                     call con_text
                     menu:
-                        "- Купить это (50 золота) -":
+                        "- Купить (50 золота) -":
                             if gold >= 50:
                                 $ gold -= 50
                                 $ order_placed = True
@@ -714,7 +714,7 @@ label the_oddities:
                     with d3
                     call vib_text
                     menu:
-                        "- Купить это (55 золота) -":
+                        "- Купить (55 золота) -":
                             if gold >= 55:
                                 $ gold -=55
                                 $ order_placed = True
@@ -734,7 +734,7 @@ label the_oddities:
                     with d3
                     call lub_text
                     menu:
-                        "- Купить это (60 золота) -":
+                        "- Купить (60 золота) -":
                             if gold >= 60:
                                 $ gold -= 60
                                 $ order_placed = True
@@ -755,7 +755,7 @@ label the_oddities:
                     with d3
                     call ball_text
                     menu:
-                        "- Купить это (70 золота) -":
+                        "- Купить (70 золота) -":
                             if gold >= 70:
                                 $ gold -= 70
                                 $ order_placed = True
@@ -782,7 +782,7 @@ label the_oddities:
                     with d3
                     call anal_text
                     menu:
-                        "- Купить это (85 золота) -":
+                        "- Купить (85 золота) -":
                             if gold >= 85:
                                 $ gold -= 85
                                 $ order_placed = True
@@ -809,7 +809,7 @@ label the_oddities:
                     with d3
                     call str_text
                     menu:
-                        "- Купить это (200 золота) -":
+                        "- Купить (200 золота) -":
                             if gold >= 200:
                                 $ gold -=200
                                 $ order_placed = True
@@ -850,13 +850,13 @@ label the_oddities:
 #                    hide screen bld1
 #                    with d3
 #                    jump app
-                "- \"А.В.Н.Э.\" знакок (100 золота) -" if not badge_01 == 7:
+                "- \"А.В.Н.Э.\" значок (100 золота) -" if not badge_01 == 7:
                     $ the_gift = "03_hp/18_store/29.png" # SPEW BADGE.
                     show screen gift
                     with d3
                     dahr "Значок \"А.В.Н.Э.\". Симулируй заботу..."
                     menu:
-                        "- Купить это (100 золота) -":
+                        "- Купить (100 золота) -":
                             if badge_01 == 7 or badge_01 == 1: # == 7 means "gifted already" # badge_01 == 1 because otherwise you could still buy it in the shop, even if you have 1 already.
                                 call do_have_book # "I already own this one."
                                 jump app
@@ -892,7 +892,7 @@ label the_oddities:
                     with d3
                     call nets_text
                     menu:
-                        "- Купить это (800 золота) -":
+                        "- Купить (800 золота) -":
                             if nets == 7 or nets == 1: # == 7 means "gifted already"
                                 call do_have_book # "I already own this one."
                                 jump app
@@ -979,7 +979,7 @@ label the_oddities:
                     with d3
                     dahr "Ночное платье для особых случаев."
                     menu:
-                        "- Купить платье (1500 золота) -":
+                        "- Купить (1500 золота) -":
                             if gold >= 1500:
                                 $ gold -=1500
                                 $ order_placed = True
@@ -1692,25 +1692,25 @@ label thx_4_shoping:
     $ days_in_delivery2 = one_of_five  #Generating one number out of three for various porpoises.
 
     if one_of_five ==  1:
-        dahr "Спасибо за покупки в \"Приблудах Дахра\". Ваш заказ будет доставлен завтра."
+        dahr "Спасибо за покупку в \"Приблудах Дахра\". Ваш заказ будет доставлен завтра."
         hide screen gift
         with d3
         return
     else:
-        dahr "Спасибо за покупки в \"Приблудах Дахра\". Ваш заказ будет доставлен в течении 1 - [one_of_five] дней."
+        dahr "Спасибо за покупку в \"Приблудах Дахра\". Ваш заказ будет доставлен в течении 1 - [one_of_five] дней."
         hide screen gift
         with d3
         return
     
 ### THANK YOU FOR shopping here. IMMEDIATE DELIVERY.
 label thx_4_shoping2:
-    dahr "Спасибо за покупки в \"Приблудах Дахра\"."
+    dahr "Спасибо за покупку в \"Приблудах Дахра\"."
     hide screen gift
     with d3
     return
 ### NOT ENOUGH GOLD ###
 label no_gold:
-    m "У меня нет столько золота...Это удручает..."
+    m "У меня нет столько золота... Это удручает..."
     hide screen gift
     with d3
     return
@@ -1754,7 +1754,7 @@ label mag1_text:
     return
           
 label mag2_text:
-    dahr "Женский журнал. \nВсе крутые девченки читают их."
+    dahr "Женский журнал. \nВсе крутые девчонки читают их."
     return
     
 label mag3_text:
@@ -1772,7 +1772,7 @@ label con_text:
     
 ### VIBRATOR ###
 label vib_text:
-    dahr "Великолепный, волшебным усиленный вибратор изготовлен из лозы дерева, с ядром сердечной жилы дракона."
+    dahr "Великолепный, волшебный усиленный вибратор изготовлен из лозы дерева, с ядром жилы дракона."
     return
     
 ### ANAL LUBRICANT ###
@@ -1792,7 +1792,7 @@ label anal_text:
           
 ### STRAP-ON ###
 label str_text:
-    dahr "Cтрапон \"Фестрал\".\nКогда вы его увидите -- потеряете дар речи."
+    dahr "Cтрапон \"Фестрал\".\nКогда вы его увидите - потеряете дар речи."
     return
 
 ### FISHNETS ###

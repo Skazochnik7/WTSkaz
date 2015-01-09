@@ -21,7 +21,7 @@ label giving_skirt:
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
     $herView.hideQQ()
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
@@ -51,7 +51,7 @@ label giving_skirt:
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     show screen notes
     #">\"Dresscode\" option unlocked. From now on you can affect Hermione's attire choices."
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
@@ -62,8 +62,8 @@ label giving_skirt:
     
 ### DRESS CODE ###
 label mini_on:
-    
-    $pos = gMakePos( h_xpos, h_ypos )
+    # WARNING_Z
+    $pos = POS_370
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -72,8 +72,8 @@ label mini_on:
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_04.png", pos )
-        her "Вы вероятно не в серьез, сэр!"
-        her "Эта мини юбка?!"
+        her "Вы же не всерьез, сэр?!"
+        her "Это мини юбка?!"
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.hideQQ()
@@ -92,7 +92,7 @@ label mini_on:
                 #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
                 #__#with d3                                                                                                                                                                                                                        #HERMIONE
                 $herView.showQQ( "body_66.png", pos )
-                her "С удовольствем..."
+                her "С удовольствием..."
                 #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 #__#with d3                                                                                                                                                                                                                        #HERMIONE
                 $herView.hideQQ()
@@ -291,7 +291,7 @@ label mini_on:
                                                                                                                                                                                                                           #HERMIONE
     
     
-    $ legs_02 = True
+    #__#$ legs_02 = True
     $ herView.data().addSkirt( CharacterExItem( herView.mClothesFolder, "skirt_short.png", G_Z_SKIRT ) )
     
     show screen blkfade
@@ -303,13 +303,14 @@ label mini_on:
     hide screen blkfade
     with d3
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    #__#with d3                                                                                                                                                                                                                        #HERMIONE
+    #__#with d3           
+                                                                                                                                                                                                                     #HERMIONE
     $herView.showQQ( None, pos )
     jump day_time_requests
     
     
 label mini_off:
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_370
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -322,7 +323,8 @@ label mini_off:
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.hideQQ()
-        $ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE 
+        #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE 
+        $herView.addFaceName( "body_03.png")
         
     if whoring >= 6 and whoring <= 11: # Lv 3-4.
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -332,7 +334,7 @@ label mini_off:
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_01.png", pos )
-        her "С удовольствем, сэр."
+        her "С удовольствием, сэр."
 
     if whoring >= 12 and whoring <= 17: # Lv 5-6.
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -355,7 +357,7 @@ label mini_off:
         her "Опять эта скукотища?"
     
     
-    $ legs_02 = False
+    #__#$ legs_02 = False
     $ herView.data().addSkirt( CharacterExItem( herView.mClothesFolder, "skirt_normal.png", G_Z_SKIRT ) )
     
     show screen blkfade
@@ -375,15 +377,15 @@ label badge_put:
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
     $herView.hideQQ()
 
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
     $herView.showQQ( "body_01.png", pos )
     her "Конечно, сэр..."
     
-    $ badges = True
-    $ ba_01 = True
+    #__#$ badges = True
+    #__#$ ba_01 = True
     $ herView.data().addItem( G_N_BADGE, CharacterExItem( herView.mClothesFolder, "badge.png", G_Z_DRESS + 1, 'dress' ) )
     
     show screen blkfade
@@ -402,15 +404,15 @@ label badge_take:
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
     $herView.hideQQ()
     
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
     $herView.showQQ( "body_01.png", pos )
     her "Как пожелаете, сэр..."
 
-    $ badges = False
-    $ ba_01 = False
+    #__#$ badges = False
+    #__#$ ba_01 = False
     $ herView.data().delItem( G_N_BADGE )
     
     show screen blkfade
@@ -426,7 +428,7 @@ label badge_take:
     
 ### FISHNETS ###
 label nets_put:
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_370
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -443,7 +445,7 @@ label nets_put:
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_31.png", pos )
-        her "Вы должно быть не серьезно, сэр!"
+        her "Вы, должно быть, не серьезно, сэр!"
         menu:
             m "..."
             "\"Ладно. Забудь.\"":
@@ -660,8 +662,8 @@ label nets_put:
     
      
     $ herView.data().addItem( G_N_NETS, CharacterExItem( herView.mClothesFolder, "nets.png", G_Z_LEGS + 1, 'legs' ) )
-    $ ne = True # Shows fishnets layer.
-    $ ne_01 = True # Shows the fishnets.
+    #__#$ ne = True # Shows fishnets layer.
+    #__#$ ne_01 = True # Shows the fishnets.
     
     #$ legs_02 = True
     
@@ -681,7 +683,7 @@ label nets_put:
     
     
 label nets_take:
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_370
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -694,7 +696,8 @@ label nets_take:
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.hideQQ()
-        $ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE 
+        #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE 
+        $herView.addFaceName( "body_03.png" )
         
     if whoring >= 6 and whoring <= 11: # Lv 3-4.
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -728,8 +731,8 @@ label nets_take:
     
     
     $ herView.data().delItem( G_N_NETS )
-    $ ne = False # Shows fishnets layer.
-    $ ne_01 = False # Shows the fishnets.
+    #__#$ ne = False # Shows fishnets layer.
+    #__#$ ne_01 = False # Shows the fishnets.
     #$ legs_02 = False
     
     show screen blkfade
@@ -763,7 +766,7 @@ label nets_take:
 label giving_lube: # JAR OF Анальный лубрикант.
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     $herView.hideQ( d5 )                                                                                                                                                                                                           #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
     
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -806,7 +809,7 @@ label giving_lube: # JAR OF Анальный лубрикант.
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_66.png", pos )
         her "Мне кажется, я знаю, что это такое..."
-        her "Но почему бы вам дать что-то вроде этого одному из ваших учеников, сэр?"
+        her "Но почему вы даете что-то вроде этого одному из ваших учеников, сэр?"
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.hideQQ()
@@ -836,7 +839,7 @@ label giving_lube: # JAR OF Анальный лубрикант.
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_189.png", pos )
         her "Эм...ну...я знаю девочку..."
-        her "То есть не знаю, она подруга моей подруги..."
+        her "То есть, не знаю, она подруга моей подруги..."
         her "Да, я передам это ей..."
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -854,7 +857,7 @@ label giving_lube: # JAR OF Анальный лубрикант.
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_186.png", pos )
-        her "Тем не менее, я думаю, вы не должны дарить такие подарки, вроде этого, вашим ученикам, сэр."
+        her "Тем не менее, я думаю, вы не должны дарить такие подарки вашим ученикам, сэр."
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.hideQQ()
@@ -891,7 +894,7 @@ label giving_lube: # JAR OF Анальный лубрикант.
         $herView.hideQQ()
         call happy #Message that says that Hermione's mood has improved.
  
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -905,7 +908,7 @@ label giving_condoms: # A PACK OF CONDOMS
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     #__#with d5
     $herView.hideQ( d5 )
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
     
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -943,7 +946,7 @@ label giving_condoms: # A PACK OF CONDOMS
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_04.png", pos )
-        her "Эм... Является ли это частью какой-то новой обучающей программы Хогвартса? Вроде сексуальное развитие или вроде того?"
+        her "Эм... Является ли это частью какой-то новой обучающей программы Хогвартса? Вроде сексуального развитие или вроде того?"
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.hideQQ()
@@ -1019,7 +1022,7 @@ label giving_condoms: # A PACK OF CONDOMS
         #__#$ h_body = "03_hp/13_hermione_main/body_45.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         $herView.addFaceName( "body_45.png" )
  
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1035,7 +1038,7 @@ label giving_candy: # CANDY.
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     #__#with d5
     $herView.hideQ( d5 )
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
     
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -1138,7 +1141,7 @@ label giving_candy: # CANDY.
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_46.png", pos )
-        her "Умные девушки используют конфеты как \"орудие\"."
+        her "Умные девушки используют конфеты как \"игрушку\"."
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3    
         $herView.hideQQ()
@@ -1157,7 +1160,7 @@ label giving_candy: # CANDY.
         #__#$ h_body = "03_hp/13_hermione_main/body_128.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         $herView.addFaceName( "body_128.png" )
  
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1173,7 +1176,7 @@ label giving_chocolate: # CHOCOLATE.
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     #__#with d5
     $herView.hideQ( d5 )
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
     
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -1309,7 +1312,7 @@ label giving_chocolate: # CHOCOLATE.
         call happy #Message that says that Hermione's mood has improved.
         
  
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1322,7 +1325,7 @@ label giving_vibrator: # VIBRATOR.
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     #__#with d5
     $herView.hideQ( d5 )
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
     
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -1425,7 +1428,7 @@ label giving_vibrator: # VIBRATOR.
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_29.png", pos )
-        her "Но тем не менее..."
+        her "Но, тем не менее..."
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3    
         $herView.hideQQ()
@@ -1482,7 +1485,7 @@ label giving_vibrator: # VIBRATOR.
         call happy #Message that says that Hermione's mood has improved.
         
  
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1508,7 +1511,7 @@ label giving_strapon: # STRAP-ON.
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     #__#with d5
     $herView.hideQ( d5 )
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
         $ mad -= 20
@@ -1732,7 +1735,7 @@ label giving_strapon: # STRAP-ON.
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_120.png", pos )
-        her "Не так, как вы думаете, сэр..."
+        her "Все не так, как вы могли подумать, сэр..."
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.hideQQ()
@@ -1761,11 +1764,11 @@ label giving_strapon: # STRAP-ON.
         call happy
 
  
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
-    $herView.showQQ( None, d3 )
+    $herView.showQQ( None, pos )
     jump day_time_requests
         
         
@@ -1778,7 +1781,7 @@ label giving_ballgag: # BALL GAG.
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     #__#with d5
     $herView.hideQ( d5 )
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
         
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -1827,7 +1830,7 @@ label giving_ballgag: # BALL GAG.
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d5
         $herView.showQ( "body_186.png", pos, d5 )
-        her "Сэр, вы не понимаете, насколько неправильно было бы для меня, принять от вас такой подарок?"
+        her "Сэр, вы не понимаете, насколько неправильно было бы для меня принять от вас такой подарок?"
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.hideQQ()
@@ -1843,7 +1846,7 @@ label giving_ballgag: # BALL GAG.
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_118.png", pos )
-        her "То есть эти пушистые наручники, это просто..."
+        her "То есть, эти пушистые наручники, это просто..."
         her "И этот круглый кляп... Эм..."
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1952,7 +1955,7 @@ label giving_ballgag: # BALL GAG.
         
 
  
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1977,7 +1980,7 @@ label giving_plug:
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     #__#with d5
     $herView.hideQ( d5 )
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
 
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -2089,7 +2092,7 @@ label giving_plug:
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_122.png", pos )
-        her "Хотя оно очень красиво..."
+        her "Хотя она очень красива..."
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.hideQQ()
@@ -2105,7 +2108,7 @@ label giving_plug:
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_121.png", pos )
-        her "Ну, ладно. Я возьму, если вы настаиваете."
+        her "Ну, ладно. Я возьму ее, если вы настаиваете."
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3    
         $herView.hideQQ()
@@ -2119,7 +2122,7 @@ label giving_plug:
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_127.png", pos )
-        her "Но конечно же никогда не воспользуюсь..."
+        her "Но, конечно же, никогда не воспользуюсь..."
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.hideQQ()
@@ -2132,7 +2135,7 @@ label giving_plug:
         
 
  
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2150,7 +2153,7 @@ label giving_mag1:
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     #__#with d5
     $herView.hideQ( d5 )
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
     
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -2281,7 +2284,7 @@ label giving_mag1:
         call no_change 
 
  
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2297,7 +2300,7 @@ label giving_mag2:
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     #__#with d5
     $herView.hideQ( d5 )
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
 
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -2437,7 +2440,7 @@ label giving_mag2:
         $herView.addFaceName( "body_06.png" )
 
  
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2451,7 +2454,7 @@ label giving_mag3:
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     #__#with d5
     $herView.hideQ( d5 )
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
 
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -2572,7 +2575,7 @@ label giving_mag3:
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_122.png", pos )
-        her "Э-э...я имела в виду журналы для взрослых?"
+        her "Э-э...я имела в виду - \"Журналы для взрослых?\""
         her "Это слегка опрометчиво..."
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2600,7 +2603,7 @@ label giving_mag3:
        
 
  
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2615,7 +2618,7 @@ label giving_mag3:
 label giving_mag4: 
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     $herView.hideQ( d5 )
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
     
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -2724,7 +2727,7 @@ label giving_mag4:
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_79.png", pos )
-        her "И я выброшу их в мусорное ведро, где они и...девушки, которые любят такие вещи..."
+        her "И я выброшу их в мусорное ведро, где они и должны быть... как и девушки, которые любят такие вещи..."
         call no_change
         #__#$ h_body = "03_hp/13_hermione_main/body_120.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         $herView.addFaceName( "body_120.png" )
@@ -2790,7 +2793,7 @@ label giving_mag4:
         $herView.addFaceName( "body_45.png" )
 
  
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2806,7 +2809,7 @@ label giving_beer:
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     #__#with d5
     $herView.hideQ( d5 )
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
     
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -2968,7 +2971,7 @@ label giving_beer:
         $herView.addFaceName( "body_01.png" )
 
  
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -2986,7 +2989,7 @@ label giving_owl:
     #__#with d5
     $herView.hideQ( d5 )
 
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
 
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -3003,7 +3006,7 @@ label giving_owl:
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_06.png", pos )
-        her "Это мило..."
+        her "Так мило..."
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3    
         $herView.hideQQ()
@@ -3118,7 +3121,7 @@ label giving_owl:
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_124.png", pos )
-        her "И так...оно вибрирует или как?"
+        her "И ...оно вибрирует или как?"
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.hideQQ()
@@ -3135,7 +3138,7 @@ label giving_owl:
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_118.png", pos )
-        her "Стыдно..."
+        her "Кошмар..."
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.hideQQ()
@@ -3157,7 +3160,7 @@ label giving_owl:
         $herView.addFaceName( "body_01.png" )
         call happy
 
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -3173,7 +3176,7 @@ label giving_sexdoll:
     #__#with d5
     $herView.hideQ( d5 )
    
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
     
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -3240,7 +3243,7 @@ label giving_sexdoll:
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_124.png", pos )
-        her "Но может мы сможешь использовать ее для розыгрышей или вроде того..."
+        her "Но может мы сможем использовать ее для розыгрышей или вроде того..."
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3    
         $herView.hideQQ()
@@ -3299,7 +3302,7 @@ label giving_sexdoll:
         
 
         
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -3312,7 +3315,7 @@ label giving_lingerie:
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     $herView.hideQ( d5 )
 
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
 
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -3424,7 +3427,7 @@ label giving_lingerie:
         call happy
         
 
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -3437,7 +3440,7 @@ label giving_broom:
     #__#with d5
     $herView.hideQ( d5 )
     
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
 
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -3638,7 +3641,7 @@ label giving_broom:
         call happy
 
 
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -3650,7 +3653,7 @@ label giving_krum:
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     #__#with d5
     $herView.hideQ( d5 )
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
     
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -3665,7 +3668,7 @@ label giving_krum:
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_185.png", pos )
-        her "Что мне с этим делать, сэр?"
+        her "Что мне с ним делать, сэр?"
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.hideQQ()
@@ -3673,7 +3676,7 @@ label giving_krum:
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_184.png", pos )
-        her "Нет, Спасибо."
+        her "Нет, спасибо."
         call no_change
         #__#$ h_body = "03_hp/13_hermione_main/body_71.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         $herView.addFaceName( "body_71.png" )
@@ -3746,7 +3749,7 @@ label giving_krum:
         #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
         #__#with d3                                                                                                                                                                                                                        #HERMIONE
         $herView.showQQ( "body_87.png", pos )
-        her "Я могу понять, что девушки находят в этих перекачаных парнях..."
+        her "Не понять, что девушки находят в этих перекачанных парнях..."
         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         #__#with d3    
         $herView.hideQQ()
@@ -3800,7 +3803,7 @@ label giving_krum:
         call happy
 
 
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -3816,7 +3819,7 @@ label giving_badge_01:
     #__#with d5
     $herView.hideQ( d5 )
 
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
 
     $ mad -= 30
@@ -3844,7 +3847,7 @@ label giving_badge_01:
     call happy
 
 
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -3859,7 +3862,7 @@ label giving_nets:
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     $herView.hideQ( d5 )
 
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_140
 
     $ mad -= 30
@@ -3889,7 +3892,7 @@ label giving_nets:
     #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     $herView.addFaceName( "body_03.png" )
 
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     $ pos = POS_370
     #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
     #__#with d3                                                                                                                                                                                                                        #HERMIONE

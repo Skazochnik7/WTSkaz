@@ -18,7 +18,7 @@ label door:
                     show screen blktone8
                     with d3
                     $ renpy.play('sounds/knocking.mp3')
-                    "*стук-стук-стук*"
+                    "*Тук-тук-тук*"
                     "..................."
                     hide screen blktone8
                     with d3
@@ -97,64 +97,63 @@ label door:
                 #stop music fadeout 2.0
                 
                 $ menu_x = 0.2 #Menu is moved to the left side.
-                $ h_xpos=410 #Defines position of the Hermione's full length sprite.
-                $ h_ypos=0
-
-                $h_pos = POS_410
-
+                #__#$ h_xpos=410 #Defines position of the Hermione's full length sprite.
+                #__#$ h_ypos=0
+                $ pos = POS_410
+                
                 $ renpy.play('sounds/door.mp3') #Sound of a door opening.
                 $ hermione_chibi_xpos = 400 #Near the desk.
                 show screen hermione_02 #Hermione stands still.
                 show screen bld1
                 with d3
                 if mad >=1 and mad < 3:
-                    $herView.showQ( "body_03.png", h_pos, d3 )
                     #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
                     #__#show screen hermione_main
                     #__#with d3
-                    herView ">Похоже, Гермиона по-прежнему немного расстроена вами..."
+                    $herView.showQQ( "body_03.png", pos )
+                    her ">Похоже, Гермиона по-прежнему немного расстроена вами..."
                 elif mad >=3 and mad < 10:
-                    $herView.showQ( "body_03.png", h_pos, d3 )
                     #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
                     #__#show screen hermione_main
                     #__#with d3
+                    $herView.showQQ( "body_03.png", pos )
                     ">Вы расстроили Гермиону."
                 elif mad >=10 and mad < 20:
-                    $herView.showQ( "body_09.png", h_pos, d3 )
                     #__#$ h_body = "03_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
                     #__#show screen hermione_main
                     #__#with d3
+                    $herView.showQQ( "body_09.png", pos )
                     ">Гермиона очень расстроена вами."
                 elif mad >=20 and mad < 40:
-                    $herView.showQ( "body_05.png", h_pos, d3 )
                     #__#$ h_body = "03_hp/13_hermione_main/body_05.png" #Sprite of Hermione's upper body.
                     #__#show screen hermione_main
                     #__#with d3
+                    $herView.showQQ( "body_05.png", pos )
                     ">Гермиона злится на вас."
                 elif mad >=40 and mad < 50:
-                    $herView.showQ( "body_47.png", h_pos, d3 )
                     #__#$ h_body = "03_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.
                     #__#show screen hermione_main
                     #__#with d3
+                    $herView.showQQ( "body_47.png", pos )
                     ">Гермиона очень злится на вас."
                 elif mad >=50 and mad < 60:
-                    $herView.showQ( "body_47.png", h_pos, d3 )
                     #__#$ h_body = "03_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.
                     #__#show screen hermione_main
                     #__#with d3
+                    $herView.showQQ( "body_47.png", pos )
                     ">Гермиона в гневе на вас."
                 elif mad >=60:
-                    $herView.showQ( "body_47.png", h_pos, d3 )
                     #__#$ h_body = "03_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.
                     #__#show screen hermione_main
                     #__#with d3
+                    $herView.showQQ( "body_47.png", pos )
                     ">Гермиона ненавидит вас."
                 else:
-                    $herView.showQ( "body_01.png", h_pos, d3 )
                     #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
                     #__#show screen hermione_main
                     #__#with d3
-                    herView "Да, профессор?"
+                    $herView.showQQ( "body_01.png", pos )
+                    her "Да, профессор?"
                 
                 label day_time_requests:
                 menu:
@@ -163,42 +162,42 @@ label door:
                         if mad <= 7:
                             jump chit_chat
                         else:
-                            herView "Мне нечего сказать вам..."    
+                            her "Мне нечего сказать вам..."    
                             jump day_time_requests
                     "- Обучение -" if not daytime and not tut_happened and whoring <= 12:
                         if mad >=1 and mad < 3:
-                            herView "Извините, возможно завтра..."
+                            her "Извините, возможно завтра..."
                             jump day_time_requests
                         elif mad >=3 and mad < 10:
-                            herView "Сегодня я не в настроении..."
+                            her "Сегодня я не в настроении..."
                             jump day_time_requests
                         elif mad >=20:
-                            herView "После того, что вы сделали, профессор?"
-                            herView "Я думаю нет..."
+                            her "После того, что вы сделали?"
+                            her "Я думаю нет..."
                             jump day_time_requests
                         else:
                             jump tutoring
                     "- Купить \"сексуальный\" рейтинг -" if buying_favors_from_hermione_unlocked:
                         if mad >=1 and mad < 3:
-                            herView "Мне жаль, профессор, может быть в другой раз..."
+                            her "Мне жаль, профессор, может быть в другой раз..."
                             jump day_time_requests
                         elif mad >=3 and mad < 10:
-                            herView "Мне не хочется сегодня..."
-                            herView "Может быть через пару дней..."
+                            her "Мне не хочется сегодня..."
+                            her "Может быть через пару дней..."
                             jump day_time_requests
                         elif mad >=10 and mad < 20:
-                            herView "Нет, спасибо...."
+                            her "Нет, спасибо...."
                             jump day_time_requests
                         elif mad >=20 and mad < 30:
-                            herView "После того, что вы сделали?"
-                            herView "Я так не думаю..."
+                            her "После того, что вы сделали?"
+                            her "Я так не думаю..."
                             jump day_time_requests
                         elif mad >=30 and mad < 40:
-                            herView "Вы не можете быть серьезным!"
+                            her "Вы серьезно!?"
                             jump day_time_requests
                         elif mad >=40:
-                            herView "Это какая-то ваша пошлая шутка?!"
-                            herView "После того, что вы сделали, я не хочу повторять это!"
+                            her "Это какая-то ваша пошлая шутка?!"
+                            her "После того, что вы сделали, я не хочу повторять это!"
                             jump day_time_requests
                         else:
                             jump new_personal_request
@@ -284,7 +283,7 @@ label door:
                                 $ gifted = True
                                 jump giving_skirt #28_gifts.rpy
                             
-                            "- \"А.В.Н.Э.\" жетон -" if badge_01 == 1:
+                            "- \"А.В.Н.Э.\" значок -" if badge_01 == 1:
                                 $ gifted = True
                                 jump giving_badge_01 #28_gifts.rpy
                             
@@ -299,7 +298,7 @@ label door:
                                 show screen  blktone
                                 with d3
                                 m "(Я чувствую, что не будет обратного пути, после того как я дам ей это платье...)"
-                                m "(Я готов для этого?)"
+                                m "(Я готов сделать это?)"
                                 hide screen blktone
                                 menu:
                                     "\"Да, вполне...\"":
@@ -319,22 +318,22 @@ label door:
                         
                     "- Гардероб -" if dress_code:
                         if mad >=1 and mad < 3:
-                            herView "Мне очень жаль, профессор. Может быть, в другой раз..."
+                            her "Мне очень жаль, профессор. Может быть, в другой раз..."
                             jump day_time_requests
                         elif mad >=3 and mad < 10:
-                            herView "Что не так с моей одеждой?"
+                            her "Что не так с моей одеждой?"
                             jump day_time_requests
                         elif mad >=10 and mad < 20:
-                            herView "Нет, спасибо...."
+                            her "Нет, спасибо...."
                             jump day_time_requests
                         elif mad >=20 and mad < 30:
-                            herView "Я так не думаю..."
+                            her "Я так не думаю..."
                             jump day_time_requests
                         elif mad >=30 and mad < 40:
-                            herView "Нет!"
+                            her "Нет!"
                             jump day_time_requests
                         elif mad >=40:
-                            herView "Я никогда не позволю вам снова решать, что мне носить!"
+                            her "Я никогда не позволю вам снова решать, что мне носить!"
                             jump day_time_requests
                         else:
                             pass
@@ -349,7 +348,7 @@ label door:
                             "- Надеть колготки -" if not ne_01 and nets == 7: # Не перевел
                                 jump nets_put
                             
-                            "- Убрать колготки -" if ne_01 and nets == 7:
+                            "- Снять колготки -" if ne_01 and nets == 7:
                                 jump nets_take
                             
                             "- Надеть мини-юбку -" if not legs_02 and gave_miniskirt: #Turns True when Hermione has the miniskirt.:
@@ -541,14 +540,14 @@ label door:
                         if daytime:
                             $ hermione_takes_classes = True
                             if mad >=3 and mad <= 6:
-                                herView "..............................."
+                                her "..............................."
                             elif mad >=7:
-                                herView "*Гм!*..."
+                                her "*Гм!*..."
                             else:
-                                herView "О, хорошо! Тогда я пойду на уроки."
+                                her "О, хорошо! Тогда я пойду на уроки."
                             hide screen bld1
                             #__#hide screen hermione_main
-                            $herView.hideQ()
+                            $herView.hideQ() #"WARNING_Z"
                             hide screen blktone 
                             hide screen hermione_02
                             hide screen ctc
@@ -556,14 +555,14 @@ label door:
                             jump day_main_menu
                         else:
                             if mad >=3 and mad <= 6:
-                                herView "..............................."
+                                her "..............................."
                             elif mad >=7:
-                                herView "Пф..."
+                                her "Пф..."
                             else:
-                                herView "О, хорошо! Тогда я пойду в кровать."
+                                her "О, хорошо! Тогда я пойду спать."
                             hide screen bld1
                             #__#hide screen hermione_main
-                            $herView.hideQ()
+                            $herView.hideQ() #"WARNING_Z"
                             hide screen blktone 
                             hide screen hermione_02
                             hide screen ctc
@@ -624,7 +623,7 @@ label request_02:
 
 ###################REQUEST_02_b (Level 01)
 label request_02_b:
-    "Hermione agrees to try and flirt with 3 classmates."
+    "Гермиона соглашается попытаться заигрывать с 3 одноклассниками."
     "Вы провожаете Гермиону."
     $ request_02_b = True
     if whoring <= 2:
@@ -642,7 +641,7 @@ label request_02_b_complete:
     "Гермиона возвращается с занятий. Она рассказывает вам о парнях с которыми флиртовала."
     $ request_02_b = False 
     $ hermione_sleeping = True
-    herView "О, хорошо! Значит я пойду в кровать."
+    her "О, хорошо! Значит я пойду в кровать."
     return
     
 ###################REQUEST_02_c (Level 01)
@@ -665,7 +664,7 @@ label request_02_c_complete:
     "Гермиона возвращается с занятий. Она рассказывает вам о флирте с ее учителем."
     $ request_02_c = False 
     $ hermione_sleeping = True
-    her "О, хорошо! Значит я пойду в кровать."
+    her "О, хорошо! Значит я пойду спать."
     return    
     
     
@@ -691,7 +690,7 @@ label request_03_complete:
     "Гермиона возвращается с занятий. Вы отдаете ей трусики обратно."
     $ request_03 = False #When False - you gave her her panties back.
     $ hermione_sleeping = True
-    her "О, хорошо! Значит я пойду в кровать."
+    her "О, хорошо! Значит я пойду спать."
     return
 
 
@@ -750,7 +749,7 @@ label request_05_complete:
     "Гермиона возвращается с занятий. Она рассказывает вам о своих попытках \"посветить\" своими трусиками перед одноклассником."
     $ request_05 = False 
     $ hermione_sleeping = True
-    herView "О, хорошо! Значит я пойду в кровать."
+    her "О, хорошо! Значит я пойду спать."
     return
     
 
@@ -774,7 +773,7 @@ label request_06_complete:
     "Гермиона возвращается с занятий и рассказывает о своих попытках \"посветить\" своими трусиками перед учителем."
     $ request_06 = False 
     $ hermione_sleeping = True
-    her "О, хорошо! Значит я пойду в кровать."
+    her "О, хорошо! Значит я пойду спать."
     return
     
 ################
@@ -831,7 +830,7 @@ label request_10_complete:
     "Гермиона возвращается с занятий. Она рассказывает вам, как она мелькнула своими сосками перед одноклассником."
     $ request_10 = False 
     $ hermione_sleeping = True
-    her "О, хорошо! Значит я пойду в кровать."
+    her "О, хорошо! Значит я пойду спать."
     return
 
 ################
@@ -888,7 +887,7 @@ label request_13_complete:
     "Гермиона возвращается с занятий и рассказывает вам, как все пялились на ее грудь."
     $ request_13 = False 
     $ hermione_sleeping = True
-    herView "О, хорошо! Значит я пойду в кровать."
+    her "О, хорошо! Значит я пойду спать."
     return
 
 ###################REQUEST_15 (Level 04) (35 pt.) (Flash a nipple to a teacher). (Available during daytime only).
@@ -909,7 +908,7 @@ label request_15_complete:
     "Гермиона возвращается с занятий. Она рассказывает вам, как она \"светила\" сосками перед учителем.."
     $ request_15 = False 
     $ hermione_sleeping = True
-    her "О, хорошо! Значит я пойду в кровать."
+    her "О, хорошо! Значит я пойду спать."
     return
 
 ################
@@ -1001,7 +1000,7 @@ label request_20_complete:
     "Гермиона возвращается с занятий и рассказывает вам, как она схватила член одного из своих одноклассников."
     $ request_20 = False 
     $ hermione_sleeping = True
-    herView "О, хорошо! Значит я пойду в кровать, Сэр."
+    her "О, хорошо! Значит я пойду спать."
     return
     
 ###################REQUEST_21 (Level 06) (55 pt.) (Cum on tits). 
@@ -1010,7 +1009,7 @@ label request_20_complete:
 label request_21: #LV.6 (Whoring = 15 - 17)
     if whoring <=14:
         jump too_much
-    "Гермиона обнажает свою грудь. Вы дрочите и кончая, заливаете спермой ее прелестные грудки."
+    "Гермиона обнажает свою грудь. Вы дрочите и кончая, заливаете спермой ее прелестные сиськи."
     "Вы провожаете Гермиону."
     if whoring <= 17:
         $ whoring +=1
@@ -1060,7 +1059,7 @@ label request_23_complete:
     "Гермиона возвращается с занятий и рассказывает вам, как дрочила одному из своих одноклассников во время урока."
     $ request_23 = False 
     $ hermione_sleeping = True
-    her "О, хорошо. Тогда я пойду спать, Сэр."
+    her "О, хорошо. Тогда я пойду спать."
     return
 
 ###################REQUEST_24 (Level 06) (55 pt.) (Flash your tits to a teacher). (Available during daytime only).
@@ -1081,7 +1080,7 @@ label request_24_complete:
     "Гермиона возвращается с занятий. Она рассказывает вам, как она \"светила\" сиськами перед учителем."
     $ request_24 = False 
     $ hermione_sleeping = True
-    her "О, хорошо. Тогда я пойду спать, Сэр."
+    her "О, хорошо. Тогда я пойду спать."
     return
     
 ###################REQUEST_25 (Level 07) (65 pt.) (Cum on face). 
@@ -1122,7 +1121,7 @@ label request_26_complete:
     "Гермиона возвращается с занятий и рассказывает вам, что не могла говорить с одноклассниками, потому что ее рот был заполнен вашей спермой."
     $ request_26 = False 
     $ hermione_sleeping = True
-    herView "О, хорошо. Тогда я пойду спать, Сэр."
+    her "О, хорошо. Тогда я пойду спать."
     return
 
 ###################REQUEST_27 (Level 07) (65 pt.) (Blow two classmates). (Available during daytime only).
@@ -1143,7 +1142,7 @@ label request_27_complete:
     "Гермиона возвращается с занятий. Она рассказывает вам, как она сосала двум одноклассникам во время занятий."
     $ request_27 = False 
     $ hermione_sleeping = True
-    her "О, хорошо. Тогда я пойду спать, Сэр."
+    her "О, хорошо. Тогда я пойду спать."
     return
 
 ###################REQUEST_28 (Level 07) (65 pt.) (Give handjob to a teacher). (Available during daytime only).
@@ -1164,7 +1163,7 @@ label request_28_complete:
     "Гермиона возвращается с занятий и рассказывает вам, как она мастурбировала учителю во время занятий."
     $ request_28 = False 
     $ hermione_sleeping = True
-    her "О, хорошо. Тогда я пойду спать, Сэр."
+    her "О, хорошо. Тогда я пойду спать."
     return
     
 ################
@@ -1177,7 +1176,7 @@ label request_29: #LV.8 (Whoring = 21 - 23)
         "Вы занимаетесь сексом с Гермионой, после чего отправляете ее на занятия."
     else:
         "Вы занимаетесь сексом с Гермионой."
-        "Вы отправляете ее в постель."
+        "Вы провожаете Гермиону."
     if whoring <= 23:
         $ whoring +=1
     $ gryffindor +=75
@@ -1207,7 +1206,7 @@ label request_30_complete:
     "Гермиона возвращается с занятий. Она рассказывает вам, как она делала минет учителю во время занятий."
     $ request_30 = False 
     $ hermione_sleeping = True
-    her "О, хорошо. Тогда я пойду спать, Сэр."
+    her "О, хорошо. Тогда я пойду спать."
     return
 
 ################
@@ -1217,7 +1216,7 @@ label request_31: #LV.9 (Whoring = 24 - 26)
     if whoring <=23:
         jump too_much
     "Вы занимаетесь анальным сексом с Гермионой"
-    "После вы провожаете ее в постель."
+    "Вы провожаете Гермиону."
     if whoring <= 26:
         $ whoring +=1
     $ gryffindor +=85
@@ -1245,7 +1244,7 @@ label request_32_complete:
     "Гермиона возвращается с занятий и говорит, что люди относились к ней как к шлюхе."
     $ request_32 = False 
     $ hermione_sleeping = True
-    her "Ох, как вы пожелаете, сэр. Я пойду спать."
+    her "О, хорошо. Тогда я пойду спать."
     return
 
 ###################REQUEST_33 (Level 10) (100 pt.) THIS REQUEST IS NOW CAN ONLY BE ACCESSED THROUGH REQUEST_25 (CUM ON FACE) when whoring > 26. (Go to class with cum on your face). (Daytime only)
@@ -1265,7 +1264,7 @@ label request_33_complete:
     "Гермиона возвращается с занятий и говорит, что люди относились к ней, как потаскухе и смеялись над ней."
     $ request_33 = False 
     $ hermione_sleeping = True
-    her "Ох, как вы пожелаете, сэр. Я пойду спать."
+    her "О, хорошо. Тогда я пойду спать."
     return
 
 
@@ -1275,35 +1274,31 @@ label request_33_complete:
 #############This massage shows when you make a request, and Hermione refuses because she is not slutty enough yet.
 label too_much:
     stop music fadeout 2.0
-    
-    $herView.hideQ( d3 )
     #__#hide screen hermione_main
     #__#with d3
-    
+    $herView.hideQQ()
     $ h_xpos=120 #Defines position of the Hermione's full length sprite. center: 120. Right: 370.
-    $pos = POS_120
-    #__#$ h_body = "03_hp/13_hermione_main/body_48.png" #Flashing panties  
+    #__#$ h_body = "03_hp/13_hermione_main/body_48.png" #Flashing panties
     #__#show screen hermione_main
     #__#with d3
-    $herView.showQ( "body_48.png", pos, d3 )
-    herView "Профессор Дамблдор??!"
-    herView "Как вы можете просить меня о таком!?"
-
-    $herView.hideQ( d3 )    
+    $herView.showQQ( "body_48.png", pos )
+    her "Профессор Дамблдор??!"
+    her "Как вы можете просить меня о таком!?"
     #__#hide screen hermione_main
     #__#with d3
-    #__#$ h_xpos=120 #Defines position of the Hermione's full length sprite. center: 120. Right: 370.
+    $herView.hideQQ()
+    $ h_xpos=120 #Defines position of the Hermione's full length sprite. center: 120. Right: 370.
     #__#$ h_body = "03_hp/13_hermione_main/body_34.png" #Flashing panties
     #__#show screen hermione_main
     #__#with d3
-    $herView.showQ( "body_34.png", pos, d3 )
-    herView "По моему, мне лучше уйти."
+    $herView.showQQ( "body_34.png", pos )
+    her "По-моему, мне лучше уйти."
 
     hide screen blktone
     hide screen bld1
     #__#hide screen hermione_main
-    #__#with Dissolve(.3)
-    $herView.hideQ( Dissolve(.3) )
+    $herView.hideQ() #"WARNING_Z"
+    with Dissolve(.3)
     $ walk_xpos=400 #Animation of walking chibi. (From)
     $ walk_xpos2=610 #Coordinates of it's movement. (To)
     $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
@@ -1334,3 +1329,4 @@ label too_much:
     else:
         $ hermione_sleeping = True
         jump night_main_menu
+

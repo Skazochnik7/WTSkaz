@@ -229,7 +229,7 @@ screen extras:
         
         
         
-        textbutton _("Об игре...") action Start("abouttrainer")
+        textbutton _("Об игре") action Start("abouttrainer")
         textbutton _("F.A.Q.") action Start("faq")
         if not persistent.game_complete:
             textbutton _("{color=#858585}Галерея{/color}") action Start("gallery_locked")
@@ -461,7 +461,7 @@ screen preferences:
                 bar value Preference("auto-forward time")
 
                 if config.has_voice:
-                    textbutton _("ЖДать голос") action Preference("wait for voice", "toggle")
+                    textbutton _("Ждать голос") action Preference("wait for voice", "toggle")
 
         vbox:
             frame:
