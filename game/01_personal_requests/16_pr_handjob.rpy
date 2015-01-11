@@ -800,7 +800,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 pause 
                         
                 #__#$ aftersperm = True
-                $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
                 #__#$ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
                 #__#$ her_head_ypos=300 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
                 $ posHead = gMakePos( 390, 300 )
@@ -985,7 +985,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 with d3
                         
                 #__#$ aftersperm = True
-                $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
                 #__#$ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
                 #__#$ her_head_ypos=300 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
                 $ posHead = gMakePos( 390, 300 )
@@ -1054,7 +1054,6 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                     #__#with d3
                     $herView.hideQQ()
                     #__#$ uni_sperm = False
-                    $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
                 else:
                     if daytime:
                         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -1087,7 +1086,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                         #__#with d3
                         $herView.hideQQ()
                         #__#$ uni_sperm = False
-                        $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                        $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
                     else:
                         #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                         #__#with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1121,7 +1120,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                         #__#with d3
                         $herView.hideQQ()
                         #__#$ uni_sperm = False
-                        $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                        $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
         #her "Могу я получить свои очки?"
 
     elif request_16_points == 1: # SECOND EVENT <============================================================== EVENT 02
@@ -1951,7 +1950,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 pause 
                         
                 #__#$ aftersperm = True
-                $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
                 #__#$ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
                 #__#$ her_head_ypos=300 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
                 $ posHead = gMakePos( 390, 300 )
@@ -2123,7 +2122,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 with d3
                         
                 #__#$ aftersperm = True
-                $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
                 #__#$ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
                 #__#$ her_head_ypos=300 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
                 $ posHead = gMakePos( 390, 300 )
@@ -2235,7 +2234,6 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 $herView.hideQ() #"WARNING_Z"
                 with fade  
-                $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) ) 
     
     label done_with_handjob:
                 
@@ -2256,6 +2254,8 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     hide screen blkfade
     with d3
     
+    $herViewHead.data().delItem( 'sperm')
+
     m "Да, мисс Грейнджер. [current_payout] очков \"Гриффиндору\"." 
     $ gryffindor +=current_payout
     #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)

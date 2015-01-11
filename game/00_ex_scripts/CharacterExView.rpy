@@ -17,7 +17,7 @@ init -999 python:
 
 init -998 python:
     from copy import deepcopy 
-    class CharacterExView:
+    class CharacterExView(store.object):
         # constructor - memorizing Character object
         def __init__( self, zOrder, aCharacter, aUniqName = 'default' ):
             self.mCh = aCharacter
@@ -55,9 +55,11 @@ init -998 python:
         
         def attach( self, aData ):
             self.mData = aData
+            aData.attachedToView( self )
             
         def detach( self ):
             self.mData = None
+            aData.detachedFromView( self )
             
         def data( self ):
             return self.mData

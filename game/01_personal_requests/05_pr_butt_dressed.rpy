@@ -796,8 +796,8 @@ label ending_of_screams_of_pleasure:
     hide screen blkfade
     with Dissolve(1)
     
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite.
-    $ h_ypos=0
+    #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite.
+    #__#$ h_ypos=0
     $ pos = POS_370
     #__#$ h_body = "03_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
     #__#show screen hermione_main

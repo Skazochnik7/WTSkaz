@@ -21,7 +21,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
     $ current_payout = 35 #Because will have option to pay extra.
 
     $ herView.data().saveState()
-    $ herView.data().addItem( 'splatters', CharacterExItemSplatters( herView.mMiscFolder, "splatters.png", G_Z_POSE - 1 ) )
+    $ herView.data().addItem( 'sweat', CharacterExItemSweat( herView.mMiscFolder, "sweat.png", G_Z_POSE - 1 ) )
 
     if request_11_points == 0: #<==============================EVENT 01
         
@@ -2172,7 +2172,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         hide screen blkfade
                                         with d5
                                         $herView.data().delTransform()
-                                        $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                        $herView.data().delItem( 'sperm' )
+                                        $herView.data().addItem( 'sperm_after', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
                                         #__#$ flip = False # Flips hermione_main
                                         #__#$ only_upper = False #Show legs.
                                         #__#$ aftersperm = True #Show cum stains.
@@ -3177,7 +3178,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                             #WARNING_Z
                                             #__#$ uni_sperm = False #Sperm layer is not displayed.
                                             #__#$ aftersperm = True #Aftersperm layer is displayed. 
-                                            $herViewHead.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                            $herViewHead.data().delItem( 'sperm' )
+                                            $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
                                             stop music fadeout 5.0
                                             ">.................{w}.................{w}.................{w}................."
                                             #__#show screen h_head2                                                              # HERMIONE
@@ -3279,7 +3281,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                                     pause.5
                                                     #WARNING_Z
                                                     #__#$herViewHead.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
-                                                    $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                                    $herView.data().addItem( 'sperm_after', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
                                                     #__#$ aftersperm = True #Show cum stains on Hermione's uniform.
                                                     jump done_with_dancing
                                                 "\"Десять дополнительных очков.\"":
@@ -3311,7 +3313,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                                     pause.5
                                                     #WARNING_Z
                                                     #__#$herViewHead.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
-                                                    $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                                    $herView.data().addItem( 'sperm_after', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
                                                     #__#$ aftersperm = True #Show cum stains on Hermione's uniform.
                                                     jump done_with_dancing
                                                 "\"Вы получите 25 дополнительных очков.\"":
@@ -3337,7 +3339,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                                     with d7
                                                     pause.5
                                                     #WARNING_Z
-                                                    $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                                    $herView.data().addItem( 'sperm_after', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
                                                     #__#$ aftersperm = True #Show cum stains on Hermione's uniform.
                                                     jump done_with_dancing
                                                 "\"Вы получаете 50 дополнительных очков.\"":
@@ -3382,7 +3384,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                                     pause.5
                                                     #WARNING_Z
                                                     #__#$herViewHead.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
-                                                    $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                                    $herView.data().addItem( 'sperm_after', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
                                                     #__#$ aftersperm = True #Show cum stains on Hermione's uniform.
                                                     jump done_with_dancing
                                                 "\"Ты ни черта не получишь!\"":
@@ -3411,7 +3413,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                                             pause.5
                                                             #WARNING_Z
                                                             #__#$herViewHead.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
-                                                            $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                                                            $herView.data().addItem( 'sperm_after', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
                                                             #__#$ aftersperm = True #Show cum stains on Hermione's uniform.
                                                             jump done_with_dancing
                                                         "\"Нет, их тоже не получишь!\"":
@@ -3661,6 +3663,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
     label done_with_dancing:
     call req11_dress
     #__#$ uni_sperm = False #Sperm layer is not displayed in hermione screen.
+    $herView.data().delItem( 'sperm' )
+    
     $ gryffindor += current_payout #35
     
     hide screen h_c_u

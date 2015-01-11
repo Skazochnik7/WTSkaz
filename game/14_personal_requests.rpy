@@ -1,5 +1,5 @@
 label new_personal_request:
-    $ pos = gMakePos( h_xpos, h_ypos )
+    $ pos = POS_410
     if slytherin > gryffindor or slytherin == gryffindor:
         #__#show screen hermione_main
         $ herView.showQ( None, pos )
@@ -464,7 +464,7 @@ label new_request_09: #LV.3 (Whoring = 6 - 8)
         #__#with d3
         $herView.hideQQ()
         #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-        $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
+        #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
         $ pos = POS_370
         #__#show screen hermione_main
         #__#with d3

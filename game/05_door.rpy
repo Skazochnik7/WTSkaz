@@ -1277,7 +1277,8 @@ label too_much:
     #__#hide screen hermione_main
     #__#with d3
     $herView.hideQQ()
-    $ h_xpos=120 #Defines position of the Hermione's full length sprite. center: 120. Right: 370.
+    #__#$ h_xpos=120 #Defines position of the Hermione's full length sprite. center: 120. Right: 370.
+    $ pos = POS_120
     #__#$ h_body = "03_hp/13_hermione_main/body_48.png" #Flashing panties
     #__#show screen hermione_main
     #__#with d3
@@ -1287,7 +1288,7 @@ label too_much:
     #__#hide screen hermione_main
     #__#with d3
     $herView.hideQQ()
-    $ h_xpos=120 #Defines position of the Hermione's full length sprite. center: 120. Right: 370.
+    #__#$ h_xpos=120 #Defines position of the Hermione's full length sprite. center: 120. Right: 370.
     #__#$ h_body = "03_hp/13_hermione_main/body_34.png" #Flashing panties
     #__#show screen hermione_main
     #__#with d3

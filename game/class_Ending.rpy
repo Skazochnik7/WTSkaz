@@ -9,7 +9,7 @@
 init -999 python:
   
 # Класс для удобного управления концовками. При инициализации в игре создается объект $ end = Ending()
-    class Ending:
+    class Ending(store.object):
         # constructor - Ending initializing
         def __init__( self ):
             self.Index = const_ENDING_YOUR_WHORE # Номер концовки по умолчанию

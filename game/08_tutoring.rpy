@@ -15,9 +15,12 @@ label tutoring:
     her "Конечно, сэр."
     her "Я только схожу за своими книгами."
     
-    
     #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     $herView.hideQ() #"WARNING_Z"
+
+    #add pose with the book!
+    $herView.data().saveState()
+    $herView.data().addPose( CharacterExItemPoseBook( herView.mPoseFolder, "pose_with_book.png", G_Z_POSE ) )
 
     show screen blkfade
     with d3
@@ -57,7 +60,7 @@ label tutoring:
         #__#with d3
         $herView.showQQ( "body_199.png", pos )
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1
-        her "Еще раз спасибо, за то, что делаете это для меня, сэр."
+        her "Еще раз спасибо за то, что делаете это для меня, сэр."
         her "Вы, должно быть, очень заняты школьными делами, но все равно вы нашли время на занятия со мной..."
         her "Я хочу сказать, что очень ценю вашу заботу."
         m "Не стоит благодарностей, мисс Грейнджер. Следить за успеваемостью учеников - одна из главных обязанностей директора."
@@ -65,6 +68,10 @@ label tutoring:
         #__#hide screen hermione_main
         #__#with d3
         $herView.hideQQ()
+
+        # hide books pose
+        $herView.data().delPose()
+
         #__#$ only_upper = False
         #__#$ h_body = "03_hp/13_hermione_main/body_08.png"
         #__#show screen hermione_main
@@ -99,8 +106,9 @@ label tutoring:
         $herView.showQQ( "body_06.png", pos )
         her "Давайте приступим, Профессор?"                                                                                                                                                                                   #HERMIONE
         m "Конечно, дитя. У тебя есть ко мне какие-то вопросы?"
-        show screen hermione_main
-        with d3
+        #__#show screen hermione_main
+        #__#with d3
+        $herView.showQQ( "body_06.png", pos )
         her "Думаю, пока нет. Хотя..."
         #__#hide screen hermione_main
         #__#with d3
@@ -215,7 +223,7 @@ label tutoring:
         #__#show screen hermione_main
         #__#with d3
         $herView.showQQ( "body_01.png", pos )
-        her "Тогда можем мы вернуться к моему вопросу, сэр?"        
+        her "Тогда можем ли мы вернуться к моему вопросу, сэр?"        
         m "Ах, да... Вопрос..."
         m "Кхм..."
         m "Мисс Грейнджер, что вы знаете о зябликах?"
@@ -292,6 +300,7 @@ label tutoring:
         #__#with d3
         $herView.hideQQ()
         m "А теперь..."
+        $ menu_x = 0.5 #Default position of the menu (0.5). Version B is $ menu_x = 0.2
         menu:
             "Эта хрень сжирает зяблика!":
                 #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -351,6 +360,7 @@ label tutoring:
                 #__#with d3
                 $herView.hideQQ()
                 #Гермиона уходит
+                call hermione_leave_tutoring
              
             "Зяблик сжирает эту хрень!":
                 g4 "Он вонзает свой острый как бритва клюв в тушу бедной твари!"
@@ -392,6 +402,8 @@ label tutoring:
                 $herView.hideQQ()
                 her "..."
                 #Гермиона уходит
+                call hermione_leave_tutoring
+
                 g9 "А мне пора приступать к \"чистке труб\"."
                 show screen blkfade # Затемнение экрана
                 g4 "Получи, чертова расчлененная тварь!"
@@ -492,7 +504,10 @@ label tutoring:
                 her "...конечно, сэр."
                 her "До свидания."
                 m "Доброй ночи, мисс Грейнджер."
+                $herView.hideQQ()
                 #Гермиона уходит
+                call hermione_leave_tutoring
+
                 g9 "Что ж, пора приступать к \"чистке труб\"."
                 show screen blkfade # Экран темнеет
                 g4 "Получай, маленькая сисястая ведьма!"
@@ -504,9 +519,12 @@ label tutoring:
         m "..."
         m "Вряд ли я смогу обучать ее, сам ничего толком не зная об этом мире..."
         m "Думаю, мне стоит поговорить об этом со Снейпом."
+
+        $herView.data().loadState()
         jump day_start    
         #$ knowledge +=1
     
+
     # "You spend the evening tutoring Hermione. Hermione become a bit smarter."
     
     elif knowledge >= 5 and tutoring_events == 0 and whoring >= 1:
@@ -576,3 +594,17 @@ label tutoring:
     "> Вы отпускаете Гермиону."
     jump day_start
 
+
+label hermione_leave_tutoring:
+    hide screen hermione_02 #Hermione stands still.
+    with d3
+    $ walk_xpos=400 #Animation of walking chibi. (From)
+    $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    show screen hermione_walk_01_f 
+    pause 2
+    hide screen hermione_walk_01_f 
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    with Dissolve(.3)
+
+    return

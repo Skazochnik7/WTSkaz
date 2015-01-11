@@ -1,6 +1,6 @@
 ﻿init -998 python:
     from copy import deepcopy 
-    class CharacterExData:
+    class CharacterExData(store.object):
         # constructor - memorizing Character object
         def __init__( self ):
             # currenlty dressed things
@@ -10,7 +10,26 @@
             # here we'll save all items on Hermione and transforms
             self.mSavedItems = {}
             self.mSavedTransforms = {}
-            
+            # list of all attached views
+            self.mViews = []
+           
+        ##########################################################
+        # methods to save/delete attached views
+        ##########################################################
+
+        def getView( self, aIndex = 0 ):
+            if aIndex < len( self.mViews ):
+                return self.mViews[ aIndex ]
+            else:
+                return None
+
+        def attachedToView( self, aView ):
+            self.mViews.append( aView )
+
+        def detachedFromView( self, aView ):
+            if aView in self.mViews:
+                self.mViews.remove( aView )
+
         ##########################################################
         # methods to work with global character transforms
         ##########################################################
@@ -163,6 +182,7 @@
         ##########################################################        
 
         def _addItem( self, aName, aData ):
+            self._delItem( aName )
             aData.onSelfAdded( self.mStuff, self )
             for item in self.mStuff.values():
                 item.onItemAdded( aName, aData, self )

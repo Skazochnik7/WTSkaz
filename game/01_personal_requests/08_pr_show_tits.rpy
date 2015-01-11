@@ -1002,6 +1002,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
 
                         #add sperm on tits
                         call addSperm
+
                         $herView.showQQ( "body_85.png", pos )
                         pause
                         her "Моя форма..."
@@ -1020,6 +1021,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         hide screen chair_02
                         show screen hermione_02
                         with d3
+
                         #__#$ sperm_on_tits = False
                         #__#$ only_upper = False
                         #__#$ aftersperm = True
@@ -1027,6 +1029,8 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         hide screen blkfade
                         with d5
                         
+                        call delSperm
+
                         #__#$ badges = True # Turns badges back on from hermione_main screen.
                         
                         #__#show screen hermione_main
@@ -1171,7 +1175,9 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         #__#$ badges = False # Hides any badges from hermione_main screen.
                         #__#show screen hermione_main
                         #__#with d3
+
                         call addSperm
+
                         $herView.showQQ( "body_85.png", pos )
                         pause
                         her "Моя форма испачкана..."
@@ -1210,9 +1216,12 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         #__#$ h_body = "03_hp/13_hermione_main/body_45.png" #Sprite of Hermione's upper body.
                         hide screen blkfade
                         with d5
+
+                        call delSperm
                         
                         #here we remove pose and add aftersperm effect
                         call addAfterSperm
+
                         #__#show screen hermione_main
                         $herView.showQ( "body_45.png", pos )
                         pause
@@ -1265,7 +1274,9 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         #__#$ h_body = "03_hp/13_hermione_main/body_85.png" #Sprite of Hermione's upper body.
                         #__#show screen hermione_main
                         #__#with d3
+
                         call addSperm
+
                         $herView.showQQ( "body_85.png", pos )
                         pause
                         her "Моя форма испачкана..."
@@ -1304,11 +1315,15 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         #__#$ h_body = "03_hp/13_hermione_main/body_45.png" #Sprite of Hermione's upper body.
                         hide screen blkfade
                         with d5
+
+                        call delSperm
+
                         #__#$ badges = True # Hides any badges from hermione_main screen.
                         #__#show screen hermione_main
                         
                         # remove pose and add aftersperm
                         call addAfterSperm
+
                         $herView.showQ( "body_45.png", pos )
                         pause
                         her "Ну, это следует сделать сейчас..."
@@ -1450,11 +1465,16 @@ label addSperm:
     # add sperm item!
     $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00.png', G_Z_FACE + 1 ) )
     return
+
+label delSperm:
+    # add sperm item!
+    $herView.data().delItem( 'sperm' )
+    return
     
 label addAfterSperm:
     # del pose and add aftersperm
     $herView.data().delPose()
-    $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+    $herView.data().addItem( 'sperm_after', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
     return
     
 label loadState_and_could_not_flirt:

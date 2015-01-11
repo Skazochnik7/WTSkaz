@@ -308,11 +308,13 @@ screen hermione_lift_skirt_no_panties: #Hermione lifts her skirt
     tag hermione
     add "03_hp/16_hermione_chibi/panties_02.png" at Position(xpos=350, ypos=190)
 
-
-# this is stayed because i don't rework the 27_final_events.rpy... yet
-screen hermione_03: #Hermione lifts her skirt
+screen hermione_lift_skirt_shift_panties: #Hermione lifts her skirt
     tag hermione
-    add "03_hp/16_hermione_chibi/panties_00_old.png" at Position(xpos=350, ypos=190)
+    add "03_hp/16_hermione_chibi/panties_02_s.png" at Position(xpos=350, ypos=190)
+
+#__#screen hermione_03: #Hermione lifts her skirt
+#__#    tag hermione
+#__#    add "03_hp/16_hermione_chibi/panties_00_old.png" at Position(xpos=350, ypos=190)
  
 #__#screen hermione_03_b: #Hermione lifts her skirt. NO PANTIES.
 #__#    tag hermione
@@ -594,109 +596,6 @@ screen with_snape_animated:
     add "genie_jerking_sperm"
     tag hanging_with_snape
     zorder 3
-
-    
-    
-### HERMIONE MAIN ###
-screen hermione_main: #Screen that shows a full sprite of HERMIONE.
-    #tag big_hermione
-    if not only_upper:
-        if legs_02: #Mini skirt.
-            add "03_hp/13_hermione_main/legs_02.png" xpos h_xpos ypos h_ypos
-        if not legs_02:
-            add "03_hp/13_hermione_main/legs_01.png" xpos h_xpos ypos h_ypos
-    add h_body xpos h_xpos ypos h_ypos
-    if autograph:
-        add "03_hp/13_hermione_main/auto.png" xpos h_xpos ypos h_ypos #Displays an autograph on her leg.
-    if sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
-        add "03_hp/13_hermione_main/sperm_00.png" xpos h_xpos ypos h_ypos #Displays sperm.
-    if aftersperm: #Shows cum stains on Hermione's uniform.
-        add "03_hp/13_hermione_main/sperm_00_after.png" xpos h_xpos ypos h_ypos #Displays sperm.
-    
-    if ne: # Desplays a fishnets in hermione_main screen.
-        if ne_01:
-            if flip:
-                add im.Flip("03_hp/13_hermione_main/nets.png", horizontal=True) xpos h_xpos ypos h_ypos # FISHNETS.
-                if not legs_02 and not only_upper: # Long skirt is on.
-                    add im.Flip("03_hp/13_hermione_main/patch.png", horizontal=True) xpos h_xpos ypos h_ypos # Patch
-            else:
-                add "03_hp/13_hermione_main/nets.png" xpos h_xpos ypos h_ypos # FISHNETS.
-                if not legs_02 and not only_upper: # Long skirt is on.
-                    add "03_hp/13_hermione_main/patch.png" xpos h_xpos ypos h_ypos # Patch
-    
-    if uni_sperm:
-        add u_sperm xpos h_xpos ypos h_ypos #Universal sperm.
-    if h_tears:
-        add u_tears_pic xpos h_xpos ypos h_ypos #Universal tears layer.
-    if robeon:
-        add "03_hp/13_hermione_main/robe.png" xpos h_xpos ypos h_ypos #The Robe.
-    if badges:
-        if ba_01:
-            add "03_hp/13_hermione_main/badge.png" xpos h_xpos ypos h_ypos #The Robe.
-    
-        
-        
-        
-    zorder hermione_main_zorder #(5) Otherwise candle light is shown on top.
-    
-    
-### HERMIONE HEAD ONLY ###
-screen h_head: #Screen that shows a full sprite of HERMIONE.
-    tag head
-    if not only_upper:
-        add "03_hp/13_hermione_main/legs_01.png" xpos h_xpos ypos h_ypos
-    add h_body xpos h_xpos ypos h_ypos
-    if sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
-        add "03_hp/13_hermione_main/auto_02.png" xpos h_xpos ypos h_ypos #Displays sperm.
-    if aftersperm: #Shows cum stains on Hermione's uniform.
-        add "03_hp/13_hermione_main/auto_03.png" xpos h_xpos ypos h_ypos #Displays sperm.
-    if uni_sperm:
-        add u_sperm xpos h_xpos ypos h_ypos #Universal sperm.
-    if h_tears:
-        add u_tears_pic xpos h_xpos ypos h_ypos #Universal tears layer.
-    if robeon:
-        add "03_hp/13_hermione_main/robe.png" xpos h_xpos ypos h_ypos #The Robe.
-    if badges:
-        if ba_01:
-            add "03_hp/13_hermione_main/badge.png" xpos h_xpos ypos h_ypos #The Robe.
-    if ne: # Desplays a fishnets in hermione_main screen.
-        if ne_01:
-            add "03_hp/13_hermione_main/nets.png" xpos h_xpos ypos h_ypos #The Robe.
-
-    if tiara:
-        add "03_hp/13_hermione_main/auto_09.png" xpos her_head_xpos ypos her_head_ypos # Tiara
-    zorder 8
-    
-    
-screen h_head2: #Screen that shows Hermione's head.
-    tag head
-    if not only_upper:
-        add "03_hp/13_hermione_main/legs_01.png" xpos her_head_xpos ypos her_head_ypos
-    add h_body xpos her_head_xpos ypos her_head_ypos
-    if sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
-        add "03_hp/13_hermione_main/auto_02.png" xpos her_head_xpos ypos her_head_ypos #Displays sperm.
-    if aftersperm: #Shows cum stains on Hermione's uniform.
-        add "03_hp/13_hermione_main/auto_03.png" xpos her_head_xpos ypos her_head_ypos #Displays sperm.
-    if uni_sperm:
-        add u_sperm xpos her_head_xpos ypos her_head_ypos #Universal sperm.
-    if h_tears:
-        add u_tears_pic xpos h_xpos ypos h_ypos #Universal tears layer.
-    if robeon:
-        add "03_hp/13_hermione_main/robe.png" xpos her_head_xpos ypos her_head_ypos #The Robe.
-    if badges:
-        if ba_01:
-            add "03_hp/13_hermione_main/badge.png" xpos her_head_xpos ypos her_head_ypos #The Robe.
-    if ne: # Desplays a fishnets in hermione_main screen.
-        if ne_01:
-            add "03_hp/13_hermione_main/nets.png" xpos her_head_xpos ypos her_head_ypos #The Robe.
-    
-    
-    
-    if tiara:
-        add "03_hp/13_hermione_main/auto_09.png" xpos her_head_xpos ypos her_head_ypos  # Tiara
-        
-    zorder 8  
-    
     
     
 screen s_head: #Snape. Head.

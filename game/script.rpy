@@ -4621,28 +4621,6 @@ define sna_head_main = Character('Северус Снейп',
     ctc="ctc3",
     ctc_position="fixed")
 
-# and this one is from duel.rpy
-define sna_01 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_01.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-# for now it's used only in final_event.rpy
-define sna_17 = Character('Северус Снейп',
-    color="#402313",
-    window_right_padding=270,
-    show_side_image=Image("03_hp/12_snape_head/head_17.png", xalign=1.0, yalign=0.0),
-    show_two_window=True,
-    show_who_xalign=0.5,
-    ctc="ctc3",
-    ctc_position="fixed")
-
-
-
 
 ### HERMIONE HEAD ###
 define her_head_state = 1

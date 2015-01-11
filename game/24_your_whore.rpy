@@ -2,9 +2,10 @@ label your_whore:
     show screen end_u_1
     $ end_u_1_pic =  "03_hp/17_ending/02.png"
     
-    $ badges = False
+    #__#$ badges = False
     
-    hide screen hermione_main
+    #__#hide screen hermione_main
+    $herView.hideQ() #"WARNING_Z"
     hide screen room # MAIN BG (DAY).
     
     hide screen notes #A bunch of notes poping out with a "win" sound effect.
@@ -58,15 +59,18 @@ label your_whore:
     # FADE
     show screen blktone
     with d7
+
+    $herView.data().saveState()
+    $herView.data().addItem( 'splatters', CharacterExItemSplatters( herView.mMiscFolder, "splatters.png", G_Z_POSE + 1 ) )
     
 #    if queen_whore_ending: #Students talking. Ending "Queen whore".
     if end.IsEnding(const_ENDING_STRONG_GIRL): #Students talking. Ending "Prostitute".
         mal "Чувак, слышал новую сплетню? Гермиона теперь стала брать бабки."
-        mal2 "Ну после того, как она в одиночку набрала все очки факультета..."
+        mal2 "Ну, после того, как она в одиночку набрала все очки факультета..."
         fem "...набрала все очки факультета?"
         mal "Ох, это ты... "
-        fem "Вы парни опять об этой проститутке Гермионе? Неужели вокруг нет нормальных девушек?"
-        fem "Эта баба дрочит члены, отсасывает всем желающим, теперь устроила из этого бизнес, но вы только о ней и говорите! "
+        fem "Вы, парни, опять об этой проститутке Гермионе? Неужели вокруг нет нормальных девушек?"
+        fem "Эта баба дрочит члены, отсасывает всем желающим, а теперь устроила из этого бизнес, но вы только о ней и говорите! "
         mal2 "А знаешь, после того, как она в одиночку добилась победы факультета, она может позволить себе и не такой бизнес!" 
         mal2 "И кто ее в этом упрекнет? Только не я."
         mal "И не я, чувак!"
@@ -137,14 +141,14 @@ label your_whore:
         fem "Так кто тут потаскуха?"
         mal2 "Гермиона Грейнджер..."
         fem "Оу! Вы, ребята, опять говорите об этой проститутке?"
-        fem "Эта баба дрочит пару членов, отсасывает нескольким парням...и вдруг она новая школьная звезда."
+        fem "Эта баба дрочит пару членов, отсасывает нескольким парням... и вдруг она новая школьная звезда."
         fem "Жалкая грязнокровка..."
         mal "Ты не должна ревновать ее--"
         fem "Ревновать??? ЕЁ??? Вот ещё!"
         fem "Я не зарабатываю себе популярность тем, что позволяю кому-то засовывать член мне в рот!"
         mal "Ну... если ты вдруг передумаешь..."
         fem "Что?"
-        mal "Не стесняйся использовать меня, как ступеньку, на пути к своей славе!"
+        mal "Не стесняйся использовать меня, как ступеньку на пути к своей славе!"
         fem "Ты бы этого хотел!"
         mal2 "Эй, ребят, мне кажется, что это Гермиона там!"
         mal "Точно!"
@@ -163,11 +167,11 @@ label your_whore:
 #    else: #Students talking. Ending "Your whore".
     if end.IsEnding(const_ENDING_YOUR_WHORE): #Students talking. Ending "Your whore".
         mal "(Вы слышали о чем поговаривают?)"
-        mal2 "(Да. Говорят, что Гермиона в одиночку набрала очки факультета.)"
+        mal2 "(Да. Говорят, что Гермиона в одиночку набрала все очки факультета.)"
         fem "(Стала шлюхой за очки, имеешь ввиду?!)"
         fem "(Какой позор!)"
         mal "(Это лишь слухи!)"
-        fem "(Я думаю, что это больше чем просто...)"
+        fem "(Я думаю, что это больше, чем просто...)"
         mal "(Да заткнись уже. Ты просто ревнуешь!)"
         mal2 "(Да! Ты просто хочешь быть на месте Гермионы! Да, ты просто мечаешь стать такой же как она!)"
         mal "(Верно! Она верна \"Гриффиндору\" как никто другой! Точно!)"
@@ -205,47 +209,62 @@ label your_whore:
     m "(Вот она!)"
     
     mal "Эй, Гермиона..."
-    $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-    $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_159.png" # HERMIONE
-    $ no_upper = True #Skirt not displayed.
+    #__#$ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
+    #__#$ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+    $ posHead = gMakePos( 390, 235 )
+    $herViewHead.data().addPose( CharacterExItemPoseParade( herViewHead.mPoseFolder, "pose_parade.png", G_Z_POSE ) )
+
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_159.png", posHead ) #WARNING_Z
+    #__#$ h_body = "03_hp/13_hermione_main/body_159.png" # HERMIONE
+    #__#$ no_upper = True #Skirt not displayed.
     her "О, привет!"
-    hide screen h_head2     
+    #__#hide screen h_head2     
+    $herViewHead.hideQ()
     mal "Ты выглядишь... просто великолепно, Гермиона! Ты... ты просто безупречна сегодня!"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_160.png" # HERMIONE
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_160.png", posHead )
+    #__#$ h_body = "03_hp/13_hermione_main/body_160.png" # HERMIONE
     her "Спасибо, ты очень милый."
-    hide screen h_head2 
+    #__#hide screen h_head2 
+    $herViewHead.hideQ()
     mal2 "Можно тебя пригласить на следующий танец?"
     mal "Что? Отвали, я был первый!"
     mal2 "Ты идешь к черту!"
     mal "Отлично, дружок! Попробуй меня туда отправить!"
     mal2 "Я не твой \"дружок\", приятель!"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_161.png" # HERMIONE
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_161.png", posHead )
+    #__#$ h_body = "03_hp/13_hermione_main/body_161.png" # HERMIONE
     her ".............."
-    hide screen h_head2 
+    #__#hide screen h_head2 
+    $herViewHead.hideQ()
     
     show screen blktone8
     with d3
     stop music fadeout 3.0
     m "Вот он, мой шанс!"
     m "(Псс! Девушка!)"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_162.png" # HERMIONE
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_162.png", posHead )
+    #__#$ h_body = "03_hp/13_hermione_main/body_162.png" # HERMIONE
     her "???"
-    hide screen h_head2     
+    #__#hide screen h_head2     
+    $herViewHead.hideQ()
     m "(Красотка, это я! Тут!)"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_163.png" # HERMIONE
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_163.png", posHead )
+    #__#$ h_body = "03_hp/13_hermione_main/body_163.png" # HERMIONE
     her "Профессор Дамблдор?"
-    hide screen h_head2     
+    #__#hide screen h_head2     
+    $herViewHead.hideQ()
     m "(Ш-ш-ш! Тише, и иди за мной.)"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_163.png" # HERMIONE
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_163.png", posHead )
+    #__#$ h_body = "03_hp/13_hermione_main/body_163.png" # HERMIONE
     her "А?"
-    hide screen h_head2     
+    #__#hide screen h_head2     
+    $herViewHead.hideQ()
     pause.1
     $ end_u_1_pic =  "03_hp/17_ending/02.png"
     hide screen blktone8
@@ -264,79 +283,100 @@ label your_whore:
     
     # ALCOVE 
     
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_162.png" # HERMIONE
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_162.png", posHead )
+    #__#$ h_body = "03_hp/13_hermione_main/body_162.png" # HERMIONE
     her "Сэр, что происходит? Почему вы... прячетесь?"
-    hide screen h_head2
+    #__#hide screen h_head2
+    $herViewHead.hideQ()
     m "Просто помолчи и послушай секундочку! Ты можешь кое-что сделать для меня?"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_162.png" # HERMIONE
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_162.png", posHead )
+    #__#$ h_body = "03_hp/13_hermione_main/body_162.png" # HERMIONE
     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
     her "Да, сэр."
-    hide screen h_head2
+    #__#hide screen h_head2
+    $herViewHead.hideQ()
     m "Хорошо, есть одна штука... Ну, это..."
     m "Кое-что, что ты должна зна--"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_166.png" # HERMIONE
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_166.png", posHead )
+    #__#$ h_body = "03_hp/13_hermione_main/body_166.png" # HERMIONE
     her "Конечно, сэр!"
-    hide screen h_head2
+    #__#hide screen h_head2
+    $herViewHead.hideQ()
     m "Что?"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
-    her "Позвольте только сделать это быстро, хорошо?"
-    hide screen h_head2
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_165.png", posHead )
+    #__#$ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
+    her "Только позвольте сделать это быстро, хорошо?"
+    #__#hide screen h_head2
+    $herViewHead.hideQ()
     g4 "Позволить сделать что?"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_164.png" # HERMIONE
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_164.png", posHead )
+    #__#$ h_body = "03_hp/13_hermione_main/body_164.png" # HERMIONE
     if end.IsEnding(const_ENDING_STRONG_GIRL): 
         her2 "Я ведь все еще должна вам за платье, верно, сэр?"
     else:
         her2 "Вы хотите, чтобы я поблагодарила вас за платье, верно, сэр?"
-    hide screen h_head2
+    #__#hide screen h_head2
+    $herViewHead.hideQ()
     m "Платье? Нет, я здесь не поэтому."
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_165.png", posHead )
+    #__#$ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
     if end.IsEnding(const_ENDING_STRONG_GIRL): 
         her2 "Все нормально, сэр, я ведь действительно Вам должна. "
         her2 "Я могу отдать деньгами, или Вы предпочитаете?..."
     else:
         her "Все хорошо, сэр. Я не против."
-    hide screen h_head2
+    #__#hide screen h_head2
+    $herViewHead.hideQ()
     m "Слушай меня, девочка! Я совсем не тот, кем ты меня считае--"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_167.png" # HERMIONE
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_167.png", posHead )
+    #__#$ h_body = "03_hp/13_hermione_main/body_167.png" # HERMIONE
     if end.IsEnding(const_ENDING_STRONG_GIRL): 
         her2 "Я поняла, никаких денег, услуга за услугу. \nДумаю, это правильно, сэр."
     else:
         her2 "Пожалуйста, сэр, позвольте мне немного приласкать ваш член."
-    hide screen h_head2
+    #__#hide screen h_head2
+    $herViewHead.hideQ()
     g4 "Гх--!!!"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_167.png" # HERMIONE
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_167.png", posHead )
+    #__#$ h_body = "03_hp/13_hermione_main/body_167.png" # HERMIONE
     if end.IsEnding(const_ENDING_STRONG_GIRL): 
         her2 "Вы не пожалеете. Я обслужу вас по высшему разряду."
     else:
         her2 "Совсем чуть-чуть. Пожалуйста, я умоляю вас..."
-    hide screen h_head2
+    #__#hide screen h_head2
+    $herViewHead.hideQ()
     g4 "Черт, проклятая ведьма!"
     g4 "Прекрати! Мне действительно нужно поговорить с тобой!"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_164.png" # HERMIONE
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_164.png", posHead )
+    #__#$ h_body = "03_hp/13_hermione_main/body_164.png" # HERMIONE
     her "Конечно, сэр."
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_167.png" # HERMIONE
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_167.png", posHead )
+    #__#$ h_body = "03_hp/13_hermione_main/body_167.png" # HERMIONE
     her "Засунье ваш член мне в рот и говорите со мной."
     her "Поговорите со мной о грязных делишках."
-    hide screen h_head2
+    #__#hide screen h_head2
+    $herViewHead.hideQ()
     g4 "*рычит!*"
     m "*Вздох....*"
     m "Хорошо, можешь взять его..."
     m "Но ты злоупотребляешь своей силой, девчонка!"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "03_hp/13_hermione_main/body_168.png" # HERMIONE
+    #__#show screen h_head2                                                             # HERMIONE
+    $herViewHead.showQ( "body_168.png", posHead )
+    #__#$ h_body = "03_hp/13_hermione_main/body_168.png" # HERMIONE
     her "(*Хихикает!*)"
-    hide screen h_head2
-    m "И когда мы закончим, нам нужно будет поговорить!"
+    #__#hide screen h_head2
+    $herViewHead.hideQ()
+    m "И, когда мы закончим, нам нужно будет поговорить!"
     
     # SUCKING
     
@@ -400,7 +440,7 @@ label your_whore:
     m "Ох... Вот оно что?"
     m "Есть шанс, что ею станешь ты?"
     her "Шанс?"
-    her "Все уже договорено, сэр."
+    her "Все уже решено, сэр."
     m "Что?"
     her "Ой, я хочу сказать - я надеюсь, что стану..."
     her "Поскольку я та, кто организовал всё это, было бы справедливо..."
@@ -499,7 +539,7 @@ label your_whore:
         $ end_u_1_pic =  "03_hp/17_ending/91.png" #<---- SCREEN
         show screen end_u_1                                           #<---- SCREEN
         with d7                                                                       #<---- SCREEN
-        her "Сэр, вы думаете что правильно, угощать ЭТИМ свою юную студентку?"
+        her "Сэр, вы как вы думаете, правильно ли угощать ЭТИМ свою юную студентку?"
         m "Ха!"
         $ end_u_2_pic =  "03_hp/17_ending/08.png" #<---- SCREEN
         show screen end_u_2                                           #<---- SCREEN
@@ -724,41 +764,53 @@ label your_whore:
         # CUMMING
         pause.5
         m "Что это только что было, девочка?"
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
+        #__#$ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
+        #__#$ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+        $ posHead = gMakePos( 390, 235 )
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_165.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
         her "Что вы имеете ввиду, сэр?"
-        hide screen h_head2  
+        #__#hide screen h_head2  
+        $herViewHead.hideQ()
         $ end_u_1_pic =  "03_hp/17_ending/02.png" #<---- SCREEN
         show screen end_u_1                                           #<---- SCREEN
         hide screen blkfade
         with d7
         m "Мне что, нужно показать на это?"
         g4 "{size=+5}Показать пальцем?{/size}"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_165.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
         her "Oх... Вы имеете ввиду волосы?"
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         m "Да...\"твои волосы\"..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_168.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_168.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_168.png" # HERMIONE
         her "Ну... А чего вы ожидали от меня, сэр?"
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         m "Да чего угодно..."
         g4 "...но {size=+7}ЭТО!{/size}"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_163.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_163.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_163.png" # HERMIONE
         her "Но... мне нужно идеально выглядеть на коронации..."
-        hide screen h_head2
-        m "И прическа полная спермы тебе поможет?"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
+        m "И прическа, полная спермы, тебе поможет?"
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_165.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
         her "Ну... да..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_163.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_163.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_163.png" # HERMIONE
         her "Знаете, сперма превосходно фиксирует волосы и--"
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         
         show screen bld1
         with d5
@@ -769,13 +821,15 @@ label your_whore:
         hide screen bld1
         with d5
         
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_161.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_161.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_161.png" # HERMIONE
         her "Коронация! Мне нужно идти!"
         if end.IsEnding(const_ENDING_STRONG_GIRL): 
             her2 "Профессор, еще я должна расплатиться с вами за то, что вы позволили мне возглавить организацию этого бала."
             her2 "Так что я сделаю кое-что, что вам понравится..."
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         $ renpy.play('sounds/run_03.mp3')    #<--------------------Sound of running off.
         pause 3
         
@@ -816,7 +870,7 @@ label your_whore:
         m "Да! Отлично, шлюха!"
         her "{size=+5}*Глотает--Глотает--Глотает!!!*{/size}"
         m "Да. Теперь поработай своим язычком."
-        m "Полижи мои шарики сучка. Ну!"
+        m "Полижи мои шарики, сучка. Ну!"
         $ end_u_2_pic =  "03_hp/17_ending/10.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
@@ -904,7 +958,7 @@ label your_whore:
         her "*Глотает!* *Глотает!* *Лижет...* *Глотает!*"
         m "Хм..."
         her "*Глотает!* *Глотает!* *Лижет...* *Глотает!*"
-        m "Может быть покажем это личико всем?"
+        m "Может быть, покажем это личико всем?"
         m "Должен ли я позвать нескольких твоих одноклассников?"
         $ end_u_2_pic =  "03_hp/17_ending/17.png" #<---- SCREEN
         show screen end_u_2                                            #<---- SCREEN
@@ -953,7 +1007,7 @@ label your_whore:
         $ end_u_1_pic =  "03_hp/17_ending/23.png" #<---- SCREEN
         show screen end_u_1                                           #<---- SCREEN
         with d7                                                                        #<---- SCREEN
-        m "Така теплая и тугая..."
+        m "Такая теплая и тугая..."
         her "............................................."
         her "...................."
         her "......."
@@ -1050,7 +1104,7 @@ label your_whore:
         show screen end_u_2                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
         her "...................................................."
-        m "Ну...я думаю, что это всё--"
+        m "Ну... я думаю, что это всё--"
         with hpunch
         g4 "{size=+5}А?!!{/size}"
         show screen blkfade
@@ -1079,19 +1133,24 @@ label your_whore:
         $ s_sprite = "03_hp/10_snape_main/snape_04.png"
         sna2 "Вы наконец-то решили показаться?"
         sna2 "Неприятный сюрприз..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_162.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_162.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_162.png" # HERMIONE
         her "Профессор..."
         $ s_sprite = "03_hp/10_snape_main/snape_10.png"
         show screen s_head2
         sna "Что ж, выйдите вперед..."
         sna "Вот ваша корона..."
         sna "И ваш пьедестал..."
-        $ tiara = True #Tiara is displayed.
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_160.png" # HERMIONE
+
+        $herViewHead.data().addItem( 'tiara', CharacterExItem( herViewHead.mClothesFolder, "tiara.png", G_Z_FACE + 1 ) )
+        #__#$ tiara = True #Tiara is displayed.
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_160.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_160.png" # HERMIONE
         her "Спасибо, профессор."
-        hide screen h_head2        
+        #__#hide screen h_head2        
+        $herViewHead.hideQ()
         pause.7
         
         
@@ -1146,7 +1205,7 @@ label your_whore:
         $ end_u_1_pic =  "03_hp/17_ending/112.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
-        her "Но я действительно благодарна вам за то, что стою сейчас перед вами."
+        her "Но, я действительно благодарна вам за то, что стою сейчас перед вами."
         
         show screen blktone
         show screen bld1
@@ -1161,7 +1220,7 @@ label your_whore:
         $ end_u_2_pic =  "03_hp/17_ending/113.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
-        her "В особенности я бы хотела поблагодарить наших учителей за их нелегкий труд."
+        her "В особенности, я бы хотела поблагодарить наших учителей за их нелегкий труд."
         
         show screen blktone
         show screen bld1
@@ -1191,7 +1250,7 @@ label your_whore:
         fem "(Я думаю, что знаю, как выглядит сперма, и это она!)"
         mal "(Уверен, что знаешь. *Хихикает*)"
         fem "(Не важно. Просто присмотритесь внимательнее.)"
-        fem "(Должно быть какой-то парень засунул член в её прическу, и спустил всё туда.)"
+        fem "(Должно быть какой-то парень засунул член в её прическу и спустил всё туда.)"
         mal "(Хм... Трахать волосы? Это сейчас модно?)"
         mal2 "(Вы, девчонки, делаете абсолютно сумасшедшие вещи!)"
         fem "(*Пф!* Не все мы шлюхи, вы должны знать.)"
@@ -1293,10 +1352,10 @@ label your_whore:
         show screen blktone
         with d7
         #play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-        mal "(Может у меня глюки?)"
+        mal "(Может, у меня глюки?)"
         mal2 "(Похоже что нет... я тоже это вижу...)"
         mal "(Сиськи... Гермионы... Грейнджер...)"
-        mal "(Похоже её платье порвалось, чувак!)"
+        mal "(Похоже, её платье порвалось, чувак!)"
         fem "(О нет! Мы должны сказать ей!)"
         mal "(Не смей лишать нас такого зрелища!)"
         fem "(Но...!!)"
@@ -1325,7 +1384,7 @@ label your_whore:
         g4 "Настоящая шалава!"
         g4 "(Интересно, она спланировала всё это??!)"
         if end.IsEnding(const_ENDING_STRONG_GIRL):
-            g4 "Ну, конечно, она же сказала 'я сделаю кое-что, что вам понравится...'"
+            g4 "Ну конечно, она же сказала 'я сделаю кое-что, что вам понравится...'"
         else :
             m "(Аарабская нооочь...Кхм...О чем это я!?)"
         hide screen blktone
@@ -1343,8 +1402,8 @@ label your_whore:
         show screen blktone
         with d7
         mal "(Хм, теперь она просто стоит...)"
-        mal2 "(Дает возможность, как следует рассмотреть?)"
-        mal "(Ты думаешь она знает, что её дойки видны всем?)"
+        mal2 "(Дает возможность рассмотреть себя как следует?)"
+        mal "(Ты думаешь, она знает, что её дойки видны всем?)"
         fem "(Стыдно-то как...)"
         fem "(Похоже, что я чуть не пожалела настоящую шлюху...)"
         fem "........................"
@@ -1378,7 +1437,7 @@ label your_whore:
         $ end_u_1_pic =  "03_hp/17_ending/122.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
-        her "Ох...точно..."
+        her "Ох... точно..."
         her "Чуть не забыла..."
         $ end_u_2_pic =  "03_hp/17_ending/123.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
@@ -1492,32 +1551,40 @@ label your_whore:
         pause
         hide screen ctc
         
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
+        #__#$ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
+        #__#$ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+        $ posHead = gMakePos( 390, 235 )
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_165.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
         her "Профессор Дамблдор..."
         if end.IsEnding(const_ENDING_STRONG_GIRL):
             her2 "Вам понравилось? Это было достойным ответным подарком?"
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             g4 "Ну, сука!"
             her2 "Мне еще вас отблагодарить?"
         else:
             her2 "Вы хотели о чем-то поговорить со мной?"
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             g4 "Поздно, сука!"
         show screen blkfade
         with d5
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_164.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_164.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_164.png" # HERMIONE
         her "Сэр?!"
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         g4 "Я тебя теперь {size=+7}ТАК{/size} оттрахаю! Иди сюда!"
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_181.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_181.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_181.png" # HERMIONE
         her "Конечно, сэр..."
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         # INSERTION
         
         $ renpy.play('sounds/gltch.mp3')
@@ -1624,8 +1691,8 @@ label your_whore:
         $ end_u_2_pic =  "03_hp/17_ending/58.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d5                                                                        #<---- SCREEN
-        her "О! Да! Да! Я шлюхо-грязнокровка!"
-        g4 "Да похер! {size=-2}(что за дурацкое слово?){/size}"
+        her "О! Да! Да! Я шлюха-грязнокровка!"
+        g4 "Да похер! {size=-2}(Что за дурацкое слово?){/size}"
         
         #SLAP
         #SLAP
@@ -1742,7 +1809,7 @@ label your_whore:
             show screen end_u_1                                             #<---- SCREEN
             with d7                                                                        #<---- SCREEN
             her "Сэр, если вы думаете, что мне все равно... Я все-таки надеялась, что вы относитесь... я думала..."
-            m "Что ты там думала? Ты же конченная шлюха, только прикидываешься стыдливой! Вот и покажи им какая ты шлюха!"
+            m "Что ты там думала? Ты же конченная шлюха, только прикидываешься стыдливой! Вот и покажи им, какая ты шлюха!"
             $ end_u_2_pic =  "03_hp/17_ending/130.png" #<---- SCREEN
             show screen end_u_2                                             #<---- SCREEN
             with d5
@@ -1764,7 +1831,7 @@ label your_whore:
             m "Что это с тобой стряслось? Вдруг стала такой застенчивой..."
             her "Разве вы не видете, что это \"Слизеринцы\"?!"
             m "И что?"
-            her "Наши факультеты...это длинная история."
+            her "Наши факультеты... это длинная история."
             m "Эм..."
             m "Что ж, ты станешь не плохим мостиком между \"Слизерином\" и \"Гриффиндором\"!"
             m "Гермиона Грейнджер, миротворец!"
@@ -1775,7 +1842,7 @@ label your_whore:
             her "И перестаньте долбить меня, пока мы говорим, сэр!"
 
         m "Парни, чего вы так долго возитесь?"
-        m "Я же сказал, эта шлюха в вашем распоряжении!"
+        m "Я же сказал - эта шлюха в вашем распоряжении!"
         her "Профессор Дамбл--"
         sly1 "Заткнись, тварь!"
         
@@ -1859,7 +1926,7 @@ label your_whore:
         show screen end_u_1                                             #<---- SCREEN
         with d5                                                                        #<---- SCREEN
         if end.IsEnding(const_ENDING_STRONG_GIRL):
-            her "О, какие... ахх...прелестные малыши!"
+            her "О, какие... ахх... прелестные малыши!"
             sly1 "Какие еще 'малыши', тупая ты сука?"
             sly2 "Без обид, бро, но думаю, она говорит о твоем... {size=-2}(*смеется*){/size}."
             sly1 "Иди нахрен!"
@@ -1980,10 +2047,10 @@ label your_whore:
         with d5
 
         if end.IsEnding(const_ENDING_STRONG_GIRL):
-            her "Парень, ты мой герой, давай не останавливайся!"
+            her "Парень, ты мой герой. Давай, не останавливайся!"
             sly1 "Сука, ты замолчишь когда-нибудь?! Ты достала своим гавканьем!"
         else:
-            her "Это было неожиданно...просто рефлекс!"
+            her "Это было неожиданно... просто рефлекс!"
             sly1 "Интересный рефлекс!"
             g4 "О... да..."
         with hpunch
@@ -1992,7 +2059,7 @@ label your_whore:
         pause.3
         her "Ах... Ах-аха..."
         if end.IsEnding(const_ENDING_STRONG_GIRL):
-            her "Мальчики, ну расчехляйтесь... скорее, мамочка устала ждать!..."
+            her "Мальчики, ну, расчехляйтесь... скорее, мамочка устала ждать!..."
         else:
             her "Вы за это заплатите, тупые слизери--"
         sly1 "Заткнись, грязнокровка!"
@@ -2183,7 +2250,7 @@ label your_whore:
 
         sly1 "Трахать твоё лицо действительно здорово, сучка!"
         sly1 "И после того, как я наполню твой рот спермой, ты скажешь мне спасибо!"
-        sly1 "Поняла, шлюхо-грязнокровка?"
+        sly1 "Поняла, шлюха-грязнокровка?"
         $ end_u_1_pic =  "03_hp/17_ending/153.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with d5                                                                        #<---- SCREEN
@@ -2238,7 +2305,7 @@ label your_whore:
         show screen end_u_2                                             #<---- SCREEN
         with d5                                                                        #<---- SCREEN
         her "*Чавк!* *Чавк!* *Чавк!*"
-        sly1 "Да! Да. ты чертова грязнокровка! Соси! Соси мой член!"
+        sly1 "Да! Да! Ты чертова грязнокровка! Соси! Соси мой член!"
         m "Это довольно необычно..."
         sly1 "Сэр?"
         m "Просто..."
@@ -2268,7 +2335,7 @@ label your_whore:
         her "..............................................."
         m "Я так и думал!"
         m "Парни, давайте немного ускоримся!"
-        m "Давайте трахать её с двух сторон, пока она кончает как грязная шлюха!"
+        m "Давайте трахать её с двух сторон, пока она кончает, как грязная шлюха!"
         sly1 "Конечно, сэр."
         sly1 "Возьми-ка это, шлюха-грязнокровка!"
         with vpunch
@@ -2485,10 +2552,12 @@ label your_whore:
         sly1 "Да, пошли!"
         sly2 "Пока, грязнокровная шлюшка!"
         sly1 "Да, спасибо за классный отсос, сучка!"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_181.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
         her ".........................."
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         $ renpy.play('sounds/footsteps.mp3') #Walking away sound
         # Walking away sound...."
         
@@ -2503,21 +2572,21 @@ label your_whore:
         sly2 "{size=-4}(Да... Кто бы мог подумать.){/size}"
         sly1 "{size=-4}(Ага. Я не могу не уважать его...){/size}"
         m "Ау... Какие хорошие парни..."
-        sly2 "{size=-4}(Да... Я надеюсь что буду таким же как он, когда состарюсь.){/size}"
+        sly2 "{size=-4}(Да... Я надеюсь, что буду таким же как он, когда состарюсь.){/size}"
         g4 "Я не старик, это вы - молодные олухи!"
         m "Хотя... в каком-то смысле я все же стар..."
         
         if end.IsEnding(const_ENDING_STRONG_GIRL):
             sly1 "И вообще, охрененно попользовали шлюху."
-            sly2 "Хм, думаешь это мы попользовали? Я уже не уверен..."
+            sly2 "Хм, думаешь, это мы попользовали? Я уже не уверен..."
             sly1 "Ты о чем, бро?"
             sly2 "У меня вдруг возникло ощущение, что это она нас поимела за наши же башли!"
             sly1 "Да ладно, чего ты. Теперь мы сможем трахать ее каждый день!"
             sly2 "Имеешь в виду - платить охуенные бабки, чтобы доставить ей удовольствие и слушать, как она при этом стебет тебя?"
             sly2 "Давай, бро! А я пас."
             sly1 "Но под конец-то мы драли ее как последнюю шлюху и ей это нравилось!"
-            sly2 "Ну и кто с чем остался? Она со всеми нашеми бабками и улетевшая в мультиоргазм."
-            sly2 "А мы по разу спустили... Кое-кто даже не вставлял."
+            sly2 "Ну и кто с чем остался? Она со всеми нашими бабками и улетевшая в мультиоргазм."
+            sly2 "А мы - по разу спустили... Кое-кто даже не вставлял."
             sly1 "Бро, ты не вкурил тему!"
             sly1 "Представь рожи грифиндорцев, когда мы будем рассказывать, как драли их звезду, как последнюю прошмандов...."
             sly2 "Я поостерегусь об этом трепаться. Чего и вам всем желаю."
@@ -2533,164 +2602,219 @@ label your_whore:
             sly2 "Возможно придется поизвиняться и занести еще денег. Надеюсь, за ночь и вы допрете, что это не такая большая плата..."
             "> Студенты уже далеко и их голоса становятся неслышны."
 
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_176.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
         her ".........................."
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         m "Эй, шлюха! Чего притихла?"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_177.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_177.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_177.png" # HERMIONE
         her "Я..."
         her "Я... не уверена..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_176.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
         her "Что...? Что это......."
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         m "Давай, девчонка, возьми себя в руки!"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_178.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_178.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_178.png" # HERMIONE
         if end.IsEnding(const_ENDING_STRONG_GIRL):
             her2 "Простите, сэр. Я пыталась не стать конченной шлюхой перед этими уродами, хотя знала, что вам нравится, чтобы я была именно шлюхой."
             her2 "Но, видно, против природы не пойдешь и все вышло, как вы любите."
             her2 "Мне ведь получилось вам угодить, сэр?"
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Что ты имеешь в виду?"
-            show screen h_head2                                                             # HERMIONE
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_178.png", posHead )
             her "Сэр, теперь я вам ничего не должна?"
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Должна?"
-            show screen h_head2                                                             # HERMIONE
-            her2 "Я ничего вам не должна ни за платье, ни за то, что стала организатором бала ни за что-то другое?"
-            hide screen h_head2
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_178.png", posHead )
+            her2 "Я ничего вам не должна ни за платье, ни за то, что стала организатором бала, ни за что-то другое?"
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Что за глупости ты говоришь. Я здесь совсем по другому поводу."
-            show screen h_head2                                                             # HERMIONE
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_178.png", posHead )
             her2 "Это не глупости, сэр! Я хочу быть уверенной, что теперь я с вами полностью расплатилась."
             ">  Подбирает бумажники и выбрасывает их в урну"
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Хм... Ну хорошо, хорошо, ты полностью расплатилась. Но я здесь..."
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_179.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
             her2 "Это замечательно, сэр. Потому что теперь я свободна. Так что все, сэр."
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Что 'все'?"
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "03_hp/13_hermione_main/body_178.png" # HERMIONE
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_178.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_178.png" # HERMIONE
             her2 "Вчера я отправила в Министерство Магии доклад о том, что происходит в Хогвартсе. "
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Прости, что ты сделала?"
-            show screen h_head2                                                             # HERMIONE
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_178.png", posHead )
             her2 "Я написала и отправила полный отчет о том, что происходит в Хогвартсе."
-            her2 " Все эти сексуальные услуги, оплаты за очки, преподаватели, трахающие студенток..."
+            her2 "Все эти сексуальные услуги, оплаты за очки, преподаватели, трахающие студенток..."
             her2 "Есть свидетели, которые дадут показания. Есть записи, документы."
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Ты так хотела мне отомстить, девочка? Мне вообще-то пофиг. Я здесь, чтобы сказать тебе, что ухожу..."
-            show screen h_head2                                                             # HERMIONE
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_178.png", posHead )
             her2 "Да? Впрочем, это неважно, потому что Ваше имя я в отчет не вносила. "
-            her2 "Так что, в худшем случае вас могли привлечь только за халатность."
-            hide screen h_head2
+            her2 "Так что, в худшем случае, вас могли привлечь только за халатность."
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Тогда... Не пойму, зачем ты это сделала?"
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_179.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
             her2 "Ну, сэр, однажды вы мне ясно дали понять, что мои проблемы никогда не станут вашими. Я задумалась и сделала выводы."
             her2 "Вы кажется, сказали, что уходите?"
             her2 "Я не спрашиваю куда, сэр, но все так и произошло - вы уходите, а я остаюсь и все мои проблемы остаются со мной."
             her2 "И значит я не зря готовилась."
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Ты сама виновата, девочка. Если бы ты не принялась оголяться на сцене, показывая, как любишь быть публичной, ничего этого не было бы!"
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "03_hp/13_hermione_main/body_178.png" # HERMIONE
-            her2 "Мне нужно было отдать вам все долги. И я знала, что такое вам точно понравится. "
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "03_hp/13_hermione_main/body_181.png" # HERMIONE
-            her2 "А вообще да, у меня стало рвать крышу. Хотя, странно, после всего, что я вытворяла на сцене меня провожали апплодисментами. "
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
-            her2 "А после того, что вы позволили сделать парням меня могут перестать считать человеком."
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_178.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_178.png" # HERMIONE
+            her2 "Мне нужно было отдать вам все долги. И я знала, что такое вам точно понравится."
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_181.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_181.png" # HERMIONE
+            her2 "А вообще - да, у меня стало рвать крышу. Хотя, странно, после всего, что я вытворяла на сцене - меня провожали апплодисментами."
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_179.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
+            her2 "А после того, что вы позволили сделать парням - меня могут перестать считать человеком."
             her2 "Не знаю, получилось ли у меня что-то исправить, пока я еще что-то соображала."
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Эй, эй, не надо меня приплетать! Если с тобой что и произошло, в этом виновата ты и только ты!"
-            m "Не будь глубоко в тебе спрятана шлюха, ты бы никогда не стала получать от этого удовольствия."
+            m "Не будь глубоко в тебе спрятана шлюха, ты бы никогда не стала получать от этого удовольствие."
             m "Да и изначально вся затея с очками за услуги... Разве могла нормальная девочка пойти на такое?"
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "03_hp/13_hermione_main/body_168.png" # HERMIONE
-            her2 "{size=-2}(*смеется*){/size} Сэр, я не собираюсь вас обвинять, вам незачем защищаться. "
-            $ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_168.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_168.png" # HERMIONE
+            her2 "{size=-2}(*смеется*){/size} Сэр, я не собираюсь вас обвинять, вам незачем защищаться."
+            $herViewHead.showQ( "body_179.png", posHead ) #WARNING_Z
+            #__#$ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
             her2 "Я так благодарна вам, что вы открыли во мне другую, настоящую меня."
-            her2 "А то, что вас интересуют только ощущения в члене, и плевать, что будет со мной... "
+            her2 "А то, что вас интересуют только ощущения в члене, и плевать, что будет со мной..."
             her2 "Что ж, я сильная девочка и могу сама о себе позаботиться."
-#            show screen h_head2                                                             # HERMIONE
-            $ h_body = "03_hp/13_hermione_main/body_178.png" # HERMIONE
+            #__##__##            show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_178.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_178.png" # HERMIONE
             her2 "Идите же, профессор. Вы говорили, что вам пора."
 
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Эм... Погоди, но каким боком министерская проверка к твоим проблемам?"
-            show screen h_head2                                                             # HERMIONE
-            her2 "Это самый простой способ, перейти из разряда шлюх, которые трахаются со всеми в разряд шлюх, которые сами выбирают с кем спать."
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_178.png", posHead )
+            her2 "Это самый простой способ перейти из разряда шлюх, которые трахаются со всеми, в разряд шлюх, которые сами выбирают, с кем спать."
             her2 "После ТАКОЙ встряски Хогвартс постарается забыть с чего все начиналось."
-            hide screen h_head2
-            m "Ты что думаешь, тебе удастся проверкой изменить здешние порядки? Наивная чукотская девочка..."
-            show screen h_head2                                                             # HERMIONE
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
+            m "Ты что, думаешь, тебе удастся проверкой изменить здешние порядки? Наивная чукотская девочка..."
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_178.png", posHead )
             her2 "Ничего подобного, сэр. Думаю, из Хогвартса выгонят несколько особо замаравшихся профессоров."
             her2 "Все на пару месяцев затихнет, а потом опять пойдет по накатанной."
-            $ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
+            $herViewHead.showQ( "body_179.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
             her2 "А чтобы я не раздувала эту историю, от меня предпочтут откупиться. "
-            $ h_body = "03_hp/13_hermione_main/body_168.png" # HERMIONE
-            her2 "Я пока раздумываю что бы такого потребовать..."
-            hide screen h_head2
-            m "Это очень.... цинично."
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
+            $herViewHead.showQ( "body_168.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_168.png" # HERMIONE
+            her2 "Я пока раздумываю, что бы такого потребовать..."
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
+            m "Это очень... цинично."
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_179.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
             her2 "Да, сэр. Я благодарна вам, что вы открыли для меня эту сторону жизни."
-            her2 "Это помогает реально смотреть на вещи и добиваться чего я хочу."
+            her2 "Это помогает реально смотреть на вещи и добиваться того, чего я хочу."
             her2 "Например, когда я поняла, что сбор сведений тормозится банальным отсутствием денег, то стала подрабатывать проституцией."
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Я... слышал об этом."
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "03_hp/13_hermione_main/body_181.png" # HERMIONE
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_181.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_181.png" # HERMIONE
             her2 "И я поняла, что это мне очень нравится. Вы действительно сделали из меня первоклассную шлюху, профессор."
-            $ h_body = "03_hp/13_hermione_main/body_168.png" # HERMIONE
+            $herViewHead.showQ( "body_168.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_168.png" # HERMIONE
             her2 "Так что (*хихикает*) по крайней одна профессия у меня есть. И я вполне спокойна и за себя, и за будущее факультета."
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Факультета?"
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
-            her2 "Вы же знаете, сэр, все, что я делала, я делала для факультета. И 'Вперед, Гриффиндор!', для меня не пустые слова."
-            $ h_body = "03_hp/13_hermione_main/body_168.png" # HERMIONE
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_179.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
+            her2 "Вы же знаете, сэр, все, что я делала - я делала для факультета. И 'Вперед, Гриффиндор!' для меня не пустые слова."
+            $herViewHead.showQ( "body_168.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_168.png" # HERMIONE
             her2 "А теперь... Я ведь королева бала. И я хочу танцевать. И так с вами заболталась."
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Я ухожу..."
-            show screen h_head2                                                             # HERMIONE
-#            $ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_176.png", posHead )
+            #$ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
             her "Счастливого пути, сэр..."
         else:
             her "Я... Я... Что?"
             her "Я не понимаю... Я..."
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Хм..."
             m "Я уже должен уходить."
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_176.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
             her "Уходить...?"
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Да. Возможно ты тоже..."
             m "Иди приведи себя в порядок и отдохни."
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "03_hp/13_hermione_main/body_178.png" # HERMIONE
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_178.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_178.png" # HERMIONE
             her "Но я не могу уйти... Нет... Я должна..."
             her "Танцевать... Должна..."
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Танцевать? Ты не можешь танцевать в таком состоянии."
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_176.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
             her "Нет! Я королева бала! Я должна...."
-            hide screen h_head2
+            #__#hide screen h_head2
+            $herViewHead.hideQ()
             m "Ладно, как хочешь."
             m "Я ухожу..."
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
+            #__#show screen h_head2                                                             # HERMIONE
+            $herViewHead.showQ( "body_176.png", posHead )
+            #__#$ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
             her "До свидания... сэр..."
 
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         m "............."
         m "Прощай, девочка."
         
@@ -2721,7 +2845,7 @@ label your_whore:
             m "Радуется, что открыл в ней шлюху и в этом же обвиняет."    
             m "Бабы..."    
 
-        m "Может мне остаться и посмотреть, как она будет танцевать после мультиоргазма?"
+        m "Может, мне остаться и посмотреть, как она будет танцевать после мультиоргазма?"
         m "Нет... Бал почти закончился. Это мой последний шанс свалить отсюда."
         
         show screen ctc
@@ -2737,21 +2861,24 @@ label your_whore:
         
 
     else: # Ending "Your whore".
-        $ s_head_xpos = 330 # x = 330,
-        $ s_head_ypos = 340 #Right bottom corner: y = 340. y = 380 - no hand.
+        #__#$ s_head_xpos = 330 # x = 330,
+        #__#$ s_head_ypos = 340 #Right bottom corner: y = 340. y = 380 - no hand.
+        $ posHead = gMakePos( 330, 340 )
         $ s_sprite = "03_hp/10_snape_main/snape_03.png"
         show screen s_head2
         sna "Мисс Грейнджер...?"
         $ s_sprite = "03_hp/10_snape_main/snape_04.png"
         sna2 "Вы решили все таки показаться. Неприятный сюрприз..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_169.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_169.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_169.png" # HERMIONE
         her "..............................."
         $ s_sprite = "03_hp/10_snape_main/snape_13.png"
         show screen s_head2
         sna "Что случилось с вашим лицом, девчонка?"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_170.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_170.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_170.png" # HERMIONE
         her "......................................."
         $ s_sprite = "03_hp/10_snape_main/snape_13.png"
         show screen s_head2
@@ -2760,8 +2887,7 @@ label your_whore:
         sna "И ваш пьедестал..."
         hide screen s_head2
         pause.7
-        
-        
+              
         
         $ end_u_2_pic =  "03_hp/17_ending/37.png" #<---- SCREEN
         hide screen blkfade
@@ -2832,6 +2958,7 @@ label your_whore:
         with hpunch
         g4 "ТЫ ШЛЮХА!!!"
         g4 "Это просто отвратительно!"
+        m "Теперь я хочу тебя трахнуть... Черт побери!"
         #m "Now I want to fuck you... Dammit."
         hide screen bld1
         with d3
@@ -2847,7 +2974,7 @@ label your_whore:
         ">Громкие крики и свист..."
         hide screen bld1
         with d3
-        her "И конечно же учителей..."
+        her "И, конечно же, учителей..."
         $ end_u_2_pic =  "03_hp/17_ending/44.png" #<---- SCREEN
         show screen end_u_2                                            #<---- SCREEN
         with d3                                                                        #<---- SCREEN
@@ -2867,7 +2994,7 @@ label your_whore:
         fem "(Пф... И почему я не удивлена?)"
         mal2 "(Может потому, что она этого заслуживает?)"
         mal "(Да! Хватит гнать на Гермиону!)"
-        fem "(Пф...Еще бы.)"
+        fem "(Пф... Еще бы.)"
         mal "(Кстати, что это там у Гермионы...)"
         mal2 "(Точно, что-то во рту. Я тоже заметил.)"
         fem "(Я уверена, что это чья-то сперма!)"
@@ -2882,7 +3009,7 @@ label your_whore:
         fem "(Да, она очень любит сосать члены, но сперму она любит еще больше!)"
         mal "(....)"
         fem "(Она просто помешана на сперме! Она наверно выпивает по стакану спермы в день...)"
-        fem "(Потому что если не делает этого, то становится сексуально-одержимой...)"
+        fem "(Потому что, если не делает этого, то становится сексуально-одержимой...)"
         mal2 "(.....)"
         fem "(И когда это происходит, она не может себя контролировать, и трахается с первым встречным мужиком.)"
         mal "(.............)"
@@ -2911,7 +3038,7 @@ label your_whore:
         $ end_u_1_pic =  "03_hp/17_ending/43.png" #<---- SCREEN
         show screen end_u_1                                            #<---- SCREEN
         with d3                                                                        #<---- SCREEN
-        her "Спасибо большое всем вам, за помощь в организации этого мероприятия."
+        her "Спасибо большое всем вам за помощь в организации этого мероприятия."
         her "И спасибо вам большое за то, что в этом году снова выбрали меня королевой бала..."
         $ end_u_1_pic =  "03_hp/17_ending/45.png" #<---- SCREEN
         show screen end_u_1                                            #<---- SCREEN
@@ -2937,17 +3064,23 @@ label your_whore:
         stop music fadeout 1.0
         m "Отличная речь..."
         m "Очень возбуждающая...Кхм, я имел ввиду вдохновляющая."
-        $ tiara = True #Tiara is displayed.
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
+
+        $herViewHead.data().addItem( 'tiara', CharacterExItem( herViewHead.mClothesFolder, "tiara.png", G_Z_FACE + 1 ) )
+        #__#$ tiara = True #Tiara is displayed.
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_165.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
         her "Спасибо, сэр."
-        hide screen h_head2   
-        m "Проглотила все что было перед всей школой?"
+        #__#hide screen h_head2   
+        $herViewHead.hideQ()
+        m "Проглотила все, что было, перед всей школой?"
         g9 "Очень мило вышло."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_168.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_168.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_168.png" # HERMIONE
         her "........................................................"
-        hide screen h_head2                     
+        #__#hide screen h_head2                     
+        $herViewHead.hideQ()
         
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         
@@ -2959,52 +3092,69 @@ label your_whore:
         show screen bld1 
         with d3
         m "Хорошо, девочка, давай поговорим теперь..." 
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_162.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_162.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_162.png" # HERMIONE
         her "...................."
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         m "Есть кое что, что я должен сказать тебе..."
-        m "Не знаю с чего начать..."
+        m "Не знаю, с чего начать..."
         m "........................................"
         m "Ну, прежде всего я--"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_163.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_163.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_163.png" # HERMIONE
         her2 "Сэр, думаю я знаю, что вы имеете ввиду."
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         m "Ты знаешь?"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_163.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_163.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_163.png" # HERMIONE
         her "Конечно."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_164.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_164.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_164.png" # HERMIONE
         her2 "Одного быстрого минета недостаточно, чтобы отплатить вам за все, я права?"
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         m "Что? Нет, я совсем не об этом--"
-        hide screen h_head2
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_164.png" # HERMIONE
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_164.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_164.png" # HERMIONE
         her "Все в порядке, сэр. Правда."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_165.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_165.png" # HERMIONE
         her2 "Давайте я немного спущу трусики..."
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         g4 "Черт, девчонка! Дай мне закончить!?"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_164.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_164.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_164.png" # HERMIONE
         her "Конечно, сэр..."
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         m "Хах?"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_167.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_167.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_167.png" # HERMIONE
         her2 "Просто постарайтесь не запачкать мне платье, хорошо?"
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         g4 "*Рычание!*"
         g4 "Иди сюда, шлюха!"
         g4 "И считай, что я трахаю тебя в последний раз!"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_162.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_162.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_162.png" # HERMIONE
         her "(Последний раз?)"
-        hide screen h_head2
+        #__#hide screen h_head2
+        $herViewHead.hideQ()
         show screen ctc
         pause
         hide screen ctc
@@ -3017,12 +3167,15 @@ label your_whore:
         with hpunch
         with kissiris
         
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_172.png" # HERMIONE
+        #__#$ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
+        #__#$ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+        $ posHead = gMakePos( 390, 340 )
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_162.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_172.png" # HERMIONE
         her2 "{size=+5}Ахх!!!{/size}"
-        hide screen h_head2            
+        #__#hide screen h_head2            
+        $herViewHead.hideQ()
         g4 "О, да!"
         
         $ end_u_2_pic =  "03_hp/17_ending/46.png" #<---- SCREEN
@@ -3050,7 +3203,7 @@ label your_whore:
         show screen end_u_2                                            #<---- SCREEN
         with d5                                                                        #<---- SCREEN
         her "Немного..."
-        m "Ну что ж, похоже это тебе понравилось, не так ли?"
+        m "Ну что ж, похоже, это тебе понравилось, не так ли?"
         her "Ах......"
         m "Не так ли, шлюха?!"
         her "Ах... Как скажете, сэр."
@@ -3067,7 +3220,7 @@ label your_whore:
         show screen end_u_2                                            #<---- SCREEN
         with d5                                                                        #<---- SCREEN
         her "Ох... Я боюсь, что кто-нибудь нас заметит--"
-        m "Я думаю, ты просто хочешь чтоб тебя отшлепали!"
+        m "Я думаю, ты просто хочешь, что бы тебя отшлепали!"
         her "Что!?"
         $ renpy.play('sounds/slap.mp3')
         show screen white 
@@ -3118,7 +3271,7 @@ label your_whore:
         hide screen white
         with hpunch
         $ end_u_2_pic =  "03_hp/17_ending/55.png" #<---- SCREEN
-        her "Да,сэр! Я хочу этого!!!"
+        her "Да, сэр! Я хочу этого!!!"
         $ end_u_1_pic =  "03_hp/17_ending/53.png" #<---- SCREEN
         show screen end_u_1                                            #<---- SCREEN
         with d5                                                                        #<---- SCREEN
@@ -3242,30 +3395,37 @@ label your_whore:
         $ renpy.play('sounds/boing.mp3') #Sound of # POP!
         with hpunch
         pause.3
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_172.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_172.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_172.png" # HERMIONE
         her "Ах..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_167.png" # HERMIONE 
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_167.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_167.png" # HERMIONE 
         her "Сэр, нет. Вы должны выслушать меня--"
-        hide screen h_head2     
+        #__#hide screen h_head2     
+        $herViewHead.hideQ()
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
         
         # INSERTION
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_173.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_173.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_173.png" # HERMIONE
         her "{size=+7}!!!!!!!!!!!!!!!!!{/size}"
         her "Моя...{w} Моя...{w} Моя..."
-        hide screen h_head2     
+        #__#hide screen h_head2     
+        $herViewHead.hideQ()
         m "Заткнись, сучка! Слишком громко."
         with hpunch
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_173.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_173.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_173.png" # HERMIONE
         her "{size=+7}МОЯ ЗАДНИЦА!!!!!!!!!!!!!{/size}"
-        hide screen h_head2  
-        g4 "Черт, девчонка, я сказал: \"Тише!\"."
+        #__#hide screen h_head2  
+        $herViewHead.hideQ()
+        g4 "Черт, девчонка, я же сказал: \"Тише!\"."
         
         $ end_u_2_pic =  "03_hp/17_ending/63.png" #<---- SCREEN
         show screen end_u_2                                          #<---- SCREEN
@@ -3305,7 +3465,7 @@ label your_whore:
         stop music fadeout 1.0
         sna "Ну что ж, начнем..."
         sna "Сейчас вы объединитесь в пары..."
-        sna "Нет! Пары парень -  девушка, вы, два кретина! Где, по-вашему, вы находитесь? В лаборатории?"
+        sna "Нет! Пары 'парень - девушка', вы, два кретина! Где, по-вашему, вы находитесь? В лаборатории?"
 
         hide screen blktone
         with d5
@@ -3322,9 +3482,9 @@ label your_whore:
         with d5                                                                        #<---- SCREEN
         her "Ах... я ахх..."
         m "Вы что-то хотите сказать, ваше величество?"
-        her "Ах... Я королева весеннего бала... ах..."
+        her "Ах... Я королева осеннего бала... ах..."
         m "Конечно же ты!"
-        m "Но еще ты шлюха!"
+        m "Но еще ты - шлюха!"
         $ end_u_1_pic =  "03_hp/17_ending/68.png" #<---- SCREEN
         show screen end_u_1                                            #<---- SCREEN
         with d5                                                                        #<---- SCREEN
@@ -3396,10 +3556,12 @@ label your_whore:
         $ renpy.play('sounds/boing.mp3') #Sound of # POP!
         with hpunch
         pause.3
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_175.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_175.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_175.png" # HERMIONE
         her "..........."
-        hide screen h_head2                       
+        #__#hide screen h_head2                       
+        $herViewHead.hideQ()
         m "Это..."
         
      
@@ -3528,7 +3690,7 @@ label your_whore:
                 show screen end_u_2                                          #<---- SCREEN
                 with d5                                                                        #<---- SCREEN
                 her "{size=+5}Нет, сэр, пожалуйста! Не кончайте в мою попку!{/size}"
-                her "{size=+5}Нет, Я же умру!!!{/size}"
+                her "{size=+5}Нет, я же умру!!!{/size}"
                 g4 "Ты не умрешь, грязная девчонка."
                 g4 "Ты будешь кончать как сумасшедшая какое-то время и только..."
                 her "Нет, сэр, пожалуйста... Я боюсь..."
@@ -3552,7 +3714,7 @@ label your_whore:
                 show screen end_u_2                                             #<---- SCREEN
                 with d5                                                                        #<---- SCREEN
                 her "{size=+5}Оно внутри меня! Наполняет всю меня!!!{/size}"
-                g4 "Да! ШЛЮХА! Я заполню тебя до краев спермой!"
+                g4 "Да! ШЛЮХА! Я заполню тебя до краев своей спермой!"
                 $ end_u_1_pic =  "03_hp/17_ending/84.png" #<---- SCREEN
                 show screen end_u_1                                             #<---- SCREEN
                 with d5                                                                        #<---- SCREEN
@@ -3567,63 +3729,79 @@ label your_whore:
                 g4 "Да! Так-то лучше!"
         
                 
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
-                
+        #__#$ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
+        #__#$ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+        $ posHead = gMakePos( 390, 235 )            
+
         show screen ctc
         pause
         hide screen ctc
         show screen blkfade
         with d9
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_177.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_177.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_177.png" # HERMIONE
         stop music fadeout 1.0
         her "Ах..."
-        her "Я... едва могу...стоять"
-        hide screen h_head2     
+        her "Я... едва могу... стоять"
+        #__#hide screen h_head2     
+        $herViewHead.hideQ()
         g4 "Я знаю, что это значит, девочка."
         g4 "Это был наш с тобой лучший трах!"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_177.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_177.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_177.png" # HERMIONE
         her "Да... Я никогда не забуду этого..."
         her "...сильнейшего оргазма..."
-        her "Но я должна, идти... танцевать..."
+        her "Но я должна идти... танцевать..."
         m "Тогда иди..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_176.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
         her "Сэр... Что вы хотели обсудить со мной?..."
-        hide screen h_head2     
-        m "Да... Знаешь что? Я на самом деле написал тебе небольшое письмо по этому поводу..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_178.png" # HERMIONE
+        #__#hide screen h_head2     
+        $herViewHead.hideQ()
+        m "Да... Знаешь что? Я, на самом деле, написал тебе небольшое письмо по этому поводу..."
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_178.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_178.png" # HERMIONE
         her "Письмо?"
-        hide screen h_head2     
+        #__#hide screen h_head2     
+        $herViewHead.hideQ()
         m "Да... Оно должно кое-что прояснить..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_177.png" # HERMIONE
+        #__#show screen h_head2                                                             # HERMIONE
+        $herViewHead.showQ( "body_177.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_177.png" # HERMIONE
         her "Оу... Хорошо..."
-        hide screen h_head2     
+        #__#hide screen h_head2     
+        $herViewHead.hideQ()
         m "Просто прочитай его завтра утром..."
         m "Или когда-нибудь..."
         m "Или не читай вообще, меня это не особо волнует..."
         g4 "............."
-        show screen h_head2                                                               # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
+        #__#show screen h_head2                                                               # HERMIONE
+        $herViewHead.showQ( "body_179.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
         her "Сэр...?"
-        hide screen h_head2     
+        #__#hide screen h_head2     
+        $herViewHead.hideQ()
         m "Не делай такие глаза! Я начинаю чувствовать себя неловко..."
         m "Я написал тебе письмо, что-то не так?"
-        show screen h_head2                                                               # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
+        #__#show screen h_head2                                                               # HERMIONE
+        $herViewHead.showQ( "body_179.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_179.png" # HERMIONE
         her "Я думаю... это очень мило............."
-        hide screen h_head2 
-        g4 "Иди девочка! Мне кажется ты опаздывала на какой-то танец!"
-        show screen h_head2                                                               # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_180.png" # HERMIONE
+        #__#hide screen h_head2 
+        $herViewHead.hideQ()
+        g4 "Иди, девочка! Мне кажется, или ты опаздывала на какой-то танец?"
+        #__#show screen h_head2                                                               # HERMIONE
+        $herViewHead.showQ( "body_180.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_180.png" # HERMIONE
         her "ТАНЕЦ!"
         her "Извините, я должна бежать!"
         her "Увидимся позже, сэр!"
-        hide screen h_head2     
+        #__#hide screen h_head2     
+        $herViewHead.hideQ()
         
         $ renpy.play('sounds/run_03.mp3')    #<--------------------Sound of running off.
         pause 3
@@ -3642,7 +3820,7 @@ label your_whore:
             show screen end_u_1                                             #<---- SCREEN
             $ end_u_1_pic =  "03_hp/17_ending/90.png" #<---- SCREEN
             
-        ">Вы ненадолго задержались, глядя как Гермиона танцует вальс..."
+        ">Вы ненадолго задержались, глядя, как Гермиона танцует вальс..."
         hide screen blkfade
         with d7
         show screen ctc
@@ -3656,10 +3834,10 @@ label your_whore:
         hide screen bld1
         with d5
         if d_flag_01: #Came into pussy
-            ">Вы видите струйку прозрачной жидкости, стекающей по внутренней стороне ее бедра,... никем больше не замеченную..."
+            ">Вы видите струйку прозрачной жидкости, стекающей по внутренней стороне ее бедра... никем больше не замеченную..."
         elif d_flag_02: #Came into asshole.
             ">Вы видите, что она сильно напрягает свои ягодицы."
-            ">Видимо, делает все возможное, чтобы сохранить ощущения, которые вы подарили её задней дырочке..."
+            ">Видимо делает все возможное, чтобы сохранить ощущения, которые вы подарили её задней дырочке..."
         show screen bld1
         with d5
         m "................................................."
@@ -4050,7 +4228,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
             dum2 "Это очень странно, Северус. Что же они ищут?"
             show screen s_head2     
             sna2 "Я не знаю, Альбус..."
-            sna2 "Но что бы они ни говорили про меня это все наглая, бессовестная ложь!..."
+            sna2 "Но, что бы они ни говорили про меня - это все наглая, бессовестная ложь!..."
 
         hide screen s_head2     
         pause.5
@@ -4087,59 +4265,77 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         show screen bld1
         with Dissolve(.3)
         
-        $ h_xpos=370 #Defines position of the Hermione's full length sprite.
-        $ h_ypos=0
+        #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite.
+        #__#$ h_ypos=0
+        $ pos = POS_370
+
         show screen hermione_02
         
         show screen ctc
         pause
         hide screen ctc
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-        $ tiara = False #Turns off displaying of the tiara in h_head2 screen.
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.  
-        show screen h_head2                                                                                                  # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_120.png"                                     # HERMIONE
+        $ herViewHead.data().delItem( 'tiara' )
+        $ herViewHead.data().delPose()
+        #__#$ tiara = False #Turns off displaying of the tiara in h_head2 screen.
+        #__#$ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
+        #__#$ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.  
+        $ posHead = gMakePos( 390, 235 )
+        #__#show screen h_head2                                                                                                  # HERMIONE
+        $herViewHead.showQ( "body_120.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_120.png"                                     # HERMIONE
         
         her "Вы хотели видеть меня, сэр?"
         her "Сэр, если вы насчет вчерашнего..."
-        hide screen h_head2       
+        #__#hide screen h_head2       
+        $herViewHead.hideQ()
         dum "Доброе утро, мисс Грейнджер."
-        show screen h_head2                                                                                                  # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_79.png"                                     # HERMIONE
-        her2 "На самом деле мне не настолько уж и понравилось..."
-        hide screen h_head2  
+        #__#show screen h_head2                                                                                                  # HERMIONE
+        $herViewHead.showQ( "body_79.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_79.png"                                     # HERMIONE
+        her2 "На самом деле, мне не настолько уж и понравилось..."
+        #__#hide screen h_head2  
+        $herViewHead.hideQ()
         dum "Мисс Грейнджер, я нашел это на своем столе..."
         dum "Это адресовано вам..."
-        show screen h_head2                                                                                                  # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_15.png"                                     # HERMIONE
+        #__#show screen h_head2                                                                                                  # HERMIONE
+        $herViewHead.showQ( "body_15.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_15.png"                                     # HERMIONE
         her "Письмо, сэр?"
-        show screen h_head2                                                                                                  # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_24.png"                                     # HERMIONE
+        #__#show screen h_head2                                                                                                  # HERMIONE
+        $herViewHead.showQ( "body_24.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_24.png"                                     # HERMIONE
         her "Ох, конечно! Это вы мне его написали."
-        hide screen h_head2  
+        #__#hide screen h_head2  
+        $herViewHead.hideQ()
         dum "Это письмо не от меня, мисс Грейнджер."
-        show screen h_head2                                                                                                  # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_17.png"                                     # HERMIONE
+        #__#show screen h_head2                                                                                                  # HERMIONE
+        $herViewHead.showQ( "body_17.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_17.png"                                     # HERMIONE
         her "Разве?"
-        show screen h_head2                                                                                                  # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_24.png"                                     # HERMIONE
+        #__#show screen h_head2                                                                                                  # HERMIONE
+        $herViewHead.showQ( "body_24.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_24.png"                                     # HERMIONE
         her "Ох, понятно..."
         her2 "Вы не должны этого стесняться, сэр. Все в порядке."
-        hide screen h_head2  
+        #__#hide screen h_head2  
+        $herViewHead.hideQ()
         dum "*эм*... вот."
-        show screen h_head2                                                                                                  # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_06.png"                                     # HERMIONE
+        #__#show screen h_head2                                                                                                  # HERMIONE
+        $herViewHead.showQ( "body_06.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_06.png"                                     # HERMIONE
         her2 "Спасибо, сэр."
-        show screen h_head2                                                                                                  # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_73.png"                                     # HERMIONE
+        #__#show screen h_head2                                                                                                  # HERMIONE
+        $herViewHead.showQ( "body_73.png", posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_73.png"                                     # HERMIONE
         her "Посмотрим...."
         stop music fadeout 7.0
-        hide screen h_head2  
+        #__#hide screen h_head2  
+        $herViewHead.hideQ()
         pause.1
         
         
-        $ letter_text = "бла-бла"#"{size=-7}Кому: Гермионе Грейнджер\n\n{/size}{size=-4}Дорогая [word_01]. \nЯ не тот, кто вы думаете... Даже не человек, если честно. В течении нескольких месяцев я выдавал себя за профессор Дамблдора. Но теперь мне нужно вернуться в [word_02]. К тому времени, как ты получишь письмо, я буду уже далеко. Мы больше никогда не встретимся, но я буду лелеять воспоминания об этом времени в вашем мире.\n\nПрощай, моя маленькая[word_03]. {size=-3}\n\n-[word_04]-{/size}"
+        $ letter_text = "{size=-7}Кому: Гермионе Грейнджер\n\n{/size}{size=-4}Дорогая [word_01]. \nЯ не тот, кто вы думаете... Даже не человек, если честно. В течении нескольких месяцев я выдавал себя за профессор Дамблдора. Но теперь мне нужно вернуться [word_02]. К тому времени, как ты получишь письмо, я буду уже далеко. Мы больше никогда не встретимся, но я буду лелеять воспоминания об этом времени в вашем мире.\n\nПрощай, моя маленькая [word_03]. {size=-3}\n\n-[word_04]-{/size}"
 
         label last_letter:
         show screen letter
@@ -4161,56 +4357,86 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
      
         show screen bld1
         with d3
-        show screen h_head2                                                                                                  # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_197.png"                                     # HERMIONE
+
+        # add shock screen!
+        $herViewHead.data().addPose( CharacterExItem( herViewHead.mPoseFolder, 'hermione_bw_final_shock.png', G_Z_FACE + 1 ) )
+
+        #__#show screen h_head2 
+        # here was body_197, but it replaced with pose                                                                                                 # HERMIONE
+        $herViewHead.showQ( None, posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_197.png"                                     # HERMIONE
         her "............................................................................................................................................................."
-        hide screen h_head2  
-        dum "Я полагаю, составитель этого некий Джинн?"
-        dum "Тот, кто выдавал себя за меня, все это время?"
-        show screen h_head2                                                                                                  # HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_197.png"                                     # HERMIONE
+        #__#hide screen h_head2  
+        $herViewHead.hideQ()
+        dum "Я полагаю, составитель этого - некий Джинн?"
+        dum "Тот, кто выдавал себя за меня все это время?"
+        #__#show screen h_head2  
+        # here was body_197, but it replaced with pose                                                                                                # HERMIONE
+        $herViewHead.showQ( None, posHead )
+        #__#$ h_body = "03_hp/13_hermione_main/body_197.png"                                     # HERMIONE
         her "............................................................................................................................................................."
-        hide screen h_head2  
+        #__#hide screen h_head2  
+        $herViewHead.hideQ()
         dum "Ну, теперь я вернулся..."
         dum "И я положу конец вашему \"бизнесу по обмену очков\", конечно же."
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_86.png" #Sprite of Hermione's upper body.                 
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
+        #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        #__#with d3                                                                                                                                                                                                                        #HERMIONE
+        $herView.hideQQ()
+        #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+        $ pos = POS_370
+        #__#$ h_body = "03_hp/13_hermione_main/body_86.png" #Sprite of Hermione's upper body.                 
+        #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+        #__#with d3                                                                                                                                                                                                                        #HERMIONE
+
+        # del shock screen
+        $herView.data().delPose()
+
+        $herView.showQQ( "body_86.png", pos )
         pause.1
         with hpunch
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
         her "{size=+7}Что?!!{/size}"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_66.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
+        #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        #__#with d3                                                                                                                                                                                                                        #HERMIONE
+        $herView.hideQQ()
+        #__#$ h_body = "03_hp/13_hermione_main/body_66.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+        #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+        #__#with d3                                                                                                                                                                                                                        #HERMIONE
+        $herView.showQQ( "body_66.png", pos )
         her "Как же я буду получать дополнительные очки?"
         dum "Есть другие пути, мисс Грейнджер."
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_186.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
+        #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        #__#with d3                                                                                                                                                                                                                        #HERMIONE
+        $herView.hideQQ()
+        #__#$ h_body = "03_hp/13_hermione_main/body_186.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+        #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+        #__#with d3                                                                                                                                                                                                                        #HERMIONE
+        $herView.showQQ( "body_186.png", pos )
         her "А...?"
         dum "Усердный труд."
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_187.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
+        #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        #__#with d3                                                                                                                                                                                                                        #HERMIONE
+        $herView.hideQQ()
+        #__#$ h_body = "03_hp/13_hermione_main/body_187.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+        #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+        #__#with d3                                                                                                                                                                                                                        #HERMIONE
+        $herView.showQQ( "body_187.png", pos )
         her "Это так тупо!"
         dum2 "Мисс Грейнджер, вам следует следить за своим языком--"
         ### TITS ###
         #$ only_upper = True
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        $herView.hideQ() #"WARNING_Z"
         with d5                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_81.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
+        #__#$ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+        $ pos = POS_140
+        #__#$ h_body = "03_hp/13_hermione_main/body_81.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+        #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+
+        # show tits!
+        $herView.data().addPose( CharacterExItemPoseShowTits( herView.mPoseFolder, 'pose_dress_up.png', G_Z_POSE ) )
+
+        $herView.showQ( "body_81.png", pos ) #"WARNING_Z"
         with d5                                                                                                                                                                                                                       #HERMIONE
         show screen ctc
         stop music
@@ -4219,18 +4445,26 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         her "..."
         
         dum3 "{size=+4}!!!{/size}"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        $herView.hideQ() #"WARNING_Z"
         with d5                                                                                                                                                                                                                        #HERMIONE
-        $ h_body = "03_hp/13_hermione_main/body_86.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
+        #__#$ h_body = "03_hp/13_hermione_main/body_86.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+        #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+        $herView.showQ( "body_86.png", pos ) #"WARNING_Z"
         with d5                                                                                                                                                                                                                       #HERMIONE
         her "Или вы хотите увидеть мою киску, сэр?"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ only_upper = True
-        $ h_body = "03_hp/13_hermione_main/body_61.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
+        #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        #__#with d3                                                                                                                                                                                                                        #HERMIONE
+        $herView.hideQQ()
+
+        # Pussy!
+        $herView.data().hideItem( 'panties' )
+        $herView.data().addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
+        #__#$ only_upper = True
+        #__#$ h_body = "03_hp/13_hermione_main/body_61.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+        #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+        #__#with d3                                                                                                                                                                                                                        #HERMIONE
+        $herView.showQQ( "body_61.png", pos )
         show screen ctc
         pause
         hide screen ctc
@@ -4240,19 +4474,24 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         
         
         her "Я готова на все ради очков, сэр!"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d5                                                                                                                                                                                                                        #HERMIONE
-        $ only_upper = False
-        $ h_body = "03_hp/13_hermione_main/body_86.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
+        #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        $herView.hideQ() #"WARNING_Z"
+        with d5      
+        $herView.data().delPose()
+        $herView.data().showItem( 'panties' )                                                                                                                                                                                                               #HERMIONE
+        #__#$ only_upper = False
+        #__#$ h_body = "03_hp/13_hermione_main/body_86.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+        #__#show screen hermione_main                                                                                                                                                                                 #HERMIONE
+        $herView.showQ( "body_86.png", pos ) #"WARNING_Z"
         with d5                                                                                                                                                                                                                       #HERMIONE
         with hpunch
-        her "То есть {size=+9}АБСОЛЮТНО НА ВСЕ!!!{/size}"
+        her "То есть - {size=+9}АБСОЛЮТНО НА ВСЕ!!!{/size}"
  
         
         
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
+        #__#hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        #__#with d3                                                                                                                                                                                                                        #HERMIONE
+        $herView.hideQQ()
         
 
         
@@ -4278,7 +4517,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     
     pause 2
 
-    $ badges = True # Turns the badges layer in hermione_main back on.
+    #__#$ badges = True # Turns the badges layer in hermione_main back on.
         
     $ persistent.game_complete = True # Turns TRUE after you beat the game. Unlocks the gallery.
 
@@ -4355,7 +4594,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     $ persistent.wine = 0
     $ persistent.wine = persistent.wine + wine # WINE.
 
-            
+    $herView.data().loadState()
            
     ### SACRED SCROLLS ###
     
@@ -4422,3 +4661,8 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         $ persistent.ss_29 = True # Sacred Scroll 29 will be unlocked in the gallery.
     if sscroll_30:
         $ persistent.ss_30 = True # Sacred Scroll 12 will be unlocked in the gallery.
+
+
+
+
+

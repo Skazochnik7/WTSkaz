@@ -9,7 +9,7 @@
         return CharacterExTransform( aName, dict )
 
 
-    class CharacterExTransform:
+    class CharacterExTransform(store.object):
         
         # aTransformName - code string, aNamedParameters - dictionary with parameters
         #

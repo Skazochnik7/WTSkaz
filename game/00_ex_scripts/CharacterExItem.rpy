@@ -23,7 +23,8 @@
 
 init -999 python:
     
-    class CharacterExItem:
+
+    class CharacterExItem(store.object):
 
         # create hermione item's description
         def __init__( self, aFolder, aName, aOrder, aParent = None, aPos = None ):
@@ -103,6 +104,9 @@ init -999 python:
         ##########################################################            
 
         def onSelfAdded( self, aItems, aCharacterEx ):
+            if self.mParent in aItems:
+                if not aItems[ self.mParent ].mIsVisible:
+                    self._hideInner( 'parent' )
             self.innerOnSelfAdded( aItems, aCharacterEx )
 
         def onSelfRemoved( self, aItems, aCharacterEx ):
