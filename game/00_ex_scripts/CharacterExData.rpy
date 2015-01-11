@@ -95,7 +95,7 @@
         ##########################################################        
         
         # save current state to variable
-        def saveState( self, aKeepLinks = False ):
+        def saveState( self ):
             self.mSavedItems = {}# deepcopy( self.mStuff )
             for key in self.mStuff.keys():
                 self.mSavedItems[ key ] = deepcopy( self.mStuff[ key ] )
@@ -105,7 +105,7 @@
 
     
         # load saved statet
-        def loadState( self, aKeepLinks = False ):
+        def loadState( self ):
             self.mStuff.clear()
             for key in self.mSavedItems.keys():
                 self.mStuff[ key ] = deepcopy( self.mSavedItems[ key ] )
