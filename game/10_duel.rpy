@@ -81,12 +81,10 @@ label duel:
     
     
     m "Это глупо...ты мне не ровня..."
-    #__#sna_01 "Забавно..."
     $sna_head_state = 1
     sna_head_main "Забавно..."
     m "{size=-4}(Вообще-то, мой человеческий сосуд довольно слаб...){/size}"
     m "{size=-4}(Но, все равно, я должен быть сильнее любого \"человеческого\" мага...){/size}"
-    #__#sna_01 "Да начнется битва!"
     sna_head_main "Да начнется битва!"
     hide screen bld1
     show screen hp_bar
@@ -102,14 +100,12 @@ label duel:
 label duel_main:
     if genie_hp <= 300 and not d_flag_01:
         $ d_flag_01 = True
-        #__#sna_01 "Уже готов сдаться?"
         sna_head_main "Уже готов сдаться?"
         g4 "Пф..."
         
     if snape_hp <= 400 and not d_flag_02:
         $ d_flag_02 = True
         g4 "{size=-4}(Он слабеет, я это чувствую!){/size}"
-        #__#sna_01 "*Задыхается*"
         sna_head_main "*Задыхается*"
     
     call screen duel_buttons
@@ -536,3 +532,4 @@ label genie_lost:
 
     
     
+

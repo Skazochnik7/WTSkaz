@@ -312,13 +312,7 @@ screen hermione_lift_skirt_shift_panties: #Hermione lifts her skirt
     tag hermione
     add "03_hp/16_hermione_chibi/panties_02_s.png" at Position(xpos=350, ypos=190)
 
-#__#screen hermione_03: #Hermione lifts her skirt
-#__#    tag hermione
-#__#    add "03_hp/16_hermione_chibi/panties_00_old.png" at Position(xpos=350, ypos=190)
  
-#__#screen hermione_03_b: #Hermione lifts her skirt. NO PANTIES.
-#__#    tag hermione
-#__#    add "03_hp/16_hermione_chibi/panties_01.png" at Position(xpos=350, ypos=190)
 
 screen hermione_04: #Hermione lifts her shirt. Showing tits.
     tag hermione
@@ -822,3 +816,4 @@ screen l_head: #Screen that shows a full sprite of HERMIONE.
     
     
     
+

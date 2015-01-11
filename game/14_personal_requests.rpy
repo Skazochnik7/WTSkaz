@@ -1,7 +1,6 @@
 label new_personal_request:
     $ pos = POS_410
     if slytherin > gryffindor or slytherin == gryffindor:
-        #__#show screen hermione_main
         $ herView.showQ( None, pos )
         
         $ menu_x = 0.2 #Default: 0.5
@@ -165,12 +164,9 @@ label new_personal_request:
                 
             "{color=#858585}-Публичные услуги-{/color}" if not daytime:
                 show screen blktone
-                #__#hide screen hermione_main
-                #__#with d3
                 $herView.hideQQ()
                 ">Публичные услуги недоступны в это время суток."
                 hide screen blktone
-                #__#show screen hermione_main
                 $herView.showQ( None, pos )
                 with d3
                 jump not_now
@@ -440,8 +436,6 @@ label new_request_06_complete:
       
 ###################REQUEST_09 (Level 03) (Show me pussy).###############################################################################################
 label new_request_09: #LV.3 (Whoring = 6 - 8)
-    #__#hide screen hermione_main 
-    #__#with d3
     $herView.hideQQ()
     if request_09_points == 0:
         m "{size=-4}(Попросить девочку, показать мне свою киску?){/size}"
@@ -460,14 +454,8 @@ label new_request_09: #LV.3 (Whoring = 6 - 8)
     if request_09_points == 0 and whoring <= 11: # LEVEL 04 # FIRST TIME.
         m "Мисс Грейнджер..."
         m "Сегодняшняя награда для факультета \"Гриффиндора\" 25 очков."
-        #__#hide screen hermione_main
-        #__#with d3
         $herView.hideQQ()
-        #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-        #__#$ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
         $ pos = POS_370
-        #__#show screen hermione_main
-        #__#with d3
         $herView.showQQ( "body_03.png", pos )
         her "Правда?"
         her "Спасибо,это так много, сэр!"
@@ -1175,7 +1163,6 @@ label vague_idea:
 label could_not_flirt: #Sent here when choose "Задание провалено! Ты не получишь очки!" (Hermione is leaving without getting any points).
     hide screen blkfade
     hide screen bld1
-    #__#hide screen hermione_main
     $herView.hideQ()
     hide screen blktone 
     hide screen chair_02
@@ -1204,3 +1191,4 @@ label could_not_flirt: #Sent here when choose "Задание провалено
     else:
         $ hermione_sleeping = True
     return
+

@@ -97,8 +97,6 @@ label door:
                 #stop music fadeout 2.0
                 
                 $ menu_x = 0.2 #Menu is moved to the left side.
-                #__#$ h_xpos=410 #Defines position of the Hermione's full length sprite.
-                #__#$ h_ypos=0
                 $ pos = POS_410
                 
                 $ renpy.play('sounds/door.mp3') #Sound of a door opening.
@@ -107,51 +105,27 @@ label door:
                 show screen bld1
                 with d3
                 if mad >=1 and mad < 3:
-                    #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-                    #__#show screen hermione_main
-                    #__#with d3
                     $herView.showQQ( "body_03.png", pos )
                     her ">Похоже, Гермиона по-прежнему немного расстроена вами..."
                 elif mad >=3 and mad < 10:
-                    #__#$ h_body = "03_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-                    #__#show screen hermione_main
-                    #__#with d3
                     $herView.showQQ( "body_03.png", pos )
                     ">Вы расстроили Гермиону."
                 elif mad >=10 and mad < 20:
-                    #__#$ h_body = "03_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
-                    #__#show screen hermione_main
-                    #__#with d3
                     $herView.showQQ( "body_09.png", pos )
                     ">Гермиона очень расстроена вами."
                 elif mad >=20 and mad < 40:
-                    #__#$ h_body = "03_hp/13_hermione_main/body_05.png" #Sprite of Hermione's upper body.
-                    #__#show screen hermione_main
-                    #__#with d3
                     $herView.showQQ( "body_05.png", pos )
                     ">Гермиона злится на вас."
                 elif mad >=40 and mad < 50:
-                    #__#$ h_body = "03_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.
-                    #__#show screen hermione_main
-                    #__#with d3
                     $herView.showQQ( "body_47.png", pos )
                     ">Гермиона очень злится на вас."
                 elif mad >=50 and mad < 60:
-                    #__#$ h_body = "03_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.
-                    #__#show screen hermione_main
-                    #__#with d3
                     $herView.showQQ( "body_47.png", pos )
                     ">Гермиона в гневе на вас."
                 elif mad >=60:
-                    #__#$ h_body = "03_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.
-                    #__#show screen hermione_main
-                    #__#with d3
                     $herView.showQQ( "body_47.png", pos )
                     ">Гермиона ненавидит вас."
                 else:
-                    #__#$ h_body = "03_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
-                    #__#show screen hermione_main
-                    #__#with d3
                     $herView.showQQ( "body_01.png", pos )
                     her "Да, профессор?"
                 
@@ -546,8 +520,7 @@ label door:
                             else:
                                 her "О, хорошо! Тогда я пойду на уроки."
                             hide screen bld1
-                            #__#hide screen hermione_main
-                            $herView.hideQ() #"WARNING_Z"
+                            $herView.hideQ() 
                             hide screen blktone 
                             hide screen hermione_02
                             hide screen ctc
@@ -561,8 +534,7 @@ label door:
                             else:
                                 her "О, хорошо! Тогда я пойду спать."
                             hide screen bld1
-                            #__#hide screen hermione_main
-                            $herView.hideQ() #"WARNING_Z"
+                            $herView.hideQ()
                             hide screen blktone 
                             hide screen hermione_02
                             hide screen ctc
@@ -1274,31 +1246,18 @@ label request_33_complete:
 #############This massage shows when you make a request, and Hermione refuses because she is not slutty enough yet.
 label too_much:
     stop music fadeout 2.0
-    #__#hide screen hermione_main
-    #__#with d3
     $herView.hideQQ()
-    #__#$ h_xpos=120 #Defines position of the Hermione's full length sprite. center: 120. Right: 370.
     $ pos = POS_120
-    #__#$ h_body = "03_hp/13_hermione_main/body_48.png" #Flashing panties
-    #__#show screen hermione_main
-    #__#with d3
     $herView.showQQ( "body_48.png", pos )
     her "Профессор Дамблдор??!"
     her "Как вы можете просить меня о таком!?"
-    #__#hide screen hermione_main
-    #__#with d3
     $herView.hideQQ()
-    #__#$ h_xpos=120 #Defines position of the Hermione's full length sprite. center: 120. Right: 370.
-    #__#$ h_body = "03_hp/13_hermione_main/body_34.png" #Flashing panties
-    #__#show screen hermione_main
-    #__#with d3
     $herView.showQQ( "body_34.png", pos )
     her "По-моему, мне лучше уйти."
 
     hide screen blktone
     hide screen bld1
-    #__#hide screen hermione_main
-    $herView.hideQ() #"WARNING_Z"
+    $herView.hideQ()
     with Dissolve(.3)
     $ walk_xpos=400 #Animation of walking chibi. (From)
     $ walk_xpos2=610 #Coordinates of it's movement. (To)
@@ -1330,4 +1289,5 @@ label too_much:
     else:
         $ hermione_sleeping = True
         jump night_main_menu
+
 
