@@ -6,7 +6,7 @@ label date_with_snape_01:
     $ s_head_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.       # SNAPE
     $ s_sprite = "03_hp/10_snape_main/23.png"                                        # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "Хорошо, модно попробовать..."
+    sna "Хорошо, можно попробовать..."
     $ s_head_xpos = 330 # x = 330,                                                                              # SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
     show screen s_head2                                                                                                 # SNAPE

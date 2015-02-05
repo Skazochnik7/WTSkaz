@@ -1,473 +1,60 @@
+label menu_dahr_book:
+    if choose==None:
+        $ choose = RunMenu()
+    else:
+        $choose.Clear()
+    python:
+        for e in this.List:
+            if e._block==_block:
+                choose.AddItem("- Книга: "+e._caption+" - "+("{image=check_08.png}" if e._status>-2 else "{image=check_07.png}"), 
+                    "menu_dahre_book_2", True, e)
+        choose.AddItem("- Ничего -", "the_oddities", True, event)
+
+    $ choose.Show()
+
+    label menu_dahre_book_2:
+        $ the_gift = event._img     # "03_hp/18_store/08.png" # Copper book of spirit.
+        show screen gift
+        with d3
+        dahr "\"[event._caption]\". [event._description]\n"
+        if event._status>-2: 
+            call do_have_book
+            jump the_oddities
+        menu:
+            "- Купить книгу за [event._price] золота -":
+                if gold >= event._price:
+                    $ gold -= event._price
+                    $ order_placed = True
+                    $ event.IncValue("status",1)
+#                            $ bought_book_01 = True
+                    call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                    jump desk
+                else:
+                    call no_gold #Massage: m "I don't have enough gold".
+                    jump expression _label
+            "- Ничего -":
+                hide screen gift
+                jump expression _label #education_menu
+
+
+
 label the_oddities:
+    $choose=None
     menu:
         dahr "Добро пожаловать в \"каталог Приблуд Дахра\". Ваши предпочтения не покажутся нам странными!"
         "- Образовательные книги -":
             label education_menu:
-            menu:
-                ###01"\"Copper book of spirit\""   
-                "- Книга: [book01] -" if not "book_01" in books:
-                    $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-                    show screen gift
-                    with d3
-                    dahr "\"[book01]\". \nЭта книга содержит различные советы о том, как улучшить свою эффективность."
-                    menu:
-                        "- Купить книгу за 40 золота -":
-                            if gold >= 40:
-                                $ gold -= 40
-                                $ order_placed = True
-                                $ bought_book_01 = True
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump education_menu
-                        "- Ничего -":
-                            hide screen gift
-                            jump education_menu
-#                "- Книга: [book01] (own) -" if "book_01" in books:
-#                    call do_have_book #Message that says that you already bought this book.
-#                    jump the_oddities 
-                
-                
-                ###02"\"Bronze book of spirit\""   
-                "- Книга: [book02] -" if not "book_02" in books:
-                    $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-                    show screen gift
-                    with d3
-                    dahr "\"[book02]\". \nЭта книга содержит различные советы о том, как улучшить свою эффективность."
-                    menu:
-                        "- Купить книгу за 80 золота -":
-                            if gold >= 80:
-                                $ gold -= 80
-                                $ order_placed = True
-                                $ bought_book_02 = True
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump education_menu    
-                        "- Ничего -":
-                            hide screen gift
-                            jump education_menu
-#                "- Книга: [book02] (own) -" if "book_02" in books:
-#                    call do_have_book #Message that says that you already bought this book.
-#                    jump the_oddities 
-                
-                ###03#"\"Silver book of spirit\""  
-                "- Книга: [book03] -" if not "book_03" in books:
-                    $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-                    show screen gift
-                    with d3
-                    dahr "\"[book03]\". \nЭта книга содержит различные советы о том, как улучшить свою эффективность."
-                    menu:
-                        "- Купить книгу за 90 золота -":
-                            if gold >= 90:
-                                $ gold -=90
-                                $ order_placed = True
-                                $ bought_book_03 = True
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                hide screen gift
-                                jump education_menu    
-                        "- Ничего -":
-                            hide screen gift
-                            jump education_menu
-#                "- Книга: [book03] (own) -" if "book_03" in books:
-#                    call do_have_book #Message that says that you already bought this book.
-#                    jump the_oddities 
-                    
-                ###04"\"Golden book of spirit\"" 
-                "- Книга: [book04] -" if not "book_04" in books:
-                    $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-                    show screen gift
-                    with d3
-                    dahr "\"[book04]\".\nЭта книга содержит различные советы о том, как улучшить свою эффективность."
-                    menu:
-                        "- Купить книгу за 100 золота -":
-                            if gold >= 100:
-                                $ gold -= 100
-                                $ order_placed = True
-                                $ bought_book_04 = True
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump education_menu    
-                        "- Ничего -":
-                            hide screen gift
-                            jump education_menu
-#                "- Книга: [book04] (own) -" if "book_04" in books:
-#                    call do_have_book #Message that says that you already bought this book.
-#                    jump the_oddities 
-                    
-#                ###10"\"Platinum book of spirit\""
-#                "- Книга: [book10] -" if not "book_10" in books:
-#                    $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-#                    show screen gift
-#                    with d3
-#                    dahr "\"[book10]\".\nThis book contains various tips on how to improve one's efficiency."
-#                    menu:
-#                        "- Купить книгу за 120 золота -":
-#                            if gold >= 120:
-#                                $ gold -=120
-#                                $ order_placed = True
-#                                $ bought_book_10 = True
-#                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-#                                jump desk
-#                            else:
-#                                call no_gold #Massage: m "I don't have enough gold".
-#                                jump education_menu    
-#                        "- Ничего -":
-#                            hide screen gift
-#                            jump education_menu
-##                "- Книга: [book10] (own) -" if "book_10" in books:
-##                    call do_have_book #Message that says that you already bought this book.
-##                    jump the_oddities 
-                
-#                ###11#"\"Adamantium book of spirit\""
-#                "- Книга: [book11] -" if not "book_11" in books:
-#                    $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-#                    show screen gift
-#                    with d3
-#                    dahr "\"[book11]\".\nThis book contains various tips on how to improve one's efficiency."
-#                    menu:
-#                        "- Купить книгу за 150 золота -":
-#                            if gold >= 150:
-#                                $ gold -= 150
-#                                $ order_placed = True
-#                                $ bought_book_11 = True
-#                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-#                                jump desk
-#                            else:
-#                                call no_gold #Massage: m "I don't have enough gold".
-#                                jump education_menu    
-#                        "- Ничего -":
-#                            hide screen gift
-#                            jump education_menu
-##                "- Книга: [book11] (own) -" if "book_11" in books:
-##                    call do_have_book #Message that says that you already bought this book.
-##                    jump the_oddities 
-                
-                ###12"\"Speedwriting for dummies.\""
-                "- Книга: [book12] -" if not "book_12" in books:
-                    $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-                    show screen gift
-                    with d3
-                    dahr "\"[book12]\".\nЭта книга содержит несколько элементарных методов, используемых для улучшения своего навыка скорописания."
-                    menu:
-                        "- Купить книгу за 30 золота -":
-                            if gold >= 30:
-                                $ gold -=30
-                                $ order_placed = True
-                                $ bought_book_12 = True
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump education_menu    
-                        "- Ничего -":
-                            hide screen gift
-                            jump education_menu
-#                "- Книга: [book12] (own) -" if "book_12" in books:
-#                    call do_have_book #Message that says that you already bought this book.
-#                    jump the_oddities 
-                
-                #"\"Speedwriting for beginners.\""
-                "- Книга: [book13] -" if not "book_13" in books:
-                    $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-                    show screen gift
-                    with d3
-                    dahr "\"[book13]\".\nЭта книга содержит несколько базовых методов, используемых для улучшения своего навыка скорописания."
-                    menu:
-                        "- Купить книгу за 90 золота -":
-                            if gold >= 90:
-                                $ gold -=90
-                                $ order_placed = True
-                                $ bought_book_13 = True
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump education_menu    
-                        "- Ничего -":
-                            hide screen gift
-                            jump education_menu
-#                "- Книга: [book13] (own) -" if "book_13" in books:
-#                    call do_have_book #Message that says that you already bought this book.
-#                    jump the_oddities 
-                
-                #"\"Speedwriting for intermediates.\""
-                "- Книга: [book14] -" if not "book_14" in books:
-                    $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-                    show screen gift
-                    with d3
-                    dahr "\"[book14]\".\nЭта книга содержит несколько начальных методов, используемых для улучшения своего навыка скорописания."
-                    menu:
-                        "- Купить книгу за 100 золота -":
-                            if gold >= 100:
-                                $ gold -= 100
-                                $ order_placed = True
-                                $ bought_book_14 = True
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump education_menu    
-                        "- Ничего -":
-                            hide screen gift
-                            jump education_menu
-#                "- Книга: [book14] (own) -" if "book_14" in books:
-#                    call do_have_book #Message that says that you already bought this book.
-#                    jump the_oddities 
-                
-                #"\"Speedwriting for the advanced.\""
-                "- Книга: [book15] -" if not "book_15" in books:
-                    $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-                    show screen gift
-                    with d3
-                    dahr "\"[book15]\".\nЭта книга содержит несколько продвинутых методов, используемых для улучшения своего навыка скорописания."
-                    menu:
-                        "- Купить книгу за 130 золота -":
-                            if gold >= 130:
-                                $ gold -= 130
-                                $ order_placed = True
-                                $ bought_book_15 = True
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump education_menu    
-                        "- Ничего -":
-                            hide screen gift
-                            jump education_menu
-#                "- Книга: [book15] (own) -" if "book_15" in books:
-#                    call do_have_book #Message that says that you already bought this book.
-#                    jump the_oddities  
-                    
-#                #"\"Speedwriting for experts.\""
-#                "- Книга: [book16] -" if not "book_16" in books:
-#                    $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-#                    show screen gift
-#                    with d3
-#                    dahr "\"[book16]\".\nThis book contains expert techniques used to improve one's ability to write quickly."
-#                    menu:
-#                        "- Купить книгу за 150 золота -":
-#                            if gold >= 150:
-#                                $ gold -=150
-#                                $ order_placed = True
-#                                $ bought_book_16 = True
-#                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-#                                jump desk
-#                            else:
-#                                call no_gold #Massage: m "I don't have enough gold".
-#                                jump education_menu    
-#                        "- Ничего -":
-#                            hide screen gift
-#                            jump education_menu
-##                "- Книга: [book16] (own) -" if "book_16" in books:
-##                    call do_have_book #Message that says that you already bought this book.
-##                    jump the_oddities  
-                
-#                #"\"Speedwriting for maniacs.\""
-#                "- Книга: [book17] -" if not "book_17" in books:
-#                    $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-#                    show screen gift
-#                    with d3
-#                    #dahr "\"[book17]\"\nThis book contains maniacal level techniques used to improve one's ability to write quickly."
-#                    dahr "\"[book17]\"\nThis book contains techniques which let one master the art of speedwriting completely."
-#                    menu:
-#                        "- Купить книгу за 170 золота -":
-#                            if gold >= 170:
-#                                $ gold -= 170
-#                                $ order_placed = True
-#                                $ bought_book_17 = True
-#                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-#                                jump desk
-#                            else:
-#                                call no_gold #Massage: m "I don't have enough gold".
-#                                jump education_menu    
-#                        "- Ничего -":
-#                            hide screen gift
-#                            jump education_menu
-#                "- Книга: [book17] (own) -" if "book_17" in books:
-#                    call do_have_book #Message that says that you already bought this book.
-#                    jump the_oddities  
-                
-                ###08 "SPEED READING FOR DUMMIES" #
-                "- Книга: [book08] -" if not "book_08" in books:
-                    $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-                    show screen gift
-                    with d3
-                    dahr "\"[book08]\"\nЭта книга содержит несколько базовых методов, используемых для улучшения своего навыка скорочтения."
-                    menu:
-                        "- Купить книгу за 50 золота -":
-                            if gold >= 50:
-                                $ gold -=50
-                                $ order_placed = True
-                                $ bought_book_08 = True
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump education_menu    
-                        "- Ничего -":
-                            hide screen gift
-                            jump education_menu
-#                "- Книга: [book08] (own) -" if "book_08" in books:
-#                    call do_have_book #Message that says that you already bought this book.
-#                    jump the_oddities  
-            
-                ###09 "SPEED READING FOR EXPERTS" #
-                "- Книга: [book09] -" if not "book_09" in books:
-                    $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-                    show screen gift
-                    with d3
-                    dahr "\"[book08]\"\nЭта книга содержит несколько экспертных методов, используемых для улучшения своего навыка скорочтения."
-                    menu:
-                        "- Купить книгу за 90 золота -":
-                            if gold >= 90:
-                                $ gold -=90
-                                $ order_placed = True
-                                $ bought_book_09 = True
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump education_menu    
-                        "- Ничего -":
-                            hide screen gift
-                            jump education_menu
-#                "- Книга: [book09] (own) -" if "book_09" in books:
-#                    call do_have_book #Message that says that you already bought this book.
-#                    jump the_oddities  
-                
-                "- Ничего -":
-                    jump the_oddities
-         
-         
+                $_label="education_menu"
+                $_block="books_edu"
+                jump menu_dahr_book
         "- Фантастика -":
             label fiction_menu:
-            menu:
-                ###06"\"The game of chairs\""
-                "- Книга: [book06]- {image=check_07.png}" if not "book_06" in books:
-                    $ the_gift = "03_hp/18_store/02.png" # GAME OF THRONES.
-                    show screen gift
-                    with d3
-                    "\"[book06]\"" "Эпический рассказ о предательстве, убийствах и изнасилованиях, а затем еще несколько убийств, немного больше предательства и еще больше изнасилований."
-                    menu:
-                        "- Купить книгу за 100 золота -":
-                            if gold >= 100:
-                                $ gold -=100
-                                $ order_placed = True
-                                $ bought_book_06 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                hide screen gift
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump fiction_menu
-                         
-                        "- Ничего -":
-                            hide screen gift
-                            jump fiction_menu
-                "- Книга: [book06] {image=check_08.png} -" if "book_06" in books:
-                    call do_have_book #Message that says that you already bought this book.
-                    jump fiction_menu
-                
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-                ###05"\"The Tale of Galadriel\""    
-                "- Книга: [book05]- {image=check_07.png}" if not "book_05" in books:
-                    $ the_gift = "03_hp/18_store/04.png" # ADVENTURE OF GALADRIEL. BOOK ONE.
-                    show screen gift
-                    with d3
-                    ">Эта книга рассказывает историю эльфийской принцессы, которая бросает вызов традициям своего народа и выбирает оковы для ее собственной судьбы. Или все не так?"
-                    #">This book contains a rather lengthy tale describing in great detail life and adventures of young elven female by the name of Galadriel."
-                    menu:
-                        "- Купить книгу за 200 золота -":
-                            if gold >= 200:
-                                $ gold -=200
-                                $ order_placed = True
-                                $ bought_book_05 = True
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump fiction_menu
-                                
-                        "- Ничего -":
-                            hide screen gift
-                            jump fiction_menu
-                "- Книга: [book05] {image=check_08.png} -" if "book_05" in books:
-                    call do_have_book #Message that says that you already bought this book.
-                    jump fiction_menu
-                
-        
-                ###05_b"\"The Tale of Galadriel. BOOK TWO\""    
-                "- Книга: [book05b]- {image=check_07.png}" if not "book_05_b" in books:
-                    $ the_gift = "03_hp/18_store/05.png" # ADVENTURE OF GALADRIEL. BOOK TWO.
-                    show screen gift
-                    with d3
-                    ">Эта книга рассказывает историю эльфийской принцессы, которая бросает вызов традициям своего народа и выбирает оковы для ее собственной судьбы. Или все не так? "
-                    #">This book contains a rather lengthy tale describing in great detail life and adventures of young elven female by the name of Galadriel."
-                    menu:
-                        "- Купить книгу за 250 золота -":
-                            if gold >= 250:
-                                $ gold -=250
-                                $ order_placed = True
-                                $ bought_book_05_b = True
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump fiction_menu
-                                
-                        "- Ничего -":
-                            hide screen gift
-                            jump fiction_menu
-                "- Книга: [book05b]- {image=check_08.png}" if "book_05_b" in books:
-                    call do_have_book #Message that says that you already bought this book.
-                    jump fiction_menu
-                
-                
-               
-                ###07"\"My dear waifu\""
-                "- Книга: [book07] {image=check_07.png} -" if not "book_07" in books:
-                    $ the_gift = "03_hp/18_store/03.png" # MY DEAR WAIFU.
-                    show screen gift
-                    with d3
-                    "\"[book07]\" {size=-4}BY AKABUR{/size}" "Переживите славные дни в вашей школе. Ваша сводная сестра Ши, учительница Мисс Стивенс или таинственная девушка из библиотеки? Кто станет вашей окончательной \"вайфу\"?"
-                    menu:
-                        "- Купить книгу за 300 золота -":
-                            if gold >= 300:
-                                $ gold -=300
-                                $ order_placed = True
-                                $ bought_book_07 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump fiction_menu
-                        "- Ничего -":
-                            hide screen gift
-                            jump fiction_menu
-                "- Книга: [book07]- {image=check_08.png}" if "book_07" in books:
-                    call do_have_book #Message that says that you already bought this book.
-                    jump fiction_menu
-                
+                $_label="fiction_menu"
+                $_block="books_fict"
+                jump menu_dahr_book
 
-                "- Ничего -":
-                    jump the_oddities
+
+         
                 
          
 

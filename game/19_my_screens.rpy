@@ -324,24 +324,29 @@ screen hermione_04_b: #Hermione lifts her shirt. Showing tits. CLOSER TO THE DES
 
 
     
-screen hermione_walk_01:
+screen hermione_walk_01: # zorder 2, чтобы при движении оказываться выше огня т.к. у screen fireplace_fire zorder 1
+    zorder 2
     tag hermione
     add "ch_hem walk_01" at custom_walk_02(walk_xpos, walk_xpos2)
 
 screen hermione_chibi_robe: #Hermione. Chibi. Walking. Wearing a robe.
+    zorder 2
     tag hermione
     add "ch_hem robe" at custom_walk_02(walk_xpos, walk_xpos2)
 
 screen hermione_chibi_robe_f: #Hermione. Chibi. Walking. Wearing a robe.
+    zorder 2
     tag hermione
     add "ch_hem robe_f" at custom_walk_02(walk_xpos, walk_xpos2)
 
     
 screen hermione_walk_01_f: #Hermione walking animation. facing right. (Leaving tower).
+    zorder 2
     tag hermione
     add "ch_hem walk_01_f" at custom_walk_02(walk_xpos, walk_xpos2)
     
 screen hermione_run: #Hermione running. facing right. (Leaving tower).
+    zorder 2
     tag hermione
     add "ch_hem run_f" at custom_walk_02(walk_xpos, walk_xpos2)
     

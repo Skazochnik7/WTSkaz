@@ -112,6 +112,11 @@ init -998 python:
 
         def hideQQ( self ):
             self.hideQ( d3 )
+
+        def hideshowQQ( self, aFace, aPos ):
+            self.hideQQ( )
+            self.showQ( aFace, aPos )
+
             
         ##########################################################
         # helper methods

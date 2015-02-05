@@ -37,62 +37,49 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
         $herView.showQQ( "body_03.png", pos )
         her "Да, сэр..."
         m "Сколько очков будет стоить посмотреть на твои сиськи?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_14.png", pos )
+        $herView.hideshowQQ( "body_14.png", pos )
         stop music fadeout 1.0
-        her "Сколько вы можете предложить...?"
+        her "Сколько стоит посмотреть на...?"
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-        $herView.hideQQ()
-        $herView.showQQ( "body_30.png", pos )
+        $herView.hideshowQQ( "body_30.png", pos )
         her "Профессор Дамблдор!"
-        m "Хм... Я думал ваш факультет может получить дополнительные очки..."
-        m "Но я думаю, что был неправ..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_31.png", pos )
+        m "Хм... Я думал, вашему факультету пригодились бы дополнительные очки..."
+        m "Но, видимо, я ошибался..."
+        $herView.hideshowQQ( "body_31.png", pos )
         her ".........?"
-        m "Пожалуйста, не противься мне..."
-        m "Все что я хочу - это помочь тебе..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_29.png", pos )
+        m "Ладно, не бери в голову..."
+        m "Я всего лишь хотел помочь тебе..."
+        $herView.hideshowQQ( "body_29.png", pos )
         her "............."
-        $herView.hideQQ()
-        $herView.showQQ( "body_33.png", pos )
+        $herView.hideshowQQ( "body_33.png", pos )
         her "200 очков, сэр."
         m "Если я дам вам 200 очков, Мисс Грейнджер..."
         m "Вы оголите свою грудь и покажите свои дыньки?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_47.png", pos )
+        $herView.hideshowQQ( "body_47.png", pos )
         her "Профессор Дамблдор! Не надо так выражаться!"
         her "Я думаю, я лучше пойду..."
         menu:
             "\"Стой. 200 очков твои. Показывай!\"":
                 $ current_payout = 200 #Used when haggling about price of th favor.
-                $herView.hideQQ()
-                $herView.showQQ( "body_14.png", pos )
+                $herView.hideshowQQ( "body_14.png", pos )
                 her "Серьезно?"
                 m "Да"
-                $herView.hideQQ()
-                $herView.showQQ( "body_29.png", pos )
+                $herView.hideshowQQ( "body_29.png", pos )
                 her "......................................"
                 her "Вы обещаете, что не будете трогать их, сэр?"
                 m "Конечно, конечно..."
-                $herView.hideQQ()
-                $herView.showQQ( "body_32.png", pos )
+                $herView.hideshowQQ( "body_32.png", pos )
                 her "Я делаю это только ради моего факультета, сэр!"
 
             "\"Я дам тебе 5 очков, если ты покажешь сиськи.\"":
-                $herView.hideQQ()
-                $herView.showQQ( "body_72.png", pos )
+                $herView.hideshowQQ( "body_72.png", pos )
                 her "Пять?!"
-                $herView.hideQQ()
-                $herView.showQQ( "body_76.png", pos )
+                $herView.hideshowQQ( "body_76.png", pos )
                 her "Профессор, я не собираюсь показывать их за скромные пять очков!"
                 m "Ну, твои сиськи, конечно, не стоят 200, девочка!"
-                $herView.hideQQ()
-                $herView.showQQ( "body_73.png", pos )
+                $herView.hideshowQQ( "body_73.png", pos )
                 her "(Неужели они так плохи?)"
-                $herView.hideQQ()
-                $herView.showQQ( "body_69.png", pos )
+                $herView.hideshowQQ( "body_69.png", pos )
                 her "Может быть, за сто очков?"
                 menu:
                     "\"Хорошо. 100 очков твои! Показывай!":
@@ -126,7 +113,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
         with d3
         m "Хм..."
         $her_head_state = 12
-        her_head_main "{size=-5}(Мои сисечки сейчас взорвуться...){/size}"
+        her_head_main "{size=-5}(Ох, я ведь еще никому не позволяла смотреть на мои...){/size}"
         m "Подойди ближе, девочка, дай мне лучше рассмотреть..."
         $her_head_state = 4
         her_head_main "............"
@@ -488,7 +475,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 $ mad +=7
    
         "\"Сдержать обещание. Просто смотреть.\"":
-            ">Вы долго всматриваетесь в грудь Гермионы..."
+            ">Вы долго разглядываете грудь Гермионы..."
             if whoring >= 6 and whoring <= 8: # LEVEL 03 # <=================================================================================== FIRST EVENT.
                 pause
                 menu:
@@ -503,22 +490,18 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 pause
                 menu:
                     "\"У тебя отличные сиськи.\"":
-                        $herView.hideQQ()
-                        $herView.showQQ( "body_83.png", pos )
+                        $herView.hideshowQQ( "body_83.png", pos )
                         pause
                         her "Спасибо--"
-                        $herView.hideQQ()
-                        $herView.showQQ( "body_82.png", pos )
+                        $herView.hideshowQQ( "body_82.png", pos )
                         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                         her "..........."
-                        $herView.hideQQ()
-                        $herView.showQQ( "body_81.png", pos )
+                        $herView.hideshowQQ( "body_81.png", pos )
                         her "В последнее время вы частенько говорите разные неуместные вещи, профессор."
                         
                     "\"Хм... Видел и лучше.\"":
                         $ mad += 7
-                        $herView.hideQQ()
-                        $herView.showQQ( "body_83.png", pos );
+                        $herView.hideshowQQ( "body_83.png", pos );
                         her "Арх..."
                         her "Теперь мы закончили?"
 
@@ -526,21 +509,17 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 pause
                 menu:
                     "\"У тебя отличные сиськи, девочка.\"":
-                        $herView.hideQQ()
-                        $herView.showQQ( "body_82.png", pos )
+                        $herView.hideshowQQ( "body_82.png", pos )
                         her "Вы правда так думаете, профессор?"
-                        $herView.hideQQ()
-                        $herView.showQQ( "body_84.png", pos )
+                        $herView.hideshowQQ( "body_84.png", pos )
                         her "Мне приятно, что вам они нравятся, сэр..."
                     "\"Ну, так себе сиськи...\"":
-                        $herView.hideQQ()
-                        $herView.showQQ( "body_82.png", pos )
+                        $herView.hideshowQQ( "body_82.png", pos )
                         her "А?"
                         her "Это значит, что они вам не нравятся, сэр?"
-                        $herView.hideQQ()
-                        $herView.showQQ( "body_85.png", pos )
+                        $herView.hideshowQQ( "body_85.png", pos )
                         her "Мне жаль..."
-            ">Вы смотрите на ее грудь немного дольше..."
+            ">Вы пялитесь на ее грудь еще какое-то время..."
             pause
             m "Ладно, ты можешь прикрыться, девочка..."
             her "............."
@@ -548,7 +527,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
             
             show screen blkfade
             with d3
-            ">Гермиона прикрылась..."
+            ">Гермиона прикрывается..."
             hide screen chair_02 #Genie's chair.
             hide screen genie_and_tits_01
             hide screen bld1
@@ -882,11 +861,9 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         her "Моя форма испачкана..."
                         m "Не беспокойся, я дам тебе очки для факультета, девочка."
                         m "Ты сделала мне хорошо."
-                        $herView.hideQQ()
-                        $herView.showQQ( "body_84.png", pos )
+                        $herView.hideshowQQ( "body_84.png", pos )
                         her "Спасибо, сэр."
-                        $herView.hideQQ()
-                        $herView.showQQ( "body_83.png", pos )
+                        $herView.hideshowQQ( "body_83.png", pos )
                         her "Теперь мне нужно очистить себя..."
                         pause
                         $herView.hideQQ()
@@ -952,11 +929,9 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         her "Моя форма испачкана..."
                         m "Не беспокойся, я дам тебе очки факультета, девочка."
                         m "Ты сделала мне хорошо."
-                        $herView.hideQQ()
-                        $herView.showQQ( "body_84.png", pos )
+                        $herView.hideshowQQ( "body_84.png", pos )
                         her "Спасибо, сэр."
-                        $herView.hideQQ()
-                        $herView.showQQ( "body_83.png", pos )
+                        $herView.hideshowQQ( "body_83.png", pos )
                         her "Теперь я должна себя очистить..."
                         pause
                         $herView.hideQQ()
@@ -1013,7 +988,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
     $ pos = POS_370
     $herView.showQQ( "body_29.png", pos )
     her ".................."
-    her "Спасибо сэр..."
+    her "Спасибо, сэр..."
     if daytime:
         her "Теперь, если Вы не возражаете, я лучше пойду. Мои занятия начинаются."
     else:

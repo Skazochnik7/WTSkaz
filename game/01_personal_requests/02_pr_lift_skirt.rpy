@@ -12,41 +12,33 @@ label new_request_02: #SHOW ME YOUR Трусики
     $herView.showQQ( "body_01.png", pos )
     her "Так, что же мне нужно сделать?"
     m "Ничего такого, на самом деле..."
-    m "Я просто хочу, чтобы ты показа мне свои трусики."             
+    m "Я просто хочу, чтобы ты показала мне свои трусики."             
     if request_02 == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.  
         $ new_request_02_01 =  True #Hearts.
-        $herView.hideQQ()
-        $herView.showQQ( "body_14.png", pos )
+        $herView.hideshowQQ( "body_14.png", pos )
         her "Мои... трусики...?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_47.png", pos )
+        $herView.hideshowQQ( "body_47.png", pos )
         her  "Профессор Дамблдор!"
         m "Я знаю, знаю, это немного странно..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_48.png", pos )
+        $herView.hideshowQQ( "body_48.png", pos )
         her  " {size=+7}Немного !?{/size}"
         her "Это абсолютно неуместно!"
         m "Слушай, нам ведь предстоит это пройти, чтобы пойти дальше, верно?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_31.png", pos )
+        $herView.hideshowQQ( "body_31.png", pos )
         her  "\"Пойти дальше\"? Профессор, я не понимаю..."
         m "Что вы не понимаете, мисс Грейнджер?"
         m "Вам нужны эти очки или нет?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_31.png", pos )
+        $herView.hideshowQQ( "body_31.png", pos )
         her  "Нужны..."
         m "Значит приподнимайте свою юбку..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_47.png", pos )
+        $herView.hideshowQQ( "body_47.png", pos )
         her "............."
     else:
         if request_02 >= 1: #Not the first time
-            $herView.hideQQ()
-            $herView.showQQ( "body_29.png", pos )
+            $herView.hideshowQQ( "body_29.png", pos )
             her "Ох... снова?"
             m "Просто сделай это..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_29.png", pos )
+        $herView.hideshowQQ( "body_29.png", pos )
         her ".................."
         
         
@@ -104,15 +96,13 @@ label new_request_02: #SHOW ME YOUR Трусики
                 ">Вы внимательно смотрите на лицо Гермионы..."
                 pause
                 ">Вы задаетесь вопрос о том, что происходит у нее в голове сейчас."
-                $herView.hideQQ()
-                $herView.showQQ( "body_51.png", pos )
+                $herView.hideshowQQ( "body_51.png", pos )
                 her "......................."
                 pause
             "- Смотреть на ее трусики -":
                 ">Просто женское белье..."
                 pause
-                $herView.hideQQ()
-                $herView.showQQ( "body_51.png", pos )
+                $herView.hideshowQQ( "body_51.png", pos )
                 her "......................."
                
 
@@ -129,28 +119,22 @@ label new_request_02: #SHOW ME YOUR Трусики
         her "Вот, профессор..."
         menu:
             "\"Вы не выглядите смущенно...\"":
-                $herView.hideQQ()
-                $herView.showQQ( "body_53.png", pos )
+                $herView.hideshowQQ( "body_53.png", pos )
                 her "Это не так..."
-                $herView.hideQQ()
-                $herView.showQQ( "body_54.png", pos )
+                $herView.hideshowQQ( "body_54.png", pos )
                 her "Это сравнительно небольшая плата, если \"Гриффиндор\" получит кубок в этом году."
                 her "Я знаю, что все будут счастливы..."
                 pause
             "\"Мне нравятся ваши трусики...\"":
-                $herView.hideQQ()
-                $herView.showQQ( "body_53.png", pos )
+                $herView.hideshowQQ( "body_53.png", pos )
                 her "Спасибо, профессор..."
             "- Продолжать смотреть в ее глаза -":
-                $herView.hideQQ()
-                $herView.showQQ( "body_55.png", pos )
+                $herView.hideshowQQ( "body_55.png", pos )
                 her ".............................."
                 her "...........................?"
-                $herView.hideQQ()
-                $herView.showQQ( "body_56.png", pos )
+                $herView.hideshowQQ( "body_56.png", pos )
                 her "................................"
-                $herView.hideQQ()
-                $herView.showQQ( "body_57.png", pos )
+                $herView.hideshowQQ( "body_57.png", pos )
                 her "Профессор, пожалуйста... Вы смущаете меня."
                 
 
@@ -169,14 +153,12 @@ label new_request_02: #SHOW ME YOUR Трусики
         with d3
         pause
         g4 "Где ваши трусики, мисс Грейнджер?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_59.png", pos )
+        $herView.hideshowQQ( "body_59.png", pos )
         her "Ох, в последнее время я не очень хочу носить их..."
         menu:
             "\"Ах ты маленькая шлюха!\"":
                 her "Хм..."
-                $herView.hideQQ()
-                $herView.showQQ( "body_58.png", pos )
+                $herView.hideshowQQ( "body_58.png", pos )
                 her "Вероятно это так..."
                 her "Могу я получить чуть больше очков за это?"
                 menu:
@@ -184,16 +166,13 @@ label new_request_02: #SHOW ME YOUR Трусики
                         m "Конечно!"
                         $ gryffindor +=10
                         m "Десять очков \"Гриффиндору\"!" 
-                        $herView.hideQQ()
-                        $herView.showQQ( "body_60.png", pos )
+                        $herView.hideshowQQ( "body_60.png", pos )
                         her "Спасибо вам, сэр!"
                     "\"Категорически нет!\"":
                         $ mad +=15
-                        $herView.hideQQ()
-                        $herView.showQQ( "body_61.png", pos )
+                        $herView.hideshowQQ( "body_61.png", pos )
                         her ".............................."
-                        $herView.hideQQ()
-                        $herView.showQQ( "body_62.png", pos )
+                        $herView.hideshowQQ( "body_62.png", pos )
                         her "Не будьте так скупы, профессор."   
             "\"Отлично. Пять очков Гриффиндору!\"":
                 pass           
@@ -229,10 +208,9 @@ label new_request_02: #SHOW ME YOUR Трусики
         $ pos.xpos = 300
         $herView.showQQ( "body_13.png", pos )
         her "Еще пять очков..."
-        her "Не дождусь рассказать ребятам!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_12.png", pos )
-        her "Только я не могу рассказать о всем, что пришлось сделать для этого..."
+        her "Не могу дождаться, чтобы рассказать ребятам!"
+        $herView.hideshowQQ( "body_12.png", pos )
+        her "Только я не могу рассказать обо всем, что пришлось сделать для этого..."
     
     if daytime:
         her "Ну, мои занятия вот-вот начнутся..."

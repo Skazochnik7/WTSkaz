@@ -23,31 +23,25 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
 
     if request_29_points == 0: # FIRST EVENT <============================================================== EVENT 01
         m "Мисс Грейнджер?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_01.png", pos )
+        $herView.hideshowQQ( "body_01.png", pos )
         her "Сэр?"
         m "Я бы хотел купить у вас сегодня..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_06.png", pos )
+        $herView.hideshowQQ( "body_06.png", pos )
         her ".......?"
         m "Как бы более мягко выразиться...?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_129.png", pos )
+        $herView.hideshowQQ( "body_129.png", pos )
         her "Занятся сексом, сэр?"
         m "Вообще-то -  да. Но как вы догадались...?"
         if whoring <=17:
             jump too_much
-        $herView.hideQQ()
-        $herView.showQQ( "body_128.png", pos )
+        $herView.hideshowQQ( "body_128.png", pos )
         her "Не сложно было догадаться..."
         m "Вы не будете возражать?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_120.png", pos )
+        $herView.hideshowQQ( "body_120.png", pos )
         her "Кончено я буду возражать, сэр!"
         her "Я не проститутка!"
         m "Но всё равно сделаете это??"
-        $herView.hideQQ()
-        $herView.showQQ( "body_127.png", pos )
+        $herView.hideshowQQ( "body_127.png", pos )
         her2 "\"Гриффиндор\" снова на грани поражения..."
         her2 "И что, вы думаете, я должна делать?.."
         m "Отлично!"
@@ -129,7 +123,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                 $herViewHead.showQ( "body_33.png", posHead )
                 her "Мне не стыдно, сэр!"
                 her "Я делаю всё это для моего факультета...!"
-                her "Что бы помочь моему...--"
+                her "Чтобы помочь моему...--"
                 $herViewHead.showQ( "body_131.png", posHead )
                 her "А-а-а..."
                 her "Мои однокурсники расчитывают на меня... а-а..."
@@ -158,7 +152,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                 $herViewHead.showQ( "body_33.png", posHead )
                 her "Нет, я не наслаждаюсь!"
                 $herViewHead.hideQ()
-                m "Упрямая девченка..."
+                m "Упрямая девчонка..."
                 $herViewHead.showQ( "body_131.png", posHead )
                 her "Ааа...{image=textheart.png}" 
                 $herViewHead.hideQ()
@@ -250,7 +244,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                 her "Ваш пенис слишком велик... ах..."
                 $herViewHead.hideQ()
                 m "Хм..."
-                m "Ты хочешь, что бы я замедлился?"
+                m "Ты хочешь, чтобы я замедлился?"
                 $herViewHead.showQ( "body_31.png", posHead )
                 her "Нет, сэр... Вам не стоит..."
                 $herViewHead.showQ( "body_33.png", posHead )
@@ -284,7 +278,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
         m "Ммм? Ты в порядке?"
         show screen blktone8
         with d3
-        ">Ноги гермионы затрясись..."
+        ">Ноги Гермионы затряслись..."
         m "Девочка?"
         $herViewHead.showQ( "body_130.png", posHead )
         her "{image=textheart.png}{image=textheart.png}{image=textheart.png}Мне кажется, я кончаю, сэр!{image=textheart.png}{image=textheart.png}{image=textheart.png}"
@@ -392,7 +386,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                 $herViewHead.hideQ()
                 m "Ты что, серьезно? Все ещё?"
                 $herViewHead.showQ( "body_131.png", posHead )
-                her "Мы можем расчитаться... пожалуйста?"
+                her "Мы можем рассчитаться... пожалуйста?"
                 $herViewHead.hideQ()
     
             "- Кончить в Гермиону -":
@@ -465,20 +459,17 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                 m "А всем известно, что ведьмаки - бесплодны..."
                 $herViewHead.showQ( "body_117.png", posHead )
                 her "Сэр, это бессмысленно..."
-                her "Могу я просто расчитаться...?"
+                her "Могу я просто получить, что причитается...?"
                 $herViewHead.hideQ()
 
     elif request_29_points == 1: # SECOND EVENT <============================================================== EVENT 02
-        m "Мисс Грейнджер, вы уже мокрая и готовы, что бы я вошёл в вас?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_30.png", pos )
+        m "Мисс Грейнджер, вы уже мокрая и готовы, чтобы я вошёл в вас?"
+        $herView.hideshowQQ( "body_30.png", pos )
         her "Профессор!"
         m "Просто скажи \"Я готова\" и иди сюда, девочка."
-        $herView.hideQQ()
-        $herView.showQQ( "body_31.png", pos )
+        $herView.hideshowQQ( "body_31.png", pos )
         her "..........."
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her "Я готова...."
         $herView.hideQ()
         jump your_ass
@@ -487,17 +478,14 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
         m "Мисс Грейнджер..."
         m "Прошлой ночью у меня был сон..."
         g9 "Вы легли на мой стол, раздвинули ноги и я трахал вашу киску со всей силой..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_120.png", pos )
+        $herView.hideshowQQ( "body_120.png", pos )
         her "В этом сне, сэр..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_47.png", pos )
+        $herView.hideshowQQ( "body_47.png", pos )
         her "Я получила 65 баллов своему факультету за это?"
         g9 "Да, мисс Грейнджер, получили."
-        $herView.hideQQ()
-        $herView.showQQ( "body_66.png", pos )
+        $herView.hideshowQQ( "body_66.png", pos )
         her "..............................."
-        her "Дайте мне хотя бы снять свои трусики..."
+        her "Дайте мне, хотя бы, снять трусики..."
         stop music fadeout 1.0
         $herView.hideQQ()
         show screen blkfade
@@ -632,7 +620,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                 $herViewHead.showQ( "body_132.png", posHead )
                 her "А-ох...{image=textheart.png}{image=textheart.png}{image=textheart.png}"
                 $herViewHead.hideQ()
-                m "Твои родители послали тебя учиться, а не трахаться со студентами и преподователями!"
+                m "Твои родители послали тебя учиться, а не трахаться со студентами и преподавателями!"
                 $herViewHead.showQ( "body_132.png", posHead )
                 her "Ах-а...{image=textheart.png} Но я всё это делаю для...--"
                 $herViewHead.hideQ()
@@ -701,7 +689,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
         $herViewHead.hideQ()
         show screen blktone
         with d3
-        ">Вы заметили, что после каждого шлепка по заднице девченки её киска сжимается на пару секунд и сжимает ваш член..."
+        ">Вы заметили, что после каждого шлепка по заднице девчонки её киска сжимается на пару секунд и сжимает ваш член..."
         ">Вам нравятся эти ощущения..."
         ">Вы продолжаете шлёпать попку Гермионы."
         ">Каждый удар по заднице сопровождается её вздохами наслаждения."
@@ -830,7 +818,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                 $herViewHead.showQ( "body_133.png", posHead )
                 her "Ааа...{image=textheart.png}"
                 $herViewHead.hideQ()
-                m "Ты в порядке, сучка? Всмысле, девочка."
+                m "Ты в порядке, сучка? То есть, девочка."
                 $herViewHead.showQ( "body_133.png", posHead )
                 her "Да... Я..."
                 $herViewHead.showQ( "body_135.png", posHead )
@@ -847,12 +835,12 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                 $herViewHead.showQ( "body_123.png", posHead )
                 her "....возможно."
                 $herViewHead.showQ( "body_121.png", posHead )
-                her "Помоему, я кончила несколько раз..."
+                her "По-моему, я кончила несколько раз..."
                 show screen blkfade
                 with d3
                 $herViewHead.showQ( "body_122.png", posHead )
                 her2 "Может вы и правы, сэр, и я не должна об этом беспокоиться."
-                her "Мы можем расчитаться?"
+                her "Мы можем рассчитаться?"
                 $herViewHead.hideQ()
 
             "- Обкончать Гермиону -":
@@ -924,7 +912,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                 $herViewHead.showQ( "body_121.png", posHead )
                 her "Думаю, я кончила несколько раз, сэр..."
                 $herViewHead.showQ( "body_122.png", posHead )
-                her "Мы можем расчитаться?"
+                her "Мы можем рассчитаться?"
                 $herViewHead.hideQ()
         
         

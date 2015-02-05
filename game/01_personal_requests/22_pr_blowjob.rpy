@@ -20,39 +20,30 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
 
     if request_22_points == 0: # FIRST EVENT <============================================================== EVENT 01
         m "Мисс Гренджер??"
-        $herView.hideQQ()
-        $herView.showQQ( "body_01.png", pos )
+        $herView.hideshowQQ( "body_01.png", pos )
         her "Да, профессор?"
         m "Сегодня я планирую дать \"Гриффиндору\" 55 очков..."
         m "Если вы у меня отсосете..."
         if whoring <=14: # LEVEL 05
             jump too_much
-        $herView.hideQQ()
-        $herView.showQQ( "body_87.png", pos )
+        $herView.hideshowQQ( "body_87.png", pos )
         her "Ох..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_124.png", pos )
+        $herView.hideshowQQ( "body_124.png", pos )
         her "Хорошо."
         m "Серьезно? Просто так?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her "Да, я знаю, что должна чувствовать себя неловко..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_117.png", pos )
+        $herView.hideshowQQ( "body_117.png", pos )
         her "Но, почему то, я чувствую себя нормально..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_124.png", pos )
+        $herView.hideshowQQ( "body_124.png", pos )
         her "Я думаю, я просто рада, что могу помочь Гриффиндру...."
-        $herView.hideQQ()
-        $herView.showQQ( "body_120.png", pos )
+        $herView.hideshowQQ( "body_120.png", pos )
         her "И если я должна сделать вам минет, то пусть так и будет..."
         m "Ну что же, хорошо."
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her "Хотя теперь, когда я говорю это вслух, мне это не нравится!..."
         m "Слишком поздно, ты уже сказала \"Да\"!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_24.png", pos )
+        $herView.hideshowQQ( "body_24.png", pos )
         her "Я знаю..."
 
         label blowjob_jumping:
@@ -195,7 +186,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 $herViewHead.hideQ()
                 m "Да, я знал это, тебе это нравится, ведь ты - извращенка."
                 $herViewHead.showQ( "body_118.png", posHead )
-                her2 "Я думаю, это было неловко и захватывающе одновременно..."
+                her2 "Я думаю, это будет неловко и захватывающе одновременно..."
                 her2 "И из за этого я чувствую себя еще хуже."
                 $herViewHead.hideQ()
                 m "Бедняжка."
@@ -525,7 +516,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 $herViewHead.showQ( "body_31.png", posHead )
                 her "............"
                 $herViewHead.hideQ()
-                m "Ведь ты не хочешь, что бы..."
+                m "Ведь ты не хочешь, чтобы..."
                 $herViewHead.showQ( "body_34.png", posHead )
                 her "Хм?"
                 $herViewHead.hideQ()
@@ -543,7 +534,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 if daytime:
                     m "Тебе лучше пойти, что бы не опоздать на занятия.."
                 else:
-                    m "Осталось немного времени..."
+                    m "Уже поздно..."
                     $herViewHead.showQ( "body_34.png", posHead )
                     her "Да..."
                 $herViewHead.showQ( "body_44.png", posHead )
@@ -555,20 +546,16 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         
     elif request_22_points == 1: #  <============================================================== EVENT 02
         m "Мисс Гренджер?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_01.png", pos )
+        $herView.hideshowQQ( "body_01.png", pos )
         her "Сэр?"
         m "Как насчет минета??"
-        $herView.hideQQ()
-        $herView.showQQ( "body_86.png", pos )
+        $herView.hideshowQQ( "body_86.png", pos )
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         her "Профессор, как вы смеете предлагать такое вашему ученику?!"
         m "Чт...?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_86.png", pos )
+        $herView.hideshowQQ( "body_86.png", pos )
         her "Это недостойно человека вашей должности!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_47.png", pos )
+        $herView.hideshowQQ( "body_47.png", pos )
         her "Вам должно быть стыдно за себя, сэр!"
         menu:
             m "???"
@@ -576,8 +563,8 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                 $herView.hideQQ()
                 $herView.showQQ( "body_24.png", pos )
-                her "Сэр, успокойтесь, пожалуйста"
-                m "Покиньте кабинет, мисс Грейнджер"
+                her "Сэр, успокойтесь, пожалуйста."
+                m "Покиньте кабинет, мисс Грейнджер!"
                 $herView.hideQQ()
                 $herView.showQQ( "body_24.png", pos )
                 her "Cэр, все что я сказала - было не всерьез."
@@ -593,20 +580,17 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                 her "Поняла... cэр."
                 m "Что?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_45.png", pos )
+        $herView.hideshowQQ( "body_45.png", pos )
         her "Ну, так много произошло за последнее время..."
         her2 "У меня было так много новых впечатлений, что я изменила свой взгляд на некоторые вещи..."
         her2 "Так что я просто пыталась представить себе, как \"я в прошлом\" отреагировала бы на это."
         m "Итак..."
         g4 "Вы плохо относитесь ко мне?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_34.png", pos )
+        $herView.hideshowQQ( "body_34.png", pos )
         her "Хм... мне жаль сэр, я не это имела ввиду..."
         g4 "Ты плохая девочка, ты должна быть наказана!"
         g9 "Я накажу тебя моим членом!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_34.png", pos )
+        $herView.hideshowQQ( "body_34.png", pos )
         her "..............................."
 
         jump blowjob_jumping
@@ -614,8 +598,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
     elif request_22_points >= 2: # <============================================================== EVENT 03
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         m "Соси мой член, девочка."
-        $herView.hideQQ()
-        $herView.showQQ( "body_45.png", pos )
+        $herView.hideshowQQ( "body_45.png", pos )
         her "Конечно..."
         # Sucking.
         
@@ -716,7 +699,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 sna "Хмм...?"
                 sna "Джинни? Ты в порядке??"
                 hide screen s_head2
-                her "{size=-4}(Джинни!!? Кто здесь?!){/size}"
+                her "{size=-4}(Джинни!!? И она здесь?!){/size}"
                 her "{size=-4}(Нет, пожалуйста! Я умру от стыда!){/size}"
                 m "Да, Северус, я в порядке..."
                 her "{size=-4}(Что? *Чавк...?* *Чавк...?* *Хлюп...?*){/size}"
@@ -801,8 +784,8 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 with d5
     
                 play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-                ">Гермиона не сказала ни слова. Ее лицо покраснело из-за смущения, вины и волнения."
-                ">Однако, не смотря на то, что она так растеряна и уязвима, она все еще старательно продолжает выполнять свою задачу."
+                ">Гермиона не сказала ни слова. Она покраснела из-за смущения, вины и волнения."
+                ">Однако, несмотря на то, что она так растеряна и уязвлена, она все еще старательно продолжает отсасывать."
                 g4 "(Я почти кончил!)"
 
                 
@@ -994,7 +977,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 pause .1
                 hide screen white
                 with hpunch
-                рук "{size=+7}Глап!{/size}"
+                her "{size=+7}Глап!{/size}"
                 g4 "Да, глотай всё, шлюха!"
                 #Cumming.
                 her "*Хлюп!-Хлюп!-Хлюп!*"

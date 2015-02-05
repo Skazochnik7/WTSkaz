@@ -257,7 +257,7 @@ label new_request_04:
     $ pos = POS_370
     $herView.showQQ( "body_29.png", pos )
     her ".................."
-    her "Спасибо сэр..."
+    her "Спасибо, сэр..."
     if daytime:
         her "Теперь, мне лучше идти. Занятия вот-вот начнутся."
     else:

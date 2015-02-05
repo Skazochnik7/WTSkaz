@@ -22,27 +22,21 @@ label want_to_rule:
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
     her "Профессор Дамблдор?"
     m "Мисс Грейнджер, чем могу быть полезен?"
-    $herView.hideQQ()
-    $herView.showQQ( "body_14.png", pos )
+    $herView.hideshowQQ( "body_14.png", pos )
     her "Сэр, вы еще не решили, кто будет курировать \"КООБ\" в этом году?"
     m "\"КООБ\"?"
-    $herView.hideQQ()
-    $herView.showQQ( "body_16.png", pos )
+    $herView.hideshowQQ( "body_16.png", pos )
     her "\"Комитет по Организации Осеннего Бала\", сэр..."
     m "Эм... Конечно..."
-    $herView.hideQQ()
-    $herView.showQQ( "body_07.png", pos )
+    $herView.hideshowQQ( "body_07.png", pos )
     her "Пожалуйста, извините, но я скажу прямо, сэр..."
-    $herView.hideQQ()
-    $herView.showQQ( "body_04.png", pos )
+    $herView.hideshowQQ( "body_04.png", pos )
     her "Я думаю, что я должна курировать его."
     her "Я курировала его в прошлом году и это был самый лучший осенний бал за последние годы."
-    $herView.hideQQ()
-    $herView.showQQ( "body_03.png", pos )
+    $herView.hideshowQQ( "body_03.png", pos )
     her "Вы так сами сказали, сэр. Вы помните?"
     m "Да, конечно..."
-    $herView.hideQQ()
-    $herView.showQQ( "body_01.png", pos )
+    $herView.hideshowQQ( "body_01.png", pos )
     her "То есть, вы согласны?"
     her "Это значит, что я буду курировать бал и в этом году?"
     menu:
@@ -478,15 +472,13 @@ label want_to_rule:
     hide screen ctc
     show screen bld1
     with d3
-    $herView.hideQQ()
-    $herView.showQQ( "body_74.png", pos )
+    $herView.hideshowQQ( "body_74.png", pos )
     her "Итак, теперь я официально курирую \"Комитет по Организации Осеннего Бала\"?"
     m "Да, теперь ты главная."
     her "Спасибо, сэр! Вы не пожалеете об этом, обещаю!"
     m "{size=-4}(А почему я должен?){/size}"
     m "{size=-4}(Мне как-то плевать...){/size}"
-    $herView.hideQQ()
-    $herView.showQQ( "body_68.png", pos )
+    $herView.hideshowQQ( "body_68.png", pos )
     her "Ну, я, пожалуй, пойду. У меня теперь столько дел!"
     m "Конечно, мисс Грейнджер. Удачи."
     $herView.hideQQ()
@@ -559,7 +551,7 @@ label against_the_rule:
     show screen snape_main                                                                                                                  #SNAPE
     with d3                                                                                                                                                   #SNAPE
     sna "Ты назначил эту девку главой \"Комитета по Организации Осеннего Бала\"?!!"
-    m "Похоже это плохо?"
+    m "Похоже, это плохо?"
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_10.png"                                                               #SNAPE
@@ -585,7 +577,7 @@ label against_the_rule:
     show screen snape_main                                                                                                                 #SNAPE
     with d3                                                                                                                                                  #SNAPE
     sna "Да ты что? И кто тебе это сказал?"
-    m "Определенно не самый надежный источник..."
+    m "Определенно, не самый надежный источник..."
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_08.png"                                                              #SNAPE
@@ -697,7 +689,7 @@ label against_the_rule:
     show screen snape_main                                                                                                                 #SNAPE
     with d3                                                                                                                                                  #SNAPE
     sna "Ага, свежие новости - я ненавижу свою работу."
-    sna "И так как ты мой босс..."
+    sna "И так как ты - мой босс..."
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                                              #SNAPE
@@ -718,7 +710,7 @@ label against_the_rule:
     $ s_sprite = "03_hp/10_snape_main/snape_07.png"                                                              #SNAPE
     show screen snape_main                                                                                                                 #SNAPE
     with d3                                                                                                                                                  #SNAPE
-    sna "Я, со сорванной во время уроков крышой, и придушивший парочку \"Гриффиндорских\" засранцев голыми руками..."
+    sna "Я, с сорванной во время уроков крышой, и придушивший парочку \"Гриффиндорских\" засранцев голыми руками..."
     m "Хм... Ты прав, пожалуй..."
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
@@ -826,46 +818,35 @@ label crying_about_dress:
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
     her "Мои родители прислали мне не то платье!"
     m "Ты серьезно!?"
-    $herView.hideQQ()
-    $herView.showQQ( "body_21.png", pos )
+    $herView.hideshowQQ( "body_21.png", pos )
     her "Они прислали мне платье, которое я одевала на бал в прошлом году..."
     m "Невнимательные сволочи!"
-    $herView.hideQQ()
-    $herView.showQQ( "body_67.png", pos )
+    $herView.hideshowQQ( "body_67.png", pos )
     her "Веселитесь, сэр?"
     m "Разве я виноват в этом?"
-    $herView.hideQQ()
-    $herView.showQQ( "body_140.png", pos )
+    $herView.hideshowQQ( "body_140.png", pos )
     her "Я стану посмешищем всего Хогвартса! *Всхлип!*"
-    $herView.hideQQ()
-    $herView.showQQ( "body_142.png", pos )
+    $herView.hideshowQQ( "body_142.png", pos )
     her "Моей репутации придет конец! *Всхлип!*"
     m "Серьезно? После всех тех услуг, что ты продала мне, тебя еще волнуют такие вещи?"
-    $herView.hideQQ()
-    $herView.showQQ( "body_143.png", pos )
+    $herView.hideshowQQ( "body_143.png", pos )
     her "Одевать одно и то же платье на \"Осенний Бал\" два года подряд в разы унизительней всех тех услуг, что я вам продала, сэр."
     with hpunch
     g4 "Да ты шутишь..."
-    $herView.hideQQ()
-    $herView.showQQ( "body_145.png", pos )
+    $herView.hideshowQQ( "body_145.png", pos )
     her "Ох, вам не понять..."
-    $herView.hideQQ()
-    $herView.showQQ( "body_148.png", pos )
+    $herView.hideshowQQ( "body_148.png", pos )
     her "Вы точно такой же, как мой отец!"
     m "Прошу прощения?"
-    $herView.hideQQ()
-    $herView.showQQ( "body_144.png", pos )
+    $herView.hideshowQQ( "body_144.png", pos )
     her "В смысле... эм..."
     her "Простите, сэр..."
-    $herView.hideQQ()
-    $herView.showQQ( "body_143.png", pos )
+    $herView.hideshowQQ( "body_143.png", pos )
     her "Я не знаю, почему я вообще рассказываю вам все это..."
     m "................"
-    $herView.hideQQ()
-    $herView.showQQ( "body_142.png", pos )
+    $herView.hideshowQQ( "body_142.png", pos )
     her "......................*всхлип!*"
-    $herView.hideQQ()
-    $herView.showQQ( "body_145.png", pos )
+    $herView.hideshowQQ( "body_145.png", pos )
     her "Я думаю, мне лучше уйти...*всхлип*"
     m "Что ж, не смею вас более задерживать, мисс Грейнджер...."
     # Walks to the door.
@@ -909,7 +890,7 @@ label crying_about_dress:
     m "И это несмотря на все, что было..."
     m "Судя по всему, для нее продавать себя за очки значительно меньшая проблема, чем не иметь приличного бального платья..."
     m ".............."
-    m "Школьницы..."
+    m "Бабы..."
        
     hide screen bld1
     with d3
@@ -949,35 +930,27 @@ label sorry_about_hesterics:
     $ pos = POS_140
     $herView.showQQ( "body_11.png", pos )
     her "Извините, что отвлекаю вас, сэр..."
-    $herView.hideQQ()
-    $herView.showQQ( "body_10.png", pos )
+    $herView.hideshowQQ( "body_10.png", pos )
     her "Я пришла извиниться за мое..."
     her "...мое вчерашнее истеричное поведение."
     m "Конечно, не переживай на этот счет."
-    $herView.hideQQ()
-    $herView.showQQ( "body_02.png", pos )
+    $herView.hideshowQQ( "body_02.png", pos )
     her "Спасибо, сэр."
-    $herView.hideQQ()
-    $herView.showQQ( "body_04.png", pos )
+    $herView.hideshowQQ( "body_04.png", pos )
     her "Однако, я не могу не чувствовать себя ужасно из-за той сцены..."
     m "Так значит проблема решилась?"
-    $herView.hideQQ()
-    $herView.showQQ( "body_11.png", pos )
+    $herView.hideshowQQ( "body_11.png", pos )
     her "Не совсем..."
-    $herView.hideQQ()
-    $herView.showQQ( "body_12.png", pos )
+    $herView.hideshowQQ( "body_12.png", pos )
     her "Вернее, совсем нет..."
     m "Хм..?"
-    $herView.hideQQ()
-    $herView.showQQ( "body_73.png", pos )
+    $herView.hideshowQQ( "body_73.png", pos )
     her "Но это не так важно..."
     her "Просто я излишне драматизирую..."
-    $herView.hideQQ()
-    $herView.showQQ( "body_71.png", pos )
+    $herView.hideshowQQ( "body_71.png", pos )
     play music "music/Despair_by_erenik.mp3" fadein 1 fadeout 1 # SAD THEME.
     her "Я не смогу попасть на бал в этом году... ну и что?"
-    $herView.hideQQ()
-    $herView.showQQ( "body_33.png", pos )
+    $herView.hideshowQQ( "body_33.png", pos )
     her "Я потратила бессчетные часы, организовывая его..."
     $herView.hideQQ()
 
@@ -989,11 +962,9 @@ label sorry_about_hesterics:
     $herView.data().delItem( 'tears' )
     $herView.showQQ( "body_139.png", pos )
     her "И теперь я даже не смогу по... пo... *Всхлип!*"
-    $herView.hideQQ()
-    $herView.showQQ( "body_143.png", pos )
+    $herView.hideshowQQ( "body_143.png", pos )
     her "Пo... *ВСХЛИП!*"
-    $herView.hideQQ()
-    $herView.showQQ( "body_145.png", pos )
+    $herView.hideshowQQ( "body_145.png", pos )
     her "Простите, сэр!"
     $herView.hideQQ()
     
@@ -1048,68 +1019,53 @@ label giving_thre_dress:
     $ pos = POS_140
     $herView.showQQ( "body_01.png", pos )
     her "Хм...? Что это?"
-    $herView.hideQQ()
-    $herView.showQQ( "body_18.png", pos )
+    $herView.hideshowQQ( "body_18.png", pos )
     with hpunch
     her "{size=+7}ПЛАТЬЕ?!{/size}"
     m "Я думал, что тебе-"
-    $herView.hideQQ()
-    $herView.showQQ( "body_22.png", pos )
+    $herView.hideshowQQ( "body_22.png", pos )
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
     her "ПРОФЕССОР!"
     g4 "Что? Что такое? Только не говори мне, что это не тот цвет или что-то еще!"
-    $herView.hideQQ()
-    $herView.showQQ( "body_21.png", pos )
+    $herView.hideshowQQ( "body_21.png", pos )
     her "Оно идеально, сэр...*всхлип!*"
     her "Оно идеально... *всхлип!* ...мне нравится."
     m "Тебе определенно оно не нравится..."
     her "Простите, сэр... *Всхлип!*"
-    $herView.hideQQ()
-    $herView.showQQ( "body_140.png", pos )
+    $herView.hideshowQQ( "body_140.png", pos )
     her "Я... Я просто..."
-    $herView.hideQQ()
-    $herView.showQQ( "body_143.png", pos )
+    $herView.hideshowQQ( "body_143.png", pos )
     her "Я так счастлива..."
     her "Спасибо, сэр. Огромное вам спасибо."
-    $herView.hideQQ()
-    $herView.showQQ( "body_145.png", pos )
+    $herView.hideshowQQ( "body_145.png", pos )
     her "Я не могу поверить, что вы могли сделать для меня нечто подобное..."
     m "Ну, я сделал. А теперь хватит реветь."
-    $herView.hideQQ()
-    $herView.showQQ( "body_147.png", pos )
+    $herView.hideshowQQ( "body_147.png", pos )
     her "Я не могу, сэр. Я так счастлива и так благодарна..."
-    $herView.hideQQ()
-    $herView.showQQ( "body_144.png", pos )
+    $herView.hideshowQQ( "body_144.png", pos )
     her "Хотите я отсосу вам, сэр?"
     m "Что?"
-    $herView.hideQQ()
-    $herView.showQQ( "body_144.png", pos )
+    $herView.hideshowQQ( "body_144.png", pos )
     her "Потому что я отсосу!"
     her "И все проглочу!"
-    $herView.hideQQ()
-    $herView.showQQ( "body_143.png", pos )
+    $herView.hideshowQQ( "body_143.png", pos )
     her "И вам не придется платить мне ни единого очка!"
     m "Кхм... Может, как-нибудь в следующий раз..."
     m "Это не тот тип рыданий, что может меня возбудить..."
-    $herView.hideQQ()
-    $herView.showQQ( "body_145.png", pos )
+    $herView.hideshowQQ( "body_145.png", pos )
     her "Извините, сэр. Я так разревелась..."
-    $herView.hideQQ()
-    $herView.showQQ( "body_143.png", pos )
+    $herView.hideshowQQ( "body_143.png", pos )
     her "Но это так неожиданно..."
     her "Вы сделали меня такой счастливой, сэр...*всхлип!*"
-    $herView.hideQQ()
-    $herView.showQQ( "body_145.png", pos )
+    $herView.hideshowQQ( "body_145.png", pos )
     her "Спасибо, сэр! *ВСХЛИП!* Спасибо! *Всхлип!*"
     m "Ну... эмм... ну будет тебе, будет..."
     m "Лучше прекрати плакать, пока не промочила новое платье насквозь в своих слезах..."
-    $herView.hideQQ()
-    $herView.showQQ( "body_147.png", pos )
+    $herView.hideshowQQ( "body_147.png", pos )
     her "Мое новое платье! *ВСХЛИП!*"
     m "Хорошо, знаешь что? Просто выметайся из моего кабинета."
     m "Забирай свое платье и уходи."
-    $herView.hideQQ()
-    $herView.showQQ( "body_145.png", pos )
+    $herView.hideshowQQ( "body_145.png", pos )
     her "Конечно... Извините, сэр!"
     $herView.hideQQ()
     
@@ -1208,7 +1164,7 @@ label good_bye_snape:
     show screen snape_main                                                                                                                  #SNAPE
     with d3                                                                                                                                                   #SNAPE
     sna "Да..."
-    sna "Вообще то, это было достаточно очевидно... Странно, что я раньше до этого не додумался."
+    sna "Вообще-то, это было достаточно очевидно... Странно, что я раньше не додумался."
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/24.png"                                                                            #SNAPE
@@ -1243,7 +1199,7 @@ label good_bye_snape:
     show screen snape_main                                                                                                                  #SNAPE
     with d3                                                                                                                                                   #SNAPE
     sna "Мой друг, моя магия - это \"Хогвартская\" магия..."
-    sna "Готов поспорить, что твою силы достаточно \"чужие\", чтобы их можно было считать угрозой."
+    sna "Готов поспорить, твои силы вполне \"чужие\", чтобы их можно было считать угрозой."
     m "Интересно..."
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
@@ -1257,7 +1213,7 @@ label good_bye_snape:
     $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                                                            #SNAPE
     show screen snape_main                                                                                                                  #SNAPE
     with d3                                                                                                                                                   #SNAPE
-    sna "Да, и лучшее время, чтобы сделать это - сегодня вечером..."
+    sna "Да, и лучшее время, чтобы сделать это - сегодняшний вечер..."
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/23.png"                                                                            #SNAPE
@@ -1281,7 +1237,7 @@ label good_bye_snape:
     play music "music/11 The Quidditch Match.mp3" fadein 1 fadeout 1 # EPIC THEME.
     pause 1
     m "Точно, сегодня будет \"Осенний бал\"..."
-    m "Итак, тогда все закончится сегодня вечером..."
+    m "Значит, все закончится сегодня вечером..."
     $ s_head_xpos = 330 # x = 330,
     $ s_head_ypos = 340 #Right bottom corner: y = 340. y = 380 - no hand.
     $ s_sprite = "03_hp/10_snape_main/snape_09.png"
@@ -1383,7 +1339,7 @@ label good_bye_snape:
     sna "Хм..."
     show screen s_head2
     $ s_sprite = "03_hp/10_snape_main/snape_03.png"
-    sna2 "Альбус не знает, что я был вкурсе его отсутствия..."
+    sna2 "Альбус не знает, что я был в курсе его отсутствия..."
     show screen s_head2
     $ s_sprite = "03_hp/10_snape_main/snape_01.png"
     sna "Есть способ, чтобы различить вас?"
@@ -1397,7 +1353,7 @@ label good_bye_snape:
     m "Да... просто спроси меня завтра: \"Кто рулит?\"."
     show screen s_head2
     $ s_sprite = "03_hp/10_snape_main/snape_01.png"
-    sna "\"Кто рулит?\" в смысле \"Кто ведет машину?\""
+    sna "\"Кто рулит?\" в смысле \"Кто за рулем?\""
     hide screen s_head2
     g9 "\"Акабур рулит!\""
     show screen s_head2
@@ -1656,14 +1612,14 @@ label good_bye_snape:
     
     
     m "Чем дальше я от школьных земель..."
-    m "Тем могущественнее я становлюсь..."
+    m "Тем могущественнее становлюсь..."
     
     $ end_u_4_pic =  "03_hp/17_ending/173.png" #<---- SCREEN
     show screen end_u_4                                           #<---- SCREEN
     with d7                                                                       #<---- SCREEN
     pause.5
     
-    m "Я думаю, что я отошел достаточно далеко..."
+    m "Думаю, что я отошел достаточно далеко..."
     m "Пришла пора отменить заклинание и вернуться домой..."
     m ".........."
     m "...................."

@@ -2,6 +2,139 @@
 
 
 init:
+
+    # Scenario initialization
+    python:
+        global flag
+        global arr
+
+    $arr=dict()
+    $flag=Flags()
+
+    python:
+        global this
+        this=This()
+        global event
+
+
+
+# Описание сценария от начала до открытия покупки сексуальных услуг
+    python:
+        this.DAY     .AddCall("event_01",                   ready= lambda e: day == 1 and not bird_examined and not desk_examined and not cupboard_examined and not door_examined and not fireplace_examined )
+        this.NIGHT   .AddCall("event_02",                   ready= lambda e: day == 1 )
+        this.NIGHT   .AddCall("event_03",                   ready= lambda e: day == 2 )
+        this.NIGHT   .AddCall("event_05",                   ready= lambda e: day == 4 )
+        this.NIGHT   .AddCall("event_07:Snape_summon",      ready= lambda e: day == 5 )
+        this.DAY     .AddCall("event_08",                   ready= lambda e: day >= 8 )
+        this.SNAPE   .AddCall("special_date_with_snape")
+        this.DAY     .AddCall("event_08_02",                ready= lambda e: e.prev.prev.IsAgo(2) ) 
+                                                                             
+        this.DAY     .AddCall("event_08_03",                ready = lambda e: e.prev.IsAgo(2) )
+        this.DAY     .AddCall("event_09",                   ready = lambda e: e.prev.IsAgo(2) )
+        this.SNAPE   .AddCall("special_date_with_snape_02")
+        this.NIGHT   .AddCall("event_11",                   ready = lambda e: e.prev.IsAgo(2))
+        this.NIGHT   .AddCall("event_12",                   ready = lambda e: e.prev.IsAgo(2))
+        this.NIGHT   .AddCall("event_13",                   ready = lambda e: e.prev.IsAgo(2))
+        this.DAY     .AddCall("event_14:Hermione_summon")
+        this.CHITCHAT.AddCall("chitchat_event_01",          ready = lambda e: e.prev.IsAgo(2))
+        this.NIGHT   .AddCall("event_15:Hermione_buy",      ready = lambda e: e.prev.IsAgo(7))
+
+# Следующее событие (первый раз трахнуться с одноклассниками) НЕ помещено в главный сценарий. 
+# Т.е. может быть не выполнено никогда, а последующие в списке события все равно могут выполняться
+# Однако в списке событий предшествует последующим - сделано для того, чтобы если событие может выполняться, оно имело приоритет перед оставшимися
+# Если флаг установить (устанавливается при первом вызове request_30), запустится разово 
+        this.DAY     .AddCall("new_request_30_complete_a",  scenario=None, ready = lambda e: request_30_a) 
+
+        this.DAY     .AddCall("want_to_rule",                              ready = lambda e: whoring >= 15) # Запустится, как только whoring превысит значение
+        this.DAY     .AddCall("against_the_rule",                          ready = lambda e: e.prev.IsAgo(2)) # Через два дня
+        this.DAY     .AddCall("crying_about_dress",                        ready = lambda e: whoring >= 18 and e.prev.IsAgo(5)) # Через 5 дней и при соответствующем уровне развращенности
+        this.DAY     .AddCall("sorry_about_hesterics") 
+
+# Отчеты Гермионы о публичных ивентах (за исключением 30_a, он - днем). Публичные ивенты состоят из 2-х частей. Днем - задание (обычный вызов из пункта меню) и отчет вечером 
+# Можно избавиться от десятка переменных первоначальной версии, а прогресс хранить в специальном поле объекта Event, но это приведет к довольно серьезной правке кода, что чревато ошибками. 
+# Так что только убираем флажки можно/нельзя выполнять, а прогресс пусть остается во внешних переменных, как был
+        tu=["02_b", "02_c", "03", "10", "15", "20", "23", "24", "30"]
+        for s in tu:
+            s="new_request_"+s
+            this.AddEvent(s, s, "", ready= lambda e: True, done= lambda e: e._finishCount!=e.next._finishCount) # Запуск не через точку, а просто через RenPy, в коде в нужном месте явно вызывается IncPassed 
+            this.NIGHT   .AddCall(s+"_complete",  scenario=s, done = lambda e: e._finishCount==e.prev._finishCount) # После срабатывания предыдущего это условие done нарушается и ивент готов к запуску. Нет ограничений по кол-ву запусков
+
+        this.AddEvent        ("giving_thre_dress", "", "",                 ready= lambda e: True, done= lambda e: gave_the_dress) 
+
+        this.NIGHT   .AddCall("good_bye_snape",                            ready = lambda e: e.prev.IsAgo(2)) 
+
+# КОНЕЦ ГЛАВНОГО СЦЕНАРИЯ
+
+
+# Книги. Полный цикл от покупки в магазине Дахра до прочтения, до получения бонусов
+
+#  Внимание!!! Порядок кортежей внутри списка менять следует с осторожностью. 
+# Лоика обработки в дальнейшем предполагает, что группы книг по каждому навыку следуют в порядке от минимального к максимальному
+# и группы разделены книгами другой направленности  (другой block)
+        tu=[
+        
+            ("book_01::\"Медная книга духа\"",            40, "03_hp/18_store/08.png", "Эта книга описывает элементарные приемы, позволяющие улучшить свою эффективность.",
+                "шанс 1 к 6, что я завершу дополнительную главу, во время работы с отчетом."),
+            ("book_02::\"Бронзовая книга духа\"",         80, "03_hp/18_store/08.png", "Эта книга описывает базовые приемы, позволяющие улучшить свою эффективность.",
+                "шанс 1 к 4, что я завершу дополнительную главу, во время работы с отчетом."),
+            ("book_03::\"Серебрянная книга духа\"",       90, "03_hp/18_store/08.png", "Эта книга описывает продвинутые приемы, позволяющие улучшить свою эффективность.",
+                "шанс 1 к 2, что я завершу дополнительную главу, во время работы с отчетом. "),
+            ("book_04::\"Золотая книга духа\"",          100, "03_hp/18_store/08.png", "Эта книга описывает экспертные приемы, позволяющие улучшить свою эффективность.",
+                ""),
+
+            ("book_05::\"Сказ о Галадриэле. Книга I.\"", 200, "03_hp/18_store/04.png", "Эта книга рассказывает историю эльфийской принцессы, которая бросает вызов традициям своего народа и выбирает оковы для ее собственной судьбы. Или все не так?",
+                "В результате мое воображение улучшилось."),          
+            ("book_05_b::\"Сказ о Галадриэле. Книга II.\"",250, "03_hp/18_store/05.png", "Эта книга рассказывает историю эльфийской принцессы, которая бросает вызов традициям своего народа и выбирает оковы для ее собственной судьбы. Или все не так?",
+                "В результате мое воображение улучшилось."),
+
+            ("book_08::\"Скорочтение для чайников\"",     50, "03_hp/18_store/08.png", "Эта книга содержит несколько базовых методов, которые помогут вам улучшить навык скорочтения.",
+                "большой шанс прочесть дополнительную главу, во время чтения."),
+            ("book_09::\"Скорочтение для экспертов\"",    90, "03_hp/18_store/08.png", "Эта книга содержит несколько экспертных методов, используемых для улучшения своего навыка скорочтения.",
+                "большой шанс освоить дополнительную главу, во время чтения."),
+
+            ("book_06::\"Игра Кресел\"",                 100, "03_hp/18_store/02.png", "Эпический рассказ о предательстве, убийствах и изнасилованиях, а затем еще несколько убийств, немного больше предательства и еще больше изнасилований.",
+                "В результате мое воображение улучшилось.\nНо больше я не стану читать эту хрень!"),
+            ("book_07::\"Моя дорогая вайфу\"",           300, "03_hp/18_store/03.png", "Переживите славные дни в вашей школе. Ваша сводная сестра Ши, учительница Мисс Стивенс или таинственная девушка из библиотеки? Кто станет вашей окончательной \"вайфу\"?",
+                ""),
+            ("book_12::\"Скорописание для чайников\"",    30, "03_hp/18_store/08.png", "Эта книга содержит несколько элементарных методов, которые позволят вам быстрее писать.",
+                "шанс 1 к 6, что я завершу дополнительную главу, во время работы с отчетом. "),
+            ("book_13::\"Скорописание для начинающих\"",  90, "03_hp/18_store/08.png", "Эта книга содержит несколько базовых методов, которые позволят вам быстрее писать.",
+                "шанс 1 к 4, что я завершу дополнительную главу, во время работы с отчетом. "),
+            ("book_14::\"Скорописание для любителей\"",  100, "03_hp/18_store/08.png", "Эта книга содержит несколько начальных методов, которые позволят вам быстрее писать.",
+                "шанс 1 к 2, что я завершу дополнительную главу, во время работы с отчетом."),
+            ("book_15::\"Скорописание для продвинутых\"",130, "03_hp/18_store/08.png", "Эта книга содержит несколько продвинутых методов, которые позволят вам быстрее писать.",
+                "Теперь я настоящий мастер скорописания..."),
+           ]
+
+        for t in tu:
+            (_sFullName, _price, _img, _description, _conclusion)=t
+            if _img=="03_hp/18_store/08.png":
+                _block="books_edu"
+            else:
+                _block="books_fict"
+
+            lam=lambda e:e._status>=e._units
+            if "book_07" in _sFullName: # У Вайфу морочливая обработка оставляю первоначальную на исходных флажках
+                lam = lambda e: dear_waifu_completed_once
+            event=this.AddEvent(_sFullName, None, _block, 
+                ready= lambda e: GetArrayValue(e.Name,"status")>=0, done=lam , 
+                defVals={"status": -2},
+                constVals={"img": _img, "description":_description, "price":_price, "conclusion":_conclusion, "units": 10 if _block=="books_edu" else 20} )
+
+
+
+
+# Создает переменные одноименные с названиями ивентов. В результате к ивентам можно получить доступ не this("event_01") а this.event_01 
+# Разница между вызовами: в первом случае происходит присваивание ивента переменной event. Во втором случае запоминания не происходит
+        for e in this.List:
+            exec("this."+e.Name+"=this.GetCall('"+e.Name+"')")
+ 
+
+# Включить обработку перехода по меткам (label). 
+    $renpy.game.onLabelExecute=lambda s: OnLabelExecute(s)
+
+    
+
     
     $ commentaries = False # In the GALLERY turns commentaries ON and OFF. 
     
@@ -54,11 +187,6 @@ init:
     
 #define m = Character(None, window_left_padding=200, image="mage", color="#402313", ctc="ctc3", ctc_position="fixed")
 
-    # Ending class initialization
-    call Ending_constants
-    python:
-        global end
-    $ end = Ending ()
 
 label splashscreen:
     $ renpy.pause(0)
@@ -4669,6 +4797,12 @@ transform basicfade4:
             
             
 label start:
+
+# Если поставть флаг, более вменяемые сообщения о некоторых ошибках при сохранении. На саму игру не влияет
+    init python:
+         config.use_cpickle = False
+
+
     call main_ex_CharacterExItem_constants
     python:
         # it's the fucking magick = make custom class variable being saved by Ren'Py...
@@ -4701,6 +4835,15 @@ label start:
     $ herView.data().addTits( CharacterExItem( herView.mBodyFolder, "tits.png", G_Z_TITS ) )
     $ herView.data().addDress( CharacterExItemDress( herView.mClothesFolder, "dress_normal.png", G_Z_DRESS ) )
     $ herView.data().addFace( CharacterExItem( herView.mFaceFolder, "body_01.png", G_Z_FACE ) )
+
+    # Ending class initialization
+    call Ending_constants
+    python:
+        global end
+    $ end = Ending ()
+
+    call start_elog
+    call after_load
 
 
     $ gold = 0
@@ -4865,7 +5008,7 @@ label start:
 
 ### STORE BOOKS AND ITEMS ###
 
-    $ bought_book_05_b = False #Affects 15_mail.rpy
+#    $ bought_book_05_b = False #Affects 15_mail.rpy
 
     $ dear_waifu_completed_once = False # Turns TRUE when complete the book for the first time with any ending. Makes sure you get +1 imagination only once.
     $ found_dahrs_ticket_once = False # Turns TRUE after you complete "My Dear Waifu" with the harem ending and "Dahr's voucher" fall out.

@@ -109,7 +109,7 @@ $ chitchat_event_07_happened = False
 
 ### SPECIAL DATES WITH SNAPE ###
 
-$ date_with_snape_02_happened = False #Second date with Snape. They decide to de-throne Hermione.
+#$ date_with_snape_02_happened = False #Second date with Snape. They decide to de-throne Hermione.
                                       #Turns true after event_09
 
 ###Miscellaneous flags###
@@ -118,33 +118,31 @@ $ jerk_off_session = False #Turns True when you choose to jerk off while Hermion
 
 $ tutoring_offer_made = False #If you offered her to tutor her (In event_12). Affects conversation in the next event.
 
-$ chitchated_with_snape = False #Prevents you from chitchating more then once a day. Turns back to False every night.
+#$ chitchated_with_snape = False #Prevents you from chitchating more then once a day. Turns back to False every night.
 
 
-$ snape_against_hermione = False #Turns True after event_01. Activates event_11 when hanging out with Snape next time.
-$ snape_against_hermione_02 = False #Turns True after event_09. Activates second event when hanging out with Snape.
+#$ snape_against_hermione = False #Turns True after event_01. Activates event_11 when hanging out with Snape next time.
+#$ snape_against_hermione_02 = False #Turns True after event_09. Activates second event when hanging out with Snape.
 
-$ hermione_is_waiting_01 = False #Turns True at the end of first special event with Snape. Triggers next visit from Hermione (event_09)
-$ hermione_is_waiting_02 = False #Turns True at the end of second special event with Snape. Triggers next visit from Hermione 
+#$ hermione_is_waiting_01 = False #Turns True at the end of first special event with Snape. Triggers next visit from Hermione (event_09)
+#$ hermione_is_waiting_02 = False #Turns True at the end of second special event with Snape. Triggers next visit from Hermione 
 
 $ phoenix_is_feed = False #When True the graphic of bird food being displayed on top of the phoenix food can.
 $ fire_in_fireplace = False #When True there is a fire going in the fireplace.
 
-$ summoning_hermione_unlocked = False #Unlocks after event_14. Adds "Summon Hermione" button to the door.
-$ tutoring_hermione_unlocked = False #Unlocks after event_14.
-$ buying_favors_from_hermione_unlocked = False 
+#$ summoning_hermione_unlocked = False #Unlocks after event_14. Adds "Summon Hermione" button to the door.
+#$ tutoring_hermione_unlocked = False #Unlocks after event_14.
+#$ buying_favors_from_hermione_unlocked = False 
 
 
-$ hanging_with_snape = False #Turns true when "hanging with Snape during the night time" becomes available. (Snape becomes available for summons).
+#$ hanging_with_snape = False #Turns true when "hanging with Snape during the night time" becomes available. (Snape becomes available for summons).
 $ have_catalogue = False #Turns True when you obtain "The muggle oddities" catalog. (The button shows).
 
 
-$ books = [] 
+#$ books = [] 
 $ gifts12 = []
 
 
-#$ books = ["book_01", "book_02", "book_03", "book_04",  "book_05", "book_06", "book_07", "book_08", "book_09", "book_10", "book_11", "book_12", "book_13", "book_14", "book_15", "book_16", "book_17"] 
-#All books.
 
 ### GENIE STATS ###============================
 $ imagination = 1 #+1 for every completed book. Unlocks new sexual favors to buy. 1 point of imagination = 1 level of whoring.
@@ -156,33 +154,33 @@ $ job_lvl = 1 #Show how many reports you are allowed to complete per week.
 ### BOOKS ###
 
 ### WORK
-$ book_01_units = 0 #Monitors progress with this book.
-$ book_01_complete = False #Turns True when you finish reading book #1.
-$ book01 = "\"Медная книга души\"" #1/10 (tinny) chance of it to pop up. Completes extra chapter during work.
+#$ book_01_units = 0 #Monitors progress with this book.
+#$ book_01_complete = False #Turns True when you finish reading book #1.
+#$ book01 = "\"Медная книга души\"" #1/10 (tinny) chance of it to pop up. Completes extra chapter during work.
 
-$ book_02_units = 0 #Monitors progress with this book.
-$ book_02_complete = False #Turns True when you finish reading book #2.
-$ book02 = "\"Бронзовая книга души\"" #1/8 (small) chance of it to pop up. Completes extra chapter during work.
+#$ book_02_units = 0 #Monitors progress with this book.
+#$ book_02_complete = False #Turns True when you finish reading book #2.
+#$ book02 = "\"Бронзовая книга души\"" #1/8 (small) chance of it to pop up. Completes extra chapter during work.
 
-$ book_03_units = 0 #Monitors progress with this book.
-$ book_03_complete = False #Turns True when you finish reading book #3.
-$ book03 = "\"Серебрянная книга души\"" #1/6 (a) chance of it to pop up. Completes extra chapter during work.
+#$ book_03_units = 0 #Monitors progress with this book.
+#$ book_03_complete = False #Turns True when you finish reading book #3.
+#$ book03 = "\"Серебрянная книга души\"" #1/6 (a) chance of it to pop up. Completes extra chapter during work.
 
-$ book_04_units = 0 #Monitors progress with this book.
-$ book_04_complete = False #Turns True when you finish reading book #4.
-$ book04 = "\"Золотая книга души\"" #1/4 (decent) chance of it to pop up. Completes extra chapter during work.
+#$ book_04_units = 0 #Monitors progress with this book.
+#$ book_04_complete = False #Turns True when you finish reading book #4.
+#$ book04 = "\"Золотая книга души\"" #1/4 (decent) chance of it to pop up. Completes extra chapter during work.
 ### FICTION=============================================================================================
-$ book_05_units = 0 #Monitors progress with this book.
-$ book_05_complete = False #Turns True when you finish reading book #5.
-$ book05 = "\"Сказ о Галадриэле. Книга I.\""
+#$ book_05_units = 0 #Monitors progress with this book.
+#$ book_05_complete = False #Turns True when you finish reading book #5.
+#$ book05 = "\"Сказ о Галадриэле. Книга I.\""
 
-$ book_05_b_units = 0 #Monitors progress with this book.
-$ book_05_b_complete = False #Turns True when you finish reading book #5_b.
-$ book05b = "\"Сказ о Галадриэле. Книга II.\""
+#$ book_05_b_units = 0 #Monitors progress with this book.
+#$ book_05_b_complete = False #Turns True when you finish reading book #5_b.
+#$ book05b = "\"Сказ о Галадриэле. Книга II.\""
 
-$ book_06_units = 0 #Monitors progress with this book.
-$ book_06_complete = False #Turns True when you finish reading book #6.
-$ book06 = "\"Игра Кресел\""
+#$ book_06_units = 0 #Monitors progress with this book.
+#$ book_06_complete = False #Turns True when you finish reading book #6.
+#$ book06 = "\"Игра Кресел\""
 
 $ book_07_units = 0 #Monitors progress with this book.
 $ book_07_complete = False #Turns True when you finish reading book #7.
@@ -204,54 +202,54 @@ $ waifu_book_completed = False #Turns TRUE when you unlock the harem ending.
 
 ### NON-FICTION BOOKS ###========================================================================================
 #BOOK 08
-$ book_08_units = 0 #Monitors progress with this book.
-$ book_08_complete = False #Turns True when you finish reading book #4.
-$ book08 = "\"Скорочтение для чайников\"" #1/6 chance to complete an extra chapter during reading.
+#$ book_08_units = 0 #Monitors progress with this book.
+#$ book_08_complete = False #Turns True when you finish reading book #4.
+#$ book08 = "\"Скорочтение для чайников\"" #1/6 chance to complete an extra chapter during reading.
 $ s_reading_lvl = 0 #+1 When complete first book on speed reading. +1 again when complete the second book.
 
 #BOOK 09
-$ book_09_units = 0 #Monitors progress with this book.
-$ book_09_complete = False #Turns True when you finish reading book #4.
-$ book09 = "\"Скорочтение для экспертов\"" #1/4 chance to complete an extra chapter during reading.
+#$ book_09_units = 0 #Monitors progress with this book.
+#$ book_09_complete = False #Turns True when you finish reading book #4.
+#$ book09 = "\"Скорочтение для экспертов\"" #1/4 chance to complete an extra chapter during reading.
 # WORK===========================================================================================
 #BOOK 10
-$ book_10_units = 0 #Monitors progress with this book.
-$ book_10_complete = False #Turns True when you finish reading book #4.
-$ book10 = "\"Платиновая книга души\"" #1/2 (big) chance of it to pop up. Completes extra chapter during work.
+#$ book_10_units = 0 #Monitors progress with this book.
+#$ book_10_complete = False #Turns True when you finish reading book #4.
+#$ book10 = "\"Платиновая книга души\"" #1/2 (big) chance of it to pop up. Completes extra chapter during work.
 #BOOK 11
-$ book_11_units = 0 #Monitors progress with this book.
-$ book_11_complete = False #Turns True when you finish reading book #4.
-$ book11 = "\"Адамантовая книга души\"" # 1 (sure) chance of it to pop up. Completes extra chapter during work.
+#$ book_11_units = 0 #Monitors progress with this book.
+#$ book_11_complete = False #Turns True when you finish reading book #4.
+#$ book11 = "\"Адамантовая книга души\"" # 1 (sure) chance of it to pop up. Completes extra chapter during work.
 
 #BOOK 12
-$ book_12_units = 0 #Monitors progress with this book.
-$ book_12_complete = False #Turns True when you finish reading book #12.
-$ book12 = "\"Скорописание для чайников\"" # 1/10 chance of it to pop up. Completes extra chapter during work.
+#$ book_12_units = 0 #Monitors progress with this book.
+#$ book_12_complete = False #Turns True when you finish reading book #12.
+#$ book12 = "\"Скорописание для чайников\"" # 1/10 chance of it to pop up. Completes extra chapter during work.
 
 #BOOK 13
-$ book_13_units = 0 #Monitors progress with this book.
-$ book_13_complete = False #Turns True when you finish reading book #13.
-$ book13 = "\"Скорописание для начинающих\"" # 1/8 chance of it to pop up. Completes extra chapter during work.
+#$ book_13_units = 0 #Monitors progress with this book.
+#$ book_13_complete = False #Turns True when you finish reading book #13.
+#$ book13 = "\"Скорописание для начинающих\"" # 1/8 chance of it to pop up. Completes extra chapter during work.
 
 #BOOK 14
-$ book_14_units = 0 #Monitors progress with this book.
-$ book_14_complete = False #Turns True when you finish reading book #14.
-$ book14 = "\"Скорописание для любителей\"" # 1/6 chance of it to pop up. Completes extra chapter during work.
+#$ book_14_units = 0 #Monitors progress with this book.
+#$ book_14_complete = False #Turns True when you finish reading book #14.
+#$ book14 = "\"Скорописание для любителей\"" # 1/6 chance of it to pop up. Completes extra chapter during work.
 
 #BOOK 15
-$ book_15_units = 0 #Monitors progress with this book.
-$ book_15_complete = False #Turns True when you finish reading book #15.
-$ book15 = "\"Скорописание для продвинутых\"" # 1/4 chance of it to pop up. Completes extra chapter during work.
+#$ book_15_units = 0 #Monitors progress with this book.
+#$ book_15_complete = False #Turns True when you finish reading book #15.
+#$ book15 = "\"Скорописание для продвинутых\"" # 1/4 chance of it to pop up. Completes extra chapter during work.
 
 #BOOK 16
-$ book_16_units = 0 #Monitors progress with this book.
-$ book_16_complete = False #Turns True when you finish reading book #16.
-$ book16 = "\"Скорописание для экспертов\"" # 1/2 chance of it to pop up. Completes extra chapter during work.
+#$ book_16_units = 0 #Monitors progress with this book.
+#$ book_16_complete = False #Turns True when you finish reading book #16.
+#$ book16 = "\"Скорописание для экспертов\"" # 1/2 chance of it to pop up. Completes extra chapter during work.
 
 #BOOK 17
-$ book_17_units = 0 #Monitors progress with this book.
-$ book_17_complete = False #Turns True when you finish reading book #17.
-$ book17 = "\"Скорописание для маньяков\"" # 1 (sure) chance of it to pop up. Completes extra chapter during work.
+#$ book_17_units = 0 #Monitors progress with this book.
+#$ book_17_complete = False #Turns True when you finish reading book #17.
+#$ book17 = "\"Скорописание для маньяков\"" # 1 (sure) chance of it to pop up. Completes extra chapter during work.
 
 ### MUGGLE ODDITIES ### =========================================================================
 $ order_placed = False #TRUE when and order has been placed on an item.
@@ -259,32 +257,6 @@ $ days_in_delivery = 0 # +1 day, every day since the orer has been made (when or
 $ days_in_delivery2 = 0 # +1 day, every day since the orer has been made (when order_placed = True).
 $ package_is_here = False # Turns true when days_in_delivery >= 5. Package is displayed.
 
-$ bought_book_01 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_02 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_03 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_04 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_05 = False #Turns TRUE when bought book_05
-$ bought_book_06 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_07 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_08 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_09 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_10 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_11 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_12 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_13 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_14 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_15 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_16 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_17 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_18 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_19 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_20 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_21 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_22 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_23 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_24 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_25 = False #Turns TRUE when bought book_06 (15_mail.rpy)
-$ bought_book_26 = False #Turns TRUE when bought book_06 (15_mail.rpy)
 
 
 ### LEVELING UP PERSONAL REQUESTS ###
@@ -601,51 +573,9 @@ $ day +=1
 
 ### DAY EVENTS ###<============================================================================================================================================================
 
-if request_30_a: #Hermione does not show up. This sends to label where she shows up next morning.
-    call new_request_30_complete_a
-
-#NOT IN USE if day == 4: #Genie says: "I wonder what has become of that two-faced dude?"
-#About two-faced dude    call event_04
-
-if day == 8:
-    call event_08 #Hermione shows up for the first time.
-if day >= 9 and hermione_is_waiting_01 and not event09:
-    call event_09 #Second visit from Hermione. Says she sent a letter to the Minestry. 
-                  #Takes place after first special event with Snape, where he just complains about Hermione.
-if event13_happened and not event14_happened:
-    call event_14
-
-if whoring >= 15 and not event_chairman_happened: #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
-    call want_to_rule
-
-if whoring >= 15 and event_chairman_happened and days_without_an_event >= 2 and not snape_against_chairman_hap: # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
-    call against_the_rule
-    
-if whoring >= 18 and days_without_an_event >= 5 and snape_against_chairman_hap and not have_no_dress_hap: #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
-    call crying_about_dress # 27_final_events
-
-if whoring >= 18 and have_no_dress_hap and not sorry_for_hesterics and days_without_an_event >= 1: # Turns TRUE after Hermione comes and apologizes for the day (event) before.
-    call sorry_about_hesterics
 
 
-
-
-### NOT IN USE
-#if day == 10:
-#    call event_08_02 #Hermione shows up for the second time. (Shorter skirts notion).
-#if day == 11:
-#    call event_08_03 #Hermione shows up for the third time. (Rules for teachers noton).
-if day >= 12 and not event09 and hermione_is_waiting_01:
-    call event_09 #Visit from Hermione after first Special event with Snape (Where Genie proposes plan against her).
-### NOT IN USE
-#if day >= 13 and not event10 and hermione_is_waiting_02:
-#    call event_10 #Hermione shows up for the third time. Says that she started "MRM" and sent letter to the ministry.
-if event13_happened and not event14_happened:
-    call event_14
-
-### EVENTS ### (COMMENTED OUT FOR THE TESTING PORPOISES) ===============================================================================================================================
-if day == 1 and not bird_examined and not desk_examined and not cupboard_examined and not door_examined and not fireplace_examined:
-    call event_01
+$ this.DAY.RunStep()
 
 
     
@@ -668,20 +598,6 @@ if day == 1 and daytime and bird_examined and desk_examined and cupboard_examine
     hide screen bld1
     with d3
     jump night_start
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -813,76 +729,8 @@ call points_changes_gryffindor #Makes changes in the Gryffindor (And the rest of
 
 ### NIGHT REQUESTS ###
 
-if request_02_b:
-    call new_request_02_b_complete
-if request_02_c:
-    call new_request_02_c_complete
-if request_03:
-    call new_request_03_complete
-if request_05:
-    call new_request_05_complete
-if request_06:
-    call new_request_06_complete
-if request_10:
-    call new_request_10_complete
-#if request_13: # SEE THROUGH SHIRT DURING CLASS. NOT USED.
-#    call request_13_complete
-if request_15: #(Flash a nipple to a teacher).
-    call new_request_15_complete
-if request_20: #(Grab a classmate's cock).
-    call new_request_20_complete
-if request_21: #(Jerk off on tits and put the clothes back on).
-    call new_request_21_complete
-if request_23: #(Give handjob to a classmate).
-    call new_request_23_complete
-if request_24: #(Flash your tits to a teacher).
-    call new_request_24_complete
-if request_25: #(Cum on face and send to class).
-    call new_request_25_complete
-if request_26: #(Go to class with mouth full of cum).
-    call new_request_26_complete
-if request_27: #(Blow two classmates).
-    call new_request_27_complete
-if request_28: #(Handjob to a teacher).
-    call new_request_28_complete
-if request_30: #(FUCK A CLASSMATE).
-    call new_request_30_complete 
-if request_32: #(Put on a slutty dress and go to classes).
-    call new_request_32_complete
-if request_33: #(Go to classes with cum covered face).
-    call new_request_33_complete
-    
 
-### NIGHT EVENTS ###
-if day == 1:
-    call event_02
-if day == 2:
-    call event_03
-if day == 4:
-    call event_05
-if day == 5:
-    call event_07
-if days_without_an_event >= 2 and hermione_is_waiting_02 and not event11_happened:
-    call event_11
-if days_without_an_event >= 2 and event11_happened and not event12_happened:
-    call event_12
-if days_without_an_event >= 2 and event12_happened and not event13_happened:
-    call event_13
-if days_without_an_event >= 7 and chitchat_event_01_happened and not event15_happened:
-    call event_15
-
-if gave_the_dress and days_without_an_event >= 2: #$ gave_the_dress = True #Turns True when Hermione has the dress.
-    jump good_bye_snape
-
-
-
-
-
-
-
-
-
-
+$ this.NIGHT.RunStep()
 
 
 

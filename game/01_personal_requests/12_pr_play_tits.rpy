@@ -23,35 +23,28 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
         
     if request_12_points == 0 and whoring <= 14: # LEVEL 05 (one level higher then level at which it unlocks - 04) # FIRST TIME.
         m "Мисс Грейнджер."
-        $herView.hideQQ()
-        $herView.showQQ( "body_01.png", pos )
+        $herView.hideshowQQ( "body_01.png", pos )
         her "Да, сэр?"
         m "Как насчет еще одной услуги?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_02.png", pos )
+        $herView.hideshowQQ( "body_02.png", pos )
         her "Эм... Ладно..."
         her "Какой, сэр?"
-        m "Ну, как на счет того, что бы ты подошла ко мне поближе и дала бы мне полапать твою грудь...?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_31.png", pos )
+        m "Ну, как на счет того, чтобы ты подошла ко мне поближе и дала бы мне полапать твою грудь...?"
+        $herView.hideshowQQ( "body_31.png", pos )
         her "!!!"
         m "Я бы хотел её потрогать."
-        $herView.hideQQ()
-        $herView.showQQ( "body_66.png", pos )
+        $herView.hideshowQQ( "body_66.png", pos )
         her "Профессор Дамбалдор! Вам не кажется, что это перебор?"
         m "Ты думаешь?"
-        her "Я не такая распутная, как эти девченки из \"Слизерина\", ну вы знаете..."
+        her "Я не такая распутная, как эти девчонки из \"Слизерина\", ну вы знаете..."
         m "Я знаю... Ты из \"Гриффундор\"... или как там..." #<- GRYFFINDOR MISSPELLED ON PERPOUSE   I KNOW
-        $herView.hideQQ()
-        $herView.showQQ( "body_29.png", pos )
+        $herView.hideshowQQ( "body_29.png", pos )
         her "И, раз я не такая, то я не буду продавать ещё одну услугу, сэр!"
         m "Конечно..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_69.png", pos )
+        $herView.hideshowQQ( "body_69.png", pos )
         her "..................."
         m "Я дам тебе за это 35 очков."
-        $herView.hideQQ()
-        $herView.showQQ( "body_66.png", pos )
+        $herView.hideshowQQ( "body_66.png", pos )
         her "......................."
         her "Вы ведь будете только смотреть, сэр?"
         m "Вообще-то, я бы хотел потрогать и помять..."
@@ -61,29 +54,24 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
     else: # Intro. Not first time.
         if whoring >= 9 and whoring <= 14: # LEVEL 04 AND LEVEL 05 # NOT A WHORE YET.
             m "Мисс Грейнджер..."
-            $herView.hideQQ()
-            $herView.showQQ( "body_01.png", pos )
+            $herView.hideshowQQ( "body_01.png", pos )
             her "Сэр?"
             m "Я бы хотел поиграть немного с вашей грудью..."
-            $herView.hideQQ()
-            $herView.showQQ( "body_79.png", pos )
+            $herView.hideshowQQ( "body_79.png", pos )
             her "Сэр... Лучше бы вы не делали мне таких предложения..."
             m "А что? Тяжело отказаться?"
             her "Ничего подобного, сэр."
             m "Я дам тебе 35 очков за это..."
-            $herView.hideQQ()
-            $herView.showQQ( "body_69.png", pos )
+            $herView.hideshowQQ( "body_69.png", pos )
             her ".................."
             her "Ладно... Вы можете потрогать их немного..."
         elif whoring >= 15: # LEVEL 06 and higher # NASTY WHORE.
             m "Мисс Грейнджер..."
             
-            $herView.hideQQ()
-            $herView.showQQ( "body_01.png", pos )
+            $herView.hideshowQQ( "body_01.png", pos )
             her "Сэр?"
             m "Я могу поиграть с вашей грудью немного?"
-            $herView.hideQQ()
-            $herView.showQQ( "body_78.png", pos )
+            $herView.hideshowQQ( "body_78.png", pos )
             her "Конечно, сэр..."
     
     $herView.hideQQ()
@@ -159,7 +147,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 $herViewHead.hideQ()
                 m "Вам нравится, когда я сжимаю их так?"
                 $herViewHead.showQ( "body_120.png", posHead )
-                her2 "Извините, сэр, но вы меня путаете с пошлыми развратными девченками, я не такая..."
+                her2 "Извините, сэр, но вы меня путаете с пошлыми развратными девчонками, я не такая..."
                 her2 "Я позволила вам трогать мою грудь лишь потому, что вы заплатите мне за это..."
                 her "Не потому, что мне нравится это..."
                 $herViewHead.hideQ()
@@ -192,7 +180,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                     $herViewHead.showQ( "body_132.png", posHead )
                     her "Ах..."
                     $herViewHead.hideQ()
-                    m "Скажи мне, что тебе нравится, девченка!"
+                    m "Скажи мне, что тебе нравится, девчонка!"
                     $herViewHead.showQ( "body_131.png", posHead )
                     her "Сэр, я позволила вам делать так, только потому--"
                     $herViewHead.hideQ()
@@ -228,7 +216,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                     $herViewHead.showQ( "body_31.png", posHead )
                     her "Нет... Я..."
                     $herViewHead.hideQ()
-                    m "Не ври своему директору, девченка!"
+                    m "Не ври своему директору, девчонка!"
                     show screen blktone
                     with d3
                     ">Вы снова сжимаете её грудь..."
@@ -318,7 +306,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 $herViewHead.hideQ()
                 show screen blktone8
                 with d3
-                ">Гермиона схватилась за стол, что бы не сделать случайный шаг к вам..."
+                ">Гермиона схватилась за стол, чтобы не сделать случайный шаг к вам..."
                 hide screen blktone8
                 with d3
                 m "Умница..."
@@ -361,9 +349,9 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 her "ммм..."
                 her "..................."
                 $herViewHead.hideQ()
-                m "Вы хотите, что бы я продолжил, да?"
+                m "Вы хотите, чтобы я продолжил, да?"
                 $herViewHead.showQ( "body_139.png", posHead )
-                her "Я... не то, что бы \"хочу\"... "
+                her "Я... не то, чтобы \"хочу\"... "
                 $herViewHead.showQ( "body_138.png", posHead )
                 her "Но, если вы настаиваете...."
                 $herViewHead.hideQ()
@@ -561,7 +549,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 $herView.showQQ( "184.png", pos )
                 her "...получается, я извращенка, сэр?"
                 m "Что?"
-                m "Перестань быть глупой, девченка."
+                m "Не глупи, девчонка."
                 m "Это вполне естественно для девочки, наслаждаться тем, что с её грудью играют."
                 her "......"
                 her "Вы уверены, сэр?"

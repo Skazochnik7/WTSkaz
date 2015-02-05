@@ -11,10 +11,12 @@ label new_request_02_c:
         "\"(Да, давай попробуем!)\"":
             pass
         "\"(Не сейчас.)\"":
+            $event.NotFinished()
             jump new_personal_request
 
     m "Мисс Грейнджер, я хочу, чтобы вы флиртовали с учителем."
     if whoring <=2 or request_02_b_points <= 1: # request_02_b_points - counts how many times Hermione was sent to flirt with boys. 
+        $event.NotFinished()
         jump too_much
    
     $ pos = POS_140
@@ -23,29 +25,24 @@ label new_request_02_c:
     ### LEVEL 03 ### <===============================================================FIRST EVENT!
         $herView.showQQ( "body_01.png", pos )
         her "Я постараюсь, сэр!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_02.png", pos )
+        $herView.hideshowQQ( "body_02.png", pos )
         her "Я рада, что вы наконец предложили это мне!"
         m "Да?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_07.png", pos )
+        $herView.hideshowQQ( "body_07.png", pos )
         her "Вы наконец-то решили устроить проверку учителям, которые обменивают очки на услуги, не так ли?" 
-        $herView.hideQQ()
-        $herView.showQQ( "body_16.png", pos )
+        $herView.hideshowQQ( "body_16.png", pos )
         her "Для меня большая честь выступить в качестве приманки."
         m "Эм... Да, именно этим мы и займемся."
-        $herView.hideQQ()
-        $herView.showQQ( "body_07.png", pos )
+        $herView.hideshowQQ( "body_07.png", pos )
         her "Отлично! Вы можете расчитывать на меня!"
     else:
-        $herView.hideQQ()
-        $herView.showQQ( "body_07.png", pos )
+        $herView.hideshowQQ( "body_07.png", pos )
         her "Я зайду к вам с подробностями вечером."
         m "Буду ждать..."
     
 
     her "Ну, мне следует идти. Занятия вот-вот начнутся..."
-    $ request_02_c = True
+#    $ request_02_c = True
 
     hide screen bld1
     $herView.hideQ()
@@ -104,43 +101,33 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
             if  whoring >= 3 and whoring <= 5: ### LEVEL 02 <===================================================================== EVENT LEVEL 01
                 if one_out_of_three == 1: ### EVENT (A)
                     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_10.png", pos )
+                    $herView.hideshowQQ( "body_10.png", pos )
                     her "Ну, я попыталась заигрывать с профессором Флитвиком..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_09.png", pos )
+                    $herView.hideshowQQ( "body_09.png", pos )
                     her "Но это не сработало..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_12.png", pos )
+                    $herView.hideshowQQ( "body_12.png", pos )
                     her ".............................."
                     m "Как замечательно..."
                     m "Это все, что вы сделали сегодня, Мисс Грейнджер?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_11.png", pos )
+                    $herView.hideshowQQ( "body_11.png", pos )
                     her "Д-да..."
                     her "Но сэр, я знаю \"грязные\" факты о профессоре Флитвике!"
                     her "Всем известно, что из-за его роста..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_13.png", pos )
+                    $herView.hideshowQQ( "body_13.png", pos )
                     her "Он иногда... Эм..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_29.png", pos )
+                    $herView.hideshowQQ( "body_29.png", pos )
                     her "Он любит заглядывать под юбки учениц, сэр!"
                     m "Это еще не все?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_31.png", pos )
+                    $herView.hideshowQQ( "body_31.png", pos )
                     her "Что?"
                     m "Я имею в виду, он нам всем нравится и мы возмущены таким поведением профессора Флик-флика."      #WARNING_Z text?
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_07.png", pos )
+                    $herView.hideshowQQ( "body_07.png", pos )
                     her "Э-э... \"Профессор Флитвик\", сэр."
                     m "Верно. Внесем его в мой \"список непослушных мальчиков\" как я и говорил."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_17.png", pos )
+                    $herView.hideshowQQ( "body_17.png", pos )
                     her "......................"
                     m "Ну, не хочу это говорить, но вы очень плохо выполнили свою работу, Мисс Грейнджер."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_12.png", pos )
+                    $herView.hideshowQQ( "body_12.png", pos )
                     her "................................"
                     
                     $ pos = POS_140
@@ -148,20 +135,16 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                     menu:
                         "\"Остаетесь без очков!\"":
 
-                            $herView.hideQQ()
-                            $herView.showQQ( "body_28.png", pos )
+                            $herView.hideshowQQ( "body_28.png", pos )
                             her "но профессор, я сделала все что смогла!"
-                            $herView.hideQQ()
-                            $herView.showQQ( "body_67.png", pos )
+                            $herView.hideshowQQ( "body_67.png", pos )
                             her "Вы не можете отказаться от своего обещания!"
                             m "......................."
-                            $herView.hideQQ()
-                            $herView.showQQ( "body_32.png", pos )
+                            $herView.hideshowQQ( "body_32.png", pos )
                             stop music fadeout 1.0
                             her "Это не подобает директору школы!"
                             m "Вы провалились, Мисс Грейнджер."
-                            $herView.hideQQ()
-                            $herView.showQQ( "body_76.png", pos )
+                            $herView.hideshowQQ( "body_76.png", pos )
                             her "Арх!"
                             $ mad += 18
                             call music_block
@@ -171,8 +154,7 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                             $ pos = POS_140
                             $herView.showQQ( "body_28.png", pos )
                             her "Правда?"
-                            $herView.hideQQ()
-                            $herView.showQQ( "body_75.png", pos )
+                            $herView.hideshowQQ( "body_75.png", pos )
                             her "Огромное спасибо, профессор!"
                            
                 elif one_out_of_three == 2: ### EVENT (B)
@@ -182,75 +164,58 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                     her ".................."
                     her "............................"
                     m "Мисс Грейнджер?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_11.png", pos )
+                    $herView.hideshowQQ( "body_11.png", pos )
                     her "Да, профессор... Мне жаль... Просто я..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_13.png", pos )
+                    $herView.hideshowQQ( "body_13.png", pos )
                     her "............"
                     m "Ты сделала то, что я просил?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_14.png", pos )
+                    $herView.hideshowQQ( "body_14.png", pos )
                     her "Я пыталась, сэр. Правда..."
                     m "С кем ты пыталась заигрывать?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_13.png", pos )
+                    $herView.hideshowQQ( "body_13.png", pos )
                     her "........."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_12.png", pos )
+                    $herView.hideshowQQ( "body_12.png", pos )
                     her "Профессор Снейп, сэр."
                     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                     m "Северус? Интересно..."
                     m "И как все прошло?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_07.png", pos )
-                    her "Ужасно сэр..."
+                    $herView.hideshowQQ( "body_07.png", pos )
+                    her "Ужасно, сэр..."
                     her "Простите, но я правда ненавижу Профессора Снейпа, сэр!"
-                    m "И конечно же я уверен, что это взаимно..."
+                    m "И почему-то я уверен, что это взаимно..."
                     m "Расскажи, что произошло."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_09.png", pos )
+                    $herView.hideshowQQ( "body_09.png", pos )
                     her "Ничего не произошло, сэр. Он просто рассмеялся мне в лицо..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_29.png", pos )
+                    $herView.hideshowQQ( "body_29.png", pos )
                     her "У меня не так уж много женского очарования, но я пыталась быть милой..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_30.png", pos )
+                    $herView.hideshowQQ( "body_30.png", pos )
                     her "И он просто начал смеяться прямо мне в лицо!"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_34.png", pos )
+                    $herView.hideshowQQ( "body_34.png", pos )
                     her "...действительно страшно видеть, как Профессор Снейп смеется..."
                     her "........"
                     her "Я ужасно заигрываю, простите, сэр..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_47.png", pos )
+                    $herView.hideshowQQ( "body_47.png", pos )
                     her "Но я знаю, что Профессор Снейп тоже проворачивает \"грязные\" делишки!"
                     her "Если бы вы отправили кого-то другого к нему, то все было бы иначе!"
                     m "Кого-то другого?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_44.png", pos )
+                    $herView.hideshowQQ( "body_44.png", pos )
                     her "Да! Кого-то опытного..."
                     her "Кого-то..."
                     her "Кого-то, хм..."
                     m "Распущенного?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_66.png", pos )
+                    $herView.hideshowQQ( "body_66.png", pos )
                     her "Да, я полагаю..."
                     m "Не сдавайтесь, Мисс Грейнджер. Мы сделаем из тебя шлюху э-э--"
                     m "То есть женщину!"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_79.png", pos )
+                    $herView.hideshowQQ( "body_79.png", pos )
                     her "..................."
                     menu:
                         "\"...Но ты не получишь очки в этот раз\"":
-                            $herView.hideQQ()
-                            $herView.showQQ( "body_12.png", pos )
+                            $herView.hideshowQQ( "body_12.png", pos )
                             her "Но я старалась..."
-                            $herView.hideQQ()
-                            $herView.showQQ( "body_34.png", pos )
+                            $herView.hideshowQQ( "body_34.png", pos )
                             her "И я чувствую себя очень униженной..."
-                            $herView.hideQQ()
-                            $herView.showQQ( "body_33.png", pos )
+                            $herView.hideshowQQ( "body_33.png", pos )
                             her "Но я понимаю и не буду с вами спорить..."
                             call music_block
                             jump could_not_flirt_02
@@ -258,8 +223,7 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                             pass
                 elif one_out_of_three == 3: ### EVENT (C)
                     stop music fadeout 1.0
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_10.png", pos )
+                    $herView.hideshowQQ( "body_10.png", pos )
                     her "Я пыталась флиртовать с профессором Филчем, сэр..."
                     m "Понятно. {size=-5}(Понятия не имею кто это.){/size}"
                     $herView.hideQQ()
@@ -268,16 +232,14 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                     her "Да, знаю, технически он не учитель..."
                     m "А?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_01.png", pos )
+                    $herView.hideshowQQ( "body_01.png", pos )
                     her "Но он является частью персонала школы..."
                     her "И мы нашли общий язык с ним!"
                     her "Он на удивление милый."
                     her "Но я не знаю ничего о его \"грязных\" делах, сэр."
                     translators "Filtch - мистер Филч. Filth - грязь."
                     m "Ага... Мистер Гряз{size=+7}ик{/size} исключен из списка."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_07.png", pos )
+                    $herView.hideshowQQ( "body_07.png", pos )
                     her "\"Мистер Филч\", сэр..."
                     m "А я что сказал?"
                     
@@ -290,30 +252,24 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                     $herView.showQQ( "body_10.png", pos )
                     her "Ну, профессор Слагхорн пригласил меня к себе..."
                     her "Профессор просто пригласил меня на чашечку чая..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_16.png", pos )
+                    $herView.hideshowQQ( "body_16.png", pos )
                     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                     her "Там было несколько девочек..."
                     her "Но все из них были намного младше меня..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_17.png", pos )
+                    $herView.hideshowQQ( "body_17.png", pos )
                     her "Почти каждая из них была первокурсницей..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_16.png", pos )
+                    $herView.hideshowQQ( "body_16.png", pos )
                     her "Пы пили чай и ели печеньки..."
                     her "Все было довольно безобидно..."
                     m "Ты флиртовала с кем-то или нет?"
                     her "Флиртовала..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_17.png", pos )
+                    $herView.hideshowQQ( "body_17.png", pos )
                     her "Ну, то есть, я пыталась..."
                     her "Профессор Слагхорн, кажется, более заинтересован в молодых девочках..."
                     m "Вы будто ревнуете его, Мисс Грейнджер."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_18.png", pos )
+                    $herView.hideshowQQ( "body_18.png", pos )
                     her "Что?!"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_69.png", pos )
+                    $herView.hideshowQQ( "body_69.png", pos )
                     her "Это нелепо!"
                     m "Вот ваши очки..."
                     her "...................."
@@ -325,68 +281,52 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                     $herView.showQQ( "body_80.png", pos )
                     her "Это был удивительный день, сэр!"
                     m "Ну же, расскажите, Мисс Грейнджер..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_68.png", pos )
+                    $herView.hideshowQQ( "body_68.png", pos )
                     her "У меня были занятия у профессора Локонса..."
                     her "сэр Локонс, он такой милый и умный..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_78.png", pos )
+                    $herView.hideshowQQ( "body_78.png", pos )
                     her "И идеальный..."
                     m "Избавьте меня от вашей школьной влюбленности, Мисс Грейнджер."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_80.png", pos )
+                    $herView.hideshowQQ( "body_80.png", pos )
                     her "сэр Локонс был так любезен, что дал мне свой автограф..."
                     m "Как мило с его стороны."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_68.png", pos )
+                    $herView.hideshowQQ( "body_68.png", pos )
                     her "Да, не могу дождаться, когда покажу его девочкам!"
                     m "Хм.. Могу я увидеть его?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_45.png", pos )
+                    $herView.hideshowQQ( "body_45.png", pos )
                     her "Сэр?"
                     m "Автограф, девочка. Могу я его увидеть?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_44.png", pos )
+                    $herView.hideshowQQ( "body_44.png", pos )
                     her "Ну... Эм... Он в весьма тайной зоне, сэр."
                     m "Что? Ну, следовательно у профессора Локонса есть какие-то \"грязные\" делишки!"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_69.png", pos )
+                    $herView.hideshowQQ( "body_69.png", pos )
                     her "Это профессор Локонс, сэр..."
                     her "И... Эм..."
                     her "Ну, это не {size=+5}настолько{/size} укромное место..."
                     m "Покажи его мне!"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_66.png", pos )
+                    $herView.hideshowQQ( "body_66.png", pos )
                     her "Нет, сэр! Это было бы неуместно!"
                     menu: 
                         "{size=-3}\"Профессор Локонс вылетит из школы в ближайшее время!\"{/size}":
-                            $herView.hideQQ()
-                            $herView.showQQ( "body_72.png", pos )
+                            $herView.hideshowQQ( "body_72.png", pos )
                             her "Из-за меня?"
-                            $herView.hideQQ()
-                            $herView.showQQ( "body_67.png", pos )
+                            $herView.hideshowQQ( "body_67.png", pos )
                             her "Сэр, пожалуйста!"
                             m "Покажи мне!"
-                            $herView.hideQQ()
-                            $herView.showQQ( "body_32.png", pos )
+                            $herView.hideshowQQ( "body_32.png", pos )
                             her "Нет, мне стыдно!"
                             menu:
                                 "\"Ладно. Вот твои очки.\"":
-                                    $herView.hideQQ()
-                                    $herView.showQQ( "body_74.png", pos )
+                                    $herView.hideshowQQ( "body_74.png", pos )
                                     her "Спасибо за понимание, сэр."
                                 "\"Покажи мне, или ты не получишь ничего!\"":
-                                    $herView.hideQQ()
-                                    $herView.showQQ( "body_72.png", pos )
+                                    $herView.hideshowQQ( "body_72.png", pos )
                                     her "Что?!"
-                                    $herView.hideQQ()
-                                    $herView.showQQ( "body_73.png", pos )
+                                    $herView.hideshowQQ( "body_73.png", pos )
                                     her "..............."
-                                    $herView.hideQQ()
-                                    $herView.showQQ( "body_29.png", pos )
+                                    $herView.hideshowQQ( "body_29.png", pos )
                                     her ".................."
-                                    $herView.hideQQ()
-                                    $herView.showQQ( "body_47.png", pos )
+                                    $herView.hideshowQQ( "body_47.png", pos )
                                     her "Ну, ладно, но только, чтобы очистить имя моего кумира..."
                                     $herView.hideQQ()
                                     show screen blktone8
@@ -406,16 +346,14 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                                     show screen ctc
                                     with d3
                                     pause
-                                    $herView.hideQQ()
-                                    $herView.showQQ( "body_50.png", pos )
+                                    $herView.hideshowQQ( "body_50.png", pos )
                                     her "Как вы понимаете, профессор Локонс очень смелый и воплощает в себе все чистое."
                                     pause
                                     m "Что мне теперь делать?"
                                     her "Можете не беспокоиться об этом, сэр."
                                     her "Он не один из \"пошлых\" учителей."
                                     m "Ах, да какое мне дело..."
-                                    $herView.hideQQ()
-                                    $herView.showQQ( "body_51.png", pos )
+                                    $herView.hideshowQQ( "body_51.png", pos )
                                     her "............?"
                                     $herView.hideQQ()
                                     
@@ -427,8 +365,7 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                                     hide screen ctc
                                     $ mad += 18
                         "\"Ладно... Вот твои очки.\"":
-                            $herView.hideQQ()
-                            $herView.showQQ( "body_74.png", pos )
+                            $herView.hideshowQQ( "body_74.png", pos )
                             her "Спасибо за понимание, профессор."
                             
                 elif one_out_of_three == 3: ### EVENT (C)
@@ -437,16 +374,13 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                     $ pos = POS_370
                     $herView.showQQ( "body_15.png", pos )
                     her "Ну, сегодня я некоторое время заигрывала с мистером Филчем."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_16.png", pos )
+                    $herView.hideshowQQ( "body_16.png", pos )
                     her "Ну, мистел Филч очень начитанный и обладает манерами."
                     m "........"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_13.png", pos )
+                    $herView.hideshowQQ( "body_13.png", pos )
                     her "Не думаю, что кто-то знает его таким..."
                     her "Не думаю, что кто-то знает мистера Филча так, как я."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_06.png", pos )
+                    $herView.hideshowQQ( "body_06.png", pos )
                     her "Я чувствую, что со мной он очень открыт, сэр."
                     m "Ладно..."
                     m "Этот, мистер Фли{size=+7}нт{/size}--"
@@ -456,31 +390,25 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                     her "Мистер Филч, сэр."
                     m "Да, не важно... Он учитель?"
                     her "Мистер Филч? Учитель? Нет, сэр..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_06.png", pos )
+                    $herView.hideshowQQ( "body_06.png", pos )
                     her "Он смотритель..."
                     m "Смотритель...?"
                     m "Ты имеешь в виду - дворник?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_10.png", pos )
+                    $herView.hideshowQQ( "body_10.png", pos )
                     her "Ну..."
                     m "Мисс Грейнджер, я не посылал вас очаровывать дворников!"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_14.png", pos )
+                    $herView.hideshowQQ( "body_14.png", pos )
                     her "Но мистер Филч является частью школьного персонала, сэр!"
                     menu:
                         "\"Просто бери свои очки и уходи!\"":
-                            $herView.hideQQ()
-                            $herView.showQQ( "body_03.png", pos )
+                            $herView.hideshowQQ( "body_03.png", pos )
                             her "........................."
                         "\"Задание провалено! Ты не получишь очки!\"":
                             $ mad +=15
-                            $herView.hideQQ()
-                            $herView.showQQ( "body_07.png", pos )
+                            $herView.hideshowQQ( "body_07.png", pos )
                             her "Но профессор?"
                             m "Вы провалились, Мисс Грейнджер."
-                            $herView.hideQQ()
-                            $herView.showQQ( "body_05.png", pos )
+                            $herView.hideshowQQ( "body_05.png", pos )
                             her "........................................."
                             jump could_not_flirt_02
 
@@ -488,89 +416,70 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
             elif whoring >= 9: # LEVEL 04 and higher.
                 if one_out_of_three == 1: ### EVENT (A) LEVEL04 <============================================================================
                     stop music fadeout 1.0
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_33.png", pos )
+                    $herView.hideshowQQ( "body_33.png", pos )
                     her "............................."
                     her "....................................."
                     m "Мисс Грейнджер?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_34.png", pos )
+                    $herView.hideshowQQ( "body_34.png", pos )
                     her "Профессор, Я....."
                     m "Что такое? Что произошло?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_29.png", pos )
+                    $herView.hideshowQQ( "body_29.png", pos )
                     her "Ну..."
                     her "Мистер Филч, сэр..."
                     m "Дворник?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_31.png", pos )
+                    $herView.hideshowQQ( "body_31.png", pos )
                     her "Я с ним немного флиртовала..."
                     her "И вначале все было отлично..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_29.png", pos )
+                    $herView.hideshowQQ( "body_29.png", pos )
                     her "......................."
                     m "................?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_31.png", pos )
+                    $herView.hideshowQQ( "body_31.png", pos )
                     her "А потом..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_29.png", pos )
+                    $herView.hideshowQQ( "body_29.png", pos )
                     her "Не уверена, должна ли я..."
                     m "Мисс Грейнджер, если вы не хотите говорить, можете уйти."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_32.png", pos )
+                    $herView.hideshowQQ( "body_32.png", pos )
                     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                     her "Он показал мне свою \"штучку\", сэр!"
                     m "Его - что?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_34.png", pos )
+                    $herView.hideshowQQ( "body_34.png", pos )
                     her "Его... мужское начало, сэр."
                     g9 "Так держать, парень-дворник!"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_72.png", pos )
+                    $herView.hideshowQQ( "body_72.png", pos )
                     her "Что?!"
                     m "*Кхм* То есть - это возмутимо!"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_21.png", pos )
+                    $herView.hideshowQQ( "body_21.png", pos )
                     her "Да... Мерзкий, кривой, весь в венах..."
                     m "Избавьте меня от ужасных подробностей, девушка."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_20.png", pos )
+                    $herView.hideshowQQ( "body_20.png", pos )
                     her "Зачем он вообще сделал это?"
                     her "Только что мы говорили, как вдруг..."
                     m "Ну, ваша благородная жертва не должна остаться незамеченной, Мисс Грейнджер!"
                     m "Пятнадцать очков \"Грифф--"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_19.png", pos )
+                    $herView.hideshowQQ( "body_19.png", pos )
                     her "Профессор Дамблдор, пожалуйста подождите."
                     m "А?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_31.png", pos )
+                    $herView.hideshowQQ( "body_31.png", pos )
                     her "Ну, вы не собираетесь что-то с этим сделать?"
                     m "Ну..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_47.png", pos )
+                    $herView.hideshowQQ( "body_47.png", pos )
                     her "Что если я не первая жертва..?"
                     her "Какой-нибудь первокур может получить травму на всю жизнь!"
                     m "Действительно может?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_31.png", pos )
+                    $herView.hideshowQQ( "body_31.png", pos )
                     her "Это значит, что вы примете меры, сэр?"
                     m "Эм... Да, конечно..."
                     m "Занесу его в свой \"список\"..."
                     m "\"Позаботиться о дворнике и его жутко кривом члене.\"..."
                     m "Да, завтра же, в первую очередь."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_16.png", pos )
+                    $herView.hideshowQQ( "body_16.png", pos )
                     her "Спасибо сэр."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_75.png", pos )
+                    $herView.hideshowQQ( "body_75.png", pos )
                     her "Могу я получить свои очки?"
     
                 elif one_out_of_three == 2: ### EVENT (B)
                     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_76.png", pos )
+                    $herView.hideshowQQ( "body_76.png", pos )
                     her "Профессор Снейп!"
                     m "Эм... Ага, Я, вообще-то, Дамблдор, вроде как..."
                     $herView.hideQQ()
@@ -579,78 +488,61 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                     g4 "{size=-5}(Значит, теперь я выгляжу как Профессор Снейп?){/size}"
                     g4 "{size=-5}(Во имя великих песков пустыни! Акабур, тебе следует сдерживать себя!){/size}"
                     a5 "{size=-5}(Нужно было сначала послушать девочку. Блин...){/size}"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_02.png", pos )
+                    $herView.hideshowQQ( "body_02.png", pos )
                     her "Профессор? С кем вы говорили?"
                     m "Эм... Я связался с духами из другого измерения..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_17.png", pos )
+                    $herView.hideshowQQ( "body_17.png", pos )
                     her ".....??!"
                     $herView.hideQQ()
                     a6 "{size=-5}(Придерживайся сценария, придурок!){/size}"
                     g4 "Да, очень раздражительный дух ... Раздражительный и немой!"
                     a6 "{size=-5}(Ты......!){/size}"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_02.png", pos )
+                    $herView.hideshowQQ( "body_02.png", pos )
                     her "Профессор Дамблдор, пожалуйста, выслушайте меня!"
                     m "Да, да, девочка. Я слушаю."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_04.png", pos )
+                    $herView.hideshowQQ( "body_04.png", pos )
                     her "Я нашла подтверждение тому, что профессор Снейп коррумпирован и имеет \"грязные\" дела, сэр!"
                     m "Расскажи, что произошло."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_02.png", pos )
+                    $herView.hideshowQQ( "body_02.png", pos )
                     her "ну, сегодня во время занятий..."
                     her "Я делала все возможное, чтобы привлечь внимание профессора Снейпа..."
                     her "Я \"мечтательно\" пялилась на него..."
                     her "И следила за его членом..."
                     m "Ты..."
                     m "Смотрела в сторону его члена?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_04.png", pos )
+                    $herView.hideshowQQ( "body_04.png", pos )
                     her "Да... Я имею в виду, когда вы смотрите туда и хотите кое-что от него..."
                     m "Откуда ты знаешь о таком?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_10.png", pos )
+                    $herView.hideshowQQ( "body_10.png", pos )
                     her "Женские журналы..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_07.png", pos )
+                    $herView.hideshowQQ( "body_07.png", pos )
                     her "Ну, не важно, это сработало, сэр."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_47.png", pos )
+                    $herView.hideshowQQ( "body_47.png", pos )
                     her "Когда занятия закончились, Профессор Снейп схватил меня за попку, сэр!"
                     m "Дьявол!"
                     m "Тебе понравилось, не так ли?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_30.png", pos )
+                    $herView.hideshowQQ( "body_30.png", pos )
                     her "Сэр, я делаю это только для--"
                     m "Только \"во имя чести \"Гриффиндора\" и все такое. Да, помню."
                     m "Вот твои очки."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_66.png", pos )
+                    $herView.hideshowQQ( "body_66.png", pos )
   
                 elif one_out_of_three == 3: ### EVENT (C)
                     stop music fadeout 1.0
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_09.png", pos )
+                    $herView.hideshowQQ( "body_09.png", pos )
                     her "Профессор Локонс!"
                     m "Ага! Добавим его в \"список непослушных\"!"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_11.png", pos )
+                    $herView.hideshowQQ( "body_11.png", pos )
                     her "Нет, сэр, это не то..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_12.png", pos )
+                    $herView.hideshowQQ( "body_12.png", pos )
                     her "Или..."
                     her "Я не уверена..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_11.png", pos )
+                    $herView.hideshowQQ( "body_11.png", pos )
                     her "Раньше я его обожала..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_13.png", pos )
+                    $herView.hideshowQQ( "body_13.png", pos )
                     her "Но он..."
                     her "Он просто..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_20.png", pos )
+                    $herView.hideshowQQ( "body_20.png", pos )
                     her "Как это возможно?"
                     her "Я не могу поверить в это..."
                     $herView.hideQQ()
@@ -659,69 +551,54 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                     m "{size=-4}(Может он заставил ее сосать?){/size}"
                     m "{size=-4}(Или, может, изнасиловал?){/size}"
                     g4 "Что такое, девочка? Говори!"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_14.png", pos )
+                    $herView.hideshowQQ( "body_14.png", pos )
                     her "А?"
                     m "Что профессор Локонс сделал с тобой?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_13.png", pos )
+                    $herView.hideshowQQ( "body_13.png", pos )
                     her "Эм... Ничего, сэр..."
                     m "Ничего?!"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_11.png", pos )
+                    $herView.hideshowQQ( "body_11.png", pos )
                     her "Да. Я, конечно, загнала его в угол сегодня..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_31.png", pos )
+                    $herView.hideshowQQ( "body_31.png", pos )
                     her "И еще могла выглядеть доступной для него..."
                     m "Серьезно?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_34.png", pos )
+                    $herView.hideshowQQ( "body_34.png", pos )
                     her "Да... Не уверена, что он хотел от меня, сэр..."
                     m "Ну же, Мисс Грейнджер!"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_32.png", pos )
+                    $herView.hideshowQQ( "body_32.png", pos )
                     her "Выслушайте меня сначала, пожалуйста!"
                     m "Мои извинения. Продолжай."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_14.png", pos )
+                    $herView.hideshowQQ( "body_14.png", pos )
                     her "Ну, обычно профессор Локонс ведет себя как джентельмен..."
                     her "И... и я просто хотела очистить его имя от всех этих подозрений раз и навсегда..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_29.png", pos )
+                    $herView.hideshowQQ( "body_29.png", pos )
                     her "..............."
                     her "Ну, профессор Локонс не отверг меня..."
                     m "Ты меня убиваешь, девочка!"
                     m "Он не отверг тебя, он не изнасиловал тебя..."
                     m "Тогда что произошло?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_33.png", pos )
+                    $herView.hideshowQQ( "body_33.png", pos )
                     her "............."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_34.png", pos )
+                    $herView.hideshowQQ( "body_34.png", pos )
                     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                     her "Я заставила его плакать, сэр..."
                     m "..............стоп.......что?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_28.png", pos )
+                    $herView.hideshowQQ( "body_28.png", pos )
                     her "Он озадаченно посмотрел и затем начал рыдать..."
                     her "Он смотрел на меня так, как будто боится, сэр."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_29.png", pos )
+                    $herView.hideshowQQ( "body_29.png", pos )
                     her "Я думаю..."
                     her "Я думаю, мистер Локонс боится женщин..."
                     m "Боится женщин?"
                     m "Что это может значить?"
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_34.png", pos )
+                    $herView.hideshowQQ( "body_34.png", pos )
                     her "То, что ему нравятся мальчики, сэр?"
                     m "Ох..."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_44.png", pos )
+                    $herView.hideshowQQ( "body_44.png", pos )
                     her "............"
                     m "..........."
                     m "Ну, почти уверен, что этот опыт нанес вам травму, Мисс Грейнджер."
-                    $herView.hideQQ()
-                    $herView.showQQ( "body_31.png", pos )
+                    $herView.hideshowQQ( "body_31.png", pos )
                     her "Вроде, сэр..."
                     m "Ну, надеюсь эти очки поднимут тебе настроение.."
                     
@@ -756,7 +633,7 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
         $ whoring +=1
 
     $ request_02_c_points += 1 #Leveling up the event.
-    $ request_02_c = False 
+#    $ request_02_c = False 
     $ hermione_sleeping = True
 
     return    
@@ -779,7 +656,7 @@ label could_not_flirt_02: #Sent here when chose "Задание провален
     with Dissolve(.3)
     
     $ request_02_b_points += 1
-    $ request_02_b = False 
+#    $ request_02_b = False 
     $ hermione_sleeping = True
     
     return   

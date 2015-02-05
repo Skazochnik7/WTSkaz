@@ -20,18 +20,15 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
  
     if request_31_points == 0: # FIRST EVENT <============================================================== EVENT 01
         m "Мисс Грейнджер..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_17.png", pos )
+        $herView.hideshowQQ( "body_17.png", pos )
         her "Сэр..?"
         m "Насколько вы знакомы с термином \"Анальный секс\"?"
         if whoring <=20:
             jump too_much
-        $herView.hideQQ()
-        $herView.showQQ( "body_79.png", pos )
+        $herView.hideshowQQ( "body_79.png", pos )
         her "90 очков..."
         m "Что?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_66.png", pos )
+        $herView.hideshowQQ( "body_66.png", pos )
         her "............................."
         m "Хорошо, пусть будет так. 90 очков."
         $herView.hideQ()
@@ -99,7 +96,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 $herViewHead.showQ( "body_32.png", posHead )
                 her "АЙ! Больно!"
                 $herViewHead.hideQ()
-                g4 "Заткнись, девченка! Я делаю тебе одолжение!"
+                g4 "Заткнись, девчонка! Я делаю тебе одолжение!"
                 g4 "Твой анус такой узкий и почти невозможно тебя трахнуть в задницу, а я исправляю это!"
                 $herViewHead.showQ( "body_20.png", posHead )
                 her "Тогда остановитесь, пожалуйста!"
@@ -108,7 +105,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 $herViewHead.showQ( "body_20.png", posHead )
                 her "Но я не хочу, что бы вы это делали!"
                 $herViewHead.hideQ()
-                m "Правда? Как ты тогда думаешь, люди буду иметь тебя в задницу?"
+                m "Правда? Как ты тогда думаешь, люди будут иметь тебя в задницу?"
                 $herViewHead.showQ( "body_132.png", posHead )
                 her "Какие люди?"
                 $herViewHead.hideQ()
@@ -118,7 +115,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 her "Остановитесь тогда! Остановитесь, сэр!"
                 her "Я передумала! Мне не нужно 90 баллов!"
                 $herViewHead.hideQ()
-                g4 "Помоему я почти..."
+                g4 "По-моему я почти..."
                 
                 $ renpy.play('sounds/gltch.mp3')
                 with hpunch
@@ -515,7 +512,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 $herViewHead.showQ( "body_142.png", posHead )
                 her "*Хнык!*..."
                 $herViewHead.hideQ()
-                m "УАУ!... Думаю я закончил."
+                m "УАУ!... Думаю, я закончил."
                 m "Ты в порядке?"
                 $herViewHead.showQ( "body_142.png", posHead )
                 her "Да... *Хнык!*"
@@ -632,25 +629,20 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
         
     elif request_31_points == 1: # FIRST EVENT <============================================================== EVENT 02
         m "Девочка?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_15.png", pos )
+        $herView.hideshowQQ( "body_15.png", pos )
         her "Профессор?"
         m "Я куплю сегодня у тебя другую услугу..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_08.png", pos )
+        $herView.hideshowQQ( "body_08.png", pos )
         her "............."
         m "Попытайся догадаться, что это будет?"
         m "У тебя три попытки."
-        $herView.hideQQ()
-        $herView.showQQ( "body_09.png", pos )
+        $herView.hideshowQQ( "body_09.png", pos )
         her "..........."
-        $herView.hideQQ()
-        $herView.showQQ( "body_66.png", pos )
+        $herView.hideshowQQ( "body_66.png", pos )
         her "Анальный секс?"
         g4 "Что..........?!"
         g4 "Как ты...?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_47.png", pos )
+        $herView.hideshowQQ( "body_47.png", pos )
         her "Просто повезло, сэр..."
         m "Иногда ты меня пугаешь, девочка..."
         $herView.hideQQ()
@@ -662,8 +654,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
         
     elif request_31_points >= 2: # FIRST EVENT <============================================================== EVENT 03
         m "Как насчет повторить анальный секс, малышка?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_17.png", pos )
+        $herView.hideshowQQ( "body_17.png", pos )
         her "Как насчет ещё 90 баллов, сэр?"
         g9 "Иди сюда, маленькая мазохистка!"
         $herView.hideQQ()
@@ -796,7 +787,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 her "Ах...{image=textheart.png}"
                 $herViewHead.hideQ()
                 m "Однажды, ты осчастливишь какого-нибудь везунчика, шлюха."
-                m "Эм, всмысле, мисс Грейнджер."
+                m "Эм, в смысле, мисс Грейнджер."
                 $herViewHead.showQ( "body_134.png", posHead )
                 her2 "Нет, \"шлюха\" лучше звучит. Называйте меня так, сэр."
                 $herViewHead.hideQ()

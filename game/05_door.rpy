@@ -59,7 +59,7 @@ label door:
             
        
             
-        "{color=#858585}- Позвать Гермиону -{/color}" if summoning_hermione_unlocked and hermione_takes_classes or hermione_sleeping:
+        "{color=#858585}- Позвать Гермиону -{/color}" if flag("Hermione_summon")  and hermione_takes_classes or hermione_sleeping:#summoning_hermione_unlocked
             if hermione_takes_classes:
                 show screen bld1
                 with d3
@@ -75,7 +75,7 @@ label door:
                 with d3
                 jump night_main_menu
         
-        "- Позвать Гермиону -" if summoning_hermione_unlocked and not hermione_takes_classes and not hermione_sleeping:
+        "- Позвать Гермиону -" if flag("Hermione_summon") and not hermione_takes_classes and not hermione_sleeping: #summoning_hermione_unlocked 
      
             if hermione_takes_classes:
                 show screen bld1
@@ -151,30 +151,26 @@ label door:
                             jump day_time_requests
                         else:
                             jump tutoring
-                    "- Купить \"сексуальный\" рейтинг -" if buying_favors_from_hermione_unlocked:
+                    "- Купить \"сексуальный\" рейтинг -" if flag("Hermione_buy"):#buying_favors_from_hermione_unlocked:
                         if mad >=1 and mad < 3:
                             her "Мне жаль, профессор, может быть в другой раз..."
-                            jump day_time_requests
                         elif mad >=3 and mad < 10:
                             her "Мне не хочется сегодня..."
                             her "Может быть через пару дней..."
-                            jump day_time_requests
                         elif mad >=10 and mad < 20:
                             her "Нет, спасибо...."
-                            jump day_time_requests
                         elif mad >=20 and mad < 30:
                             her "После того, что вы сделали?"
                             her "Я так не думаю..."
-                            jump day_time_requests
                         elif mad >=30 and mad < 40:
                             her "Вы серьезно!?"
-                            jump day_time_requests
                         elif mad >=40:
                             her "Это какая-то ваша пошлая шутка?!"
                             her "После того, что вы сделали, я не хочу повторять это!"
-                            jump day_time_requests
-                        else:
+                        if mad==0:
                             jump new_personal_request
+                        else:
+                            jump day_time_requests
                    
                     
                     
@@ -544,14 +540,14 @@ label door:
                             
                             
             
-        "{color=#858585}- Позвать Снейпа -{/color}" if hanging_with_snape and snape_busy:
+        "{color=#858585}- Позвать Снейпа -{/color}" if flag("Snape_summon") and snape_busy:#hanging_with_snape
             ">Профессор Снейп недоступен."
             if daytime:
                 jump day_main_menu
             else: 
                 jump night_main_menu
             
-        "- Позвать Снейпа -" if hanging_with_snape and not snape_busy:
+        "- Позвать Снейпа -" if flag("Snape_summon") and not snape_busy:#hanging_with_snape
             play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
             jump summon_snape
         "- Ничего -":
@@ -1245,6 +1241,8 @@ label request_33_complete:
 
 #############This massage shows when you make a request, and Hermione refuses because she is not slutty enough yet.
 label too_much:
+    if IsEventOnlyAfter("new_personal_request"): # Если попали сюда после ивента, запущенного через меню "new_personal_request", значит ивент не завершен
+        $event.NotFinished()
     stop music fadeout 2.0
     $herView.hideQQ()
     $ pos = POS_120

@@ -20,11 +20,9 @@ label giving_skirt:
     $ pos = POS_140
     $herView.showQQ( "body_01.png", pos )
     her "Хм...? Что это?"
-    $herView.hideQQ()
-    $herView.showQQ( "body_11.png", pos )
+    $herView.hideshowQQ( "body_11.png", pos )
     her "Юбка?"
-    $herView.hideQQ()
-    $herView.showQQ( "body_06.png", pos )
+    $herView.hideshowQQ( "body_06.png", pos )
     her "Спасибо, профессор."
     m "Не стоит благодарности."
     $herView.hideQQ()
@@ -41,18 +39,15 @@ label giving_skirt:
 label mini_on:
     $pos = POS_370
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
-        $herView.hideQQ()
-        $herView.showQQ( "body_04.png", pos )
+        $herView.hideshowQQ( "body_04.png", pos )
         her "Вы же не всерьез, сэр?!"
         her "Это мини юбка?!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_79.png", pos )
+        $herView.hideshowQQ( "body_79.png", pos )
         her "...Она едва прикрывает мои прелести."
         menu:
             m "..."
             "\"Ладно. Забудь.\"":
-                $herView.hideQQ()
-                $herView.showQQ( "body_66.png", pos )
+                $herView.hideshowQQ( "body_66.png", pos )
                 her "С удовольствием..."
                 $herView.hideQQ()
                 #_#with d3            
@@ -62,8 +57,7 @@ label mini_on:
                 $ gryffindor +=15
                 her "........................"
                 her "..............................."
-                $herView.hideQQ()
-                $herView.showQQ( "body_66.png", pos )
+                $herView.hideshowQQ( "body_66.png", pos )
                 her "Ну, ладно..."
                 $herView.hideQQ()
                 $ mad += 10
@@ -72,20 +66,16 @@ label mini_on:
         
 
     if whoring >= 6 and whoring <= 11: # Lv 3-4.
-        $herView.hideQQ()
-        $herView.showQQ( "body_15.png", pos )
+        $herView.hideshowQQ( "body_15.png", pos )
         her "Хм...?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_17.png", pos )
+        $herView.hideshowQQ( "body_17.png", pos )
         her "Но она очень короткая..."
         menu:
             m "..."
             "\"Просто надень её!\"":
-                $herView.hideQQ()
-                $herView.showQQ( "body_07.png", pos )
+                $herView.hideshowQQ( "body_07.png", pos )
                 her "Сэр, врядли это соответствует форме учеников Хогвартса."
-                $herView.hideQQ()
-                $herView.showQQ( "body_09.png", pos )
+                $herView.hideshowQQ( "body_09.png", pos )
                 her "Я отказываюсь!"
                 $herView.hideQQ()
                 $ mad += 5
@@ -94,58 +84,45 @@ label mini_on:
                 jump day_time_requests
             "\"Я дам тебе 15 очков.\"":
                 $ gryffindor +=15
-                $herView.hideQQ()
-                $herView.showQQ( "body_07.png", pos )
+                $herView.hideshowQQ( "body_07.png", pos )
                 her "Хм..."
-                $herView.hideQQ()
-                $herView.showQQ( "body_08.png", pos )
+                $herView.hideshowQQ( "body_08.png", pos )
                 her "Ну, в таком случае..."
-                $herView.hideQQ()
-                $herView.showQQ( "body_29.png", pos )
+                $herView.hideshowQQ( "body_29.png", pos )
                 her "Пока это приносит пользу моему факультету..."
             "\"Ладно. Забудь.\"":
-                $herView.hideQQ()
-                $herView.showQQ( "body_01.png", pos )
+                $herView.hideshowQQ( "body_01.png", pos )
                 her "Ладно..."
-                $herView.hideQQ()
-                $herView.showQQ( None, pos )
+                $herView.hideshowQQ( None, pos )
                 jump day_time_requests
 
     if whoring >= 12 and whoring <= 17: # Lv 5-6.
-        $herView.hideQQ()
-        $herView.showQQ( "body_15.png", pos )
+        $herView.hideshowQQ( "body_15.png", pos )
         her "Хм...?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_17.png", pos )
+        $herView.hideshowQQ( "body_17.png", pos )
         her "Но она очень короткая..."
         menu:
             m "..."
             "\"Просто надень ее!\"":
-                $herView.hideQQ()
-                $herView.showQQ( "body_69.png", pos )
+                $herView.hideshowQQ( "body_69.png", pos )
                 her "Ладно, ладно..."
             "\"Я дам тебе 15 очков.\"":
                 $ gryffindor +=15
-                $herView.hideQQ()
-                $herView.showQQ( "body_07.png", pos )
+                $herView.hideshowQQ( "body_07.png", pos )
                 her "Хм..."
-                $herView.hideQQ()
-                $herView.showQQ( "body_68.png", pos )
+                $herView.hideshowQQ( "body_68.png", pos )
                 her "Ладно, я не против."
             "\"Ладно. Забудь\"":
-                $herView.hideQQ()
-                $herView.showQQ( "body_13.png", pos )
+                $herView.hideshowQQ( "body_13.png", pos )
                 her "Ох..."
-                $herView.hideQQ()
-                $herView.showQQ( None, pos )
+                $herView.hideshowQQ( None, pos )
                 jump day_time_requests
         
 
 
     
     if whoring >= 18: # Lv 7+
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her "Слушаюсь, сэр..."
         $herView.hideQQ()
         $herView.addFaceName( "body_78.png", pos )
@@ -170,25 +147,21 @@ label mini_on:
 label mini_off:
     $ pos = POS_370
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
-        $herView.hideQQ()
-        $herView.showQQ( "body_04.png", pos )
+        $herView.hideshowQQ( "body_04.png", pos )
         her "Я рада, что вы попросили меня об этом. "
         $herView.hideQQ()
         $herView.addFaceName( "body_03.png")
         
     if whoring >= 6 and whoring <= 11: # Lv 3-4.
-        $herView.hideQQ()
-        $herView.showQQ( "body_01.png", pos )
+        $herView.hideshowQQ( "body_01.png", pos )
         her "С удовольствием, сэр."
 
     if whoring >= 12 and whoring <= 17: # Lv 5-6.
-        $herView.hideQQ()
-        $herView.showQQ( "body_13.png", pos )
+        $herView.hideshowQQ( "body_13.png", pos )
         her "Хорошо..."
     
     if whoring >= 18: # Lv 7+
-        $herView.hideQQ()
-        $herView.showQQ( "body_28.png", pos )
+        $herView.hideshowQQ( "body_28.png", pos )
         her "Опять эта скукотища?"
     
     
@@ -250,48 +223,39 @@ label badge_take:
 label nets_put:
     $ pos = POS_370
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
-        $herView.hideQQ()
-        $herView.showQQ( "body_11.png", pos )
+        $herView.hideshowQQ( "body_11.png", pos )
         her "Ажурные чулки...?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_31.png", pos )
+        $herView.hideshowQQ( "body_31.png", pos )
         her "Вы, должно быть, не серьезно, сэр!"
         menu:
             m "..."
             "\"Ладно. Забудь.\"":
-                $herView.hideQQ()
-                $herView.showQQ( "body_69.png", pos )
+                $herView.hideshowQQ( "body_69.png", pos )
                 her "С радостью..."
-                $herView.hideQQ()
-                $herView.showQQ( None, pos )
+                $herView.hideshowQQ( None, pos )
                 jump day_time_requests
             "\"Я дам тебе 15 очков.\"":
                 $ gryffindor +=15
                 her "........................"
                 her "..............................."
-                $herView.hideQQ()
-                $herView.showQQ( "body_66.png", pos )
+                $herView.hideshowQQ( "body_66.png", pos )
                 her "Ну, хорошо..."
                 $herView.hideQQ()
                 $ mad += 5
                 call upset
         
     if whoring >= 6 and whoring <= 11: # Lv 3-4.
-        $herView.hideQQ()
-        $herView.showQQ( "body_15.png", pos )
+        $herView.hideshowQQ( "body_15.png", pos )
         her "Хм...?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_17.png", pos )
+        $herView.hideshowQQ( "body_17.png", pos )
         her "Я не из таких девушек, сэр..."
         her "Попытайте удачу с одной из \"Слизеринских\" шлюх..."
         menu:
             m "..."
             "\"Просто надень это!\"":
-                $herView.hideQQ()
-                $herView.showQQ( "body_07.png", pos )
+                $herView.hideshowQQ( "body_07.png", pos )
                 her "Сэр, это врядли соответствует форме студента Хогвартса."
-                $herView.hideQQ()
-                $herView.showQQ( "body_09.png", pos )
+                $herView.hideshowQQ( "body_09.png", pos )
                 her "Я отказываюсь!"
                 $herView.hideQQ()
                 $ mad += 5
@@ -300,60 +264,46 @@ label nets_put:
                 jump day_time_requests
             "\"Я дам тебе 15 очков.\"":
                 $ gryffindor +=15
-                $herView.hideQQ()
-                $herView.showQQ( "body_07.png", pos )
+                $herView.hideshowQQ( "body_07.png", pos )
                 her "Хм..."
-                $herView.hideQQ()
-                $herView.showQQ( "body_08.png", pos )
+                $herView.hideshowQQ( "body_08.png", pos )
                 her "Ну, раз так..."
-                $herView.hideQQ()
-                $herView.showQQ( "body_29.png", pos )
+                $herView.hideshowQQ( "body_29.png", pos )
                 her "Пока это приносит пользу моему факультету..."
             "\"Ладно. Забудь\"":
-                $herView.hideQQ()
-                $herView.showQQ( "body_01.png", pos )
+                $herView.hideshowQQ( "body_01.png", pos )
                 her "Ладно..."
-                $herView.hideQQ()
-                $herView.showQQ( None, pos )
+                $herView.hideshowQQ( None, pos )
                 jump day_time_requests
 
     if whoring >= 12 and whoring <= 17: # Lv 5-6.
-        $herView.hideQQ()
-        $herView.showQQ( "body_15.png", pos )
+        $herView.hideshowQQ( "body_15.png", pos )
         her "Хм...?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_17.png", pos )
+        $herView.hideshowQQ( "body_17.png", pos )
         her "Ажурные чулки?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_29.png", pos )
+        $herView.hideshowQQ( "body_29.png", pos )
         her "Я не уверена насчет этого, сэр..."
         menu:
             m "..."
             "\"Просто надень их!\"":
-                $herView.hideQQ()
-                $herView.showQQ( "body_69.png", pos )
+                $herView.hideshowQQ( "body_69.png", pos )
                 her "Ладно, Ладно..."
             "\"Я дам тебе 15 очков.\"":
                 $ gryffindor +=15
-                $herView.hideQQ()
-                $herView.showQQ( "body_07.png", pos )
+                $herView.hideshowQQ( "body_07.png", pos )
                 her "Хм..."
-                $herView.hideQQ()
-                $herView.showQQ( "body_68.png", pos )
+                $herView.hideshowQQ( "body_68.png", pos )
                 her "Ладно, я не против."
             "\"Ладно. Забудь\"":
-                $herView.hideQQ()
-                $herView.showQQ( "body_13.png", pos )
+                $herView.hideshowQQ( "body_13.png", pos )
                 her "Ох..."
-                $herView.hideQQ()
-                $herView.showQQ( None, pos )
+                $herView.hideshowQQ( None, pos )
                 jump day_time_requests
         
 
     
     if whoring >= 18: # Lv 7+
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her "Если вы настаиваете, сэр..."
         $herView.hideQQ()
         $herView.addFaceName( "body_78.png" )
@@ -380,25 +330,21 @@ label nets_put:
 label nets_take:
     $ pos = POS_370
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
-        $herView.hideQQ()
-        $herView.showQQ( "body_04.png", pos )
+        $herView.hideshowQQ( "body_04.png", pos )
         her "Я рада, что вы приняли это решение, сэр."
         $herView.hideQQ()
         $herView.addFaceName( "body_03.png" )
         
     if whoring >= 6 and whoring <= 11: # Lv 3-4.
-        $herView.hideQQ()
-        $herView.showQQ( "body_01.png", pos )
+        $herView.hideshowQQ( "body_01.png", pos )
         her "С удовольствием, сэр."
 
     if whoring >= 12 and whoring <= 17: # Lv 5-6.
-        $herView.hideQQ()
-        $herView.showQQ( "body_12.png", pos )
+        $herView.hideshowQQ( "body_12.png", pos )
         her "Как пожелаете, сэр."
     
     if whoring >= 18: # Lv 7+
-        $herView.hideQQ()
-        $herView.showQQ( "body_28.png", pos )
+        $herView.hideshowQQ( "body_28.png", pos )
         her "Правда? Ой..."
     
     
@@ -439,8 +385,7 @@ label giving_lube: # JAR OF Анальный лубрикант.
         $ mad += 6
         $herView.showQ( "body_02.png", pos, d5 )                                                                                                                                                                                         #HERMIONE
         her "Я не знаю, что это..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_05.png", pos )
+        $herView.hideshowQQ( "body_05.png", pos )
         her "Но мне кажется, что эта банка полна чего-то мерзкого и противного..."
         her "Нет, спасибо, сэр."
         $herView.hideQQ()
@@ -453,12 +398,10 @@ label giving_lube: # JAR OF Анальный лубрикант.
         $ mad += 2
         $herView.showQ( "body_73.png", pos, d5 )                                                                                                                                                                                                                      #HERMIONE
         her "Хм..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_66.png", pos )
+        $herView.hideshowQQ( "body_66.png", pos )
         her "Мне кажется, я знаю, что это такое..."
         her "Но почему вы даете что-то вроде этого одному из ваших учеников, сэр?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_69.png", pos )
+        $herView.hideshowQQ( "body_69.png", pos )
         her "Нет, спасибо."
         $herView.hideQQ()
         call upset #Message saying that Hermione became upset with you.
@@ -468,8 +411,7 @@ label giving_lube: # JAR OF Анальный лубрикант.
         $ anal_lube -= 1
         $herView.showQ( "body_118.png", pos, d5 )
         her "Анальный лубрикант?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_189.png", pos )
+        $herView.hideshowQQ( "body_189.png", pos )
         her "Эм...ну...я знаю девочку..."
         her "То есть, не знаю, она подруга моей подруги..."
         her "Да, я передам это ей..."
@@ -480,8 +422,7 @@ label giving_lube: # JAR OF Анальный лубрикант.
         ">Вы даете банку Гермионе..."
         hide screen gift
         with d3
-        $herView.hideQQ()
-        $herView.showQQ( "body_186.png", pos )
+        $herView.hideshowQQ( "body_186.png", pos )
         her "Тем не менее, я думаю, вы не должны дарить такие подарки вашим ученикам, сэр."
         $herView.hideQQ()
         call no_change #Message: Hermione's mood did not change.
@@ -492,11 +433,9 @@ label giving_lube: # JAR OF Анальный лубрикант.
         $ mad -=5
         $herView.showQ( "body_124.png", pos, d5 )
         her "Анальный лубрикант, сэр?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_186.png", pos )
+        $herView.hideshowQQ( "body_186.png", pos )
         her "Я знаю пару девушек, которые могли бы сделать что-нибудь с этим."
-        $herView.hideQQ()
-        $herView.showQQ( "body_128.png", pos )
+        $herView.hideshowQQ( "body_128.png", pos )
         her "Спасибо, что присматриваете за нами, сэр."
         $herView.hideQQ()
         call happy #Message that says that Hermione's mood has improved.
@@ -516,8 +455,7 @@ label giving_condoms: # A PACK OF CONDOMS
         $ mad += 6
         $herView.showQ( "body_18.png", pos, d5 )
         her "Презервативы?!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_30.png", pos )
+        $herView.hideshowQQ( "body_30.png", pos )
         her "Сэр, я даже не знаю, что с этим делать..."
         $herView.hideQQ()
         call upset #Message saying that Hermione became upset with you.
@@ -527,11 +465,9 @@ label giving_condoms: # A PACK OF CONDOMS
     if whoring >= 6 and whoring <= 11: # Lv 3-4.
         $herView.showQ( "body_07.png", pos, d5 )
         her "...Презервативы?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_04.png", pos )
+        $herView.hideshowQQ( "body_04.png", pos )
         her "Эм... Является ли это частью какой-то новой обучающей программы Хогвартса? Вроде сексуального развитие или вроде того?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_189.png", pos )
+        $herView.hideshowQQ( "body_189.png", pos )
         her "Нет, сэр ... Мне кажется, что неправильно принимать этот подарок от вас..."
         $herView.hideQQ()
         call no_change 
@@ -543,8 +479,7 @@ label giving_condoms: # A PACK OF CONDOMS
         $herView.showQ( "body_03.png", pos, d5 )
         her "Пачка презервативов?"
         her "Сэр, как мне использовать их?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_04.png", pos )
+        $herView.hideshowQQ( "body_04.png", pos )
         her "Ну, я приму их, только потому, что невежливо отказываться от подарка..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/10.png" # CONDOMS
@@ -563,8 +498,7 @@ label giving_condoms: # A PACK OF CONDOMS
         $ mad -=4
         $herView.showQ( "body_08.png", pos, d5 )
         her "Пачка презервативов?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_128.png", pos )
+        $herView.hideshowQQ( "body_128.png", pos )
         her "Я ценю вашу заботу, сэр. Спасибо."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/10.png" # CONDOMS
@@ -610,8 +544,7 @@ label giving_candy: # CANDY.
         $ candy -= 1
         $herView.showQ( "body_03.png", pos, d5 )
         her "Конфета?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_02.png", pos )
+        $herView.hideshowQQ( "body_02.png", pos )
         her "Конфеты для детей, сэр."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/11.png" # CANDY
@@ -649,8 +582,7 @@ label giving_candy: # CANDY.
         $ mad -=5
         $herView.showQ( "body_06.png", pos, d5 )
         her "Конфета?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_46.png", pos )
+        $herView.hideshowQQ( "body_46.png", pos )
         her "Умные девушки используют конфеты как \"игрушку\"."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/11.png" # CANDY
@@ -698,12 +630,10 @@ label giving_chocolate: # CHOCOLATE.
         $ chocolate -= 1
         $herView.showQ( "body_03.png", pos, d5 )
         her "Плитка шоколада?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_09.png", pos )
+        $herView.hideshowQQ( "body_09.png", pos )
         her "Хм..."
         her "Тут что-то о феях..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_11.png", pos )
+        $herView.hideshowQQ( "body_11.png", pos )
         her "Это шутка какая-то, не так ли?"
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/12.png" # CHOCOLATE
@@ -723,8 +653,7 @@ label giving_chocolate: # CHOCOLATE.
         $ chocolate -= 1
         $herView.showQ( "body_03.png", pos, d5 )
         her "Плитка шоколада?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_24.png", pos )
+        $herView.hideshowQQ( "body_24.png", pos )
         her "Мне просто нравится как она хрустит, сэр! Н-не вкус..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/12.png" # CHOCOLATE
@@ -744,8 +673,7 @@ label giving_chocolate: # CHOCOLATE.
         $ mad -= 10
         $herView.showQ( "body_06.png", pos, d5 )
         her "Плитка шоколада?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_111.png", pos )
+        $herView.hideshowQQ( "body_111.png", pos )
         her "Вы балуете меня, сэр."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/12.png" # CHOCOLATE
@@ -773,18 +701,14 @@ label giving_vibrator: # VIBRATOR.
         $ mad+= 10
         $herView.showQ( "body_01.png", pos, d5 )
         her "Магическая палочка?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_15.png", pos )
+        $herView.hideshowQQ( "body_15.png", pos )
         her "Нет, выглядит как--"
         her ".........?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_18.png", pos )
+        $herView.hideshowQQ( "body_18.png", pos )
         her "!!!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_187.png", pos )
+        $herView.hideshowQQ( "body_187.png", pos )
         her "Профессор Дамблдор!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_30.png", pos )
+        $herView.hideshowQQ( "body_30.png", pos )
         her "Это неуместно!"
         call upset
         $herView.addFaceName( "body_120.png" )
@@ -793,11 +717,9 @@ label giving_vibrator: # VIBRATOR.
         $ mad += 10
         $herView.showQ( "body_118.png", pos, d5 )
         her "Это то, что я думаю?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_186.png", pos )
+        $herView.hideshowQQ( "body_186.png", pos )
         her "Сэр, позвольте напомнить вам о том, что я принадлежу факультету \"Гриффиндор\"."
-        $herView.hideQQ()
-        $herView.showQQ( "body_120.png", pos )
+        $herView.hideshowQQ( "body_120.png", pos )
         her "Этот подарок подходит для \"Слизеринских\" шлюх, сэр."
         call upset
 
@@ -807,14 +729,11 @@ label giving_vibrator: # VIBRATOR.
         her "Это...вибратор?"
         her "Дизайн..."
         her "Он напоминает мне мою палочку..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her "Это сделано на заказ для меня?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_30.png", pos )
+        $herView.hideshowQQ( "body_30.png", pos )
         her "Это неуместно."
-        $herView.hideQQ()
-        $herView.showQQ( "body_29.png", pos )
+        $herView.hideshowQQ( "body_29.png", pos )
         her "Но, тем не менее..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/13.png" # VIBRATOR
@@ -831,11 +750,9 @@ label giving_vibrator: # VIBRATOR.
         $ mad -= 10
         $herView.showQ( "body_11.png", pos, d5 )
         her "Это вибратор..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_10.png", pos )
+        $herView.hideshowQQ( "body_10.png", pos )
         her "Это... вызывает во мне..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_66.png", pos )
+        $herView.hideshowQQ( "body_66.png", pos )
         her "Грязные мысли, сэр"
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/13.png" # VIBRATOR
@@ -877,14 +794,11 @@ label giving_strapon: # STRAP-ON.
         $ strapon -= 1
         $herView.showQ( "body_18.png", pos, d5 )
         her "Что это?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_14.png", pos )
+        $herView.hideshowQQ( "body_14.png", pos )
         her "Какой-то артефакт?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_01.png", pos )
+        $herView.hideshowQQ( "body_01.png", pos )
         her "Так хорошо продуман..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_06.png", pos )
+        $herView.hideshowQQ( "body_06.png", pos )
         her "Вы уверены, что мне стоит обладать этим?"
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/14.png" # STRAP-ON
@@ -904,22 +818,17 @@ label giving_strapon: # STRAP-ON.
         $ mad += 15
         $herView.showQ( "body_18.png", pos, d5 )
         her "!!!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her "Это..."
         her "Оно не выглядит... по человечески..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_69.png", pos )
+        $herView.hideshowQQ( "body_69.png", pos )
         her "То есть..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_86.png", pos )
+        $herView.hideshowQQ( "body_86.png", pos )
         her "Сэр, вам не стыдно?!"
         her "Дарить что-то вроде этого ученику?!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_87.png", pos )
+        $herView.hideshowQQ( "body_87.png", pos )
         her ".................."
-        $herView.hideQQ()
-        $herView.showQQ( "body_47.png", pos )
+        $herView.hideshowQQ( "body_47.png", pos )
         her "Пожалуйста, уберите это."
         $herView.hideQQ()
         call upset
@@ -929,23 +838,17 @@ label giving_strapon: # STRAP-ON.
         $ mad -= 10
         $herView.showQ( "body_118.png", pos, d5 )
         her "Эта штука..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_117.png", pos )
+        $herView.hideshowQQ( "body_117.png", pos )
         her "Это нормальный размер...для \"этого\"?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_189.png", pos )
+        $herView.hideshowQQ( "body_189.png", pos )
         her "Я имею в виду..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her "......................."
-        $herView.hideQQ()
-        $herView.showQQ( "body_117.png", pos )
+        $herView.hideshowQQ( "body_117.png", pos )
         her "Это реквизит для какого-то розыгрыша?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her "Оно неплохо сделано "
-        $herView.hideQQ()
-        $herView.showQQ( "body_33.png", pos )
+        $herView.hideshowQQ( "body_33.png", pos )
         her "Я возьму его..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/14.png" # STRAP-ON
@@ -962,23 +865,17 @@ label giving_strapon: # STRAP-ON.
         $ mad -= 30
         $herView.showQ( "body_48.png", pos, d5 )
         her "Это... Это великолепно, сэр..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_189.png", pos )
+        $herView.hideshowQQ( "body_189.png", pos )
         her "Он смоделирован по тому самому Фестралу?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_190.png", pos )
+        $herView.hideshowQQ( "body_190.png", pos )
         her "Но эти существа невидимы..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her ".................."
-        $herView.hideQQ()
-        $herView.showQQ( "body_123.png", pos )
+        $herView.hideshowQQ( "body_123.png", pos )
         her "Захватывающе..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_120.png", pos )
+        $herView.hideshowQQ( "body_120.png", pos )
         her "Все не так, как вы могли подумать, сэр..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_127.png", pos )
+        $herView.hideshowQQ( "body_127.png", pos )
         her "Я просто любуюсь мастерством..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/14.png" # STRAP-ON
@@ -1011,17 +908,13 @@ label giving_ballgag: # BALL GAG.
         $ mad += 10
         $herView.showQ( "body_118.png", pos, d5 )
         her "Что это?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_141.png", pos )
+        $herView.hideshowQQ( "body_141.png", pos )
         her "Выглядит как одна из игрушек для взрослых?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_30.png", pos )
+        $herView.hideshowQQ( "body_30.png", pos )
         her "Какая женщина в здравом уме будет подвергать себя такому унижению?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_186.png", pos )
+        $herView.hideshowQQ( "body_186.png", pos )
         her "И что мне с этим сделать?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_187.png", pos )
+        $herView.hideshowQQ( "body_187.png", pos )
         her "Это очень обидно, сэр..."                                                                                                                                                                                                              
         call upset
 
@@ -1029,15 +922,12 @@ label giving_ballgag: # BALL GAG.
         $ mad += 5
         $herView.showQ( "body_186.png", pos, d5 )
         her "Сэр, вы не понимаете, насколько неправильно было бы для меня принять от вас такой подарок?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_189.png", pos )
+        $herView.hideshowQQ( "body_189.png", pos )
         her "И ведь я даже не представляю, что с этим делать..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her "То есть, эти пушистые наручники, это просто..."
         her "И этот круглый кляп... Эм..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_120.png", pos )
+        $herView.hideshowQQ( "body_120.png", pos )
         her "Сэр, пожалуйста..."
         her "Просто уберите это."
         call upset
@@ -1048,19 +938,14 @@ label giving_ballgag: # BALL GAG.
         $ mad -= 9
         $herView.showQ( "body_120.png", pos, d5 )
         her "Месяц назад я бы чувствовала себя оскорбленной, если бы получила такой подарок..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her "Но теперь я знаю, что некоторые девушки получают удовольствие от такого..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_117.png", pos )
-        $herView.hideQQ()
-        $herView.showQQ( "body_120.png", pos )
+        $herView.hideshowQQ( "body_117.png", pos )
+        $herView.hideshowQQ( "body_120.png", pos )
         her "Уверяю вас, я не одна из таких, сэр."
-        $herView.hideQQ()
-        $herView.showQQ( "body_189.png", pos )
+        $herView.hideshowQQ( "body_189.png", pos )
         her "Но я знаю девушку, которая знает девушку, которая в таких вещах, как ..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_188.png", pos )
+        $herView.hideshowQQ( "body_188.png", pos )
         her "Да, я возьму это и отдам ей..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/15.png" # BALL GAG.
@@ -1076,11 +961,9 @@ label giving_ballgag: # BALL GAG.
         $ mad -= 15
         $herView.showQ( "body_190.png", pos, d5 )
         her "Кляп и наручники?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_122.png", pos )
+        $herView.hideshowQQ( "body_122.png", pos )
         her "Это совершенно неуместно, сэр." # :)
-        $herView.hideQQ()
-        $herView.showQQ( "body_129.png", pos )
+        $herView.hideshowQQ( "body_129.png", pos )
         her "Но, подарок это подарок, так?"
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/15.png" # BALL GAG.
@@ -1120,8 +1003,7 @@ label giving_plug:
         $ plug -= 1
         $herView.showQ( "body_01.png", pos, d5 )
         her "Хм...?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_15.png", pos )
+        $herView.hideshowQQ( "body_15.png", pos )
         her "Это что-то вроде затычек?"
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/16.png" # ANAL PLUG.
@@ -1130,8 +1012,7 @@ label giving_plug:
         ">Вы даете Гермионе анальную пробку..."
         hide screen gift
         with d3
-        $herView.hideQQ()
-        $herView.showQQ( "body_185.png", pos )
+        $herView.hideshowQQ( "body_185.png", pos )
         her "Спасибо, сэр."
         call happy
 
@@ -1140,12 +1021,10 @@ label giving_plug:
         $ mad -= 15
         $herView.showQ( "body_186.png", pos, d5 )
         her "Сэр, это какие-то игрушки для взрослых?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_187.png", pos )
+        $herView.hideshowQQ( "body_187.png", pos )
         her "Это что-то из штук для анального секса?"
         her "Сэр, я считаю, что это одно из оружий для угнетения и унижения женщин!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_120.png", pos )
+        $herView.hideshowQQ( "body_120.png", pos )
         her "Козел!"
         call upset
 
@@ -1153,12 +1032,10 @@ label giving_plug:
     if whoring >= 12 and whoring <= 17: # Lv 5-6.
         $herView.showQ( "body_120.png", pos, d5 )
         her "Да, я знаю девочку, которая..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_186.png", pos )
+        $herView.hideshowQQ( "body_186.png", pos )
         her "Пользуется чем-то подобным..."
         her "Но не я, сэр."
-        $herView.hideQQ()
-        $herView.showQQ( "body_120.png", pos )
+        $herView.hideshowQQ( "body_120.png", pos )
         her "Нет. Спасибо."
         call no_change
 
@@ -1167,17 +1044,13 @@ label giving_plug:
         $ mad -= 10
         $herView.showQ( "body_118.png", pos, d5 )
         her "Анальная пробка?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_117.png", pos )
+        $herView.hideshowQQ( "body_117.png", pos )
         her "Я не пользуюсь таким..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_122.png", pos )
+        $herView.hideshowQQ( "body_122.png", pos )
         her "Хотя она очень красива..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her "....................."
-        $herView.hideQQ()
-        $herView.showQQ( "body_121.png", pos )
+        $herView.hideshowQQ( "body_121.png", pos )
         her "Ну, ладно. Я возьму ее, если вы настаиваете."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/16.png" # ANAL PLUGS.
@@ -1188,8 +1061,7 @@ label giving_plug:
         with d3
         $herView.showQQ( "body_127.png", pos )
         her "Но, конечно же, никогда не воспользуюсь..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_124.png", pos )
+        $herView.hideshowQQ( "body_124.png", pos )
         her "................"
         call happy
         
@@ -1249,11 +1121,9 @@ label giving_mag1:
         $ mag1 -= 1
         $herView.showQ( "body_02.png", pos, d5 )
         her "Ох..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_06.png", pos )
+        $herView.hideshowQQ( "body_06.png", pos )
         her "Да, я читаю как можно больше журналов..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_10.png", pos )
+        $herView.hideshowQQ( "body_10.png", pos )
         her "Особенно много в последнее время..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/17.png" # EDUCATIONAL MAGAZIES.
@@ -1271,11 +1141,9 @@ label giving_mag1:
         $ mag1 -= 1
         $herView.showQ( "body_10.png", pos, d5 )
         her "Эм..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_08.png", pos )
+        $herView.hideshowQQ( "body_08.png", pos )
         her "Если быть честной, журналы уже не особо привлекают меня..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_11.png", pos )
+        $herView.hideshowQQ( "body_11.png", pos )
         her "Но я не против принять их от вас."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/17.png" # EDUCATIONAL MAGAZIES.
@@ -1305,11 +1173,9 @@ label giving_mag2:
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
         $herView.showQ( "body_15.png", pos, d5 )
         her "Хм?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_17.png", pos )
+        $herView.hideshowQQ( "body_17.png", pos )
         her "Это какие-то журналы для \"слизеринских\" девок, я полагаю."
-        $herView.hideQQ()
-        $herView.showQQ( "body_16.png", pos )
+        $herView.hideshowQQ( "body_16.png", pos )
         her "Я выше, этих глупых журналов, сэр."
         call no_change
         $herView.addFaceName( "body_01.png" )
@@ -1321,11 +1187,9 @@ label giving_mag2:
         $ mag2 -= 1
         $herView.showQ( "body_04.png", pos, d5 )
         her "Я не читаю журналы такого рода..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_13.png", pos )
+        $herView.hideshowQQ( "body_13.png", pos )
         her "................"
-        $herView.hideQQ()
-        $herView.showQQ( "body_04.png", pos )
+        $herView.hideshowQQ( "body_04.png", pos )
         her "Но я могу попробовать, просто смеха ради..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/18.png" # GIRLY MAGAZIES.
@@ -1344,8 +1208,7 @@ label giving_mag2:
         $ mag2 -= 1
         $herView.showQ( "body_10.png", pos, d5 )
         her "Мне стыдно признаваться, но..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_24.png", pos )
+        $herView.hideshowQQ( "body_24.png", pos )
         her "Последнее время мне действительно нравится читать подобное..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/18.png" # GIRLY MAGAZIES.
@@ -1365,8 +1228,7 @@ label giving_mag2:
         $ mad -= 15
         $herView.showQ( "body_18.png", pos, d5 )
         her "Последний выпуск \"Девченок\"?!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_24.png", pos )
+        $herView.hideshowQQ( "body_24.png", pos )
         her "Нет ничего лучше этого журнала!"
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/18.png" # GIRLY MAGAZIES.
@@ -1396,17 +1258,13 @@ label giving_mag3:
         $ mad += 7
         $herView.showQ( "body_02.png", pos, d5 )
         her "Это...?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_31.png", pos )
+        $herView.hideshowQQ( "body_31.png", pos )
         her "Журналы для взрослых, сэр?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_69.png", pos )
+        $herView.hideshowQQ( "body_69.png", pos )
         her "Учитывая ваш высокий статус?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_66.png", pos )
+        $herView.hideshowQQ( "body_66.png", pos )
         her "Сэр, неужели вы не нашли более продуктивный способ провести свое время?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_47.png", pos )
+        $herView.hideshowQQ( "body_47.png", pos )
         her "Я определенно не стану брать их..."
         call upset
         
@@ -1415,11 +1273,9 @@ label giving_mag3:
         $ mad += 3
         $herView.showQ( "body_05.png", pos, d5 )
         her "Журналы для взрослых?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_69.png", pos )
+        $herView.hideshowQQ( "body_69.png", pos )
         her "Сэр, мне не интересно подобное."
-        $herView.hideQQ()
-        $herView.showQQ( "body_47.png", pos )
+        $herView.hideshowQQ( "body_47.png", pos )
         her "И это не очень уместный подарок для одного из ваших студентов."
         call upset
         $herView.addFaceName( "body_29.png" )
@@ -1430,8 +1286,7 @@ label giving_mag3:
         $ mag3 -= 1
         $herView.showQ( "body_31.png", pos, d5 )
         her "Журналы для взрослых?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_34.png", pos )
+        $herView.hideshowQQ( "body_34.png", pos )
         her "Сэр, мне кажется это не подходящий подарок для девушки моего возраста..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/19.png" # ADULT MAGAZIES.
@@ -1451,12 +1306,10 @@ label giving_mag3:
         $ mad -= 15
         $herView.showQ( "body_75.png", pos, d5 )
         her "Новый выпуск \"Л.ю.б.в.и.\"!!!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_122.png", pos )
+        $herView.hideshowQQ( "body_122.png", pos )
         her "Э-э...я имела в виду - \"Журналы для взрослых?\""
         her "Это слегка опрометчиво..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_74.png", pos )
+        $herView.hideshowQQ( "body_74.png", pos )
         her "Но я возьму их..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/19.png" # ADULT MAGAZIES.
@@ -1488,11 +1341,9 @@ label giving_mag4:
         $ mad += 15
         $herView.showQ( "body_01.png", pos, d5 )                                                                                                                                                                                       #HERMIONE
         her "Хм... Что это?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_130.png", pos )
+        $herView.hideshowQQ( "body_130.png", pos )
         her "Сэр, это порно журналы!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_187.png", pos )
+        $herView.hideshowQQ( "body_187.png", pos )
         her "Вам должно быть стыдно!"
         call upset
         
@@ -1502,14 +1353,11 @@ label giving_mag4:
         $ mad += 8
         $herView.showQ( "body_48.png", pos, d5 )
         her "Порно журналы?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_87.png", pos )
+        $herView.hideshowQQ( "body_87.png", pos )
         her "Сэр, что мне с ними делать?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_79.png", pos )
+        $herView.hideshowQQ( "body_79.png", pos )
         her "Исследовать их?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_86.png", pos )
+        $herView.hideshowQQ( "body_86.png", pos )
         her "Козел!"
         call upset
         $herView.addFaceName( "body_120.png" )
@@ -1519,14 +1367,11 @@ label giving_mag4:
         $ mag4 -= 1
         $herView.showQ( "body_31.png", pos, d5 )
         her "Это жесткое порно."
-        $herView.hideQQ()
-        $herView.showQQ( "body_34.png", pos )
+        $herView.hideshowQQ( "body_34.png", pos )
         her "Не очень подходящий подарок для девушки моих лет!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her ".............."
-        $herView.hideQQ()
-        $herView.showQQ( "body_117.png", pos )
+        $herView.hideshowQQ( "body_117.png", pos )
         her "Но я возьму..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/20.png" # PORN MAGAZIES.
@@ -1545,20 +1390,15 @@ label giving_mag4:
         $ mad -= 15
         $herView.showQ( "body_48.png", pos, d5 )
         her "Порнография?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her "................"
-        $herView.hideQQ()
-        $herView.showQQ( "body_117.png", pos )
+        $herView.hideshowQQ( "body_117.png", pos )
         her "Как женщины вообще могут такое делать?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her "................."
-        $herView.hideQQ()
-        $herView.showQQ( "body_120.png", pos )
+        $herView.hideshowQQ( "body_120.png", pos )
         her "Ладно, я возьму их..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_189.png", pos )
+        $herView.hideshowQQ( "body_189.png", pos )
         her "Исключительно для научных целей, конечно же..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/20.png" # PORN MAGAZIES.
@@ -1589,11 +1429,9 @@ label giving_beer:
         $ mad -= 3
         $herView.showQ( "body_01.png", pos, d5 )
         her "Сливочное пиво?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_08.png", pos )
+        $herView.hideshowQQ( "body_08.png", pos )
         her "Вы уверены насчет этого?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_06.png", pos )
+        $herView.hideshowQQ( "body_06.png", pos )
         her "Оно содержит алкоголь..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/21.png" # BUTTERBEER.
@@ -1617,8 +1455,7 @@ label giving_beer:
         
         $herView.showQQ( "body_14.png", pos )
         her "Это будет наш маленький секрет..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_06.png", pos )
+        $herView.hideshowQQ( "body_06.png", pos )
         her "Я большая поклонница этого безвредного напитка."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/21.png" # BUTTERBEER.
@@ -1639,8 +1476,7 @@ label giving_beer:
         $ beer -= 1
         $herView.showQ( "body_01.png", pos, d5 )
         her "Сливочное пиво?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_24.png", pos )
+        $herView.hideshowQQ( "body_24.png", pos )
         her "Спасибо, сэр."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/21.png" # BUTTERBEER.
@@ -1659,8 +1495,7 @@ label giving_beer:
         $ beer -= 1
         $herView.showQ( "body_06.png", pos, d5 )
         her "Сливочное пиво...?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_01.png", pos )
+        $herView.hideshowQQ( "body_01.png", pos )
         her "Спасибо, сэр."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/21.png" # BUTTERBEER.
@@ -1671,8 +1506,7 @@ label giving_beer:
         with d3
         $herView.showQQ( "body_06.png", pos )
         her "Я выпью ее с мальчишками несколько позднее."
-        $herView.hideQQ()
-        $herView.showQQ( "body_189.png", pos )
+        $herView.hideshowQQ( "body_189.png", pos )
         her "Э-э... Я хотела сказать с девочками, да."
         call happy
         $herView.addFaceName( "body_01.png" )
@@ -1698,8 +1532,7 @@ label giving_owl:
         $ mad -= 7
         $herView.showQ( "body_01.png", pos, d5 )
         her "Плюшевая сова?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_06.png", pos )
+        $herView.hideshowQQ( "body_06.png", pos )
         her "Так мило..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/22.png" # PLUSH OWL.
@@ -1719,8 +1552,7 @@ label giving_owl:
         $ owl -= 1
         $herView.showQ( "body_11.png", pos, d5 )
         her "Плюшевая сова?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_06.png", pos )
+        $herView.hideshowQQ( "body_06.png", pos )
         her "Мне нравится!"
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/22.png" # PLUSH OWL.
@@ -1738,11 +1570,9 @@ label giving_owl:
         $ owl -= 1
         $herView.showQ( "body_01.png", pos, d5 )
         her "Игрушка?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_02.png", pos )
+        $herView.hideshowQQ( "body_02.png", pos )
         her "Игрушки для детей, сэр."
-        $herView.hideQQ()
-        $herView.showQQ( "body_29.png", pos )
+        $herView.hideshowQQ( "body_29.png", pos )
         her "Но я возьму..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/22.png" # PLUSH OWL.
@@ -1763,21 +1593,16 @@ label giving_owl:
         $ owl -= 1
         $herView.showQ( "body_66.png", pos, d5 )
         her "Это что-то из игрушек для взрослых?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_87.png", pos )
+        $herView.hideshowQQ( "body_87.png", pos )
         her "Где-то есть переключатель или кнопка..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_124.png", pos )
+        $herView.hideshowQQ( "body_124.png", pos )
         her "И ...оно вибрирует или как?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_190.png", pos )
+        $herView.hideshowQQ( "body_190.png", pos )
         her "Ох...?"
         her "Так это действительно просто плюшевая сова?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her "Кошмар..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_34.png", pos )
+        $herView.hideshowQQ( "body_34.png", pos )
         her "То есть, спасибо, сэр."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/22.png" # PLUSH OWL.
@@ -1806,11 +1631,9 @@ label giving_sexdoll:
         $ mad += 20
         $herView.showQ( "body_48.png", pos, d5 )
         her "Это..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_34.png", pos )
+        $herView.hideshowQQ( "body_34.png", pos )
         her "Секс-кукла?!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_32.png", pos )
+        $herView.hideshowQQ( "body_32.png", pos )
         her "Профессор Дамблдор!!!"
         call upset
         $herView.addFaceName( "body_33.png" )
@@ -1819,8 +1642,7 @@ label giving_sexdoll:
         $ mad += 20
         $herView.showQ( "body_48.png", pos, d5 )
         her "Секс-кукла?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_120.png", pos )
+        $herView.hideshowQQ( "body_120.png", pos )
         her "Это очень неприлично, для такого как вы..."
         call upset
 
@@ -1829,11 +1651,9 @@ label giving_sexdoll:
         $ sexdoll -= 1
         $herView.showQ( "body_118.png", pos, d5 )
         her "Секс-кукла..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_120.png", pos )
+        $herView.hideshowQQ( "body_120.png", pos )
         her "Это немного неуместно..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_124.png", pos )
+        $herView.hideshowQQ( "body_124.png", pos )
         her "Но может мы сможем использовать ее для розыгрышей или вроде того..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/23.png" # SEX DOLL.
@@ -1851,11 +1671,9 @@ label giving_sexdoll:
         $ sexdoll -= 1
         $herView.showQ( "body_73.png", pos, d5 )
         her "Секс-кукла Джуанна?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_189.png", pos )
+        $herView.hideshowQQ( "body_189.png", pos )
         her "Я не сказала бы, что одобряю подобное..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_124.png", pos )
+        $herView.hideshowQQ( "body_124.png", pos )
         her "Но знаю, что Гарри хотел бы такую..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/23.png" # SEX DOLL.
@@ -1885,8 +1703,7 @@ label giving_lingerie:
         $ mad += 10
         $herView.showQ( "body_118.png", pos, d5 )
         her "Нижнее белье?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_120.png", pos )
+        $herView.hideshowQQ( "body_120.png", pos )
         her "Сэр, я не могу принять от вас такой подарок.."
         call upset
        
@@ -1895,11 +1712,9 @@ label giving_lingerie:
     if whoring >= 6 and whoring <= 11: # Lv 3-4.
         $herView.showQ( "body_118.png", pos, d5 )
         her "Сексуальное нижнее белье?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_117.png", pos )
+        $herView.hideshowQQ( "body_117.png", pos )
         her "Вы ведь знаете, что я не могу принять этот подарок."
-        $herView.hideQQ()
-        $herView.showQQ( "body_118.png", pos )
+        $herView.hideshowQQ( "body_118.png", pos )
         her "(Хотя оно довольно милое)........."
         call no_change
 
@@ -1908,8 +1723,7 @@ label giving_lingerie:
         $ lingerie -= 1
         $herView.showQ( "body_124.png", pos, d5 )
         her "Сексуальное нижнее белье?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_122.png", pos )
+        $herView.hideshowQQ( "body_122.png", pos )
         her "Сэр, это несколько неуместно..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/24.png" # SEXY LINGERIE.
@@ -1928,11 +1742,9 @@ label giving_lingerie:
         $ lingerie -= 1
         $herView.showQ( "body_124.png", pos, d5 )
         her "Сексуальное нижнее белье?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_123.png", pos )
+        $herView.hideshowQQ( "body_123.png", pos )
         her "Как вам кажется, я могу стать похожей на одну из ведьм из тех журналов для взрослых?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_122.png", pos )
+        $herView.hideshowQQ( "body_122.png", pos )
         her "Ох... То есть, спасибо, сэр."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/24.png" # SEXY LINGERIE.
@@ -1959,14 +1771,11 @@ label giving_broom:
         $ broom -= 1
         $herView.showQ( "body_01.png", pos, d5 )
         her "Метла...?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_03.png", pos )
+        $herView.hideshowQQ( "body_03.png", pos )
         her "Хм..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_07.png", pos )
+        $herView.hideshowQQ( "body_07.png", pos )
         her "Что это за странные штуки на ней?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_08.png", pos )
+        $herView.hideshowQQ( "body_08.png", pos )
         her "Выглядит как седло...?"
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/25.png" # BROOM
@@ -1987,14 +1796,11 @@ label giving_broom:
         $ broom -= 1
         $herView.showQ( "body_01.png", pos, d5 )
         her "Метла...?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_07.png", pos )
+        $herView.hideshowQQ( "body_07.png", pos )
         her "Хм..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_05.png", pos )
+        $herView.hideshowQQ( "body_05.png", pos )
         her "Это какая-то секс-игрушка, не так ли?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_87.png", pos )
+        $herView.hideshowQQ( "body_87.png", pos )
         her "Ну, неплохо сделано..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/25.png" # BROOM
@@ -2014,11 +1820,9 @@ label giving_broom:
         $herView.showQ( "body_118.png", pos, d5 )
         her "Метла...?"
         her "Хм..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_66.png", pos )
+        $herView.hideshowQQ( "body_66.png", pos )
         her "Что это за седло...?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_127.png", pos )
+        $herView.hideshowQQ( "body_127.png", pos )
         her "Ну, не важно."
         her "Отказываться от дорогого подарка было бы глупо..."
         $herView.hideQQ()
@@ -2038,17 +1842,13 @@ label giving_broom:
         $herView.showQ( "body_124.png", pos, d5 )
         her "Метла..."
         her "Хм..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_189.png", pos )
+        $herView.hideshowQQ( "body_189.png", pos )
         her "Это седло, сэр..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_190.png", pos )
+        $herView.hideshowQQ( "body_190.png", pos )
         her "Оно было разработано специально для меня, не так ли?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_185.png", pos )
+        $herView.hideshowQQ( "body_185.png", pos )
         her "Я не уверена, неуместно это или разумно..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_129.png", pos )
+        $herView.hideshowQQ( "body_129.png", pos )
         her "Но это идеальное инженерное решение..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/25.png" # BROOM
@@ -2074,11 +1874,9 @@ label giving_krum:
     if whoring >= 0 and whoring <= 5: # Lv 1-2.
         $herView.showQ( "body_73.png", pos, d5 )
         her "Постер Квиддича?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_185.png", pos )
+        $herView.hideshowQQ( "body_185.png", pos )
         her "Что мне с ним делать, сэр?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_184.png", pos )
+        $herView.hideshowQQ( "body_184.png", pos )
         her "Нет, спасибо."
         call no_change
         $herView.addFaceName( "body_71.png" )
@@ -2089,14 +1887,11 @@ label giving_krum:
         $ krum -= 1
         $herView.showQ( "body_73.png", pos, d5 )
         her "Постер по Квиддичу?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_185.png", pos )
+        $herView.hideshowQQ( "body_185.png", pos )
         her "Хм..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_71.png", pos )
+        $herView.hideshowQQ( "body_71.png", pos )
         her "Мне кажется, я видела этого игрока пару раз..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_06.png", pos )
+        $herView.hideshowQQ( "body_06.png", pos )
         her "Это тот студент из Дурмштранга?"
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/26.png" # KRUM POSTER.
@@ -2114,11 +1909,9 @@ label giving_krum:
         $ krum -= 1
         $herView.showQ( "body_73.png", pos, d5 )
         her "Постер Виктора Крама, сэр?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_08.png", pos )
+        $herView.hideshowQQ( "body_08.png", pos )
         her "Ну, я немного интересуюсь квиддичем..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_87.png", pos )
+        $herView.hideshowQQ( "body_87.png", pos )
         her "Не понять, что девушки находят в этих перекачанных парнях..."
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/26.png" # KRUM POSTER.
@@ -2136,8 +1929,7 @@ label giving_krum:
         $ krum -= 1
         $herView.showQ( "body_72.png", pos, d5 )
         her "Постер Виктора Крама?!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_24.png", pos )
+        $herView.hideshowQQ( "body_24.png", pos )
         her "Спасибо, сэр!"
         $herView.hideQQ()
         $ the_gift = "03_hp/18_store/26.png" # KRUM POSTER.
@@ -2148,8 +1940,7 @@ label giving_krum:
         with d3
         $herView.showQQ( "body_46.png", pos )
         her "Не могу дождаться, чтобы повесить его над своей кроватью!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_64.png", pos )
+        $herView.hideshowQQ( "body_64.png", pos )
         her "Девченки обзавидуются..."
         call happy
 

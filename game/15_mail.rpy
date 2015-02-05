@@ -7,27 +7,27 @@ label mail:
         ">Вы читаете свои сообщения."
         play sound "sounds/money.mp3"  #Quiet...
         if finished_report == 1:
-            $ letter_text = "{size=-7}ОТ:Министерства Магии\nКому: Профессору Дамблдору\n\n\n{/size}{size=-2}Благодарим Вас за выполненый доклад на этой неделе.\n Ваша оплата:{/size} \n{size=+4}40 золотых монет.{/size}\n\n\n{size=-3}-С уважением-{/size}"    
+            $ letter_text = "{size=-7}ОТ:Министерства Магии\nКому: Профессору Дамблдору\n\n\n{/size}{size=-2}Благодарим Вас за присланный отчет на этой неделе.\n Ваша оплата:{/size} \n{size=+4}40 золотых монет.{/size}\n\n\n{size=-3}-С уважением-{/size}"    
             $ gold += 40
         
         if finished_report == 2:
-            $ letter_text = "{size=-7}ОТ:Министерства Магии\nКому: Профессору Дамблдору\n\n\n{/size}{size=-2}Благодарим Вас за два выполненых доклада на этой неделе.\nВаша оплата:{/size} \n{size=+4}70 золотых монет.{/size}\n\n\n{size=-3}-С уважением-{/size}"    
+            $ letter_text = "{size=-7}ОТ:Министерства Магии\nКому: Профессору Дамблдору\n\n\n{/size}{size=-2}Благодарим Вас за два присланных отчета на этой неделе.\nВаша оплата:{/size} \n{size=+4}70 золотых монет.{/size}\n\n\n{size=-3}-С уважением-{/size}"    
             $ gold += 70
     
         if finished_report == 3:
-            $ letter_text = "{size=-7}ОТ:Министерства Магии\nКому: Профессору Дамблдору\n\n\n{/size}{size=-2}Благодарим Вас за три выполненых  доклада на этой неделе.\nВаша оплата:{/size} \n{size=+4}90 золотых монет.{/size}\n\n\n{size=-3}-С уважением-{/size}"    
+            $ letter_text = "{size=-7}ОТ:Министерства Магии\nКому: Профессору Дамблдору\n\n\n{/size}{size=-2}Благодарим Вас за три присланных отчета на этой неделе.\nВаша оплата:{/size} \n{size=+4}90 золотых монет.{/size}\n\n\n{size=-3}-С уважением-{/size}"    
             $ gold += 90
             
         if finished_report == 4:
-            $ letter_text = "{size=-7}ОТ:Министерства Магии\nКому: Профессору Дамблдору\n\n\n{/size}{size=-2}Благодарим Вас за четыре выполненых  доклада на этой неделе.\nВаша оплата:{/size} \n{size=+4}110 золотых монет.{/size}\n\n\n{size=-3}-С уважением-{/size}"    
+            $ letter_text = "{size=-7}ОТ:Министерства Магии\nКому: Профессору Дамблдору\n\n\n{/size}{size=-2}Благодарим Вас за четыре присланных отчета на этой неделе.\nВаша оплата:{/size} \n{size=+4}110 золотых монет.{/size}\n\n\n{size=-3}-С уважением-{/size}"    
             $ gold += 110
         
         if finished_report == 5:
-            $ letter_text = "{size=-7}ОТ:Министерства Магии\nКому: Профессору Дамблдору\n\n\n{/size}{size=-2}Благодарим Вас за пять выполненых докладов на этой неделе.\nВаша оплата:{/size} \n{size=+4}150 золотых монет.{/size}\n\n\n{size=-3}-С уважением-{/size}"    
+            $ letter_text = "{size=-7}ОТ:Министерства Магии\nКому: Профессору Дамблдору\n\n\n{/size}{size=-2}Благодарим Вас за пять присланных отчетов на этой неделе.\nВаша оплата:{/size} \n{size=+4}150 золотых монет.{/size}\n\n\n{size=-3}-С уважением-{/size}"    
             $ gold += 150
             
         if finished_report >= 6:
-            $ letter_text = "{size=-7}ОТ:Министерства Магии\nКому: Профессору Дамблдору\n\n\n{/size}{size=-2}Благодарим Вас за шесть выполненых докладов на этой неделе.\nВаша оплата:{/size} \n{size=+4}200 золотых монет.{/size}\n\n\n{size=-3}-С уважением-{/size}"    
+            $ letter_text = "{size=-7}ОТ:Министерства Магии\nКому: Профессору Дамблдору\n\n\n{/size}{size=-2}Благодарим Вас за шесть присланных отчетов на этой неделе.\nВаша оплата:{/size} \n{size=+4}200 золотых монет.{/size}\n\n\n{size=-3}-С уважением-{/size}"    
             $ gold += 200
         
         show screen bld1
@@ -46,7 +46,7 @@ label mail:
 ### MAIL FROM HERMIONE ###
 if day == 1:
     #$ letter_text = "{size=-4}-Для профессора Дамблдора-\n\nЯ пишу Вам, что бы довести до Вашего внимания текущию ситуацию в нашей школе .\n Я боюсь мне будет нужна Ваша помощь, чтобы разобраться в этом.\n\n\n-С уважениям Ваша Гермиона Грейнджер-{/size}"
-    $ letter_text = "{size=-7}От: Гермионы Грейнджер\nКому: Профессору Дамблдору\n\n{/size}{size=-4}Я уверена вы помните причину, по которой я написала вам письмо в последний раз, сэр.\n\nЯ прошу вас, пожалуйста, услышьте мою просьбу в этот раз. Эта несправедливость не может продолжаться...\nНе в этот день или год и не в нашей школе.\n\nПожалуйста примите меры.\n\n{size=-3}С уважением,\nГермиона Грейнджер{/size}"    
+    $ letter_text = "{size=-7}От: Гермионы Грейнджер\nКому: Профессору Дамблдору\n\n{/size}{size=-4}Я уверена вы помните причину, по которой я написала вам последнее письмо, сэр.\n\nЯ прошу вас, пожалуйста, услышьте мою просьбу в этот раз. Эта несправедливость не может продолжаться...\nТолько не в настоящее время и не в нашей школе.\n\nПожалуйста примите меры.\n\n{size=-3}С уважением,\nГермиона Грейнджер{/size}"    
     hide screen owl
     show screen owl_02
     #$ mail_from_her = False #Comented out because replaced with $ letters += 1
@@ -81,7 +81,7 @@ if day == 1:
 if letter_from_hermione_02: #Letter from Hermione #02.
     $ letter_from_hermione_02 = False
     #$ letter_text = "{size=-4}-Для профессора Дамблдора-\n\nЯ пишу Вам, что бы довести до Вашего внимания текущию ситуацию в нашей школе.\n Я боюсь мне будет нужна Ваша помощь, чтобы разобраться в этом.\n\n\n-С уважениям Ваша Гермиона Грейнджер--{/size}"
-    $ letter_text = "{size=-7}От: Гермионы Грейнджер\nКому: Профессору Дамблдору\n\n{/size}{size=-4}Я извиняюсь, что беспокою Вас вновь профессор. Я просто хочу убедиться, что Вы отнесётесь к этой проблемме серьезно.\n\nПрошлой ночью другой одноклассник признался мне... Я дала слово держать это в секрете, поэтому я не могу вдаваться в подробности.\n\nВсе, что я могу сказать, это то, что один из профессоров был вовлечен.\n\nПожалуйста примите меры в ближайшее время.\n\n{size=-3}С уважением,\nГермиона Грейнджер.{/size}"
+    $ letter_text = "{size=-7}От: Гермионы Грейнджер\nКому: Профессору Дамблдору\n\n{/size}{size=-4}Прошу прощения, что беспокою Вас снова профессор. Я просто хочу убедиться, что Вы отнесётесь к этой проблеме серьезно.\n\nПрошлой ночью еще одна однокурсница призналась мне... Я пообещала держать это в секрете, поэтому не могу вдаваться в подробности.\n\nВсе, что я могу сказать, это то, что вовлечен один из профессоров.\n\nПожалуйста примите меры в ближайшее время.\n\n{size=-3}С уважением,\nГермиона Грейнджер.{/size}"
     hide screen owl
     show screen owl_02
     #$ mail_from_her = False #Comented out because replaced with $ letters += 1
@@ -142,241 +142,26 @@ if work_unlock: # Send a letter that will unlock an ability to write reports
 
     
 label mail_02: #Packages only. <=====================================================================### PACKAGES ###=================================================== 
-    
-    if bought_book_05:
-        $ bought_book_05 = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0
-        $ books.append("book_05")
-        $ the_gift = "03_hp/18_store/04.png" # THE ADVENTURE OF GALADRIEL. BOOK ONE.
-        show screen gift
-        with d3
-        "Книга [book05] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-    if bought_book_05_b:
-        $ bought_book_05_b = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0
-        $ books.append("book_05_b")
-        $ the_gift = "03_hp/18_store/05.png" # THE ADVENTURE OF GALADRIEL. BOOK TWO.
-        show screen gift
-        with d3
-        "Книга [book05b] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-    
-    if bought_book_06:
-        $ bought_book_06 = False
+
+    $evn=None
+    python:
+        for e in this.List:
+            if "book_" in e.Name and e._status==-1:
+                e.SetValue("status", 0)
+                evn=e 
+
+    if evn!=None:
         $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
         $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        $ books.append("book_06")
-        $ the_gift = "03_hp/18_store/02.png" # GAME OF THRONES.
+        $ the_gift = evn._img #"03_hp/18_store/08.png" # Copper book of spirit.
         show screen gift
         with d3
-        "Книга [book06] была добавлена в Вашу коллекцию."
+        ">Книга [event._caption] была добавлена в Вашу коллекцию."
         hide screen gift
         with d3
-        call screen main_menu_01
-        
-    if bought_book_07:
-        $ bought_book_07 = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        $ books.append("book_07")
-        $ the_gift = "03_hp/18_store/03.png" # MY DEAR WAIFU.
-        show screen gift
-        with d3
-        "Книга [book07] была добавлена в Вашу коллекцию."
-        hide screen gift
-        call screen main_menu_01
-    
-    
-    if bought_book_01: ###01"\"Copper book of spirit\""   
-        $ bought_book_01 = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        $ books.append("book_01")
-        $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-        show screen gift
-        with d3
-        "Книга [book01] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-    
-    
-    if bought_book_02: ###02"\"Bronze book of spirit\""   
-        $ bought_book_02 = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        $ books.append("book_02")
-        $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-        show screen gift
-        with d3
-        "Книга [book02] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-    if bought_book_03: ###03"\"SILVER book of spirit\""   
-        $ bought_book_03 = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        $ books.append("book_03")
-        $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-        show screen gift
-        with d3
-        "Книга [book03] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-    if bought_book_04: ###04"\"GOLDEN book of spirit\""   
-        $ bought_book_04 = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        $ books.append("book_04")
-        $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-        show screen gift
-        with d3
-        "Книга [book04] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-    
-    if bought_book_10: ###05"\"PLATINUM book of spirit\""   
-        $ bought_book_10 = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        $ books.append("book_10")
-        $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-        show screen gift
-        with d3
-        ">Книга [book10] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-    if bought_book_11: ###06"\"ADAMNTIUM book of spirit\""   
-        $ bought_book_11 = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        $ books.append("book_11")
-        $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-        show screen gift
-        with d3
-        ">Книга [book11] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-    
-    if bought_book_12: ###01"\"Speedwriting for dummies\""   
-        $ bought_book_12 = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        $ books.append("book_12")
-        $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-        show screen gift
-        with d3
-        ">Книга [book12] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-    if bought_book_13: ###02"\"Speedwriting for beginners\""   
-        $ bought_book_13 = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        $ books.append("book_13")
-        $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-        show screen gift
-        with d3
-        ">Книга [book13] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-    
-    if bought_book_14: ###03"\"Speedwriting for intermidiate\""   
-        $ bought_book_14 = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        $ books.append("book_14")
-        $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-        show screen gift
-        with d3
-        ">Книга [book14] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-    if bought_book_15: ###04"\"Speedwriting for advanced\""   
-        $ bought_book_15 = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        $ books.append("book_15")
-        $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-        show screen gift
-        with d3
-        ">Книга [book15] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-    if bought_book_16: ###04"\"Speedwriting for advanced\""   
-        $ bought_book_16 = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        $ books.append("book_16")
-        $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-        show screen gift
-        with d3
-        ">Книга [book16] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
-        call screen main_menu_01    
-        
-    if bought_book_17: ###04"\"Speedwriting for MANIACS\""   
-        $ bought_book_17 = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        $ books.append("book_17")
-        $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-        show screen gift
-        with d3
-        ">Книга [book17] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
-        call screen main_menu_01    
-    
-    if bought_book_08: ###04"\"Speedreading for DUMMIES\""   
-        $ bought_book_08 = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        $ books.append("book_08")
-        $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-        show screen gift
-        with d3
-        ">Книга [book08] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
-        call screen main_menu_01    
-        
-    if bought_book_09: ###04"\"Speedreading for EXPERTS\""   
-        $ bought_book_09 = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        $ books.append("book_09")
-        $ the_gift = "03_hp/18_store/08.png" # Copper book of spirit.
-        show screen gift
-        with d3
-        ">Книга [book09] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
-        call screen main_menu_01    
+        call screen main_menu_01  
+
+
     
     
     

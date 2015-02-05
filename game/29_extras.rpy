@@ -26,10 +26,10 @@ label gallery:
             jump out_hog
         
 #        "{color=#858585}- Концовка 01 -{/color}" if not persistent.ending_01:
-        "{color=#858585}- Концовка 01 -{/color}" if not end.IsPersistent(1):
+        "{color=#858585}- Концовка 01 -{/color}" if not (1 in persistent.endings): #end.IsPersistent(1):
             jump after_cam
 #        "- Концовка 01 -" if persistent.ending_01:
-        "- Концовка 01 -" if end.IsPersistent(1):
+        "- Концовка 01 -" if (1 in persistent.endings): #end.IsPersistent(1):
             label end_01_men:
             menu:
                 "- Первый акт -":
@@ -42,10 +42,10 @@ label gallery:
                     jump after_cam
         
 #        "{color=#858585}- Концовка 02 -{/color}" if not persistent.ending_02:
-        "{color=#858585}- Концовка 02 -{/color}" if not end.IsPersistent(2):
+        "{color=#858585}- Концовка 02 -{/color}" if not (2 in persistent.endings):# end.IsPersistent(2):
             jump after_cam
 #        "- Концовка 02 -" if persistent.ending_02:
-        "- Концовка 02 -" if end.IsPersistent(2):
+        "- Концовка 02 -" if (2 in persistent.endings):#end.IsPersistent(2):
             label end_02_men:
             menu:
                 "- Первый акт -":
@@ -58,9 +58,9 @@ label gallery:
                     jump after_cam
         
 #av-2015.01.04 Ссылки на вторую концовку, переделать на третью
-        "{color=#858585}- Концовка 03 -{/color}" if not end.IsPersistent(3):
+        "{color=#858585}- Концовка 03 -{/color}" if not (3 in persistent.endings):#end.IsPersistent(3):
             jump after_cam
-        "- Концовка 03 -" if end.IsPersistent(3):
+        "- Концовка 03 -" if (3 in persistent.endings):#end.IsPersistent(3):
             label end_02_men:
             menu:
                 "- Первый акт -":

@@ -134,7 +134,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
         with Dissolve(1)
         pause.3
         label event_01_round_02:
-        ">Гермиона берет своими худыми ручками ваш член..."
+        ">Гермиона берет своими тонкими ручками ваш член..."
         m "Отлично. Теперь дрочи его."
         $herViewHead.showQ( "body_34.png", posHead )
         her "Ага..."
@@ -248,7 +248,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 m "Да, ты малолетняя шлюха!"
                 $herViewHead.showQ( "body_69.png", posHead )
                 her "Да! Я шлюха!"
-                her "Я постоянно жажду члены!"
+                her "Я постоянно жажду членов!"
                 $herViewHead.hideQ()
                 m "Очень хорошо!"
                 m "Но, как я уже сказал, не нужно быть честной."
@@ -541,9 +541,9 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 else:
                     $herViewHead.showQ( "body_34.png", posHead )
                     her2 "Сейчас общая комната \"Гриффиндора\" будет полна людей..."
-                    her2 "И я не хотела вернуться туда покрытой вашей спермой, сэр."
+                    her2 "И я не хотела бы вернуться туда покрытая вашей спермой, сэр."
                     $herViewHead.showQ( "body_117.png", posHead )
-                    her2 "Ох, становится поздно..."
+                    her2 "Ох, уже совсем поздно..."
                     $herViewHead.hideQ()
                     m "И ты вот так пойдешь?"
                     m "В форме, заполненой спермой?"
@@ -682,39 +682,32 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                     $herView.showQQ( "body_47.png", pos )
                     her "Вы обещали предупредить меня, сэр!"
                     m "Ох, верно... Моя оплошность."
-                    $herView.hideQQ()
-                    $herView.showQ( "body_69.png", pos )
+                    $herView.hideshowQQ( "body_69.png", pos )
                     her "Моя форма испорчена..."
                     her "...Я хочу получить свои очки."
                     $herView.hideQQ()
                 else:
                     if daytime:
-                        $herView.hideQQ()
-                        $herView.showQ( "body_69.png", pos )
+                        $herView.hideshowQQ( "body_69.png", pos )
                         her "Моя форма испорчена!"
-                        $herView.hideQQ()
-                        $herView.showQ( "body_87.png", pos )
+                        $herView.hideshowQQ( "body_87.png", pos )
                         her "Мои занятия вот-вот начнутся и я не могу вот так пойти на них!"
                         m "Конечно можешь, просто вытри ее и все..."
                         m "Никто даже не заметит."
-                        $herView.hideQQ()
-                        $herView.showQ( "body_79.png", pos )
+                        $herView.hideshowQQ( "body_79.png", pos )
                         her "...Я хочу получить свои очки."
                         $herView.hideQQ()
                         $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
                     else:
-                        $herView.hideQQ()
-                        $herView.showQ( "body_69.png", pos )
+                        $herView.hideshowQQ( "body_69.png", pos )
                         her "Моя форма испорчена!"
                         her "И как я вернусь в комнату \"Гриффиндора\" в таком виде?!"
                         m "Почему нет? Ты выглядишь горячо, девочка!"
-                        $herView.hideQQ()
-                        $herView.showQ( "body_79.png", pos )
+                        $herView.hideshowQQ( "body_79.png", pos )
                         her "Профессор!!!"
                         m "Ладно, хорошо. Просто вытри ее и все."
                         m "Никто и не заметит."
-                        $herView.hideQQ()
-                        $herView.showQ( "body_79.png", pos )
+                        $herView.hideshowQQ( "body_79.png", pos )
                         her "...Я хочу получить свои очки."
                         $herView.hideQQ()
                         $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
@@ -871,7 +864,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 $herViewHead.showQ( "body_30.png", posHead )
                 her "Это еще не все!"
                 $herViewHead.hideQ()
-                m "Извиняюсь."
+                m "Прошу прощения."
                 $herViewHead.showQ( "body_118.png", posHead )
                 her "Ваш член настолько большой, что пугает меня!"
                 $herViewHead.hideQ()
@@ -882,7 +875,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 $herViewHead.hideQ()
                 m "...а ты хороша!"
                 $herViewHead.showQ( "body_30.png", posHead )
-                her "Постойте!"
+                her "Не перебивайте!"
                 $herViewHead.hideQ()
                 her "Несмотря ни на что..."
                 $herViewHead.showQ( "body_30.png", posHead )
@@ -1563,26 +1556,21 @@ label kiss_suck: #Jumps here after event #03 and if WHORING >= LEVEL 07
     show screen ctc
     pause
     her2 "........................................."
-    $herView.hideQQ()
-    $herView.showQ( "body_126.png", pos )
+    $herView.hideshowQQ( "body_126.png", pos )
     her2 "ГЛП!!!"
-    $herView.hideQQ()
-    $herView.showQ( "body_39.png", pos )
+    $herView.hideshowQQ( "body_39.png", pos )
     her2 "Гу-а-а..."
     hide screen blkfade
     with d3
-    $herView.hideQQ()
-    $herView.showQ( "body_123.png", pos )
+    $herView.hideshowQQ( "body_123.png", pos )
     her2 "Я проглотила ее всю, сэр!"
     m "Хорошая девочка..."
-    $herView.hideQQ()
-    $herView.showQ( "body_123.png", pos )
+    $herView.hideshowQQ( "body_123.png", pos )
     her "В какой-то момент я подумала, что задохнусь..."
     her2 "Ее было так много..."
     $herViewHead.hideQ()
     m "Что же, дело сделано и твоя форма идеально чиста."
-    $herView.hideQQ()
-    $herView.showQ( "body_124.png", pos )
+    $herView.hideshowQQ( "body_124.png", pos )
     her2 "Да! Я знаю! Этот вариант намного лучше!"
     if daytime:
         $herView.hideQQ()

@@ -20,7 +20,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
         her "Эм... Ладно..."
         her "Мне просто стоять здесь и говорить...? Как сейчас?"
     else:
-        her "В центре, верно? Я помню..."
+        her "Стоя перед вами, верно? Я помню..."
     $herView.hideQQ()
     $ menu_x = 0.5 #Menu is moved to the left side.
     
@@ -35,20 +35,17 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
     m "Ну?"
     if request_01 == 0 and whoring <=5: #First time this event taking place.
         $  new_request_01_01 = True #Hearts on menu buttons.
-        $herView.hideQQ()
-        $herView.showQQ( "body_11.png", pos )
-        her "Эм... Ну чтож..."
-        ">Гермиона чувствует смущение..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_12.png", pos )
+        $herView.hideshowQQ( "body_11.png", pos )
+        her "Эм... Ну что ж..."
+        ">Гермиона смущается и слегка краснеет..."
+        $herView.hideshowQQ( "body_12.png", pos )
         her "..................."
     if whoring >= 0 and  whoring <= 5: #LEVEL 01 and LEVEL 02
         if whoring >= 3 and whoring <= 5:
             $ level = "02"
             $ new_request_01_02 = True #Hearts on menu buttons.
-        $herView.hideQQ()
-        $herView.showQQ( "body_12.png", pos )
-        her "Последнее время все относительно спокойно, ничего такого..."
+        $herView.hideshowQQ( "body_12.png", pos )
+        her "В последнее время все относительно спокойно, ничего такого..."
         her "Кроме того дня, когда я завалила тест..."
         her "Все еще не могу поверить в это..."
         menu: 
@@ -68,17 +65,16 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                 $ pos = POS_370
                 $herView.showQQ( "body_14.png", pos )
                 her "Профессор, что вы делаете?"
-                m "Что, ничего. Просто чешу свою ногу."
+                m "А? О, ничего. Просто чешу свою ногу."
                 m "Так о чем ты говорила?"
-                $herView.hideQQ()
-                $herView.showQQ( "body_14.png", pos )
+                $herView.hideshowQQ( "body_14.png", pos )
                 her "Да... Ну, тот тест я провалила..."
             "- Слушать ее -":
                 $ d_flag_01 = False #NOT JERKING OFF.
                 m "Да, это такая трагедия..."
                 her "Именно! я рада, что вы понимаете меня, профессор."
                 pass
-        her "Подумайте об этом, мне больше не о чем говорить..."
+        her "Как только вспомню об этом... Мне не слишком нравится это обсуждать..."
         m "Хорошо, что еще произошло за последнее время?"
         her "Эм... Ну, у меня очень хорошо идут дела с биологией..."
         her "Я имею в виду, у меня всегда хорошие оценки, но я все равно учусь усерднее..."
@@ -89,27 +85,23 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
             # translators "(Sprout - росток, отросток. В книгах/фильмах ее зовут Памона Спраут/Памона Стебль.  Еще одна игра слов.)"
             m "(Профессор Стебль... Хе-хе, забавное имя...)"
         
-        $herView.hideQQ()
-        $herView.showQQ( "body_07.png", pos )
+        $herView.hideshowQQ( "body_07.png", pos )
         her "Вы что-то сказали?"
         m "Ничего, продолжай..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_14.png", pos )
+        $herView.hideshowQQ( "body_14.png", pos )
         her "Ну, некоторые студенты смеются над профессором Квирреллом..."
-        her "Конечно же я не одобряю такое поведение."
+        her "Конечно же, я не одобряю такое поведение."
         if d_flag_01:
             m "{size=-4}(Давай же! Скажи что-нибудь грязное!){/size}"
         else:
             m ".................."
         her "О, мое \"Общество по защите мужских прав\" набирает популярность..."
         her "И я очень рада..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_16.png", pos )
-        her "Я думаю, с учетом всего времени, мы действительно сможем что-нибудь изменить..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_06.png", pos )
-        her "Да, то, что вы делаете это, очень ободряет нас."
-        her "Разве вы не согласны?"
+        $herView.hideshowQQ( "body_16.png", pos )
+        her "Дайте нам только время, и мы реально сможем что-нибудь изменить..."
+        $herView.hideshowQQ( "body_06.png", pos )
+        her "Это очень воодушевляет, когда ты знаешь, что делаешь правильные вещи!"
+        her "Вы согласны, профессор?"
         if d_flag_01:
             m "{size=-4}(Черт. Теперь она полностью убила все желание...){/size}"
             show screen genie
@@ -117,42 +109,36 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
             $ d_flag_01 = False #NOT JERKING OFF ANY MORE.
             pass
         else:
-            m "*Зевает*........"
+            m "Хх-хр-р-р........"
+            m "А?"
             
-        $herView.hideQQ()
-        $herView.showQQ( "body_05.png", pos )
+        $herView.hideshowQQ( "body_05.png", pos )
         her "Профессор?"
         m "Да, да, я внимательно слушаю..."
         m "Это все очень самооправданно, э-э..."
-        m "То есть, очень помогает нам и поддерживает..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_07.png", pos )
+        m "То есть, очень вдохновляет и даже переполняет, да..."
+        $herView.hideshowQQ( "body_07.png", pos )
         her ".........................."
   
     elif whoring >= 6: #LEVEL 03
         $  new_request_01_03 = True #Hearts on menu buttons.
-        $herView.hideQQ()
-        $herView.showQQ( "body_12.png", pos )
+        $herView.hideshowQQ( "body_12.png", pos )
         her "У меня в последнее время все вроде-как в порядке..."
         her "Хм..."
         her "Сейчас факультеты \"Слизерина\" и \"Гриффиндора\" очень сильно соперничают."
-        her "Если честно, то этого не должно быть..."
-        her "\"Гриффиндор\" был бы в лидерах, если бы не \"Слизеринские\" шлюхи..."
+        her "И честно говоря, это совершенно неправильно..."
+        her "\"Гриффиндор\" уверенно лидировал бы, если бы не \"Слизеринские\" шлюхи..."
         her "Я только и слышу, что они получают свои очки за \"услуги\"..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_04.png", pos )
+        $herView.hideshowQQ( "body_04.png", pos )
         her "Очень подло!"
         m "И что же вы теперь будете делать, мисс Грейнджер?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_03.png", pos )
+        $herView.hideshowQQ( "body_03.png", pos )
         her "Точно!"
         m "А?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_04.png", pos )
+        $herView.hideshowQQ( "body_04.png", pos )
         her "Я должна трудится еще лучше, чтобы выровнять шансы, неравные из-за этих грязных девок..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_03.png", pos )
-        her "Спасибо мне за помощь, профессор."
+        $herView.hideshowQQ( "body_03.png", pos )
+        her "Спасибо, что помогаете мне, профессор."
         menu: 
             "- Начать дрочить -":
                 $ d_flag_01 = True #If TRUE genie jerks off under the desk.    
@@ -171,55 +157,46 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                 $herView.showQQ( "body_14.png", pos )
                 her "Профессор, что вы делаете?"
                 her "Вы же не.....?"
-                $herView.hideQQ()
-                $herView.showQQ( "body_29.png", pos )
+                $herView.hideshowQQ( "body_29.png", pos )
                 her "Вы...?"
                 m "Ничего. Просто продолжай."
-                $herView.hideQQ()
-                $herView.showQQ( "body_07.png", pos )
+                $herView.hideshowQQ( "body_07.png", pos )
                 her "Хм..."
-                m "{size=-4}(Он что-то заподозрила? Да не...){/size}"
+                m "{size=-4}(Она что-то заподозрила? Да нет...){/size}"
             "- Внимательно выслушать ее -":
                 $ d_flag_01 = False #NOT JERKING OFF.
                 m "Не стоит благодарности."
                 pass
-        $herView.hideQQ()
-        $herView.showQQ( "body_16.png", pos )
+        $herView.hideshowQQ( "body_16.png", pos )
         her "Ну, как я и сказала..."
-        her "Я слышала, девочки меняют свои пикантные фотографии в обмен на очки для факультета..."
+        her "Я слышала, одна девчонка обменяла свои пикантные фотографии на десятку для факультета..."
         if d_flag_01:
             m "{size=-4}(Ну и шлюха... ах... Да...){/size}"
         else:
             m "Десять очков, да?"
         her "Да..."
         if d_flag_01:
-            $herView.hideQQ()
-            $herView.showQQ( "body_29.png", pos )
+            $herView.hideshowQQ( "body_29.png", pos )
             her "И эти две девушки..."
             her "Ходит слух, что они даже спят с профессором Снейпом..."
-            m "{size=-4}(Да... Ты маленькая, мерзка, \"слизеринская\" шлюха!){/size}"
-            $herView.hideQQ()
-            $herView.showQQ( "body_45.png", pos )
-            her "То же был случай, я слышала, что ученица дрочила учителю прямо на занятии..."
+            m "{size=-4}(Да... Эти маленькие, грязные \"слизеринские\" шлюхи!){/size}"
+            $herView.hideshowQQ( "body_45.png", pos )
+            her "Еще был случай, я слышала, что ученица дрочила учителю прямо на занятии..."
             m "{size=-4}(Да... Это очень круто, продолжай!){/size}"
-            $herView.hideQQ()
-            $herView.showQQ( "body_29.png", pos )
+            $herView.hideshowQQ( "body_29.png", pos )
             her "И другая девочка, она сосала учителю!"
             m "{size=-4}(Да! Да!){/size}"
-            $herView.hideQQ()
-            $herView.showQQ( "body_46.png", pos )
+            $herView.hideshowQQ( "body_46.png", pos )
             her "А еще одна девочка позволила кончить себе в рот..."
-            her "И ведь она все это проглатила и ей понравилось!"
-            m "{size=-4}(Стоп... Она правда это делает?){/size}"
-            $herView.hideQQ()
-            $herView.showQQ( "body_64.png", pos )
-            her "Я ведь тоже очень грязная девченка..."
+            her "И ведь она все это проглотила и ей понравилось!"
+            m "{size=-4}(Минуту... Она что, это выдумывает?){/size}"
+            $herView.hideshowQQ( "body_64.png", pos )
+            her "Я ведь тоже очень грязная девчонка..."
             g4 "Что?!"
-            $herView.hideQQ()
-            $herView.showQQ( "body_65.png", pos )
+            $herView.hideshowQQ( "body_65.png", pos )
             her "Я просто обожаю сосать члены..."
             her "Я хочу чтобы мужчина кончил мне на лицо, как в тех фильмах, которые я смотрю!"
-            g4 "{size=-4}(Ах ты маленькая шлюха! Ты реально делаешь это!) *Argh!*{/size}"
+            g4 "{size=-4}(Ах ты, маленькая шлюха! Ты сделала это!) *Аргх!*{/size}"
             $herView.hideQQ()
             show screen white 
             pause.1
@@ -246,21 +223,18 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
             her "Я знала! Вы трогаете себя, профессор!"
             show screen genie_jerking_sperm_02
             with d3
-            g4 "Что? Нет, я просто... ах, дерьмо, это просто охуенно..."
+            g4 "Что? Нет, я просто... ах, дерьмо, это просто охренительно..."
             show screen genie
             #show screen genie_jerking_off
             with d3
-            $herView.hideQQ()
-            $herView.showQQ( "body_32.png", pos )
+            $herView.hideshowQQ( "body_32.png", pos )
             her "Это отвратительно! Как вы могли!?"
             her "Сэр, вы ведь директор! Вы должны подавать хороший пример!"
             m "Эй, маленькая Мисси, ты так и будешь судить меня или тебе нужны очки?"
-            $herView.hideQQ()
-            $herView.showQQ( "body_34.png", pos )
+            $herView.hideshowQQ( "body_34.png", pos )
             her "Мои очки, пожалуйста. Я думаю, я заслужила их."
             m "Да, даже очень."
-            $herView.hideQQ()
-            $herView.showQQ( "body_47.png", pos )
+            $herView.hideshowQQ( "body_47.png", pos )
             her "Фу... Теперь я чувствую себя такой грязной..."
             hide screen genie_jerking_sperm_02
             with d3
@@ -295,8 +269,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
         her "*Вздох облегчения*"
     m "Да, можете идти."
     if request_01 == 0:
-        $herView.hideQQ()
-        $herView.showQQ( "body_01.png", pos )
+        $herView.hideshowQQ( "body_01.png", pos )
         her "Еще пять очков... Ребята будут счастливы."
         her "Спасибо, профессор."
 

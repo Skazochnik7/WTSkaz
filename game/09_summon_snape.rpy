@@ -88,14 +88,19 @@ label snape_dates:  ### HANGING WITH SNAPE ###
     with fade
     $ fire_in_fireplace = True
    
-    if snape_against_hermione: #Turns True after event_08 (Hermione shows up for the first time).
+#    if snape_against_hermione: #Turns True after event_08 (Hermione shows up for the first time).
                                #Activates special event when hanging out with Snape next time.
-        show screen with_snape #Makes sure the scene is not animated...
-        jump special_date_with_snape
+#        show screen with_snape #Makes sure the scene is not animated...
+#        jump special_date_with_snape
     
-    if snape_against_hermione_02: #Activates after second visit from Hermione (event_09).
+#    if snape_against_hermione_02: #Activates after second visit from Hermione (event_09).
+#        show screen with_snape #Makes sure the scene is not animated...
+#        jump special_date_with_snape_02
+
+
+    if this.SNAPE.IsStep():
         show screen with_snape #Makes sure the scene is not animated...
-        jump special_date_with_snape_02
+        $ this.SNAPE.RunStep()
     
     
     if wine >= 1 and not wine_not: # Using Dumbledor's wine for the first time.
@@ -175,7 +180,7 @@ label snape_dates:  ### HANGING WITH SNAPE ###
    
 ### SPECIAL DATE ###
 label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
-    $ snape_against_hermione = False #Turns True after event_08. Activates special event (THIS EVENT) when hanging out with Snape next time.
+#    $ snape_against_hermione = False #Turns True after event_08. Activates special event (THIS EVENT) when hanging out with Snape next time.
     $sna_head_state = 2
     sna_head_main "..........................."
     m "...............................?"
@@ -296,7 +301,7 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
     
 
     
-    $ hermione_is_waiting_01 = True #Triggers another visit from Hermione. (Event_09)
+#    $ hermione_is_waiting_01 = True #Triggers another visit from Hermione. (Event_09)
     jump day_start
     
 #######################################################################################################################    
@@ -307,14 +312,14 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     m "......................."
     m "Гермиона Грейнджер приходила снова..."
     $sna_head_state = 1
-    sna_head_main "Не произноси имя этой ведьмы, когда я здесь"
+    sna_head_main "Не произноси имя этой ведьмы, когда я здесь."
     $sna_head_state = 2
     sna_head_main "..............."
     $sna_head_state = 3
     sna_head_main "Черт возьми! Я взрослый человек, Альбус!"
     m "Меня зовут не-"
-    sna_head_main "Уважаемый мастер..."
-    m "Ну, хорошо, пусть так..."
+    sna_head_main "Глубокоуважаемый чародей..."
+    m "Ну, ладно, проехали..."
     $sna_head_state = 2
     sna_head_main "Почему одно крошечное .... влагалище, может вызвать во мне столько злости?!"
     $sna_head_state = 4
@@ -433,11 +438,11 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
         "{size=-3}\"Конечно же \"Гриффиндор\" потеряет кубок в этом году!\"{/size}" if not d_flag_02:
             $ d_flag_02 = True
             $sna_head_state = 1
-            sna_head_main "Просто начать вычитать очки у них без как либо причины?"
+            sna_head_main "Просто начать вычитать очки у них без всякой причины?"
             $sna_head_state = 18
             sna_head_main "О, мне нравится это!"
             $sna_head_state = 20
-            sna_head_main "Есть несколько \"Слизеринских\" девушек, которые готовы получить допольнительные очки для своего дома."
+            sna_head_main "Есть несколько \"Слизеринских\" девушек, которые готовы получить дополнительные очки для своего факультета."
             $sna_head_state = 19
             sna_head_main "О, это великолепно сработает!"
             $sna_head_state = 18
@@ -467,13 +472,13 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
                 jump fuck_off
 
     sna_head_main "Это может сработать!"
-    m "Я тоже так думаю"
+    m "Я тоже так думаю."
     $sna_head_state = 19
     sna_head_main "О, я чувствую себя таким... живым сегодня!"
     $sna_head_state = 15
     sna_head_main "Налей мне еще кубок!"
     $sna_head_state = 19
-    sna_head_main "Занятие по \"Защите от Темных Искусств \" начнется завтра позднее чем обычно!"
+    sna_head_main "Занятие по \"Защите от Темных Искусств \" начнется завтра позднее, чем обычно!"
     m "....."
     m "Не кажется ли тебе это немного жестоким?"
     m "Я думаю, она просто девочка..."
@@ -481,14 +486,14 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     sna_head_main "Просто девочка?"
     sna_head_main "Ох, нет, нет, нет..."
     $sna_head_state = 4
-    sna_head_main "Она воплощение чистого зла!"
+    sna_head_main "Она - воплощение чистого зла!"
     $sna_head_state = 2
     sna_head_main "Если мы не сделаем этого сейчас..."
     $sna_head_state = 3
-    sna_head_main "В один из дней я могу просто щелкнуть и \"Авада Кедаврануть\" ее!"
+    sna_head_main "Однажды я могу просто не выдержать и \"Авада Кедаврануть\" ее!"
     m "Ты можешь что?"
     $sna_head_state = 4
-    sna_head_main "Убью ее по настоящему!"
+    sna_head_main "Убью ее по-настоящему!"
     m "Хорошо, хорошо... Понял...."
     m "Давай выберем наименьшее из двух зол."
     $sna_head_state = 7
@@ -496,10 +501,10 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     $sna_head_state = 6
     sna_head_main "Теперь налей мне еще вина."
 
-    ">Вы проводите остаток вечера в компании Снейпа запивая ваши заботы."
+    ">Вы проводите остаток вечера в компании Снейпа, запивая ваши заботы."
     
-    $ snape_against_hermione_02 = False #Turns True after event_10. Activates special event (THIS EVENT) when hanging out with Snape next time.   
-    $ hermione_is_waiting_02 = True #Triggers another visit from Hermione. (Event_11)
+#    $ snape_against_hermione_02 = False #Turns True after event_10. Activates special event (THIS EVENT) when hanging out with Snape next time.   
+#    $ hermione_is_waiting_02 = True #Triggers another visit from Hermione. (Event_11)
    
 
     #$ hermione_is_waiting_01 = True #Triggers another visit from Hermione. (Event_09)
