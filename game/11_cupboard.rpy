@@ -258,14 +258,17 @@ label cupboard:
                         "Выключить ТУРБО-режим" if turbo==2: 
                             $turbo=1
                             "ТУРБО-режим выключен. Теперь ваши действия будут приносить вам обычное количество денег и очков факультету Слизерина."                    
-                        "+100 очков Слизерину":
+                        "ЧИТ: +100 очков Слизерину":
                             hide screen points
                             $slytherin+=100
                             show screen points
-                        "+100 золотых":
+                        "ЧИТ: +100 золотых":
                             hide screen points
                             $gold+=100
                             show screen points
+                        "Прохождение":
+                            "Прохождение и ответы часто встречающиеся вопросы можно найти {a=http://wtrus.ixbb.ru/viewtopic.php?id=3}ЗДЕСЬ{/a}. "
+
                         "- Ничего -":
                             jump cupboard
                     jump cheat_help
