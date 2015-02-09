@@ -4,10 +4,6 @@ init -992 python:
     class This(EventCollection): # Код специфический для игры, все в этом классе
         def __init__(self):
             super(This, self).__init__()
-            self.DAY=RunPoint("DAY", self)
-            self.NIGHT=RunPoint("NIGHT", self)
-            self.SNAPE=RunPoint("SNAPE", self)
-            self.CHITCHAT=RunPoint("CHITCHAT", self)
             self.Name=None
 
 # this("event_01") пытается вернуть Event c именем event_01 (None, если не нашел в списке)
@@ -40,7 +36,12 @@ init -992 python:
         except Exception:
             pass
 
-# Если текущий ивент - единственный после метки actualLabel, то пометить его, как не финишировавший
+
+# Если текущий ивент - единственный после метки actualLabel, то пометить его, как не финишировавший.
+# Пример: на метку too_much переход происходит только если Гермиона отказывается выполнять задания
+# Часть из этих заданий оформлены как ивенты, часть - нет. Все задания начинаються после метки захода в меню выбора заданий
+# Значит надо отследить запускался ли текущий ивент (хранящийся в event) после метки захода в меню выбора заданий, и если да, то откатить финиширование
+# Альтернатива: 1. Все задания оформить как ивенты и ставить в too_much $event.NotFinished() без этого условия  2. В кажом ивенте перед каждой директивой jump too_much ставить $event.NotFinished()
     def IsEventOnlyAfter(actualLabel):
         for s in reversed(labelHistory[0:len(labelHistory)-2]): 
             if s==actualLabel:
@@ -49,6 +50,32 @@ init -992 python:
                 return False
         return True
 
+    def Execute(e, s, condition=True):
+        if not condition: return False
+        s=s.replace("_e.", "this.GetCall('"+e.Name+"').")
+        exec s
+        return True
+
+
+    def Rand(iMax): #от 1 до iMax
+        import random 
+        return int(random.random()*iMax+1)
+
+    def RandFromSet(availSet, onetimeSet={}):
+        o=list(availSet)[Rand(len(availSet))-1]
+        if o in onetimeSet:
+            availSet-={o}                
+        return o
+
+
+#    def OnJumpExecute(loc, target, expression):
+#        try:
+#            if s[0]!="_":
+#            jumpHistory.append({loc, target, expression})
+
+
+#        except Exception:
+#            pass
 
 
 

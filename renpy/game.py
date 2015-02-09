@@ -88,6 +88,7 @@ preferences = None
 
 # The current preferences.
 onLabelExecute = None
+onJumpExecute = None
 
 class RestartContext(Exception):
     """

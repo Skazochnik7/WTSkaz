@@ -36,7 +36,7 @@ label new_request_23: #LV.6 (Whoring = 15 - 17)
         $herView.hideshowQQ( "body_47.png", pos )
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
         her "Вот теперь все, сэр! Вы пересекли линию!"
-        her "Я знаю что я продала вам парочку достаточно необычных услуг в прошлом..."
+        her "Это правда, что в прошлом я продала вам парочку довольно необычных услуг..."
         $herView.hideshowQQ( "body_86.png", pos )
         with vpunch
         her "{size=+5}Но ЭТО?!{/size}"

@@ -56,6 +56,7 @@ $ day = 0
 
 
 
+
 ### PAPERWORK (MONEY-MAKING) RELATED FLAGS ###
 $ day_of_week = 0 #Counts days of the week. Everyday +1. When day_of_week = 7 resets to zero.
 $ report_chapters = 0 #Shows how many chapters of a current report has been completed so far. Resets to zero when report is finished.
@@ -575,7 +576,10 @@ $ day +=1
 
 
 
-$ this.DAY.RunStep()
+
+$ this.RunStep("DAY")
+
+
 
 
     
@@ -718,8 +722,6 @@ with fade
 
 
 
-
-
 call points_changes #Makes changes in the Slytherin house points.
 call points_changes_gryffindor #Makes changes in the Gryffindor (And the rest of the houses) house points. (07_points_gry.rpy)
 # call snape_bonus # Not in use anymore.
@@ -730,7 +732,7 @@ call points_changes_gryffindor #Makes changes in the Gryffindor (And the rest of
 ### NIGHT REQUESTS ###
 
 
-$ this.NIGHT.RunStep()
+$ this.RunStep("NIGHT")
 
 
 

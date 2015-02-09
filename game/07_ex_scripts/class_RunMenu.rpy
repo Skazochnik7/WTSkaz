@@ -23,7 +23,10 @@ init python:
             if items!=None:
                 for i in items:
                     self.AddItem(i)
-            self.SetPrompt(text, who)
+            if text:
+                self.text = text
+                if who:
+                    self.who = who                                
             
         def AddItem(self, caption=None, label=None, isActive=True, evn=None):
             self.items.append(MenuItem(caption, label, isActive, evn))
@@ -39,12 +42,6 @@ init python:
                 renpy.say(self.who, self.text, interact=False)
             renpy.call_screen(RunMenu.screen)
             
-        def SetPrompt(self, text=None, who=None):
-            if text:
-                self.text = text
-                if who:
-                    self.who = who                                
-            return self.text
 
 
 

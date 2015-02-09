@@ -267,20 +267,25 @@ screen snape_02: #Snape stands still near the desk.
 screen snape_walk_01: #Default Snape walk animation. 
     tag snape
     add "snape_walk_01" at custom_walk(walk_xpos, walk_xpos2)
+    zorder 2
+
     #at Position(xpos=680, ypos=345, xanchor="center", yanchor="center")
 
 screen snape_walk_01_f: #Default Snape walk animation. (Mirrored).
     tag snape
     add "snape_walk_01_f" at custom_walk(walk_xpos, walk_xpos2)
+    zorder 2
 
 ### HERMIONE CHIBI ###
 screen hermione_01: #Hermione stands still.
     tag hermione
     add "03_hp/animation/h_walk_01.png" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
+    zorder 2
 
 screen hermione_01_f: #Hermione stands still. (MIRRORED)
     tag hermione
     add im.Flip("03_hp/animation/h_walk_01.png", horizontal=True) at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos) # 610 - Stands near the door.
+    zorder 2
 
 
 
@@ -288,10 +293,12 @@ screen hermione_01_f: #Hermione stands still. (MIRRORED)
 screen hermione_02: #Hermione stands still and blinks.
     tag hermione
     add "ch_hem blink" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
+    zorder 2
 
 screen hermione_02_b: #Hermione stands still wearing a robe.
     tag hermione
     add "03_hp/animation/01.png" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
+    zorder 2
 
 
 
@@ -328,6 +335,7 @@ screen hermione_walk_01: # zorder 2, чтобы при движении оказ
     zorder 2
     tag hermione
     add "ch_hem walk_01" at custom_walk_02(walk_xpos, walk_xpos2)
+
 
 screen hermione_chibi_robe: #Hermione. Chibi. Walking. Wearing a robe.
     zorder 2
@@ -524,6 +532,11 @@ screen ravenclaw_15_points:
 
 screen s_p_u: # SLYTHERIN
     add s_p_u_pic at Position(xpos=131, ypos=0)
+
+screen s_p_u2: # SLYTHERIN
+    add s_p_u_pic at Position(xpos=131, ypos=0)
+    add s_p_u_pic at Position(xpos=131, ypos=22)
+
     
 screen g_p_u: # GRYFFINDOR
     add g_p_u_pic at Position(xpos=238, ypos=0)

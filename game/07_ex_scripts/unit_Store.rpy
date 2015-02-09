@@ -5,6 +5,11 @@ label after_load:
     python:
         if hasattr(renpy.store,"elog"):
             this.InitStart()
+            if event!=None: # Состояние переменной объекта event после чтения сохранения может отличаться от полей объекта this.GetCall(event.Name). 
+                for e in this.List: # Нужно сопоставить их, иначе присвоение полей одного из объектов непредсказуемо влмияет на поля другого
+                    if e.Name==event.Name:
+                        event=this.GetCall(event.Name)
+                        break
         else:
             this.InitTempVars()
     return
@@ -15,9 +20,11 @@ label start_elog:
     python:
         global elog
         global labelHistory
+        global jumpHistory
         
     $elog=dict()
     $labelHistory=[]
+    $jumpHistory=[]
     return
 
 init -999 python:

@@ -98,9 +98,9 @@ label snape_dates:  ### HANGING WITH SNAPE ###
 #        jump special_date_with_snape_02
 
 
-    if this.SNAPE.IsStep():
+    if this.IsStep("SNAPE"):
         show screen with_snape #Makes sure the scene is not animated...
-        $ this.SNAPE.RunStep()
+        $ this.RunStep("SNAPE")
     
     
     if wine >= 1 and not wine_not: # Using Dumbledor's wine for the first time.
@@ -417,14 +417,14 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
             $sna_head_state = 2
             sna_head_main "Ха... Дамблдор никогда не позволит-"
             $sna_head_state = 9
-            sna_head_main "Погоди ка!"
-            m "Точно!"
+            sna_head_main "Погоди-ка!"
+            m "Вот именно!"
             $sna_head_state = 18
-            sna_head_main "Ты прав! Я буду оценивать ее несправедливо! Я бы мог даже подговорить других учителей!"
-            sna_head_main "Я бы мог сказать, что это ваш приказ..."
+            sna_head_main "Ты прав! Я стану оценивать ее несправедливо! Я мог бы даже подговорить других учителей!"
+            sna_head_main "Я мог бы сказать, что это ваш приказ..."
             $sna_head_state = 19
-            sna_head_main "И когда настоящий Дамблдор вернется, я сделаю вид, что не знал, кто ты на самом деле..."
-            m "Работка для меня."
+            sna_head_main "И когда настоящий Дамблдор вернется, я сделаю вид, что не знал, кто ты на самом деле. И я..."
+            m "...работал на директора."
             $sna_head_state = 10
             sna_head_main "Э-э..."
             sna_head_main "Это все еще ты, Джинн?"
@@ -442,12 +442,13 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
             $sna_head_state = 18
             sna_head_main "О, мне нравится это!"
             $sna_head_state = 20
-            sna_head_main "Есть несколько \"Слизеринских\" девушек, которые готовы получить дополнительные очки для своего факультета."
+            sna_head_main "Есть несколько \"Слизеринских\" девиц, готовых получить дополнительные очки для своего факультета."
             $sna_head_state = 19
-            sna_head_main "О, это великолепно сработает!"
+            sna_head_main "Да, это великолепно сработает!"
             $sna_head_state = 18
-            sna_head_main "Ты Гений!"
-            m "Да, я джинн-гений. Но каковы шансы ..."
+            sna_head_main "Ты - Гений!"
+            m "Да, я и джинн и гений. Это вообще-то одно и то же ..."
+            translators "По-английски 'джинн' (genie), звучит сходно с 'гений' (genius)."
             if d_flag_01 and d_flag_02 and d_flag_03:
                 pass
             else:
@@ -463,9 +464,9 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
             $sna_head_state = 9
             sna_head_main "О, ну конечно..."
             $sna_head_state = 21
-            sna_head_main "Она бы с удовольствием \"Замарала свои руки\", чтобы сохранить честь своего драгоценного \"Гриффиндора\"!"
+            sna_head_main "Она с удовольствием \"замарает руки\", только чтобы сохранить честь своего драгоценного \"Гриффиндора\"!"
             $sna_head_state = 9
-            sna_head_main "И когда она это сделает, у нас появятся рычаги для давления..."
+            sna_head_main "И когда она это сделает, у нас появятся рычаги для воздействия..."
             if d_flag_01 and d_flag_02 and d_flag_03:
                 pass
             else:

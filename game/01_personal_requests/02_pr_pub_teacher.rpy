@@ -16,7 +16,6 @@ label new_request_02_c:
 
     m "Мисс Грейнджер, я хочу, чтобы вы флиртовали с учителем."
     if whoring <=2 or request_02_b_points <= 1: # request_02_b_points - counts how many times Hermione was sent to flirt with boys. 
-        $event.NotFinished()
         jump too_much
    
     $ pos = POS_140

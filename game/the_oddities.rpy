@@ -5,7 +5,7 @@ label menu_dahr_book:
         $choose.Clear()
     python:
         for e in this.List:
-            if e._block==_block:
+            if e.GetValue("block")==_block: # Нужно ставить GetValue("block")  а не _block - у ивента такого объекта может не быть
                 choose.AddItem("- Книга: "+e._caption+" - "+("{image=check_08.png}" if e._status>-2 else "{image=check_07.png}"), 
                     "menu_dahre_book_2", True, e)
         choose.AddItem("- Ничего -", "the_oddities", True, event)
@@ -564,7 +564,7 @@ label the_oddities:
                     $ the_gift = "03_hp/18_store/01.png" # DRESS.
                     show screen gift
                     with d3
-                    dahr "Ночное платье для особых случаев."
+                    dahr "Вечернее платье для особых случаев."
                     menu:
                         "- Купить (1500 золота) -":
                             if gold >= 1500:

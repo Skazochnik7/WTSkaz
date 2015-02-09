@@ -59,7 +59,7 @@ label door:
             
        
             
-        "{color=#858585}- Позвать Гермиону -{/color}" if flag("Hermione_summon")  and hermione_takes_classes or hermione_sleeping:#summoning_hermione_unlocked
+        "{color=#858585}- Позвать Гермиону -{/color}" if this.Has("her_summon")  and hermione_takes_classes or hermione_sleeping:#summoning_hermione_unlocked
             if hermione_takes_classes:
                 show screen bld1
                 with d3
@@ -75,7 +75,7 @@ label door:
                 with d3
                 jump night_main_menu
         
-        "- Позвать Гермиону -" if flag("Hermione_summon") and not hermione_takes_classes and not hermione_sleeping: #summoning_hermione_unlocked 
+        "- Позвать Гермиону -" if this.Has("her_summon") and not hermione_takes_classes and not hermione_sleeping: #summoning_hermione_unlocked 
      
             if hermione_takes_classes:
                 show screen bld1
@@ -151,7 +151,7 @@ label door:
                             jump day_time_requests
                         else:
                             jump tutoring
-                    "- Купить \"сексуальный\" рейтинг -" if flag("Hermione_buy"):#buying_favors_from_hermione_unlocked:
+                    "- Купить \"сексуальный\" рейтинг -" if this.Has("her_wants_buy"):#buying_favors_from_hermione_unlocked:
                         if mad >=1 and mad < 3:
                             her "Мне жаль, профессор, может быть в другой раз..."
                         elif mad >=3 and mad < 10:
@@ -540,14 +540,14 @@ label door:
                             
                             
             
-        "{color=#858585}- Позвать Снейпа -{/color}" if flag("Snape_summon") and snape_busy:#hanging_with_snape
+        "{color=#858585}- Позвать Снейпа -{/color}" if this.Has("snape_summon") and snape_busy:#hanging_with_snape
             ">Профессор Снейп недоступен."
             if daytime:
                 jump day_main_menu
             else: 
                 jump night_main_menu
             
-        "- Позвать Снейпа -" if flag("Snape_summon") and not snape_busy:#hanging_with_snape
+        "- Позвать Снейпа -" if this.Has("snape_summon") and not snape_busy:#hanging_with_snape
             play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
             jump summon_snape
         "- Ничего -":

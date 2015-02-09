@@ -98,7 +98,7 @@ label new_request_03: #(Whoring = 3 - 5)
         jump request_03_ends
 
     else: #<========================================================================================== FIRST EVENT!
-        if request_03 == 0 and whoring < 12:
+        if request_03_points == 0 and whoring < 12:
             her "Эмм..."
             her " Это несколько неожиданно, сэр, но..."
         if request_03 >= 1:

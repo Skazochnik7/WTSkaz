@@ -798,7 +798,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     
                     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
                     sna "Джинни... э-э, то есть Альбус, ты хотел меня видеть?"
-                    m "Да. Не желаешь немного стриптиза?"
+                    m "Да. Не желаешь ли немного стриптиза?"
                     hide screen snape_main
                     with d3
                     $ s_sprite = "03_hp/10_snape_main/snape_05.png"
@@ -852,10 +852,10 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     pause
                     show screen bld1
                     with d3
-                    m "И так... Северус... Как жизнь?"
+                    m "Итак... Северус... Как жизнь?"
                     $ s_sprite = "03_hp/10_snape_main/snape_09.png"
                     show screen s_head2
-                    sna "Ну, вы знаете... все по старому, все по старому..."
+                    sna "Ну, вы знаете... все по-старому, все по-старому..."
                     $ s_sprite = "03_hp/10_snape_main/snape_06.png"
                     sna " Студенты вызывают одно разочарование..."
                     $ s_sprite = "03_hp/10_snape_main/snape_03.png"
@@ -895,12 +895,12 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     show screen s_head2
                     sna "Хм... В последнее время ты очень тихая."
                     $herViewHead.showQ( "body_48.png", posHead )
-                    her "{size=-4}(О нет! Он дейстивтельно так считает?){/size}"
+                    her "{size=-4}(О нет! Он и вправду так считает?){/size}"
                     $herViewHead.showQ( "body_57.png", posHead )
                     her2 "Я просто делаю то, что мне сказал профессор..."
                     $ s_sprite = "03_hp/10_snape_main/snape_03.png"
                     show screen s_head2
-                    sna2 "Сегодня вы не собираетесь читать мне лекции о \"коррупции в Хогвартсе\"?"
+                    sna2 "Сегодня вы не собираетесь выговаривать мне о \"разврате, который затопил Хогвартсе\"?"
                     hide screen s_head2
                     m "Северус..."
                     $ s_sprite = "03_hp/10_snape_main/snape_03.png"
@@ -910,18 +910,18 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     her2 "Я просто хочу, чтобы вы отлично провели время, сэр..."
                     $ s_sprite = "03_hp/10_snape_main/snape_03.png"
                     show screen s_head2
-                    sna2 "Ох! Этот \"сэр\", это ведь не ко мне ты обращаешься?"
+                    sna2 "Ох! Этот \"сэр\",... это ведь ты не ко мне обращаешься?"
                     $ s_sprite = "03_hp/10_snape_main/snape_10.png"
-                    sna2 "Что стало с  \"Снейпо-каракулем\" и профессором \"Сопливикусом\"!??"
+                    sna2 "Что стало со \"Снейпо-дурнем\" и профессором \"Лицемериусом\"!??"
                     hide screen s_head2
-                    g9 "{size=-5}( \"Сопливикус\", хех... это забавно.){/size}"
+                    g9 "{size=-5}( \"Лицемериус\", хех... это забавно.){/size}"
                     $herViewHead.showQ( "body_57.png", posHead )
                     her "............."
                     $ s_sprite = "03_hp/10_snape_main/snape_08.png"
                     show screen s_head2
                     sna2 "Да, я знаю, как ты зовешь меня за спиной, девочка!"
                     $herViewHead.showQ( "body_86.png", posHead )
-                    her2 "Может быть это потому что вы заслужили это... сэр."
+                    her2 "Может быть это потому, что вы заслужили это... сэр."
                     $ s_sprite = "03_hp/10_snape_main/snape_10.png" #SNAPE
                     show screen s_head2 #SNAPE
                     sna "Что?!"
@@ -990,7 +990,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             show screen s_head2                                                          #SNAPE
                             sna "Ладно, ладно, я понял тебя..."
                             hide screen s_head2
-                            m "Мисс Грейнджер, вы собиретесь раздеваться дальше, или нам нужно заглядывать вам под юбку?"
+                            m "Мисс Грейнджер, вы собиретесь раздеваться дальше, или нам придется заглядывать вам под юбку?"
                             $herViewHead.showQ( "body_87.png", posHead )
                             her "Эм..."
                             $herViewHead.hideQ()
@@ -1021,7 +1021,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     
                     show screen blktone
                     with d3
-                    ">Гермиона быстро снимает юбку \"Хогвартса\"..."
+                    ">Гермиона быстро снимает юбку..."
                     hide screen blktone
                     with d3
                    
@@ -1064,7 +1064,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             sna2 "Хотя я планировал сделать его жизнь невыносимой из-за его отца..."
                             $ s_sprite = "03_hp/10_snape_main/snape_02.png" #SNAPE
                             show screen s_head2    
-                            sna2 "Но в последнее время у меня есть много интересных проектов, чтобы занять себя..."
+                            sna2 "Но в последнее время у меня навалом более интересных проектов..."
                             $herViewHead.showQ( "body_55.png", posHead )
                             her "..................."  
                             $herViewHead.hideQ()
@@ -1073,7 +1073,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             show screen s_head2                                                          #SNAPE
                             sna "Что с ними?"
                             hide screen s_head2   
-                            m "Они все еще являются проблемой?"
+                            m "Они все еще проблема?"
                             $ s_sprite = "03_hp/10_snape_main/snape_09.png" #SNAPE
                             show screen s_head2                                                          #SNAPE
                             sna "Да... Даже большей, чем раньше."
@@ -1082,19 +1082,19 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             m "Ты кажешься удивительно равнодушным по этому поводу..."
                             $ s_sprite = "03_hp/10_snape_main/snape_05.png" #SNAPE
                             show screen s_head2                                                          #SNAPE
-                            sna2 "Это только потому, что я знаю, что в конце концов они получат то, что заслуживают..."
+                            sna2 "Только потому, что я знаю - в конце концов они получат, что заслуживают..."
                             hide screen s_head2
                             m "Месть? Отлично! Что у тебя на уме?"
                             $herViewHead.showQ( "body_55.png", posHead )
                             her "!!!"
                             $ s_sprite = "03_hp/10_snape_main/snape_06.png" #SNAPE
                             show screen s_head2                                                          #SNAPE
-                            sna "Хм... немогу обсуждать это, пока \"враг\" рядом."
+                            sna "Хм... не могу обсуждать это, пока \"враг\" рядом."
                             $herViewHead.showQ( "body_69.png", posHead )
                             her "Арх!"
                             $ s_sprite = "03_hp/10_snape_main/snape_13.png" #SNAPE
                             show screen s_head2                                                          #SNAPE
-                            sna2 "Все, что я могу сказать - это то, что это включает в себя их любимую маленькую сестренку Джинни..."
+                            sna2 "Все, что я могу сказать - ЭТО включает в себя их любимую сестренку Джинни..."
                             hide screen s_head2  
                             m "Джинни? Хм... Что за странное имя для девочки..."
                             m "............."
@@ -1139,7 +1139,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             $ s_sprite = "03_hp/10_snape_main/snape_09.png" #SNAPE
                             show screen s_head2                                                          #SNAPE
                             sna "Неудовлетворительно..."
-                            sna2 "Посмотрите на нее. Маленькая и тощая... Да это задница мальчика."
+                            sna2 "Посмотрите на нее! Маленькая и тощая... Да это задница мальчика!"
                             $herViewHead.showQ( "body_51.png", posHead )
                             her "!!!!!!!!!!"
                             $herViewHead.hideQ()
@@ -1185,11 +1185,11 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             $herViewHead.showQ( "body_94.png", posHead )
                             her "Профессор Дамблдор?!"
                             $herViewHead.hideQ()
-                            m "Все в порядке, девочка. Не возражай мне..."
+                            m "Все в порядке, девочка. Не обращай внимания..."
                             $ s_sprite = "03_hp/10_snape_main/snape_12.png" #SNAPE
                             show screen s_head2                                                          #SNAPE
-                            sna "О, мы будем теперь вести себя так?"
-                            sna "Что же, не возражаешь, если я тоже присоединюсь?.."
+                            sna "О, теперь мы займемся этим?"
+                            sna "Не против, если я присоединюсь?.."
                             $ posHead.ypos = 380
                             $herViewHead.showQ( "body_94.png", posHead )
                             
@@ -1223,7 +1223,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             her "Но..."
                             $herViewHead.showQ( "body_99.png", posHead )
                             her2 "Нет! Я отказываюсь танцевать, пока эти штуки нацелены на меня!"
-                            her2 "Вы должны убрать их, или танца не будет!"
+                            her2 "Вы должны убрать их, или танцу конец!"
                             $herViewHead.hideQ()
                             m "Ты не в том положении, чтобы что-то требовать, девочка."
                             $herViewHead.showQ( "body_110.png", posHead )
@@ -1316,9 +1316,9 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         show screen blktone8
                                         with d3
                                         ">Гермиона нагибается и ее трусики соскальзывают вниз."
-                                        ">Ее движения лишены грации..."
-                                        ">Но ее хорошенькая киска, тем не менее, вам нравится..."
-                                        ">Вы показываете свое одобрение, начиная дрочить быстрее..."
+                                        ">Ее движениям не хватает грации..."
+                                        ">Но хорошенькая киска всегда радует глаз..."
+                                        ">Так что вы демонстрируете одобрение, начиная дрочить быстрее..."
                                         
                                        
                                         hide screen blktone8 
@@ -1341,7 +1341,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         $ s_sprite = "03_hp/10_snape_main/snape_18.png" #SNAPE
                                         show screen s_head2                                                          #SNAPE
                                         sna "Да... Да!!!"
-                                        sna2 "Теперь потряси этими сиськами для меня, ты, шлюха!"
+                                        sna2 "Теперь потряси своими сиськами \"четыре с плюсом\" для меня, шлюха!"
                                         $herViewHead.showQ( "body_99.png", posHead )
                                         her "......."
                                         $herViewHead.hideQ()
@@ -1352,10 +1352,10 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         ">Гермиона неожиданно прерывается на серию довольно сложных пируэтов."
                                         $ s_sprite = "03_hp/10_snape_main/snape_19.png" #SNAPE
                                         show screen s_head2                                                          #SNAPE
-                                        sna "Да, такая грация..."
+                                        sna "Да, так грациозно..."
                                         $ s_sprite = "03_hp/10_snape_main/snape_20.png" #SNAPE
                                         show screen s_head2                                                          #SNAPE
-                                        sna "Это гибкое молодое тело!"
+                                        sna "Такое гибкое молодое тело!"
                                         $herViewHead.showQ( "body_106.png", posHead )
                                         her "........."
                                         $ s_sprite = "03_hp/10_snape_main/snape_20.png" #SNAPE
@@ -1389,7 +1389,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         $ hermione_chibi_xpos = -210 #400 = Near the desk.
                                         $ hermione_chibi_ypos = 10
                                         $ h_c_u_pic = "03_hp/08_animation_02/08_sits.png"
-                                        ">И после этого измученно падает на задницу."
+                                        ">И после этого устало шлепается на задницу."
                                         
                                         hide screen blktone
                                         with d3
@@ -1486,7 +1486,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         her "Спасибо................"
                                         $ s_sprite = "03_hp/10_snape_main/snape_19.png" #SNAPE
                                         show screen s_head2                                                          #SNAPE
-                                        sna "Но если я здесь, чтобы оценить это..."
+                                        sna "Но если я здесь, чтобы оценить его..."
                                         $herViewHead.showQ( "body_91.png", posHead )
                                         her "..........."
                                         $ s_sprite = "03_hp/10_snape_main/snape_22.png" #SNAPE
@@ -1502,7 +1502,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         her "{size=+5}ЧТО?!!!{/size}"
                                         $ s_sprite = "03_hp/10_snape_main/snape_09.png" #SNAPE
                                         show screen s_head2                                                          #SNAPE
-                                        sna2 "Да... Думаю кое-что можно было бы и улучшить."
+                                        sna2 "Да... Думаю, кое-что можно было бы и улучшить."
                                         $herViewHead.showQ( "body_110.png", posHead )
                                         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                                         her "Не могу поверить!"
@@ -1545,20 +1545,20 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         her "Я требую более высокую оценку за это!"
                                         $ s_sprite = "03_hp/10_snape_main/snape_09.png" #SNAPE
                                         show screen s_head2      
-                                        sna2 "Не требуйте оценку Мисс Грейнджер, вы заработали ее."
+                                        sna2 "Не требуйте оценку Мисс Грейнджер, вы получили, что заработали."
                                         hide screen s_head2     
                                         $herView.hideQQ()
                                         $ herView.showQQ( "body_107.png", pos )
                                         her "Я заслужила ее!"
                                         $herView.hideQQ()
                                         $ herView.showQQ( "body_103.png", pos )
-                                        her "И не могли бы вы, хотя бы для порядочности, перестать трогать себя, сэр?!"
+                                        her "И не могли бы вы, хотя бы для приличия, перестать трогать себя, сэр?!"
                                         $ s_sprite = "03_hp/10_snape_main/snape_12.png" #SNAPE
                                         show screen s_head2     
                                         sna2 "Тс..."
                                         hide screen s_head2   
                                         $herView.hideQQ()
-                                        m "(Она это вправду?..)"
+                                        m "(Она это серьезно?..)"
                                         show screen ctc
                                         pause
                                         show screen blkfade
@@ -1569,9 +1569,9 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         $ hermione_chibi_xpos = 400 #Near the desk.
                                         $ hermione_chibi_ypos = 250 #Default: 250
                                         show screen hermione_02 #Hermione stands still.
-                                        ">Вы видите как Снейп, со все еще стоящим членом и полностью покрытая спермой Гермиона громко спорят о воображаемой оценке."
-                                        ">Наконец, профессор Снейп соглашается изменить ее оценку с \"2+\" на \"3-\"."
-                                        ">После этого он поспешно уходит, до того, как Гермиона сможет найти еще один аргумент..."
+                                        ">Вы видите как Снейп, со все еще стоящим членом и полностью покрытая спермой Гермиона громко спорят о неправильной оценке."
+                                        ">Наконец, профессор Снейп соглашается изменить оценку с \"2+\" на \"3-\"."
+                                        ">После чего поспешно уходит, пока Гермиона снова не начала спорить..."
                                         hide screen blkfade
                                         with d5
                                         $herView.data().delTransform()
@@ -1590,7 +1590,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                                 $herView.hideshowQQ( "body_32.png", pos )
                                                 her "Я согласилась на это только ради того, чтобы вы увидели профессора Снейпа в действии, сэр!"
                                                 $herView.hideshowQQ( "body_33.png", pos )
-                                                her "Так что у нас есть неопровержимое доказательство того, что он \"грязный\"!"
+                                                her "Так что у нас есть неопровержимые доказательства, что он \"грязный\"!"
                                                 m "О, эта миссия..."
                                                 m "Да. Миссия выполнена!"
                                             "\"Да! Спасибо вам!\"":

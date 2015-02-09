@@ -197,8 +197,8 @@ label cupboard:
                     $ the_gift = "03_hp/18_store/01.png" # DRESS.
                     show screen gift
                     with d3
-                    m "Вечернее платье, которое я купил..."
-                    m "Надеюсь, что оно подойдет."
+                    m "Роскошное вечернее платье, которое я купил..."
+                    m "Надеюсь, размерчик подходящий."
                     hide screen gift
                     with d3
                     jump possessions
@@ -249,6 +249,27 @@ label cupboard:
                     with d3
                     jump possessions
                     
+                "- Помощь -" if  day>1:
+                    label cheat_help:
+                    menu:
+                        "Включить ТУРБО-режим" if turbo==1: 
+                            $turbo=2
+                            "ТУРБО-режим включен. Теперь ваши действия будут приносить вам вдвое больше денег и очков факультету Слизерина."                    
+                        "Выключить ТУРБО-режим" if turbo==2: 
+                            $turbo=1
+                            "ТУРБО-режим выключен. Теперь ваши действия будут приносить вам обычное количество денег и очков факультету Слизерина."                    
+                        "+100 очков Слизерину":
+                            hide screen points
+                            $slytherin+=100
+                            show screen points
+                        "+100 золотых":
+                            hide screen points
+                            $gold+=100
+                            show screen points
+                        "- Ничего -":
+                            jump cupboard
+                    jump cheat_help
+
                 "- Ничего -":
                     jump cupboard
 

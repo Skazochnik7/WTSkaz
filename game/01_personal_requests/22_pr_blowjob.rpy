@@ -383,7 +383,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 $herViewHead.showQ( "body_121.png", posHead )
                 her "Да, я люблю сосать--"
                 $herViewHead.hideQ()
-                g4 "Скорее девочка, я почти кончил!"
+                g4 "Скорее, девочка, я почти кончил!"
                 $herViewHead.showQ( "body_18.png", posHead )
                 her "!!!"
                 $herViewHead.hideQ()
@@ -395,7 +395,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 hide screen h_c_u   # SUCKING
                 show screen g_c_u # SUCKING
                 with d3                      #  SUCKING
-                ">Гермиона быстро кладет член в рот и продолжает сосать его с большей страстью"
+                ">Гермиона быстро кладет член в рот и продолжает сосать с еще большей страстью."
                 show screen white 
                 pause.1
                 hide screen white
@@ -728,24 +728,24 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 her "{size=-4}(*Чавк...* *Чавк...* *Хлюп...*){/size}"
                 $ s_sprite = "03_hp/10_snape_main/snape_04.png" # SNAPE
                 show screen s_head2                                                          # SNAPE
-                sna "Но она по-прежнему досаждает мне!"
+                sna "Но она по-прежнему, как заноза в моей заднице."
                 sna "Ее тактика изменилась..."
                 $ s_sprite = "03_hp/10_snape_main/snape_03.png" # SNAPE
                 show screen s_head2                                                          # SNAPE
-                sna2 "Но ей все еще удается довести меня до горя..."
+                sna2 "Но количество проблем от нее осталось тем же..."
                 hide screen s_head2
                 m "Я понимаю... ах..."
                 $ s_sprite = "03_hp/10_snape_main/snape_10.png" # SNAPE
                 show screen s_head2                                                          # SNAPE
-                sna "Эта девочка сводит меня с ума!"
+                sna "Эта девчонка сводит меня с ума!"
                 hide screen s_head2
-                g4 "Да, она сводит меня с ума, а... ах..."
+                g4 "Да, она сводит меня с ума и меня, а... ах..."
                 her "{size=-4}(*Чавк...* *Чавк...* *Хлюп...*){/size}"
                 $ s_sprite = "03_hp/10_snape_main/snape_04.png" # SNAPE
                 show screen s_head2                                                          # SNAPE
                 sna "Будете ли вы присматривать за ней?"
                 hide screen s_head2
-                m "Да. Она получит то, что заслуживает."
+                m "О, да. Она получит то, что заслуживает."
                 $ s_sprite = "03_hp/10_snape_main/snape_06.png" # SNAPE
                 show screen s_head2                                                          # SNAPE
                 sna "Хорошо. Это все, что я хотел услышать."
@@ -760,7 +760,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                     m "Спокойной ночи, Северус."
                     $ s_sprite = "03_hp/10_snape_main/snape_06.png" # SNAPE
                     show screen s_head2                                                          # SNAPE
-                    sna "Верно..."
+                    sna "И тебе..."
                 # SNAPE LEAVES
                 hide screen s_head2
                 hide screen ctc
@@ -1013,7 +1013,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                 her "Да, профессор..."
                 $herViewHead.hideQ()
-                m "Ты не собираешься идти поесть?"
+                m "Ты не собираешься идти на ужин?"
                 $herViewHead.showQ( "body_123.png", posHead )
                 her "Видимо, не пойду..."
                 her "Вы всегда кончаете так обильно, сэр..."

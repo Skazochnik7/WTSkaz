@@ -3,7 +3,7 @@
 # Класс - обертка для словаря ивентов
     class Event(store.object):
         # constructor - Event initializing
-        def __init__( self, sFullName, scenario, block, ready, done, OnChange, defVals, constVals):
+        def __init__( self, sFullName, scenario, points, ready, done, OnChange, defVals, constVals):
 
             alter=None
             caption=None
@@ -14,9 +14,6 @@
                 alter=sp[1]
                 if len(sp)>2: caption=sp[2] 
 
-            self.scenario=scenario if scenario!=None else self.Name
-
-
             self.defVals = {"startCount": 0, "finishCount": 0, "start1": -1, "start2": -1, "finish1": -1, "finish2": -1, "bakfinish1": -1, "bakfinish2": -1}        # Это словарь доп. аргументов по умолчанию, обычно используется для одиночных ивентов
             if defVals!=None:
                 self.defVals.update(defVals)
@@ -26,7 +23,8 @@
             SetArrayValue(self.Name, "onChange", OnChange) # Если функция задана, она запустится при изменении какого-нибудь параметра
             SetArrayValue(self.Name, "alter", alter) 
             SetArrayValue(self.Name, "caption", caption) 
-            SetArrayValue(self.Name, "block", block) 
+            SetArrayValue(self.Name, "points", points) 
+            SetArrayValue(self.Name, "scenario", scenario) 
 
             if constVals!=None:
                 for s in constVals:
@@ -41,13 +39,15 @@
 #    renpy.say( her, "%d" % eval( gs % 2 ) )
 
         def InitTempVar(self, subkey, value):
+#            SetArrayValue(self.Name, "temp", value) 
+#            exec "this.GetCall('"+self.Name+"')._"+subkey+"=GetArrayValue('"+self.Name+"','temp')"
+
             self._temp=value
             exec "this.GetCall('"+self.Name+"')._"+subkey+"=this.GetCall('"+self.Name+"')._temp"
             return            
 
         def InitTempVars(self):
             __list=GetStoreAllSubKeys(self.Name)
-#            renpy.say(her,str(self.Name)+" "+str(__list))
             for subkey in __list:
                 self.InitTempVar(subkey, self.GetValue(subkey))
             __list=GetArrayAllSubKeys(self.Name)
@@ -88,9 +88,8 @@
             return value
 
         def IncValue(self, subkey, incVal):
-            res=self.GetValue(subkey)+incVal
-            self.SetValue(subkey, res)
-            return res
+#            self.res=self.GetValue(subkey)+incVal
+            return self.SetValue(subkey, self.GetValue(subkey)+incVal)
 
 
 

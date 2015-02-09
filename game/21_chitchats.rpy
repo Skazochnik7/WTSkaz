@@ -1,8 +1,5 @@
 label snape_chitchat:
-    $this.CHITCHAT.RunStep()
-#    if not chitchat_event_01_happened and tutoring_hermione_unlocked and days_without_an_event >=2:
-#        jump chitchat_event_01
-    
+    $ this.RunStep("CHITCHAT")
     
 
     $ one_of_ten = renpy.random.randint(1, 10) #Generating one number out of three for various porpoises.
@@ -2264,10 +2261,10 @@ label chit_chat:
         elif one_of_ten == 2:
             $herView.hideQQ()
             $herView.showQQ( "body_14.png", pos )
-            her "С этим ничего не подулаешь, но я чувствую себя не очень, когда домовые эльфы стирают за мной вещи..."
+            her "С этим ничего не поделать, но я чувствую себя не очень, когда домовые эльфы стирают за мной вещи..."
             $herView.hideQQ()
             $herView.showQQ( "body_87.png", pos )
-            her "То есть, все эти пятна от спермы..."
+            her "То есть, все эти пятна спермы..."
             $herView.hideQQ()
             $herView.showQQ( "body_118.png", pos )
 

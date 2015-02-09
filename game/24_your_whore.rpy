@@ -63,7 +63,7 @@ label your_whore:
     
 #    if queen_whore_ending: #Students talking. Ending "Queen whore".
     if end.IsEnding(const_ENDING_STRONG_GIRL): #Students talking. Ending "Prostitute".
-        mal "Чувак, слышал новую сплетню? Гермиона теперь стала брать бабки."
+        mal "Чувак, слышал новую сплетню? Гермиона теперь стала брать деньги."
         mal2 "Ну, после того, как она в одиночку заработала все очки факультета..."
         fem "...заработала все очки факультета?"
         mal "Ох, это ты... "
@@ -96,12 +96,12 @@ label your_whore:
         mal2 "..."
         fem "..."
         mal2 "..."
-        fem "...А все-таки сколько?"
+        fem "...А, все-таки, сколько?"
         fem "Не то, чтобы мне было сильно интересно, просто..."
         fem "Забавно узнать... {size=-2}(ядовито){/size} почем нынче 'Мисс Популярность'."
         mal2 "Я слышал про 3 тысячи."
         fem "С ума сошел?! Мои предки вдвоем за месяц столько не зарабатывают!"
-        mal2 "Ну, твои предки за месяц, а она за ночь. И желающих хватает."
+        mal2 "Ну, твои предки вдвоем за месяц, а она одна за ночь. И желающих хватает."
         fem "{size=-2}(*мотает головой*){/size} Все равно не верю!"
         fem "Я могу понять 500 монет, ну тысяча, если девушка очень, ну очень хороша..."
         mal2 "Так хороша, как ты?"
@@ -558,7 +558,7 @@ label your_whore:
         show screen end_u_2                                           #<---- SCREEN
         with d7                                                                       #<---- SCREEN
         her "*Чавк!* *Чавк!* *Глоть!*"
-        m "О, да! Ты маленькая сучка!"
+        m "О, да! Ты - маленькая сучка!"
         her "*Чавк!* *Чавк!* *Чавк!*"
         her "*Чавк!* *Чавк!* *Глоть!*"
         g4 "Ты и правда умеешь говорить похотливые вещи..."
@@ -574,8 +574,8 @@ label your_whore:
         $ end_u_1_pic =  "03_hp/17_ending/92.png" #<---- SCREEN
         show screen end_u_1                                           #<---- SCREEN
         with d7                                                                       #<---- SCREEN
-        her "Ведь я и сама ребенок..."
-        g4 "Ты противная маленькая дрянь..."
+        her "Ведь я и сама - ребенок..."
+        g4 "Ты - противная маленькая дрянь..."
         $ end_u_2_pic =  "03_hp/17_ending/97.png" #<---- SCREEN
         show screen end_u_2                                           #<---- SCREEN
         with d7                                                                       #<---- SCREEN
@@ -659,7 +659,7 @@ label your_whore:
         show screen end_u_1                                           #<---- SCREEN
         with d7                                                                       #<---- SCREEN
         her "{size=+5}Кончайте на меня, сэр! Я хочу вашу горячую сперму!{/size}"
-        g4 "Аргх! Ты шлюха!"
+        g4 "Аргх! Ты, шлюха!.."
         $ end_u_2_pic =  "03_hp/17_ending/104.png" #<---- SCREEN
         show screen end_u_2                                           #<---- SCREEN
         with d7                                                                       #<---- SCREEN
@@ -711,7 +711,7 @@ label your_whore:
         m "Что это только что было, девочка?"
         $ posHead = gMakePos( 390, 235 )
         $herViewHead.showQ( "body_165.png", posHead )
-        her "Что вы имеете ввиду, сэр?"
+        her "Что вы имеете в виду, сэр?"
         $herViewHead.hideQ()
         $ end_u_1_pic =  "03_hp/17_ending/02.png" #<---- SCREEN
         show screen end_u_1                                           #<---- SCREEN
@@ -720,7 +720,7 @@ label your_whore:
         m "Мне что, нужно показать на это?"
         g4 "{size=+5}Показать пальцем?{/size}"
         $herViewHead.showQ( "body_165.png", posHead )
-        her "Oх... Вы имеете ввиду волосы?"
+        her "Oх... Вы имеете в виду волосы?"
         $herViewHead.hideQ()
         m "Да...\"твои волосы\"..."
         $herViewHead.showQ( "body_168.png", posHead )
@@ -743,7 +743,7 @@ label your_whore:
         stop music fadeout 1.0
         sna "Мисс Грейнджер..................?"
         sna "Вы собираетесь пропустить свою коронацию, девчонка?"
-        sna "(Не то, что бы для меня это было важно...)"
+        sna "(Не то, чтобы для меня это было важно...)"
         hide screen bld1
         with d5
         
@@ -1054,7 +1054,7 @@ label your_whore:
         show screen s_head2
         sna "Мисс Грейнджер...?"
         $ s_sprite = "03_hp/10_snape_main/snape_04.png"
-        sna2 "Вы наконец-то решили показаться?"
+        sna2 "Вы, наконец-то, решили показаться?"
         sna2 "Неприятный сюрприз..."
         $herViewHead.showQ( "body_162.png", posHead )
         her "Профессор..."
@@ -1322,7 +1322,7 @@ label your_whore:
         mal2 "(Дает возможность как следует рассмотреть?)"
         mal "(Ты думаешь она знает, что её дойки видны всем?)"
         fem "(Стыдно-то как...)"
-        fem "(Похоже, что я чуть не пожалела настоящую шлюху...)"
+        fem "(Похоже, я чуть не пожалела настоящую шлюху...)"
         fem "........................"
         with hpunch
         fem "{size=+7}Прикрой сиськи, потаскуха!!!{/size}"
@@ -1377,7 +1377,7 @@ label your_whore:
         show screen s_head2
         sna "Прекратите сейчас же!"
         sna "Что касается вас, мисс Грейнджер..."
-        sna "Я думаю, что это уж слишком."
+        sna "Я думаю, что это уже слишком."
         sna "Выметайтесь со сцены... Быстро..."
         hide screen s_head2
         pause.1
@@ -1450,7 +1450,7 @@ label your_whore:
         show screen blkfade
         with d7
         $ renpy.play('sounds/applause01.ogg') # APPLAUSE
-        ">Дикие вопли восхищения сопровождают Гермиону, пока она спускается по лестнице..."
+        ">Дикий свист, крики и апплодисменты сопровождают Гермиону, пока она спускается по лестнице..."
         pause 1
         stop music fadeout 3.0
         ">.......................{w}....................{w}......................."
@@ -1773,7 +1773,7 @@ label your_whore:
         her "!!!"
         m "Ну, начали!"
         
-        sly2 "Ха-ха-ха! Неплохо! Взгляните на это тупое выражение лица!"
+        sly2 "Ха-ха-ха! Неплохо! Взгляните на это тупую морду!"
         $ end_u_2_pic =  "03_hp/17_ending/134.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d5                                                                        #<---- SCREEN
@@ -1793,7 +1793,7 @@ label your_whore:
             her "......"
             her "............"
             her "..................."
-            her "Ну, конечно, это было и для вас, мальчики. Вы же должны были увидеть какая я шлюха."
+            her "Ну, конечно, это было и для вас, мальчики. Вы же должны были увидеть, какая я шлюха."
             sly2 "О, как ты заговорила! Мы все увидели, давалка, еще как увидели!"
         else:
             her "Сэр! Прекратите трахать меня!"
@@ -1980,7 +1980,7 @@ label your_whore:
             her "Эти мальчики мне не нравятся. Но я отсосу у них, если мне заплатят."
             m "Заплатят?! Ты хочешь еще очки факультету?"
             her "{size=-2}(*хихикает*) {/size}Я хочу, чтобы они отдали мне свои бумажники со всем, что там есть. "
-            her "Если нет, им придется просто стоять и поддрачивать, глядя, как вы меня трахаете."
+            her "А иначе им придется просто стоять и поддрачивать, глядя, как вы меня трахаете."
             sly1 "Ха, забирай, дешевка! У меня там сроду не было больше 10 монет. {size=-2}(*бросает бумажник*){/size}"
             sly2 "Тебе хорошо, у меня там чек с деньгами на все каникулы!"
             sly2 "А я как раз накопил на новую модель метлы... На хрен такое!"
@@ -2227,10 +2227,10 @@ label your_whore:
         with d5                                                                        #<---- SCREEN
         her "*Чавк!* *Чавк!* *Чавк!*"
         sly1 "Да, шлюха! Мне нравится трахать лицо грязнокровки!"
-        sly1 "И тебе тоже нравится каждое мгновения, пока я делаю это, верно?"
+        sly1 "И ты тоже наслаждаешься каждым мгновением, верно?"
         sly1 "Верно, грязнокровка?"
         her "*Чавк!* *Чавк!* *Глоть!*"
-        m "Ага... Каждый раз когда ты называл её..."
+        m "Ага... Каждый раз, когда ты называл её..."
         m "Хах?"
         m "Что это? Её ноги трясутся!"
         m "Ты кончаешь, девочка?"
@@ -2474,15 +2474,15 @@ label your_whore:
         sly2 "{size=-4}(Да... Кто бы мог подумать.){/size}"
         sly1 "{size=-4}(Ага. Я не могу не уважать его...){/size}"
         m "Ау... Какие хорошие парни..."
-        sly2 "{size=-4}(Да... Я надеюсь, что буду таким же как он, когда состарюсь.){/size}"
-        g4 "Я не старик, это вы - молодные олухи!"
-        m "Хотя... в каком-то смысле я все же стар..."
+        sly2 "{size=-4}(Да... Я надеюсь, что буду таким же, как он, когда состарюсь.){/size}"
+        g4 "Я не старик, это вы - молоные олухи!"
+        m "Хотя... в каком-то смысле, я все же стар..."
         
         if end.IsEnding(const_ENDING_STRONG_GIRL):
             sly1 "И вообще, охрененно попользовали шлюху."
             sly2 "Хм, думаешь, это мы попользовали? Я уже не уверен..."
             sly1 "Ты о чем, бро?"
-            sly2 "У меня вдруг возникло ощущение, что это она нас поимела за наши же башли!"
+            sly2 "У меня тут возникло ощущение, что это она нас поимела за наши же башли!"
             sly1 "Да ладно, чего ты. Теперь мы сможем трахать ее каждый день!"
             sly2 "Имеешь в виду - платить охуенные бабки, чтобы доставить ей удовольствие и слушать, как она при этом стебет тебя?"
             sly2 "Давай, бро! А я пас."
@@ -2502,7 +2502,7 @@ label your_whore:
             sly2 "Я, скорее, преуменьшаю... Вы как хотите, а я с утра сразу же подкачу к ней, попрошу, чтобы молчала."
             sly1 "Че-го?"
             sly2 "Возможно придется поизвиняться и занести еще денег. Надеюсь, за ночь и вы допрете, что это не такая большая плата..."
-            "> Студенты уже далеко и их голоса становятся неслышны."
+            "> Студенты уже далеко, и их голоса становятся неслышны."
 
         $herViewHead.showQ( "body_176.png", posHead )
         her ".........................."
@@ -2532,7 +2532,7 @@ label your_whore:
             m "Что за глупости ты говоришь. Я здесь совсем по другому поводу."
             $herViewHead.showQ( "body_178.png", posHead )
             her2 "Это не глупости, сэр! Я хочу быть уверенной, что теперь я с вами полностью расплатилась."
-            ">  Подбирает бумажники и выбрасывает их в урну"
+            ">  Поднимает лежащие на полу бумажники \nдвумя пальчиками и относит их в урну."
             $herViewHead.hideQ()
             m "Хм... Ну хорошо, хорошо, ты полностью расплатилась. Но я здесь..."
             $herViewHead.showQ( "body_179.png", posHead )
@@ -2550,15 +2550,15 @@ label your_whore:
             $herViewHead.hideQ()
             m "Ты так хотела мне отомстить, девочка? Мне вообще-то пофиг. Я здесь, чтобы сказать тебе, что ухожу..."
             $herViewHead.showQ( "body_178.png", posHead )
-            her2 "Да? Впрочем, это неважно, потому что Ваше имя я в отчет не вносила. "
-            her2 "Так что, в худшем случае, вас могли привлечь только за халатность."
+            her2 "Да? Впрочем, это неважно, потому что Ваше имя я в отчет не вносила."
+            her2 "Так что, в худшем случае, вас могли привлечь за халатность."
             $herViewHead.hideQ()
             m "Тогда... Не пойму, зачем ты это сделала?"
             $herViewHead.showQ( "body_179.png", posHead )
             her2 "Ну, сэр, однажды вы мне ясно дали понять, что мои проблемы никогда не станут вашими. Я задумалась и сделала выводы."
             her2 "Вы кажется, сказали, что уходите?"
             her2 "Я не спрашиваю куда, сэр, но все так и произошло - вы уходите, а я остаюсь и все мои проблемы остаются со мной."
-            her2 "И значит я не зря готовилась."
+            her2 "И, значит, я не зря готовилась."
             $herViewHead.hideQ()
             m "Ты сама виновата, девочка. Если бы ты не принялась оголяться на сцене, показывая, как любишь быть публичной, ничего бы этого не случилось!"
             $herViewHead.showQ( "body_178.png", posHead )
@@ -2566,7 +2566,7 @@ label your_whore:
             $herViewHead.showQ( "body_181.png", posHead )
             her2 "А вообще - да, у меня стало рвать крышу. Хотя, странно, после всего, что я вытворяла на сцене - меня провожали апплодисментами."
             $herViewHead.showQ( "body_179.png", posHead )
-            her2 "А после того, что вы позволили сделать парням - меня могут перестать считать человеком."
+            her2 "А после того, что вы позволили сделать парням - меня могут за человека перестать считать."
             her2 "Не знаю, получилось ли у меня что-то исправить, пока я еще что-то соображала."
             $herViewHead.hideQ()
             m "Эй, эй, не надо меня приплетать! Если с тобой что и произошло, в этом виновата ты и только ты!"
@@ -2589,12 +2589,12 @@ label your_whore:
             $herViewHead.hideQ()
             m "Ты что, думаешь, тебе удастся проверкой изменить здешние порядки? Наивная чукотская девочка..."
             $herViewHead.showQ( "body_178.png", posHead )
-            her2 "Ничего подобного, сэр. Думаю, из Хогвартса выгонят несколько особо замаравшихся профессоров."
+            her2 "Ничего подобного, сэр. Думаю, из Хогвартса всего лишь выгонят несколько особо замаравшихся профессоров."
             her2 "Все на пару месяцев затихнет, а потом опять пойдет по накатанной."
             $herViewHead.showQ( "body_179.png", posHead )
             her2 "А чтобы я не раздувала эту историю, от меня предпочтут откупиться. "
             $herViewHead.showQ( "body_168.png", posHead )
-            her2 "Я пока раздумываю, что бы такого потребовать..."
+            her2 "Я пока раздумываю, чего бы такого потребовать..."
             $herViewHead.hideQ()
             m "Это очень... цинично."
             $herViewHead.showQ( "body_179.png", posHead )
@@ -2606,7 +2606,7 @@ label your_whore:
             $herViewHead.showQ( "body_181.png", posHead )
             her2 "И я поняла, что это мне очень нравится. Вы действительно сделали из меня первоклассную шлюху, профессор."
             $herViewHead.showQ( "body_168.png", posHead )
-            her2 "Так что (*хихикает*) по крайней одна профессия у меня есть. И я вполне спокойна и за себя, и за будущее факультета."
+            her2 "Так что {size=-2}(*хихикает*){/size} по крайней одна профессия у меня есть. И я вполне спокойна и за себя, и за будущее факультета."
             $herViewHead.hideQ()
             m "Факультета?"
             $herViewHead.showQ( "body_179.png", posHead )
@@ -2615,7 +2615,7 @@ label your_whore:
             her2 "А теперь... Я ведь королева бала. И я хочу танцевать. И так с вами заболталась."
             $herViewHead.hideQ()
             m "Я ухожу..."
-            $herViewHead.showQ( "body_176.png", posHead )
+            $herViewHead.showQ( "body_179.png", posHead )
             #$ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
             her "Счастливого пути, сэр..."
         else:
@@ -3713,7 +3713,7 @@ label test:
     $ dermo = "ch_sna defend"
     
     show screen credits_chibi
-    centered "{cps=20}{size=+5}{color=#ea91b0}-Тренер Ведьмы-{/color}{/size}\n\n\
+    centered "{cps=20}{size=+5}{color=#ea91b0}-Witch Trainer-{/color}{/size}\n\n\
     {color=#e5e297}-\{Сценарист и продюссер\}-{/color}\n{size=+5}{color=#cbcbcb}AKABUR{/color}{/size}\n\n\
     {color=#e5e297}-\{Главный программист\}-{/color}\n {size=+5}{color=#cbcbcb}AKABUR{/color}{/size}\n\n\
     {color=#e5e297}-\{Арты\}-{/color}\n   {size=+5}{color=#cbcbcb}AKABUR{/color}{/size}\n\n\
@@ -3742,19 +3742,11 @@ label test:
     
     
     
-    centered "{cps=40}{size=+5}{color=#e5e297}-\{Звуковые эффекты\}-{/color}{/size}\n{color=#cbcbcb}http://www.freesound.org/{/color}\n\n\
-    {color=#e5e297}-\{Переводом занимались\}-{/color}\n\n\
-    {color=#fff}\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16733487}Nyarkohotep{/a}\n\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15155170}Discordnk90{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=8041771}maniac4a{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=4472572}Rio-Violente{/a}\n\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16957111}MrFrost1991{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=18304384}babaylolxz{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15281703}Borzsama{/a}\n\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=11908608}sn0rk95{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15179745}qcerb1880{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=4472572}Rio-Violente{/a}\n\n\
-    Если кого-то забыли - простите ;){/color} \
-    \n\n\
-    {size=+5}{color=#e5e297}-\{Музыка предоставленна\}-{/color}{/size}\n\
-    {color=#cbcbcb}http://incompetech.com/{/color}{/cps}\n\n"
 
-    centered "{cps=40}{size=+5}{color=#e5e297}-\{Музыка\}-{/color}{/size}\n\n\
+    centered "{cps=40}{size=+5}{color=#e5e297}-\{Звуковые эффекты\}-{/color}{/size}\n{color=#cbcbcb}http://www.freesound.org/{/color}\n\n\
+    {size=+5}{color=#e5e297}-\{Музыка предоставлена\}-{/color}{/size}\n\
+    {color=#cbcbcb}http://incompetech.com/{/color}{/cps}\n\n\
+	{cps=40}{size=+5}{color=#e5e297}-\{Музыка\}-{/color}{/size}\n\n\
     {color=#e5e297}\"(Orchestral) Playful Tension\" {/color}{color=#cbcbcb}by Shadow16nh.{/color}\n\
     {color=#e5e297}\"Prologue\" {/color}{color=#cbcbcb}Harry Potter OST.{/color}\n\
     {color=#e5e297}\"Shanghai Honey\"{/color} {color=#cbcbcb}by orange range.{/color}\n\
@@ -3781,7 +3773,7 @@ label test:
     #$ dermo = "no_shirt_dance_ani"
     nvl clear
 
-    centered "{cps=40}{size=+2}{color=#e5e297}-\{Создатели этой игры так же выражают благодарность\}-{/color}{/size}\n\n{color=#cbcbcb} \
+    centered "{cps=40}{size=+2}{color=#e5e297}-\{Создатели Witch Trainer также выражают благодарность\}-{/color}{/size}\n\n{color=#cbcbcb} \
     {size=+5}Dahr{/size}{/color}\n{color=#e5e297}for still working for me pretty much free of charge, for inspiring me to keep on going and simply for being a good friend and colleague. {/color}\n\n\
     {color=#cbcbcb}{size=+5}Xaljio{/size}{/color}\n{color=#e5e297} for not only being my personal \"Ren'Py\" consultant but also an extremely thorough game-tester.\n\n\
     {color=#cbcbcb}{size=+5}Lyk.D9 (a.k.a. Silentchill){/size}{/color}\n {color=#e5e297}for toiling tirelessly over my texts full of typos and broken grammar. {/color}\n\n\
@@ -3825,7 +3817,25 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     {color=#e5e297}{size=-4}-\{Thank you, Joseph Antoni, for organizing all these 750+ names for me.\}-{/size}{/color}{/cps}"
               
               
-              
+    centered "{cps=20}{size=+5}{color=#ea91b0}-Тренер Ведьмы 1.2.2c (русская редакция)-{/color}{/size}\n\n\n\
+    {color=#e5e297}-\{Перевод Witch Trainer\}-{/color}\n\n\
+    {color=#fff}\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16733487}Nyarkohotep{/a}\n\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15155170}Discordnk90{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=8041771}maniac4a{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=4472572}Rio-Violente{/a}\n\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16957111}MrFrost1991{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=18304384}babaylolxz{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15281703}Borzsama{/a}\n\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=11908608}sn0rk95{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15179745}qcerb1880{/a}, Skazochnik{/color}\n\n\
+    {color=#cbcbcb}Если кого-то забыли - простите ;){/color} \
+    \n\n\n\
+    {color=#e5e297}-\{Программирование новых ивентов:\}-{/color}\n\n\
+    {color=#fff}\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, eskelsama,\n\
+    Skazochnik\
+    \n\n\n\
+    {color=#e5e297}-\{Тексты новых ивентов:\}-{/color}\n\n\
+    {color=#fff}\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16733487}Nyarkohotep{/a}, Skazochnik\n\n\
+    \n\n\n\
+    "              
               
               
               

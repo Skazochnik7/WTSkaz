@@ -1156,7 +1156,7 @@ label good_bye_snape:
     m "Неужели...?"
     sna "....................."
     m ".....?"
-    sna "Я думаю, что понял, почему твоя магия не работает в полную силу..."
+    sna "Думаю, я понял почему твоя магия не работает в полную силу..."
     g4 "Серьезно?!"
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
@@ -1164,13 +1164,13 @@ label good_bye_snape:
     show screen snape_main                                                                                                                  #SNAPE
     with d3                                                                                                                                                   #SNAPE
     sna "Да..."
-    sna "Вообще-то, это было достаточно очевидно... Странно, что я раньше не додумался."
+    sna "Вообще-то, это было довольно очевидно... Странно, что я раньше не додумался."
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/24.png"                                                                            #SNAPE
     show screen snape_main                                                                                                                  #SNAPE
     with d3                                                                                                                                                   #SNAPE
-    sna "Видишь ли, дело в том, что на каждое здание в \"Хогвартсе\" наложены всевозможные виды защитных заклинаний..."
+    sna "Видишь ли, на каждое здание в \"Хогвартсе\" наложены всевозможные виды защитных заклинаний..."
     m "Защитные заклинания?"
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
@@ -1191,22 +1191,22 @@ label good_bye_snape:
     $ s_sprite = "03_hp/10_snape_main/snape_25.png"                                                                            #SNAPE
     show screen snape_main                                                                                                                  #SNAPE
     with d3                                                                                                                                                   #SNAPE
-    sna "Такое большое количество заклинаний должно мешать твоим силам здесь..."
-    m "Стой, тогда почему у тебя нет проблем с магией?"
+    sna "Такое количество заклинаний здесь должно мешать твоим силам..."
+    m "Погоди, тогда почему у тебя нет проблем с магией?"
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                                                            #SNAPE
     show screen snape_main                                                                                                                  #SNAPE
     with d3                                                                                                                                                   #SNAPE
     sna "Мой друг, моя магия - это \"Хогвартская\" магия..."
-    sna "Готов поспорить, твои силы вполне \"чужие\", чтобы их можно было считать угрозой."
+    sna "Но я уверен, что твоя сила воспринимается здесь, как чужеродная и несущая угрозу."
     m "Интересно..."
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/24.png"                                                                            #SNAPE
     show screen snape_main                                                                                                                  #SNAPE
     with d3                                                                                                                                                   #SNAPE
-    sna "Я думаю, что если ты уйдешь достаточно далеко от школы..."
+    sna "Думаю, если ты уйдешь достаточно далеко от школы..."
     m "Я смогу попасть домой... наконец-то..."
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
@@ -1236,7 +1236,7 @@ label good_bye_snape:
     $ g_c_u_pic = "03_hp/05_props/hand_00.png"
     play music "music/11 The Quidditch Match.mp3" fadein 1 fadeout 1 # EPIC THEME.
     pause 1
-    m "Точно, сегодня будет \"Осенний бал\"..."
+    m "Точно, сегодня же будет \"Осенний бал\"..."
     m "Значит, все закончится сегодня вечером..."
     $ s_head_xpos = 330 # x = 330,
     $ s_head_ypos = 340 #Right bottom corner: y = 340. y = 380 - no hand.
@@ -1251,9 +1251,9 @@ label good_bye_snape:
 
     show screen s_head2
     $ s_sprite = "03_hp/10_snape_main/snape_05.png"
-    sna2 "Если я окажусь прав, то я никогда тебя больше не увижу..."
+    sna2 "Если я прав, то я никогда тебя больше не увижу..."
     hide screen s_head2
-    m "Точно..."
+    m "Так и есть..."
     show screen blkfade
     with d3
     $ g_c_u_pic = "03_hp/05_props/hand_01.png"
@@ -1272,10 +1272,10 @@ label good_bye_snape:
     show screen s_head2
     $ s_sprite = "03_hp/10_snape_main/snape_06.png"
     sna "Тогда ничего не говори..."
-    sna2 "Просто отправляйся в свое следующее приключение..."
+    sna2 "Просто отправляйся навстречу новым приключениям..."
     sna "Наш мир держал тебя слишком долго..."
     hide screen s_head2
-    m "Спасибо за то, что составлял мне компанию и был единственным другом здесь, Северус."
+    m "Спасибо, что составлял мне компанию и был единственным другом здесь, Северус."
     show screen s_head2
     $ s_sprite = "03_hp/10_snape_main/snape_27.png"
     sna "Спасибо за то, что был моим..." #TEARS?
@@ -1330,7 +1330,7 @@ label good_bye_snape:
     m "Да?"
     show screen s_head2
     $ s_sprite = "03_hp/10_snape_main/24.png"
-    sna "Если все пойдет как надо..."
+    sna "Если все пойдет, как надо..."
     sna2 "Завтра в этом кресле я увижу настоящего Альбуса Дамблдора?"
     hide screen s_head2
     m "Скорее всего..."

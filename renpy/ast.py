@@ -1469,6 +1469,10 @@ class Jump(Node):
 
         statement_name("jump")
 
+
+        if renpy.game.onJumpExecute!=None:
+            renpy.game.onJumpExecute(self.name,self.target,self.expression)
+
         target = self.target
         if self.expression:
             target = renpy.python.py_eval(target)

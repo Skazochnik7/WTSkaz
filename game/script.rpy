@@ -5,11 +5,9 @@ init:
 
     # Scenario initialization
     python:
-        global flag
         global arr
 
     $arr=dict()
-    $flag=Flags()
 
     python:
         global this
@@ -20,48 +18,55 @@ init:
 
 # Описание сценария от начала до открытия покупки сексуальных услуг
     python:
-        this.DAY     .AddCall("event_01",                   ready= lambda e: day == 1 and not bird_examined and not desk_examined and not cupboard_examined and not door_examined and not fireplace_examined )
-        this.NIGHT   .AddCall("event_02",                   ready= lambda e: day == 1 )
-        this.NIGHT   .AddCall("event_03",                   ready= lambda e: day == 2 )
-        this.NIGHT   .AddCall("event_05",                   ready= lambda e: day == 4 )
-        this.NIGHT   .AddCall("event_07:Snape_summon",      ready= lambda e: day == 5 )
-        this.DAY     .AddCall("event_08",                   ready= lambda e: day >= 8 )
-        this.SNAPE   .AddCall("special_date_with_snape")
-        this.DAY     .AddCall("event_08_02",                ready= lambda e: e.prev.prev.IsAgo(2) ) 
-                                                                             
-        this.DAY     .AddCall("event_08_03",                ready = lambda e: e.prev.IsAgo(2) )
-        this.DAY     .AddCall("event_09",                   ready = lambda e: e.prev.IsAgo(2) )
-        this.SNAPE   .AddCall("special_date_with_snape_02")
-        this.NIGHT   .AddCall("event_11",                   ready = lambda e: e.prev.IsAgo(2))
-        this.NIGHT   .AddCall("event_12",                   ready = lambda e: e.prev.IsAgo(2))
-        this.NIGHT   .AddCall("event_13",                   ready = lambda e: e.prev.IsAgo(2))
-        this.DAY     .AddCall("event_14:Hermione_summon")
-        this.CHITCHAT.AddCall("chitchat_event_01",          ready = lambda e: e.prev.IsAgo(2))
-        this.NIGHT   .AddCall("event_15:Hermione_buy",      ready = lambda e: e.prev.IsAgo(7))
+        this.Where({"DAY"})     .AddStep("event_01",                 ready= lambda e: day == 1 and not bird_examined and not desk_examined and not cupboard_examined and not door_examined and not fireplace_examined )
+        this.Where({"NIGHT"})   .AddStep("event_02",                 ready= lambda e: day == 1 )
+        this                    .AddStep("event_03",                 ready= lambda e: day == 2 )
+        this                    .AddStep("event_05",                 ready= lambda e: day == 4 )
+        this                    .AddStep("event_07:snape_summon",    ready= lambda e: day == 5 )
+        this.Where({"DAY"})     .AddStep("event_08",                 ready= lambda e: day >= 8 )
+        this.Where({"SNAPE"})   .AddStep("special_date_with_snape")
+        this.Where({"DAY"})     .AddStep("event_08_02",              ready= lambda e: e.prev.prev.IsAgo(2) ) 
+        this                    .AddStep("event_08_03",              ready = lambda e: e.prev.IsAgo(2) )
+        this                    .AddStep("event_09",                 ready = lambda e: e.prev.IsAgo(2) )
+        this.Where({"SNAPE"})   .AddStep("special_date_with_snape_02")
+        this.Where({"NIGHT"})   .AddStep("event_11",                 ready = lambda e: e.prev.IsAgo(2))
+        this                    .AddStep("event_12",                 ready = lambda e: e.prev.IsAgo(2))
+        this                    .AddStep("event_13",                 ready = lambda e: e.prev.IsAgo(2))
+        this.Where({"DAY"})     .AddStep("event_14:her_summon")
+        this.Where({"CHITCHAT"}).AddStep("chitchat_event_01",        ready = lambda e: e.prev.IsAgo(2))
+        this.Where({"NIGHT"})   .AddStep("event_15:her_wants_buy",   ready = lambda e: e.prev.IsAgo(7))
+
+
+
+# Отчеты Гермионы о публичных ивентах (за исключением 30_a, он - днем). Публичные ивенты состоят из 2-х частей. Днем - задание (обычный вызов из пункта меню) и отчет вечером 
+# Можно избавиться и от десятка переменных первоначальной версии, а прогресс хранить в специальном поле объекта Event, но это приведет к довольно серьезной правке кода, что чревато ошибками. 
+# Так что только убираем флажки можно/нельзя выполнять, а прогресс пусть остается во внешних переменных, как был
+        tu=["02_b", "02_c", "03", "10", "15", "20", "23", "24", "30"]
+        for s in tu:
+            fn=lambda e, subKey, oldVal, newVal: Execute(e,"one_out_of_three=RandFromSet(_e._availChoices)", subKey=="startCount") 
+            if s=="30":
+                fn=lambda e, subKey, oldVal, newVal: Execute(e,"one_out_of_three=RandFromSet(_e._availChoices,{1})", subKey=="startCount")   #GetValue('availChoices')
+
+            s="new_request_"+s
+            this.AddEvent(s) 
+            s+="_complete"
+            this.Where({"NIGHT"}, s).AddStep(s,  done = lambda e: e._finishCount==e.prevInList._finishCount, defVals={"availChoices":{1,2,3}},
+                OnChange=fn  ) # После срабатывания предыдущего это условие done нарушается и ивент готов к запуску. Нет ограничений по кол-ву запусков
+
 
 # Следующее событие (первый раз трахнуться с одноклассниками) НЕ помещено в главный сценарий. 
 # Т.е. может быть не выполнено никогда, а последующие в списке события все равно могут выполняться
 # Однако в списке событий предшествует последующим - сделано для того, чтобы если событие может выполняться, оно имело приоритет перед оставшимися
-# Если флаг установить (устанавливается при первом вызове request_30), запустится разово 
-        this.DAY     .AddCall("new_request_30_complete_a",  scenario=None, ready = lambda e: request_30_a) 
+# Если флаг установить (устанавливается при вызове request_30 ветка 1), запустится разово 
+        this.Where({"DAY"},"new_request_30_complete_a").AddStep("new_request_30_complete_a", ready = lambda e: request_30_a) 
 
-        this.DAY     .AddCall("want_to_rule",                              ready = lambda e: whoring >= 15) # Запустится, как только whoring превысит значение
-        this.DAY     .AddCall("against_the_rule",                          ready = lambda e: e.prev.IsAgo(2)) # Через два дня
-        this.DAY     .AddCall("crying_about_dress",                        ready = lambda e: whoring >= 18 and e.prev.IsAgo(5)) # Через 5 дней и при соответствующем уровне развращенности
-        this.DAY     .AddCall("sorry_about_hesterics") 
+        this.Where({"DAY"})     .AddStep("want_to_rule",             ready = lambda e: whoring >= 15) # Запустится, как только whoring превысит значение
+        this                    .AddStep("against_the_rule",         ready = lambda e: e.prev.IsAgo(2)) # Через два дня
+        this                    .AddStep("crying_about_dress",       ready = lambda e: whoring >= 18 and e.prev.IsAgo(5)) # Через 5 дней и при соответствующем уровне развращенности
+        this                    .AddStep("sorry_about_hesterics") 
 
-# Отчеты Гермионы о публичных ивентах (за исключением 30_a, он - днем). Публичные ивенты состоят из 2-х частей. Днем - задание (обычный вызов из пункта меню) и отчет вечером 
-# Можно избавиться от десятка переменных первоначальной версии, а прогресс хранить в специальном поле объекта Event, но это приведет к довольно серьезной правке кода, что чревато ошибками. 
-# Так что только убираем флажки можно/нельзя выполнять, а прогресс пусть остается во внешних переменных, как был
-        tu=["02_b", "02_c", "03", "10", "15", "20", "23", "24", "30"]
-        for s in tu:
-            s="new_request_"+s
-            this.AddEvent(s, s, "", ready= lambda e: True, done= lambda e: e._finishCount!=e.next._finishCount) # Запуск не через точку, а просто через RenPy, в коде в нужном месте явно вызывается IncPassed 
-            this.NIGHT   .AddCall(s+"_complete",  scenario=s, done = lambda e: e._finishCount==e.prev._finishCount) # После срабатывания предыдущего это условие done нарушается и ивент готов к запуску. Нет ограничений по кол-ву запусков
-
-        this.AddEvent        ("giving_thre_dress", "", "",                 ready= lambda e: True, done= lambda e: gave_the_dress) 
-
-        this.NIGHT   .AddCall("good_bye_snape",                            ready = lambda e: e.prev.IsAgo(2)) 
+        this.Where({})          .AddStep("giving_thre_dress")
+        this.Where({"NIGHT"})   .AddStep("good_bye_snape",           ready = lambda e: e.prev.IsAgo(2)) 
 
 # КОНЕЦ ГЛАВНОГО СЦЕНАРИЯ
 
@@ -89,7 +94,7 @@ init:
 
             ("book_08::\"Скорочтение для чайников\"",     50, "03_hp/18_store/08.png", "Эта книга содержит несколько базовых методов, которые помогут вам улучшить навык скорочтения.",
                 "большой шанс прочесть дополнительную главу, во время чтения."),
-            ("book_09::\"Скорочтение для экспертов\"",    90, "03_hp/18_store/08.png", "Эта книга содержит несколько экспертных методов, используемых для улучшения своего навыка скорочтения.",
+            ("book_09::\"Скорочтение для экспертов\"",    90, "03_hp/18_store/08.png", "Эта книга содержит несколько экспертных методов, которые помогут вам улучшить навык скорочтения.",
                 "большой шанс освоить дополнительную главу, во время чтения."),
 
             ("book_06::\"Игра Кресел\"",                 100, "03_hp/18_store/02.png", "Эпический рассказ о предательстве, убийствах и изнасилованиях, а затем еще несколько убийств, немного больше предательства и еще больше изнасилований.",
@@ -116,10 +121,10 @@ init:
             lam=lambda e:e._status>=e._units
             if "book_07" in _sFullName: # У Вайфу морочливая обработка оставляю первоначальную на исходных флажках
                 lam = lambda e: dear_waifu_completed_once
-            event=this.AddEvent(_sFullName, None, _block, 
-                ready= lambda e: GetArrayValue(e.Name,"status")>=0, done=lam , 
+            event=this.AddEvent(_sFullName,  
+                ready= lambda e: GetStoreValue(e.Name, "status")>=0, done=lam , 
                 defVals={"status": -2},
-                constVals={"img": _img, "description":_description, "price":_price, "conclusion":_conclusion, "units": 10 if _block=="books_edu" else 20} )
+                constVals={"img": _img, "description":_description, "block":_block, "price":_price, "conclusion":_conclusion, "units": 10 if _block=="books_edu" else 20} )
 
 
 
@@ -133,6 +138,7 @@ init:
 # Включить обработку перехода по меткам (label). 
     $renpy.game.onLabelExecute=lambda s: OnLabelExecute(s)
 
+#    $renpy.game.onJumpExecute=lambda name, target,expression: OnJumpExecute(name, target,expression)
     
 
     
@@ -4847,6 +4853,7 @@ label start:
 
 
     $ gold = 0
+    $ turbo =1 
     
     $ rum_times = 0 # Counts how many times have you rummaged the cupboard. +1 every time you do that. Needed to make to grand 2 potions before the fight.
     
