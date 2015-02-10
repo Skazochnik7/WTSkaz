@@ -23,8 +23,8 @@ label menu_reading_book:
         menu:
             "- Читать книгу -":
 # Проверяем, что освоены предыдущие ступени навыка:
-                if event._block=="books_edu":
-                    if event.prevInList._block!=event._block or event.prevInList.IsDone():
+                if event.GetValue("block")=="books_edu":
+                    if event.prevInList.GetValue("block")!=event.GetValue("block") or event.prevInList.IsDone():
                         jump reading_book_xx
                     else:
                         m "Эта книга пока слишком сложна для меня."
