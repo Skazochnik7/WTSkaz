@@ -3713,6 +3713,26 @@ label test:
     $ dermo = "ch_sna defend"
     
     show screen credits_chibi
+    centered "{cps=20}{size=+5}{color=#ea91b0}-Тренер Ведьмы 1.2.2c (русская редакция)-{/color}{/size}\n\n\n\
+    {color=#e5e297}-\{Перевод Witch Trainer\}-{/color}\n\n\
+    {color=#fff}\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16733487}Nyarkohotep{/a}\n\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15155170}Discordnk90{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=8041771}maniac4a{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=4472572}Rio-Violente{/a}\n\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16957111}MrFrost1991{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=18304384}babaylolxz{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15281703}Borzsama{/a}\n\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=11908608}sn0rk95{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15179745}Khan32{/a}, Skazochnik{/color}\n\n\
+    {color=#cbcbcb}Если кого-то забыли - простите ;){/color} \
+    \n\n\n\
+    {color=#e5e297}-\{Программирование новых ивентов:\}-{/color}\n\n\
+    {color=#fff}\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, eskelsama,\n\
+    Skazochnik\
+    \n\n\n\
+    {color=#e5e297}-\{Тексты новых ивентов:\}-{/color}\n\n\
+    {color=#fff}\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16733487}Nyarkohotep{/a}, Skazochnik\n\n\
+    \n\n\n\
+    "
+
     centered "{cps=20}{size=+5}{color=#ea91b0}-Witch Trainer-{/color}{/size}\n\n\
     {color=#e5e297}-\{Сценарист и продюссер\}-{/color}\n{size=+5}{color=#cbcbcb}AKABUR{/color}{/size}\n\n\
     {color=#e5e297}-\{Главный программист\}-{/color}\n {size=+5}{color=#cbcbcb}AKABUR{/color}{/size}\n\n\
@@ -3722,7 +3742,6 @@ label test:
     {color=#e5e297}-\{Технический менеджер\}-{/color}\n   {size=+5}{color=#cbcbcb}XALJIO{/color}{/size}\n\n\
     {color=#e5e297}-\{Тестеры\}-{/color}\n   {size=+5}{color=#cbcbcb}XALJIO\nLYK.D9\nDAHR\nAKABUR{/color}{/size}\n\n{/cps}"
     
-
     
     
     nvl clear
@@ -3817,25 +3836,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     {color=#e5e297}{size=-4}-\{Thank you, Joseph Antoni, for organizing all these 750+ names for me.\}-{/size}{/color}{/cps}"
               
               
-    centered "{cps=20}{size=+5}{color=#ea91b0}-Тренер Ведьмы 1.2.2c (русская редакция)-{/color}{/size}\n\n\n\
-    {color=#e5e297}-\{Перевод Witch Trainer\}-{/color}\n\n\
-    {color=#fff}\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16733487}Nyarkohotep{/a}\n\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15155170}Discordnk90{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=8041771}maniac4a{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=4472572}Rio-Violente{/a}\n\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16957111}MrFrost1991{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=18304384}babaylolxz{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15281703}Borzsama{/a}\n\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=11908608}sn0rk95{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15179745}qcerb1880{/a}, Skazochnik{/color}\n\n\
-    {color=#cbcbcb}Если кого-то забыли - простите ;){/color} \
-    \n\n\n\
-    {color=#e5e297}-\{Программирование новых ивентов:\}-{/color}\n\n\
-    {color=#fff}\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, eskelsama,\n\
-    Skazochnik\
-    \n\n\n\
-    {color=#e5e297}-\{Тексты новых ивентов:\}-{/color}\n\n\
-    {color=#fff}\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16733487}Nyarkohotep{/a}, Skazochnik\n\n\
-    \n\n\n\
-    "              
+                  
               
               
               
@@ -3951,20 +3952,20 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         sna "........................................."
         $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                         # SNAPE
         show screen s_head2                                                                                                 # SNAPE
-        sna "Это еще ты?"
+        sna "Кто рулит?"
         hide screen s_head2     
         dum2 "Извини?"
         $ s_sprite = "03_hp/10_snape_main/snape_26.png"                                         # SNAPE
         show screen s_head2                                                                                                 # SNAPE
-        sna "Кто ... шофер?" # T_T
+        sna "Кто ... рулит?" # T_T
         hide screen s_head2     
         dum2 "?!?..."
         show screen s_head2                                                                                                 # SNAPE
-        sna "Кто шофер?"
+        sna "Кто рулит?"
         hide screen s_head2     
-        dum2 "... шофер чего?"
+        dum2 "... рулит чем?"
         show screen s_head2                                                                                                 # SNAPE
-        sna "А....?"
+        sna "Ака....?"
         hide screen s_head2     
         dum2 "А?"
         $ s_sprite = "03_hp/10_snape_main/snape_27.png"                                         # SNAPE

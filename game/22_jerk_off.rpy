@@ -89,7 +89,7 @@ label jerk_off:
    
    label random_pics:
            $ list_of_files_jas = 10
-           $ list_of_files_lara = 103
+           $ list_of_files_lara = 100
            
            if checked == 'jas':
                $ directory_of_images = '03_hp/22_dreams/jas'

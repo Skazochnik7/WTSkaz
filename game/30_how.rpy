@@ -342,7 +342,7 @@ label faq2:
             {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=4472572}Rio-Violente{/a}, \
             {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16957111}MrFrost1991{/a}, \
             {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=18304384}babaylolxz{/a}, \
-            {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15179745}qcerb1880{/a}, \
+            {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15179745}Khan32{/a}, \
             {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=11908608}sn0rk95{/a}, \
             и любимец публики {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16733487}Nyarkohotep{/a}."
             nyor "Извините, если кого-то забыли :3!"
