@@ -1158,7 +1158,7 @@ label giving_mag1:
 
  
     $ pos = POS_370
-    $herView.showQQ( d3 )
+    $herView.showQQ( None, pos  )
     jump day_time_requests    
         
         

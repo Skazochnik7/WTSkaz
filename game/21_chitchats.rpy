@@ -1893,8 +1893,8 @@ label chit_chat:
         elif one_of_ten == 6:
             $herView.hideQQ()
             $herView.showQQ( "body_04.png", pos )
-            her "Наше \"Общество Защиты Прав Мужчин\" набирает популярность."
-            her "Это очень важно знать, что вы помогаете развивать наше общество."
+            her "Наше общество  \"Студентов Упорно Кривду Осуждающих\" набирает популярность."
+            her "Это очень здорово знать, что вы помогаете развивать наше общество."
             $herView.hideQQ()
             $herView.showQQ( "body_03.png", pos )
             
@@ -2053,7 +2053,7 @@ label chit_chat:
         if one_of_ten == 1:
             $herView.hideQQ()
             $herView.showQQ( "body_11.png", pos )
-            her "Мое \"Общество по Защите Прав Мужчин\" в последнее время теряет популярность..."
+            her "\"С.У.К.О\" в последнее время теряет популярность..."
             $herView.hideQQ()
             $herView.showQQ( "body_12.png", pos )
             her "Похоже это никого не волнует!"
@@ -2236,7 +2236,7 @@ label chit_chat:
         elif one_of_ten == 10:
             $herView.hideQQ()
             $herView.showQQ( "body_10.png", pos )
-            her "Люди вряд ли посетят наше \"Общество по Защите Прав Мужчин\" еще когда-либо..."
+            her "Люди вряд ли посетят наше общество \"С.У.К.О.\" еще когда-либо..."
             $herView.hideQQ()
             $herView.showQQ( "body_13.png", pos )
     

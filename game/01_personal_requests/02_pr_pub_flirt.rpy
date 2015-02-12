@@ -301,7 +301,7 @@ label new_request_02_b_complete:
                     $herView.hideshowQQ( "body_34.png", pos )
                     her "Я знаю, сэр!"
                     $herView.hideshowQQ( "body_69.png", pos )
-                    her "Но я очень занята. У меня встречи \"ОЗМП\" и еще занятия..."
+                    her "Но я очень занята. У меня встречи в обществе \"С.У.К.О\" и еще занятия..."
                     her "Мне едва хватает времени--"
                     m "Это все, что ты хотела мне сказать сегодня?"
                     $herView.hideshowQQ( "body_69.png", pos )
