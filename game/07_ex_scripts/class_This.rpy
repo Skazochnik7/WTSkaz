@@ -80,15 +80,10 @@ init -992 python:
             if e.Name=="new_request_30_complete":
                 s="one_out_of_three=RandFromSet(_e._availChoices,{1})"
             Execute(e,s, subKey=="startCount")  
-
-#        debug.SaveString("Class="+e.Name+" subkey="+subKey)
-#        debug.SaveClass(e.Name)
-        if ("hearts" in e._points) and subKey=="whored": # Если требуется расчет количества сердечек - произвести его
-            step=3
-            if e._startWhoring==21: step=1 # На макс. ивенте сердечко за 1 балл
-            if e._startWhoring==18: step=2 # На предпоследнем до макс. сердечко за 2 балла
-            e.SetValue("heartCount",GetStage(newVal,e._startWhoring,3,step))
         return
+
+    def SetHearts(heartCount): # Установить количество сердечек текущему ивенту
+        event.SetValue("heartCount",heartCount)
 
 #    def OnJumpExecute(loc, target, expression):
 #        try:

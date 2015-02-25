@@ -17,7 +17,9 @@ label new_request_04:
         jump too_much
         
     elif whoring >= 3 and whoring <= 5: # LEVEL 02 # Hermione is hesitant. 
-        $ new_request_04_01 = True # Hearts.
+#        $ new_request_04_01 = True # Hearts.
+        SetHearts(1)
+
         hide bld1
         with d3
         m "Подойди, девочка..."
@@ -143,9 +145,13 @@ label new_request_04:
                 her_head_main "Оу........."
 
     if whoring >= 6: # LEVEL 03 and higher # Hermione doesn't mind. <============================================================================EVENT LEVEL: 03
-        $ new_request_04_02 = True # Hearts.
+#        $ new_request_04_02 = True # Hearts.
+        SetHearts(2)
+
         if whoring > 8: # LEVEL 03.
-            $ new_request_04_03 = True # Hearts.
+#            $ new_request_04_03 = True # Hearts.
+            SetHearts(3)
+
         stop music fadeout 2.0
         m "Подойди ближе, девочка... Я хочу сделать тебе массаж груди..."
         $her_head_state = 14

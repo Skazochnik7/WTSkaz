@@ -109,7 +109,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 hide screen g_c_u # NOT SUCKING
                 with d3                      #  NOT SUCKING
                 $herViewHead.showQ( "body_122.png", posHead )
-                her2 "Но мы не получаем той популярости и максимальной поддержки, какой хотелось бы..."
+                her2 "Но мы не получаем той популярости и поддержки, какой хотелось бы..."
                 hide screen h_c_u   # SUCKING
                 show screen g_c_u # SUCKING
                 with d3                      #  SUCKING
@@ -132,7 +132,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 $herViewHead.hideQ()
                 m "Что ты имеешь в виду?"
                 $herViewHead.showQ( "body_16.png", posHead )
-                her2 "\"ОЗМП\" О половом равенстве."
+                her2 "\"ОЗМП\" о половом равенстве."
                 her2 "Мы не против обмена очков на услуги для учителей..."
                 her2 "Мы против полового неравенства, которое подразумевает под собой этого рода услуги за очки..."
                 $herViewHead.hideQ()
@@ -147,7 +147,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 $herViewHead.hideQ()
                 her "*Кулдык!* *Хлюп!* *Хлюп!*"
                 m "Да, намного лучше..."
-                m "Но вы по прежнему против подобных услуг, верно?"
+                m "Но вы по-прежнему против подобных услуг, верно?"
                 her "*Хлюп--"
                 show screen h_c_u   # NOT SUCKING
                 hide screen g_c_u # NOT SUCKING
@@ -562,22 +562,18 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
             m "???"
             "\"Прекрасно. Никаких очков! Уходи!\"":
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                $herView.hideQQ()
-                $herView.showQQ( "body_24.png", pos )
+                $herView.hideshowQQ( "body_24.png", pos )
                 her "Сэр, успокойтесь, пожалуйста."
                 m "Покиньте кабинет, мисс Грейнджер!"
-                $herView.hideQQ()
-                $herView.showQQ( "body_24.png", pos )
+                $herView.hideshowQQ( "body_24.png", pos )
                 her "Cэр, все что я сказала - было не всерьез."
                 m "Что?"
             "\"Эм, извините?\"":
                 stop music fadeout 1.0
-                $herView.hideQQ()
-                $herView.showQQ( "body_06.png", pos )
+                $herView.hideshowQQ( "body_06.png", pos )
                 her "*хи-хи*"
                 m "Хмм?"
-                $herView.hideQQ()
-                $herView.showQQ( "body_24.png", pos )
+                $herView.hideshowQQ( "body_24.png", pos )
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                 her "Поняла... cэр."
                 m "Что?"

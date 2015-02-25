@@ -42,11 +42,10 @@ init:
         this.Where({"NIGHT"})   .AddStep("event_15:her_wants_buy",   ready = lambda e: e.prev.IsAgo(7))
 
 
-        li={"01":[0, "\"Поговори со мной\""], "02":[0, "\"Отличные трусики!\""], "04":[3,"\"Полапать грудь!\""], "05":[3,"Полапать попку!"], "08":[6,"\"Покажи их мне!\""], 
-            "11":[9,"\"Станцуй для меня!\""], "12":[9,"\"Дай мне потрогать их!\""], "16":[12,"\"Потрогай меня!\""], "22":[15,"\"Соси его!\""], "29":[18,"\"Давай займемся сексом!\""], "31":[21,"\"Время для анала!\""]}
+        li={"01":"\"Поговори со мной\"", "02": "\"Отличные трусики!\"", "04":"\"Полапать грудь!\"", "05":"Полапать попку!", "08":"\"Покажи их мне!\"", 
+            "11":"\"Станцуй для меня!\"", "12":"\"Дай мне потрогать их!\"", "16":"\"Потрогай меня!\"", "22":"\"Соси его!\"", "29":"\"Давай займемся сексом!\"", "31":"\"Время для анала!\""}
         for s in li:
-            this.AddEvent("new_request_"+s+"::"+li[s][1], points={"hearts"}, constVals={"startWhoring": li[s][0]}, defVals={"heartCount": 0}, 
-                OnChange=lambda e, subKey, oldVal, newVal: OnValueChange(e, subKey, oldVal, newVal)) 
+            this.AddEvent("new_request_"+s+"::"+li[s], points={"private"}, defVals={"heartCount": 0}) 
 
 #Where({"hearts"},s)
 
@@ -56,9 +55,9 @@ init:
         tu=["02_b", "02_c", "03", "10", "15", "20", "23", "24", "30"]
         for s in tu:
             s="new_request_"+s
-            # 3-й ивент уже добавлен
+            # 3-й ивент добавляем здесь, он должен по порядку идти перед завершающим
             if s=="new_request_03": 
-                this.AddEvent(s+"::\"Вор трусиков\"", points={"hearts"}, constVals={"startWhoring": 0}, defVals={"heartCount": 0}, 
+                this.AddEvent(s+"::\"Вор трусиков\"", points={"private"}, defVals={"heartCount": 0}, 
                 OnChange=lambda e, subKey, oldVal, newVal: OnValueChange(e, subKey, oldVal, newVal))
             else:
                 this.AddEvent(s) 

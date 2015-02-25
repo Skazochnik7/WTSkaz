@@ -15,7 +15,9 @@ label new_request_02: #SHOW ME YOUR Трусики
     m "Ничего такого, на самом деле..."
     m "Я просто хочу, чтобы ты показала мне свои трусики."             
     if request_02 == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.  
-        $ new_request_02_01 =  True #Hearts.
+#        $ new_request_02_01 =  True #Hearts.
+        SetHearts(1)
+
         $herView.hideshowQQ( "body_14.png", pos )
         her "Мои... трусики...?"
         $herView.hideshowQQ( "body_47.png", pos )
@@ -81,7 +83,9 @@ label new_request_02: #SHOW ME YOUR Трусики
     $ pos = POS_120
     
     if whoring >= 0 and whoring <= 2: #LEVEL 01   <============================= Fist event.
-        $ new_request_02_01 =  True #Hearts.
+#        $ new_request_02_01 =  True #Hearts.
+        SetHearts(1)
+
         show screen bld1
         with d3
         show screen blktone
@@ -108,7 +112,9 @@ label new_request_02: #SHOW ME YOUR Трусики
                
 
     elif whoring >= 3 and whoring <= 5: #LEVEL 02  <====================================================================== SECOND EVENT!
-        $ new_request_02_02 =  True #Hearts.
+#        $ new_request_02_02 =  True #Hearts.
+        SetHearts(2)
+
         show screen bld1
         with d3
         show screen blktone
@@ -140,7 +146,9 @@ label new_request_02: #SHOW ME YOUR Трусики
                 
 
     elif whoring >= 6: #LEVEL 04 and up. <====================================================================== FINAL EVENT! (No Трусики).
-        $ new_request_02_03 =  True #Hearts.
+#        $ new_request_02_03 =  True #Hearts.
+        SetHearts(3)
+
         show screen bld1
         with d3
         show screen blktone

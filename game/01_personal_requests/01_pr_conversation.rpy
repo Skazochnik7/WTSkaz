@@ -33,9 +33,10 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
     pause
     
     $pos = POS_140
-    m "Ну?"
+    m "Итак?"
     if request_01 == 0 and whoring <=5: #First time this event taking place.
-        $  new_request_01_01 = True #Hearts on menu buttons.
+#        $  new_request_01_01 = True #Hearts on menu buttons.
+        $SetHearts(1)
         $herView.hideshowQQ( "body_11.png", pos )
         her "Эм... Ну что ж..."
         ">Гермиона смущается и слегка краснеет..."
@@ -43,8 +44,9 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
         her "..................."
     if whoring >= 0 and  whoring <= 5: #LEVEL 01 and LEVEL 02
         if whoring >= 3 and whoring <= 5:
-            $ level = "02"
-            $ new_request_01_02 = True #Hearts on menu buttons.
+#            $ level = "02"
+#            $ new_request_01_02 = True #Hearts on menu buttons.
+            $SetHearts(2)
         $herView.hideshowQQ( "body_12.png", pos )
         her "В последнее время все относительно спокойно, ничего такого..."
         her "Кроме того дня, когда я завалила тест..."
@@ -122,7 +124,8 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
         her ".........................."
   
     elif whoring >= 6: #LEVEL 03
-        $  new_request_01_03 = True #Hearts on menu buttons.
+#        $  new_request_01_03 = True #Hearts on menu buttons.
+        $ SetHearts(3)
         $herView.hideshowQQ( "body_12.png", pos )
         her "У меня в последнее время все вроде-как в порядке..."
         her "Хм..."
