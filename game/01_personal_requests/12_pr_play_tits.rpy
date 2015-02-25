@@ -13,6 +13,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
             with d3
             pass
         "\"(Нет, не сейчас.)\"":
+            $event.NotFinished()
             jump new_personal_request
     
     if whoring <=8:

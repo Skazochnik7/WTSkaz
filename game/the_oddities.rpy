@@ -1269,7 +1269,7 @@ label the_oddities:
 ### ALREADY HAVE THIS BOOK
 label do_have_book:
     show screen bld1
-    m "У меня уже есть эта книга."
+    m "Я уже это покупал и мне больше не нужно."
     hide screen bld1
     hide screen gift
     with d3

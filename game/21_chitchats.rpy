@@ -268,13 +268,13 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Хех, \"Движение прав человека\"...?"
+            sna "Хех, \"Движение за права мужчин\"...?"
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_04.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            sna "Что дальше? Ассоциация по восстановлению независимости эльфов?"
+            sna "Что дальше? Ассоциация по освобождению эльфов?"
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                                                            #SNAPE
@@ -1893,8 +1893,8 @@ label chit_chat:
         elif one_of_ten == 6:
             $herView.hideQQ()
             $herView.showQQ( "body_04.png", pos )
-            her "Наше общество  \"Студентов Упорно Кривду Осуждающих\" набирает популярность."
-            her "Это очень здорово знать, что вы помогаете развивать наше общество."
+            her "Наше \"Общество Защиты Прав Мужчин\" набирает популярность."
+            her "Это очень важно знать, что вы помогаете развивать наше общество."
             $herView.hideQQ()
             $herView.showQQ( "body_03.png", pos )
             
@@ -2053,7 +2053,7 @@ label chit_chat:
         if one_of_ten == 1:
             $herView.hideQQ()
             $herView.showQQ( "body_11.png", pos )
-            her "\"С.У.К.О\" в последнее время теряет популярность..."
+            her "Мое \"Общество по Защите Прав Мужчин\" в последнее время теряет популярность..."
             $herView.hideQQ()
             $herView.showQQ( "body_12.png", pos )
             her "Похоже это никого не волнует!"
@@ -2236,7 +2236,7 @@ label chit_chat:
         elif one_of_ten == 10:
             $herView.hideQQ()
             $herView.showQQ( "body_10.png", pos )
-            her "Люди вряд ли посетят наше общество \"С.У.К.О.\" еще когда-либо..."
+            her "Люди вряд ли посетят наше \"Общество по Защите Прав Мужчин\" еще когда-либо..."
             $herView.hideQQ()
             $herView.showQQ( "body_13.png", pos )
     

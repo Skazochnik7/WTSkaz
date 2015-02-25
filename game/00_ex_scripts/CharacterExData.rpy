@@ -86,6 +86,14 @@
                 item = self.mStuff[ aKey ]
                 item.hide( aSource, aKey, self )
 
+        # return True, if the item with suck name exists in items on passed position
+        def checkItem( self, aKey, aName ):
+            if aKey in self.mStuff.keys():
+                item = self.mStuff[ aKey ]
+                if item.mName == aName:
+                    return True
+            return False
+
         # call this to remove all items from character mStuff
         def clear( self ):
             self.mStuff = {}

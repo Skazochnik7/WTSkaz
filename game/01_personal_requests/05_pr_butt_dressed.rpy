@@ -8,6 +8,7 @@ label new_request_05:
         "\"(Да, давай попробуем!)\"":
             pass
         "\"(Не сейчас.)\"":
+            $event.NotFinished()
             jump new_personal_request
 
     

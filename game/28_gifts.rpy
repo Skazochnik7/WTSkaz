@@ -125,7 +125,7 @@ label mini_on:
         $herView.hideshowQQ( "body_118.png", pos )
         her "Слушаюсь, сэр..."
         $herView.hideQQ()
-        $herView.addFaceName( "body_78.png", pos )
+        $herView.addFaceName( "body_78.png" )
                                                                                                                                                                                                                           #HERMIONE
     
     
@@ -426,7 +426,7 @@ label giving_lube: # JAR OF Анальный лубрикант.
         her "Тем не менее, я думаю, вы не должны дарить такие подарки вашим ученикам, сэр."
         $herView.hideQQ()
         call no_change #Message: Hermione's mood did not change.
-        $herView.addFaceName( "body_79.png ");
+        $herView.hideshowQQ( "body_79.png ", pos);
         
     if whoring >= 18: # Lv 7+  
         $ anal_lube -= 1
@@ -1018,7 +1018,7 @@ label giving_plug:
 
 
     if whoring >= 6 and whoring <= 11: # Lv 3-4.
-        $ mad -= 15
+        $ mad += 15
         $herView.showQ( "body_186.png", pos, d5 )
         her "Сэр, это какие-то игрушки для взрослых?"
         $herView.hideshowQQ( "body_187.png", pos )

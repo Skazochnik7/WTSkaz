@@ -301,7 +301,7 @@ label new_request_02_b_complete:
                     $herView.hideshowQQ( "body_34.png", pos )
                     her "Я знаю, сэр!"
                     $herView.hideshowQQ( "body_69.png", pos )
-                    her "Но я очень занята. У меня встречи в обществе \"С.У.К.О\" и еще занятия..."
+                    her "Но я очень занята. У меня встречи \"ОЗМП\" и еще занятия..."
                     her "Мне едва хватает времени--"
                     m "Это все, что ты хотела мне сказать сегодня?"
                     $herView.hideshowQQ( "body_69.png", pos )
@@ -396,7 +396,7 @@ label new_request_02_b_complete:
                     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                     $herView.hideshowQQ( "body_75.png", pos )
                     her "Одиннадцать мальчиков, сэр!"
-                    m "Одиннадцать? Really? Ваш личный рекдорд, Мисс Грейнджер."
+                    m "Одиннадцать? Правда? Ваш личный рекдорд, Мисс Грейнджер!"
                     $herView.hideshowQQ( "body_74.png", pos )
                     her "Да."
                     $herView.hideshowQQ( "body_68.png", pos )

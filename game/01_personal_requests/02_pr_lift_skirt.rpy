@@ -8,6 +8,7 @@ label new_request_02: #SHOW ME YOUR Трусики
         "\"(Да, давай попробуем!)\"":
             pass
         "\"(Не сейчас.)\"":
+            $event.NotFinished()
             jump new_personal_request
     $herView.showQQ( "body_01.png", pos )
     her "Так, что же мне нужно сделать?"

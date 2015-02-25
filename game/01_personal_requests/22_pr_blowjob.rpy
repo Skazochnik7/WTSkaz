@@ -12,6 +12,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
             with d3
             pass
         "\"(Не сейчас.)\"":
+            $event.NotFinished()
             jump new_personal_request
             
  
@@ -86,7 +87,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         $ posHead = gMakePos( 390, 235 )
         menu:
             m "Хмм..."
-            "\"Что там с твоим клубом сук, э-э,... то есть клубом \"С.У.К.О\"?\"":
+            "\"Что там с твоим \"ОЗМП\" клубом?\"":
                 her "*Чавк?*"
                 
                 $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
@@ -131,7 +132,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 $herViewHead.hideQ()
                 m "Что ты имеешь в виду?"
                 $herViewHead.showQ( "body_16.png", posHead )
-                her2 "\"С.У.К.О\" о половом равенстве."
+                her2 "\"ОЗМП\" О половом равенстве."
                 her2 "Мы не против обмена очков на услуги для учителей..."
                 her2 "Мы против полового неравенства, которое подразумевает под собой этого рода услуги за очки..."
                 $herViewHead.hideQ()

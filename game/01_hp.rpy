@@ -52,9 +52,7 @@ label hp:
   
 ###THE GAME STARTS###
 
-$ day = 0
-
-
+$ day = 0 
 
 
 ### PAPERWORK (MONEY-MAKING) RELATED FLAGS ###
@@ -154,35 +152,6 @@ $ job_lvl = 1 #Show how many reports you are allowed to complete per week.
 
 ### BOOKS ###
 
-### WORK
-#$ book_01_units = 0 #Monitors progress with this book.
-#$ book_01_complete = False #Turns True when you finish reading book #1.
-#$ book01 = "\"Медная книга души\"" #1/10 (tinny) chance of it to pop up. Completes extra chapter during work.
-
-#$ book_02_units = 0 #Monitors progress with this book.
-#$ book_02_complete = False #Turns True when you finish reading book #2.
-#$ book02 = "\"Бронзовая книга души\"" #1/8 (small) chance of it to pop up. Completes extra chapter during work.
-
-#$ book_03_units = 0 #Monitors progress with this book.
-#$ book_03_complete = False #Turns True when you finish reading book #3.
-#$ book03 = "\"Серебрянная книга души\"" #1/6 (a) chance of it to pop up. Completes extra chapter during work.
-
-#$ book_04_units = 0 #Monitors progress with this book.
-#$ book_04_complete = False #Turns True when you finish reading book #4.
-#$ book04 = "\"Золотая книга души\"" #1/4 (decent) chance of it to pop up. Completes extra chapter during work.
-### FICTION=============================================================================================
-#$ book_05_units = 0 #Monitors progress with this book.
-#$ book_05_complete = False #Turns True when you finish reading book #5.
-#$ book05 = "\"Сказ о Галадриэле. Книга I.\""
-
-#$ book_05_b_units = 0 #Monitors progress with this book.
-#$ book_05_b_complete = False #Turns True when you finish reading book #5_b.
-#$ book05b = "\"Сказ о Галадриэле. Книга II.\""
-
-#$ book_06_units = 0 #Monitors progress with this book.
-#$ book_06_complete = False #Turns True when you finish reading book #6.
-#$ book06 = "\"Игра Кресел\""
-
 $ book_07_units = 0 #Monitors progress with this book.
 $ book_07_complete = False #Turns True when you finish reading book #7.
 $ book07 = "\"Моя дорогая вайфу\""
@@ -208,49 +177,7 @@ $ waifu_book_completed = False #Turns TRUE when you unlock the harem ending.
 #$ book08 = "\"Скорочтение для чайников\"" #1/6 chance to complete an extra chapter during reading.
 $ s_reading_lvl = 0 #+1 When complete first book on speed reading. +1 again when complete the second book.
 
-#BOOK 09
-#$ book_09_units = 0 #Monitors progress with this book.
-#$ book_09_complete = False #Turns True when you finish reading book #4.
-#$ book09 = "\"Скорочтение для экспертов\"" #1/4 chance to complete an extra chapter during reading.
-# WORK===========================================================================================
-#BOOK 10
-#$ book_10_units = 0 #Monitors progress with this book.
-#$ book_10_complete = False #Turns True when you finish reading book #4.
-#$ book10 = "\"Платиновая книга души\"" #1/2 (big) chance of it to pop up. Completes extra chapter during work.
-#BOOK 11
-#$ book_11_units = 0 #Monitors progress with this book.
-#$ book_11_complete = False #Turns True when you finish reading book #4.
-#$ book11 = "\"Адамантовая книга души\"" # 1 (sure) chance of it to pop up. Completes extra chapter during work.
 
-#BOOK 12
-#$ book_12_units = 0 #Monitors progress with this book.
-#$ book_12_complete = False #Turns True when you finish reading book #12.
-#$ book12 = "\"Скорописание для чайников\"" # 1/10 chance of it to pop up. Completes extra chapter during work.
-
-#BOOK 13
-#$ book_13_units = 0 #Monitors progress with this book.
-#$ book_13_complete = False #Turns True when you finish reading book #13.
-#$ book13 = "\"Скорописание для начинающих\"" # 1/8 chance of it to pop up. Completes extra chapter during work.
-
-#BOOK 14
-#$ book_14_units = 0 #Monitors progress with this book.
-#$ book_14_complete = False #Turns True when you finish reading book #14.
-#$ book14 = "\"Скорописание для любителей\"" # 1/6 chance of it to pop up. Completes extra chapter during work.
-
-#BOOK 15
-#$ book_15_units = 0 #Monitors progress with this book.
-#$ book_15_complete = False #Turns True when you finish reading book #15.
-#$ book15 = "\"Скорописание для продвинутых\"" # 1/4 chance of it to pop up. Completes extra chapter during work.
-
-#BOOK 16
-#$ book_16_units = 0 #Monitors progress with this book.
-#$ book_16_complete = False #Turns True when you finish reading book #16.
-#$ book16 = "\"Скорописание для экспертов\"" # 1/2 chance of it to pop up. Completes extra chapter during work.
-
-#BOOK 17
-#$ book_17_units = 0 #Monitors progress with this book.
-#$ book_17_complete = False #Turns True when you finish reading book #17.
-#$ book17 = "\"Скорописание для маньяков\"" # 1 (sure) chance of it to pop up. Completes extra chapter during work.
 
 ### MUGGLE ODDITIES ### =========================================================================
 $ order_placed = False #TRUE when and order has been placed on an item.
@@ -323,6 +250,15 @@ $ cupboard_examined = False
 $ bird_examined = False
 $ door_examined = False
 $ fireplace_examined = False
+
+if this.event_05._finish2==4: 
+    $ day = 4 # Если в начале новой игры выбрано перепрыгнуть на утро после дуэли т.е. event_05._finish2=4, установить день = 4
+    $ desk_examined = True #Turns True when you did examine you desk on day one.
+    $ cupboard_examined = True
+    $ bird_examined = True
+    $ door_examined = True
+    $ fireplace_examined = True
+    $ rum_times = 4
 
 ###SCREENS### NO NEED FOR THIS ONE ANYMORE. (SHOWS WHORING THOUGH).
 screen statistics: #более подробно см. здесь http://www.renpy.org/doc/html/screens.html

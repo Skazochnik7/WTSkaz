@@ -12,6 +12,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
             with d3
             pass
         "\"(Не сейчас.)\"":
+            $event.NotFinished()
             jump new_personal_request
  
     $ pos = POS_140

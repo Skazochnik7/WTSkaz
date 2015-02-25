@@ -15,6 +15,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
             with d3
             pass
         "\"(Не сейчас.)\"":
+            $event.NotFinished()
             jump new_personal_request
     
     if whoring <=5:
@@ -1055,14 +1056,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
     # load from pose with tits and that sperm!
     $herView.data().loadState()
     
-    call music_block
-    
-    if daytime:
-        $ hermione_takes_classes = True
-        jump day_main_menu
-    else:
-        $ hermione_sleeping = True
-        jump night_main_menu
+    jump finish_daytime_event
 
 
 
@@ -1089,4 +1083,6 @@ label addAfterSperm:
     
 label loadState_and_could_not_flirt:
     $herView.data().loadState()
-    jump could_not_flirt
+    call could_not_flirt
+    jump finish_daytime_event
+

@@ -8,6 +8,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
         "\"(Да, сделаем это.)\"":
             pass
         "\"(Не сейчас.)\"":
+            $event.NotFinished()
             jump new_personal_request
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
     m "Ладно..."
@@ -95,7 +96,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
             m "{size=-4}(Давай же! Скажи что-нибудь грязное!){/size}"
         else:
             m ".................."
-        her "О, мой \"Союз Учеников Кривду Осуждающих\" набирает популярность..."
+        her "О, мое \"Общество по защите мужских прав\" набирает популярность..."
         her "И я очень рада..."
         $herView.hideshowQQ( "body_16.png", pos )
         her "Дайте нам только время, и мы реально сможем что-нибудь изменить..."

@@ -3719,17 +3719,17 @@ label test:
     {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16733487}Nyarkohotep{/a}\n\
     {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15155170}Discordnk90{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=8041771}maniac4a{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=4472572}Rio-Violente{/a}\n\
     {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16957111}MrFrost1991{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=18304384}babaylolxz{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15281703}Borzsama{/a}\n\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=11908608}sn0rk95{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15179745}Khan32{/a}, Skazochnik{/color}\n\n\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=11908608}sn0rk95{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15179745}Khan32{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=2}Skazochnik{/a}\n\n\
     {color=#cbcbcb}Если кого-то забыли - простите ;){/color} \
     \n\n\n\
     {color=#e5e297}-\{Программирование новых ивентов:\}-{/color}\n\n\
     {color=#fff}\
     {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, eskelsama,\n\
-    Skazochnik\
+    {a=http://wtrus.ixbb.ru/profile.php?id=2}Skazochnik{/a}\
     \n\n\n\
     {color=#e5e297}-\{Тексты новых ивентов:\}-{/color}\n\n\
     {color=#fff}\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16733487}Nyarkohotep{/a}, Skazochnik\n\n\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16733487}Nyarkohotep{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=2}Skazochnik{/a}\n\n\
     \n\n\n\
     "
 

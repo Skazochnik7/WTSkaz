@@ -34,6 +34,8 @@
         def Where(self,points, scenario=""):
             self.scenario=scenario
 # Необходимо делать копию, иначе скопируется просто ссылка на объект            
+#            debug.SaveString(scenario+": "+str(points))
+
             self.points=points.copy()
             return self
 
@@ -78,8 +80,9 @@
 # Смысл сценария - связать события в одну нить. Если события в одном сенарии, последующее не может запуститься, пока не выполнено (IsDone) предыдущее.
         def GetStep(self, point):
             for e in self.List:
-                 if (point in e._points) and e.IsActive() and e._scenario!=None:
-                        return e
+#                debug.SaveClass(e.Name)
+                if (point in e._points) and e.IsActive() and e._scenario!=None:
+                    return e
 
             return None
 

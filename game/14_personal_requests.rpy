@@ -11,74 +11,89 @@ label new_personal_request:
                 label not_now2:
                 ### LEVEL 01 ###
                 menu:
-                    "Услуга: \"Поговори со мной\" {image=heart_00.png}" if not new_request_01_01 and not new_request_01_02 and not new_request_01_03:
-                        jump new_request_01
-                    "Услуга: \"Поговори со мной\" {image=heart_01.png}" if new_request_01_01 and not new_request_01_02 and not new_request_01_03:
-                        jump new_request_01
-                    "Услуга: \"Поговори со мной\" {image=heart_02.png}" if new_request_01_02 and not new_request_01_03:
-                        jump new_request_01
-                    "Услуга: \"Поговори со мной\" {image=heart_03.png}" if new_request_01_03:
+#                    "Услуга: \"Поговори со мной\" {image=heart_00.png}" if not new_request_01_01 and not new_request_01_02 and not new_request_01_03:
+#                        jump new_request_01
+#                    "Услуга: \"Поговори со мной\" {image=heart_01.png}" if new_request_01_01 and not new_request_01_02 and not new_request_01_03:
+#                        jump new_request_01
+#                    "Услуга: \"Поговори со мной\" {image=heart_02.png}" if new_request_01_02 and not new_request_01_03:
+#                        jump new_request_01
+#                    "Услуга: \"Поговори со мной\" {image=heart_03.png}" if new_request_01_03:
+#                        jump new_request_01
+                    "Услуга: [this.new_request_01._caption] {image=heart_0[this.new_request_01._heartCount].png}":
                         jump new_request_01
 
-                    "Услуга: \"Отличные трусики!\" {image=heart_00.png}" if not new_request_02_01 and not new_request_02_02 and not new_request_02_03: # LEVEL 1
-                        jump new_request_02
-                    "Услуга: \"Отличные трусики!\" {image=heart_01.png}" if new_request_02_01 and not new_request_02_02 and not new_request_02_03: # LEVEL 1
-                        jump new_request_02
-                    "Услуга: \"Отличные трусики!\" {image=heart_02.png}" if new_request_02_02 and not new_request_02_03: # LEVEL 1
-                        jump new_request_02
-                    "Услуга: \"Отличные трусики!\" {image=heart_03.png}" if new_request_02_03: # LEVEL 1
+#                    "Услуга: \"Отличные трусики!\" {image=heart_00.png}" if not new_request_02_01 and not new_request_02_02 and not new_request_02_03: # LEVEL 1
+#                        jump new_request_02
+#                    "Услуга: \"Отличные трусики!\" {image=heart_01.png}" if new_request_02_01 and not new_request_02_02 and not new_request_02_03: # LEVEL 1
+#                        jump new_request_02
+#                    "Услуга: \"Отличные трусики!\" {image=heart_02.png}" if new_request_02_02 and not new_request_02_03: # LEVEL 1
+#                        jump new_request_02
+#                    "Услуга: \"Отличные трусики!\" {image=heart_03.png}" if new_request_02_03: # LEVEL 1
+#                        jump new_request_02
+                    "Услуга: [this.new_request_02._caption] {image=heart_0[this.new_request_02._heartCount].png}":
                         jump new_request_02
                   
                     ### LEVEL 02 ###
                     "{color=#858585}--Не открытое действие-{/color} -" if imagination == 1:
                         call vague_idea
                         jump not_now2
-                    "Услуга: \"Вор трусиков\" {image=heart_00.png}" if not new_request_03_01 and not new_request_03_02 and not new_request_03_03 and daytime and imagination >= 2:
+#                    "Услуга: \"Вор трусиков\" {image=heart_00.png}" if not new_request_03_01 and not new_request_03_02 and not new_request_03_03 and daytime and imagination >= 2:
+#                        jump new_request_03
+#                    "Услуга: \"Вор трусиков\" {image=heart_01.png}" if new_request_03_01 and not new_request_03_02 and not new_request_03_03 and daytime and imagination >= 2:
+#                        jump new_request_03
+#                    "Услуга: \"Вор трусиков\" {image=heart_02.png}" if new_request_03_02 and not new_request_03_03 and daytime and imagination >= 2:
+#                        jump new_request_03
+#                    "Услуга: \"Вор трусиков\" {image=heart_03.png}" if new_request_03_03 and daytime and imagination >= 2:
+#                        jump new_request_03
+                    "Услуга: [this.new_request_03._caption] {image=heart_0[this.new_request_03._heartCount].png}" if daytime and imagination >= 2:
                         jump new_request_03
-                    "Услуга: \"Вор трусиков\" {image=heart_01.png}" if new_request_03_01 and not new_request_03_02 and not new_request_03_03 and daytime and imagination >= 2:
-                        jump new_request_03
-                    "Услуга: \"Вор трусиков\" {image=heart_02.png}" if new_request_03_02 and not new_request_03_03 and daytime and imagination >= 2:
-                        jump new_request_03
-                    "Услуга: \"Вор трусиков\" {image=heart_03.png}" if new_request_03_03 and daytime and imagination >= 2:
-                        jump new_request_03
+
+
                     
                     "{color=#858585}--Не открытое действие-{/color} -" if imagination == 1:
                         call vague_idea
                         jump not_now2
-                    "Услуга: \"Полапать грудь!\" {image=heart_00.png}" if not new_request_04_01 and not new_request_04_02 and not new_request_04_03 and imagination >= 2: 
-                        jump new_request_04
-                    "Услуга: \"Полапать грудь!\" {image=heart_01.png}" if new_request_04_01 and not new_request_04_02 and not new_request_04_03 and imagination >= 2: 
-                        jump new_request_04
-                    "Услуга: \"Полапать грудь!\" {image=heart_02.png}" if new_request_04_02 and not new_request_04_03 and imagination >= 2: 
-                        jump new_request_04
-                    "Услуга: \"Полапать грудь!\" {image=heart_03.png}" if new_request_04_03 and imagination >= 2: 
+#                    "Услуга: \"Полапать грудь!\" {image=heart_00.png}" if not new_request_04_01 and not new_request_04_02 and not new_request_04_03 and imagination >= 2: 
+#                        jump new_request_04
+#                    "Услуга: \"Полапать грудь!\" {image=heart_01.png}" if new_request_04_01 and not new_request_04_02 and not new_request_04_03 and imagination >= 2: 
+#                        jump new_request_04
+#                    "Услуга: \"Полапать грудь!\" {image=heart_02.png}" if new_request_04_02 and not new_request_04_03 and imagination >= 2: 
+#                        jump new_request_04
+#                    "Услуга: \"Полапать грудь!\" {image=heart_03.png}" if new_request_04_03 and imagination >= 2: 
+#                        jump new_request_04
+                    "Услуга: [this.new_request_04._caption] {image=heart_0[this.new_request_04._heartCount].png}" if imagination >= 2:
                         jump new_request_04
                         
                     "{color=#858585}--Не открытое действие-{/color} -" if imagination == 1:
                         call vague_idea
                         jump not_now2
-                    "Услуга: \"Полапать попку!\" {image=heart_00.png}" if not new_request_05_01 and not new_request_05_02 and not new_request_05_03 and imagination >= 2:
-                        jump new_request_05
-                    "Услуга: \"Полапать попку!\" {image=heart_01.png}" if new_request_05_01 and not new_request_05_02 and not new_request_05_03 and imagination >= 2: 
-                        jump new_request_05
-                    "Услуга: \"Полапать попку!\" {image=heart_02.png}" if new_request_05_02 and not new_request_05_03 and imagination >= 2: 
-                        jump new_request_05
-                    "Услуга: \"Полапать попку!\" {image=heart_03.png}" if new_request_05_03 and imagination >= 2: 
+#                    "Услуга: \"Полапать попку!\" {image=heart_00.png}" if not new_request_05_01 and not new_request_05_02 and not new_request_05_03 and imagination >= 2:
+#                        jump new_request_05
+#                    "Услуга: \"Полапать попку!\" {image=heart_01.png}" if new_request_05_01 and not new_request_05_02 and not new_request_05_03 and imagination >= 2: 
+#                        jump new_request_05
+#                    "Услуга: \"Полапать попку!\" {image=heart_02.png}" if new_request_05_02 and not new_request_05_03 and imagination >= 2: 
+#                        jump new_request_05
+#                    "Услуга: \"Полапать попку!\" {image=heart_03.png}" if new_request_05_03 and imagination >= 2: 
+#                        jump new_request_05
+                    "Услуга: [this.new_request_05._caption] {image=heart_0[this.new_request_05._heartCount].png}" if imagination >= 2:
                         jump new_request_05
                         
                     ### LEVEL 03 ### IMAGINATION == 3
                     "{color=#858585}--Не открытое действие-{/color} -" if imagination < 3:
                         call vague_idea
                         jump not_now2
-                    "Услуга: \"Покажи их мне!\" {image=heart_00.png}" if not new_request_08_01 and not new_request_08_02 and not new_request_08_03 and imagination >= 3:
+#                    "Услуга: \"Покажи их мне!\" {image=heart_00.png}" if not new_request_08_01 and not new_request_08_02 and not new_request_08_03 and imagination >= 3:
+#                        jump new_request_08
+#                    "Услуга: \"Покажи их мне!\" {image=heart_01.png}" if new_request_08_01 and not new_request_08_02 and not new_request_08_03 and imagination >= 3: 
+#                        jump new_request_08
+#                    "Услуга: \"Покажи их мне!\" {image=heart_02.png}" if new_request_08_02 and not new_request_08_03 and imagination >= 3: 
+#                        jump new_request_08
+#                    "Услуга: \"Покажи их мне!\" {image=heart_03.png}" if new_request_08_03 and imagination >= 3: 
+#                        jump new_request_08 
+                    "Услуга: [this.new_request_08._caption] {image=heart_0[this.new_request_08._heartCount].png}" if imagination >= 3:
                         jump new_request_08
-                    "Услуга: \"Покажи их мне!\" {image=heart_01.png}" if new_request_08_01 and not new_request_08_02 and not new_request_08_03 and imagination >= 3: 
-                        jump new_request_08
-                    "Услуга: \"Покажи их мне!\" {image=heart_02.png}" if new_request_08_02 and not new_request_08_03 and imagination >= 3: 
-                        jump new_request_08
-                    "Услуга: \"Покажи их мне!\" {image=heart_03.png}" if new_request_08_03 and imagination >= 3: 
-                        jump new_request_08 
-                    
+ 
+
 #                    "Услуга: \"Show {size=+5}it{/size} to me! (NOT FINISHED YET)":
 #                        jump new_request_09
                     
@@ -86,78 +101,95 @@ label new_personal_request:
                     "{color=#858585}--Не открытое действие-{/color} -" if imagination < 3:
                         call vague_idea
                         jump not_now2
-                    "Услуга: \"Станцуй для меня!\" {image=heart_00.png}" if not new_request_11_01 and not new_request_11_02 and not new_request_11_03 and imagination >= 3:
+#                    "Услуга: \"Станцуй для меня!\" {image=heart_00.png}" if not new_request_11_01 and not new_request_11_02 and not new_request_11_03 and imagination >= 3:
+#                        jump new_request_11
+#                    "Услуга: \"Станцуй для меня!\" {image=heart_01.png}" if new_request_11_01 and not new_request_11_02 and not new_request_11_03 and imagination >= 3: 
+#                        jump new_request_11
+#                    "Услуга: \"Станцуй для меня!\" {image=heart_02.png}" if new_request_11_02 and not new_request_11_03 and imagination >= 3:
+#                        jump new_request_11
+#                    "Услуга: \"Станцуй для меня!\" {image=heart_03.png}" if new_request_11_03 and imagination >= 3: 
+#                        jump new_request_11
+                    "Услуга: [this.new_request_11._caption] {image=heart_0[this.new_request_11._heartCount].png}" if imagination >= 3:
                         jump new_request_11
-                    "Услуга: \"Станцуй для меня!\" {image=heart_01.png}" if new_request_11_01 and not new_request_11_02 and not new_request_11_03 and imagination >= 3: 
-                        jump new_request_11
-                    "Услуга: \"Станцуй для меня!\" {image=heart_02.png}" if new_request_11_02 and not new_request_11_03 and imagination >= 3:
-                        jump new_request_11
-                    "Услуга: \"Станцуй для меня!\" {image=heart_03.png}" if new_request_11_03 and imagination >= 3: 
-                        jump new_request_11
+
                     
                     "{color=#858585}--Не открытое действие-{/color} -" if imagination < 3:
                         call vague_idea
                         jump not_now2
-                    "Услуга: \"Дай мне потрогать их!\" {image=heart_00.png}" if not new_request_12_01 and not new_request_12_02 and not new_request_12_03 and daytime and imagination >= 3: # LEVEL 4
+#                    "Услуга: \"Дай мне потрогать их!\" {image=heart_00.png}" if not new_request_12_01 and not new_request_12_02 and not new_request_12_03 and daytime and imagination >= 3: # LEVEL 4
+#                        jump new_request_12
+#                    "Услуга: \"Дай мне потрогать их!\" {image=heart_01.png}" if new_request_12_01 and not new_request_12_02 and not new_request_12_03 and daytime and imagination >= 3: # LEVEL 4
+#                        jump new_request_12
+#                    "Услуга: \"Дай мне потрогать их!\" {image=heart_02.png}" if new_request_12_02 and not new_request_12_03 and daytime and imagination >= 3: # LEVEL 4
+#                        jump new_request_12
+#                    "Услуга: \"Дай мне потрогать их!\" {image=heart_03.png}" if new_request_12_03 and daytime and imagination >= 3: # LEVEL 4
+#                        jump new_request_12
+                    "Услуга: [this.new_request_12._caption] {image=heart_0[this.new_request_12._heartCount].png}" if imagination >= 3:
                         jump new_request_12
-                    "Услуга: \"Дай мне потрогать их!\" {image=heart_01.png}" if new_request_12_01 and not new_request_12_02 and not new_request_12_03 and daytime and imagination >= 3: # LEVEL 4
-                        jump new_request_12
-                    "Услуга: \"Дай мне потрогать их!\" {image=heart_02.png}" if new_request_12_02 and not new_request_12_03 and daytime and imagination >= 3: # LEVEL 4
-                        jump new_request_12
-                    "Услуга: \"Дай мне потрогать их!\" {image=heart_03.png}" if new_request_12_03 and daytime and imagination >= 3: # LEVEL 4
-                        jump new_request_12
+
                     
                     ### LEVEL 05 ### IMAGINATION == 4
                     "{color=#858585}--Не открытое действие-{/color} -" if imagination < 4:
                         call vague_idea
                         jump not_now2
-                    "Услуга: \"Потрогай меня!\" {image=heart_00.png}" if not new_request_16_01 and not new_request_16_02 and not new_request_16_03 and imagination >= 4: # LEVEL 5
+#                    "Услуга: \"Потрогай меня!\" {image=heart_00.png}" if not new_request_16_01 and not new_request_16_02 and not new_request_16_03 and imagination >= 4: # LEVEL 5
+#                        jump new_request_16
+#                    "Услуга: \"Потрогай меня!\" {image=heart_01.png}" if new_request_16_01 and not new_request_16_02 and not new_request_16_03 and imagination >= 4: # LEVEL 5
+#                        jump new_request_16
+#                    "Услуга: \"Потрогай меня!\" {image=heart_02.png}" if new_request_16_02 and not new_request_16_03 and imagination >= 4: # LEVEL 5
+#                        jump new_request_16
+#                    "Услуга: \"Потрогай меня!\" {image=heart_03.png}" if new_request_16_03 and imagination >= 4:  # LEVEL 5
+#                        jump new_request_16
+                    "Услуга: [this.new_request_16._caption] {image=heart_0[this.new_request_16._heartCount].png}" if imagination >= 4:
                         jump new_request_16
-                    "Услуга: \"Потрогай меня!\" {image=heart_01.png}" if new_request_16_01 and not new_request_16_02 and not new_request_16_03 and imagination >= 4: # LEVEL 5
-                        jump new_request_16
-                    "Услуга: \"Потрогай меня!\" {image=heart_02.png}" if new_request_16_02 and not new_request_16_03 and imagination >= 4: # LEVEL 5
-                        jump new_request_16
-                    "Услуга: \"Потрогай меня!\" {image=heart_03.png}" if new_request_16_03 and imagination >= 4:  # LEVEL 5
-                        jump new_request_16
+
                        
                     ### LEVEL 06 ### IMAGINATION == 4
                     "{color=#858585}--Не открытое действие-{/color} -" if imagination < 4:
                         call vague_idea
                         jump not_now2
-                    "Услуга: \"Соси его!\" {image=heart_00.png}" if not new_request_22_01 and not new_request_22_02 and not new_request_22_03 and imagination >= 4: # LEVEL 6
+#                    "Услуга: \"Соси его!\" {image=heart_00.png}" if not new_request_22_01 and not new_request_22_02 and not new_request_22_03 and imagination >= 4: # LEVEL 6
+#                        jump new_request_22
+#                    "Услуга: \"Соси его!\" {image=heart_01.png}" if new_request_22_01 and not new_request_22_02 and not new_request_22_03 and imagination >= 4: # LEVEL 6
+#                        jump new_request_22
+#                    "Услуга: \"Соси его!\" {image=heart_02.png}" if new_request_22_02 and not new_request_22_03 and imagination >= 4: # LEVEL 6
+#                        jump new_request_22
+#                    "Услуга: \"Соси его!\" {image=heart_03.png}" if new_request_22_03 and imagination >= 4: # LEVEL 6
+#                        jump new_request_22
+                    "Услуга: [this.new_request_22._caption] {image=heart_0[this.new_request_22._heartCount].png}" if imagination >= 4:
                         jump new_request_22
-                    "Услуга: \"Соси его!\" {image=heart_01.png}" if new_request_22_01 and not new_request_22_02 and not new_request_22_03 and imagination >= 4: # LEVEL 6
-                        jump new_request_22
-                    "Услуга: \"Соси его!\" {image=heart_02.png}" if new_request_22_02 and not new_request_22_03 and imagination >= 4: # LEVEL 6
-                        jump new_request_22
-                    "Услуга: \"Соси его!\" {image=heart_03.png}" if new_request_22_03 and imagination >= 4: # LEVEL 6
-                        jump new_request_22
+
                     
                     ### LEVEL 07 ### IMAGINATION == 5
                     "{color=#858585}--Не открытое действие-{/color} -" if imagination < 5:
                         call vague_idea
                         jump not_now2
-                    "Услуга: \"Давай займемся сексом!\" {image=heart_00.png}" if not new_request_29_01 and not new_request_29_02 and not new_request_29_03 and imagination >= 5: # LEVEL 7
-                        jump new_request_29
-                    "Услуга: \"Давай займемся сексом!\" {image=heart_01.png}" if new_request_29_01 and not new_request_29_02 and not new_request_29_03 and imagination >= 5: # LEVEL 7
-                        jump new_request_29
-                    "Услуга: \"Давай займемся сексом!\" {image=heart_02.png}" if new_request_29_02 and not new_request_29_03 and imagination >= 5: # LEVEL 7
-                        jump new_request_29
-                    "Услуга: \"Давай займемся сексом!\" {image=heart_03.png}" if new_request_29_03 and imagination >= 5: # LEVEL 7
+#                    "Услуга: \"Давай займемся сексом!\" {image=heart_00.png}" if not new_request_29_01 and not new_request_29_02 and not new_request_29_03 and imagination >= 5: # LEVEL 7
+#                        jump new_request_29
+#                    "Услуга: \"Давай займемся сексом!\" {image=heart_01.png}" if new_request_29_01 and not new_request_29_02 and not new_request_29_03 and imagination >= 5: # LEVEL 7
+#                        jump new_request_29
+#                    "Услуга: \"Давай займемся сексом!\" {image=heart_02.png}" if new_request_29_02 and not new_request_29_03 and imagination >= 5: # LEVEL 7
+#                        jump new_request_29
+#                    "Услуга: \"Давай займемся сексом!\" {image=heart_03.png}" if new_request_29_03 and imagination >= 5: # LEVEL 7
+#                        jump new_request_29
+                    "Услуга: [this.new_request_29._caption] {image=heart_0[this.new_request_29._heartCount].png}" if imagination >= 5:
                         jump new_request_29
                         
                     ### LEVEL 08 ###
                     "{color=#858585}--Не открытое действие-{/color} -" if imagination < 5:
                         call vague_idea
                         jump not_now2
-                    "Услуга:  \"Время для анала!\" {image=heart_00.png}" if not new_request_31_01 and not new_request_31_02 and not new_request_31_03 and imagination >= 5: # LEVEL 8
+#                    "Услуга:  \"Время для анала!\" {image=heart_00.png}" if not new_request_31_01 and not new_request_31_02 and not new_request_31_03 and imagination >= 5: # LEVEL 8
+#                        jump new_request_31
+#                    "Услуга:  \"Время для анала!\" {image=heart_01.png}" if new_request_31_01 and not new_request_31_02 and not new_request_31_03 and imagination >= 5: # LEVEL 8
+#                        jump new_request_31
+#                    "Услуга:  \"Время для анала!\" {image=heart_02.png}" if new_request_31_02 and not new_request_31_03 and imagination >= 5: # LEVEL 8
+#                        jump new_request_31
+#                    "Услуга:  \"Время для анала!\" {image=heart_03.png}" if new_request_31_03 and imagination >= 5: # LEVEL 8
+#                        jump new_request_31
+                    "Услуга: [this.new_request_31._caption] {image=heart_0[this.new_request_31._heartCount].png}" if imagination >= 5:
                         jump new_request_31
-                    "Услуга:  \"Время для анала!\" {image=heart_01.png}" if new_request_31_01 and not new_request_31_02 and not new_request_31_03 and imagination >= 5: # LEVEL 8
-                        jump new_request_31
-                    "Услуга:  \"Время для анала!\" {image=heart_02.png}" if new_request_31_02 and not new_request_31_03 and imagination >= 5: # LEVEL 8
-                        jump new_request_31
-                    "Услуга:  \"Время для анала!\" {image=heart_03.png}" if new_request_31_03 and imagination >= 5: # LEVEL 8
-                        jump new_request_31
+
                             
                     "- Отмена -":
                         jump new_personal_request
@@ -1183,12 +1215,19 @@ label could_not_flirt: #Sent here when choose "Задание провалено
     
     $ request_02_b_points += 1
     $ request_02_b = False 
-    
-    call music_block
-    
+
     if daytime:
         $ hermione_takes_classes = True
     else:
         $ hermione_sleeping = True
     return
 
+label finish_daytime_event:
+    call music_block
+    
+    if daytime:
+        $ hermione_takes_classes = True
+        jump day_main_menu
+    else:
+        $ hermione_sleeping = True
+        jump night_main_menu

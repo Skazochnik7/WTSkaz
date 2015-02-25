@@ -14,6 +14,11 @@ init:
         this=This()
         global event
 
+    python:
+        global debug
+    $debug=Debug()
+    $debug.SaveHeader()
+
 
 
 # Описание сценария от начала до открытия покупки сексуальных услуг
@@ -37,21 +42,29 @@ init:
         this.Where({"NIGHT"})   .AddStep("event_15:her_wants_buy",   ready = lambda e: e.prev.IsAgo(7))
 
 
+        li={"01":[0, "\"Поговори со мной\""], "02":[0, "\"Отличные трусики!\""], "04":[3,"\"Полапать грудь!\""], "05":[3,"Полапать попку!"], "08":[6,"\"Покажи их мне!\""], 
+            "11":[9,"\"Станцуй для меня!\""], "12":[9,"\"Дай мне потрогать их!\""], "16":[12,"\"Потрогай меня!\""], "22":[15,"\"Соси его!\""], "29":[18,"\"Давай займемся сексом!\""], "31":[21,"\"Время для анала!\""]}
+        for s in li:
+            this.AddEvent("new_request_"+s+"::"+li[s][1], points={"hearts"}, constVals={"startWhoring": li[s][0]}, defVals={"heartCount": 0}, 
+                OnChange=lambda e, subKey, oldVal, newVal: OnValueChange(e, subKey, oldVal, newVal)) 
+
+#Where({"hearts"},s)
 
 # Отчеты Гермионы о публичных ивентах (за исключением 30_a, он - днем). Публичные ивенты состоят из 2-х частей. Днем - задание (обычный вызов из пункта меню) и отчет вечером 
 # Можно избавиться и от десятка переменных первоначальной версии, а прогресс хранить в специальном поле объекта Event, но это приведет к довольно серьезной правке кода, что чревато ошибками. 
 # Так что только убираем флажки можно/нельзя выполнять, а прогресс пусть остается во внешних переменных, как был
         tu=["02_b", "02_c", "03", "10", "15", "20", "23", "24", "30"]
         for s in tu:
-            fn=lambda e, subKey, oldVal, newVal: Execute(e,"one_out_of_three=RandFromSet(_e._availChoices)", subKey=="startCount") 
-            if s=="30":
-                fn=lambda e, subKey, oldVal, newVal: Execute(e,"one_out_of_three=RandFromSet(_e._availChoices,{1})", subKey=="startCount")   #GetValue('availChoices')
-
             s="new_request_"+s
-            this.AddEvent(s) 
+            # 3-й ивент уже добавлен
+            if s=="new_request_03": 
+                this.AddEvent(s+"::\"Вор трусиков\"", points={"hearts"}, constVals={"startWhoring": 0}, defVals={"heartCount": 0}, 
+                OnChange=lambda e, subKey, oldVal, newVal: OnValueChange(e, subKey, oldVal, newVal))
+            else:
+                this.AddEvent(s) 
             s+="_complete"
             this.Where({"NIGHT"}, s).AddStep(s,  done = lambda e: e._finishCount==e.prevInList._finishCount, defVals={"availChoices":{1,2,3}},
-                OnChange=fn  ) # После срабатывания предыдущего это условие done нарушается и ивент готов к запуску. Нет ограничений по кол-ву запусков
+                OnChange=lambda e, subKey, oldVal, newVal: OnValueChange(e, subKey, oldVal, newVal)  ) # После срабатывания предыдущего это условие done нарушается и ивент готов к запуску. Нет ограничений по кол-ву запусков
 
 
 # Следующее событие (первый раз трахнуться с одноклассниками) НЕ помещено в главный сценарий. 
@@ -136,7 +149,7 @@ init:
  
 
 # Включить обработку перехода по меткам (label). 
-    $renpy.game.onLabelExecute=lambda s: OnLabelExecute(s)
+    $onLabelExecute=lambda s: OnLabelExecute(s)
 
 #    $renpy.game.onJumpExecute=lambda name, target,expression: OnJumpExecute(name, target,expression)
     
@@ -5173,7 +5186,7 @@ label start:
     if persistent.game_complete: # Offer for game+
         menu:
             "Новая игра +" ">Хотите перенести все золото и имущество из предыдущей игры?"
-            "\"Да, пожауйста.\"":
+            "\"Да, пожалуйста.\"":
                 $ gold = gold + persistent.gold
                 ">[persistent.gold] золота было добавлено."
                 
@@ -5276,6 +5289,9 @@ label start:
         "Начать интро.":
             jump intro
         "Пропустить интро.":
+            jump hp
+        "Перейти сразу на утро после дуэли.":
+            $this.event_05.SetValue("finish2",4)
             jump hp
     
    

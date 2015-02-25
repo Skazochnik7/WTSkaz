@@ -14,6 +14,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
             with d3
             pass
         "\"(Не сейчас.)\"":
+            $event.NotFinished()
             jump new_personal_request
             
     
@@ -1428,7 +1429,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     
     label done_with_handjob:
                 
-    $ gryffindor += current_payout #35
+#    $ gryffindor += current_payout #35 Дважды суммировалось
     hide screen h_c_u
     hide screen g_c_u
     hide screen g_c_c_u # Genie's sperm. Universal.

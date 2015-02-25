@@ -14,6 +14,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
             with d3
             pass
         "\"(Не сейчас.)\"":
+            $event.NotFinished()
             jump new_personal_request
 
     $ current_payout = 35 #Because will have option to pay extra.
