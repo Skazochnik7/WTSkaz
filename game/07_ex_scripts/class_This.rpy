@@ -53,7 +53,8 @@ init -992 python:
 
     def Execute(e, s, condition=True):
         if not condition: return False
-        s=s.replace("_e.", "this.GetCall('"+e.Name+"').")
+        if e!=None:
+            s=s.replace("_e.", "this.GetCall('"+e.Name+"').")
         exec s
         return True
 
@@ -83,7 +84,20 @@ init -992 python:
         return
 
     def SetHearts(heartCount): # Установить количество сердечек текущему ивенту
-        event.SetValue("heartCount",heartCount)
+        return event.SetValue("heartCount",heartCount)
+
+    def IsFirstRun(): # Это первый запуск текущего ивента?
+        return IsRunNumber(1) 
+
+    def IsNextRun(): # Не первый 
+        return IsRunNumberOrMore(2)
+
+    def IsRunNumber(num): # Это запуск номер num
+        return event._finishCount==num
+
+    def IsRunNumberOrMore(num): # Это запуск номер num или последующий?
+        return event._finishCount>=num
+
 
 #    def OnJumpExecute(loc, target, expression):
 #        try:

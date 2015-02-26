@@ -14,9 +14,11 @@ label new_request_02: #SHOW ME YOUR Трусики
     her "Так, что же мне нужно сделать?"
     m "Ничего такого, на самом деле..."
     m "Я просто хочу, чтобы ты показала мне свои трусики."             
-    if request_02 == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.  
+
+    if IsFirstRun() and whoring <= 5: #First time this event taking place. and LEVEL 02.  
+#    if request_02 == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.  
 #        $ new_request_02_01 =  True #Hearts.
-        SetHearts(1)
+        $SetHearts(1)
 
         $herView.hideshowQQ( "body_14.png", pos )
         her "Мои... трусики...?"
@@ -33,11 +35,12 @@ label new_request_02: #SHOW ME YOUR Трусики
         m "Вам нужны эти очки или нет?"
         $herView.hideshowQQ( "body_31.png", pos )
         her  "Нужны..."
-        m "Значит приподнимайте свою юбку..."
+        m "Значит, приподнимайте свою юбку..."
         $herView.hideshowQQ( "body_47.png", pos )
         her "............."
     else:
-        if request_02 >= 1: #Not the first time
+        if IsNextRun(): #First time this event taking place. and LEVEL 02.  
+#        if request_02 >= 1: #Not the first time
             $herView.hideshowQQ( "body_29.png", pos )
             her "Ох... снова?"
             m "Просто сделай это..."
@@ -84,7 +87,7 @@ label new_request_02: #SHOW ME YOUR Трусики
     
     if whoring >= 0 and whoring <= 2: #LEVEL 01   <============================= Fist event.
 #        $ new_request_02_01 =  True #Hearts.
-        SetHearts(1)
+#        SetHearts(1)
 
         show screen bld1
         with d3
@@ -113,7 +116,7 @@ label new_request_02: #SHOW ME YOUR Трусики
 
     elif whoring >= 3 and whoring <= 5: #LEVEL 02  <====================================================================== SECOND EVENT!
 #        $ new_request_02_02 =  True #Hearts.
-        SetHearts(2)
+        $SetHearts(2)
 
         show screen bld1
         with d3
@@ -147,7 +150,7 @@ label new_request_02: #SHOW ME YOUR Трусики
 
     elif whoring >= 6: #LEVEL 04 and up. <====================================================================== FINAL EVENT! (No Трусики).
 #        $ new_request_02_03 =  True #Hearts.
-        SetHearts(3)
+        $SetHearts(3)
 
         show screen bld1
         with d3
@@ -212,7 +215,8 @@ label new_request_02: #SHOW ME YOUR Трусики
     her "Это все?"
     m "Да, можешь идти."
 
-    if request_02 == 0: #First time.
+    if IsFirstRun():
+#    if request_02 == 0: #First time.
         $herView.hideQQ()
         $ pos.xpos = 300
         $herView.showQQ( "body_13.png", pos )
@@ -254,7 +258,7 @@ label new_request_02: #SHOW ME YOUR Трусики
 
     if whoring <= 2:
         $ whoring +=1
-    $ request_02 += 1
+#    $ request_02 += 1
     if daytime:
         $ hermione_takes_classes = True
         jump day_main_menu

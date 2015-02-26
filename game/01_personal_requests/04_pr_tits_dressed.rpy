@@ -18,7 +18,6 @@ label new_request_04:
         
     elif whoring >= 3 and whoring <= 5: # LEVEL 02 # Hermione is hesitant. 
 #        $ new_request_04_01 = True # Hearts.
-        SetHearts(1)
 
         hide bld1
         with d3
@@ -146,11 +145,9 @@ label new_request_04:
 
     if whoring >= 6: # LEVEL 03 and higher # Hermione doesn't mind. <============================================================================EVENT LEVEL: 03
 #        $ new_request_04_02 = True # Hearts.
-        SetHearts(2)
 
-        if whoring > 8: # LEVEL 03.
+#        if whoring > 8: # LEVEL 03.
 #            $ new_request_04_03 = True # Hearts.
-            SetHearts(3)
 
         stop music fadeout 2.0
         m "Подойди ближе, девочка... Я хочу сделать тебе массаж груди..."
@@ -221,6 +218,7 @@ label new_request_04:
         
 
 
+    $SetHearts(GetStage(whoring, 3, 3, 3))
 
     if whoring <= 5:
         $ whoring +=1
@@ -252,7 +250,7 @@ label new_request_04:
     $ gryffindor +=15
     m "\"Гриффиндор\" получает 15 очков!"
     
-    $ request_04_points += 1
+#    $ request_04_points += 1
    
    
     $ hermione_chibi_xpos = 400 #Near the desk.

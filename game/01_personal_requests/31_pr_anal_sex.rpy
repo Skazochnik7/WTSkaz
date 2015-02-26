@@ -19,7 +19,8 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
     $ posHead = gMakePos( 390, 340 )
     $ herView.data().saveState()
  
-    if request_31_points == 0: # FIRST EVENT <============================================================== EVENT 01
+    if IsFirstRun(): # FIRST EVENT <============================================================== EVENT 01
+#    if request_31_points == 0: # FIRST EVENT <============================================================== EVENT 01
         m "Мисс Грейнджер..."
         $herView.hideshowQQ( "body_17.png", pos )
         her "Сэр..?"
@@ -628,7 +629,8 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 $herViewHead.hideQ()
 
         
-    elif request_31_points == 1: # FIRST EVENT <============================================================== EVENT 02
+    elif IsRunNumber(2): # FIRST EVENT <============================================================== EVENT 02
+#    elif request_31_points == 1: # FIRST EVENT <============================================================== EVENT 02
         m "Девочка?"
         $herView.hideshowQQ( "body_15.png", pos )
         her "Профессор?"
@@ -653,7 +655,8 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
         
         
         
-    elif request_31_points >= 2: # FIRST EVENT <============================================================== EVENT 03
+    elif IsRunNumberOrMore(3): # FIRST EVENT <============================================================== EVENT 03
+#    elif request_31_points >= 2: # FIRST EVENT <============================================================== EVENT 03
         m "Как насчет повторить анальный секс, малышка?"
         $herView.hideshowQQ( "body_17.png", pos )
         her "Как насчет ещё 90 баллов, сэр?"
@@ -1008,15 +1011,17 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
     if whoring <= 23: # Level 08 <
         $ whoring +=1
 
-    if request_31_points == 0:
-        $ new_request_31_01 = True # HEARTS.
-    if request_31_points == 1:
-        $ new_request_31_02 = True # HEARTS.
-    if request_31_points >= 2:
-        $ new_request_31_03 = True # HEARTS.
+#    if request_31_points == 0:
+#        $ new_request_31_01 = True # HEARTS.
+#    if request_31_points == 1:
+#        $ new_request_31_02 = True # HEARTS.
+#    if request_31_points >= 2:
+#        $ new_request_31_03 = True # HEARTS.
 
 
-    $ request_31_points += 1
+#    $ request_31_points += 1
+    $SetHearts(SetStage(event._finishCount,1,1,1))
+
 
     hide screen bld1
     $herView.hideQ()

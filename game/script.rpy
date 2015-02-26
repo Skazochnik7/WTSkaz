@@ -60,7 +60,7 @@ init:
                 this.AddEvent(s+"::\"Вор трусиков\"", points={"private"}, defVals={"heartCount": 0}, 
                 OnChange=lambda e, subKey, oldVal, newVal: OnValueChange(e, subKey, oldVal, newVal))
             else:
-                this.AddEvent(s) 
+                this.AddEvent(s, points={"public"}) 
             s+="_complete"
             this.Where({"NIGHT"}, s).AddStep(s,  done = lambda e: e._finishCount==e.prevInList._finishCount, defVals={"availChoices":{1,2,3}},
                 OnChange=lambda e, subKey, oldVal, newVal: OnValueChange(e, subKey, oldVal, newVal)  ) # После срабатывания предыдущего это условие done нарушается и ивент готов к запуску. Нет ограничений по кол-ву запусков
@@ -4967,53 +4967,53 @@ label start:
 
 ### HEARTS ###
 
-    $  new_request_01_01 = False # Talk to me.
-    $  new_request_01_02 = False
-    $  new_request_01_03 = False
+#    $  new_request_01_01 = False # Talk to me.
+#    $  new_request_01_02 = False
+#    $  new_request_01_03 = False
     
-    $ new_request_02_01 = False #SHOW ME YOUR PANTIES
-    $ new_request_02_02 = False #SHOW ME YOUR PANTIES
-    $ new_request_02_03 = False #SHOW ME YOUR PANTIES
+#    $ new_request_02_01 = False #SHOW ME YOUR PANTIES
+#    $ new_request_02_02 = False #SHOW ME YOUR PANTIES
+#    $ new_request_02_03 = False #SHOW ME YOUR PANTIES
     
-    $ new_request_03_01 = False # "Give me your panties" 
-    $ new_request_03_02 = False # "Give me your panties" 
-    $ new_request_03_03 = False # "Give me your panties" 
+#    $ new_request_03_01 = False # "Give me your panties" 
+#    $ new_request_03_02 = False # "Give me your panties" 
+#    $ new_request_03_03 = False # "Give me your panties" 
     
-    $ new_request_04_01 = False # (Touch tits's through fabric.)
-    $ new_request_04_02 = False # (Touch tits's through fabric.)
-    $ new_request_04_03 = False # (Touch tits's through fabric.)
+#    $ new_request_04_01 = False # (Touch tits's through fabric.)
+#    $ new_request_04_02 = False # (Touch tits's through fabric.)
+#    $ new_request_04_03 = False # (Touch tits's through fabric.)
     
-    $ new_request_05_01 = False # (BUTT MOLESTER).
-    $ new_request_05_02 = False # (BUTT MOLESTER).
-    $ new_request_05_03 = False # (BUTT MOLESTER).
+#    $ new_request_05_01 = False # (BUTT MOLESTER).
+#    $ new_request_05_02 = False # (BUTT MOLESTER).
+#    $ new_request_05_03 = False # (BUTT MOLESTER).
     
-    $ new_request_08_01 = False # (Show me tits).
-    $ new_request_08_02 = False # (Show me tits).
-    $ new_request_08_03 = False # (Show me tits).
+#    $ new_request_08_01 = False # (Show me tits).
+#    $ new_request_08_02 = False # (Show me tits).
+#    $ new_request_08_03 = False # (Show me tits).
 
-    $ new_request_11_01 = False # (Dance for me.)
-    $ new_request_11_02 = False # (Dance for me.)
-    $ new_request_11_03 = False # (Dance for me.)
+#    $ new_request_11_01 = False # (Dance for me.)
+#    $ new_request_11_02 = False # (Dance for me.)
+#    $ new_request_11_03 = False # (Dance for me.)
     
-    $ new_request_12_01 = False # (Play with her tits.)
-    $ new_request_12_02 = False # (Play with her tits.)
-    $ new_request_12_03 = False # (Play with her tits.)
+#    $ new_request_12_01 = False # (Play with her tits.)
+#    $ new_request_12_02 = False # (Play with her tits.)
+#    $ new_request_12_03 = False # (Play with her tits.)
     
-    $ new_request_16_01 = False #  (HANDJOB)
-    $ new_request_16_02 = False #  (HANDJOB)
-    $ new_request_16_03 = False #  (HANDJOB)
+#    $ new_request_16_01 = False #  (HANDJOB)
+#    $ new_request_16_02 = False #  (HANDJOB)
+#    $ new_request_16_03 = False #  (HANDJOB)
     
-    $ new_request_22_01 = False #  (BLOWJOB)
-    $ new_request_22_02 = False #  (BLOWJOB)
-    $ new_request_22_03 = False #  (BLOWJOB)
+#    $ new_request_22_01 = False #  (BLOWJOB)
+#    $ new_request_22_02 = False #  (BLOWJOB)
+#    $ new_request_22_03 = False #  (BLOWJOB)
     
-    $ new_request_29_01 = False #  (SEX)
-    $ new_request_29_02 = False #  (SEX)
-    $ new_request_29_03 = False #  (SEX)
+#    $ new_request_29_01 = False #  (SEX)
+#    $ new_request_29_02 = False #  (SEX)
+#    $ new_request_29_03 = False #  (SEX)
     
-    $ new_request_31_01 = False #  (ANAL)
-    $ new_request_31_02 = False #  (ANAL)
-    $ new_request_31_03 = False #  (ANAL)
+#    $ new_request_31_01 = False #  (ANAL)
+#    $ new_request_31_02 = False #  (ANAL)
+#    $ new_request_31_03 = False #  (ANAL)
     
 
 ### MISC FLAGS ###

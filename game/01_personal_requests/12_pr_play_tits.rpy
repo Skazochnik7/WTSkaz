@@ -2,7 +2,8 @@
 ###################REQUEST_12 (Level 04) (Play with her tits.) (Day/Night) ############################################################################
 label new_request_12: #LV.4 (Whoring = 9 - 11)
     $herView.hideQQ()
-    if request_12_points == 0:
+    if IsFirstRun():
+#    if request_12_points == 0:
         m "{size=-4}(Кажется, пора поиграть с её сиськами.){/size}"
     else:
         m "{size=-4}(Пора ещё раз поразвлечься с её сиськами.){/size}"
@@ -22,7 +23,8 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
     $ pos = POS_140
     $ herView.data().saveState()
         
-    if request_12_points == 0 and whoring <= 14: # LEVEL 05 (one level higher then level at which it unlocks - 04) # FIRST TIME.
+    if IsFirstRun() and whoring <= 14: # LEVEL 05 (one level higher then level at which it unlocks - 04) # FIRST TIME.
+#    if request_12_points == 0 and whoring <= 14: # LEVEL 05 (one level higher then level at which it unlocks - 04) # FIRST TIME.
         m "Мисс Грейнджер."
         $herView.hideshowQQ( "body_01.png", pos )
         her "Да, сэр?"
@@ -598,17 +600,19 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
     if whoring <= 11: # If still of level of unlocking - 04
         $ whoring +=1
 
-    $ request_12_points += 1
+#    $ request_12_points += 1
+    $SetHearts(SetStage(whoring,9,3,3))
 
-    if whoring >= 9 and whoring <= 11:
-        $ level = "04"
-        $ new_request_12_01 = True # HEARTS.
-    if whoring >= 12 and whoring <= 14:
-        $ level = "05"
-        $ new_request_12_02 = True # HEARTS.
-    if whoring >= 15:
-        $ level = "06"
-        $ new_request_12_03 = True # HEARTS.
+
+#    if whoring >= 9 and whoring <= 11:
+#        $ level = "04"
+#        $ new_request_12_01 = True # HEARTS.
+#    if whoring >= 12 and whoring <= 14:
+#        $ level = "05"
+#        $ new_request_12_02 = True # HEARTS.
+#    if whoring >= 15:
+#        $ level = "06"
+#        $ new_request_12_03 = True # HEARTS.
 
 
     hide screen bld1

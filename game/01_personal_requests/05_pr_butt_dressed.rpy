@@ -15,23 +15,27 @@ label new_request_05:
     if whoring <=2:
         jump too_much
         
-    if whoring >= 3 and whoring <= 5:
-        $ level = "02"
-        $ new_request_05_01 = True # HEARTS.
-    elif whoring >= 6 and whoring <= 8:
-        $ level = "03"
-        $ new_request_05_02 = True # HEARTS.
-    elif whoring >= 9:
-        $ level = "04"
-        $ new_request_05_03 = True # HEARTS.
+#    if whoring >= 3 and whoring <= 5:
+#        $ level = "02"
+#        $ new_request_05_01 = True # HEARTS.
+#    elif whoring >= 6 and whoring <= 8:
+#        $ level = "03"
+#        $ new_request_05_02 = True # HEARTS.
+#    elif whoring >= 9:
+#        $ level = "04"
+#        $ new_request_05_03 = True # HEARTS.
+
+    $SetHearts(GetStage(whoring, 3, 3, 3))
+
         
         
     if whoring >= 3 and whoring <= 5: # LEVEL 02 # Hermione is hesitant. <=================================================================================== FIRST EVENT.
         
         hide bld1
         with d3
-        m "Подойди ближе, дитя. Давайка разомнем твою сочную попку."
-        if request_05_points == 0 and whoring <= 5: #First time
+        m "Подойди поближе, детка. Давайка разомнем твою сочную попку."
+        if IsFirstRun() and whoring <= 5: #First time
+#        if request_05_points == 0 and whoring <= 5: #First time
             stop music fadeout 5.0
             $her_head_state = 7
             her_head_main "Профессор Дамблдор!?"
@@ -43,7 +47,7 @@ label new_request_05:
             her_head_main "Это неуместно, профессор................"
             m "Всем не обязательно знать, как ты получила эти очки..."
             $her_head_state = 12
-            her_head_main "(Эти 15 очков действительно вытолкнут нас вперед...)"
+            her_head_main "(Эти 15 очков действительно нас продвинут...)"
             $her_head_state = 19
             her_head_main "(Черт.....!)"
         else:
@@ -145,12 +149,12 @@ label new_request_05:
                                             g4 "Арх..."
                                             "\"Мои... Я прошу прощения...\"":
                                                 $her_head_state = 25
-                                                her_head_main "Просто больше не делаете этого, сэр..."
+                                                her_head_main "Просто больше не делайте этого, сэр..."
                                                 pass
                                             "\"Ты не получишь очков за это!\"":
                                                 $ mad += 30
                                                 $her_head_state = 20
-                                                her_head_main "Ха! See if I care, сэр!"
+                                                her_head_main "Ха! И плевать, сэр!"
                                                 ### Takes place aftre you refuse to pay her the очков.
                                                 $ walk_xpos=300 #Animation of walking chibi. (From)
                                                 $ walk_xpos2=610 #Coordinates of it's movement. (To)
@@ -165,8 +169,8 @@ label new_request_05:
                                                 $ renpy.play('sounds/door.mp3') #Sound of a door opening.
                                                 with Dissolve(.3)
                                                 pause.5
-                                                g4 "Арх! (You little brat!)"
-                                                $ request_05_points += 1
+                                                g4 "Арх! (Ты, маленькая дрянь!...)"
+#                                                $ request_05_points += 1
                                                 if daytime:
                                                     $ hermione_takes_classes = True
                                                     jump day_main_menu
@@ -184,7 +188,7 @@ label new_request_05:
                                                 her_head_main "Грр..........."
                                                 her_head_main "........................"
                                                 $her_head_state = 27
-                                                her_head_main "Это не справедливо..."
+                                                her_head_main "Это несправедливо..."
                                                 m "Что? Эй, подожди, не начинай плакаться мне..."
                                                 $her_head_state = 29
                                                 her_head_main "Я ненавижу вас, проф! Я ненавижу вас!"
@@ -209,15 +213,15 @@ label new_request_05:
                                                         #m "But who could resist slapping that little behind of her's?"
                                                         m "Но кто бы смог устоять и не шлепнуть ее великолепную попку?"
                                                     #"\"She made me do this, that brat!\"":
-                                                    "\"Этот ребенок, все из-за нее!\"":
+                                                    "\"Эта девица, все из-за нее!\"":
                                                         $ mad += 9
                                                         #m "She made me do this, that brat!"
                                                         #m "Acting all wounded now..."
                                                         #m "I bet she actually enjoyed the slapping and just won't admit it..."
                                                         m "Она подтолкнула меня к этому!"
                                                         m "А теперь строит из себя оскробленную..."
-                                                        m "Я уверен что ей понравились эти шлепка, она просто не хочет признать этого..."
-                                                $ request_05_points += 1
+                                                        m "Я уверен что ей понравились эти шлепки, она просто не хочет в этом признаться..."
+#                                                $ request_05_points += 1
                                                 if daytime:
                                                     $ hermione_takes_classes = True
                                                     jump day_main_menu
@@ -403,7 +407,7 @@ label new_request_05:
     
         
     elif whoring >= 6: # LEVEL 04 # Hermione is hesitant. <=================================================================================== SECOND EVENT.
-        $ new_request_05_02 = True # HEARTS.
+#        $ new_request_05_02 = True # HEARTS.
         hide screen bld1
         with d3
         m "Подойди ближе, девочка. Позволь потрогать твою попку."
@@ -653,7 +657,7 @@ label ending_of_screams_of_pleasure:
     $ gryffindor +=15
     m " \"Гриффиндор\" получает 15 очков!"
     
-    $ request_05_points += 1
+#    $ request_05_points += 1
    
    
     $ hermione_chibi_xpos = 400 #Near the desk.
@@ -725,7 +729,7 @@ label screams_of_rapings:
     her_head_main "Нет, вы сделали это профессор!"
     $her_head_state = 31
     her_head_main "Теперь дайте мне 20 очков--"
-    her_head_main "Нет, 100 очков или я пожалуйюсь на вас в гильдию магии!!"
+    her_head_main "Нет, 100 очков или я пожалуюсь на вас в министерство!!"
     menu:
         m "(Ах, черт...)"
         "\"Ладно, ладно... 100 очков...\"":
@@ -754,7 +758,7 @@ label screams_of_rapings:
             her_head_main "Нет! Я сделаю это"
             g4 "Делай что хочешь"
             g4 "Никакого изнасилования не было!"
-            her_head_main "Я ненавижу вас,профессор!"
+            her_head_main "Я ненавижу вас, профессор!"
             $ mad +=50
 
 
@@ -781,6 +785,7 @@ label screams_of_rapings:
         $her_head_state = 12
         her_head_main "..........................."
         
+
         
     hide screen hermione_01_f #Hermione stands still.
     with Dissolve(.3)

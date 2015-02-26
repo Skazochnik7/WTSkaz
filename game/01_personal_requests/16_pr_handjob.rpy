@@ -3,7 +3,8 @@
 ###################REQUEST_16 (Level 05) (HANDJOB) (Day/Night) #####################################################
 label new_request_16: #LV.5 (Whoring = 12 - 14)
     $herView.hideQQ()
-    if request_16_points == 0:
+    if IsFirstRun():
+#    if request_16_points == 0:
         m "{size=-4}(Попросить ее вздрочнуть мне?){/size}"
     else:
         m "{size=-4}(Попросить ее еще раз подрочить мне?){/size}"
@@ -22,79 +23,65 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     $herView.data().saveState()
 
     $ current_payout = 45 #Used when haggling about price of th favor.  
-    if request_16_points == 0: # FIRST EVENT <============================================================== EVENT 01
+#    if request_16_points == 0: # FIRST EVENT <============================================================== EVENT 01
+    if IsFirstRun(): # FIRST EVENT <============================================================== EVENT 01
         m "Мисс Грейнджер."
-        $herView.hideQQ()
-        $herView.showQQ( "body_01.png", pos )
+        $herView.hideshowQQ( "body_01.png", pos )
         her "Да, профессор?"
         m "Ты знаешь что такое \"работа ручками\"?"
         if whoring <=11:
             jump too_much
-        $herView.hideQQ()
-        $herView.showQQ( "body_79.png", pos )
+        $herView.hideshowQQ( "body_79.png", pos )
         her "А что?"
         m "Я хочу, чтобы ты сделала это мне..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_47.png", pos )
+        $herView.hideshowQQ( "body_47.png", pos )
         her "Профессор!"
         m "Просто одна услуга. Ничего страшного, да?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_66.png", pos )
+        $herView.hideshowQQ( "body_66.png", pos )
         her "......"
-        $herView.hideQQ()
-        $herView.showQQ( "body_34.png", pos )
+        $herView.hideshowQQ( "body_34.png", pos )
         her "{size=-7}Я хочу 100 очков за это...{/size}"
         m "А? Что это было?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_32.png", pos )
+        $herView.hideshowQQ( "body_32.png", pos )
         her "Я хочу 100 очков за это!!!"
         m "100 очков, да?"
         m "И ты подрочишь мне и все такое, правильно?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_66.png", pos )
+        $herView.hideshowQQ( "body_66.png", pos )
         her "{size=-7}Да...{/size}"
         m "Прости, я не расслышал..."
-        $herView.hideQQ()
-        $herView.showQQ( "body_32.png", pos )
+        $herView.hideshowQQ( "body_32.png", pos )
         her "Да, я сказала да! Я подрочу вам, сэр!"
         label back_to_handjob_choices:
         menu:
             m "..."
             "\"Ты получишь 15 очков.\"":
                 $ mad +=7
-                $herView.hideQQ()
-                $herView.showQQ( "body_69.png", pos )
+                $herView.hideshowQQ( "body_69.png", pos )
                 her "За 15 очков вы сможете немного поприставать ко мне, но не более, сэр."
                 her "Я не продешевлю и не стану дрочить вам за 15 очков."
                 her "Это оскорбительно, сэр."
                 jump back_to_handjob_choices
             "\"Ты получишь 45 очков.\"":
-                $herView.hideQQ()
-                $herView.showQQ( "body_69.png", pos )
+                $herView.hideshowQQ( "body_69.png", pos )
                 her "....."
-                $herView.hideQQ()
-                $herView.showQQ( "body_87.png", pos )
+                $herView.hideshowQQ( "body_87.png", pos )
                 her "45 очков...?"
                 her "Это поможет вернуть \"Гриффиндор\" в лидеры..."
                 m "Это значит \"Да\"?"
-                $herView.hideQQ()
-                $herView.showQQ( "body_79.png", pos )
+                $herView.hideshowQQ( "body_79.png", pos )
                 her "Да! Это значит да, сэр."
                 m "Отлично!"
             "\"Ты получишь 100 очков.\"":
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                 $ current_payout = 100 #Used when haggling about price of th favor.
                 $ mad = 0
-                $herView.hideQQ()
-                $herView.showQQ( "body_72.png", pos )
+                $herView.hideshowQQ( "body_72.png", pos )
                 her "100 очков?!"
                 her "Это поможет вернуть \"Гриффиндор\" в лидеры!"
                 m "Это значит \"Да\"?"
-                $herView.hideQQ()
-                $herView.showQQ( "body_75.png", pos )
+                $herView.hideshowQQ( "body_75.png", pos )
                 her "Конечно!"
-                $herView.hideQQ()
-                $herView.showQQ( "body_80.png", pos )
+                $herView.hideshowQQ( "body_80.png", pos )
                 her "Если это принесет \"Гриффиндору\" 100 очков, то я согласна прикасаться... к вашей штуке."
         # GENIE STANDS WITH HIS COCK OUT
        
@@ -154,7 +141,8 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
         show screen bld1
         with d3
         g9 "Отлично..."
-        if request_16_points == 0:
+#        if request_16_points == 0:
+        if IsFirstRun():
             $herViewHead.showQ( "body_48.png", posHead )
             her "!!!"
             her "Как насчет кончить, сэр?!"
@@ -714,42 +702,36 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                         $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
         #her "Могу я получить свои очки?"
 
-    elif request_16_points == 1: # SECOND EVENT <============================================================== EVENT 02
+    elif IsRunNumber(2): # SECOND EVENT <============================================================== EVENT 02
+#    elif request_16_points == 1: # SECOND EVENT <============================================================== EVENT 02
         m "Мисс Грейнджер?"
         $herView.hideQQ()
         $ pos = POS_140
         $herView.showQQ( "body_01.png", pos )
         her "Да, сэр?"
         m "Что вы знаете о \"работе ручками\"?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_66.png", pos )
+        $herView.hideshowQQ( "body_66.png", pos )
         her "Вы меня уже спрашивали, сэр."
         m "Ах, верно."
         m "Ну, я хочу, чтобы вы снова поиграли с моим членом."
-        $herView.hideQQ()
-        $herView.showQQ( "body_120.png", pos )
+        $herView.hideshowQQ( "body_120.png", pos )
         her "Сэр, вы опять начинаете пошлить..."
         m "Ладно, ладно."
         m "Мисс Грейнджер, как насчет некоторой услуги на сегодня."
-        $herView.hideQQ()
-        $herView.showQQ( "body_69.png", pos )
+        $herView.hideshowQQ( "body_69.png", pos )
         her "Конечно, сэр."
         g9 "Услуга заключается в том, что вы должны поиграть с моим членом!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_66.png", pos )
+        $herView.hideshowQQ( "body_66.png", pos )
         her ".............."
         m "Ох, да ладно. Ради чести \"Гриффиндора\"?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_47.png", pos )
+        $herView.hideshowQQ( "body_47.png", pos )
         her "............."
         g9 "Поиграй с моим членом ради чести \"Гриффиндора\"!"
-        $herView.hideQQ()
-        $herView.showQQ( "body_86.png", pos )
+        $herView.hideshowQQ( "body_86.png", pos )
         her "Хватит так говорить, сэр..."
         #Genie with his cock out
         m "Ну же, девочка, я же не прошу тебя сделать это за просто так."
-        $herView.hideQQ()
-        $herView.showQQ( "body_69.png", pos )
+        $herView.hideshowQQ( "body_69.png", pos )
         her "......."
         stop music fadeout 4.0
         
@@ -777,17 +759,15 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
         jump event_01_round_02
 
 
-    elif request_16_points >= 2: # THIRD EVENT <========================================================================================================= EVENT 03
-
-        $ new_request_16_03 = True #  Hearts
+    elif IsRunNumberOrMore(3): # THIRD EVENT <========================================================================================================= EVENT 03
+#    elif request_16_points >= 2: # THIRD EVENT <========================================================================================================= EVENT 03
+#        $ new_request_16_03 = True #  Hearts
         
         m "Мисс Грейнджер?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_01.png", pos )
+        $herView.hideshowQQ( "body_01.png", pos )
         her "Сэр?"
         m "Как насчет дрочки?"
-        $herView.hideQQ()
-        $herView.showQQ( "body_68.png", pos )
+        $herView.hideshowQQ( "body_68.png", pos )
         her "Пока вы даете мне очки..."
         m "Ну, тогда начнем. Заработай пару очков."
         
@@ -1399,30 +1379,23 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 her "Профессор! Что вы сделали?"
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                 m "Что?"
-                $herView.hideQQ()
-                $herView.showQQ( "body_32.png", pos )
+                $herView.hideshowQQ( "body_32.png", pos )
                 her "Вы меня всю обкончали, сэр..."
-                $herView.hideQQ()
-                $herView.showQQ( "body_118.png", pos )
+                $herView.hideshowQQ( "body_118.png", pos )
                 her "Что за ужас..."
-                $herView.hideQQ()
-                $herView.showQQ( "body_120.png", pos )
+                $herView.hideshowQQ( "body_120.png", pos )
                 her2 "Профессор, вы должны были предупредить меня."
                 m "Это все твоя вина!"
-                $herView.hideQQ()
-                $herView.showQQ( "body_117.png", pos )
+                $herView.hideshowQQ( "body_117.png", pos )
                 her2 "Моя вина?"
                 m "Да! Ты делала мне так хорошо..."
                 m "Что я позабыл обо всем на свете..."     
-                $herView.hideQQ()
-                $herView.showQQ( "body_122.png", pos )
+                $herView.hideshowQQ( "body_122.png", pos )
                 her2 "О..."
                 her2 "Ну, что сделано, то сделано..."
-                $herView.hideQQ()
-                $herView.showQQ( "body_123.png", pos )
+                $herView.hideshowQQ( "body_123.png", pos )
                 her "Я просто вытрусь и буду надеяться, что никто ничего не заметит..."
-                $herView.hideQQ()
-                $herView.showQQ( "body_122.png", pos )
+                $herView.hideshowQQ( "body_122.png", pos )
                 her2 "Могу я получить свою оплату?"
                 $herView.hideQ()
                 with fade  
@@ -1460,15 +1433,20 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
 
     
     
-    if whoring >= 12 and whoring <= 14:
-        $ level = "05"
-        $ new_request_16_01 = True #  Hearts
-    if whoring >= 15 and whoring <= 17:
-        $ level = "06"
-        $ new_request_16_02 = True #  Hearts
+#    if whoring >= 12 and whoring <= 14:
+#        $ level = "05"
+#        $ new_request_16_01 = True #  Hearts
+#    if whoring >= 15 and whoring <= 17:
+#        $ level = "06"
+#        $ new_request_16_02 = True #  Hearts
     
+    if IsRunNumberOrMore(3): 
+        $SetHearts(3)
+    else:
+        $SetHearts(SetStage(whoring,12,3,2))
 
-    $ request_16_points += 1
+
+#    $ request_16_points += 1
 
     hide screen bld1
     $herView.hideQ()
@@ -1574,12 +1552,10 @@ label kiss_suck: #Jumps here after event #03 and if WHORING >= LEVEL 07
     $herView.hideshowQQ( "body_124.png", pos )
     her2 "Да! Я знаю! Этот вариант намного лучше!"
     if daytime:
-        $herView.hideQQ()
-        $herView.showQQ( "body_122.png", pos )
+        $herView.hideshowQQ( "body_122.png", pos )
         her "Я лучше просто пойду в класс, как будто бы ничего и не было."
     else:
-        $herView.hideQQ()
-        $herView.showQQ( "body_124.png", pos )
+        $herView.hideshowQQ( "body_124.png", pos )
         her "Я могу просто пойти и провести время с парнями в Общей Комнате и никто ничего не узнает..."
     $herViewHead.hideQ()
     m "Да... С полным животом спермы..."

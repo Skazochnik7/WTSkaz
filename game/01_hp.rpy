@@ -189,36 +189,36 @@ $ package_is_here = False # Turns true when days_in_delivery >= 5. Package is di
 
 ### LEVELING UP PERSONAL REQUESTS ###
 $ request_01 = 0 #Genie touches himself.
-$ request_02 = 0 #"Lift your skirt".
+#$ request_02 = 0 #"Lift your skirt".
 $ request_02_b_points = 0 #"Flirt with 3 classmates".
 $ request_02_c_points = 0 #"Flirt with a teacher".
-$ request_03_points = 0 #"Give me your panties."
-$ request_04_points = 0 #"Molest tits."
-$ request_05_points = 0 #"Molest butt."
+#$ request_03_points = 0 #"Give me your panties."
+#$ request_04_points = 0 #"Molest tits."
+#$ request_05_points = 0 #"Molest butt."
 $ request_06_points = 0 #"Flash panties to a classmate."
 $ request_07_points = 0 #"Flash panties to a teacher."
-$ request_08_points = 0 #"Show me your tits."
+#$ request_08_points = 0 #"Show me your tits."
 $ request_09_points = 0 #"Show me your pussy."
 $ request_10_points = 0 #"Flash nipple to a classmate."
 $ request_11_points = 0 #"Get naked."
-$ request_12_points = 0 #"Let me play with your tits."
+#$ request_12_points = 0 #"Let me play with your tits."
 $ request_15_points = 0 #(Flash a nipple to a teacher)
 $ request_16_points = 0 #(Finger her pussy)
 $ request_17_points = 0 #(Stick a finger up her butthole.)
-$ request_18_points = 0 #(Handjob).
+#$ request_18_points = 0 #(Handjob).
 $ request_19_points = 0 #(Rub dick against her cheeks.)
 $ request_20_points = 0 #(Grab a classmate's cock)
 $ request_21_points = 0 #(Cum on tits). 
-$ request_22_points = 0 #(Blowjob). 
+#$ request_22_points = 0 #(Blowjob). 
 $ request_23_points = 0 #(Give handjob to a classmate)
 $ request_24_points = 0 #(Flash your tits to a teacher)
 $ request_25_points = 0 #(Cum on face and with enough whoring send to class with face covered in cum.)
 $ request_26_points = 0 #(Go to class with mouth full of cum).
 $ request_27_points = 0 #(Blow two classamates).
 $ request_28_points = 0 #(Give handjob to a teacher). 
-$ request_29_points = 0 #(Sex). 
+#$ request_29_points = 0 #(Sex). 
 $ request_30_points = 0 #(Blow a teacher)
-$ request_31_points = 0 #(Anal sex)
+#$ request_31_points = 0 #(Anal sex)
 $ request_32_points = 0 #(Wear a very revealing outfit to class)
 
 

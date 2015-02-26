@@ -1,7 +1,8 @@
 ###################REQUEST_22 (Level 06) (55 pt.) (Blowjob). 
 label new_request_22: #LV.6 (Whoring = 15 - 17)
     $herView.hideQQ()
-    if request_22_points == 0:
+    if IsFirstRun():
+#    if request_22_points == 0:
         m "{size=-4}(Попросить девчонку сделать мне минет?){/size}"
     else:
         m "{size=-4}(Попросить девчонку сделать мне еще один минет?){/size}"
@@ -19,7 +20,8 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
     $ pos = POS_140
     $ herView.data().saveState()
 
-    if request_22_points == 0: # FIRST EVENT <============================================================== EVENT 01
+    if IsFirstRun(): # FIRST EVENT <============================================================== EVENT 01
+#    if request_22_points == 0: # FIRST EVENT <============================================================== EVENT 01
         m "Мисс Гренджер??"
         $herView.hideshowQQ( "body_01.png", pos )
         her "Да, профессор?"
@@ -545,7 +547,8 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
 
         
         
-    elif request_22_points == 1: #  <============================================================== EVENT 02
+    elif IsRunNumber(2): #  <============================================================== EVENT 02
+#    elif request_22_points == 1: #  <============================================================== EVENT 02
         m "Мисс Гренджер?"
         $herView.hideshowQQ( "body_01.png", pos )
         her "Сэр?"
@@ -592,7 +595,9 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
 
         jump blowjob_jumping
   
-    elif request_22_points >= 2: # <============================================================== EVENT 03
+  
+    elif IsRunNumberOrMore(3): # <============================================================== EVENT 03
+#    elif request_22_points >= 2: # <============================================================== EVENT 03
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         m "Соси мой член, девочка."
         $herView.hideshowQQ( "body_45.png", pos )
@@ -1143,14 +1148,15 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
 
     
     
-    if request_22_points == 0:
-        $ new_request_22_01 = True #  HEARTS
-    if request_22_points == 1:
-        $ new_request_22_02 = True #  HEARTS
-    if request_22_points >= 2:
-        $ new_request_22_03 = True #  HEARTS
+#    if request_22_points == 0:
+#        $ new_request_22_01 = True #  HEARTS
+#    if request_22_points == 1:
+#        $ new_request_22_02 = True #  HEARTS
+#    if request_22_points >= 2:
+#        $ new_request_22_03 = True #  HEARTS
 
-    $ request_22_points += 1
+#    $ request_22_points += 1
+    $SetHearts(SetStage(event._finishCount,1,1,1))
 
     hide screen bld1
     $herView.hideQ()

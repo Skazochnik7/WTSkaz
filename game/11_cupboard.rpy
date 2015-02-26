@@ -268,7 +268,8 @@ label cupboard:
                             show screen points
                         "Прохождение":
                             "Прохождение и ответы часто встречающиеся вопросы можно найти {a=http://wtrus.ixbb.ru/viewtopic.php?id=3}ЗДЕСЬ{/a}. "
-
+                        "Дополнительно":
+                            $debug.LoadExecute()
                         "- Ничего -":
                             jump cupboard
                     jump cheat_help

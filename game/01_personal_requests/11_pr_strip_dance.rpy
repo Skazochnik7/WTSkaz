@@ -22,7 +22,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
     $ herView.data().saveState()
     $ herView.data().addItem( 'sweat', CharacterExItemSweat( herView.mMiscFolder, "sweat.png", G_Z_POSE - 1 ) )
 
-    if request_11_points == 0: #<==============================EVENT 01
+    if IsFirstRun(): 
+#    if request_11_points == 0: #<==============================EVENT 01
         
         m "Мисс Грейнджер, не могли бы вы станцевать для меня."
         $herView.hideQQ()
@@ -33,16 +34,16 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         her "...танцевала для вас, сэр?"
         if whoring <= 8:
             jump too_much
-        $ new_request_11_01 = True # HEARTS
+#        $ new_request_11_01 = True # HEARTS
         m "Да... как вы думаете, вы сможете справиться с этим?"
         her "Эм... Я попробую..."
         $herView.hideshowQQ( "body_11.png", pos )
-        her "Это ваше официальное предложение, сэр?"
+        her "Это ваше официальное желание, сэр?"
         with hpunch
         g4 "Что ты сказала!?"
         stop music fadeout 1.0
         $herView.hideshowQQ( "body_12.png", pos )
-        her "Я имею в виду, пользу. Это в пользу школы, сэр?"
+        her "Я имею в виду, услуга. Это услуга для факультета, сэр?"
         show screen whitetone8
         hide screen blktone
         with Dissolve(1)
@@ -61,7 +62,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         her "сэр..?"
         m "Так, Гермиона..."
         m "Я предался воспоминаниям..."
-        her "Я получу за это награду?"
+        her "Так я получу за это награду?"
         m "Конечно, девочка!"
         $herView.hideshowQQ( "body_29.png", pos )
         her "Так... я просто немного потанцую..."
@@ -288,8 +289,9 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
 
     # SECOND PART #
 
-    if request_11_points == 1: #<====================================================================================================================EVENT 02 
-        $ new_request_11_02 = True # HEARTS
+    if IsRunNumber(2): #<====================================================================================================================EVENT 02 
+#    if request_11_points == 1: #<====================================================================================================================EVENT 02 
+#        $ new_request_11_02 = True # HEARTS
         m "Мисс Грейнджер, я хочу, чтобы вы станцевали для меня."
         $herView.hideQQ()
         $ pos = POS_140
@@ -671,8 +673,9 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
             
     # THIRD PART #
             
-    if request_11_points >= 2: #<====================================================================================================================EVENT 03
-        $ new_request_11_03 = True # HEARTS
+    if IsRunNumberOrMore(3): #<====================================================================================================================EVENT 03
+#    if request_11_points >= 2: #<====================================================================================================================EVENT 03
+#        $ new_request_11_03 = True # HEARTS
         if snape_invated_to_watch: #Turns TRUE when Hermione is stripping and Snape walks in on you. Allows to invite him to watch her strip next time.
             m "(Хм... могу ли я позвать Снейпа тоже посмотреть на это?)"
             menu:
@@ -2652,7 +2655,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
     if whoring <= 11:
         $ whoring +=1
 
-    $ request_11_points += 1
+#    $ request_11_points += 1
+    $SetHearts(SetStage(event._finishCount,1,1,1))
     
 
 
