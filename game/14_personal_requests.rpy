@@ -19,7 +19,7 @@ label new_personal_request:
 #                        jump new_request_01
 #                    "Услуга: \"Поговори со мной\" {image=heart_03.png}" if new_request_01_03:
 #                        jump new_request_01
-                    "Услуга: [this.new_request_01._caption] {image=heart_0[this.new_request_01._heartCount].png}":
+                    "Услуга: [this.new_request_01._caption] {image=heart_4[this.new_request_01._heartCount].png}":
                         jump new_request_01
 
 #                    "Услуга: \"Отличные трусики!\" {image=heart_00.png}" if not new_request_02_01 and not new_request_02_02 and not new_request_02_03: # LEVEL 1
