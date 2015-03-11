@@ -5,6 +5,7 @@ init -992 python:
         def __init__(self):
             super(This, self).__init__()
             self.Name=None
+            self.flag_SCUKO_presented=False
 
 # this("event_01") пытается вернуть Event c именем event_01 (None, если не нашел в списке)
 # Запоминает парметр - последнее обращение
@@ -31,7 +32,6 @@ init -992 python:
                 if this(s)!=None:
     # Если перешли на метку, которая есть ивент, автоматически запускается увеличение счетчика стартов-финишей. 
     # Случаи, когда ивент завершается на середине (и требуют уменьшения счетчика финишей) обрабатываются в коде самого ивента                
-                    debug.SaveString("event.IncPassed()="+s+"   "+this().Name)
                     this().IncPassed()
 
         except Exception:

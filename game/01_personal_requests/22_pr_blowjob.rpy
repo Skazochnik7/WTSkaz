@@ -666,7 +666,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 ">Гермиона крепко сжимает ваши яйца."
                 hide screen blktone
                 with d3
-                g4 "АУЧЬ!"
+                g4 "АУЧ!"
                 hide screen bld1
                 with d3
                 # SNAPE COMES IN
@@ -1156,7 +1156,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
 #        $ new_request_22_03 = True #  HEARTS
 
 #    $ request_22_points += 1
-    $SetHearts(SetStage(event._finishCount,1,1,1))
+    $SetHearts(GetStage(event._finishCount,1,1,1))
 
     hide screen bld1
     $herView.hideQ()

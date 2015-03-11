@@ -89,9 +89,37 @@ label the_oddities:
                     menu:
                         "- Купить (20 золота) -":
                             if gold >= 20:
+                                hide screen points
                                 $ gold -=20
+                                show screen points
                                 $ order_placed = True
                                 $ bought_candy = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+
+                        "- Купить 2 (35 золота) -":
+                            if gold >= 35:
+                                hide screen points
+                                $ gold -=35
+                                show screen points
+                                $ order_placed = True
+                                $ bought_candy2 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+
+                        "- Купить 3 (50 золота) -":
+                            if gold >= 50:
+                                hide screen points
+                                $ gold -=50
+                                show screen points
+                                $ order_placed = True
+                                $ bought_candy3 = True #Affects 15_mail.rpy
                                 call thx_4_shoping #Massage that says "Thank you for shopping here!".
                                 jump desk
                             else:
@@ -109,9 +137,35 @@ label the_oddities:
                     menu:
                         "- Купить (40 золота) -":
                             if gold >= 40:
+                                hide screen points
                                 $ gold -= 40
+                                show screen points
                                 $ order_placed = True
                                 $ bought_chocolate = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 2 (60 золота) -":
+                            if gold >= 60:
+                                hide screen points
+                                $ gold -= 60
+                                show screen points
+                                $ order_placed = True
+                                $ bought_chocolate2 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 3 (100 золота) -":
+                            if gold >= 100:
+                                hide screen points
+                                $ gold -= 100
+                                show screen points
+                                $ order_placed = True
+                                $ bought_chocolate3 = True #Affects 15_mail.rpy
                                 call thx_4_shoping #Massage that says "Thank you for shopping here!".
                                 jump desk
                             else:
@@ -129,9 +183,35 @@ label the_oddities:
                     menu:
                         "- Купить (35 золота) -":
                             if gold >= 35:
+                                hide screen points
                                 $ gold -= 35
+                                show screen points
                                 $ order_placed = True
                                 $ bought_owl = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 2 (60 золота) -":
+                            if gold >= 60:
+                                hide screen points
+                                $ gold -= 60
+                                show screen points
+                                $ order_placed = True
+                                $ bought_owl2 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 3 (90 золота) -":
+                            if gold >= 90:
+                                hide screen points
+                                $ gold -= 90
+                                show screen points
+                                $ order_placed = True
+                                $ bought_owl3 = True #Affects 15_mail.rpy
                                 call thx_4_shoping #Massage that says "Thank you for shopping here!".
                                 jump desk
                             else:
@@ -157,9 +237,35 @@ label the_oddities:
                     menu:
                         "- Купить (50 золота) -":
                             if gold >= 50:
+                                hide screen points
                                 $ gold -= 50
+                                show screen points
                                 $ order_placed = True
                                 $ bought_beer = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 2 (50 золота) -":
+                            if gold >= 90:
+                                hide screen points
+                                $ gold -= 90
+                                show screen points
+                                $ order_placed = True
+                                $ bought_beer2 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 3 (50 золота) -":
+                            if gold >= 130:
+                                hide screen points
+                                $ gold -= 130
+                                show screen points
+                                $ order_placed = True
+                                $ bought_beer3 = True #Affects 15_mail.rpy
                                 call thx_4_shoping #Massage that says "Thank you for shopping here!".
                                 jump desk
                             else:
@@ -179,9 +285,35 @@ label the_oddities:
                     menu:
                         "- Купить (30 золота) -":
                             if gold >= 30:
+                                hide screen points
                                 $ gold -= 30
+                                show screen points
                                 $ order_placed = True
                                 $ bought_mag1 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 2 (50 золота) -":
+                            if gold >= 50:
+                                hide screen points
+                                $ gold -= 50
+                                show screen points
+                                $ order_placed = True
+                                $ bought_mag12 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 3 (80 золота) -":
+                            if gold >= 80:
+                                hide screen points
+                                $ gold -= 80
+                                show screen points
+                                $ order_placed = True
+                                $ bought_mag13 = True #Affects 15_mail.rpy
                                 call thx_4_shoping #Massage that says "Thank you for shopping here!".
                                 jump desk
                             else:
@@ -199,9 +331,35 @@ label the_oddities:
                     menu:
                         "- Купить (45 золота) -":
                             if gold >= 45:
+                                hide screen points
                                 $ gold -= 45
+                                show screen points
                                 $ order_placed = True
                                 $ bought_mag2 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 2 (80 золота) -":
+                            if gold >= 80:
+                                hide screen points
+                                $ gold -= 80
+                                show screen points
+                                $ order_placed = True
+                                $ bought_mag22 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 3 (125 золота) -":
+                            if gold >= 125:
+                                hide screen points
+                                $ gold -= 125
+                                show screen points
+                                $ order_placed = True
+                                $ bought_mag23 = True #Affects 15_mail.rpy
                                 call thx_4_shoping #Massage that says "Thank you for shopping here!".
                                 jump desk
                             else:
@@ -220,9 +378,35 @@ label the_oddities:
                     menu:
                         "- Купить (60 золота) -":
                             if gold >= 60:
+                                hide screen points
                                 $ gold -= 60
+                                show screen points
                                 $ order_placed = True
                                 $ bought_mag3 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 2 (100 золота) -":
+                            if gold >= 100:
+                                hide screen points
+                                $ gold -= 100
+                                show screen points
+                                $ order_placed = True
+                                $ bought_mag32 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 3 (155 золота) -":
+                            if gold >= 155:
+                                hide screen points
+                                $ gold -= 155
+                                show screen points
+                                $ order_placed = True
+                                $ bought_mag33 = True #Affects 15_mail.rpy
                                 call thx_4_shoping #Massage that says "Thank you for shopping here!".
                                 jump desk
                             else:
@@ -248,9 +432,35 @@ label the_oddities:
                     menu:
                         "- Купить (80 золота) -":
                             if gold >= 80:
+                                hide screen points
                                 $ gold -= 80
+                                show screen points
                                 $ order_placed = True
                                 $ bought_mag4 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 2 (140 золота) -":
+                            if gold >= 140:
+                                hide screen points
+                                $ gold -= 140
+                                show screen points
+                                $ order_placed = True
+                                $ bought_mag42 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 3 (220 золота) -":
+                            if gold >= 220:
+                                hide screen points
+                                $ gold -= 220
+                                show screen points
+                                $ order_placed = True
+                                $ bought_mag43 = True #Affects 15_mail.rpy
                                 call thx_4_shoping #Massage that says "Thank you for shopping here!".
                                 jump desk
                             else:
@@ -276,9 +486,35 @@ label the_oddities:
                     menu:
                         "- Купить (50 золота) -":
                             if gold >= 50:
+                                hide screen points
                                 $ gold -= 50
+                                show screen points
                                 $ order_placed = True
                                 $ bought_condoms = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 2 (80 золота) -":
+                            if gold >= 80:
+                                hide screen points
+                                $ gold -= 80
+                                show screen points
+                                $ order_placed = True
+                                $ bought_condoms2 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 3 (120 золота) -":
+                            if gold >= 120:
+                                hide screen points
+                                $ gold -= 120
+                                show screen points
+                                $ order_placed = True
+                                $ bought_condoms3 = True #Affects 15_mail.rpy
                                 call thx_4_shoping #Massage that says "Thank you for shopping here!".
                                 jump desk
                             else:
@@ -303,9 +539,35 @@ label the_oddities:
                     menu:
                         "- Купить (55 золота) -":
                             if gold >= 55:
+                                hide screen points
                                 $ gold -=55
+                                show screen points
                                 $ order_placed = True
                                 $ bought_vibrator = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 2 (90 золота) -":
+                            if gold >= 90:
+                                hide screen points
+                                $ gold -=90
+                                show screen points
+                                $ order_placed = True
+                                $ bought_vibrator2 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 3 (140 золота) -":
+                            if gold >= 140:
+                                hide screen points
+                                $ gold -=140
+                                show screen points
+                                $ order_placed = True
+                                $ bought_vibrator3 = True #Affects 15_mail.rpy
                                 call thx_4_shoping #Massage that says "Thank you for shopping here!".
                                 jump desk
                             else:
@@ -323,9 +585,35 @@ label the_oddities:
                     menu:
                         "- Купить (60 золота) -":
                             if gold >= 60:
+                                hide screen points
                                 $ gold -= 60
+                                show screen points
                                 $ order_placed = True
                                 $ bought_anal_lube = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 2 (100 золота) -":
+                            if gold >= 100:
+                                hide screen points
+                                $ gold -= 100
+                                show screen points
+                                $ order_placed = True
+                                $ bought_anal_lube2 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 3 (150 золота) -":
+                            if gold >= 150:
+                                hide screen points
+                                $ gold -= 150
+                                show screen points
+                                $ order_placed = True
+                                $ bought_anal_lube3 = True #Affects 15_mail.rpy
                                 call thx_4_shoping #Massage that says "Thank you for shopping here!".
                                 jump desk
                             else:
@@ -344,9 +632,35 @@ label the_oddities:
                     menu:
                         "- Купить (70 золота) -":
                             if gold >= 70:
+                                hide screen points
                                 $ gold -= 70
+                                show screen points
                                 $ order_placed = True
                                 $ bought_ballgag = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 2 (180 золота) -":
+                            if gold >= 120:
+                                hide screen points
+                                $ gold -= 120
+                                show screen points
+                                $ order_placed = True
+                                $ bought_ballgag2 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 3 (180 золота) -":
+                            if gold >= 180:
+                                hide screen points
+                                $ gold -= 180
+                                show screen points
+                                $ order_placed = True
+                                $ bought_ballgag3 = True #Affects 15_mail.rpy
                                 call thx_4_shoping #Massage that says "Thank you for shopping here!".
                                 jump desk
                             else:
@@ -371,9 +685,35 @@ label the_oddities:
                     menu:
                         "- Купить (85 золота) -":
                             if gold >= 85:
+                                hide screen points
                                 $ gold -= 85
+                                show screen points
                                 $ order_placed = True
                                 $ bought_plug = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 2 (150 золота) -":
+                            if gold >= 150:
+                                hide screen points
+                                $ gold -= 150
+                                show screen points
+                                $ order_placed = True
+                                $ bought_plug2 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 3 (255 золота) -":
+                            if gold >= 255:
+                                hide screen points
+                                $ gold -= 255
+                                show screen points
+                                $ order_placed = True
+                                $ bought_plug3 = True #Affects 15_mail.rpy
                                 call thx_4_shoping #Massage that says "Thank you for shopping here!".
                                 jump desk
                             else:
@@ -398,9 +738,35 @@ label the_oddities:
                     menu:
                         "- Купить (200 золота) -":
                             if gold >= 200:
+                                hide screen points
                                 $ gold -=200
+                                show screen points
                                 $ order_placed = True
                                 $ bought_strapon = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 2 (150 золота) -":
+                            if gold >= 150:
+                                hide screen points
+                                $ gold -=150
+                                show screen points
+                                $ order_placed = True
+                                $ bought_strapon2 = True #Affects 15_mail.rpy
+                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                                jump desk
+                            else:
+                                call no_gold #Massage: m "I don't have enough gold".
+                                jump gifts_menu
+                        "- Купить 3 (350 золота) -":
+                            if gold >= 350:
+                                hide screen points
+                                $ gold -=350
+                                show screen points
+                                $ order_placed = True
+                                $ bought_strapon3 = True #Affects 15_mail.rpy
                                 call thx_4_shoping #Massage that says "Thank you for shopping here!".
                                 jump desk
                             else:

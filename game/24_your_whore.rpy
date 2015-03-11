@@ -1485,6 +1485,7 @@ label your_whore:
         $herViewHead.showQ( "body_164.png", posHead )
         her "Сэр?!"
         $herViewHead.hideQ()
+        label tttest:
         g4 "Я тебя теперь {size=+7}ТАК{/size} оттрахаю! Иди сюда!"
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         $herViewHead.showQ( "body_181.png", posHead )
@@ -2475,14 +2476,17 @@ label your_whore:
         sly1 "{size=-4}(Ага. Я не могу не уважать его...){/size}"
         m "Ау... Какие хорошие парни..."
         sly2 "{size=-4}(Да... Я надеюсь, что буду таким же, как он, когда состарюсь.){/size}"
-        g4 "Я не старик, это вы - молоные олухи!"
+        g4 "Я не старик, это вы - молодые олухи!"
         m "Хотя... в каком-то смысле, я все же стар..."
         
         if end.IsEnding(const_ENDING_STRONG_GIRL):
+            stop music fadeout 2.0
+            play music "music/Reamonn-Supergirl.mp3" fadein 1 fadeout 1 
+            $ renpy.music.set_volume(0.3) #.....установить громкость музыки на 30% 
             sly1 "И вообще, охрененно попользовали шлюху."
             sly2 "Хм, думаешь, это мы попользовали? Я уже не уверен..."
             sly1 "Ты о чем, бро?"
-            sly2 "У меня тут возникло ощущение, что это она нас поимела за наши же башли!"
+            sly2 "У меня такое чувство, что это она нас поимела за наши же башли!"
             sly1 "Да ладно, чего ты. Теперь мы сможем трахать ее каждый день!"
             sly2 "Имеешь в виду - платить охуенные бабки, чтобы доставить ей удовольствие и слушать, как она при этом стебет тебя?"
             sly2 "Давай, бро! А я пас."
@@ -2532,7 +2536,7 @@ label your_whore:
             m "Что за глупости ты говоришь. Я здесь совсем по другому поводу."
             $herViewHead.showQ( "body_178.png", posHead )
             her2 "Это не глупости, сэр! Я хочу быть уверенной, что теперь я с вами полностью расплатилась."
-            ">  Поднимает лежащие на полу бумажники \nдвумя пальчиками и относит их в урну."
+            ">  Поочередно поднимает лежащие на полу \nбумажники двумя пальчиками и \nотносит их в урну."
             $herViewHead.hideQ()
             m "Хм... Ну хорошо, хорошо, ты полностью расплатилась. Но я здесь..."
             $herViewHead.showQ( "body_179.png", posHead )
@@ -2618,6 +2622,7 @@ label your_whore:
             $herViewHead.showQ( "body_179.png", posHead )
             #$ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
             her "Счастливого пути, сэр..."
+            $MusicStop()
         else:
             her "Я... Я... Что?"
             her "Я не понимаю... Я..."
@@ -2672,6 +2677,7 @@ label your_whore:
             m "Наговорила какой-то херни про меня и убежала танцевать..."    
             m "Радуется, что открыл в ней шлюху и в этом же обвиняет."    
             m "Бабы..."    
+            stop music fadeout 2.0
 
         m "Может, мне остаться и посмотреть, как она будет танцевать после мультиоргазма?"
         m "Нет... Бал почти закончился. Это мой последний шанс свалить отсюда."
@@ -3713,23 +3719,27 @@ label test:
     $ dermo = "ch_sna defend"
     
     show screen credits_chibi
-    centered "{cps=20}{size=+5}{color=#ea91b0}-Тренер Ведьмы 1.2.2c (русская редакция)-{/color}{/size}\n\n\n\
+    centered "{cps=20}{size=+5}{color=#ea91b0}-Тренер Ведьмы 1.3 (русская редакция)-{/color}{/size}\n\n\n\
     {color=#e5e297}-\{Перевод Witch Trainer\}-{/color}\n\n\
     {color=#fff}\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16733487}Nyarkohotep{/a}\n\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=4}Nyarkohotep{/a}\n\
     {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15155170}Discordnk90{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=8041771}maniac4a{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=4472572}Rio-Violente{/a}\n\
     {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16957111}MrFrost1991{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=18304384}babaylolxz{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15281703}Borzsama{/a}\n\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=11908608}sn0rk95{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15179745}Khan32{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=2}Skazochnik{/a}\n\n\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=11908608}sn0rk95{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=3}Khan{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=2}Skazochnik{/a}\n\n\
     {color=#cbcbcb}Если кого-то забыли - простите ;){/color} \
     \n\n\n\
-    {color=#e5e297}-\{Программирование новых ивентов:\}-{/color}\n\n\
+    {color=#e5e297}-\{Программирование:\}-{/color}\n\n\
     {color=#fff}\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, eskelsama,\n\
-    {a=http://wtrus.ixbb.ru/profile.php?id=2}Skazochnik{/a}\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=68}Eskelsama{/a},\n\
+    {a=http://wtrus.ixbb.ru/profile.php?id=2}Skazochnik{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=65}i11idan{/a}\
     \n\n\n\
     {color=#e5e297}-\{Тексты новых ивентов:\}-{/color}\n\n\
     {color=#fff}\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16733487}Nyarkohotep{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=2}Skazochnik{/a}\n\n\
+    {a=http://wtrus.ixbb.ru/profile.php?id=4}Nyarkohotep{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=2}Skazochnik{/a}\n\n\
+    \n\n\n\
+    {color=#e5e297}-\{Теническая поддержка:\}-{/color}\n\n\
+    {color=#fff}\
+    {a=http://wtrus.ixbb.ru/profile.php?id=3}Khan{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=46}Dimon_Tools{/a}\n\n\
     \n\n\n\
     "
 

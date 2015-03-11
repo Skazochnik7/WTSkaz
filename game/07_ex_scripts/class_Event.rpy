@@ -30,7 +30,7 @@
             if constVals!=None:
                 for s in constVals:
                     SetArrayValue(self.Name, s, constVals[s]) 
-
+            return
 
 
 
@@ -83,7 +83,6 @@
 
             self.InitTempVar(subkey, value)
 
-#            debug.SaveString("Class="+self.Name+" subkey("+subkey+")="+str(value))
             fn=GetArrayValue(self.Name,"onChange")
             if fn!=None:
                 fn(self, subkey, oldVal, value)
@@ -102,6 +101,8 @@
                     SetStoreValue(self.Name, s,  self.defVals[s])
 # Создать для каждого параметра в хранилище поле типа self._var
             self.InitTempVars()
+            return
+
 
 
         # Произошло ли событие iStartFinishMode iDaysAgo дней назад или раньше?
@@ -138,11 +139,8 @@
 
 # Логгировать запуск ивента
         def IncPassed( self ):
-            debug.SaveString("before IncStarted")
             self.IncStarted()
-            debug.SaveString("after IncStarted")
             self.IncFinished()
-            debug.SaveString("after IncFinished")
             return
 
 
@@ -178,10 +176,12 @@
             self.IncValue("finishCount", -1)
 #            if self.GetValue("finishCount")<0: 
 #                self.SetValue("finishCount", 0) # В некоторых случаях finishCount оказывается <0, видимо, из-за неправильной обработки отката. Пока не удается поймать где это, просто блокируем такие ситуации  
+            return
 
 # Исполнить ивент
         def Run(self):
             renpy.call(self.Name)
+            return
 
 
 

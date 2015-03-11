@@ -181,6 +181,7 @@ label new_request_30_complete: # <==============================================
         m "Твоя репутация?"
         $herView.hideshowQQ( "body_189.png", pos )
         her "Ну, да... эм..."
+        m ".............."
 
 #        label test:
         menu:

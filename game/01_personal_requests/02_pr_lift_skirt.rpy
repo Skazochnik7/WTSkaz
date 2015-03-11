@@ -48,6 +48,7 @@ label new_request_02: #SHOW ME YOUR Трусики
         her ".................."
         
         
+    $ current_payout = 5 #Used when haggling about price of th favor.
 
     hide screen bld1
     $herView.hideQ( d5 )
@@ -58,9 +59,11 @@ label new_request_02: #SHOW ME YOUR Трусики
     elif whoring <= 5:
         show screen hermione_lift_skirt_normal #Hermione lifts her skirt WITH pants
         with d3
-    else: #whoring >= 6: # no panties
+    elif whoring >=6 and whoring<13:  # no panties
         show screen hermione_lift_skirt_no_panties
         with d3
+    else: 
+        pass
         
         
     #play music "music/Under-the-Radar by PhobyAk.mp3" fadein 1 fadeout 1 
@@ -72,18 +75,20 @@ label new_request_02: #SHOW ME YOUR Трусики
     elif whoring >= 3 and whoring <= 5: #LEVEL 02
         $her_head_state = 14
         her_head_main "....................."
-    elif whoring >= 6: #LEVEL 03 and up.
+    elif whoring >= 6 and whoring<13: #LEVEL 03 and up.
         $her_head_state = 18
         her_head_main ".........................."
         g4 "!!?"
+
         
         
 
     # save previous state and add pose
     # add pose with lifted skirt
-    $herView.data().saveState()
-    $herView.data().addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
-    $ pos = POS_120
+    if whoring<13:
+        $herView.data().saveState()
+        $herView.data().addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
+        $ pos = POS_120
     
     if whoring >= 0 and whoring <= 2: #LEVEL 01   <============================= Fist event.
 #        $ new_request_02_01 =  True #Hearts.
@@ -148,7 +153,7 @@ label new_request_02: #SHOW ME YOUR Трусики
                 her "Профессор, пожалуйста... Вы смущаете меня."
                 
 
-    elif whoring >= 6: #LEVEL 04 and up. <====================================================================== FINAL EVENT! (No Трусики).
+    elif whoring >= 6 and whoring<13: #LEVEL 04 and up. <====================================================================== FINAL EVENT! (No Трусики).
 #        $ new_request_02_03 =  True #Hearts.
         $SetHearts(3)
 
@@ -168,15 +173,15 @@ label new_request_02: #SHOW ME YOUR Трусики
         $herView.hideshowQQ( "body_59.png", pos )
         her "Ох, в последнее время я не очень хочу носить их..."
         menu:
-            "\"Ах ты маленькая шлюха!\"":
+            "\"Ах ты, маленькая шлюха!\"":
                 her "Хм..."
                 $herView.hideshowQQ( "body_58.png", pos )
-                her "Вероятно это так..."
+                her "Вероятно, это так..."
                 her "Могу я получить чуть больше очков за это?"
                 menu:
                     "\"Конечно!\"":
                         m "Конечно!"
-                        $ gryffindor +=10
+                        $ current_payout +=10
                         m "Десять очков \"Гриффиндору\"!" 
                         $herView.hideshowQQ( "body_60.png", pos )
                         her "Спасибо вам, сэр!"
@@ -188,14 +193,180 @@ label new_request_02: #SHOW ME YOUR Трусики
                         her "Не будьте так скупы, профессор."   
             "\"Отлично. Пять очков Гриффиндору!\"":
                 pass           
-    
-    
-    
+    elif whoring >= 13: #Хотя бы один раз дрочила
+        $herView.hideshowQQ( "body_12.png", pos )
+        her "Сэр, вы действительно позвали меня сюда из-за этих несчастных 5 очков?"
+        her "Мне жалко тратить время на такую  услугу. Это для первокурок, сэр!"
+        m "Неужели?"
+        her "\"Показать трусики за 5 очков\". Просто смешно!"
+        $herView.hideshowQQ( "body_10.png", pos )
+        her "Может, мы займемся чем-нибудь ....м-м... поинтереснее?"
+        her "В смысле, дающим больше очков?"
+        menu: 
+            "\"И чем же вы хотите заняться?\"":
+                m "И чем же вы хотите заняться, мисс Грейнджер?"
+                $herView.hideshowQQ( "body_68.png", pos )
+                her "Ну, не знаю, сэр. Есть разные варианты!"
+                jump new_personal_request
+            "\"C каких это пор вы стали выбирать себе задания, мисс Грейнджер?":
+                $ SetHearts(4)
+                m "C каких это пор вы стали выбирать себе задания, мисс Грейнджер?"
+                m "Кажется, это я здесь решаю какая услуга оплачивается."
+                m "Так вот, сегодня оплачивается показ ваших трусов!"
+                $herView.hideshowQQ( "body_202.png", pos )
+                her "Простите, сэр! Конечно."
+                m "Итак?"
+                her "Вот, профессор."
+                $herView.hideshowQQ( "body_111.png", pos )
+                "> Гермиона достает из кармана трусики и показывает их вам."
+                g4 "Что это за...?!"
+                her "Мои трусики, сэр. Показываю их вам, как вы просили."
+                m "Ты прикидываешься?"
+                $herView.hideshowQQ( "body_53.png", pos )
+                her "Сэр?"
+                m "Я рассчитываю увидеть нижнее белье, которое НА ТЕБЕ!"
+                $herView.hideshowQQ( "body_68.png", pos )
+                her "А-а! Так его нет, сэр. Я сегодня хожу без трусов."
+                m "Ну так и покажи мне это!"
+                $herView.hideshowQQ( "body_31.png", pos )
+                her "При всем уважении, сэр, это получается почти стриптиз. А значит, стоит гораздо больше, чем пять очков!"
+                $herView.hideshowQQ( "body_128.png", pos )
+                her "Так, посчитаем..."
+                her "Парни хотят увидеть киску девчонки гораздо больше, чем все остальное..."
+                her "Пусть киска - 2/3 от всего стриптиза..."
+                $herView.hideshowQQ( "body_101.png", pos )
+                her "2/3 от 35 очков это... 23 и три в периоде, сэр."
+                her "Только из уважения к вам округляем в меньшую сторону."
+                $herView.hideshowQQ( "body_53.png", pos )
+                her "Получается 20 очков! Вот, это будет справедливо."
+                menu: 
+                    "\"Нет!\"":
+                        m "Вы свободны, мисс Грейнджер!"
+                        $herView.hideshowQQ( "body_58.png", pos )
+                        her "Как скажете, сэр. В таком случае, я хотела бы получить свою оплату."
+                    "\"Хорошо, еще 20 очков. Показывай!":
+                        $current_payout+=20
+                        m "Ладно, я заплачу тебе 20 очков. Показывай!"
+                        $herView.hideshowQQ( "body_186.png", pos )
+                        her "25 очков, сэр."
+                        g4 "?!"
+                        her "20 за киску и 5 за трусики, которые я уже показала, сэр. Всего 25."
+                        m "Мисс Грейнджер, вы торгуетесь, как на рынке, вы потеряли всякий стыд!"
+                        $herView.hideshowQQ( "body_64.png", pos )
+                        her "Не потеряла, сэр. Вы же видите, как я краснею."
+                        m "Действительно... Кхм!"
+                        m "Ну и чего вы ждете? За 25 очков я хочу увидеть что-то особенное."
+#                        show screen bld1
+#                        with d3
+#                        show screen blktone
+#                        with d3
+                        
+                        # we should remove panties from hermi in this event
+                        show screen hermione_lift_skirt_no_panties
+                        with d3
+#                        $her_head_state = 18
+#                        her_head_main ".........................."
+#                        g4 "!!?"
+                        hide screen bld1
+
+                        $herView.data().delPanties()
+                        $herView.data().saveState()
+                        $herView.data().addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
+                        $ pos = POS_120
+
+#                        her "test"
+                        
+                        show screen bld1
+                        with d3
+                        show screen blktone
+                        with d3
+                        
+                        # we should remove panties from hermi in this event
+                        
+                        $herView.showQ( "body_58.png", pos )
+                        show screen ctc
+                        with d3
+                        pause
+
+
+
+
+
+
+                        her "Это достаточно особенное, сэр? Я как раз сегодня подбрилась."
+                        m "Завораживающие подробности."
+                        menu:
+                            "\"Вы не слишком смущаетесь, мисс...\"":
+                                $herView.hideshowQQ( "body_53.png", pos )
+                                m "Вы не слишком смущены, мисс Грейнджер."
+                                her "Ну, если мой директор хочет получше меня рассмотреть, должна ли я возражать?..."
+                                $herView.hideshowQQ( "body_54.png", pos )
+                                her "Тем более, что Гиффиндор получит еще [current_payout] очков."
+                            "- Продолжать смотреть ей в глаза -":
+                                $herView.hideshowQQ( "body_55.png", pos )
+                                her ".............................."
+                                her "...........................?"
+                                $herView.hideshowQQ( "body_56.png", pos )
+                                her "................................"
+                                if not end.IsEnding(const_ENDING_STRONG_GIRL) and whoring<14:
+                                    her "Сэр, мне пора идти. У меня сейчас зельеварение, а профессор Снейп очень строг к опаздывающим..."               
+                                    her "...если они из Гриффиндора."               
+                                    m "Хорошо, мисс Грейнджер."
+                                else:
+                                    $MusicStart("Supergirl",0.1)
+                                    $herView.hideshowQQ( "body_64.png", pos )
+                                    "> Гермиона нахально смотрит вам в глаза и вы чувствуете, что начинаете возбуждаться."
+                                    "> Поганка, как бы невзначай, облизывает губы."
+                                    her "Сэр, уже скоро уроки. Может, я вас по-быстрому подою и уйду заниматься?"
+                                    menu:
+                                        "\"Нет! Хватит на сегодня.\"":
+                                            $herView.hideshowQQ( "body_55.png", pos )
+                                            m "Хорошо, мисс Грейнджер."
+                                        "\"Что ты сделаешь?!...\"":
+                                            $herView.hideshowQQ( "body_53.png", pos )
+                                            g4 "Что ты сделаешь?!"
+                                            her "Подою вас. Только не говорите мне, что не знаете, как девчонки называют ЭТО."
+                                            m "Я знаю, как они называют. Но откуда это знаете ВЫ, мисс Грейнждер?!"
+                                            m "Вы ведь не интересуетесь ТАКИМИ вещами?"
+                                            $herView.hideshowQQ( "body_84.png", pos )
+                                            her "Ну, сэр, поскольку вы уже просили меня об этой услуге, мне пришлось подготовиться и провести небольшое исследование."
+                                            m "Научное, разумеется?"
+                                            her "Разумеется, сэр. И теперь я знаю много подходящих выражений: играть в руку, дурака валять, трясти мошной..."
+                                            m "Мисс Грейнджер, избавьте меня от ваших лингвистических упражнений."
+                                            $herView.hideshowQQ( "body_75.png", pos )
+                                            her "Конечно, сэр... "
+                                            $herView.hideshowQQ( "body_46.png", pos )
+                                            her "Так мы будем сегодня драконить тузика или как?"
+                                            menu:
+                                                "\"Нет!...\"":
+                                                    $herView.hideshowQQ( "body_53.png", pos )
+                                                    m "Мисс Грейнджер, подите прочь с этим вашим Тузиком!"
+                                                    her "Не могу с тузиком, сэр, потому что \"тузик\", это образное название вашег..."
+                                                    m "Неважно, мисс Грейнджер, просто достаточно на сегодня."
+                                                    her ".............................."
+                                                "Хорошо, мисс Грейнджер...":
+                                                    $herView.hideshowQQ( "body_56.png", pos )
+                                                    m "Хорошо, мисс Грейнджер, приступайте. Надеюсь, ваши ручки так же искусны, как ваш язык."
+                                                    $herView.hideshowQQ( "body_53.png", pos )
+                                                    her "Да, сэр. Плюс 45 очков?"
+                                                    m "Да, девочка, да. Плюс 45."
+                                                    $current_payout+=45
+                                                    $MusicStop()
+                                                    $ hermione_chibi_xpos = 400 #Near the desk.
+                                                    $ pos = POS_120
+                                                    hide screen ctc
+                                                    $herView.hideQQ()
+                                                      
+                                                    # load state before doing mess
+                                                    $herView.data().loadState()
+
+                                                    jump new_request_16_jerkonly
+
     stop music fadeout 4.0
     
     label request_02_done:
-    $ gryffindor +=5
-    m "Пять очков  \"Гриффиндору\", мисс Грейнджер. Отличная работа." 
+    $ gryffindor +=current_payout
+    m "[current_payout] очков  \"Гриффиндору\", мисс Грейнджер. Отличная работа." 
     pause
     
     $ hermione_chibi_xpos = 400 #Near the desk.
@@ -211,7 +382,7 @@ label new_request_02: #SHOW ME YOUR Трусики
     with fade
     
     stop music fadeout 4.0
-    
+
     her "Это все?"
     m "Да, можешь идти."
 
@@ -229,6 +400,9 @@ label new_request_02: #SHOW ME YOUR Трусики
         her "Ну, мои занятия вот-вот начнутся..."
     else:
         her "Уже довольно поздно, сэр... Мне нужно идти..."
+
+    label new_request_16_jerkonly_to_02:
+        $herView.data().loadState()
 
     
     $herView.hideQQ()

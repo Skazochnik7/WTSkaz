@@ -105,7 +105,7 @@ label new_request_03: #(Whoring = 3 - 5)
         if IsFirstRun() and whoring < 12:
             her "Эмм..."
             her " Это несколько неожиданно, сэр, но..."
-        if event.IsFinished():
+        if not IsFirstRun():
             her "Снова, сэр?"
             m "Да, снова..."
         her "Вот..."
@@ -276,10 +276,18 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                 $herView.showQQ( "body_16.png", pos )
                 her "Еще один обычный день в Хогвартсе..."
                 her "Ничего примечательного..."
-                $herView.hideshowQQ( "body_29.png", pos )
-                her "Хотя, должна признаться..."
-                her "Я была по странному свободна без белья..."
-                her "Хм..."
+                if whoring>=15:
+	                $SetHearts(4)
+                    m "Отсутствие белья больше не доставляет вам неудобств, мисс Грейндер?"
+                    $herView.hideshowQQ( "body_29.png", pos )
+                    her "Неудобства, сэр? О чем вы... Ах, это!"
+                    her "Ну мы же взрослые люди, профессор. Если девушка не носит белье, что в этом такого?..."
+                    m "Хм... Действительно."
+                else:
+	                $herView.hideshowQQ( "body_29.png", pos )
+	                her "Хотя, должна признаться..."
+	                her "Я была по-странному свободна без белья..."
+	                her "Хм..."
                 $herView.hideshowQQ( "body_45.png", pos )
                 her "Я могу получить свои трусики назад?"
                 m "Конечно..."
@@ -291,6 +299,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                     $herView.hideshowQQ( "body_45.png", pos )
                     her "И мои очки?"
                     m "Да, да..."
+
     label back_from_panties:
     $ gryffindor +=15
     m "Пятнадцать очков \"Гриффиндору\", мисс Грейнджер. Вы заслужили." 
@@ -427,7 +436,7 @@ label panties_soaked_in_cum:
     if whoring >= 9: #LEVEL 04+ (THIRD EVENT)
         $herView.hideshowQQ( "body_71.png", pos )
         her "Мои трусики..."
-        if event.IsFinished():
+        if not IsFirstRun():
             her "Они снова в чем-то скользком..."
         else:
             her "Они покрыты чем-то скользким..."

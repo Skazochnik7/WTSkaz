@@ -121,7 +121,7 @@ label door:
                     ">Гермиона очень злится на вас."
                 elif mad >=50 and mad < 60:
                     $herView.showQQ( "body_47.png", pos )
-                    ">Гермиона в гневе на вас."
+                    ">Гермиона гневается на вас."
                 elif mad >=60:
                     $herView.showQQ( "body_47.png", pos )
                     ">Гермиона ненавидит вас."
@@ -147,7 +147,7 @@ label door:
                             jump day_time_requests
                         elif mad >=20:
                             her "После того, что вы сделали?"
-                            her "Я думаю нет..."
+                            her "Я думаю - нет..."
                             jump day_time_requests
                         else:
                             jump tutoring
@@ -267,7 +267,7 @@ label door:
                             "- Бальное платье -" if "ball_dress" in gifts12 and not gave_the_dress:
                                 show screen  blktone
                                 with d3
-                                m "(Я чувствую, что не будет обратного пути, после того как я дам ей это платье...)"
+                                m "(Я чувствую, что не будет обратного пути после того, как я дам ей это платье...)"
                                 m "(Я готов сделать это?)"
                                 hide screen blktone
                                 menu:

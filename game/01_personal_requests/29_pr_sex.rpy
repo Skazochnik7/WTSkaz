@@ -30,7 +30,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
         m "Я бы хотел купить у вас сегодня..."
         $herView.hideshowQQ( "body_06.png", pos )
         her ".......?"
-        m "Как бы более мягко выразиться...?"
+        m "Как бы помягче выразиться...?"
         $herView.hideshowQQ( "body_129.png", pos )
         her "Занятся сексом, сэр?"
         m "Вообще-то -  да. Но как вы догадались...?"
@@ -963,7 +963,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
 
 
 #    $ request_29_points += 1
-    $SetHearts(SetStage(event._finishCount,1,1,1))
+    $SetHearts(GetStage(event._finishCount,1,1,1))
 
 
     hide screen bld1

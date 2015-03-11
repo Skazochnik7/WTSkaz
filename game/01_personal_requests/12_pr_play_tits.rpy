@@ -37,7 +37,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
         her "!!!"
         m "Я бы хотел её потрогать."
         $herView.hideshowQQ( "body_66.png", pos )
-        her "Профессор Дамбалдор! Вам не кажется, что это перебор?"
+        her "Профессор Дамблдор! Вам не кажется, что это перебор?"
         m "Ты думаешь?"
         her "Я не такая распутная, как эти девчонки из \"Слизерина\", ну вы знаете..."
         m "Я знаю... Ты из \"Гриффундор\"... или как там..." #<- GRYFFINDOR MISSPELLED ON PERPOUSE   I KNOW
@@ -77,6 +77,8 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
             $herView.hideshowQQ( "body_78.png", pos )
             her "Конечно, сэр..."
     
+
+    label new_request_12_mainonly:
     $herView.hideQQ()
     hide screen blktone
     with d3
@@ -601,7 +603,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
         $ whoring +=1
 
 #    $ request_12_points += 1
-    $SetHearts(SetStage(whoring,9,3,3))
+    $SetHearts(GetStage(whoring,9,3,3))
 
 
 #    if whoring >= 9 and whoring <= 11:

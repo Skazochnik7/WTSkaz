@@ -66,7 +66,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 her "....."
                 $herView.hideshowQQ( "body_87.png", pos )
                 her "45 очков...?"
-                her "Это поможет вернуть \"Гриффиндор\" в лидеры..."
+                her "Это может серьёзно помочь \"Гриффиндору\"!"
                 m "Это значит \"Да\"?"
                 $herView.hideshowQQ( "body_79.png", pos )
                 her "Да! Это значит да, сэр."
@@ -771,7 +771,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
         her "Пока вы даете мне очки..."
         m "Ну, тогда начнем. Заработай пару очков."
         
-        
+        label new_request_16_jerkonly:
         $herView.hideQ()
         hide screen bld1
         with d3
@@ -1181,7 +1181,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
         ">Гермиона прижимает ладонью ваш член и начинает очень нежно тереть его..."
         m "О да!!!"
         stop music fadeout 1.0
-        g4 "{size=-5}(Я думаю что я сейчс кончу! Нужно ли мне предупредить ее?){/size}"
+        g4 "{size=-5}(Я думаю что я сейчас кончу! Нужно ли мне предупредить ее?){/size}"
         menu:
             m "..."
             "\"(Да, лучше сказать ей об этом).\"":
@@ -1401,7 +1401,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 with fade  
     
     label done_with_handjob:
-                
+
 #    $ gryffindor += current_payout #35 Дважды суммировалось
     hide screen h_c_u
     hide screen g_c_u
@@ -1418,7 +1418,6 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     hide screen blkfade
     with d3
     
-    $herViewHead.data().delItem( 'sperm')
 
     m "Да, мисс Грейнджер. [current_payout] очков \"Гриффиндору\"." 
     $ gryffindor +=current_payout
@@ -1427,6 +1426,10 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     hide screen hermione_01_f #Hermione stands still.
     with d3
     her "Спасибо, сэр..."
+
+    $herViewHead.data().delItem( 'sperm')
+    if event.Name=="new_request_02": 
+        jump new_request_16_jerkonly_to_02
 
     if whoring <= 14:
         $ whoring +=1
@@ -1443,7 +1446,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     if IsRunNumberOrMore(3): 
         $SetHearts(3)
     else:
-        $SetHearts(SetStage(whoring,12,3,2))
+        $SetHearts(GetStage(whoring,12,3,2))
 
 
 #    $ request_16_points += 1

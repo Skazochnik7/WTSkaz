@@ -218,17 +218,17 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
     sna_head_main "Раньше она просто раздражала, но в эти дни..."
     $sna_head_state = 1
     sna_head_main "Она стала реальной угрозой..."
-    sna_head_main "Теперь эта ведьма официально мой нелюбимый ученик из всей школы..."
+    sna_head_main "Теперь эта ведьма - официально мой самый нелюбимый ученик из всей школы..."
     m "Как насчет этого мальчишки Поттера?"
     $sna_head_state = 6
     sna_head_main "Поттер? Ха! Да кто он такой!?"
     $sna_head_state = 1
     sna_head_main "Нет, я серьезно..."
-    sna_head_main "Я зайду дальше и скажу, что Поттер младший и смесь его жалкого отца" #I will go as far as to say that Potter jr. and his wretched father combined..."
-    sna_head_main "Не вызывает у меня столько злости, как эта маленькая ведьма, которая делает это все последнее время..."
+    sna_head_main "Более того, я скажу, что Поттер младший, взятый вместе со своим жалким отцом..." #I will go as far as to say that Potter jr. and his wretched father combined..."
+    sna_head_main "Не вызывает у меня столько злости, сколько эта маленькая ведьма, особенно в последнее время..."
     m "Да, конечно, мы оба знаем, что это не так..."
     $sna_head_state = 2
-    sna_head_main "Да ... Ты прав..."
+    sna_head_main "Да... Ты прав..."
     $sna_head_state = 7
     sna_head_main "Этот ублюдок Джеймс Поттер действительно бесит меня-"
     $sna_head_state = 6
@@ -250,14 +250,14 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
     $sna_head_state = 2
     sna_head_main "Я думал, мы договорились о правиле \"никаких контактов с людьми\"."
     $sna_head_state = 7
-    sna_head_main "(Хотя в последнее время я задавался вопросом является ли она вообще человеком...)"
+    sna_head_main "(Хотя в последнее время я задавался вопросом, является ли она вообще человеком...)"
     m "Я знаю ... Она была вынуждена так поступить..."
     $sna_head_state = 1
     sna_head_main "Я полагаю она была здесь..."
     sna_head_main "Что она хотела?"
     
     if jerk_off_session:
-        m "Я не уверен..."
+        m "Я не имею понятия..."
         $sna_head_state = 11
         sna_head_main "??"
         m "Я дрочил в течение всего времени, пока она говорила..."
@@ -265,7 +265,7 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
         sna_head_main "Ты..."
         sna_head_main "... делал что?"
         m "Эй, не суди меня!"
-        m "Ты не знаешь, какого это быть запертым в этой башне, как заключенный!"
+        m "Ты не знаешь, какого это - быть запертым в этой башне, как заключенный!"
         sna_head_main "Ты... т-ты..."
         $sna_head_state = 12
         sna_head_main "......"
@@ -275,14 +275,14 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
         $sna_head_state = 14
         sna_head_main "Ха-ха-ха! Ты бесподобен!"
         $sna_head_state = 9
-        sna_head_main "Все Джинны такие... удивительные нигилисты?"
-        m "Да уж... Мы бессмертные, и как правило нам плевать."
+        sna_head_main "Все Джинны - такие... удивительные нигилисты?"
+        m "Да уж... Мы - бессмертные, и, как правило, нам плевать."
         sna_head_main "Понятно..."
         $sna_head_state = 10
         sna_head_main "К сожалению, мы, простые смертные, не можем позволить себе такую роскошь..."
         
     else:
-        m "Не уверен ... Она много говорила ..."
+        m "Не уверен, что запомнил... Она много говорила ..."
         m "Что-то насчет \"гриффиндорских\" очков... и..."
         m "Э-э ... я не обращал внимания, если честно ..."
         $sna_head_state = 1
@@ -321,9 +321,9 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     sna_head_main "Глубокоуважаемый чародей..."
     m "Ну, ладно, проехали..."
     $sna_head_state = 2
-    sna_head_main "Почему одно крошечное .... влагалище, может вызвать во мне столько злости?!"
+    sna_head_main "Почему одно крошечное.... влагалище, может вызвать во мне столько злости?!"
     $sna_head_state = 4
-    sna_head_main "Я думал, что с тобой, как с моим союзником, у меня будет шанс-"
+    sna_head_main "Я думал, что с тобой как с моим союзником у меня будет шанс-"
     m "Бесит?" 
     $sna_head_state = 2
     sna_head_main "Да, не то слово..."
@@ -346,20 +346,20 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     $sna_head_state = 11
     sna_head_main "Можешь сделать это для меня?"
     m "Эм..."
-    m "Как бы я наслаждался убийством девочки..."
-    m "Но Джинны не могу убивать..."
+    m "Как бы я ни наслаждался убийством девочки..."
+    m "Джинны не могут убивать..."
     $sna_head_state = 7
     sna_head_main "Вздор!"
     m "И мы осуждаем убийц..."
     if jerk_off_session:
         $sna_head_state = 17
-        sna_head_main "В самом деле? Я думал тебе плевать..."
+        sna_head_main "В самом деле? Я думал, тебе плевать..."
         m "До определенной степени..."
         $sna_head_state = 7
         sna_head_main "............."
     $sna_head_state = 2
-    sna_head_main "Ну...значит не обращай на меня внимания..."
-    sna_head_main "Это все разговоры..."
+    sna_head_main "Ну...значит, не обращай на меня внимания..."
+    sna_head_main "Это все - разговоры..."
     sna_head_main "Я бы никогда на самом деле не навредил студенту..."
     $sna_head_state = 3
     sna_head_main "(...до поры, до времени.)"
@@ -381,7 +381,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     m "Ну, кажется ее влияние исходит из репутации..."
     $sna_head_state = 11
     sna_head_main "......................?"
-    m "Что если мы отнимем это у нее"
+    m "Что если мы отнимем это у нее?"
     $sna_head_state = 10
     sna_head_main "Это заткнет ее, я полагаю..."
     $sna_head_state = 2
@@ -460,7 +460,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
             sna_head_main "Запятнаем ее репутацию?"
             sna_head_main "Эта девушка неподкупна..."
             m "Нонсенс!"
-            m "Все что нужно, это убедить ее сделать какие-то жертвы для \"блага\""
+            m "Все, что нужно - это убедить ее сделать какие-то жертвы для \"блага\""
             $sna_head_state = 9
             sna_head_main "О, ну конечно..."
             $sna_head_state = 21
@@ -632,7 +632,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
 
 ####################################
 label wine_first:
-    m "Смотри что у меня есть!"
+    m "Смотри, что у меня есть!"
     $ s_head_xpos = 330 # x = 330,                                                                              # SNAPE
     $ s_head_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.       # SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                        # SNAPE
@@ -656,7 +656,7 @@ label wine_first:
     show screen s_head2                                                                                                 # SNAPE
     sna2 "Очень дорогая и очень раритетная вещица."
     hide screen s_head2 
-    m "В таком случае можем ли мы позволить себе?"
+    m "В таком случае, можем ли мы позволить себе?"
     $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
     show screen s_head2                                                                                                 # SNAPE
     sna "Мы, безусловно, можем!"
@@ -674,7 +674,7 @@ label wine_first:
 
 
 label wine_not_first:
-    m "Смотри что у меня есть!"
+    m "Смотри, что у меня есть!"
     hide screen s_head2    
     pause.1
     $ the_gift = "03_hp/18_store/27.png" # WINE.

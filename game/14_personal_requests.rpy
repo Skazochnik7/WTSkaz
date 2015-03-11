@@ -30,7 +30,7 @@ label new_personal_request:
 #                        jump new_request_02
 #                    "Услуга: \"Отличные трусики!\" {image=heart_03.png}" if new_request_02_03: # LEVEL 1
 #                        jump new_request_02
-                    "Услуга: [this.new_request_02._caption] {image=heart_0[this.new_request_02._heartCount].png}":
+                    "Услуга: [this.new_request_02._caption] {image=heart_4[this.new_request_02._heartCount].png}":
                         jump new_request_02
                   
                     ### LEVEL 02 ###
