@@ -17,6 +17,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
             $event.NotFinished()
             jump new_personal_request
     
+    $current_payout = 35
     if whoring <=8:
         jump too_much
 
@@ -32,7 +33,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
         $herView.hideshowQQ( "body_02.png", pos )
         her "Эм... Ладно..."
         her "Какой, сэр?"
-        m "Ну, как на счет того, чтобы ты подошла ко мне поближе и дала бы мне полапать твою грудь...?"
+        m "Ну, как насчет того, чтобы ты подошла ко мне поближе и дала полапать твою грудь...?"
         $herView.hideshowQQ( "body_31.png", pos )
         her "!!!"
         m "Я бы хотел её потрогать."
@@ -78,7 +79,6 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
             her "Конечно, сэр..."
     
 
-    label new_request_12_mainonly:
     $herView.hideQQ()
     hide screen blktone
     with d3
@@ -103,6 +103,8 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
     with d1
     hide screen blkfade
     with d5
+
+    label new_request_12_mainonly:
     stop music fadeout 1.0
     pause
     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
@@ -571,9 +573,12 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 $herView.showQQ( "187.png", pos )
                 her "Да-да... да... Спасибо, сэр."
                 $herView.hideQQ()
-                m "Ну что-ж... Достаточно со шлепками на сегодня..."
+                m "Ну что ж... Достаточно со шлепками на сегодня..."
                 jump no_smacking_tits #Jumps to usual tits molesting scene.
 
+
+    if event.Name=="new_request_04": 
+        jump new_request_04_finish
     
     $ gryffindor += current_payout #35
     hide screen h_c_u
@@ -592,12 +597,13 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
     with d3
     
     stop music fadeout 1.0
-    m "Да, мисс Грейнджер. 35 очков \"Гриффиндору\"." 
+    m "Да, мисс Грейнджер. [current_payout] очков \"Гриффиндору\"." 
     $ gryffindor +=35
     $herView.showQ( "body_13.png", pos )
     hide screen hermione_01_f #Hermione stands still.
     with d3
     her "Спасибо, Сэр..."
+
 
     if whoring <= 11: # If still of level of unlocking - 04
         $ whoring +=1
