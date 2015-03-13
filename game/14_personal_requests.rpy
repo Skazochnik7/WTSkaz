@@ -45,7 +45,7 @@ label new_personal_request:
 #                        jump new_request_03
 #                    "Услуга: \"Вор трусиков\" {image=heart_03.png}" if new_request_03_03 and daytime and imagination >= 2:
 #                        jump new_request_03
-                    "Услуга: [this.new_request_03._caption] {image=heart_0[this.new_request_03._heartCount].png}" if daytime and imagination >= 2:
+                    "Услуга: [this.new_request_03._caption] {image=heart_4[this.new_request_03._heartCount].png}" if daytime and imagination >= 2:
                         jump new_request_03
 
 
@@ -61,7 +61,7 @@ label new_personal_request:
 #                        jump new_request_04
 #                    "Услуга: \"Полапать грудь!\" {image=heart_03.png}" if new_request_04_03 and imagination >= 2: 
 #                        jump new_request_04
-                    "Услуга: [this.new_request_04._caption] {image=heart_0[this.new_request_04._heartCount].png}" if imagination >= 2:
+                    "Услуга: [this.new_request_04._caption] {image=heart_4[this.new_request_04._heartCount].png}" if imagination >= 2:
                         jump new_request_04
                         
                     "{color=#858585}--Не открытое действие-{/color} -" if imagination == 1:

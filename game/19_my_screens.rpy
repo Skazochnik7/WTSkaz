@@ -9,7 +9,7 @@ screen main_menu_01:
         yanchor "center"
         idle "03_hp/05_props/01_door.png"
         hover "03_hp/05_props/01_door_02.png"
-        action [Hide("main_menu_01"), Hide("animation_feather"), Jump("door")]
+        action [Hide("main_menu_01"), Hide("animation_feather"), Jump("door")] 
         
  
         
@@ -407,7 +407,7 @@ screen points: #House points screen.
     if mad >= 1:                                                                    # LRM ##############################################################################################
         add "03_hp/11_misc/points_02_m.png" at Position(xpos=0, ypos=1)             # LRM ##############################################################################################
     else:                                                                           # LRM ##############################################################################################
-        add "03_hp/11_misc/points_02.png" at Position(xpos=0, ypos=1)               # LRM ##############################################################################################
+        add "03_hp/11_misc/points_02_m.png" at Position(xpos=0, ypos=1)               # LRM ##############################################################################################
     hbox: #горизонтальный «контейнер», где будет изображение золота и его количество
         spacing 10 xpos 146 ypos 11#отступ для текста, если надо прямо в левом углу — убираем его        
         text "{size=-5}[slytherin]{/size}" #сумма текстом

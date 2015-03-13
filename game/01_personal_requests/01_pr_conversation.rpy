@@ -450,7 +450,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                                     $herView.hideshowQQ( "body_58.png", pos )
                                     her "В деревянной перегородке делают дырки ниже пояса, где несколько девчонок выставляют свои..."
                                     her "Прелести, сэр. И если парень угадал кто это..."
-                                    m "{size=-4}(О, да... да... я уже... УЖЕ!)*АРГХ!*{/size}"
+                                    m "{size=-4}(О, да... да... я уже... УЖЕ!){/size}{size=+2}*АРГХ!*{/size}"
                                     $herView.hideQQ()
                                     show screen white 
                                     pause.1
@@ -469,7 +469,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                                     #pause 3
                                     pause
                                     
-                                    $MusicStart("Supergirl",0.3)                                   
+                                    $MusicStart("Supergirl")                                   
                                     show screen bld1
                                     with d3
                                     $herView.showQQ( "body_64.png", pos )
@@ -509,7 +509,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                                             her "Да, сэр. Девчонки забирают его в свою спальню и он должен делать для них все."
                                             m "?!..."
                                             $herView.hideshowQQ( "body_122.png", pos )
-                                            her "АБСОЛЮТНО все, что каждая из них скажет, сэр!"
+                                            her "{size=+4}АБСОЛЮТНО{/size} все, что каждая из них скажет, сэр!"
                                             m "Вот дерьмо!"
                                             her "Профессор, по-моему у вас опять встает. Если вы хотите, продолжить, то всего 15 оч..."
                                             m "Нет!!! На сегодня достаточно!"

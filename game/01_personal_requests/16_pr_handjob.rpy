@@ -1427,9 +1427,10 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     with d3
     her "Спасибо, сэр..."
 
-    $herViewHead.data().delItem( 'sperm')
     if event.Name=="new_request_02": 
         jump new_request_16_jerkonly_to_02
+
+    $herViewHead.data().delItem( 'sperm')
 
     if whoring <= 14:
         $ whoring +=1
