@@ -52,8 +52,15 @@
                 fn(self, subkey, oldVal, value)
             return value
 
-        def IncValue(self, subkey, incVal):
-            return self.SetValue(subkey, self.GetValue(subkey)+incVal)
+        def IncValue(self, subkey, incVal, minimum=None, maximum=None):
+            __temp=self.GetValue(subkey)+incVal
+            if minimum!=None:
+                if __temp<minimum:
+                    __temp=minimum
+            if maximum!=None:
+                if __temp>maximum:
+                    __temp=maximum
+            return self.SetValue(subkey, __temp)
 
 
 

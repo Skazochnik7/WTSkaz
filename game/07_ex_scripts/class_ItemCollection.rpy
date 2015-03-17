@@ -6,13 +6,10 @@
         def __init__( self, Name, allItemCount=0):
             self.Name=Name
 
-            super(ItemCollection, self).__init__(Name=Name, Type="ItemCollection", defVals={"Counts": []} )
-
+            super(ItemCollection, self).__init__(Name=Name, Type="ItemCollection" )
+            self.defVals=dict()
             for o in itemList:
-                self.defVals["Counts"].append(allItemCount)
-
-
-
+                self.defVals.update({o.Name+"_count":allItemCount})    
 
 
 
@@ -33,54 +30,30 @@
 #                self.AddItem(s, itemSet[s])    
 #            return
 
-        def AddItem(self, itemName, count=1): # на вход сет {"имя вещи":кол-во} кол-во может быть отрицательным  
-            for i in range(len(itemList) - 1):
-                if itemList[i].Name==itemName:
-                    self.GetValue("Counts")[i]+=count
-                    if self.GetValue("Counts")[i]<0:
-                        self.GetValue("Counts")[i]=0
-            return self.GetValue("Counts")[i]
+        def AddItem(self, Name, count=1): # на вход сет {"имя вещи":кол-во} кол-во может быть отрицательным  
+            return self.IncValue(self.Count(Name),count, minimum=0)
 
-#            _count=1 if itemPars.get("count")==None else itemPars["count"]
-#            _status=0 if itemPars.get("status")==None else itemPars["status"]
-#            defVals=itemPars.get("defVals")
-
-
-#            while _count>0:
-#                self.items.append(Item(s, _status, defVals))
-#                _count-=1
-#            if _count<0:
-#                i=0
-#                while i <= len(self.items) - 1: # идем по индексам, итерировать нельзя - меняется структура массива
-#                    if self.items[i].Name==s:
-#                        del(self.items[i])
-#                    else:
-#                        i+=1
 
         def Count(self, Name):
-            for i in range(len(itemList) - 1):
-                if itemList[i].Name==Name:
-                    return self.GetValue("Counts")[i]
-            return 0
+            return self.GetValue(Name+"_count")
 
         def Clear(self):
-            for i in range(len(itemList) - 1):
-                self.GetValue("Counts")[i]=0
+            for o in self.defVals:
+                self.SetValue(o.Name, 0)
 
         def Any(self):
-            renpy.say("", "test")
-            for i in range(len(itemList) - 1):
-                if self.GetValue("Counts")[i]>0:
+            for o in self.defVals:
+                if self.GetValue(o.Name)>0:
                     return True
             return False
 
 
         def GetList(self, level=0):
-            self.list=[]
+            self.__list=[]
             for i in range(len(itemList) - 1):
-                if self.GetValue("Counts")[i]>level:
-                    self.list.append(itemList[i])
-            return self.list
+                if self.Count(itemList[i].Name)>level:
+                    self.__list.append(itemList[i])
+            return self.__list
 
         
         def First(self):

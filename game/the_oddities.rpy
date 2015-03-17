@@ -39,6 +39,7 @@ label menu_dahr_book:
 
 
 label menu_dahr_gifts:
+    "Перед меню"
     if choose==None:
         $ choose = RunMenu()
     else:
@@ -56,6 +57,8 @@ label menu_dahr_gifts:
 
 label menu_dahr_gift_order:
     $item=itsDAHR(choose.choice)
+    "После меню"
+
     if gold >= item._price:
         hide screen points
         $ gold -=item._price
