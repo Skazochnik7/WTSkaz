@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>panties_sperm</key>
+
+	<style name="default">
+		<frame>panties_sperm.png</frame>
+		<folder>misc</folder>
+		<zorder>panties+1</zorder>
+		<parent>panties</parent>
+		<actions>
+			<action event="beforeStyleChange">
+				<body>
+					<block>
+						<condition type="hasItem">
+							<actionItem>1</actionItem>
+							<name>item_panties</name>
+							<style>default</style>
+						</condition>
+					</block>
+				</body>
+				<result type="hideItem">
+					<item>item_panties_sperm</item>
+				</result>
+			</action>
+
+			<action event="afterStyleChange">
+				<body>
+					<block>
+						<condition type="hasItem">
+							<actionItem>1</actionItem>
+							<name>item_panties</name>
+							<style>default</style>
+						</condition>
+					</block>
+				</body>
+				<result type="showItem">
+					<item>item_panties_sperm</item>
+				</result>
+			</action>
+		</actions>
+	</style>
+</item>
