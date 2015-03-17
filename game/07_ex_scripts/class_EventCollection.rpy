@@ -55,7 +55,7 @@
                 if e.GetValue("scenario")==scenario:
                     prev=e
 
-            self.List.append(Event(sFullName, scenario, points, ready, done, OnChange, defVals, constVals))
+            self.List.append(RegEntry(Event(sFullName, scenario, points, ready, done, OnChange, defVals, constVals)))
 # Нужно ставить не max(self.List), а self.List[len(self.List)-1] , max почему-то выдает предыдущее значение    ?!
             if prev!=None: prev.next=self.List[len(self.List)-1]
             self.List[len(self.List)-1].prev=prev

@@ -291,8 +291,10 @@ label new_request_23_complete: # <==============================================
         elif one_out_of_three == 3: ### EVENT (C) Event level: 01.
             # HERMIONE HAVE A CUM-STAIN ON HER SHOULDER.
             m "Мисс Грейнджер, как все прошло?"
-            $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, "sperm_05.png", G_Z_FACE + 1 ) )
-            $herView.data().addItem( 'sperm_after', CharacterExItem( herView.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 2 ) )
+            #$herView.data().addItemKey( 'sperm', CharacterExItem( herView.mMiscFolder, "sperm_05.png", G_Z_FACE + 1 ) )
+            $herView.data().addItem( 'item_sperm', '05' )
+            #$herView.data().addItemKey( 'sperm_after', CharacterExItem( herView.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 2 ) )
+            $herView.data().addItem( 'item_sperm_dried' )
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
             show screen blktone
             with d3
@@ -308,7 +310,7 @@ label new_request_23_complete: # <==============================================
             show screen blkfade 
             with d3
             pause.5
-            $herView.data().delItem( 'sperm' )
+            $herView.data().delItem( 'item_sperm' )
             $herView.addFaceName( "body_120.png" )
             hide screen blkfade
             with d3
@@ -577,8 +579,10 @@ label new_request_23_complete: # <==============================================
                 stop music fadeout 1.0
                 # HERMIONE HAS CUM ON HAIR.
                 #$ aftersperm = True #Shows stains on Hermione's uniform.
-                $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, "sperm_05.png", G_Z_FACE + 1 ) )
-                $herView.data().addItem( 'sperm_after', CharacterExItem( herView.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 2 ) )
+                #$herView.data().addItemKey( 'sperm', CharacterExItem( herView.mMiscFolder, "sperm_05.png", G_Z_FACE + 1 ) )
+                $herView.data().addItem( 'item_sperm', '05' )
+                #$herView.data().addItemKey( 'sperm_after', CharacterExItem( herView.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 2 ) )
+                $herView.data().addItem( 'item_sperm_dried' )
 
                 show screen blktone
                 with d3

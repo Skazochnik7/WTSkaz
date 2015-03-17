@@ -80,6 +80,61 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         
         her "*Хлюп* *Чавк!* *Хлюп!*"
         m "Даа..."
+        if (event.Name=="new_request_08") and end.IsEnding(const_ENDING_STRONG_GIRL):
+            $MusicStart("Supergirl",0.3)                                   
+            $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
+            $ hermione_chibi_ypos = 10
+            $ h_c_u_pic = "hand_ani"
+            show screen h_c_u
+            hide screen g_c_u
+            with d3
+            g4 "О, твою мать, что ты делаешь?!... Ты мне сейчас оторвешь яйца, девчонка!"
+            $ posHead = gMakePos( 390, 235 )
+            $herViewHead.showQ( "body_100.png", posHead )
+            her2 "Я доставляю себе удовольствие, сэр, как вы велели."
+            $herViewHead.hideQ()
+            m "Что за удовольствие такое? АУЧ!"
+            $herViewHead.showQ( "body_47.png", posHead )
+            her2 "О, для меня держать вас за яйца это очень больше удовольствие, сэр!"
+            $herViewHead.hideQ()
+            m "Отпусти!"
+            $herViewHead.showQ( "body_47.png", posHead )
+            her "Наказание уже закончилось, профессор?"
+            $herViewHead.hideQ()
+            g4 "Ты забываешься, девчонка! Ты хоть понимаешь с кем разговариваешь?!"
+            $herViewHead.showQ( "body_206.png", posHead )
+            her2 "Я разговариваю с парнем, чьи яйца у меня в руке..."
+            her2 "Ох, профессор, когда я понимаю, что у моего любимого факультета вычтут очки..."
+            her2 "У меня невольно все начинает трястись... и сжиматься тоже."
+            $herViewHead.hideQ()
+            g4 "О-о-о-о! Перестань, перестань сейчас же!"
+            $herViewHead.showQ( "body_47.png", posHead )
+            her2 "От расстройства я готова просто рвать и оторва... и потом метать, сэр!"
+            $herViewHead.hideQ()
+            g4 "Отпусти, мать твою! Я не собирался вычитать у тебя очки, просто хотел напугать, чтобы ты навсегда запомнила!"
+            $current_payout=0
+            $herViewHead.showQ( "body_68.png", posHead )
+            her "О, сэр... Вы так добры... А я подумала..."
+            $herViewHead.hideQ()
+            "> Гермиона перестает сжимать ваши яйца и начинает нежно их массировать."
+            $herViewHead.showQ( "body_122.png", posHead )
+            her2 "Пожалуйста, простите меня, я просто очень расстроилась." 
+            her2 "Я сейчас все исправлю, вы получите лучший минет в жизни!"
+            $herViewHead.hideQ()
+            m "Сомневаюсь! Ты - мелкая..."
+            hide screen h_c_u   # SUCKING
+            show screen g_c_u # SUCKING
+            with d3
+            her "*Хлюп* *Чавк!* *Хлюп!*"
+            m "О, да-а..."
+            her "*Чавк!* *Чавк!* *Хлюп!*"
+            $herViewHead.showQ( "body_55.png", posHead )
+            her "Ну как вам, сэр?"
+            $herViewHead.hideQ()
+            m "Для начала неплохо, девочка..."
+            $MusicStop()
+            play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+
         m "Теперь, попробуй глубже..."
         her "*Хлюп!* *Кулдык!* *Кулдык!*"
         m "Даа, мне это нравится, хорошо."
@@ -100,7 +155,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 with d3
                 
                 $herViewHead.showQ( "body_118.png", posHead )
-                her "Ох, хорошо..."
+                her "О... да..."
                 her "Мы остаемся активны, но..."
                 $herViewHead.hideQ()
                 hide screen h_c_u   # SUCKING
@@ -217,7 +272,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 $herViewHead.showQ( "body_117.png", posHead )
                 her2 "Хотя сначала они хотели отправить меня в \"Богус\", школу-интернат."
                 $herViewHead.showQ( "body_74.png", posHead )
-                her2 "Потребовалось некоторое усилие, чтобы убедить их в том, что \"Хогвартс\" является респектабельным учреждением..."
+                her2 "Потребовалось некоторое усилие, чтобы убедить их в том, что \"Хогвартс\" - респектабельное учреждение..."
                 $herViewHead.hideQ()
                 m "Да, действительно респектабельное учреждение."
                 m "Положи член обратно в рот, девочка."
@@ -491,7 +546,8 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 with d3
                 
                 #Cumming.
-                $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, 'sperm_04.png', G_Z_FACE + 1 ) )
+                #$herViewHead.data().addItemKey( 'sperm', CharacterExItem( herViewHead.mMiscFolder, 'sperm_04.png', G_Z_FACE + 1 ) )
+                $herViewHead.data().addItem( 'item_sperm', '04' )
 
                 $herViewHead.showQ( "body_48.png", posHead )
                 her "Профессор..."
@@ -543,7 +599,8 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 $herViewHead.showQ( "body_44.png", posHead )
                 her "Могу я получить оплату?"
                 $herViewHead.hideQ()
-                $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 2 ) )
+                #$herViewHead.data().addItemKey( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 2 ) )
+                $herViewHead.data().addItem( 'item_sperm_dried' )
 
         
         
@@ -1074,7 +1131,8 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 with d3
                 
                 #Cumming.
-                $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, 'sperm_04.png', G_Z_FACE + 1 ) )
+                #$herViewHead.data().addItemKey( 'sperm', CharacterExItem( herViewHead.mMiscFolder, 'sperm_04.png', G_Z_FACE + 1 ) )
+                $herViewHead.data().addItem( 'item_sperm', '04' )
                 $herViewHead.showQ( "body_48.png", posHead )
                 her "Профессор..."
                 $herViewHead.hideQ()
@@ -1102,8 +1160,9 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 with d3
                 stop music fadeout 1.0 
                 ">Минутой позже."
-                $herViewHead.data().delItem( 'sperm' )
-                $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                $herViewHead.data().delItem( 'item_sperm' )
+                #$herViewHead.data().addItemKey( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+                $herViewHead.data().addItem( 'item_sperm_dried' )
                 $herViewHead.showQ( "body_122.png", posHead )
                 her "Мне кажется, вам нравится, сэр?"
                 $herViewHead.hideQ()
@@ -1118,7 +1177,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
             
         
     
-    $herViewHead.data().delItem( 'sperm' )
+    $herViewHead.data().delItem( 'item_sperm' )
     $ gryffindor += current_payout #35
     hide screen h_c_u
     hide screen g_c_u
@@ -1135,6 +1194,8 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
     hide screen blkfade
     with d3
     
+    if event.Name=="new_request_08":
+        jump new_request_08_finish
     
     m "Да, мисс Грейнджер. 55 очков \"Гриффиндору\"." 
     $ gryffindor +=55

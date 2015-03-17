@@ -87,7 +87,8 @@ label new_request_02: #SHOW ME YOUR Трусики
     # add pose with lifted skirt
     if whoring<13:
         $herView.data().saveState()
-        $herView.data().addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
+        #$herView.data().addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
+        $herView.data().addItem( 'item_pose_lifted_skirt' )
         $ pos = POS_120
     
     if whoring >= 0 and whoring <= 2: #LEVEL 01   <============================= Fist event.
@@ -256,6 +257,7 @@ label new_request_02: #SHOW ME YOUR Трусики
                         her "Не потеряла, сэр. Вы же видите, как я краснею."
                         m "Действительно... Кхм!"
                         m "Ну и чего вы ждете? За 25 очков я хочу увидеть что-то особенное."
+                        $herView.hideQQ()
 #                        show screen bld1
 #                        with d3
 #                        show screen blktone
@@ -271,7 +273,8 @@ label new_request_02: #SHOW ME YOUR Трусики
 
                         $herView.data().delPanties()
 #                        $herView.data().saveState()
-                        $herView.data().addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
+                        #$herView.data().addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
+                        $herView.data().addItem( 'item_pose_lifted_skirt' )
                         $ pos = POS_120
 
 #                        her "test"

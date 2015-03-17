@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>hair</key>
+
+	<subitems>
+		<item>item_hair_basic_sub_shadow</item>
+		<item>item_hair_basic_sub_front</item>
+	</subitems>
+
+	<style name="default">
+		<frame>hair_normal_1.png</frame>
+		<folder>hair</folder>
+		<visible>1</visible>
+		<zorder>hair_back</zorder>
+		<parent>head</parent>
+	</style>
+</item>

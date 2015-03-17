@@ -1,23 +1,46 @@
-﻿
+﻿# тут инитим всякую фигню для персонажей и xml загрузки
+init python:
+    # declare variables
+    global Hermione_FB
+    global Hermione_OB
+    global Hermione_IB
+    global Hermione_SB
+
+    # initing variables
+    Hermione_FB = CharacterExFolderStorage()
+    Hermione_OB = CharacterExOrderStorage()
+    Hermione_IB = CharacterExItemStorage()
+    Hermione_SB = CharacterExSetStorage()
+
+    # initing creator
+    global Hermione_ItemCreator
+    Hermione_ItemCreator = CharacterExItemCreator( Hermione_IB, Hermione_SB, WTXmlLinker.gerHermioneLinkerKey() )
+
+    # fill variables
+    Hermione_FB.read( '00_ex/00_hermione_hxml/folders.hxml' )
+    Hermione_OB.read( '00_ex/00_hermione_hxml/zorders.hxml' )
+    Hermione_IB.read( '00_ex/00_hermione_hxml/items/', Hermione_FB, Hermione_OB )
+    Hermione_SB.read( '00_ex/00_hermione_hxml/sets/', Hermione_IB )
 
 
 init:
-
     # Scenario initialization
     python:
         global arr
+        global entries
 
     $arr=dict()
+    $entries=[]
 
     python:
         global this
         this=This()
         global event
 
-#    python:
-#        global debug
-#    $debug=Debug()
-#    $debug.SaveHeader()
+    python:
+        global debug
+    $debug=Debug()
+    $debug.SaveHeader()
 
 
 
@@ -71,7 +94,7 @@ init:
 # Следующее событие (первый раз трахнуться с одноклассниками) НЕ помещено в главный сценарий. 
 # Т.е. может быть не выполнено никогда, а последующие в списке события все равно могут выполняться
 # Однако в списке событий предшествует последующим - сделано для того, чтобы если событие может выполняться, оно имело приоритет перед оставшимися
-# Если флаг установить (устанавливается при вызове request_30 ветка 1), запустится разово 
+# Если флаг request_30_a установить (устанавливается при вызове request_30 ветка 1), запустится разово 
         this.Where({"DAY"},"new_request_30_complete_a").AddStep("new_request_30_complete_a", ready = lambda e: request_30_a) 
 
         this.Where({"DAY"})     .AddStep("want_to_rule",             ready = lambda e: whoring >= 15) # Запустится, как только whoring превысит значение
@@ -150,11 +173,84 @@ init:
             exec("this."+e.Name+"=this.GetCall('"+e.Name+"')")
  
 
+        itemDefaults=[
+        ("candy", "Чупа-чупс", 20, "03_hp/18_store/11.png", 
+            "Чупа-чупс. Взрослая конфета для детей или детская конфета для взрослых?", "gifts", None ),
+        ("chocolate", "Шоколад", 40, "03_hp/18_store/12.png", 
+            "Рецепт этого восхитительного молочного шоколада держится в секрете. (По слухам, он содержит сушеных фей).", "gifts", None ),
+        ("owl", "Плюшевая сова", 35, "03_hp/18_store/22.png", 
+            "Игрушечная сова, набитая перьями настоящей совы. Она такая мягкая!", "gifts", None ),
+        ("beer", "Сливочное пиво", 50, "03_hp/18_store/21.png", 
+            "Девушки не могут устоять перед этим вкусом. Поэтому всегда пользуются большим спросом среди мальчиков. \n {size=-4}. Предупреждение: употребление алкоголя не допускается несовершеннолетними, без присмотра взрослых {/size}", "gifts", None ),
+        ("mag1", "Обучающий журнал", 30, "03_hp/18_store/17.png", 
+            "Образовательный журнал. \nВерный спутник каждого изгоя.", "gifts", None ),
+        ("mag2", "Женский журнал", 45, "03_hp/18_store/19.png", 
+            "Женский журнал. \nВсе крутые девчонки читают их.", "gifts", None ),
+        ("mag3", "Журнал для взрослых", 60, "03_hp/18_store/11.png", 
+            "Ваш парень превращается в хорошего мальчика? \nВаш муж больше не использует вас по назначению?\nВсе, что вы ждали о отношениях, любви и сексе. В основном о сексе.", "gifts", None ),
+        ("mag4", "Порно журнал", 80, "03_hp/18_store/20.png", 
+            "Дайте их своей девушке, чтобы проверить ее, своей жене, чтобы постыдить ее и вашей дочери, чтобы избежать \"разговоров\".", "gifts", None ),
+        ("condoms", "Упаковка презервативов", 50, "03_hp/18_store/10.png", 
+            "\"Презервативы Розовый единорог\". \nПокажите всем однорогое существо!\n{size=-4}Может содержать слюну реального единорога.{/size}", "gifts", None ),
+        ("vibrator", "Вибратор", 55, "03_hp/18_store/13.png", 
+            "Великолепный, волшебный усиленный вибратор изготовлен из лозы дерева, с ядром жилы дракона.", "gifts", None ),
+        ("lubricant", "Банка лубриканта", 60, "03_hp/18_store/09.png", 
+            "Банка анальной смазки. Купите это любимому человеку - покажите, что вы заботитесь о нем/ней.", "gifts", None ),
+        ("ballgag", "Кляп и наручники", 70, "03_hp/18_store/15.png", 
+            "Кляп и манжеты, превратите свою вторую половинку в вашего сокамерника.", "gifts", None ),
+        ("plug", "Анальная пробка", 85, "03_hp/18_store/16.png", 
+            "Анальные пробки украшены настоящими хвостами. \n Разные размеры, чтобы удовлетворить экспертов, практиков и начинающих.", "gifts", None ),
+        ("strapon", "Страпон \"Фестрал\"", 200, "03_hp/18_store/14.png", 
+            "Cтрапон \"Фестрал\".\nКогда вы его увидите - потеряете дар речи.", "gifts", None )
+
+        ]
+
+
+        itemList=[]
+        for t in itemDefaults:
+            (s, _caption, _price, _img, _description, _block, _constVals)=t
+            SetArrayValue(s, "caption", _caption) 
+            SetArrayValue(s, "price", _price) 
+            SetArrayValue(s, "description", _description) 
+            SetArrayValue(s, "img", _img) 
+            SetArrayValue(s, "block", _block) 
+            SetArrayValue(s, "constVals", _constVals) 
+            itemList.append(RegEntry(Item(s, 0, {'klop':_price})))
+#            item=Item(s, 0, None)
+#            item._caption=_caption
+#            item._price=_price
+#            item._description=_description
+#            item._img=_img
+#            item._block=_block
+#            itemList.append(item)
+
+        global itsDAHR
+        itsDAHR=RegEntry(ItemCollection("DAHR",1))
+
+        global itsOWL
+        itsOWL=RegEntry(ItemCollection("OWL",0))
+
+        global hero
+        hero=RegEntry(Person("hero", "Джинн"))
+        global hermi
+        hermi=RegEntry(Person("hermi", "Гермиона", {"whoring": 0, "mad": 0}))
+
+
+
+# Коснтанты лямбы, используются в меню
+        fn0=lambda o: True
+        fn3=lambda o: whoring>=3
+
+
 # Включить обработку перехода по меткам (label). 
     $onLabelExecute=lambda s: OnLabelExecute(s)
 
 #    $renpy.game.onJumpExecute=lambda name, target,expression: OnJumpExecute(name, target,expression)
     
+
+
+
+
 
     
     $ commentaries = False # In the GALLERY turns commentaries ON and OFF. 
@@ -4837,7 +4933,7 @@ label start:
         # dialogue-face view
         global herViewHead     
         
-    $ herData = CharacterExData()
+    $ herData = CharacterExData( WTXmlLinker.gerHermioneLinkerKey() )
     $ herData.clearState()
     
     $ herView = CharacterExView( 5, her, 'hermione' )
@@ -4848,14 +4944,18 @@ label start:
     $ herViewHead.attach( herData )
 
     # lets use saved stuff system, so now fill hermione items
-    $ herView.data().addLegs( CharacterExItem( herView.mBodyFolder, "legs_universal.png", G_Z_LEGS ) )
-    $ herView.data().addPanties( CharacterExItem( herView.mClothesFolder, "panties_normal.png", G_Z_PANTIES ) )
-    $ herView.data().addSkirt( CharacterExItem( herView.mClothesFolder, "skirt_normal.png", G_Z_SKIRT ) )
-    $ herView.data().addHands( CharacterExItem( herView.mBodyFolder, "hands_universal.png", G_Z_HANDS ) )
-    $ herView.data().addBody( CharacterExItem( herView.mBodyFolder, "body.png", G_Z_BODY ) )
-    $ herView.data().addTits( CharacterExItem( herView.mBodyFolder, "tits.png", G_Z_TITS ) )
-    $ herView.data().addDress( CharacterExItemDress( herView.mClothesFolder, "dress_normal.png", G_Z_DRESS ) )
-    $ herView.data().addFace( CharacterExItem( herView.mFaceFolder, "body_01.png", G_Z_FACE ) )
+    #$ herView.data().addLegs( CharacterExItem( herView.mBodyFolder, "legs_universal.png", G_Z_LEGS ) )
+    #$ herView.data().addPanties( CharacterExItem( herView.mClothesFolder, "panties_normal.png", G_Z_PANTIES ) )
+    #$ herView.data().addSkirt( CharacterExItem( herView.mClothesFolder, "skirt_normal.png", G_Z_SKIRT ) )
+    #$ herView.data().addHands( CharacterExItem( herView.mBodyFolder, "hands_universal.png", G_Z_HANDS ) )
+    #$ herView.data().addBody( CharacterExItem( herView.mBodyFolder, "body.png", G_Z_BODY ) )
+    #$ herView.data().addTits( CharacterExItem( herView.mBodyFolder, "tits.png", G_Z_TITS ) )
+    #$ herView.data().addDress( CharacterExItemDress( herView.mClothesFolder, "dress_normal.png", G_Z_DRESS ) )
+    #$ herView.data().addFace( CharacterExItem( herView.mFaceFolder, "body_01.png", G_Z_FACE ) )
+
+    # test new stuff! load all this with two sets - body and clothes!
+    $herView.data().addItemSet( 'hermione_body' )
+    $herView.data().addItemSet( 'hermione_start_clothes' )
 
     # Ending class initialization
     call Ending_constants

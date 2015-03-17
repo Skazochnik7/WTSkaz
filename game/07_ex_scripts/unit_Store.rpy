@@ -3,15 +3,7 @@ label after_load:
 # Код ниже инициализирует переменные хранилища, если они не были инициализированы (например, написан новый шаг сценария)
 # Этот же код вызываем из блока start для начальной инициализации переменных
     python:
-        if hasattr(renpy.store,"elog"):
-            this.InitStart()
-            if event!=None: # Состояние переменной объекта event после чтения сохранения может отличаться от полей объекта this.GetCall(event.Name). 
-                for e in this.List: # Нужно сопоставить их, иначе присвоение полей одного из объектов непредсказуемо влмияет на поля другого
-                    if e.Name==event.Name:
-                        event=this.GetCall(event.Name)
-                        break
-        else:
-            this.InitTempVars()
+        InitEntriesFields()
     return
 
 label start_elog:    
@@ -25,6 +17,7 @@ label start_elog:
     $elog=dict()
     $labelHistory=[]
     $jumpHistory=[]
+#    $entries=[]
     return
 
 init -999 python:
@@ -99,4 +92,43 @@ init -999 python:
 
 #    def IsLabelCountEq(s1, s2):
 #        return labelHistory.count(s1)==labelHistory.count(s2)
+
+
+
+    def RegEntry(entry):
+        entry.handle=len(entries)
+        entries.append(entry)
+        return entry
+
+    def InitEntryField(entry, subkey):
+        exec "entries["+str(entry.handle)+"]._"+subkey+"=entries["+str(entry.handle)+"].GetValue('"+subkey+"')"
+        return            
+
+    def InitEntriesFields():
+        if hasattr(renpy.store,"elog"): # Если уже инициализирован elog
+#            this.InitStart()
+            if hasattr(renpy.store,"event"):
+                if renpy.store.event!=None: # Состояние переменной объекта event после чтения сохранения может отличаться от полей объекта this.GetCall(event.Name). 
+                    for e in this.List: # Нужно сопоставить их, иначе присвоение полей одного из объектов непредсказуемо влияет на поля другого
+                        if e.Name==renpy.store.event.Name:
+                            renpy.store.event=this.GetCall(renpy.store.event.Name)
+                            break
+
+            for o in entries:   # Если значение не заполнено (т.е. разрабдотчик ввел новое или новый объект появился) - заполнить значениями по умолчанию
+                for subkey in o.defVals:
+                    if not IsStoreSubKey(o.Name, subkey):
+                        SetStoreValue(o.Name, subkey,  o.defVals[subkey])
+#        else:
+        for o in entries: # для всех объектов типа наследников Entry создать поля типа  объект._имяпеременной
+            __list=GetStoreAllSubKeys(o.Name)
+            for subkey in __list:
+                InitEntryField(o, subkey)
+            __list=GetArrayAllSubKeys(o.Name)
+            for subkey in __list:
+# Нельзя создавать переменные для лямбда- RenPy их пытается записать при сохранении и возвращает ошибку               
+                if not subkey in ["ready", "done", "onChange"]:
+                    InitEntryField(o, subkey)
+
+
+
 

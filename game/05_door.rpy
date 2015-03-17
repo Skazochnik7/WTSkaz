@@ -309,22 +309,22 @@ label door:
                             pass
                         menu:
                             
-                            "- Надеть значок -" if (herView.data().getItem( G_N_BADGE )==None) and  badge_01 == 7: #not ba_01 and badge_01 == 7:
+                            "- Надеть значок -" if (herView.data().getItemKey( G_N_BADGE )==None) and  badge_01 == 7: #not ba_01 and badge_01 == 7:
                                 jump badge_put
                             
-                            "- Снять значок -" if (herView.data().getItem( G_N_BADGE )!=None) and  badge_01 == 7: #ba_01 and badge_01 == 7:
+                            "- Снять значок -" if (herView.data().getItemKey( G_N_BADGE )!=None) and  badge_01 == 7: #ba_01 and badge_01 == 7:
                                 jump badge_take
                             
-                            "- Надеть колготки -" if (herView.data().getItem( G_N_NETS )==None) and  nets == 7: #not ne_01 and nets == 7: # Не перевел
+                            "- Надеть колготки -" if (herView.data().getItemKey( G_N_NETS )==None) and  nets == 7: #not ne_01 and nets == 7: # Не перевел
                                 jump nets_put
                             
-                            "- Снять колготки -" if (herView.data().getItem( G_N_NETS )!=None) and  nets == 7: #ne_01 and nets == 7:
+                            "- Снять колготки -" if (herView.data().getItemKey( G_N_NETS )!=None) and  nets == 7: #ne_01 and nets == 7:
                                 jump nets_take
                             
-                            "- Надеть мини-юбку -" if herView.data().checkItem( G_N_SKIRT, 'skirt_normal.png' ) and gave_miniskirt: #not legs_02 and gave_miniskirt: #Turns True when Hermione has the miniskirt.:
+                            "- Надеть мини-юбку -" if herView.data().checkItemKeyStyle( G_N_SKIRT, 'default' ) and gave_miniskirt: #not legs_02 and gave_miniskirt: #Turns True when Hermione has the miniskirt.:
                                 jump mini_on #28_gifts.rpy
 
-                            "- Надеть длинную юбку -" if herView.data().checkItem( G_N_SKIRT, 'skirt_short.png' ) and gave_miniskirt: #legs_02 and gave_miniskirt: #Turns True when Hermione has the miniskirt.
+                            "- Надеть длинную юбку -" if herView.data().checkItemKeyStyle( G_N_SKIRT, 'short' ) and gave_miniskirt: #legs_02 and gave_miniskirt: #Turns True when Hermione has the miniskirt.
                                 jump mini_off #28_gifts.rpy
                             
                            

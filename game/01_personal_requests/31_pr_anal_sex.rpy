@@ -15,6 +15,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
             $event.NotFinished()
             jump new_personal_request
  
+    label new_request_31_start:
     $ pos = POS_140
     $ posHead = gMakePos( 390, 340 )
     $ herView.data().saveState()
@@ -451,7 +452,8 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 show screen ctc
                 pause
                 hide screen ctc
-                $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_05.png", G_Z_FACE + 1 ) )
+                #$herViewHead.data().addItemKey( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_05.png", G_Z_FACE + 1 ) )
+                $herViewHead.data().addItem( 'item_sperm', '05' )
                 $herViewHead.showQ( "body_144.png", posHead )
                 her "ААА! Я ЧУВСТВУЮ КАК ВЫ МЕНЯ ЗАПОЛНЯЕТЕ !{image=textheart.png}{image=textheart.png}{image=textheart.png}"
                 $herViewHead.hideQ()
@@ -584,7 +586,8 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 show screen ctc
                 pause
                 hide screen ctc
-                $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_05.png", G_Z_FACE + 1 ) )
+                #$herViewHead.data().addItemKey( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_05.png", G_Z_FACE + 1 ) )
+                $herViewHead.data().addItem( 'item_sperm', '05' )
                 $herViewHead.showQ( "body_133.png", posHead )
                 her2 "Аа...{image=textheart.png}{image=textheart.png}{image=textheart.png}"
 
@@ -913,7 +916,8 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 show screen ctc
                 pause
                 hide screen ctc
-                $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_05.png", G_Z_FACE + 1 ) )
+                #$herViewHead.data().addItemKey( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_05.png", G_Z_FACE + 1 ) )
+                $herViewHead.data().addItem( 'item_sperm', '05' )
                 $herViewHead.showQ( "body_133.png", posHead )
                 her "Ааа! Вы кончаете! {image=textheart.png}{image=textheart.png}{image=textheart.png}"
                 $herViewHead.hideQ()
@@ -982,9 +986,10 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
     
     stop music fadeout 1.0
     
-    if herViewHead.data().getItem( 'sperm' ) != None:
-        $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
-    $herViewHead.data().delItem( 'sperm' )
+    if herViewHead.data().getItem( 'item_sperm' ) != None:
+        $herViewHead.data().addItem( 'item_sperm_dried' )
+        #$herViewHead.data().addItemKey( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+    $herViewHead.data().delItem( 'item_sperm' )
     $ gryffindor += current_payout #35
     hide screen h_c_u
     hide screen g_c_u
@@ -1001,6 +1006,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
     hide screen blkfade
     with d3
  
+    jump new_request_08_finish
     m "Да, мисс Грейнджер, 90 очков \"Гриффиндору\"." 
     $ gryffindor +=90
     $herView.showQ( "body_141.png", pos )

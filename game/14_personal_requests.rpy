@@ -90,7 +90,7 @@ label new_personal_request:
 #                        jump new_request_08
 #                    "Услуга: \"Покажи их мне!\" {image=heart_03.png}" if new_request_08_03 and imagination >= 3: 
 #                        jump new_request_08 
-                    "Услуга: [this.new_request_08._caption] {image=heart_0[this.new_request_08._heartCount].png}" if imagination >= 3:
+                    "Услуга: [this.new_request_08._caption] {image=heart_4[this.new_request_08._heartCount].png}" if imagination >= 3:
                         jump new_request_08
  
 

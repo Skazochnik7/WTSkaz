@@ -183,14 +183,16 @@ label new_request_24_complete:  # <=============================================
             her "Я, одна из лучших учениц в этой школе!"
             her "Одна из самых популярных..."
             
-            $herView.data().addItem( 'tears', CharacterExItem( herView.mMiscFolder, "tears_01.png", G_Z_FACE + 1 ) )
+            #$herView.data().addItemKey( 'tears', CharacterExItem( herView.mMiscFolder, "tears_01.png", G_Z_FACE + 1 ) )
+            $herView.data().addItem( 'item_tears', '01' )
             
             $herView.hideshowQQ( "body_47.png", pos )
             her "И он меня отшил?"
             her "Да как он посмел меня так оскорбить?!"
             m "Так ты оскорблена, потому что тот парень отказался положить свой член тебе в рот?"
             $herView.hideQQ()
-            $herView.data().addItem( 'tears', CharacterExItem( herView.mMiscFolder, "tears_02.png", G_Z_FACE + 1 ) )
+            #$herView.data().addItemKey( 'tears', CharacterExItem( herView.mMiscFolder, "tears_02.png", G_Z_FACE + 1 ) )
+            $herView.data().addItem( 'item_tears', '02' )
             $herView.showQQ( "body_47.png", pos )
             her "А вы бы не оскорбились, сэр?"
             m "Думаю, я бы довольно легко это пережил..."
@@ -201,7 +203,8 @@ label new_request_24_complete:  # <=============================================
             her "При всем уважении, сэр, вам не понять..."
             m "Ну, в любом случае, я не могу заплатить тебе за это."
             $herView.hideQQ()
-            $herView.data().addItem( 'tears', CharacterExItem( herView.mMiscFolder, "tears_01.png", G_Z_FACE + 1 ) )
+            #$herView.data().addItemKey( 'tears', CharacterExItem( herView.mMiscFolder, "tears_01.png", G_Z_FACE + 1 ) )
+            $herView.data().addItem( 'item_tears', '01' )
             $herView.showQQ( "body_79.png", pos )
             her "Конечно... Я и не ждала этого, сэр."
             her "Я провалила свое задание и не заслуживаю никакой награды..."
@@ -214,7 +217,7 @@ label new_request_24_complete:  # <=============================================
             m "Хм... Тогда, на сегодня все."
             her "Спокойной ночи, сэр."
             $herView.hideQQ()
-            $herView.data().delItem('tears')
+            $herView.data().delItem( 'item_tears' )
             
             $ request_24_points += 1 
             $ request_24 = False 
@@ -250,9 +253,12 @@ label new_request_24_complete:  # <=============================================
         if one_out_of_three == 1: ### EVENT (A)
             stop music fadeout 1.0
             # HERMIONE ALL MESSED UP, WITH RUNNING MASCARA.
-            $herView.data().addItem( 'tears', CharacterExItem( herView.mMiscFolder, "tears_03.png", G_Z_FACE + 1 ) )
-            $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, "sperm_05.png", G_Z_FACE + 2 ) )
-            $herView.data().addItem( 'sperm_after', CharacterExItem( herView.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 3 ) )
+            #$herView.data().addItemKey( 'tears', CharacterExItem( herView.mMiscFolder, "tears_03.png", G_Z_FACE + 1 ) )
+            $herView.data().addItem( 'item_tears', '03' )
+            #$herView.data().addItemKey( 'sperm', CharacterExItem( herView.mMiscFolder, "sperm_05.png", G_Z_FACE + 2 ) )
+            $herView.data().addItem( 'item_sperm', '05' )
+            #$herView.data().addItemKey( 'sperm_after', CharacterExItem( herView.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 3 ) )
+            $herView.data().addItem( 'item_sperm_dried' )
 
             show screen blktone
             with d3
@@ -312,7 +318,8 @@ label new_request_24_complete:  # <=============================================
             label suked_off_them_both:
                 pass
             stop music fadeout 1.0
-            $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, "sperm_06.png", G_Z_FACE + 1 ) )
+            #$herView.data().addItemKey( 'sperm', CharacterExItem( herView.mMiscFolder, "sperm_06.png", G_Z_FACE + 1 ) )
+            $herView.data().addItem( 'item_sperm', '06' )
             show screen blktone
             with d3
             $herView.hideshowQQ( "body_78.png", pos )

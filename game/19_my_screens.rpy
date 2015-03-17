@@ -27,6 +27,7 @@ screen main_menu_01:
         imagebutton: # THE PACKAGE
                 xpos 260 
                 ypos 235
+                focus_mask True
                 xanchor "center"
                 yanchor "center"
                 idle "03_hp/05_props/owl_06.png" 
@@ -52,7 +53,7 @@ screen main_menu_01:
     imagebutton: # PHOENIX
         xpos 400 
         ypos 225
-        #focus_mask True
+        focus_mask True
         xanchor "center"
         yanchor "center"
         idle "pho_01" 
@@ -65,7 +66,7 @@ screen main_menu_01:
     imagebutton: # FIREPLACE
         xpos 553 
         ypos 277
-        #focus_mask True
+        focus_mask True
         xanchor "center"
         yanchor "center"
         idle "03_hp/05_props/03_fireplace_02.png" 
@@ -407,7 +408,7 @@ screen points: #House points screen.
     if mad >= 1:                                                                    # LRM ##############################################################################################
         add "03_hp/11_misc/points_02_m.png" at Position(xpos=0, ypos=1)             # LRM ##############################################################################################
     else:                                                                           # LRM ##############################################################################################
-        add "03_hp/11_misc/points_02_m.png" at Position(xpos=0, ypos=1)               # LRM ##############################################################################################
+        add "03_hp/11_misc/points_02.png" at Position(xpos=0, ypos=1)               # LRM ##############################################################################################
     hbox: #горизонтальный «контейнер», где будет изображение золота и его количество
         spacing 10 xpos 146 ypos 11#отступ для текста, если надо прямо в левом углу — убираем его        
         text "{size=-5}[slytherin]{/size}" #сумма текстом

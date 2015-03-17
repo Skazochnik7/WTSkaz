@@ -7,8 +7,8 @@ label menu_dahr_book:
         for e in this.List:
             if e.GetValue("block")==_block: # Нужно ставить GetValue("block")  а не _block - у ивента такого объекта может не быть
                 choose.AddItem("- Книга: "+e._caption+" - "+("{image=check_08.png}" if e._status>-2 else "{image=check_07.png}"), 
-                    "menu_dahre_book_2", True, e)
-        choose.AddItem("- Ничего -", "the_oddities", True, event)
+                    "menu_dahre_book_2", True, e.Name)
+        choose.AddItem("- Ничего -", "the_oddities", True, "")
 
     $ choose.Show()
 
@@ -35,6 +35,42 @@ label menu_dahr_book:
             "- Ничего -":
                 hide screen gift
                 jump expression _label #education_menu
+
+
+
+label menu_dahr_gifts:
+    if choose==None:
+        $ choose = RunMenu()
+    else:
+        $choose.Clear()
+    python:
+        for o in itsDAHR():
+            _temp={"candy": fn0, "chocolate": fn0, "owl": fn0, "beer": fn3, "mag1": fn0, "mag2": fn0, "mag3": fn0, "mag4": fn3,
+         "condoms": fn3, "vibrator": fn3, "lubricant": fn0,"ballgag": fn0, "plug": fn3, "strapon": fn3}[o.Name](o)
+            if o._block=="gifts": 
+                choose.AddItem("- "+o._caption+" - ("+str(o._price)+" гал.) -" if _temp else "{color=#858585}- Товар закончился -{/color}", 
+                    "menu_dahr_gift_order" if _temp else "out" , True, o.Name)
+        choose.AddItem("- Ничего -", "the_oddities", True, "")
+
+    $ choose.Show()
+
+label menu_dahr_gift_order:
+    $item=itsDAHR(choose.choice)
+    if gold >= item._price:
+        hide screen points
+        $ gold -=item._price
+        show screen points
+        $ order_placed = True
+        $itsOWL.AddItem(item.Name)
+#        $ bought_candy = True #Affects 15_mail.rpy
+        call thx_4_shoping #Massage that says "Thank you for shopping here!".
+        jump desk
+    else:
+        call no_gold #Massage: m "I don't have enough gold".
+        jump gifts_menu
+
+
+
 
 
 
@@ -77,6 +113,7 @@ label the_oddities:
 
 
         "- Подарки -":
+            jump menu_dahr_gifts
             label gifts_menu:
             menu:
                 #dahr "Gifts that you can gift to that special someone."

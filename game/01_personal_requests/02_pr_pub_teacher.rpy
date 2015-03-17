@@ -337,8 +337,10 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                                     with d5
                                     $herView.data().saveState()
                                     # add pose with lifted skirt and authograph
-                                    $herView.data().addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
-                                    $herView.data().addItem( 'autograph', CharacterExItem( herView.mMiscFolder, 'autograph.png', G_Z_LEGS + 1 ) )
+                                    #$herView.data().addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
+                                    $herView.data().addItem( 'item_pose_lifted_skirt' )
+                                    #$herView.data().addItemKey( 'autograph', CharacterExItem( herView.mMiscFolder, 'autograph.png', G_Z_LEGS + 1 ) )
+                                    $herView.data().addItem( 'item_autograph' )
                                     
                                     $herView.showQ( "body_51.png", pos )
                                     hide screen ctc

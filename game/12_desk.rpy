@@ -1,6 +1,5 @@
 label menu_reading_book:
     $choose=None
-    $RunMenu.event=None
     if choose==None:
         $ choose = RunMenu()
     else:
@@ -9,8 +8,8 @@ label menu_reading_book:
         for e in this.List:
             if e.GetValue("block")==_block and e._status>=0: # Нужно ставить GetValue("block")  а не _block - у ивента такого объекта может не быть
                 choose.AddItem("- Книга: "+e._caption+" - "+("{image=check_08.png}" if e.IsDone() else ""), 
-                    "reading_book_done" if e.IsDone() else "menu_reading_book_2", True, e)
-        choose.AddItem("- Ничего -", "books_list", True, event)
+                    "reading_book_done" if e.IsDone() else "menu_reading_book_2", True, e.Name)
+        choose.AddItem("- Ничего -", "books_list", True, "")
 
     $ choose.Show()
 

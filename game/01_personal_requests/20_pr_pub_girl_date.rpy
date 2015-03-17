@@ -617,7 +617,8 @@ label new_request_20_complete: # <==============================================
             $ pos.xpos = 500
 
             # use CharacterExItemPoseParade to hide all items
-            $ herView.data().addPose( CharacterExItemPoseParade( herView.mPoseFolder, "hermione_bugged_branch.png", G_Z_FACE + 5 ) )
+            #$ herView.data().addPose( CharacterExItemPoseParade( herView.mPoseFolder, "hermione_bugged_branch.png", G_Z_FACE + 5 ) )
+            $ herView.data().addItem( 'item_pose_bug' )
             $herView.showQ( "body_63.png", pos )
             stop music
             her "Я выяснила, что ессссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссс"

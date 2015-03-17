@@ -226,55 +226,108 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
             her_head_main "Вы будете только смотреть, сэр?"
             m "Конечно..."
             if whoring >= 15:
+                $herView.hideshowQQ( "body_09.png", pos )
                 her "Сэр, мы оба знаем, что вам интереснее, не просто смотреть, а делать кое-что еще..."
                 m "Может быть это {size=+4}ВАМ{/size} интересно, мисс Грейнджер, чтобы я делал кое-что еще?"
+                $herView.hideshowQQ( "body_17.png", pos )
                 her "Сэр, не будем играть в игры. Мне нужны очки для факультета, вам нужны сексуальные услуги."
                 her "Я не получаю от этого никакого удовольствия, но если это нужно вам, то готова пойти на большее, чтобы заработать."
                 m "Вы теперь подрабатываете этим, мисс Грейнджер?"
+                $herView.hideshowQQ( "body_47.png", pos )
                 her "Что?.. СЭР! Я говорю о том, чтобы заработать очки!"
                 m "Ох, простите, а я было подумал..."
+                $herView.hideshowQQ( "body_51.png", pos )
                 her "Вы подумали неправильно! Я никогда не опущусь до этого!"
                 m "Ну хорошо, мисс, если речь идет о том, чтобы заработать побольше очков..."
+                $herView.hideshowQQ( "body_47.png", pos )
                 her "Только об этом и идет, сэр!"
                 m "Тогда давайте займемся вашей попкой."
                 if whoring<21:
-                    her "Попкой, сэр? Но... Я не имела в виду..." 
+                    $herView.hideshowQQ( "body_95.png", pos )
+                    her "Попкой, сэр? В смысле, вы потрогаете..." 
+                    m "В смысле, я потрогаю ее своим членом..."
+                    $herView.hideshowQQ( "body_48.png", pos )
+                    her "Но, сэр! Что вы такое... Я не имела в виду..." 
                     m "Не имели в виду? А за что по-вашему я должен давать вам больше очков? За рождественскую песенку?"
+                    $herView.hideshowQQ( "body_32.png", pos )
                     her "Но я не готова, это слишком!"
                     m "Зачем же тогда вы мне морочите голову, мисс, рассказывая, что хотите заработать побольше очков?"
+                    $herView.hideshowQQ( "body_120.png", pos )
                     her "Я хочу, сэр, но не такой ценой!"
                     m "То есть, вы теперь указываете мне, девушка, за что вам платить?"
                     m "Вы знаете, мисс, я неравнодушен к Гриффиндору..." 
                     m "Но из-за ваших капризов начинаю серьезно подумывать, не ошибся ли я в вас?"
                     m "Может, мне позвать кого-нибудь из слизеринок? Наверняка, они более преданны факультету."
-                    m "Да! Как я сразу не сообразил. Мисс Грейнджер, будьте любезны, пригласите профессоры Снейпа." 
+                    m "Да! Отличная идея. Мисс Грейнджер, будьте любезны, пригласите профессоры Снейпа." 
                     m "Наверняка он порекомендует мне {size=+4}ДОСТОЙНУЮ{/size} кандидатку."
+                    $herView.hideshowQQ( "body_117.png", pos )
                     her "Профессор, пожалуйста..."
                     m "Что такое, мисс Грейнджер? Вы и этого не в состоянии сделать?"
-                    her "Профессор, я ошиблась... я была неправа,... пожалуйста, простите меня."
+                    $herView.hideshowQQ( "body_67.png", pos )
+                    her "Профессор, я ошиблась... я была неправа... пожалуйста, простите меня."
                     m "И что будет завтра?"
                     m "Вам опять будет мало очков?"
-                    her "Нет, сэр, я поняла. Все справедливо."
+                    her "Нет, сэр, я поняла."
+                    $herView.hideshowQQ( "body_55.png", pos )
                     her "Если вы хотите посмотреть на мои сиськи, значит я должна показать вам сиськи и не торговаться из-за очков."
                     m "..............................."
                     her "............................."
-                    m "Вы понимаете, мисс, что вы провинились и должны быть наказаны?"
-                    her "На-наверное..."
-                    m "То есть, вы не уверены?"
-                    her "Нет-нет, я уверена..."
-                    m "Я не стану мучать вас сложными наказаниями. Вам просто придется отсосать у меня, это вы любите..."
-                    her "Ничего подобного..."
-                    m "Мне послышалось?"
-                    her "Да, сэр, люблю."
-                    m "Полностью, будьте добры!"
-                    her "Я люблю отсасывать, сэр."
-                    m "Замечательно. Но чтобы наказание не превратилось для вас в сплошное удовольствие, в этот раз я не стану платить вам"
-                    her "Да, сэр."
-                    m "А наоброт вычту у гриффинодор"
+                    menu:
+                        "Простить":
+                            m "Похоже, вы не понимаете, мисс Грейнждер, что я подбираю вам посильные задания."
+                            m "Вы должны быть благодарны."
+                            $herView.hideshowQQ( "body_29.png", pos )
+                            her "Я благодарна, сэр, правда."
+                            m "И в благодарность вы сегодня показываете свои сиськи бесплатно. Не так ли?"
+                            $herView.hideshowQQ( "body_103.png", pos )
+                            her "Эмм... Д-да, сэр."
+                            $current_payout=0
+                        "Наказать":
+                            $herView.hideshowQQ( "body_61.png", pos )
+                            m "Вы понимаете, мисс, что провинились и должны быть наказаны?"
+                            her "На-наверное..."
+                            m "То есть, вы не уверены?"
+                            $herView.hideshowQQ( "body_103.png", pos )
+                            her "Нет, я уверена... видимо."
+                            m "Я не стану мучать вас сложными наказаниями, вы просто отсосете у меня. Это вы любите..."
+                            $herView.hideshowQQ( "body_47.png", pos )
+                            her "Ничего подобного..."
+                            m "Мне послышалось? Или стоит выбрать наказание серьезнее?"
+                            $herView.hideshowQQ( "body_34.png", pos )
+                            her "Эмм... Хорошо, сэр. Да, я люблю."
+                            m "Скажите полностью, будьте добры!"
+                            $herView.hideshowQQ( "body_47.png", pos )
+                            her "Я люблю... отсасывать, сэр."
+                            m "Замечательно. Но чтобы наказание не превратилось для вас в сплошное удовольствие, в этот раз я не стану платить вам."
+                            her "Да, сэр."
+                            m "А наоборот, вы заплатите мне за доставленное удовольствие - я вычту стоимость услуги из очков Гриффиндора."
+                            $herView.hideshowQQ( "body_130.png", pos )
+                            her "Но, сэр!"
+                            m "Вы считаете это несправедливым, юная леди?"
+                            $herView.hideshowQQ( "body_47.png", pos )
+                            her "....................................."
+                            m "Я не слышу!"
+                            $herView.hideshowQQ( "body_120.png", pos )
+                            her "Ну, если вы так говорите..."
+                            m "Отлично! Тогда доставьте себе удовольствие."
+                            her "Вы имеете в виду, я должна?..."
+                            g9 "Должны-должны, мисс. Получите удовольствие, отсасывая у меня."
+                            $current_payout=-55
+                            jump blowjob_jumping
+                else:
+                    her "Спасибо, сэр."
+                    menu:
+                        "Передумать":
+                            m "Впрочем, я передумал, мисс Грейнджер." 
+                            m "Сегодня мы ограничимся просмотром ваших сисек!"
+                            $herView.hideshowQQ( "body_50.png", pos )
 
-
-                    .ы опять Профессор, я ошиблась... я была неправа,... пожалуйста, простите меня."
-                    m "Вы понимаете, мисс, что я "
+                            her "................"
+                            m "Приступим."
+                        "\"Тогда приступим!\"":
+                            m "Ну что ж..."
+                            $current_payout=95
+                            jump new_request_31_start
             hide screen blktone
             with d3
             hide screen bld1
@@ -1022,6 +1075,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
     hide screen blkfade
     with d3
 
+    label new_request_08_finish:
     $ gryffindor +=current_payout
     m " \"Гриффиндор\" получает [current_payout] очков!"
     stop music fadeout 10.0
@@ -1116,23 +1170,26 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
 
 label addTitsPose:
     # add tits pose!
-    $herView.data().addPose( CharacterExItemPoseShowTits( herView.mPoseFolder, 'pose_dress_up.png', G_Z_POSE ) )
+    #$herView.data().addPose( CharacterExItemPoseShowTits( herView.mPoseFolder, 'pose_dress_up.png', G_Z_POSE ) )
+    $herView.data().addItem( 'item_pose_show_tits' )
     return
     
 label addSperm:
     # add sperm item!
-    $herView.data().addItem( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00.png', G_Z_FACE + 1 ) )
+    #$herView.data().addItemKey( 'sperm', CharacterExItem( herView.mMiscFolder, 'sperm_00.png', G_Z_FACE + 1 ) )
+    $herView.data().addItem( 'item_sperm', '00' )
     return
 
 label delSperm:
     # add sperm item!
-    $herView.data().delItem( 'sperm' )
+    $herView.data().delItem( 'item_sperm' )
     return
     
 label addAfterSperm:
     # del pose and add aftersperm
     $herView.data().delPose()
-    $herView.data().addItem( 'sperm_after', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+    #$herView.data().addItemKey( 'sperm_after', CharacterExItem( herView.mMiscFolder, 'sperm_00_after.png', G_Z_FACE + 1 ) )
+    $herView.data().addItem( 'item_sperm_dried' )
     return
     
 label loadState_and_could_not_flirt:

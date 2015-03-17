@@ -497,7 +497,8 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 stop music fadeout 1.0
                 pause 
                         
-                $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                #$herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                $herViewHead.data().addItem( 'item_sperm_dried' )
                 $ posHead = gMakePos( 390, 300 )
                 $herViewHead.showQ( "body_119.png", posHead )
                 her2 "......................."
@@ -636,7 +637,8 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 show screen bld1
                 with d3
                         
-                $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                #$herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                $herViewHead.data().addItem( 'item_sperm_dried' )
                 $ posHead = gMakePos( 390, 300 )
                 $herViewHead.showQ( "body_119.png", posHead )
                 her2 "......................."
@@ -645,7 +647,8 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 pause
                 $ g_c_u_pic = "03_hp/08_animation_02/15_cum_21.png"
                 
-                $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_03_blowjob.png", G_Z_FACE + 1 ) )
+                #$herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_03_blowjob.png", G_Z_FACE + 1 ) )
+                $herViewHead.data().addItem( 'item_sperm', '03' )
                
                 $ pos.xpos = 130
                 $herView.showQ( "body_19.png", pos )
@@ -686,7 +689,8 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                         $herView.hideshowQQ( "body_79.png", pos )
                         her "...Я хочу получить свои очки."
                         $herView.hideQQ()
-                        $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                        #$herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                        $herViewHead.data().addItem( 'item_sperm_dried' )
                     else:
                         $herView.hideshowQQ( "body_69.png", pos )
                         her "Моя форма испорчена!"
@@ -699,7 +703,8 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                         $herView.hideshowQQ( "body_79.png", pos )
                         her "...Я хочу получить свои очки."
                         $herView.hideQQ()
-                        $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                        #$herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                        $herViewHead.data().addItem( 'item_sperm_dried' )
         #her "Могу я получить свои очки?"
 
     elif IsRunNumber(2): # SECOND EVENT <============================================================== EVENT 02
@@ -1228,7 +1233,8 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 show screen ctc
                 pause 
                         
-                $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                #$herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                $herViewHead.data().addItem( 'item_sperm_dried' )
                 $ posHead = gMakePos( 390, 300 )
 
                 
@@ -1353,7 +1359,8 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 show screen bld1
                 with d3
                         
-                $herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                #$herViewHead.data().addItem( 'sperm_after', CharacterExItem( herViewHead.mMiscFolder, "sperm_00_after.png", G_Z_FACE + 1 ) )
+                $herViewHead.data().addItem( 'item_sperm_dried' )
                 $ posHead = gMakePos( 390, 300 )
                 $herViewHead.showQ( "body_119.png", posHead )
                 her2 "......................."
@@ -1362,7 +1369,8 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 pause
                 $ g_c_u_pic = "03_hp/08_animation_02/15_cum_21.png"
                 
-                $herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_03_blowjob.png", G_Z_FACE + 1 ) )
+                #$herViewHead.data().addItem( 'sperm', CharacterExItem( herViewHead.mMiscFolder, "sperm_03_blowjob.png", G_Z_FACE + 1 ) )
+                $herViewHead.data().addItem( 'item_sperm', '03' )
                 $ pos.xpos = 130
                 $herView.showQ( "body_19.png", pos, d5 )
                 pause
@@ -1430,7 +1438,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     if event.Name=="new_request_02": 
         jump new_request_16_jerkonly_to_02
 
-    $herViewHead.data().delItem( 'sperm')
+    $herViewHead.data().delItem( 'item_sperm' )
 
     if whoring <= 14:
         $ whoring +=1

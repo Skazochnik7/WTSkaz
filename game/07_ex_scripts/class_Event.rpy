@@ -1,10 +1,9 @@
 ﻿init -997 python:
   
 # Класс - обертка для словаря ивентов
-    class Event(store.object):
+    class Event(Entry):
         # constructor - Event initializing
         def __init__( self, sFullName, scenario, points, ready, done, OnChange, defVals, constVals):
-
             alter=None
             caption=None
             self.Name=sFullName
@@ -14,10 +13,16 @@
                 alter=sp[1]
                 if len(sp)>2: caption=sp[2] 
 
+            super(Event, self).__init__(Name=self.Name, Type="Event", defVals=defVals )
+
             self.defVals = {"startCount": 0, "finishCount": 0, "start1": -1, "start2": -1, "finish1": -1, "finish2": -1, "bakfinish1": -1, "bakfinish2": -1,
                             "whored": -1, "bakwhored": -1}        # Это словарь доп. аргументов по умолчанию
             if defVals!=None:
                 self.defVals.update(defVals)
+
+
+
+
 
             SetArrayValue(self.Name, "ready", ready) 
             SetArrayValue(self.Name, "done", done) 
@@ -26,82 +31,9 @@
             SetArrayValue(self.Name, "caption", caption) 
             SetArrayValue(self.Name, "points", points) 
             SetArrayValue(self.Name, "scenario", scenario) 
-
-            if constVals!=None:
-                for s in constVals:
-                    SetArrayValue(self.Name, s, constVals[s]) 
             return
 
 
-
-# Альтернатива лямбдам- 
-# exec("s_reading_lvl+=1") или 
-#    gs = "(lambda x: x * 2 )(%d)"
-#    renpy.say( her, "%d" % eval( gs % 2 ) )
-
-        def InitTempVar(self, subkey, value):
-#            SetArrayValue(self.Name, "temp", value) 
-#            exec "this.GetCall('"+self.Name+"')._"+subkey+"=GetArrayValue('"+self.Name+"','temp')"
-
-            self._temp=value
-            exec "this.GetCall('"+self.Name+"')._"+subkey+"=this.GetCall('"+self.Name+"')._temp"
-            return            
-
-        def InitTempVars(self):
-            __list=GetStoreAllSubKeys(self.Name)
-            for subkey in __list:
-                self.InitTempVar(subkey, self.GetValue(subkey))
-            __list=GetArrayAllSubKeys(self.Name)
-            for subkey in __list:
-# Нельзя создавать переменные для лямбда- RenPy их пытается записать при сохранении и возвращает ошибку               
-                if not subkey in ["ready", "done", "onChange"]:
-                    self.InitTempVar(subkey, self.GetValue(subkey))
-            return            
-
-
-
-
-        def GetValue(self, subkey):
-            if subkey in self.defVals:
-                return GetStoreValue(self.Name, subkey)
-            else:
-                return GetArrayValue(self.Name, subkey) 
-
-        def SetValue(self, subkey, value):
-            if subkey in self.defVals:
-                if IsStoreSubKey(self.Name, subkey):
-                    oldVal=GetStoreValue(self.Name, subkey)
-                else:
-                    oldVal=None
-                SetStoreValue(self.Name, subkey, value)
-            else:
-                if IsArraySubKey(self.Name, subkey):
-                    oldVal=GetArrayValue(self.Name, subkey)
-                else:
-                    oldVal=None
-                SetArrayValue(self.Name, subkey, value)
-
-            self.InitTempVar(subkey, value)
-
-            fn=GetArrayValue(self.Name,"onChange")
-            if fn!=None:
-                fn(self, subkey, oldVal, value)
-            return value
-
-        def IncValue(self, subkey, incVal):
-#            self.res=self.GetValue(subkey)+incVal
-            return self.SetValue(subkey, self.GetValue(subkey)+incVal)
-
-
-
-        def InitStart(self):
-# Не инициализированы еще глобальные переменные и не заполнены значения. Работать напрямую с хранилищем
-            for s in self.defVals:
-                if not IsStoreSubKey(self.Name, s):
-                    SetStoreValue(self.Name, s,  self.defVals[s])
-# Создать для каждого параметра в хранилище поле типа self._var
-            self.InitTempVars()
-            return
 
 
 

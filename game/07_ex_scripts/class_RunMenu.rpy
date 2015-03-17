@@ -2,11 +2,11 @@ init python:
     
    
     class MenuItem(store.object):
-        def __init__(self, caption, label, isActive, evn):            
+        def __init__(self, caption, label, isActive, objName):            
             self.caption = caption
             self.label = label
             self.isActive = isActive
-            self.event=evn
+            self.objName=objName
     
     class RunMenu(store.object):
 #        chose = None
@@ -19,6 +19,7 @@ init python:
             who=None,
             items=None):
     
+            self.choice=None
             self.Clear()
             if items!=None:
                 for i in items:
@@ -41,8 +42,10 @@ init python:
             if self.text:
                 renpy.say(self.who, self.text, interact=False)
             renpy.call_screen(RunMenu.screen)
-            
+          
 
+        def SetCurrentMenuItem(self, sName):
+            self.choice=sName
 
 
 
@@ -62,7 +65,7 @@ screen display:
                 if i.isActive:
 
                     button:
-                        action [Function(this, sName=i.event.Name), Jump(i.label) ]
+                        action [Function(this, sName=i.objName), Function(RunMenu.current.SetCurrentMenuItem, sName=i.objName),  Jump(i.label) ]
                         style "menu_choice_button"
 
                         text i.caption style "menu_choice"

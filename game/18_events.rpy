@@ -46,7 +46,7 @@ label event_00:
     show screen ctc
     with Dissolve(.3)
     pause
-    sna "Альбус...есть минута?"
+    who2 "Альбус...есть минута?"
     hide screen snape_main
     hide screen ctc
     
@@ -68,7 +68,7 @@ label event_00:
 #    hide screen emo
 #    show screen snape_main
 #    with d3
-#    sna "I will be with you in a moment, мисс Грейнджер..."
+#    sna "I will be with you in a moment, miss Granger..."
 #    hide screen snape_main
 #    with d3
 #    show screen emo
@@ -87,73 +87,73 @@ label event_00:
             $ s_sprite = "03_hp/10_snape_main/snape_04.png"
             show screen snape_main
             with d3
-            sna "Но ведь не постоянно?"                            
+            who2 "Но ведь не постоянно?"                            
         "\"Конечно. Что там?\"":
             pass                       
         "\"И Альбус тоже.\"":
             $ s_sprite = "03_hp/10_snape_main/snape_05.png"
             show screen snape_main
             with d3
-            sna "Что?"
+            who2 "Что?"
             $ s_sprite = "03_hp/10_snape_main/snape_04.png"
-            sna "Альбус, я не в настроении для ваших... издевательств."
+            who2 "Альбус, я не в настроении для ваших... издевательств."
         "\"Отведи меня к своему боссу.\"":
             $ s_sprite = "03_hp/10_snape_main/snape_01.png"
             show screen snape_main
             with d3
-            sna "Что?"
+            who2 "Что?"
             hide screen snape_main
             with d3
             $ s_sprite = "03_hp/10_snape_main/snape_01.png"
             show screen snape_main
             with d3
-            sna "Хм...?"
-            sna "Вы имели в виду министра магии?"
+            who2 "Хм...?"
+            who2 "Вы имели в виду министра магии?"
             hide screen snape_main
             with d3
             $ s_sprite = "03_hp/10_snape_main/snape_03.png"
             show screen snape_main
             with d3
-            sna "Я хотел бы избежать каких-либо дел с этими бюрократами..."
+            who2 "Я хотел бы избежать каких-либо дел с этими бюрократами..."
             m "Ладно, проехали... Как я могу помочь тебе?"
             
     $ s_sprite = "03_hp/10_snape_main/snape_06.png"
-    sna "У меня есть важный разговор к вам..."
-    sna "Я думаю, нам стоит пересмотреть политику допуска." 
+    who2 "У меня есть важный разговор к вам..."
+    who2 "Я думаю, нам стоит пересмотреть политику допуска." 
     hide screen snape_main
     with d2
     m "................?"
     $ s_sprite = "03_hp/10_snape_main/snape_03.png"
     show screen snape_main
     with d2
-    sna "Половина моих...так называемых \"учеников\" не что иное, как раздражающие личинки, которые портят мне жизнь день ото дня"
+    who2 "Половина моих...так называемых \"учеников\" не что иное, как раздражающие личинки, которые портят мне жизнь день ото дня"
     hide screen snape_main
     with d2
     m "................"
     $ s_sprite = "03_hp/10_snape_main/snape_07.png"
     show screen snape_main
-    sna "Большинство из них из \"Гриффиндора\", конечно же..." 
+    who2 "Большинство из них из \"Гриффиндора\", конечно же..." 
     hide screen snape_main
     with d2
     m "......?"
     show screen snape_main
-    sna "Несчастные Уизли, шумная Грейнджер и, конечно же, герой всех несовершеннолетних правонарушителей...."
+    who2 "Несчастные Уизли, шумная Грейнджер и, конечно же, герой всех несовершеннолетних правонарушителей...."
     $ s_sprite = "03_hp/10_snape_main/snape_08.png"
-    sna "{size=+3}Мальчишка Поттер!{/size}"
+    who2 "{size=+3}Мальчишка Поттер!{/size}"
     $ s_sprite = "03_hp/10_snape_main/snape_01.png"
-    sna "Запомни мои слова, Альбус. \"Гриффиндор\" станет погибелью для это школы!"
+    who2 "Запомни мои слова, Альбус. \"Гриффиндор\" станет погибелью для это школы!"
     hide screen snape_main
     m "...................."
     show screen snape_main
-    sna "Многие из них не представляют абсолютно ничего!"
+    who2 "Многие из них не представляют абсолютно ничего!"
     $ s_sprite = "03_hp/10_snape_main/snape_06.png"
-    sna "И если этого не достаточно, то вот: они распространили разные слухи о преподавателях!"
-    sna "В частности и о вашем покорном слуге..."
+    who2 "И если этого не достаточно, то вот: они распространили разные слухи о преподавателях!"
+    who2 "В частности и о вашем покорном слуге..."
     hide screen snape_main
     m "......................"
     $ s_sprite = "03_hp/10_snape_main/snape_05.png"
     show screen snape_main
-    sna "Вы ведь не верите в эти слухи, так, Альбус?"
+    who2 "Вы ведь не верите в эти слухи, так, Альбус?"
     hide screen snape_main
     menu:
         m ".............."
@@ -165,15 +165,15 @@ label event_00:
         "\"Не бывает дыма без огня.\"":
             $ s_sprite = "03_hp/10_snape_main/snape_10.png"
             show screen snape_main
-            sna "Альбус!? Вы серьезно?!"
-            sna "Я вам говорю, это все грязная ложь!"
+            who2 "Альбус!? Вы серьезно?!"
+            who2 "Я вам говорю, это все грязная ложь!"
     hide screen snape_main
     m "........................."
     $ s_sprite = "03_hp/10_snape_main/snape_04.png"
     show screen snape_main
-    sna "Ну, эти жалкие дети достали меня сегодня, я думаю, что следует отдохнуть от всего сегодня."
+    who2 "Ну, эти жалкие дети достали меня сегодня, я думаю, что следует отдохнуть от всего сегодня."
     $ s_sprite = "03_hp/10_snape_main/snape_09.png"
-    sna "................"
+    who2 "................"
     
     stop music fadeout 1.0
     
@@ -218,7 +218,7 @@ label event_00:
 #    who2 "No! You sniveling maggot! we hate that name!"
 #    who2 "We want to be called Lord Voldemort!"
 #    who2 "Forgive me, master..."
-#    m "Эм... mr. Lord- -"
+#    m "Ehm... mr. Lord--"
 #    with hpunch
 #    who2 "No! No! \"lord\" is not master's name, \"lord\" is master's title, you idiot!"
 #    who2 "Watch your tone, worm! That is an immortal being before you."
@@ -2275,7 +2275,8 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
     show screen bld1
     with Dissolve(.3)
     
-    $ herView.data().addItem( 'robe', CharacterExItemRobe( herView.mClothesFolder, "robe.png", G_Z_DRESS + 1, 'body' ) )
+    #$ herView.data().addItemKey( 'robe', CharacterExItemRobe( herView.mClothesFolder, "robe.png", G_Z_DRESS + 1, 'body' ) )
+    $herView.data().addItem( 'item_robe_study' )
     
     $ pos = POS_370
     $herView.showQ( "body_09.png", pos )
@@ -2380,7 +2381,7 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
     with Dissolve(.3)
     pause.5
     
-    $ herView.data().delItem( 'robe' )
+    $ herView.data().delItem( 'item_robe_study' )
     
     $ event11_happened = True #Allows next event to start.
     $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
