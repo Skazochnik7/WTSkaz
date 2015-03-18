@@ -3,13 +3,17 @@
 # Класс - обертка для словаря ивентов
     class ItemCollection(Entry):
         # constructor - Event initializing
-        def __init__( self, Name, allItemCount=0):
+        def __init__( self, Name, fillingSet=None):
             self.Name=Name
 
             super(ItemCollection, self).__init__(Name=Name, Type="ItemCollection" )
             self.defVals=dict()
             for o in itemList:
-                self.defVals.update({o.Name+"_count":allItemCount})    
+                self.defVals.update({o.Name+"_count":0})
+                if fillingSet!=None:
+                    if o.GetValue("block") in fillingSet:
+                        self.defVals.update({o.Name+"_count":fillingSet[o.GetValue("block")]})
+
 
 
 
@@ -31,19 +35,31 @@
 #            return
 
         def AddItem(self, Name, count=1): # на вход сет {"имя вещи":кол-во} кол-во может быть отрицательным  
-            return self.IncValue(self.Count(Name),count, minimum=0)
+            return self.IncValue(Name+"_count",count, minimum=0)
 
 
         def Count(self, Name):
-            return self.GetValue(Name+"_count")
+#            if isinstance( a, int ):
+#            if isinstance( a, basestring ):
+                return self.GetValue(Name+"_count")
 
-        def Clear(self):
-            for o in self.defVals:
-                self.SetValue(o.Name, 0)
+
+
+
+
+        def Clear(self, Name=None):
+            self.Fill(Name,0)
+
+        def Fill(self, Name=None, value=1):
+            for o in itemList: # Item по имени
+                if Name==None or o.GetValue("block")==Name:
+                    self.SetValue(o.Name+"_count",value)
+
+
 
         def Any(self):
             for o in self.defVals:
-                if self.GetValue(o.Name)>0:
+                if self.GetValue(o)>0:
                     return True
             return False
 

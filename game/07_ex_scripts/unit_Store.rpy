@@ -22,6 +22,10 @@ label start_elog:
 
 init -999 python:
 
+    import sys
+    reload(sys)
+    sys.setdefaultencoding('utf8')
+
 
 # Функции для работы со словарем elog - сохранятеся
     def IsStoreKey(key):
@@ -33,6 +37,7 @@ init -999 python:
         return False
 
     def SetStoreValue(key, subkey, value):
+        debug.SaveString("SetStoreValue("+str(key)+", "+str(subkey)+", "+str(value), 3)
         if not IsStoreKey(key):
             elog.update({key: dict()})
         if not IsStoreSubKey(key, subkey):
@@ -42,6 +47,11 @@ init -999 python:
 
 # Намеренно не ставлю здесь проверок на наличие соответствующего поля. Разработчик должен проверять перед вызовом с помощью функций  IsStoreKey IsStoreSubKey
     def GetStoreValue(key, subkey):
+        if IsStoreKey(key):
+            debug.SaveString("GetStoreValue("+str(key)+", "+str(subkey)+")="+str(elog[key].get(subkey)), 3)
+        else:
+            debug.SaveString("GetStoreValue("+str(key)+", "+str(subkey)+")=НЕТ КЛЮЧА!", 3)
+
         return elog[key].get(subkey)
 
     def GetStoreAllSubKeys(key):
@@ -66,6 +76,7 @@ init -999 python:
         return False
 
     def SetArrayValue(key, subkey, value):
+        debug.SaveString("SetArrayValue("+str(key)+", "+str(subkey)+", "+str(value), 3)
         if not IsArrayKey(key):
             arr.update({key: dict()})
         if not IsArraySubKey(key, subkey):
@@ -75,6 +86,7 @@ init -999 python:
 
 # Намеренно не ставлю здесь проверок на наличие соответствующего поля. Разработчик должен проверять перед вызовом с помощью функций  IsStoreKey IsStoreSubKey
     def GetArrayValue(key, subkey):
+        debug.SaveString("GetArrayValue("+str(key)+", "+str(subkey)+")="+str(arr[key].get(subkey)), 3)
         return arr[key].get(subkey)
 
     def GetArrayAllSubKeys(key):

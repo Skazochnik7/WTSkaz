@@ -28,258 +28,56 @@ label cupboard:
             jump cupboard
         "- Ваши вещи -" if not day == 1:
             label possessions:
-            menu:
+                $ choose = RunMenu()
+                python:
+                    for o in hero.Items():
+                            choose.AddItem("- "+o._caption+" -", 
+                                "menu_cupboard_description" , True, o.Name)
+                    if  day>1: 
+                        choose.AddItem("Помощь", "cheat_help", True, "")
+                    choose.AddItem("- Ничего -", "cupboard", True, "")
 
-                
-                "- Чупа-чупс -([candy])" if candy >= 1:
-                    $ the_gift = "03_hp/18_store/11.png" # CANDY.
-                    show screen gift
-                    with d3
-                    ">Чупа-чупс. Взрослая конфета для детей или детская конфета для взрослых?"
-                    hide screen gift
-                    with d3
-                    jump possessions
-                    
-                "- Шоколад -([chocolate])" if chocolate >= 1:
-                    $ the_gift = "03_hp/18_store/12.png" # CHOCOLATE.
-                    show screen gift
-                    with d3
-                    call choco_text
-                    hide screen gift
-                    with d3
-                    jump possessions
-                
-                "- Плюшевая сова -([owl])" if owl >= 1:
-                    $ the_gift = "03_hp/18_store/22.png" # PLUSH OWL.
-                    show screen gift
-                    with d3
-                    call owl_text
-                    hide screen gift
-                    with d3
-                    jump possessions
-                
-                "- Сливочное пиво -([beer])" if beer >= 1:
-                    $ the_gift = "03_hp/18_store/21.png" # BUTTERBEER
-                    show screen gift
-                    with d3
-                    call beer_text
-                    hide screen gift
-                    with d3
-                    jump possessions
-                
-                "- Обучающий журнал -([mag1])" if mag1 >= 1:
-                    $ the_gift = "03_hp/18_store/17.png" #MAGAZINE # 1
-                    show screen gift
-                    with d3
-                    call mag1_text
-                    hide screen gift
-                    with d3
-                    jump possessions
-                
-                "- Женский журнал -([mag2])" if mag2 >= 1:
-                    $ the_gift = "03_hp/18_store/18.png" #MAGAZINE # 2
-                    show screen gift
-                    with d3
-                    call mag2_text
-                    hide screen gift
-                    with d3
-                    jump possessions
-                
-                "- Журнал для взрослых -([mag3])" if mag3 >= 1:
-                    $ the_gift = "03_hp/18_store/19.png" #MAGAZINE # 3
-                    show screen gift
-                    with d3
-                    call mag3_text
-                    hide screen gift
-                    with d3
-                    jump possessions
-                    
-                "- Порно журнал -([mag4])" if mag4 >= 1:
-                    $ the_gift = "03_hp/18_store/20.png" #MAGAZINE # 4
-                    show screen gift
-                    with d3
-                    call mag4_text
-                    hide screen gift
-                    with d3
-                    jump possessions
-                
-                "- Постер Виктора Крама -([krum])" if krum >= 1:
-                    $ the_gift = "03_hp/18_store/26.png" # KRUM POSTER.
-                    show screen gift
-                    with d3
-                    ">Мастер по квиддичу, Виктор был выбран, чтобы играть за национальную сборную Болгарии по квиддичу. Несмотря на то, что он все еще ходит в школу, он по праву считается одним из лучших игроков в мире."
-                    hide screen gift
-                    with d3
-                    jump possessions
+                $ choose.Show()
 
-                "- Сексуальное нижнее белье -([lingerie])" if lingerie >= 1:
-                    $ the_gift = "03_hp/18_store/24.png" # LENGERIE.
-                    show screen gift
-                    with d3
-                    ">Сексуальное нижнее белье \"Добрая Фея\". В постели она станет подобна императрице или сестрам Саббат."
-                    hide screen gift
-                    with d3
-                    jump possessions
+            label menu_cupboard_description:
+                $item=itsDAHR(choose.choice)
+                $ the_gift = item._img
+                show screen gift
+                with d3
+                ">[item._description]"
+                hide screen gift
+                with d3
+                jump possessions                
 
-                "- Упаковка презервативов -([condoms])" if condoms >= 1:
-                    $ the_gift = "03_hp/18_store/10.png" # CONDOMS.
-                    show screen gift
-                    with d3
-                    call con_text
-                    hide screen gift
-                    with d3
-                    jump possessions
-                    
-                "- Вибратор -([vibrator])" if vibrator >= 1:
-                    $ the_gift = "03_hp/18_store/13.png" # VIBRATOR.
-                    show screen gift
-                    with d3
-                    call vib_text
-                    hide screen gift
-                    with d3
-                    jump possessions
-                    
-                "- Банка лубриканта -([anal_lube])" if anal_lube >= 1:
-                    $ the_gift = "03_hp/18_store/09.png" # Anal lubricant.
-                    show screen gift
-                    with d3
-                    call lub_text
-                    hide screen gift
-                    with d3
-                    jump possessions
-                    
-                "- Кляп и наручники -([ballgag])" if ballgag >= 1:
-                    $ the_gift = "03_hp/18_store/15.png" # BALL GAG.
-                    show screen gift
-                    with d3
-                    call ball_text
-                    hide screen gift
-                    with d3
-                    jump possessions
-                
-                "- Анальная пробка -([plug])" if plug >= 1:
-                    $ the_gift = "03_hp/18_store/16.png" # ANAL PLUG.
-                    show screen gift
-                    with d3
-                    call anal_text
-                    hide screen gift
-                    with d3
-                    jump possessions
+                   
+                label cheat_help:
+                menu:
+                    "Включить ТУРБО-режим" if turbo==1: 
+                        $turbo=2
+                        "ТУРБО-режим включен. Теперь ваши действия будут приносить вам вдвое больше денег и очков факультету Слизерина.\n Шанс на прочтение дополнительной главы вдвое больше."                    
+                    "Выключить ТУРБО-режим" if turbo==2: 
+                        $turbo=1
+                        "ТУРБО-режим выключен. Теперь ваши действия будут приносить вам обычное количество денег и очков факультету Слизерина.\n Шанс на прочтение дополнительной главы стандартный."                    
+                    "ЧИТ: +100 очков Слизерину":
+                        hide screen points
+                        $slytherin+=100
+                        show screen points
+                    "ЧИТ: Гермиона больше не злиться на вас":
+                        hide screen points
+                        $mad=0
+                        show screen points
+                        "Готово можете проверить"
+                    "ЧИТ: +100 золотых":
+                        hide screen points
+                        $gold+=100
+                        show screen points
+                    "Прохождение":
+                        "Прохождение и ответы часто встречающиеся вопросы можно найти {a=http://wtrus.ixbb.ru/viewtopic.php?id=3}ЗДЕСЬ{/a}. "
 
-                "- Страпон \"Фестрал\" -([strapon])" if strapon >= 1:
-                    $ the_gift = "03_hp/18_store/14.png" # STRAP-ON.
-                    show screen gift
-                    with d3
-                    call str_text
-                    hide screen gift
-                    with d3
-                    jump possessions
-                    
-                "- Леди Спид Стик-2000 -([broom])" if broom >= 1:
-                    $ the_gift = "03_hp/18_store/25.png" # BROOM.
-                    show screen gift
-                    with d3
-                    ">\"Леди Спид Стик-2000\", элегантный способ передвижения для страстных ведьм. Торговой маркой гарантируется полное удовлетворение от эффекта. Закажите одну штуку для вашей ведьмы, и она больше не будет использовать ее скучную старую метлу!"
-                    hide screen gift
-                    with d3
-                    jump possessions
-                    
-                "- Секс-кукла \"Джуанна\" -([sexdoll])" if sexdoll >= 1:
-                    $ the_gift = "03_hp/18_store/23.png" # SEX DOLL.
-                    show screen gift
-                    with d3
-                    ">Секс-кукла \"Джуанна\"... Очень реалистичная. Выглядит почти как настоящий человек под каким-то заклинанием."
-                    hide screen gift
-                    with d3
-                    jump possessions
-                    
-                "- Бальное платье -" if "ball_dress" in gifts12 and not gave_the_dress:
-                    $ the_gift = "03_hp/18_store/01.png" # DRESS.
-                    show screen gift
-                    with d3
-                    m "Роскошное вечернее платье, которое я купил..."
-                    m "Надеюсь, размерчик подходящий."
-                    hide screen gift
-                    with d3
-                    jump possessions
-                    
-                "- \"А.В.Н.Э.\" значок -" if badge_01 == 1:
-                    $ the_gift = "03_hp/18_store/29.png" # S.P.E.W. BADGE
-                    show screen gift
-                    with d3
-                    m "\"А.В.Н.Э.\" Значок..."
-                    hide screen gift
-                    with d3
-                    jump possessions
-                    
-                "- Ажурные чулки -" if nets == 1:
-                    $ the_gift = "03_hp/18_store/30.png" # FISHNETS.
-                    show screen gift
-                    with d3
-                    call nets_text
-                    hide screen gift
-                    with d3
-                    jump possessions
-                    
-                "- Школьная мини-юбка -" if have_miniskirt:
-                    $ the_gift = "03_hp/18_store/07.png" # MINISKIRT.
-                    show screen gift
-                    with d3
-                    m "Просто школьная мини-юбка... Поможет в поднятии оценок."
-                    hide screen gift
-                    with d3
-                    jump possessions
-                
-                "- Вино Дамблдора -([wine])" if wine >= 1:
-                    $ the_gift = "03_hp/18_store/27.png" # WINE.
-                    show screen gift
-                    with d3
-                    ">Бутылка из тайника профессора Дамблдора..." 
-                    hide screen gift
-                    with d3
-                    jump possessions
-                    
-                    
-                "- Неизвестное зелье -([potions])" if  potions >= 1:
-                    $ the_gift = "03_hp/18_store/32.png" # HEALING POTION.
-                    show screen gift
-                    with d3
-                    ">Какое-то зелье..." 
-                    hide screen gift
-                    with d3
-                    jump possessions
-                    
-                "- Помощь -" if  day>1:
-                    label cheat_help:
-                    menu:
-                        "Включить ТУРБО-режим" if turbo==1: 
-                            $turbo=2
-                            "ТУРБО-режим включен. Теперь ваши действия будут приносить вам вдвое больше денег и очков факультету Слизерина.\n Шанс на прочтение дополнительной главы вдвое больше."                    
-                        "Выключить ТУРБО-режим" if turbo==2: 
-                            $turbo=1
-                            "ТУРБО-режим выключен. Теперь ваши действия будут приносить вам обычное количество денег и очков факультету Слизерина.\n Шанс на прочтение дополнительной главы стандартный."                    
-                        "ЧИТ: +100 очков Слизерину":
-                            hide screen points
-                            $slytherin+=100
-                            show screen points
-                        "ЧИТ: Гермиона больше не злиться на вас":
-                            hide screen points
-                            $mad=0
-                            show screen points
-                            "Готово можете проверить"
-                        "ЧИТ: +100 золотых":
-                            hide screen points
-                            $gold+=100
-                            show screen points
-                        "Прохождение":
-                            "Прохождение и ответы часто встречающиеся вопросы можно найти {a=http://wtrus.ixbb.ru/viewtopic.php?id=3}ЗДЕСЬ{/a}. "
+                    "- Ничего -":
+                        jump cupboard
+                jump cheat_help
 
-                        "- Ничего -":
-                            jump cupboard
-                    jump cheat_help
-
-                "- Ничего -":
-                    jump cupboard
 
         "- Священные свитки. Часть I -" if not day == 1 and cataloug_found:
             label sc_col_men_1:
@@ -686,6 +484,10 @@ label rummaging:
         
     
     if i_of_iv == 4: # Found something.
+        $arrr={"candy":[2,2,2,0], "gold":[8, 9, 8, 8]}
+
+
+
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
             if one_of_tw == 20:
                 $ renpy.play('sounds/win2.mp3')   #Not loud.

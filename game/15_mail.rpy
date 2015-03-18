@@ -152,87 +152,20 @@ label mail_02: #Packages only. <================================================
 ### ITEMS ###  
     if itsOWL.Any():
         $item=itsOWL()[0]
-        "1"
+        $hero.Items.AddItem(item.Name, itsOWL.Count(item.Name))  
         $itsOWL.Clear()
-        $hero._Items.AddItem(item)  
-        "2"
         $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
         $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
         $ the_gift = item._img 
         show screen gift
         with d3
-        "3"
-        ">Добавлено в ваши вещи: [item._caption]."
+        ">Добавлено к вашим вещам: [item._caption]."
         hide screen gift
         with d3
         call screen main_menu_01
 
 
     
-    if bought_ball_dress:
-        $ bought_ball_dress = False
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        #$ gifts12 += ["ball_dress"]
-        $ bought_dress_already = True #Makes sure that you won't buy the dress twice.
-        
-        $ gifts12.append("ball_dress")
-        $ the_gift = "03_hp/18_store/01.png" # THE NIGHT DRESS.
-        show screen gift
-        with d3
-        ">Роскошное вечернее платье было добавлено в вашу собственность."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-        
-        
-    if bought_miniskirt:
-        $ bought_miniskirt = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        #$ gifts12 += ["ball_dress"]
-        $ bought_skirt_already = True #Makes sure that you won't buy the skirt twice.
-        $ have_miniskirt = True # Turns TRUE when you have the skirt in your possession.
-        $ the_gift = "03_hp/18_store/07.png" # MINISKIRT.
-        show screen gift
-        with d3
-        ">Школьная миниюбка была добавлена в вашу собственность."
-        hide screen gift
-        with d3
-        call screen main_menu_01
 
-    
 
-    if bought_badge_01:
-        $ bought_badge_01 = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ badge_01 = 1 
 
-        $ the_gift = "03_hp/18_store/29.png" # S.P.E.W. Badge.
-        show screen gift
-        with d3
-        ">Значок \"А.В.Н.Э.\" был добавлен в вашу собственность."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-    
-    
-    if bought_nets:
-        $ bought_nets = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ nets = 1 
-
-        $ the_gift = "03_hp/18_store/30.png" # FISHNETS.
-        show screen gift
-        with d3
-        ">Пара ажурных чулков была добавлена в вашу собственность."
-        hide screen gift
-        with d3
-        call screen main_menu_01

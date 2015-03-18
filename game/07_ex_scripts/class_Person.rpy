@@ -11,7 +11,7 @@
 
             super(Person, self).__init__(Name=Name, Type="Person", defVals=defVals )
 
-            self._Items=RegEntry(ItemCollection("items"+self.Name))        # Это словарь сохраняемых аргументов
+            self.Items=RegEntry(ItemCollection("items"+self.Name))        # Это словарь сохраняемых аргументов
 #            if defVals
 #            self.defVals = {"Items": ItemCollection("items"+self.Name)}        # Это словарь сохраняемых аргументов
 #            if defVals!=None:

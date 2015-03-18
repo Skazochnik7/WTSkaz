@@ -176,95 +176,22 @@ label door:
                     
                     
                     "- Дать ей подарок -" if not gifted:
-                        menu:
-                            "- Чупа-чупс -([candy])" if candy >= 1:
-                                $ gifted = True 
-                                jump giving_candy #28_gifts.rpy
-                                
-                            "- Шоколад -([chocolate])" if chocolate >= 1:
-                                $ gifted = True 
-                                jump giving_chocolate #28_gifts.rpy
-                            
-                            "- Чучело совы -([owl])" if owl >= 1:
-                                $ gifted = True 
-                                jump giving_owl #28_gifts.rpy
-                                
-                            "- Сливочное пиво -([beer])" if beer >= 1:
-                                $ gifted = True 
-                                jump giving_beer #28_gifts.rpy
-                                
-                            "- Обучающий журнал -([mag1])" if mag1 >= 1:
-                                $ gifted = True 
-                                jump giving_mag1 #28_gifts.rpy
-                                
-                            "- Женский журнал -([mag2])" if mag2 >= 1:
-                                $ gifted = True 
-                                jump giving_mag2 #28_gifts.rpy
-                                
-                            "- Журнал для взрослых -([mag3])" if mag3 >= 1:
-                                $ gifted = True 
-                                jump giving_mag3 #28_gifts.rpy
-                                
-                            "- Порно журнал -([mag4])" if mag4 >= 1:
-                                $ gifted = True 
-                                jump giving_mag4 #28_gifts.rpy
-                            
-                            "- Постер Виктора Крама -([krum])" if krum >= 1:
-                                $ gifted = True 
-                                jump giving_krum #28_gifts.rpy
-                            
-                            "- Сексуальное нижнее белье -([lingerie])" if lingerie >= 1:
-                                $ gifted = True 
-                                jump giving_lingerie #28_gifts.rpy
-                            
-                            "- Упаковка презервативов -([condoms])" if condoms >= 1:
-                                $ gifted = True 
-                                jump giving_condoms #28_gifts.rpy
-                                
-                            "- Банка анальной смазки -([anal_lube])" if anal_lube >= 1:
-                                $ gifted = True 
-                                jump giving_lube #28_gifts.rpy
-                            
-                            "- Вибратор -([vibrator])" if vibrator >= 1:
-                                $ gifted = True 
-                                jump giving_vibrator #28_gifts.rpy
-                            
-                            "- Кляп и наручники  -([ballgag])" if ballgag >= 1:
-                                $ gifted = True 
-                                jump giving_ballgag #28_gifts.rpy
-                                
-                            "- Анальная пробка  -([plug])" if plug >= 1:
-                                $ gifted = True 
-                                jump giving_plug #28_gifts.rpy
-                                
-                            "- Страпон \"Фестрал\"  -([strapon])" if strapon >= 1:
-                                $ gifted = True 
-                                jump giving_strapon #28_gifts.rpy
-                            
-                            "- Леди Спид Стик-2000  -([broom])" if broom >= 1:
-                                $ gifted = True 
-                                jump giving_broom #28_gifts.rpy
-                                
-                            "- Секс-кукла \"Джуанна\"  -([sexdoll])" if sexdoll >= 1:
-                                $ gifted = True 
-                                jump giving_sexdoll #28_gifts.rpy
-                            
-                            "- Школьная мини-юбка -" if have_miniskirt: # Turns TRUE when you have the skirt in your possession.
-                                $ gifted = True
-                                jump giving_skirt #28_gifts.rpy
-                            
-                            "- \"А.В.Н.Э.\" значок -" if badge_01 == 1:
-                                $ gifted = True
-                                jump giving_badge_01 #28_gifts.rpy
-                            
-                            "- Ажурные чулки -" if nets == 1:
-                                $ gifted = True
-                                jump giving_nets #28_gifts.rpy
-                                
-                                
-                                
-                                
-                            "- Бальное платье -" if "ball_dress" in gifts12 and not gave_the_dress:
+                        $ choose = RunMenu()
+                        python:
+                            for o in hero.Items():
+                                choose.AddItem("- "+o._caption+" -", 
+                                    "menu_gifts_description" , True, o.Name)
+                            choose.AddItem("- Ничего -", "day_time_requests", True, "")
+
+                        $ choose.Show()
+
+
+
+                        label menu_gifts_description:
+                            $item=itsDAHR(choose.choice)
+                            $ gifted = True 
+
+                            if item.Name=="ball_dress" and hermi.Items.Count(item.Name)==0:
                                 show screen  blktone
                                 with d3
                                 m "(Я чувствую, что не будет обратного пути после того, как я дам ей это платье...)"
@@ -275,9 +202,11 @@ label door:
                                         jump giving_thre_dress #27_final_events.rpy
                                     "\"Нет, не готов...\"":
                                         jump day_time_requests
-                            "- Ничего -":
-                                jump day_time_requests
-                
+
+
+                            jump expression "giving_"+item.Name
+
+                                
                     
                     # "- Ending \"Your whore\"- ":
                         #jump your_whore

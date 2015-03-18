@@ -37,41 +37,79 @@ label menu_dahr_book:
                 jump expression _label #education_menu
 
 
-
-label menu_dahr_gifts:
-    "Перед меню"
-    if choose==None:
-        $ choose = RunMenu()
-    else:
-        $choose.Clear()
-    python:
-        for o in itsDAHR():
-            _temp={"candy": fn0, "chocolate": fn0, "owl": fn0, "beer": fn3, "mag1": fn0, "mag2": fn0, "mag3": fn0, "mag4": fn3,
-         "condoms": fn3, "vibrator": fn3, "lubricant": fn0,"ballgag": fn0, "plug": fn3, "strapon": fn3}[o.Name](o)
-            if o._block=="gifts": 
-                choose.AddItem("- "+o._caption+" - ("+str(o._price)+" гал.) -" if _temp else "{color=#858585}- Товар закончился -{/color}", 
-                    "menu_dahr_gift_order" if _temp else "out" , True, o.Name)
-        choose.AddItem("- Ничего -", "the_oddities", True, "")
-
-    $ choose.Show()
-
 label menu_dahr_gift_order:
     $item=itsDAHR(choose.choice)
-    "После меню"
+    $ the_gift = item._img # CANDY.
+    show screen gift
+    with d3
+    $itemCount=0
+    if item.Name=="miniskirt":
+        menu:
+            "- Купить юбку (---) -":
+                if vouchers >= 1: #Shows the amount of DAHR's vouchers in your possession.
+                    $ vouchers -= 1 #Shows the amount of DAHR's vouchers in your possession.
+                    $ order_placed = True
+                    $itsOWL.AddItem(item.Name)
+                    $itsDAHR.AddItem(item.Name,-1)
+                    call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                    jump desk
+                else:
+                    dahr "Эту вещь можно купить только за \"Ваучер Дахра\"."
+                    dahr "Что-то не так..."
+                    dahr "Чертовы переводчики..."
+                    dahr "Я..."
+                    translators "Так-то лучше. Этот момент показался всем достаточно сложным. Я о юбке. Дальше будет подсказка, как ее получить."
+                    menu:
+                        "- Глянуть подсказку -":
+                            translators "{size=14}Подсказка от переводчика:\nНайти его можно {b}правильно{/b} прочитав книгу {b}[book07]{/b}{/size}."
+                            translators "{size=14}Более подробно {a=http://wtrus.ixbb.ru/viewtopic.php?id=3#p4}здесь{/a}{/size}."
+                        
+                        "- Не нужно -":
+                            translators "Как угодно."
+                    hide screen gift
+                    with d3
+                    jump app
+            "- Ничего -":
+                hide screen gift
+                with d3
+                jump app
 
-    if gold >= item._price:
+    if item._block=="gears":
+        menu:
+            dahr "[item._description]"
+            "- Купить ([item._price] галеонов) -":
+                $itemCount=1
+            "- Ничего -":
+                hide screen gift
+                jump gifts_menu
+    else:
+        $_price2=item._price*2
+        $_price3=item._price*3
+        menu:
+            dahr "[item._description]"
+            "- Купить 1 ([item._price] галеонов) -":
+                $itemCount=1
+            "- Купить 2 ([_price2] галеонов) -":
+                $itemCount=2
+            "- Купить 3 ([_price3] галеонов) -":
+                $itemCount=3
+            "- Ничего -":
+                hide screen gift
+                jump gifts_menu
+
+
+    if gold >= item._price*itemCount:
         hide screen points
-        $ gold -=item._price
+        $ gold -=item._price*itemCount
         show screen points
         $ order_placed = True
-        $itsOWL.AddItem(item.Name)
+        $itsOWL.AddItem(item.Name,itemCount)
 #        $ bought_candy = True #Affects 15_mail.rpy
         call thx_4_shoping #Massage that says "Thank you for shopping here!".
         jump desk
     else:
         call no_gold #Massage: m "I don't have enough gold".
         jump gifts_menu
-
 
 
 
@@ -93,904 +131,40 @@ label the_oddities:
                 jump menu_dahr_book
 
 
-         
-                
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         "- Подарки -":
-            jump menu_dahr_gifts
             label gifts_menu:
-            menu:
-                #dahr "Gifts that you can gift to that special someone."
-                
-                "- Чупа-чупс (20 з.) -":
-                    $ the_gift = "03_hp/18_store/11.png" # CANDY.
-                    show screen gift
-                    with d3
-                    dahr "Чупа-чупс. Взрослая конфета для детей или детская конфета для взрослых?"
-                    menu:
-                        "- Купить (20 золота) -":
-                            if gold >= 20:
-                                hide screen points
-                                $ gold -=20
-                                show screen points
-                                $ order_placed = True
-                                $ bought_candy = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
+            $ choose = RunMenu()
+            python:
+                for o in itsDAHR():
+                    if o._block=="gifts": 
+                        _temp={"candy": fn0, "chocolate": fn0, "owl": fn0, "beer": fn3, "mag1": fn0, "mag2": fn0, "mag3": fn0, "mag4": fn3,
+                     "condoms": fn3, "vibrator": fn3, "lubricant": fn0,"ballgag": fn0, "plug": fn3, "strapon": fn3}[o.Name](o)
+                        choose.AddItem("- "+o._caption+" - ("+str(o._price)+" гал.) -" if _temp else "{color=#858585}- Товар временно отсутствует -{/color}", 
+                            "menu_dahr_gift_order" if _temp else "out" , True, o.Name)
+                choose.AddItem("- Ничего -", "the_oddities", True, "")
 
-                        "- Купить 2 (35 золота) -":
-                            if gold >= 35:
-                                hide screen points
-                                $ gold -=35
-                                show screen points
-                                $ order_placed = True
-                                $ bought_candy2 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-
-                        "- Купить 3 (50 золота) -":
-                            if gold >= 50:
-                                hide screen points
-                                $ gold -=50
-                                show screen points
-                                $ order_placed = True
-                                $ bought_candy3 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Ничего -":
-                            hide screen gift
-                            jump gifts_menu
-                            
-                "- Шоколад (40 з.) -":
-                    $ the_gift = "03_hp/18_store/12.png" # CHOCOLATE.
-                    show screen gift
-                    with d3
-                    call choco_text
-                    menu:
-                        "- Купить (40 золота) -":
-                            if gold >= 40:
-                                hide screen points
-                                $ gold -= 40
-                                show screen points
-                                $ order_placed = True
-                                $ bought_chocolate = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 2 (60 золота) -":
-                            if gold >= 60:
-                                hide screen points
-                                $ gold -= 60
-                                show screen points
-                                $ order_placed = True
-                                $ bought_chocolate2 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 3 (100 золота) -":
-                            if gold >= 100:
-                                hide screen points
-                                $ gold -= 100
-                                show screen points
-                                $ order_placed = True
-                                $ bought_chocolate3 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Ничего -":
-                            hide screen gift
-                            jump gifts_menu
-                            
-                "- Плюшевая сова (35 з.) -":
-                    $ the_gift = "03_hp/18_store/22.png" # PLUSH OWL
-                    show screen gift
-                    with d3
-                    call owl_text
-                    menu:
-                        "- Купить (35 золота) -":
-                            if gold >= 35:
-                                hide screen points
-                                $ gold -= 35
-                                show screen points
-                                $ order_placed = True
-                                $ bought_owl = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 2 (60 золота) -":
-                            if gold >= 60:
-                                hide screen points
-                                $ gold -= 60
-                                show screen points
-                                $ order_placed = True
-                                $ bought_owl2 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 3 (90 золота) -":
-                            if gold >= 90:
-                                hide screen points
-                                $ gold -= 90
-                                show screen points
-                                $ order_placed = True
-                                $ bought_owl3 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Ничего -":
-                            hide screen gift
-                            jump gifts_menu
-                            
-                
-                "{color=#858585}- Товар закончился -{/color}" if whoring < 3: # BUTTERBEER.
-                    show screen bld1
-                    with d3
-                    call out # Message "Item us out of stock".
-                    hide screen bld1
-                    with d3
-                    jump gifts_menu
-                "- Сливочное пиво (50 з.) -" if whoring >= 3: # LEVEL 02.
-                    $ the_gift = "03_hp/18_store/21.png" # BUTTERBEER
-                    show screen gift
-                    with d3
-                    call beer_text
-                    menu:
-                        "- Купить (50 золота) -":
-                            if gold >= 50:
-                                hide screen points
-                                $ gold -= 50
-                                show screen points
-                                $ order_placed = True
-                                $ bought_beer = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 2 (50 золота) -":
-                            if gold >= 90:
-                                hide screen points
-                                $ gold -= 90
-                                show screen points
-                                $ order_placed = True
-                                $ bought_beer2 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 3 (50 золота) -":
-                            if gold >= 130:
-                                hide screen points
-                                $ gold -= 130
-                                show screen points
-                                $ order_placed = True
-                                $ bought_beer3 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Ничего -":
-                            hide screen gift
-                            jump gifts_menu
-
-                    
-                    
-                "- Обучающий журнал (30 з.) -":
-                    $ the_gift = "03_hp/18_store/17.png" # MAGAZINE # 1
-                    show screen gift
-                    with d3
-                    call mag1_text
-                    menu:
-                        "- Купить (30 золота) -":
-                            if gold >= 30:
-                                hide screen points
-                                $ gold -= 30
-                                show screen points
-                                $ order_placed = True
-                                $ bought_mag1 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 2 (50 золота) -":
-                            if gold >= 50:
-                                hide screen points
-                                $ gold -= 50
-                                show screen points
-                                $ order_placed = True
-                                $ bought_mag12 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 3 (80 золота) -":
-                            if gold >= 80:
-                                hide screen points
-                                $ gold -= 80
-                                show screen points
-                                $ order_placed = True
-                                $ bought_mag13 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Ничего -":
-                            hide screen gift
-                            jump gifts_menu
-                
-                "- Женский журнал (45 з.) -":
-                    $ the_gift = "03_hp/18_store/18.png" # MAGAZINE # 2
-                    show screen gift
-                    with d3
-                    call mag2_text
-                    menu:
-                        "- Купить (45 золота) -":
-                            if gold >= 45:
-                                hide screen points
-                                $ gold -= 45
-                                show screen points
-                                $ order_placed = True
-                                $ bought_mag2 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 2 (80 золота) -":
-                            if gold >= 80:
-                                hide screen points
-                                $ gold -= 80
-                                show screen points
-                                $ order_placed = True
-                                $ bought_mag22 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 3 (125 золота) -":
-                            if gold >= 125:
-                                hide screen points
-                                $ gold -= 125
-                                show screen points
-                                $ order_placed = True
-                                $ bought_mag23 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Ничего -":
-                            hide screen gift
-                            jump gifts_menu
-
-
-                "- Журнал для взрослых (60 з.) -":
-                    $ the_gift = "03_hp/18_store/19.png" # MAGAZINE # 3
-                    show screen gift
-                    with d3
-                    call mag3_text
-                    menu:
-                        "- Купить (60 золота) -":
-                            if gold >= 60:
-                                hide screen points
-                                $ gold -= 60
-                                show screen points
-                                $ order_placed = True
-                                $ bought_mag3 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 2 (100 золота) -":
-                            if gold >= 100:
-                                hide screen points
-                                $ gold -= 100
-                                show screen points
-                                $ order_placed = True
-                                $ bought_mag32 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 3 (155 золота) -":
-                            if gold >= 155:
-                                hide screen points
-                                $ gold -= 155
-                                show screen points
-                                $ order_placed = True
-                                $ bought_mag33 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Ничего -":
-                            hide screen gift
-                            jump gifts_menu
-                            
-                
-                "{color=#858585}- Этот товар закончился на складе -{/color}" if whoring < 3: # PORN MAGAZINES.
-                    show screen bld1
-                    with d3
-                    call out # Message "Item us out of stock".
-                    hide screen bld1
-                    with d3
-                    jump gifts_menu
-                "- Порно журнал  (80 з.) -" if whoring >= 3: # LEVEL 02.
-                    $ the_gift = "03_hp/18_store/20.png" # MAGAZINE # 4
-                    show screen gift
-                    with d3
-                    call mag4_text
-                    menu:
-                        "- Купить (80 золота) -":
-                            if gold >= 80:
-                                hide screen points
-                                $ gold -= 80
-                                show screen points
-                                $ order_placed = True
-                                $ bought_mag4 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 2 (140 золота) -":
-                            if gold >= 140:
-                                hide screen points
-                                $ gold -= 140
-                                show screen points
-                                $ order_placed = True
-                                $ bought_mag42 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 3 (220 золота) -":
-                            if gold >= 220:
-                                hide screen points
-                                $ gold -= 220
-                                show screen points
-                                $ order_placed = True
-                                $ bought_mag43 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Ничего -":
-                            hide screen gift
-                            jump gifts_menu
-
-
-                "{color=#858585}- Этот товар закончился на складе -{/color}" if whoring < 3: # CONDOMS.
-                    show screen bld1
-                    with d3
-                    call out # Message "Item us out of stock".
-                    hide screen bld1
-                    with d3
-                    jump gifts_menu
-                "- Упаковка презервативов (50 з.) -" if whoring >= 3: # LEVEL 02.
-                    $ the_gift = "03_hp/18_store/10.png" # CONDOMS
-                    show screen gift
-                    with d3
-                    call con_text
-                    menu:
-                        "- Купить (50 золота) -":
-                            if gold >= 50:
-                                hide screen points
-                                $ gold -= 50
-                                show screen points
-                                $ order_placed = True
-                                $ bought_condoms = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 2 (80 золота) -":
-                            if gold >= 80:
-                                hide screen points
-                                $ gold -= 80
-                                show screen points
-                                $ order_placed = True
-                                $ bought_condoms2 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 3 (120 золота) -":
-                            if gold >= 120:
-                                hide screen points
-                                $ gold -= 120
-                                show screen points
-                                $ order_placed = True
-                                $ bought_condoms3 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Ничего -":
-                            hide screen gift
-                            jump gifts_menu
-                
-                "{color=#858585}- Этот товар закончился на складе -{/color}" if whoring < 3: # VIBRATOR
-                    show screen bld1
-                    with d3
-                    call out # Message "Item us out of stock".
-                    hide screen bld1
-                    with d3
-                    jump gifts_menu
-                "- Вибратор (55 з.) -" if whoring >= 3: # LEVEL 02.
-                    $ the_gift = "03_hp/18_store/13.png" # VIBRATOR.
-                    show screen gift
-                    with d3
-                    call vib_text
-                    menu:
-                        "- Купить (55 золота) -":
-                            if gold >= 55:
-                                hide screen points
-                                $ gold -=55
-                                show screen points
-                                $ order_placed = True
-                                $ bought_vibrator = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 2 (90 золота) -":
-                            if gold >= 90:
-                                hide screen points
-                                $ gold -=90
-                                show screen points
-                                $ order_placed = True
-                                $ bought_vibrator2 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 3 (140 золота) -":
-                            if gold >= 140:
-                                hide screen points
-                                $ gold -=140
-                                show screen points
-                                $ order_placed = True
-                                $ bought_vibrator3 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Ничего -":
-                            hide screen gift
-                            jump gifts_menu
-                
-                "- Банка лубриканта (60 з.) -":
-                    $ the_gift = "03_hp/18_store/09.png" # ANAL LUBRICANT
-                    show screen gift
-                    with d3
-                    call lub_text
-                    menu:
-                        "- Купить (60 золота) -":
-                            if gold >= 60:
-                                hide screen points
-                                $ gold -= 60
-                                show screen points
-                                $ order_placed = True
-                                $ bought_anal_lube = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 2 (100 золота) -":
-                            if gold >= 100:
-                                hide screen points
-                                $ gold -= 100
-                                show screen points
-                                $ order_placed = True
-                                $ bought_anal_lube2 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 3 (150 золота) -":
-                            if gold >= 150:
-                                hide screen points
-                                $ gold -= 150
-                                show screen points
-                                $ order_placed = True
-                                $ bought_anal_lube3 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Ничего -":
-                            hide screen gift
-                            jump gifts_menu
-                
-
-                "- Кляп и наручники (70 з.) -":
-                    $ the_gift = "03_hp/18_store/15.png" # BALL GAG.
-                    show screen gift
-                    with d3
-                    call ball_text
-                    menu:
-                        "- Купить (70 золота) -":
-                            if gold >= 70:
-                                hide screen points
-                                $ gold -= 70
-                                show screen points
-                                $ order_placed = True
-                                $ bought_ballgag = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 2 (180 золота) -":
-                            if gold >= 120:
-                                hide screen points
-                                $ gold -= 120
-                                show screen points
-                                $ order_placed = True
-                                $ bought_ballgag2 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 3 (180 золота) -":
-                            if gold >= 180:
-                                hide screen points
-                                $ gold -= 180
-                                show screen points
-                                $ order_placed = True
-                                $ bought_ballgag3 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Ничего -":
-                            hide screen gift
-                            jump gifts_menu
-                
-                "{color=#858585}- Этот товар закончился на складе -{/color}" if whoring < 3: # VIBRATOR
-                    show screen bld1
-                    with d3
-                    call out # Message "Item us out of stock".
-                    hide screen bld1
-                    with d3
-                    jump gifts_menu
-                "- Анальная пробка (85 з.) -" if whoring >= 3: # LEVEL 02.
-                    $ the_gift = "03_hp/18_store/16.png" # ANAL PLUGS.
-                    show screen gift
-                    with d3
-                    call anal_text
-                    menu:
-                        "- Купить (85 золота) -":
-                            if gold >= 85:
-                                hide screen points
-                                $ gold -= 85
-                                show screen points
-                                $ order_placed = True
-                                $ bought_plug = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 2 (150 золота) -":
-                            if gold >= 150:
-                                hide screen points
-                                $ gold -= 150
-                                show screen points
-                                $ order_placed = True
-                                $ bought_plug2 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 3 (255 золота) -":
-                            if gold >= 255:
-                                hide screen points
-                                $ gold -= 255
-                                show screen points
-                                $ order_placed = True
-                                $ bought_plug3 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Ничего -":
-                            hide screen gift
-                            jump gifts_menu
-                
-                "{color=#858585}- Этот товар закончился на складе -{/color}" if whoring < 3: # VIBRATOR
-                    show screen bld1
-                    with d3
-                    call out # Message "Item us out of stock".
-                    hide screen bld1
-                    with d3
-                    jump gifts_menu
-                "- Страпон \"Фестрал\" (200 з.) -" if whoring >= 3: # LEVEL 02.
-                    $ the_gift = "03_hp/18_store/14.png" # STRAP-ON.
-                    show screen gift
-                    with d3
-                    call str_text
-                    menu:
-                        "- Купить (200 золота) -":
-                            if gold >= 200:
-                                hide screen points
-                                $ gold -=200
-                                show screen points
-                                $ order_placed = True
-                                $ bought_strapon = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 2 (150 золота) -":
-                            if gold >= 150:
-                                hide screen points
-                                $ gold -=150
-                                show screen points
-                                $ order_placed = True
-                                $ bought_strapon2 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Купить 3 (350 золота) -":
-                            if gold >= 350:
-                                hide screen points
-                                $ gold -=350
-                                show screen points
-                                $ order_placed = True
-                                $ bought_strapon3 = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump gifts_menu
-                        "- Ничего -":
-                            hide screen gift
-                            jump gifts_menu
-                
-                
-                
-                
-                "- Ничего -":
-                            hide screen gift
-                            with d3
-                            jump the_oddities
-                
-                
-                
+            $ choose.Show() 
                 
                             
                             
         "- Одежда -":
             label app:
                 pass
-            menu:
 
-                    
-           
-#                "{color=#858585}-Этот товар закончился на складе-{/color}"
-#                    show screen bld1
-#                    with d3
-#                    call out # Message "Item us out of stock".
-#                    hide screen bld1
-#                    with d3
-#                    jump app
-                "- \"А.В.Н.Э.\" значок (100 золота) -" if not badge_01 == 7:
-                    $ the_gift = "03_hp/18_store/29.png" # SPEW BADGE.
-                    show screen gift
-                    with d3
-                    dahr "Значок \"А.В.Н.Э.\". Симулируй заботу..."
-                    menu:
-                        "- Купить (100 золота) -":
-                            if badge_01 == 7 or badge_01 == 1: # == 7 means "gifted already" # badge_01 == 1 because otherwise you could still buy it in the shop, even if you have 1 already.
-                                call do_have_book # "I already own this one."
-                                jump app
-                            else:
-                                if gold >= 100:
-                                    $ gold -=100
-                                    $ order_placed = True
-                                    $ bought_badge_01 = True #Affects 15_mail.rpy
-                                    call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                    jump desk
-                                else:
-                                    call no_gold #Massage: m "I don't have enough gold".
-                                    hide screen gift
-                                    with d3
-                                    jump app
-                        "- Ничего -":
-                            hide screen gift
-                            with d3
-                            jump app
-                            
-                
-                
-#                "{color=#858585}-Этот товар закончился на складе-{/color}" if whoring < 3: # $ level = "02":
-#                    show screen bld1
-#                    with d3
-#                    call out # Message "Item us out of stock".
-#                    hide screen bld1
-#                    with d3
-#                    jump app
-                "- Ажурные чулки (800 золота) -" if not nets == 7:
-                    $ the_gift = "03_hp/18_store/30.png" # FISHNETS.
-                    show screen gift
-                    with d3
-                    call nets_text
-                    menu:
-                        "- Купить (800 золота) -":
-                            if nets == 7 or nets == 1: # == 7 means "gifted already"
-                                call do_have_book # "I already own this one."
-                                jump app
-                            else:
-                                if gold >= 800:
-                                    $ gold -= 800
-                                    $ order_placed = True
-                                    $ bought_nets = True #Affects 15_mail.rpy
-                                    call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                    jump desk
-                                else:
-                                    call no_gold #Massage: m "I don't have enough gold".
-                                    hide screen gift
-                                    with d3
-                                    jump app
-                        "- Ничего -":
-                            hide screen gift
-                            with d3
-                            jump app
+                $ choose = RunMenu()
+                python:
+                    for o in itsDAHR():
+                        if o._block=="gears": 
+                            _temp={"ball_dress": lambda e: sorry_for_hesterics and not bought_dress_already, "badge_01": fn0, "nets": fn0, "miniskirt": lambda e: not bought_skirt_already and not gave_miniskirt and whoring >= 3}[o.Name](o)
+                            choose.AddItem("- "+o._caption+" - ("+str(o._price)+" гал.) -" if _temp else "{color=#858585}- Товар временно отсутствует  -{/color}", 
+                                "menu_dahr_gift_order" if _temp else "out" , True, o.Name)
+                    choose.AddItem("- Ничего -", "the_oddities", True, "")
+
+                $ choose.Show()
 
 
 
-
-
-#                "{color=#858585}-Этот товар закончился на складе-{/color}" if whoring < 3: # $ level = "02": MINI SKIRT.
-#                    show screen bld1
-#                    with d3
-#                    call out # Message "Item us out of stock".
-#                    hide screen bld1
-#                    with d3
-#                    jump app
-                "- Школьная мини-юбка (---) -" if not bought_skirt_already and not gave_miniskirt and whoring >= 3:
-                    $ the_gift = "03_hp/18_store/07.png" # MINISKIRT
-                    show screen gift
-                    with d3
-                    dahr "Школьная мини-юбка. Резко улучшает оценки."
-                    menu:
-                        "- Купить юбку (---) -":
-                            if vouchers >= 1: #Shows the amount of DAHR's vouchers in your possession.
-                                $ vouchers -= 1 #Shows the amount of DAHR's vouchers in your possession.
-                                $ order_placed = True
-                                $ bought_miniskirt = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                dahr "Эту вещь можно купить только за \"Ваучер Дахра\"."
-                                dahr "Что-то не так..."
-                                dahr "Чертовы переводчики..."
-                                dahr "Я..."
-                                translators "Так-то лучше. Этот момент показался всем достаточно сложным. Я о юбке. Дальше будет подсказка, как ее получить."
-                                menu:
-                                    "- Глянуть подсказку -":
-                                        translators "{size=14}Подсказка от переводчика:\nНайти его можно {b}правильно{/b} прочитав книгу {b}[book07]{/b}{/size}."
-                                        translators "{size=14}Более подробно {a=http://pornolab.net/forum/viewtopic.php?t=1930734}здесь{/a} в F.A.Q{/size}."
-                                    
-                                    "- Не нужно -":
-                                        translators "Как угодно."
-                                hide screen gift
-                                with d3
-                                jump app
-                        "- Ничего -":
-                            hide screen gift
-                            with d3
-                            jump app
-#                "- Item Sold Out -" if bought_skirt_already:
-#                    "This item has been sold out."
-#                    jump app
-                            
-                            
-                            
-                "- Предмет уже куплен -" if bought_dress_already:
-                    "Этот товар уже продан."
-                    jump app
-                "{color=#858585}- Этот товар закончился на складе -{/color}" if not sorry_for_hesterics: # NIGHT DRESS.
-                    show screen bld1
-                    with d3
-                    call out # Message "Item us out of stock".
-                    hide screen bld1
-                    with d3
-                    jump app
-                "- Бальное платье (1500 золота) -" if sorry_for_hesterics and not bought_dress_already:
-                    $ the_gift = "03_hp/18_store/01.png" # DRESS.
-                    show screen gift
-                    with d3
-                    dahr "Вечернее платье для особых случаев."
-                    menu:
-                        "- Купить (1500 золота) -":
-                            if gold >= 1500:
-                                $ gold -=1500
-                                $ order_placed = True
-                                $ bought_ball_dress = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                jump desk
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                hide screen gift
-                                with d3
-                                jump app
-                        "- Ничего -":
-                            hide screen gift
-                            with d3
-                            jump app
-                            
-                "- Ничего -":
-                        jump the_oddities
                         
         "- Священные свитки. Часть I -":
             label sscrolls:
@@ -1682,15 +856,29 @@ label do_have_book:
     return
 ### THANK YOU FOR shopping here.
 label thx_4_shoping:
+    $item=itsOWL()[0]
+    $itemCount=itsOWL.Count(item.Name)
     $ days_in_delivery2 = one_of_five  #Generating one number out of three for various porpoises.
+    if days_in_delivery2==1:
+        $days_in_delivery2+=1 # Назавтра только экспресс
+        $days_in_delivery2+=itemCount-1  # Удлинняется, если несколько предметов
 
-    if one_of_five ==  1:
+    if gold >= item._price*itemCount//2:
+        menu:
+            dahr "Вы заказали [itemCount] шт. предметов \"[item._caption]\". Оплатите экспресс-доставку?"
+            "Экспресс-доставка (1/2 стоимости заказа)":
+                $days_in_delivery2=1
+                $gold -= item._price*itemCount//2
+            "Обычная доставка":
+                pass
+
+    if days_in_delivery2 ==  1:
         dahr "Спасибо за покупку в \"Приблудах Дахра\". Ваш заказ будет доставлен завтра."
         hide screen gift
         with d3
         return
     else:
-        dahr "Спасибо за покупку в \"Приблудах Дахра\". Ваш заказ будет доставлен в течении 1 - [one_of_five] дней."
+        dahr "Спасибо за покупку в \"Приблудах Дахра\". Доставка вашего заказа займет около [days_in_delivery2] дней."
         hide screen gift
         with d3
         return
