@@ -484,259 +484,29 @@ label rummaging:
         
     
     if i_of_iv == 4: # Found something.
-        $arrr={"candy":[2,2,2,0], "gold":[8, 9, 8, 8]}
+        $arrr={"candy":[2,2,2,0], "wine": [7,5,4,0], "chocolate":[1,1,0,4], "lingere":[1,1,0,1], "sexdoll":[1,1,1,1],
+        "krum":[0,1,1,1],"owl":[0,0,4,4], "broom":[0,0,0,1]} #"gold":[8, 9, 8, 8]
+
+        $_level=GetStage(whoring, 0, 6, 4)-1
+        $_randValue=one_of_tw
+        $_name="gold"
+        for o in arrr:
+        	$_randValue-=arrr[o][_level]
+        	if _randValue<=0:
+        		$_name=o
+
+        $ renpy.play('sounds/win2.mp3')   #Not loud.
+        $item=hero.Items.AddItem(_name)
+        if $item.Name=="gold":
+        	gold=[gold1,gold2,gold3,gold4][_level]
+        $ the_gift = item._img
+        show screen gift
+        with d3
+        ">Вы нашли предмет: [item._caption]!" 
+        hide screen gift
+        with d3
 
 
-
-        if whoring >= 0 and whoring <= 5: # Lv 1-2.
-            if one_of_tw == 20:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ sexdoll += 1
-                $ the_gift = "03_hp/18_store/23.png" # SEX DOLL.
-                show screen gift
-                with d3
-                ">Вы нашли секс-куклу \"Джуанну\"!" 
-                hide screen gift
-                with d3
-            elif one_of_tw == 1 or one_of_tw == 2:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ candy += 1
-                $ the_gift = "03_hp/18_store/11.png" # CANDY.
-                show screen gift
-                with d3
-                ">Вы нашли конфету..." 
-                hide screen gift
-                with d3
-            elif one_of_tw >= 3 and one_of_tw <= 9  or one_of_tw == 18: # GOLD.
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ the_gift = "03_hp/18_store/28.png" # GOLD.
-                show screen gift
-                with d3
-                ">Вы нашли [gold1] золота..." 
-                $ gold = gold + gold1
-                hide screen gift
-                with d3
-            elif one_of_tw >= 10 and one_of_tw <= 16: # WINE.
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ wine += 1
-                $ the_gift = "03_hp/18_store/27.png" # WINE
-                show screen gift
-                with d3
-                ">Вы нашли бутылку из тайника Дамблдора..." 
-                hide screen gift
-                with d3
-            elif one_of_tw == 17: # CHOCOLATE.
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ chocolate += 1
-                $ the_gift = "03_hp/18_store/12.png" # CHOCOLATE.
-                show screen gift
-                with d3
-                ">Вы нашли плитку шоколада..."
-                hide screen gift
-                with d3
-            elif one_of_tw == 19: # LINGERIE.
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ lingerie += 1
-                $ the_gift = "03_hp/18_store/24.png" # LINGERIE
-                show screen gift
-                with d3
-                ">Вы нашли сексуальное нижее белье..."
-                hide screen gift
-                with d3
-                
-          
-        ### EVENT LEVEL 02 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
-        if whoring >= 6 and whoring <= 11: # Lv 3-4.
-            if one_of_tw == 20:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ sexdoll += 1
-                $ the_gift = "03_hp/18_store/23.png" # SEX DOLL.
-                show screen gift
-                with d3
-                ">Вы нашли секс-куклу \"Джуанну\"!" 
-                hide screen gift
-                with d3
-            elif one_of_tw == 1 or one_of_tw ==2:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ candy += 1
-                $ the_gift = "03_hp/18_store/11.png" # CANDY.
-                show screen gift
-                with d3
-                ">Вы нашли конфету..." 
-                hide screen gift
-                with d3
-            elif one_of_tw >= 3 and one_of_tw <= 10 or one_of_tw == 18:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ the_gift = "03_hp/18_store/28.png" # GOLD.
-                show screen gift
-                with d3
-                ">Вы нашли [gold2] золота..." 
-                $ gold = gold + gold2
-                hide screen gift
-                with d3
-            elif one_of_tw >= 11 and one_of_tw <= 15:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ wine += 1
-                $ the_gift = "03_hp/18_store/27.png" # WINE
-                show screen gift
-                with d3
-                ">Вы нашли бутылку из тайника Дамблдора..." 
-                hide screen gift
-                with d3
-            elif one_of_tw == 16:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ lingerie += 1
-                $ the_gift = "03_hp/18_store/24.png" # LINGERIE
-                show screen gift
-                with d3
-                ">Вы нашли сексуальное нижее белье..."
-                hide screen gift
-                with d3
-            elif one_of_tw == 17:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ chocolate += 1
-                $ the_gift = "03_hp/18_store/12.png" # CHOCOLATE.
-                show screen gift
-                with d3
-                ">Вы нашли плитку шоколада..."
-                hide screen gift
-                with d3
-            elif one_of_tw == 19:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ krum += 1
-                $ the_gift = "03_hp/18_store/26.png" # KRUM POSTER.
-                show screen gift
-                with d3
-                ">Вы нашли постер..."
-                hide screen gift
-                with d3
-         
-         
-         
-         
-        ### EVENT LEVEL 03 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
-        if whoring >= 12 and whoring <= 17: # Lv 5-6.
-            if one_of_tw == 20:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ sexdoll += 1
-                $ the_gift = "03_hp/18_store/23.png" # SEX DOLL.
-                show screen gift
-                with d3
-                ">Вы нашли секс-куклу \"Джуанну\"!" 
-                hide screen gift
-                with d3
-            elif one_of_tw >= 1 and one_of_tw <= 4:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ owl += 1
-                $ the_gift = "03_hp/18_store/22.png" # OWL.
-                show screen gift
-                with d3
-                ">Вы нашли плюшевую игрушку..." 
-                hide screen gift
-                with d3
-            elif one_of_tw == 5 or one_of_tw == 6:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ candy += 1
-                $ the_gift = "03_hp/18_store/11.png" # CANDY.
-                show screen gift
-                with d3
-                ">Вы нашли конфету..." 
-                hide screen gift
-                with d3
-            elif one_of_tw >= 7 and one_of_tw <= 14:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ the_gift = "03_hp/18_store/28.png" # GOLD.
-                show screen gift
-                with d3
-                ">Вы нашли [gold3] золота..." 
-                $ gold = gold + gold3
-                hide screen gift
-                with d3
-            elif one_of_tw >= 15 and one_of_tw <= 18:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ wine += 1
-                $ the_gift = "03_hp/18_store/27.png" # WINE
-                show screen gift
-                with d3
-                ">Вы нашли бутылку вина в тайнике Дамблдора..." 
-                hide screen gift
-                with d3
-            elif one_of_tw == 19:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ krum += 1
-                $ the_gift = "03_hp/18_store/26.png" # KRUM POSTER.
-                show screen gift
-                with d3
-                ">Вы нашли постер..."
-                hide screen gift
-                with d3
-            
-        ### EVENT LEVEL 04 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
-        if whoring >= 18: # Lv 7+  
-            if one_of_tw == 20:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ sexdoll += 1
-                $ the_gift = "03_hp/18_store/23.png" # SEX DOLL.
-                show screen gift
-                with d3
-                ">Вы нашли секс-куклу \"Джуанну\"!" 
-                hide screen gift
-                with d3
-            elif one_of_tw >= 1 and one_of_tw <= 4:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ owl += 1
-                $ the_gift = "03_hp/18_store/22.png" # OWL.
-                show screen gift
-                with d3
-                ">Вы нашли плюшевую игрушку..." 
-                hide screen gift
-                with d3
-            elif one_of_tw >= 5 and one_of_tw <= 8:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ chocolate += 1
-                $ the_gift = "03_hp/18_store/12.png" # CHOCOLATE.
-                show screen gift
-                with d3
-                ">Вы нашли плитку шоколада..."
-                hide screen gift
-                with d3
-            elif one_of_tw >= 9 and one_of_tw <= 16:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ the_gift = "03_hp/18_store/28.png" # GOLD.
-                show screen gift
-                with d3
-                ">Вы нашли [gold4] золота..." 
-                $ gold = gold + gold4
-                hide screen gift
-                with d3
-            elif one_of_tw == 17:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ broom += 1
-                $ the_gift = "03_hp/18_store/25.png" # BROOM.
-                show screen gift
-                with d3
-                ">Вы нашли метлу..."
-                hide screen gift
-                with d3
-            elif one_of_tw == 18:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ krum += 1
-                $ the_gift = "03_hp/18_store/26.png" # KRUM POSTER.
-                show screen gift
-                with d3
-                ">Вы нашли постер..."
-                hide screen gift
-                with d3
-            elif one_of_tw == 19:
-                $ renpy.play('sounds/win2.mp3')   #Not loud.
-                $ lingerie += 1
-                $ the_gift = "03_hp/18_store/24.png" # LINGERIE
-                show screen gift
-                with d3
-                ">Вы нашли сексуальное нижнее белье..."
-                hide screen gift
-                with d3
-            
 
     else: #Didn't find anything.
         ">...Вы не нашли ничего ценного." 
