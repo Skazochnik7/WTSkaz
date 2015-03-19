@@ -181,30 +181,10 @@ label door:
                             for o in hero.Items():
                                 choose.AddItem("- "+o._caption+" -", 
                                     "menu_gifts_description" , True, o.Name)
-                            choose.AddItem("- Ничего -", "day_time_requests", True, "")
+                            choose.AddItem("- Ничего -", "menu_gifts_actions", True, "")
 
                         $ choose.Show()
 
-
-
-                        label menu_gifts_description:
-                            $item=itsDAHR(choose.choice)
-                            $ gifted = True 
-
-                            if item.Name=="ball_dress" and hermi.Items.Count(item.Name)==0:
-                                show screen  blktone
-                                with d3
-                                m "(Я чувствую, что не будет обратного пути после того, как я дам ей это платье...)"
-                                m "(Я готов сделать это?)"
-                                hide screen blktone
-                                menu:
-                                    "\"Да, вполне...\"":
-                                        jump giving_thre_dress #27_final_events.rpy
-                                    "\"Нет, не готов...\"":
-                                        jump day_time_requests
-
-
-                            jump expression "giving_"+item.Name
 
                                 
                     
@@ -238,22 +218,22 @@ label door:
                             pass
                         menu:
                             
-                            "- Надеть значок -" if (herView.data().getItemKey( G_N_BADGE )==None) and  badge_01 == 7: #not ba_01 and badge_01 == 7:
+                            "- Надеть значок -" if (herView.data().getItemKey( G_N_BADGE )==None) and  hermi.Items.Any("badge_01"): #not ba_01 and badge_01 == 7:
                                 jump badge_put
                             
-                            "- Снять значок -" if (herView.data().getItemKey( G_N_BADGE )!=None) and  badge_01 == 7: #ba_01 and badge_01 == 7:
+                            "- Снять значок -" if (herView.data().getItemKey( G_N_BADGE )!=None) and  hermi.Items.Any("badge_01"): #ba_01 and badge_01 == 7:
                                 jump badge_take
                             
-                            "- Надеть колготки -" if (herView.data().getItemKey( G_N_NETS )==None) and  nets == 7: #not ne_01 and nets == 7: # Не перевел
+                            "- Надеть колготки -" if (herView.data().getItemKey( G_N_NETS )==None) and  hermi.Items.Any("nets"): #not ne_01 and nets == 7: # Не перевел
                                 jump nets_put
                             
-                            "- Снять колготки -" if (herView.data().getItemKey( G_N_NETS )!=None) and  nets == 7: #ne_01 and nets == 7:
+                            "- Снять колготки -" if (herView.data().getItemKey( G_N_NETS )!=None) and  hermi.Items.Any("nets"): #ne_01 and nets == 7:
                                 jump nets_take
                             
-                            "- Надеть мини-юбку -" if herView.data().checkItemKeyStyle( G_N_SKIRT, 'default' ) and gave_miniskirt: #not legs_02 and gave_miniskirt: #Turns True when Hermione has the miniskirt.:
+                            "- Надеть мини-юбку -" if herView.data().checkItemKeyStyle( G_N_SKIRT, 'default' ) and hermi.Items.Any("miniskirt"): #not legs_02 and gave_miniskirt: #Turns True when Hermione has the miniskirt.:
                                 jump mini_on #28_gifts.rpy
 
-                            "- Надеть длинную юбку -" if herView.data().checkItemKeyStyle( G_N_SKIRT, 'short' ) and gave_miniskirt: #legs_02 and gave_miniskirt: #Turns True when Hermione has the miniskirt.
+                            "- Надеть длинную юбку -" if herView.data().checkItemKeyStyle( G_N_SKIRT, 'short' ) and and hermi.Items.Any("miniskirt"): #legs_02 and gave_miniskirt: #Turns True when Hermione has the miniskirt.
                                 jump mini_off #28_gifts.rpy
                             
                            

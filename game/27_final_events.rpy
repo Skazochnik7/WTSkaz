@@ -1,6 +1,6 @@
 label want_to_rule:
     
-    $ event_chairman_happened = True #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
+#    $ event_chairman_happened = True #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
    
     $ walk_xpos=520 #Animation of walking chibi. (From)
     $ walk_xpos2=400 #Coordinates of it's movement. (To)
@@ -526,7 +526,7 @@ label want_to_rule:
     
 label against_the_rule:
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
-    $ snape_against_chairman_hap = True # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
+#    $ snape_against_chairman_hap = True # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
     $ days_without_an_event = 0
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
@@ -801,7 +801,7 @@ label against_the_rule:
 
 label crying_about_dress:
     
-    $ have_no_dress_hap = True #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
+#    $ have_no_dress_hap = True #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
     $ days_without_an_event = 0
     
     $ walk_xpos=520 #Animation of walking chibi. (From)
@@ -909,10 +909,10 @@ label crying_about_dress:
     
 #===========================
 label sorry_about_hesterics:
-    $ sorry_for_hesterics = True # Turns TRUE after Hermione comes and apologizes for the day (event) before.
+#    $ sorry_for_hesterics = True # Turns TRUE after Hermione comes and apologizes for the day (event) before.
     $ days_without_an_event = 0
     
-    $ have_no_dress_hap = True #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
+#    $ have_no_dress_hap = True #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
     $ days_without_an_event = 0
     
     $ walk_xpos=520 #Animation of walking chibi. (From)
@@ -1006,7 +1006,8 @@ label sorry_about_hesterics:
     
 #=========================
 label giving_thre_dress:
-    $ gave_the_dress = True #Turns True when Hermione has the dress.
+#    $ gave_the_dress = True #Turns True when Hermione has the dress.
+    $hermi.Items.Receive(hero.Items,"ball_dress",-1)
     $ days_without_an_event = 0
     $herView.hideQ()
     with d5

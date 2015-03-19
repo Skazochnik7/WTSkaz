@@ -221,7 +221,9 @@ init:
         ("wine", "Вино Дамблдора", 0, "03_hp/18_store/27.png", 
             "Бутылка из тайника профессора Дамблдора...", "cupboard", None ),
         ("potions", "Неизвестное зелье", 0, "03_hp/18_store/32.png", 
-            "Какое-то зелье...", "cupboard", None )
+            "Какое-то зелье...", "cupboard", None ),
+        ("scroll", "Священный свиток", 30, "03_hp/18_store/31.png", 
+            "Священный свиток содержит тайные знания...", "scroll", None) # {"pic":"03_hp/19_extras/xx.png"} )
 
 
         ]
@@ -235,9 +237,12 @@ init:
             SetArrayValue(s, "price", _price) 
             SetArrayValue(s, "description", _description) 
             SetArrayValue(s, "img", _img) 
-            SetArrayValue(s, "block", _block) 
-            SetArrayValue(s, "constVals", _constVals) 
-            itemList.append(RegEntry(Item(s, 0, {'klop':_price})))
+            SetArrayValue(s, "block", _block)
+            if _constVals!=None:
+                for o in _constVals:
+                    SetArrayValue(s, o, _constVals[o]) 
+            
+            itemList.append(RegEntry(Item(s, 0)))
 #            item=Item(s, 0, None)
 #            item._caption=_caption
 #            item._price=_price
@@ -247,7 +252,7 @@ init:
 #            itemList.append(item)
 
         global itsDAHR
-        itsDAHR=RegEntry(ItemCollection("DAHR",{"gears":1, "gifts":1}))
+        itsDAHR=RegEntry(ItemCollection("DAHR",{"gears":1, "gifts":3, "scroll":30}))
 
         global itsOWL
         itsOWL=RegEntry(ItemCollection("OWL"))
@@ -5071,10 +5076,10 @@ label start:
     $ request_30_a = False #Turns true when hermione fails to show up after her "Fuck a classmate" favor. Runs an event next morning.
     
 ### 27_FINAL_EVENTS ###
-    $ event_chairman_happened = False #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
-    $ snape_against_chairman_hap = False # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
-    $ have_no_dress_hap = False #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
-    $ sorry_for_hesterics = False # Turns TRUE after Hermione comes and apologizes for the day (event) before.
+#    $ event_chairman_happened = False #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
+#    $ snape_against_chairman_hap = False # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
+#    $ have_no_dress_hap = False #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
+#    $ sorry_for_hesterics = False # Turns TRUE after Hermione comes and apologizes for the day (event) before.
     
 
     $ slytherin = 180 #Shows amount of points the Slytherin house has.
@@ -5085,63 +5090,7 @@ label start:
 
 
     
-### THE STORE ###
-    
-
-    $ bought_ball_dress = False #Affects 15_mail.rpy
-    $ bought_dress_already = False #Makes sure that you won't buy the dress twice.
-    $ gave_the_dress = False #Turns True when Hermione has the dress.
-
-### HEARTS ###
-
-#    $  new_request_01_01 = False # Talk to me.
-#    $  new_request_01_02 = False
-#    $  new_request_01_03 = False
-    
-#    $ new_request_02_01 = False #SHOW ME YOUR PANTIES
-#    $ new_request_02_02 = False #SHOW ME YOUR PANTIES
-#    $ new_request_02_03 = False #SHOW ME YOUR PANTIES
-    
-#    $ new_request_03_01 = False # "Give me your panties" 
-#    $ new_request_03_02 = False # "Give me your panties" 
-#    $ new_request_03_03 = False # "Give me your panties" 
-    
-#    $ new_request_04_01 = False # (Touch tits's through fabric.)
-#    $ new_request_04_02 = False # (Touch tits's through fabric.)
-#    $ new_request_04_03 = False # (Touch tits's through fabric.)
-    
-#    $ new_request_05_01 = False # (BUTT MOLESTER).
-#    $ new_request_05_02 = False # (BUTT MOLESTER).
-#    $ new_request_05_03 = False # (BUTT MOLESTER).
-    
-#    $ new_request_08_01 = False # (Show me tits).
-#    $ new_request_08_02 = False # (Show me tits).
-#    $ new_request_08_03 = False # (Show me tits).
-
-#    $ new_request_11_01 = False # (Dance for me.)
-#    $ new_request_11_02 = False # (Dance for me.)
-#    $ new_request_11_03 = False # (Dance for me.)
-    
-#    $ new_request_12_01 = False # (Play with her tits.)
-#    $ new_request_12_02 = False # (Play with her tits.)
-#    $ new_request_12_03 = False # (Play with her tits.)
-    
-#    $ new_request_16_01 = False #  (HANDJOB)
-#    $ new_request_16_02 = False #  (HANDJOB)
-#    $ new_request_16_03 = False #  (HANDJOB)
-    
-#    $ new_request_22_01 = False #  (BLOWJOB)
-#    $ new_request_22_02 = False #  (BLOWJOB)
-#    $ new_request_22_03 = False #  (BLOWJOB)
-    
-#    $ new_request_29_01 = False #  (SEX)
-#    $ new_request_29_02 = False #  (SEX)
-#    $ new_request_29_03 = False #  (SEX)
-    
-#    $ new_request_31_01 = False #  (ANAL)
-#    $ new_request_31_02 = False #  (ANAL)
-#    $ new_request_31_03 = False #  (ANAL)
-    
+  
 
 ### MISC FLAGS ###
 
@@ -5161,48 +5110,6 @@ label start:
     $ vouchers = 0 #Shows the amount of DAHR's vouchers in your possession.
     
     
-    ### GIFTS ### 
-    $ wine = 0 # Dumbledore's wine you find in the cupboard and use for "Snape dates".
-    $ anal_lube = 0 #Amount of anal lubricant in possesion. 
-    $ bought_anal_lube = False #Affects 15_mail.rpy
-    $ condoms = 0 #Amount.
-    $ bought_condoms = False #Affects 15_mail.rpy
-    $ candy = 0 #Amount.
-    $ bought_candy = False #Affects 15_mail.rpy
-    $ chocolate = 0 #Amount.
-    $ bought_chocolate = False #Affects 15_mail.rpy
-    $ vibrator = 0 #Amount.
-    $ bought_vibrator = False #Affects 15_mail.rpy
-    $ strapon = 0 #Amount.
-    $ bought_strapon = False #Affects 15_mail.rpy
-    $ ballgag = 0 #Amount.
-    $ bought_ballgag = False #Affects 15_mail.rpy
-    $ plug = 0 #Amount.
-    $ bought_plug = False #Affects 15_mail.rpy
-    $ mag1 = 0 #Amount.
-    $ bought_mag1 = False #Affects 15_mail.rpy
-    $ mag2 = 0 #Amount.
-    $ bought_mag2 = False #Affects 15_mail.rpy
-    $ mag3 = 0 #Amount.
-    $ bought_mag3 = False #Affects 15_mail.rpy
-    $ mag4 = 0 #Amount.
-    $ bought_mag4 = False #Affects 15_mail.rpy
-    $ beer = 0 #Amount.
-    $ bought_beer = False #Affects 15_mail.rpy
-    $ owl = 0 #Amount.
-    $ bought_owl = False #Affects 15_mail.rpy
-    $ sexdoll = 0 #Amount.
-    $ bought_sexdoll = False #Affects 15_mail.rpy
-    $ lingerie = 0 #Amount.
-    $ bought_lingerie = False #Affects 15_mail.rpy
-    $ broom = 0 #Amount.
-    $ bought_broom = False #Affects 15_mail.rpy
-    $ krum = 0 #Amount.
-    $ bought_krum = False #Affects 15_mail.rpy
-    $ badge_01 = 0 #Amount.
-    $ bought_badge_01 = False #Affects 15_mail.rpy
-    $ nets = 0 #Amount.
-    $ bought_nets = False #Affects 15_mail.rpy
 
     
     $ searched = False #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
@@ -5256,55 +5163,12 @@ label start:
     
     
     
-    
-     ### GIFTS ### 
-    $ wine = 0 # Dumbledore's wine you find in the cupboard and use for "Snape dates".
-    $ anal_lube = 0 #Amount of anal lubricant in possesion. 
-    $ bought_anal_lube = False #Affects 15_mail.rpy
-    $ condoms = 0 #Amount.
-    $ bought_condoms = False #Affects 15_mail.rpy
-    $ candy = 0 #Amount.
-    $ bought_candy = False #Affects 15_mail.rpy
-    $ chocolate = 0 #Amount.
-    $ bought_chocolate = False #Affects 15_mail.rpy
-    $ vibrator = 0 #Amount.
-    $ bought_vibrator = False #Affects 15_mail.rpy
-    $ strapon = 0 #Amount.
-    $ bought_strapon = False #Affects 15_mail.rpy
-    $ ballgag = 0 #Amount.
-    $ bought_ballgag = False #Affects 15_mail.rpy
-    $ plug = 0 #Amount.
-    $ bought_plug = False #Affects 15_mail.rpy
-    $ mag1 = 0 #Amount.
-    $ bought_mag1 = False #Affects 15_mail.rpy
-    $ mag2 = 0 #Amount.
-    $ bought_mag2 = False #Affects 15_mail.rpy
-    $ mag3 = 0 #Amount.
-    $ bought_mag3 = False #Affects 15_mail.rpy
-    $ mag4 = 0 #Amount.
-    $ bought_mag4 = False #Affects 15_mail.rpy
-    $ beer = 0 #Amount.
-    $ bought_beer = False #Affects 15_mail.rpy
-    $ owl = 0 #Amount.
-    $ bought_owl = False #Affects 15_mail.rpy
-    $ sexdoll = 0 #Amount.
-    $ bought_sexdoll = False #Affects 15_mail.rpy
-    $ lingerie = 0 #Amount.
-    $ bought_lingerie = False #Affects 15_mail.rpy
-    $ broom = 0 #Amount.
-    $ bought_broom = False #Affects 15_mail.rpy
-    $ krum = 0 #Amount.
-    $ bought_krum = False #Affects 15_mail.rpy
-    $ badge_01 = 0 #Amount.
-    $ bought_badge_01 = False #Affects 15_mail.rpy
-    $ nets = 0 #Amount.
-    $ bought_nets = False #Affects 15_mail.rpy
-    
+   
     ### MINISKIRT ###
-    $ bought_skirt_already = False # Turns TRUE after you redeem the voucher and get the mini skirt.
-    $ bought_miniskirt = False #Affects 15_mail.rpy
-    $ have_miniskirt = False # Turns TRUE when you have the skirt in your possession.
-    $ gave_miniskirt = False #Turns True when Hermione has the miniskirt.
+#    $ bought_skirt_already = False # Turns TRUE after you redeem the voucher and get the mini skirt.
+#    $ bought_miniskirt = False #Affects 15_mail.rpy
+#    $ have_miniskirt = False # Turns TRUE when you have the skirt in your possession.
+#    $ gave_miniskirt = False #Turns True when Hermione has the miniskirt.
     
     $ dress_code = False # Turns TRUE when you gift the miniskirt. Unlocks the "dress code" button.
     
@@ -5315,89 +5179,12 @@ label start:
             "\"Да, пожалуйста.\"":
                 $ gold = gold + persistent.gold
                 ">[persistent.gold] золота было добавлено."
+                python:
+                    if persistent.itemSet!=None:
+                        for o in persistent.itemSet:
+                            renpy.say(">Предмет \""+o+"\": "+str(persistent.itemSet[o])+" шт. добавлено в ваше имущество")
+                            hero.Items.AddItem(o,_value)
                 
-                if persistent.lolipop >= 1:
-                    $ candy = candy + persistent.lolipop # LOLIPOP.
-                    ">[persistent.lolipop] конфет было добавлено в ваще имущество"
-                
-                if persistent.choco >= 1:
-                    $ chocloate = chocolate + persistent.choco # CHOCOLATE.
-                    ">[persistent.choco] шоколадок было добавлено в ваще имущество."
-                
-                if persistent.owl >= 1:
-                    $ owl = owl + persistent.owl # PLUSH OWL.
-                    ">[persistent.owl] плюшевых сов было добавлено в ваще имущество."
-                
-                if persistent.beer >= 1:
-                    $ beer = beer + persistent.beer # Beer.
-                    ">[persistent.beer] бутылок сливочного пива было добавлено в ваще имущество."
-                
-                if persistent.mag1 >= 1:
-                    $ mag1 = mag1 + persistent.mag1 # mag1.
-                    ">[persistent.mag1] обучающих журналов было добавлено в ваще имущество."
-                
-                if persistent.mag2 >= 1:
-                    $ mag2 = mag2 + persistent.mag2 # mag2.
-                    ">[persistent.mag2] женских журналов было добавлено в ваще имущество."
-                    
-                if persistent.mag3 >= 1:
-                    $ mag3 = mag3 + persistent.mag3 # mag3.
-                    ">[persistent.mag3] журналов для взрослых было добавлено в ваще имущество."
-                
-                if persistent.mag4 >= 1:
-                    $ mag4 = mag4 + persistent.mag4 # mag4.
-                    ">[persistent.mag4] порно журналов было добавлено в ваще имущество."
-                
-                if persistent.krum >= 1:
-                    $ krum = krum + persistent.krum # VIKTOR KRUM POSTER.
-                    ">[persistent.krum] постеров Виктора Крама было добавлено в ваще имущество."
-                    
-                if persistent.lin >= 1:
-                    $ lingerie = lingerie + persistent.lin # lin.
-                    ">[persistent.lin] коробок сексуального нижнего белья было добавлено в ваще имущество."
-                
-                if persistent.con >= 1:
-                    $ condoms = condoms + persistent.con # CONDOMS.
-                    ">[persistent.con] упаковок презервативов было добавлено в ваще имущество."
-                    
-                if persistent.vib >= 1:
-                    $ vibrator = vibrator + persistent.vib # VIBRATOR.
-                    ">[persistent.vib] вибраторов было добавлено в ваще имущество."
-                    
-                if persistent.lube >= 1:
-                    $ anal_lube = anal_lube + persistent.lube # ANAL LUBRICANT.
-                    ">[persistent.lube] банок анального лубриканта было добавлено в ваще имущество."
-                
-                if persistent.gag >= 1:
-                    $ ballgag = ballgag + persistent.gag # BALLGAG.
-                    ">[persistent.gag] пара кляпов и наручников было добавлено в ваще имущество."
-                    
-                if persistent.plug >= 1:
-                    $ plug = plug + persistent.plug # ANAL PLUG.
-                    ">[persistent.plug] набор(ов) анальных пробок было добавлено в ваще имущество."
-                    
-                if persistent.strap >= 1:
-                    $ strapon = strapon + persistent.strap # STRAP-ON.
-                    ">[persistent.strap] страпонов \"Фестрал\" было добавлено в ваще имущество."
-                
-                if persistent.broom >= 1:
-                    $ broom = broom + persistent.broom # BROOM.
-                    ">[persistent.broom] метел \"Леди Спид Стик-2000\" было добавлено в ваще имущество."
-                    
-                if persistent.doll >= 1:
-                    $ sexdoll = sexdoll + persistent.doll # SEXDOLL.
-                    ">[persistent.doll] секс-кукол \"Джуанна\" было добавлено в ваще имущество."
-                    
-                if persistent.wine >= 1:
-                    $ wine = wine + persistent.wine # WINE.
-                    ">[persistent.wine] бутылок вина Дамблдора было добавлено в ваще имущество."
-                    
-
-            ### THE SKIRT ###
-                if persistent.haveskirt: # Makes sure you only need to buy the skirt once. Checked at the +new game screen.
-                    $ dress_code = True # Turns TRUE when you gift the miniskirt. Unlocks the "dress code" button.
-                    $ gave_miniskirt = True #Turns True when Hermione has the miniskirt.
-                    ">Школьная мини-юбка была добавлена в гардероб Гермионы."
             "\"Не нужно.\"":
                 pass
 

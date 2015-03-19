@@ -11,10 +11,12 @@ label gallery:
             jump music_room
         
         "- Священные свитки. Часть I -":
-            jump volone
+            $_scroll=0
+            jump volone 
         
         "- Священные свитки. Часть II -":
-            jump voltwo
+            $_scroll=1
+            jump volone 
             
 #        "- Gallery volume 02 -":
 #            jump volumetwo
@@ -86,382 +88,73 @@ label gallery:
             
             
 label volone:
-    menu:
-        "- С.01: [scroll_01_name] -" if persistent.ss_01:
-            show image "03_hp/19_extras/01.png" with d3
-            if commentaries:
-                a1 "Это самый первый эскиз офиса Дамблдора."
-                a1 "Не самое лучшее мое творение. Но заключает в себе великую историческую ценность."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/01.png" with d3
-            pass
-        "- С.02: [scroll_02_name] -" if persistent.ss_02:
-            show image "03_hp/19_extras/02.png" with d3
-            if commentaries:
-                a1 "Календарь..."
-                a1 "На ранних этапах разработки я планировал сделать внутриигровой календарь и завязать на нем геймплей..."
-                a1 "До тех пор, пока не понял, насколько сложнее сделать такую игру..."
-                a1 "К тому же мне кажется, что любые временные рамки в любой игре мешают веселью. Так что, я бросил эту затею..."
-                a1 "Позже я использовал этот рисунок как пергамент для писем..."
+    $ choose = RunMenu()
+    python:
+        _itemCount=0
+        if persistent.itemSet!=None:
+            _itemCount=persistent.itemSet.get("scroll")
+            _itemCount=0 if _itemCount==None else _itemCount
+        for i in range(_scroll*15+1, _scroll*15+15):
+            if i<=_itemCount:
+                choose.AddItem("- C."+str(i)+": Священный свиток #"+str(i)+" -", 
+                    "vol_description" , True, i)
+        choose.AddItem("- Ничего -", "after_cam", True, "")
+    $ choose.Show()
 
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/02.png" with d3
-            pass
-        "- С.03: [scroll_03_name] -" if persistent.ss_03:
-            show image "03_hp/19_extras/03.png" with d3
-            if commentaries:
-                a1 "Несколько самых ранних набросков Гермионы..."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/03.png" with d3
-            pass
-            
-        "- С.04: [scroll_04_name] -" if persistent.ss_04:
-            show image "03_hp/19_extras/04.png" with d3
-            if commentaries:
-                a1 "Сцена с глубоким заглотом..."
-                a1 "Моя первая попытка."
-                a1 "Была признана негодной и оставлена как есть."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/04.png" with d3
-            pass
-            
-        "- С.05: [scroll_05_name] -" if persistent.ss_05:
-            show image "03_hp/19_extras/05.png" with d3
-            if commentaries:
-                a1 "Постер игры..."
-                a1 "Гермиона - работа Dahr. Остальное - моя..."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/05.png" with d3
-            pass
-            
-        "- С.06: [scroll_06_name] -" if persistent.ss_06:
-            show image "03_hp/19_extras/06.png" with d3
-            if commentaries:
-                a1 "Альтернативный постер игры."
-                a1 "Этот так и не был выпущен."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/06.png" with d3
-            pass
-            
-        "- С.07: [scroll_07_name] -" if persistent.ss_07:
-            show image "03_hp/19_extras/07.png" with d3
-            if commentaries:
-                a1 "Несколько чибиков крупным планом."
-                a1 "Они так и не попали в игру..."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/07.png" with d3
-            pass
-            
-        "- С.08: [scroll_08_name] -" if persistent.ss_08:
-            show image "03_hp/19_extras/08.png" with d3
-            if commentaries:
-                a1 "Куча вещей, которых я так и не использовал..."
-                a1 "Все из-за dahr и его шикарных рисунков."
+label vol_description:
 
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/08.png" with d3
-            pass
-            
-        "- С.09: [scroll_09_name] -" if persistent.ss_09:
-            show image "03_hp/19_extras/09.png" with d3
-            if commentaries:
-                a1 "Рисунок Гермионы с постера. (by Dahr)"
-                a1 "Мне больше нравится правая - та, что с трусиками."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/09.png" with d3
-            pass
-            
-        "- С.10: [scroll_10_name] -" if persistent.ss_10:
-            show image "03_hp/19_extras/10.png" with d3
-            if commentaries:
-                a1 "Опять вещи, что так и не вошли в игру..."
-                a1 "Идея была в том, что чем больше ты бы прокачивал Гермиону, тем больше прищепок она давала бы на себя нацепить..."
-                a1 "А цепь для сосков она должна была бы носить во время уроков под своей формой."
+    $_descrs=[
+    ["Это самый первый эскиз офиса Дамблдора.", "Не самое лучшее мое творение. Но заключает в себе великую историческую ценность."],
+    ["Календарь...", "На ранних этапах разработки я планировал сделать внутриигровой календарь и завязать на нем геймплей...","До тех пор, пока не понял, насколько сложнее сделать такую игру...",
+        "К тому же мне кажется, что любые временные рамки в любой игре мешают веселью. Так что, я бросил эту затею...", "Позже я использовал этот рисунок как пергамент для писем..."],
+    ["Несколько самых ранних набросков Гермионы..."],
+    ["Сцена с глубоким заглотом...", "Моя первая попытка.", "Была признана негодной и оставлена как есть."],
+    ["Постер игры...", "Гермиона - работа Dahr. Остальное - моя..."],
+    ["Альтернативный постер игры.", "Этот так и не был выпущен."],
+    ["Несколько чибиков крупным планом.", "Они так и не попали в игру..."],
+    ["Куча вещей, которых я так и не использовал...", "Все из-за dahr и его шикарных рисунков."],
+    ["Рисунок Гермионы с постера. (by Dahr)", "Мне больше нравится правая - та, что с трусиками."],
+    ["Опять вещи, что так и не вошли в игру...", "Идея была в том, что чем больше ты бы прокачивал Гермиону, тем больше прищепок она давала бы на себя нацепить...","А цепь для сосков она должна была бы носить во время уроков под своей формой."],
+    ["Бордель домовых... Еще одна вещь, которая так и не сбылась."],
+    ["Рисунок, где ты очень похож на мага из Дурмстранга, а Лола - на ученицу...", "Рисунок рисовал Dahr, конечно."],
+    ["Еще один побочный квест, так и не увидевший свет...", "В общем, там-","Нет, пожалуй, нет. Кто знает, быть может мы все-таки введем эти квесты."],
+    ["Еще один побочный квест...", "Этот про волшебный шахматный клуб."],
+    ["Существует множество способов того, как симпатичная девушка может держать книгу.", "Я думал, что было бы круто, если бы Гермиона начинала носить держать книги по-другому по мере того, как она учится все новому.","Так как вся ветка с репетиторством была отменена, я выкладываю это здесь..."],
+
+
+    ["Парочка вещей, что не попали в финальную версию...", "Слева действительно настоящий живой домовой, которого можно подарить.","Справа портрет извращенного, но мудрого мага. Должен был помогать с учебой..."],
+    ["Еще несколько вещиц...", "Газета, флакон духов и волшебная шляпа, которая говорит то, что ты хочешь услышать..."],
+    ["Книги...", "Верхний ряд - мои наброски, нижний ряд - законченный изображения от dahr."],
+    ["Известная певица.", "Не имеет отношения игре, добавлена сюда без причины, просто так."],
+    ["Я потратил прилично времени, чтобы дать Гермионе подходящую внешность...", "Версия \"A\" была моей первой попыткой. И она мне нравилась, пока я не начал ее ненавидеть...",
+        "Версия \"B\" была моей второй попыткой. И она хороша. Но ее самоуверенные и полуагрессивные черты не совсем подходили героине...","Версия \C\" та, что прошла кастинг. Гермиона которую мы вырастили и о которой будем заботиться, я уверен."],
+    ["Побочный квест, которого нет.", "Вам позволено жалеть, что торопили меня.","Если вы не торопили меня, вам позволено злиться на тех, кто торопил."],
+    ["Гермиона дарит свое тело Джинни...", "Это была бы запоминающаяся сцена..."],
+    ["Не ожидали, ага?", "Это все еще Гермиона, если вам любопытно."],
+    [".................................", "Сайд-квест, конечно..."],
+    ["Еще один сайд-квест...", "Мы много спорили с Dahr о нем...","Я был против квеста, но потом Dahr отправил мне картинки, чем заставил меня заткнуться."],
+    ["На самых ранних стадиях разработки у меня была идея показывать последствия проваленных или успешно выполненых сайд-квестов в виде упрощенных изображений, или фотографий...", 
+        "Поначалу многие сайд-квесты давали игроку выбор, как потратить бюджет Хогвартса...",
+        "Потратить деньги на финансирование школьной команды по квиддичу, или на наем новых учителей? Ну, и в таком духе..."],
+    ["Ну разве она не милашка?"],
+    ["Очередной (довольно большой) сайд-квест..."],
+    [".........."],
+    ["Одни из самых ранних набросков по сайд-квесту школьной команды по квиддичу..."]
+    ]
+
     
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/10.png" with d3
-            pass
-            
-        "- С.11: [scroll_11_name] -" if persistent.ss_11:
-            show image "03_hp/19_extras/11.png" with d3
-            if commentaries:
-                a1 "Бордель домовых... Еще одна вещь, которая так и не сбылась."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/11.png" with d3
-            pass
-            
-        "- С.12: [scroll_12_name] -" if persistent.ss_12:
-            show image "03_hp/19_extras/12.png" with d3
-            if commentaries:
-                a1 "Рисунок, где ты очень похож на мага из Дурмстранга, а Лола - на ученицу..."
-                a2 "Рисунок рисовал Dahr, конечно."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/12.png" with d3
-            pass
-        
-        
-        "- С.13: [scroll_13_name] -" if persistent.ss_13:
-            show image "03_hp/19_extras/13.png" with d3
-            if commentaries:
-                a1 "Еще один побочный квест, так и не увидевший свет..."
-                a1 "В общем, там-"
-                a1 "Нет, пожалуй, нет. Кто знает, быть может мы все-таки введем эти квесты."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/13.png" with d3
-            pass
-        
-        "- С.14: [scroll_14_name] -" if persistent.ss_14:
-            show image "03_hp/19_extras/14.png" with d3
-            if commentaries:
-                a1 "Еще один побочный квест..."
-                a1 "Этот про волшебный шахматный клуб."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/14.png" with d3
-            pass
-        
-        "- С.15: [scroll_15_name] -" if persistent.ss_15:
-            show image "03_hp/19_extras/15.png" with d3
-            if commentaries:
-                a1 "Существует множество способов того, как симпатичная девушка может держать книгу."
-                a1 "Я думал, что было бы круто, если бы Гермиона начинала носить держать книги по-другому по мере того, как она учится все новому."
-                a1 "Так как вся ветка с репетиторством была отменена, я выкладываю это здесь..."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/15.png" with d3
-            pass
-        
-        "Ничего":
-            jump after_cam
-        
+    show image "03_hp/19_extras/"+str(choose.choice).zfill(2)+".png" with d3
+    if commentaries:
+        python:
+            for i in range(len(_descrs[choose.choice-1])):
+                renpy.say(a1,_descrs[choose.choice-1][i])
+    show screen ctc
+    pause
+    hide screen ctc
+    hide image "03_hp/19_extras/"+str(choose.choice).zfill(2)+".png" with d3
     jump volone
         
-        
-        
-        
-label voltwo:
-    menu:
-        "- С.16: [scroll_16_name] -" if persistent.ss_16:
-            show image "03_hp/19_extras/16.png" with d3
-            if commentaries:
-                a1 "Парочка вещей, что не попали в финальную версию..."
-                a1 "Слева действительно настоящий живой домовой, которого можно подарить."
-                a1 "Справа портрет извращенного, но мудрого мага. Должен был помогать с учебой..."
 
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/16.png" with d3
-            pass
-        "- С.17: [scroll_17_name] -" if persistent.ss_17:
-            show image "03_hp/19_extras/17.png" with d3
-            if commentaries:
-                #17.
-                a1 "Еще несколько вещиц..."
-                a1 "Газета, флакон духов и волшебная шляпа, которая говорит то, что ты хочешь услышать..."
-
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/17.png" with d3
-            pass
-        "- С.18: [scroll_18_name] -" if persistent.ss_18:
-            show image "03_hp/19_extras/18.png" with d3
-            if commentaries:
-                 #18.
-                a1 "Книги..."
-                a1 "Верхний ряд - мои наброски, нижний ряд - законченный изображения от dahr."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/18.png" with d3
-            pass
-            
-        "- С.19: [scroll_19_name] -" if persistent.ss_19:
-            show image "03_hp/19_extras/19.png" with d3
-            if commentaries:
-                #19.
-                a1 "Известная певица."
-                a1 "Не имеет отношения игре, добавлена сюда без причины, просто так."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/19.png" with d3
-            pass
-            
-        "- С.20: [scroll_20_name] -" if persistent.ss_20:
-            show image "03_hp/19_extras/20.png" with d3
-            if commentaries:
-                #20.
-                a1 "Я потратил прилично времени, чтобы дать Гермионе подходящую внешность..."
-                a1 "Версия \"A\" была моей первой попыткой. И она мне нравилась, пока я не начал ее ненавидеть..."
-                a2 "Версия \"B\" была моей второй попыткой. И она хороша. Но ее самоуверенные и полуагрессивные черты не совсем подходили героине..."
-                a1 "Версия \C\" та, что прошла кастинг. Гермиона которую мы вырастили и о которой будем заботиться, я уверен."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/20.png" with d3
-            pass
-            
-        "- С.21: [scroll_21_name] -" if persistent.ss_21:
-            show image "03_hp/19_extras/21.png" with d3
-            if commentaries:
-                #21 
-                a1 "Побочный квест, которого нет."
-                a1 "Вам позволено жалеть, что торопили меня."
-                a1 "Если вы не торопили меня, вам позволено злиться на тех, кто торопил."
-
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/21.png" with d3
-            pass
-            
-        "- С.22: [scroll_22_name] -" if persistent.ss_22:
-            show image "03_hp/19_extras/22.png" with d3
-            if commentaries:
-                #22
-                a1 "Гермиона дарит свое тело Джинни..."
-                a1 "Это была бы запоминающаяся сцена..."
-
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/22.png" with d3
-            pass
-            
-        "- С.23: [scroll_23_name] -" if persistent.ss_23:
-            show image "03_hp/19_extras/23.png" with d3
-            if commentaries:
-                #23. 
-                a1 "Не ожидали, ага?"
-                a1 "Это все еще Гермиона, если вам любопытно."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/23.png" with d3
-            pass
-            
-        "- С.24: [scroll_24_name] -" if persistent.ss_24:
-            show image "03_hp/19_extras/24.png" with d3
-            if commentaries:
-                #24.
-                a1 "................................."
-                a1 "Сайд-квест, конечно..."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/24.png" with d3
-            pass
-            
-        "- С.25: [scroll_25_name] -" if persistent.ss_25:
-            show image "03_hp/19_extras/25.png" with d3
-            if commentaries:
-                #25.
-                a1 "Еще один сайд-квест..."
-                a1 "Мы много спорили с Dahr о нем..."
-                a1 "Я был против квеста, но потом Dahr отправил мне картинки, чем заставил меня заткнуться."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/25.png" with d3
-            pass
-            
-        "- С.26: [scroll_26_name] -" if persistent.ss_26:
-            show image "03_hp/19_extras/26.png" with d3
-            if commentaries:
-                #26.
-                a1 "На самых ранних стадиях разработки у меня была идея показывать последствия проваленных или успешно выполненых сайд-квестов в виде упрощенных изображений, или фотографий..."
-                a1 "Поначалу многие сайд-квесты давали игроку выбор, как потратить бюджет Хогвартса..."
-                a1 "Потратить деньги на финансирование школьной команды по квиддичу, или на наем новых учителей? Ну, и в таком духе..."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/26.png" with d3
-            pass
-            
-        "- С.27: [scroll_27_name] -" if persistent.ss_27:
-            show image "03_hp/19_extras/27.png" with d3
-            if commentaries:
-                #27.
-                a1 "Ну разве она не милашка?"
-
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/27.png" with d3
-            pass
-
-        
-        "- С.28: [scroll_28_name] -" if persistent.ss_28:
-            show image "03_hp/19_extras/28.png" with d3
-            if commentaries:
-                #28.
-                a1 "Очередной (довольно большой) сайд-квест..."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/28.png" with d3
-            pass
-        
-        "- С.29: [scroll_29_name] -" if persistent.ss_29:
-            show image "03_hp/19_extras/29.png" with d3
-            if commentaries:
-                #29.
-                a1 ".........."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/29.png" with d3
-            pass
-        
-        "- С.30: [scroll_30_name] -" if persistent.ss_30:
-            show image "03_hp/19_extras/30.png" with d3
-            if commentaries:
-                #30.
-                a1 "Одни из самых ранних набросков по сайд-квесту школьной команды по квиддичу..."
-            show screen ctc
-            pause
-            hide screen ctc
-            hide image "03_hp/19_extras/30.png" with d3
-            pass
-        
-        "\"Ничего\"":
-            jump after_cam
-        
-    jump voltwo
-    
-        
-        
-        
         
         
     

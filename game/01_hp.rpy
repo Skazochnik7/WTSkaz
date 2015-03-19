@@ -727,76 +727,7 @@ init -2:
     
     $ config.autoreload = False
     
-     ### SACRED SCROLLS ###
-    #
-    $ sscroll_01 = False # Turns TRUE if the scroll had been bought.
-    $ sscroll_02 = False
-    $ sscroll_03 = False
-    $ sscroll_04 = False
-    $ sscroll_05 = False
-    $ sscroll_06 = False
-    $ sscroll_07 = False
-    $ sscroll_08 = False
-    $ sscroll_09 = False
-    $ sscroll_10 = False
-    #
-    $ sscroll_11 = False # Turns TRUE if the scroll had been bought.
-    $ sscroll_12 = False
-    $ sscroll_13 = False
-    $ sscroll_14 = False
-    $ sscroll_15 = False
-    $ sscroll_16 = False
-    $ sscroll_17 = False
-    $ sscroll_18 = False
-    $ sscroll_19 = False
-    $ sscroll_20 = False
-    #
-    $ sscroll_21 = False # Turns TRUE if the scroll had been bought.
-    $ sscroll_22 = False
-    $ sscroll_23 = False
-    $ sscroll_24 = False
-    $ sscroll_25 = False
-    $ sscroll_26 = False
-    $ sscroll_27 = False
-    $ sscroll_28 = False
-    $ sscroll_29 = False
-    $ sscroll_30 = False
-    #
-    $ scroll_01_name = "Свиток #1"
-    $ scroll_02_name = "Свиток #2"
-    $ scroll_03_name = "Свиток #3"
-    $ scroll_04_name = "Свиток #4"
-    $ scroll_05_name = "Свиток #5"
-    $ scroll_06_name = "Свиток #6"
-    $ scroll_07_name = "Свиток #7"
-    $ scroll_08_name = "Свиток #8"
-    $ scroll_09_name = "Свиток #9"
-    $ scroll_10_name = "Свиток #10"
-    #
-    $ scroll_11_name = "Свиток #11"
-    $ scroll_12_name = "Свиток #12"
-    $ scroll_13_name = "Свиток #13"
-    $ scroll_14_name = "Свиток #14"
-    $ scroll_15_name = "Свиток #15"
-    $ scroll_16_name = "Свиток #16"
-    $ scroll_17_name = "Свиток #17"
-    $ scroll_18_name = "Свиток #18"
-    $ scroll_19_name = "Свиток #19"
-    $ scroll_20_name = "Свиток #20"
-    #
-    $ scroll_21_name = "Свиток #21"
-    $ scroll_22_name = "Свиток #22"
-    $ scroll_23_name = "Свиток #23"
-    $ scroll_24_name = "Свиток #24"
-    $ scroll_25_name = "Свиток #25"
-    $ scroll_26_name = "Свиток #26"
-    $ scroll_27_name = "Свиток #27"
-    $ scroll_28_name = "Свиток #28"
-    $ scroll_29_name = "Свиток #29"
-    $ scroll_30_name = "Свиток #30"
-    
-    
-    
+
     
     
     

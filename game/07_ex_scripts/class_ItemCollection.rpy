@@ -25,14 +25,6 @@
                     return o
             return None
 
-#        def AddItems(self, itemSet): # на вход сет {"имя вещи":кол-во} кол-во может быть отрицательным  
-        #   AddItems({"candy":{"status":0, "defVals":None, "count":5}})  
-        #   AddItems({"candy":{}})  - дефлтное
-        #   Пока вещи добавляются по отдельности, а не просто количество, т.е. предполагается, что у двух предметов одного типа могут быть разные характеристики
-        #   Если не пригодится, можно упростить структуру
-#            for s in itemSet:
-#                self.AddItem(s, itemSet[s])    
-#            return
 
         def AddItem(self, Name, count=1): # на вход сет {"имя вещи":кол-во} кол-во может быть отрицательным  
             return self.IncValue(Name+"_count",count, minimum=0)
@@ -45,6 +37,9 @@
 
 
 
+        def Receive(self, collection, Name, count=1):
+            collection.AddItem(Name,count)
+            self.AddItem(Name,count)
 
 
         def Clear(self, Name=None):
@@ -57,9 +52,9 @@
 
 
 
-        def Any(self):
+        def Any(self,Name=None):
             for o in self.defVals:
-                if self.GetValue(o)>0:
+                if self.GetValue(o)>0 and (Name==None or Name+"_count"==o):
                     return True
             return False
 
