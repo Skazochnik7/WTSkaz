@@ -31,13 +31,13 @@ label cupboard:
                 $ choose = RunMenu()
                 python:
                     for o in hero.Items():
-                            choose.AddItem("- "+o._caption+" -", 
+                            choose.AddItem("- "+o._caption+" ("+str(hero.Items.Count(o.Name))+") -", 
                                 "menu_cupboard_description" , True, o.Name)
                     if  day>1: 
                         choose.AddItem("Помощь", "cheat_help", True, "")
-                    choose.AddItem("- Ничего -", "cupboard", True, "")
+#                    choose.AddItem("- Ничего -", "cupboard", True, "")
 
-                $ choose.Show()
+                $ choose.Show("cupboard")
 
             label menu_cupboard_description:
                 $item=itsDAHR(choose.choice)
@@ -81,24 +81,26 @@ label cupboard:
 
         "- Священные свитки. Часть I -" if not day == 1 and cataloug_found:
             label sc_col_men_1:
-                $ choose = RunMenu()
-                python:
-                    for i in range(1, 15):
-                        choose.AddItem("- C.[i]: Священный свиток #[i] -", 
-                            "menu_cupboard_scroll_show" , True, i)
-                    choose.AddItem("- Ничего -", "cupboard", True, "")
-                $ choose.Show()
+                $_scrollSection=0
+                jump sc_col
 
 
         "- Священные свитки. Часть II -" if not day == 1 and cataloug_found:
             label sc_col_men_2:
-                $ choose = RunMenu()
-                python:
-                    for i in range(16, 30):
-                        choose.AddItem("- C.[i]: Священный свиток #[i] -", 
-                            "menu_cupboard_scroll_show" , True, i)
-                    choose.AddItem("- Ничего -", "cupboard", True, "")
-                $ choose.Show()
+                $_scrollSection=1
+                jump sc_col
+
+
+                label sc_col:
+                    $ choose = RunMenu()
+                    python:
+                        _itemCount=hero.Items.Count("scroll")
+                        for i in range(_scrollSection*15+1, _scrollSection*15+15):
+                            if i<=_itemCount:
+                                choose.AddItem("- C."+str(i)+": Священный свиток #"+str(i)+" -", 
+                                    "menu_cupboard_scroll_show" , True, i)
+                        choose.AddItem("- Ничего -", "cupboard", True, "")
+                    $ choose.Show()
 
 
                 label menu_cupboard_scroll_show:
@@ -189,13 +191,21 @@ label rummaging:
                     _name=o
 
         $ renpy.play('sounds/win2.mp3')   #Not loud.
-        $item=hero.Items.AddItem(_name)
-        if item.Name=="gold":
-            $gold=[gold1,gold2,gold3,gold4][_level]
-        $ the_gift = item._img
+        if _name=="gold":
+            $_gold=[gold1,gold2,gold3,gold4][_level]
+            hide screen points
+            $gold+=_gold
+            show screen points
+            $ the_gift="03_hp/18_store/28.png"
+            $_caption="Мешочек с "+str(_gold)+" галеонами"
+        else:
+            $item=hero.Items.AddItem(_name)
+            $ the_gift=item._img
+            $_caption=item._caption
+
         show screen gift
         with d3
-        ">Вы нашли предмет: [item._caption]!" 
+        ">Вы нашли предмет: \"[_caption]!\"" 
         hide screen gift
         with d3
 

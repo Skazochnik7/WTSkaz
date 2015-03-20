@@ -11,11 +11,11 @@ label gallery:
             jump music_room
         
         "- Священные свитки. Часть I -":
-            $_scroll=0
+            $_scrollSection=0
             jump volone 
         
         "- Священные свитки. Часть II -":
-            $_scroll=1
+            $_scrollSection=1
             jump volone 
             
 #        "- Gallery volume 02 -":
@@ -94,7 +94,7 @@ label volone:
         if persistent.itemSet!=None:
             _itemCount=persistent.itemSet.get("scroll")
             _itemCount=0 if _itemCount==None else _itemCount
-        for i in range(_scroll*15+1, _scroll*15+15):
+        for i in range(_scrollSection*15+1, _scrollSection*15+15):
             if i<=_itemCount:
                 choose.AddItem("- C."+str(i)+": Священный свиток #"+str(i)+" -", 
                     "vol_description" , True, i)

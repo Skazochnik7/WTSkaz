@@ -1,8 +1,5 @@
 label menu_dahr_book:
-    if choose==None:
-        $ choose = RunMenu()
-    else:
-        $choose.Clear()
+    $ choose = RunMenu()
     python:
         for e in this.List:
             if e.GetValue("block")==_block: # Нужно ставить GetValue("block")  а не _block - у ивента такого объекта может не быть
@@ -41,16 +38,16 @@ label menu_dahr_gifts_and_gears:
     $ choose = RunMenu()
     python:
         for o in itsDAHR():
-            if _block=="gifts" and o._block=="gifts": 
+            if not (o.Name in {"scroll"}): 
                 _temp={"candy": fn0, "chocolate": fn0, "owl": fn0, "beer": fn3, "mag1": fn0, "mag2": fn0, "mag3": fn0, "mag4": fn3,
-             "condoms": fn3, "vibrator": fn3, "lubricant": fn0,"ballgag": fn0, "plug": fn3, "strapon": fn3}[o.Name](o)
+                     "condoms": fn3, "vibrator": fn3, "lubricant": fn0,"ballgag": fn0, "plug": fn3, "strapon": fn3,
+                     "ball_dress": lambda e: this.Has("sorry_about_hesterics"), "badge_01": fn0, "nets": fn0, 
+                            "miniskirt": lambda e: whoring >= 3 and (hero.Items.Count("miniskirt")+hermi.Items.Count("miniskirt")+itsOWL.Count("miniskirt")==0)}[o.Name](o)
 
-            if _block=="gears" and o._block=="gears": 
-                _temp={"ball_dress": lambda e: sorry_for_hesterics and not bought_dress_already, "badge_01": fn0, "nets": fn0, 
-                    "miniskirt": lambda e: whoring >= 3 and (hero.Items.Count("miniskirt")+hermi.Items.Count("miniskirt")+itsOWL.Count("miniskirt")==0) }[o.Name](o)
-
-                choose.AddItem("- "+o._caption+" - ("+str(o._price)+" гал.) -" if _temp else "{color=#858585}- Товар временно отсутствует -{/color}", 
-                    "menu_dahr_gift_order" if _temp else "out" , True, o.Name)
+#            elif _block=="gears" and o._block=="gears": 
+                if o._block==_block:
+                    choose.AddItem("- "+o._caption+" - ("+str(o._price)+" гал.) -" if _temp and itsDAHR.Count(o.Name)>0 else "{color=#858585}- Товар временно отсутствует -{/color}", 
+                        "menu_dahr_gift_order" if _temp else "out" , True, o.Name)
         choose.AddItem("- Ничего -", "the_oddities", True, "")
 
     $ choose.Show() 
@@ -58,7 +55,10 @@ label menu_dahr_gifts_and_gears:
 
 
 label menu_dahr_gift_order:
-    $item=itsDAHR(choose.choice)
+    if _block=="scroll":
+        $item=itsDAHR("scroll")
+    else:
+        $item=itsDAHR(choose.choice)
     label menu_dahr_scroll_order:
     $ the_gift = item._img # CANDY.
     show screen gift
@@ -103,7 +103,7 @@ label menu_dahr_gift_order:
                         $itemCount=1
                     "- Ничего -":
                         hide screen gift
-                        jump gifts_menu
+                        jump the_oddities
         else:
             $_price2=item._price*2
             $_price3=item._price*3
@@ -118,7 +118,7 @@ label menu_dahr_gift_order:
                         $itemCount=3
                     "- Ничего -":
                         hide screen gift
-                        jump gifts_menu
+                        jump the_oddities
     else:
         ">Извините, товар закончился"
 
@@ -129,14 +129,14 @@ label menu_dahr_gift_order:
         show screen points
         $ order_placed = True
         $itsOWL.AddItem(item.Name,itemCount)
-        if item.Name in {"scroll"}:
+        if item.Name in {"scroll", "ball_dress"}:
             $itsDAHR.AddItem(item.Name,-itemCount)
 #        $ bought_candy = True #Affects 15_mail.rpy
         call thx_4_shoping #Massage that says "Thank you for shopping here!".
         jump desk
     else:
         call no_gold #Massage: m "I don't have enough gold".
-        jump gifts_menu
+        jump the_oddities
 
 
 
@@ -168,7 +168,6 @@ label the_oddities:
                             
         "- Одежда -":
             label app:
-                pass
                 $_block="gears"
                 jump menu_dahr_gifts_and_gears
 
@@ -176,7 +175,7 @@ label the_oddities:
 
         "- Священные свитки -":
             label sscrolls:
-                $item=itsDAHR.Items("scroll")
+                $_block="scroll"
                 jump menu_dahr_gift_order
 
         "- Ничего -":
@@ -193,19 +192,27 @@ label do_have_book:
     return
 ### THANK YOU FOR shopping here.
 label thx_4_shoping:
-    $item=itsOWL()[0]
-    $itemCount=itsOWL.Count(item.Name)
+# Пока не было объекта Item книги были сделаны через объект Event. Вероятно, надо переделать, через Item, но из-за спешки при подготовке к релизу пока пусть будет костыль
+    if "books_" in _block:
+        $_caption=event._caption
+        $_price=event._price
+        $itemCount=1
+    else:
+        $item=itsOWL()[0]
+        $itemCount=itsOWL.Count(item.Name)
+        $_caption=item._caption
+        $_price=item._price
     $ days_in_delivery2 = one_of_five  #Generating one number out of three for various porpoises.
     if days_in_delivery2==1:
         $days_in_delivery2+=1 # Назавтра только экспресс
         $days_in_delivery2+=itemCount-1  # Удлинняется, если несколько предметов
 
-    if gold >= item._price*itemCount//2:
+    if gold >= _price*itemCount//2:
         menu:
-            dahr "Вы заказали [itemCount] шт. предметов \"[item._caption]\". Вы оплатите экспресс-доставку?"
-            "Экспресс-доставка (50%% стоимости заказа)":
+            dahr "Вы заказали [itemCount] шт. предметов \"[_caption]\". Вы оплатите экспресс-доставку?"
+            "Экспресс-доставка (+50%% за срочность)":
                 $days_in_delivery2=1
-                $gold -= item._price*itemCount//2
+                $gold -= _price*itemCount//2
             "Обычная доставка":
                 pass
 

@@ -88,28 +88,18 @@ label snape_dates:  ### HANGING WITH SNAPE ###
     with fade
     $ fire_in_fireplace = True
    
-#    if snape_against_hermione: #Turns True after event_08 (Hermione shows up for the first time).
-                               #Activates special event when hanging out with Snape next time.
-#        show screen with_snape #Makes sure the scene is not animated...
-#        jump special_date_with_snape
-    
-#    if snape_against_hermione_02: #Activates after second visit from Hermione (event_09).
-#        show screen with_snape #Makes sure the scene is not animated...
-#        jump special_date_with_snape_02
-
-
     if this.IsStep("SNAPE"):
         show screen with_snape #Makes sure the scene is not animated...
         $ this.RunStep("SNAPE")
     
     
-    if wine >= 1 and not wine_not: # Using Dumbledor's wine for the first time.
-        $ wine_not = True # Turns True after you use Dumbledore's wine in the "Snape dating" for the first time. Makes sure the cut-scene is shown only once.
-        call wine_first
-    elif wine >= 1 and wine_not: # Using Dumbledor's wine not for the first time.
-        call wine_not_first
-    else:
-        pass
+    if hero.Items.Any("wine"):
+        $hero.Items.AddItem("wine",-1)
+        if not wine_not:
+            $wine_not=True # Turns True after you use Dumbledore's wine in the "Snape dating" for the first time. Makes sure the cut-scene is shown only once.
+            call wine_first # Using Dumbledor's wine for the first time.
+        else:
+            call wine_not_first # Using Dumbledor's wine not for the first time.
     
     
     
@@ -647,7 +637,7 @@ label wine_first:
     ">Вы передаете Снейпу бутылку, которую нашли в шкафу..." 
     hide screen gift
     with d3
-    $ wine -= 1
+#    $ wine -= 1
     
     $ s_sprite = "03_hp/10_snape_main/24.png"                                        # SNAPE
     show screen s_head2                                                                                                 # SNAPE
@@ -683,7 +673,7 @@ label wine_not_first:
     ">Вы передаете Снейпу бутылку, которую нашли в шкафу..." 
     hide screen gift
     with d3
-    $ wine -= 1
+#    $ wine -= 1
     $ s_head_xpos = 330 # x = 330,                                                                              # SNAPE
     $ s_head_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.       # SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                        # SNAPE

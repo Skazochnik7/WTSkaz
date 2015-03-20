@@ -115,6 +115,9 @@ label desk:
                     "- Ничего -":
                         jump desk
 
+        "- Продолжить чтение -" if currentBook!=None:
+            $event=this(currentBook)
+            jump reading_book_xx 
           
         
                     
@@ -242,7 +245,7 @@ label reading_book_xx:
 #            ">Осталось еще несколько глав."
 
     ">Осталось еще несколько глав."       
-
+    $currentBook=event.Name
 
     if fire_in_fireplace:
         hide screen reading_near_fire
@@ -367,6 +370,7 @@ label chapter_check_book_xx: #Checks if the chapter just finished was the last o
         hide screen notes
         show screen notes
         ">Это была последняя глава. Вы закончили эту книгу."
+        $currentBook=None
 
         if event.Name=="book_06":
             g4 "Что за херня! Я ненавижу человека, который это написал!"

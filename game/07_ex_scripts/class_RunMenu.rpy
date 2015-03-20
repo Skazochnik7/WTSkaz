@@ -37,10 +37,16 @@ init python:
             self.text = None
             self.who = None
             
-        def Show(self):
+        def Show(self,
+            escLabel=None,
+            escText=None):
             RunMenu.current = self                        
             if self.text:
                 renpy.say(self.who, self.text, interact=False)
+            if escLabel!=None:
+                if escText==None:
+                    escText="- Ничего -"
+                self.AddItem(escText, escLabel, True, None)
             renpy.call_screen(RunMenu.screen)
           
 

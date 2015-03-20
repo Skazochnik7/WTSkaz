@@ -13,7 +13,7 @@
                 alter=sp[1]
                 if len(sp)>2: caption=sp[2] 
 
-            super(Event, self).__init__(Name=self.Name, Type="Event", defVals=defVals )
+            super(Event, self).__init__(Name=self.Name, Type="Event", defVals=defVals, constVals=constVals )
 
             self.defVals = {"startCount": 0, "finishCount": 0, "start1": -1, "start2": -1, "finish1": -1, "finish2": -1, "bakfinish1": -1, "bakfinish2": -1,
                             "whored": -1, "bakwhored": -1}        # Это словарь доп. аргументов по умолчанию

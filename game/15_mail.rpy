@@ -152,14 +152,15 @@ label mail_02: #Packages only. <================================================
 ### ITEMS ###  
     if itsOWL.Any():
         $item=itsOWL()[0]
-        $hero.Items.AddItem(item.Name, itsOWL.Count(item.Name))  
+        $_count=itsOWL.Count(item.Name)
+        $hero.Items.AddItem(item.Name, _count)  
         $itsOWL.Clear()
         $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
         $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
         $ the_gift = item._img 
         show screen gift
         with d3
-        ">Добавлено к вашим вещам: [item._caption]."
+        ">Добавлено к вашим вещам: [item._caption], [_count] шт. "
         hide screen gift
         with d3
         call screen main_menu_01

@@ -90,6 +90,8 @@ $ teachers_pet = 0
 $ classmates_pet = 0
 $ being_mean = 0 #+1 every time you are being mean to hermione.
 
+$currentBook=None
+$item=None
 
 
 $ dates = 0 #Tracks how many times Hermione been tutored.

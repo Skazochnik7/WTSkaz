@@ -86,7 +86,7 @@ init -999 python:
 
 # Намеренно не ставлю здесь проверок на наличие соответствующего поля. Разработчик должен проверять перед вызовом с помощью функций  IsStoreKey IsStoreSubKey
     def GetArrayValue(key, subkey):
-        debug.SaveString("GetArrayValue("+str(key)+", "+str(subkey)+")="+str(arr[key].get(subkey)), 3)
+#        debug.SaveString("GetArrayValue("+str(key)+", "+str(subkey)+")="+str(arr[key].get(subkey)), 3)
         return arr[key].get(subkey)
 
     def GetArrayAllSubKeys(key):

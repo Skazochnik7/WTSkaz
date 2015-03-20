@@ -61,7 +61,7 @@
 
         def GetList(self, level=0):
             self.__list=[]
-            for i in range(len(itemList) - 1):
+            for i in range(len(itemList)):
                 if self.Count(itemList[i].Name)>level:
                     self.__list.append(itemList[i])
             return self.__list
