@@ -15,8 +15,7 @@
 
             super(Event, self).__init__(Name=self.Name, Type="Event", defVals=defVals, constVals=constVals )
 
-            self.defVals = {"startCount": 0, "finishCount": 0, "start1": -1, "start2": -1, "finish1": -1, "finish2": -1, "bakfinish1": -1, "bakfinish2": -1,
-                            "whored": -1, "bakwhored": -1}        # Это словарь доп. аргументов по умолчанию
+            self.defVals = {"startCount": 0, "finishCount": 0, "start1": -1, "start2": -1, "finish1": -1, "finish2": -1, "bakfinish1": -1, "bakfinish2": -1}        # Это словарь доп. аргументов по умолчанию
             if defVals!=None:
                 self.defVals.update(defVals)
 
@@ -61,19 +60,19 @@
 # Запомнить значения дат finish для отката на случай, если ивент будет начат и прерван.             
             self.SetValue("bakfinish1", self.GetValue("finish1"))
             self.SetValue("bakfinish2", self.GetValue("finish2"))
-            self.SetValue("bakwhored", self.GetValue("whored"))
             if self.GetValue("finish1")==-1:
                 self.SetValue("finish1", day)
             self.SetValue("finish2", day)
-            self.SetValue("whored", whoring)
             self.IncValue("finishCount", 1)
             return
 
 # Логгировать запуск ивента
-        def IncPassed( self ):
+        def LabelExecute( self ):
             self.IncStarted()
-            self.IncFinished()
+#            self.IncFinished()
             return
+
+
 
 
 # Завершено iDays назад или ранее?
@@ -102,13 +101,26 @@
             return self.IsReady() and not self.IsDone()
 
         def NotFinished(self):
-            self.SetValue("finish1", self.GetValue("bakfinish1"))
-            self.SetValue("finish2", self.GetValue("bakfinish2"))
-            self.SetValue("whored", self.GetValue("bakwhored"))
-            self.IncValue("finishCount", -1)
-#            if self.GetValue("finishCount")<0: 
-#                self.SetValue("finishCount", 0) # В некоторых случаях finishCount оказывается <0, видимо, из-за неправильной обработки отката. Пока не удается поймать где это, просто блокируем такие ситуации  
+#            self.SetValue("finish1", self.GetValue("bakfinish1"))
+#            self.SetValue("finish2", self.GetValue("bakfinish2"))
+#            self.IncValue("finishCount", -1)
             return
+
+# Переключение на подсчет завершений директивно:
+# Event.LabelExecute - комментировать строку self.IncFinished()
+# Event.Finalize - убрать комментарий с self.IncFinished()
+# Event.NotFinished - коментировать все (отката нет)
+# В Объекте This(ниже старый код): в сравнении вместо num поставить num -1     
+#    def IsRunNumber(num): # Это запуск номер num
+#        return event._finishCount==num-1 # было - num
+
+#    def IsRunNumberOrMore(num): # Это запуск номер num или последующий?
+#        return event._finishCount>=num-1 # было - num
+
+        def Finalize(self):
+            self.IncFinished()
+            return
+
 
 # Исполнить ивент
         def Run(self):

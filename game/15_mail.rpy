@@ -134,7 +134,6 @@ label mail_02: #Packages only. <================================================
 
     if evn!=None:
         $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
         $ the_gift = evn._img #"03_hp/18_store/08.png" # Copper book of spirit.
         show screen gift
         with d3
@@ -156,7 +155,6 @@ label mail_02: #Packages only. <================================================
         $hero.Items.AddItem(item.Name, _count)  
         $itsOWL.Clear()
         $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
         $ the_gift = item._img 
         show screen gift
         with d3

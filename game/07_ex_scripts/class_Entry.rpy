@@ -1,15 +1,13 @@
 ﻿init -997 python:
   
-# Класс - обертка для словаря ивентов
+# Базовый класс, содержит методы работы с хранилищами arr и elog
     class Entry(store.object):
-        # constructor - Event initializing
+        # constructor - Entry initializing
         def __init__( self, Name, Type, defVals=None, constVals=None): # 
             self.Name=Name
             self.Type=Type
 
-            self.defVals = defVals        # Это словарь доп. аргументов по умолчанию
-
-#            SetArrayValue(self.Name, "Type", Type) 
+            self.defVals = defVals        # Это словарь доп. аргументов со значениями по умолчанию
 
             if constVals!=None:
                 for s in constVals:
@@ -30,7 +28,13 @@
             else:
                 return GetArrayValue(self.Name, subkey) 
 
-        def SetValue(self, subkey, value):
+        def SetValue(self, subkey, value, minim=None, maxim=None):
+            if minim!=None:
+                if value<minim:
+                    value=minim
+            if maxim!=None:
+                if value>maxim:
+                    value=maxim
             if subkey in self.defVals:
                 if IsStoreSubKey(self.Name, subkey):
                     oldVal=GetStoreValue(self.Name, subkey)
@@ -46,21 +50,14 @@
 
             InitEntryField(self, subkey)
 
-            if IsArrayKey("onChange"): # Если подключено обработка на изменение
+            if IsArrayKey("onChange"): # Если подключена обработка на изменение
                 fn=GetArrayValue(self.Name,"onChange")
                 if fn!=None:
                     fn(self, subkey, oldVal, value)
             return value
 
-        def IncValue(self, subkey, incVal, minimum=None, maximum=None):
-            __temp=self.GetValue(subkey)+incVal
-            if minimum!=None:
-                if __temp<minimum:
-                    __temp=minimum
-            if maximum!=None:
-                if __temp>maximum:
-                    __temp=maximum
-            return self.SetValue(subkey, __temp)
+        def IncValue(self, subkey, incVal, minim=None, maxim=None):
+            return self.SetValue(subkey, self.GetValue(subkey)+incVal, minim, maxim)
 
 
 

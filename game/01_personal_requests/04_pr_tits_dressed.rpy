@@ -14,10 +14,10 @@ label new_request_04:
     
     
     $ current_payout = 15 #Used when haggling about price of th favor.
-    if whoring <=2: # LEVEL 01 # Hermione refuses.
+    if hermi.whoring <=2: # LEVEL 01 # Hermione refuses.
         jump too_much
         
-    elif whoring >= 3 and whoring <= 5: # LEVEL 02 # Hermione is hesitant. 
+    elif hermi.whoring >= 3 and hermi.whoring <= 5: # LEVEL 02 # Hermione is hesitant. 
 #        $ new_request_04_01 = True # Hearts.
 
         hide bld1
@@ -145,7 +145,7 @@ label new_request_04:
                 $her_head_state = 12
                 her_head_main "Оу........."
 
-    if whoring >= 6: # LEVEL 03 and higher # Hermione doesn't mind. <============================================================================EVENT LEVEL: 03
+    if hermi.whoring >= 6: # LEVEL 03 and higher # Hermione doesn't mind. <============================================================================EVENT LEVEL: 03
 #        $ new_request_04_02 = True # Hearts.
 
 #        if whoring > 8: # LEVEL 03.
@@ -220,13 +220,13 @@ label new_request_04:
                 her_head_main "Не нужно быть таким грубым со мной....{image=textheart.png}"
                 hide screen blktone8
 
-        if whoring>=12: # Если уже играл с ее голыми сиськами
+        if hermi.whoring>=12: # Если уже играл с ее голыми сиськами
             her "Эмм... Профессор, может, вы будете делать это по-настоящему?"
             m "По-настоящему?"
             her "Да, я хочу, чтобы вы... То есть, чтобы я заработала больше очков. Может, я сниму форму?"
             menu:
-                "Заголяйтесь, мисс!":
-                    m "Хорошо. Заголяйтесь, мисс!"
+                "Оголяйтесь, мисс!":
+                    m "Хорошо. Оголяйтесь, мисс!"
                     show screen blkfade
                     with Dissolve(1)
                     pause.5
@@ -277,7 +277,7 @@ label new_request_04:
                     $herView.showQQ( "body_55.png", pos )
                     m "На сегодня все, девочка."
                     m "Впрочем, если ты готова лечь и раздвинуть ножки..."
-                    if whoring<18: # Если не готова к сексу
+                    if hermi.whoring<18: # Если не готова к сексу
                         $herView.showQQ( "body_05.png", pos )
                         her "Аргх! Сэр... как вы можете!... Я!..."
                         m "Тише, дорогая, тише. Я просто пошутил."
@@ -295,7 +295,7 @@ label new_request_04:
                     if not end.IsEnding(const_ENDING_STRONG_GIRL):
                         $herView.showQQ( "body_120.png", pos )
                         her "Гррх!... Заплатите мне и я пойду!"
-                        $mad=+30
+                        $hermi.liking -=30
                         jump new_request_04_finish
                     else:
                         $MusicStart("Supergirl",0.3)                                   
@@ -312,7 +312,7 @@ label new_request_04:
                         $herView.showQQ( "body_56.png", pos )
                         her "Может быть и могла бы..."
                         m "Могла бы что?"
-                    if whoring<18: # Если не готова к сексу
+                    if hermi.whoring<18: # Если не готова к сексу
                         $herView.showQQ( "body_123.png", pos )
                         her "Ну как вы и сказали, раздвинуть... Если это будет как следует оплачиваться, конечно!"
                         g9 "Разумеется, будет. Конечно!" 
@@ -334,8 +334,8 @@ label new_request_04:
                         "Вон!":
                             m "Вон отсюда! Очков не будет!"
                             $herView.showQQ( "body_05.png", pos )
-                            her "Поскольку вы не держите свое слово, сэр, вероятно, я не смогу больше приходить к вам."
-                            $mad+=50
+                            her2 "Поскольку вы не держите свое слово, сэр, вероятно, я не смогу больше приходить к вам."
+                            $hermi.liking -=50
                             jump new_request_04_nopoints
                         "Что ж, получай!":
                             m "Что ж, мисс Грейнджер, получайте свои очки."
@@ -343,10 +343,10 @@ label new_request_04:
                             m "Я доступно излагаю?"
                             $herView.showQQ( "body_58.png", pos )
                             her "Вполне, сэр."
-                            her "Но если так, профессор, то я мне придется молчать, как рыба об лед. Я буду бояться лишнее слово сказать."
+                            her2 "Но если так, профессор, то я мне придется молчать, как рыба об лед. Я буду бояться лишнее слово сказать."
                             m "Это только к лучшему, мисс Грейнджер."
                             $herView.showQQ( "body_129.png", pos )
-                            her "Как же я буду отчитываться вам, профессор?.. Но, конечно, я сделаю как вы говорите."
+                            her2 "Как же я буду отчитываться вам, профессор?.. Но, конечно, я сделаю как вы говорите."
                             "> Гермиона обрачивается уходить."
                             m "Ладно, мисс Грейнджер, на этот раз я вас прощаю. Но предупреждаю - попридержите свой язычок!"
                             $herView.showQQ( "body_84.png", pos )
@@ -355,10 +355,9 @@ label new_request_04:
 
 
     label new_request_04_finish:
-    $SetHearts(GetStage(whoring, 3, 3, 3))
 
-    if whoring <= 5:
-        $ whoring +=1
+    if hermi.whoring <= 5:
+        $ hermi.whoring +=1
         
     show screen blkfade 
     with d3
@@ -375,7 +374,7 @@ label new_request_04:
 
 
     stop music fadeout 1.0
-    if whoring<12: # Если еще не играл с ее голыми сиськами
+    if hermi.whoring<12: # Если еще не играл с ее голыми сиськами
         ">Вы отпускаете грудь Гермионы..."
         m "На этом все."
         $her_head_state = 4
@@ -422,7 +421,7 @@ label new_request_04:
         m "Как бы там ни было, мисс Грейнджер, решение окончательное. 35 очков и ни очком больше!" 
         $herView.showQQ( "body_86.png", pos )
         her "Это нечестно, сэр!"
-        $mad+=15
+        $hermi.liking -=15
     else:
         $herView.showQQ( "body_29.png", pos )
         her ".................."
@@ -453,6 +452,9 @@ label new_request_04:
         play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
     ### END OF BLOCK ###
 
+    $SetHearts(GetStage(hermi.whoring, 3, 4, 3))
+
+    $event.Finalize()    
 
     if daytime:
         $ hermione_takes_classes = True

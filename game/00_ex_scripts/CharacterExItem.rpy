@@ -214,6 +214,8 @@ init -998 python:
             self.mFileName = aImageName
             self.mFileFolder = aImageFolder
             self.image = aImageFolder + aImageName
+            for tr in self.mOwnerTransforms.values():
+                self.image = tr.apply( self.image )
             if aIsActLikeAdding:
                 if self.mOwner != None:
                     self.mOwner.updateItemSpecial( self )

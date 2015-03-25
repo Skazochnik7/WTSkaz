@@ -142,25 +142,25 @@ label desk:
         #     jump jerk_off
         "- Передернуть -" if not day < 5:
             jump jerk_off 
-        "- Состояние Гермионы -" if this.Has("her_wants_buy"): #summoning_hermione_unlocked and buying_favors_from_hermione_unlocked: 
-            "> Распутство: {color=#B40000}{size=+4}{b}[whoring]{/b}{/size}{/color}-я степень."
-            "> Злость: {color=#B40000}{size=+4}{b}[mad]{/b}{/size}{/color}-я степень"
-            if mad >=1 and mad < 3:
-                "> Гермиона по-прежнему {b}немного расстроена{/b} вами..."
-            elif mad >=3 and mad < 10:
-                "> Вы {b}расстроили{/b} Гермиону."
-            elif mad >=10 and mad < 20:
-                "> Гермиона {b}очень расстроена{/b} вами."
-            elif mad >=20 and mad < 40:
-                "> Гермиона {b}злится{/b} на вас."
-            elif mad >=40 and mad < 50:
-                "> Гермиона {b}очень злится{/b} на вас."
-            elif mad >=50 and mad < 60:
-                "> Гермиона {b}гневается{/b} на вас."
-            elif mad >=60:
-                "> Гермиона {b}ненавидит{/b} вас."
-            else:
-                "> Гермиона {b}не злится{/b} на вас"
+#        "- Состояние Гермионы -" if this.Has("her_wants_buy"): #summoning_hermione_unlocked and buying_favors_from_hermione_unlocked: 
+#            "> Распутство: {color=#B40000}{size=+4}{b}[whoring]{/b}{/size}{/color}-я степень."
+#            "> Злость: {color=#B40000}{size=+4}{b}[mad]{/b}{/size}{/color}-я степень"
+#            if mad >=1 and mad < 3:
+#                "> Гермиона по-прежнему {b}немного расстроена{/b} вами..."
+#            elif mad >=3 and mad < 10:
+#                "> Вы {b}расстроили{/b} Гермиону."
+#            elif mad >=10 and mad < 20:
+#                "> Гермиона {b}очень расстроена{/b} вами."
+#            elif mad >=20 and mad < 40:
+#                "> Гермиона {b}злится{/b} на вас."
+#            elif mad >=40 and mad < 50:
+#                "> Гермиона {b}очень злится{/b} на вас."
+#            elif mad >=50 and mad < 60:
+#                "> Гермиона {b}гневается{/b} на вас."
+#            elif mad >=60:
+#                "> Гермиона {b}ненавидит{/b} вас."
+#            else:
+#                "> Гермиона {b}не злится{/b} на вас"
             jump desk
         "- Дремать -" if daytime and not day == 1:
             jump night_start

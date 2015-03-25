@@ -25,46 +25,46 @@ label date_01:
 label date_02:
     menu:
         "Дотронуться своей ногой до ее ноги.":
-            if whoring < 3:
+            if hermi.whoring < 3:
                 "Гермиона не обратила внимания на ваши прикосновения..."
-            elif whoring >= 3 and whoring < 6:
+            elif hermi.whoring >= 3 and hermi.whoring < 6:
                 "Гермиона понимает, что вы делаете, но ничего не говорит."
-            elif whoring >= 6:
+            elif hermi.whoring >= 6:
                 "Гермиона подсаживается чуть ближе к вам. Она отвечает на ваши прикосновения."
             "Обучения законечно. Гермиона уходит."
-            $ whoring +=1
+            $ hermi.whoring +=1
             jump day_start 
-        "Коснуться ее ноги рукой." if whoring >= 7:
+        "Коснуться ее ноги рукой." if hermi.whoring >= 7:
             pass
-        "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if whoring <=7:
+        "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if hermi.whoring <=7:
             jump locked
-        "Положить ее руки на член." if whoring >= 14:
+        "Положить ее руки на член." if hermi.whoring >= 14:
             pass
-        "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if whoring <=14:
+        "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if hermi.whoring <=14:
             jump locked
-        "Подрочить." if whoring >= 21:
+        "Подрочить." if hermi.whoring >= 21:
             pass
-        "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if whoring <=21:
+        "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if hermi.whoring <=21:
             jump locked
-        "Заставить ее дрочить вам." if whoring >= 28:
+        "Заставить ее дрочить вам." if hermi.whoring >= 28:
             pass
-        "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if whoring <=28:
+        "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if hermi.whoring <=28:
             jump locked
-        "Засунуть в нее свой палец." if whoring >= 35:
+        "Засунуть в нее свой палец." if hermi.whoring >= 35:
             pass
-        "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if whoring <=35:
+        "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if hermi.whoring <=35:
             jump locked
-        "Заставить ее сосать член." if whoring >= 42:
+        "Заставить ее сосать член." if hermi.whoring >= 42:
             pass
-        "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if whoring <=42:
+        "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if hermi.whoring <=42:
             jump locked
-        "Трахнуть ее во время чтения." if whoring >= 49:
+        "Трахнуть ее во время чтения." if hermi.whoring >= 49:
             pass
-        "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if whoring <=49:
+        "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if hermi.whoring <=49:
             jump locked
-        "Трахнуть ее в попку." if whoring >= 56:
+        "Трахнуть ее в попку." if hermi.whoring >= 56:
             pass
-        "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if whoring <=56:
+        "{color=#858585}...(ЗАБЛОКИРОВАНО)...{/color}" if hermi.whoring <=56:
             jump locked
         "- Отмена -":
             jump home_assignment

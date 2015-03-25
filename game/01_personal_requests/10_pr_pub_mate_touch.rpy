@@ -33,7 +33,7 @@ label new_request_10:
         $herView.hideshowQQ( "body_31.png", pos )
         her ".......?"
         m "И пусть он потрогает тебя..."
-        if whoring <=5 or request_02_c_points <= 1: # Counts how many times Hermione been sent to flirt with teachers.
+        if hermi.whoring <=5 or request_02_c_points <= 1: # Counts how many times Hermione been sent to flirt with teachers.
             jump too_much
         $herView.hideshowQQ( "body_31.png", pos )
         her "Дать ему потрогать меня... сэр?"
@@ -71,7 +71,7 @@ label new_request_10:
         her "Я, наверно, пойду. Скоро начнутся уроки..."
         $herView.hideQ()
     else:
-        if whoring >= 6 and whoring <= 8: # LEVEL 03 
+        if hermi.whoring >= 6 and hermi.whoring <= 8: # LEVEL 03 
             m "Мисс Грейнджер?"
             $herView.showQQ( "body_01.png", pos )
             her "Сэр."
@@ -93,14 +93,14 @@ label new_request_10:
             $herView.hideshowQQ( "body_66.png", pos )
             her "Я не знаю... Наверное..."
             $herView.hideQ()
-        elif whoring >= 9 and whoring <= 11: # LEVEL 04
+        elif hermi.whoring >= 9 and hermi.whoring <= 11: # LEVEL 04
             m "Мисс Грейнджер, нужно чтобы вы подошли к своему однокласснику и предложили ему полапать вас."
             $herView.showQQ( "body_01.png", pos )
             her "Я поняла, сэр..."
             m "Тогда ступай."
             her "..........."
             $herView.hideQ()
-        elif whoring >= 12: # LEVEL 05+
+        elif hermi.whoring >= 12: # LEVEL 05+
             m "Мисс Грейнджер, я хочу, чтобы вы пошли..."
             m "И нашли привлекательного парня и предложили ему себя!"
             $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center.
@@ -144,6 +144,9 @@ label new_request_10:
 
 
     $ hermione_takes_classes = True
+
+    $event.Finalize()    
+
     jump day_main_menu
 
         
@@ -182,7 +185,7 @@ label new_request_10_complete: #<===============================================
             show screen blktone
             with d3
             
-            if whoring >= 6 and whoring <= 8: # LEVEL 03 # EVENT LEVEL 01.
+            if hermi.whoring >= 6 and hermi.whoring <= 8: # LEVEL 03 # EVENT LEVEL 01.
                 stop music fadeout 3.0
                 $herView.hideshowQQ( "body_12.png", pos )
                 her "......"
@@ -285,7 +288,7 @@ label new_request_10_complete: #<===============================================
                     her "Спасибо, сэр..."
                     m "А вот и остальные баллы..."
             
-            elif whoring >= 9 and whoring <= 11: # LEVEL 04
+            elif hermi.whoring >= 9 and hermi.whoring <= 11: # LEVEL 04
                 if one_out_of_three == 1: ### EVENT (A)
                     $herView.hideshowQQ( "body_16.png", pos )
                     her "Ну... Тут нечего рассказывать..."
@@ -408,7 +411,7 @@ label new_request_10_complete: #<===============================================
         
         
         
-            elif whoring >= 12: # LEVEL 05+
+            elif hermi.whoring >= 12: # LEVEL 05+
                 if one_out_of_three == 1: ### EVENT (A)
                     stop music fadeout 1.0
                     $herView.hideshowQQ( "body_29.png", pos )
@@ -555,6 +558,9 @@ label new_request_10_complete: #<===============================================
     $ request_10_points += 1 
 #    $ request_10 = False 
     $ hermione_sleeping = True
+
+    $event.Finalize()    
+
     return
 
 

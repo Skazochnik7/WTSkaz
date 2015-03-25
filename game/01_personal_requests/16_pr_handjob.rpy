@@ -29,7 +29,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
         $herView.hideshowQQ( "body_01.png", pos )
         her "Да, профессор?"
         m "Ты знаешь что такое \"работа ручками\"?"
-        if whoring <=11:
+        if hermi.whoring <=11:
             jump too_much
         $herView.hideshowQQ( "body_79.png", pos )
         her "А что?"
@@ -55,7 +55,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
         menu:
             m "..."
             "\"Ты получишь 15 очков.\"":
-                $ mad +=7
+                $ hermi.liking -=7
                 $herView.hideshowQQ( "body_69.png", pos )
                 her "За 15 очков вы сможете немного поприставать ко мне, но не более, сэр."
                 her "Я не продешевлю и не стану дрочить вам за 15 очков."
@@ -74,7 +74,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
             "\"Ты получишь 100 очков.\"":
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                 $ current_payout = 100 #Used when haggling about price of th favor.
-                $ mad = 0
+                $ hermi.liking = 0
                 $herView.hideshowQQ( "body_72.png", pos )
                 her "100 очков?!"
                 her "Это поможет вернуть \"Гриффиндор\" в лидеры!"
@@ -669,7 +669,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 m "Что?"
                 if d_flag_01: #If TRUE Genie promised to warn her.
                     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                    $ mad += 11
+                    $ hermi.liking -= 11
                     $herView.hideQQ()
                     $herView.showQQ( "body_47.png", pos )
                     her "Вы обещали предупредить меня, сэр!"
@@ -1030,7 +1030,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
         menu:
             m "..."
             "{size=-4}\"Я мечтаю, чтобы меня изнасиловал отец.\"{/size}":
-                $ mad += 11
+                $ hermi.liking -= 11
                 $herViewHead.showQ( "body_77.png", posHead )
                 her "Я не мечтаю об этом!"
                 $herViewHead.hideQ()
@@ -1191,7 +1191,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
             m "..."
             "\"(Да, лучше сказать ей об этом).\"":
                 g4 "Я думаю я близок к--"
-                if whoring >= 18: # LEVEL 07
+                if hermi.whoring >= 18: # LEVEL 07
                     jump kiss_suck
                 else:
                     pass
@@ -1312,7 +1312,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
 
             "\"(А, не нужно!).\"":
                 g4 "Вот! Получай, шлюха!"
-                if whoring >= 18: # LEVEL 07
+                if hermi.whoring >= 18: # LEVEL 07
                     jump kiss_suck
                 else:
                     pass
@@ -1440,8 +1440,8 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
 
     $herViewHead.data().delItem( 'item_sperm' )
 
-    if whoring <= 14:
-        $ whoring +=1
+    if hermi.whoring <= 14:
+        $ hermi.whoring +=1
 
     
     
@@ -1455,7 +1455,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     if IsRunNumberOrMore(3): 
         $SetHearts(3)
     else:
-        $SetHearts(GetStage(whoring,12,3,2))
+        $SetHearts(GetStage(hermi.whoring,12,3,2))
 
 
 #    $ request_16_points += 1
@@ -1478,6 +1478,9 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     $herView.data().loadState()
 
     call music_block
+
+    $event.Finalize()    
+
     if daytime:
         $ hermione_takes_classes = True
         jump night_main_menu

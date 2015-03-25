@@ -31,7 +31,7 @@ label new_request_15: #LV.4 (Whoring = 9 - 11)
         m "Ну, знаешь, оголила грудь перед парнями..."
         $herView.hideshowQQ( "body_48.png", pos )
         her "?!!"
-        if whoring <=8 or request_10_points <= 1: # request_10_points - counts how many times Hermione been sent to let boys touch her.
+        if hermi.whoring <=8 or request_10_points <= 1: # request_10_points - counts how many times Hermione been sent to let boys touch her.
             jump too_much
         her "Профессор Дамблдор!"
         $herView.hideshowQQ( "body_47.png", pos )
@@ -67,7 +67,7 @@ label new_request_15: #LV.4 (Whoring = 9 - 11)
         her "Ладно, я посмотрю, что я могу сделать..."
         
     else: # <================================================================================ NOT FIRST TIME
-        if whoring >= 9 and whoring <= 11: # LEVEL 04 FIRST EVENT.
+        if hermi.whoring >= 9 and hermi.whoring <= 11: # LEVEL 04 FIRST EVENT.
             m "Я думаю, что тебе нужно показывать свои сиськи почаще, девочка."
             $herView.hideshowQQ( "body_44.png", pos )
             her "В смысле вам, сэр?"
@@ -84,7 +84,7 @@ label new_request_15: #LV.4 (Whoring = 9 - 11)
             $herView.hideshowQQ( "body_66.png", pos )
             her "Что ж, ладно... Я посмотрю, что я смогу сделать, сэр..."
             
-        elif whoring >= 12 and whoring <= 14: # LEVEL 05
+        elif hermi.whoring >= 12 and hermi.whoring <= 14: # LEVEL 05
             m "Мисс Грейнджер. У меня к вам вопрос."
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
             m "Как вы думаете, зачем женщине грудь?"
@@ -115,7 +115,7 @@ label new_request_15: #LV.4 (Whoring = 9 - 11)
             $herView.hideshowQQ( "body_79.png", pos )
             her ".............."
             
-        elif whoring >= 15: # LEVEL 06+
+        elif hermi.whoring >= 15: # LEVEL 06+
             m "Девочка, мне нужно, чтобы ты вышла отсюда и показала сиськи какому-нибудь однокласснику."
             $herView.hideshowQQ( "body_127.png", pos )
             her "Я постараюсь, сэр."
@@ -158,6 +158,9 @@ label new_request_15: #LV.4 (Whoring = 9 - 11)
     call music_block
     
     $ hermione_takes_classes = True
+    
+    $event.Finalize()    
+
     jump day_main_menu
     
     
@@ -185,7 +188,7 @@ label new_request_15_complete:
     
     $ pos = POS_370
 
-    if whoring >= 9 and whoring <= 11: # LEVEL 04 <=============================================================EVENT LEVEL 01                    
+    if hermi.whoring >= 9 and hermi.whoring <= 11: # LEVEL 04 <=============================================================EVENT LEVEL 01                    
         if one_out_of_three == 1: ### EVENT (A)
                 
 
@@ -291,7 +294,7 @@ label new_request_15_complete:
             her "Поэтому, я просто собрала все свои книги и ушла..."
             m "Ясно..."
             
-    elif whoring >= 12 and whoring <= 14: # LEVEL 05 <=============================================================EVENT LEVEL 02
+    elif hermi.whoring >= 12 and hermi.whoring <= 14: # LEVEL 05 <=============================================================EVENT LEVEL 02
         if one_out_of_three == 1: ### EVENT (A)
             stop music fadeout 1.0
             show screen blktone
@@ -436,7 +439,7 @@ label new_request_15_complete:
             m "Хм..."
             m "Ну ладно... Думаю, что это считается..."
 
-    elif whoring >= 15: # LEVEL 06+ <=============================================================EVENT LEVEL 03
+    elif hermi.whoring >= 15: # LEVEL 06+ <=============================================================EVENT LEVEL 03
         if one_out_of_three == 1: ### EVENT (A)
             m "Мисс Грейнджер, вы выполнили задание?"
             show screen blktone
@@ -604,7 +607,7 @@ label new_request_15_complete:
     hide screen hermione_walk_01_f 
     
     $ posHead = gMakePos( 390, 340 )
-    if one_out_of_three == 2 and whoring >= 12 and whoring <= 14: #Event level 02.
+    if one_out_of_three == 2 and hermi.whoring >= 12 and hermi.whoring <= 14: #Event level 02.
         $ hermione_chibi_xpos = 610 # Stands near the door.
         show screen hermione_01_f #Hermione stands still.
         pause.3
@@ -613,7 +616,7 @@ label new_request_15_complete:
         $herViewHead.hideQ()
         hide screen hermione_01_f #Hermione stands still.
     
-    if one_out_of_three == 3 and whoring >= 12 and whoring <= 14: #Event level 02.
+    if one_out_of_three == 3 and hermi.whoring >= 12 and hermi.whoring <= 14: #Event level 02.
         $ hermione_chibi_xpos = 610 # Stands near the door.
         show screen hermione_01_f #Hermione stands still.
         pause.3
@@ -629,7 +632,7 @@ label new_request_15_complete:
         $herViewHead.hideQ()
         hide screen hermione_01_f #Hermione stands still.
     
-    if whoring >= 15 and one_out_of_three == 1: # LEVEL 06+ <=============================================================EVENT LEVEL 03
+    if hermi.whoring >= 15 and one_out_of_three == 1: # LEVEL 06+ <=============================================================EVENT LEVEL 03
         $ hermione_chibi_xpos = 610 # Stands near the door.
         show screen hermione_01_f #Hermione stands still.
         pause.3
@@ -654,6 +657,9 @@ label new_request_15_complete:
     $ hermione_sleeping = True
 
     call music_block
+
+    $event.Finalize()    
+
     return
     
     

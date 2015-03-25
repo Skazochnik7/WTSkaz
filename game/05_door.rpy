@@ -93,362 +93,8 @@ label door:
                 jump night_main_menu
                 
             else:
-                #play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
-                #stop music fadeout 2.0
-                
-                $ menu_x = 0.2 #Menu is moved to the left side.
-                $ pos = POS_410
-                
-                $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                $ hermione_chibi_xpos = 400 #Near the desk.
-                show screen hermione_02 #Hermione stands still.
-                show screen bld1
-                with d3
-                if mad >=1 and mad < 3:
-                    $herView.showQQ( "body_03.png", pos )
-                    her ">Похоже, Гермиона по-прежнему немного расстроена вами..."
-                elif mad >=3 and mad < 10:
-                    $herView.showQQ( "body_03.png", pos )
-                    ">Вы расстроили Гермиону."
-                elif mad >=10 and mad < 20:
-                    $herView.showQQ( "body_09.png", pos )
-                    ">Гермиона очень расстроена вами."
-                elif mad >=20 and mad < 40:
-                    $herView.showQQ( "body_05.png", pos )
-                    ">Гермиона злится на вас."
-                elif mad >=40 and mad < 50:
-                    $herView.showQQ( "body_47.png", pos )
-                    ">Гермиона очень злится на вас."
-                elif mad >=50 and mad < 60:
-                    $herView.showQQ( "body_47.png", pos )
-                    ">Гермиона гневается на вас."
-                elif mad >=60:
-                    $herView.showQQ( "body_47.png", pos )
-                    ">Гермиона ненавидит вас."
-                else:
-                    $herView.showQQ( "body_01.png", pos )
-                    her "Да, профессор?"
-                
-                label day_time_requests:
-                menu:
-                    "- Поговорить -" if not chitchated_with_her:
-                        $ chitchated_with_her = True #Prevents you from chitchatting with Hermione more then once per time of day. Turns back to False every night. (And every day).
-                        if mad <= 7:
-                            jump chit_chat
-                        else:
-                            her "Мне нечего сказать вам..."    
-                            jump day_time_requests
-                    "- Обучение -" if not daytime and not tut_happened and whoring <= 12:
-                        if mad >=1 and mad < 3:
-                            her "Извините, возможно завтра..."
-                            jump day_time_requests
-                        elif mad >=3 and mad < 10:
-                            her "Сегодня я не в настроении..."
-                            jump day_time_requests
-                        elif mad >=20:
-                            her "После того, что вы сделали?"
-                            her "Я думаю - нет..."
-                            jump day_time_requests
-                        else:
-                            jump tutoring
-                    "- Купить \"сексуальный\" рейтинг -" if this.Has("her_wants_buy"):#buying_favors_from_hermione_unlocked:
-                        if mad >=1 and mad < 3:
-                            her "Мне жаль, профессор, может быть в другой раз..."
-                        elif mad >=3 and mad < 10:
-                            her "Мне не хочется сегодня..."
-                            her "Может быть через пару дней..."
-                        elif mad >=10 and mad < 20:
-                            her "Нет, спасибо...."
-                        elif mad >=20 and mad < 30:
-                            her "После того, что вы сделали?"
-                            her "Я так не думаю..."
-                        elif mad >=30 and mad < 40:
-                            her "Вы серьезно!?"
-                        elif mad >=40:
-                            her "Это какая-то ваша пошлая шутка?!"
-                            her "После того, что вы сделали, я не хочу повторять это!"
-                        if mad==0:
-                            jump new_personal_request
-                        else:
-                            jump day_time_requests
-                   
-                    
-                    
-                    
-                    "- Дать ей подарок -" if not gifted:
-                        $ choose = RunMenu()
-                        python:
-                            for o in hero.Items():
-                                choose.AddItem("- "+o._caption+" -", 
-                                    "menu_gifts_description" , True, o.Name)
-                            choose.AddItem("- Ничего -", "menu_gifts_actions", True, "")
-
-                        $ choose.Show()
-
-
-                                
-                    
-                    # "- Ending \"Your whore\"- ":
-                        #jump your_whore
-                        
-                    # "- Ending \"Public whore\"- ":
-                        # $ public_whore_ending = True #If TRUE the game will end with "Public Whore Ending".
-                        # jump your_whore
-                        
-                    "- Гардероб -" if dress_code:
-                        if mad >=1 and mad < 3:
-                            her "Мне очень жаль, профессор. Может быть, в другой раз..."
-                            jump day_time_requests
-                        elif mad >=3 and mad < 10:
-                            her "Что не так с моей одеждой?"
-                            jump day_time_requests
-                        elif mad >=10 and mad < 20:
-                            her "Нет, спасибо...."
-                            jump day_time_requests
-                        elif mad >=20 and mad < 30:
-                            her "Я так не думаю..."
-                            jump day_time_requests
-                        elif mad >=30 and mad < 40:
-                            her "Нет!"
-                            jump day_time_requests
-                        elif mad >=40:
-                            her "Я никогда не позволю вам снова решать, что мне носить!"
-                            jump day_time_requests
-                        else:
-                            pass
-                        menu:
-                            
-                            "- Надеть значок -" if (herView.data().getItemKey( G_N_BADGE )==None) and  hermi.Items.Any("badge_01"): #not ba_01 and badge_01 == 7:
-                                jump badge_put
-                            
-                            "- Снять значок -" if (herView.data().getItemKey( G_N_BADGE )!=None) and  hermi.Items.Any("badge_01"): #ba_01 and badge_01 == 7:
-                                jump badge_take
-                            
-                            "- Надеть колготки -" if (herView.data().getItemKey( G_N_NETS )==None) and  hermi.Items.Any("nets"): #not ne_01 and nets == 7: # Не перевел
-                                jump nets_put
-                            
-                            "- Снять колготки -" if (herView.data().getItemKey( G_N_NETS )!=None) and  hermi.Items.Any("nets"): #ne_01 and nets == 7:
-                                jump nets_take
-                            
-                            "- Надеть мини-юбку -" if herView.data().checkItemKeyStyle( G_N_SKIRT, 'default' ) and hermi.Items.Any("miniskirt"): #not legs_02 and gave_miniskirt: #Turns True when Hermione has the miniskirt.:
-                                jump mini_on #28_gifts.rpy
-
-                            "- Надеть длинную юбку -" if herView.data().checkItemKeyStyle( G_N_SKIRT, 'short' ) and and hermi.Items.Any("miniskirt"): #legs_02 and gave_miniskirt: #Turns True when Hermione has the miniskirt.
-                                jump mini_off #28_gifts.rpy
-                            
-                           
-  
-                            "- Ничего -":
-                                jump day_time_requests
-                    
-                        
-#                    "- Personal requests (lv.1)":
-#                        if slytherin > gryffindor or slytherin == gryffindor:
-#                            menu:
-#                                "Stand there. (I touch myself.)(5pt.)": #Request_01 (Level 01)
-#                                    jump request_01
-#                                "Lift your skirt.(5pt.)": #Request_02 (Level 01)
-#                                    jump request_02
-#                                "Flirt with 3 classmates.(5pt.)" if daytime: #Request_02_b (Level 01)
-#                                    jump request_02_b
-#                                "Flirt with a teacher.(5pt.)" if daytime:  #Request_02_c (Level 01)
-#                                    jump request_02_c
-#                                "Cancel.":
-#                                    jump day_time_requests
-#                        else:
-#                            her "The Gryffindors are in the lead. I don't need to do this."
-#                            jump day_time_requests
-#                    ###LEVEL 02###    
-#                    "- Personal requests (lv.2)":
-#                        if slytherin > gryffindor or slytherin == gryffindor:
-#                            menu:
-#                                "Take her panties.(15pt.)" if daytime: #Request_03 (Level 02)
-#                                    jump request_03
-#                                "Touch her tits through her clothes. (15pt)": #Request_04 (Level 02)
-#                                    jump request_04
-#                                "Touch her butt though her clothes.(15pt)": #Request_05 (Level 02)
-#                                    jump request_05
-#                                "Flash panties to a classmate. (15pt)" if daytime: #Request_06 (Level 02)
-#                                    jump request_06
-#                                "Flash panties to a teacher.(15pt)" if daytime: #Request_07 (Level 02)
-#                                    jump request_07
-#                                "Cancel.":
-#                                    jump day_time_requests
-#                        else:
-#                            her "The Gryffindors are in the lead. I don't need to do this."
-#                            jump day_time_requests
-#                    ###LEVEL 03###
-#                    "- Personal requests (lv.3)":
-#                        if slytherin > gryffindor or slytherin == gryffindor:
-#                            menu:
-#                                "Show me your tits. (25pt)":#Request_08 (Level 03)
-#                                    jump request_08
-#                                "Show me your pussy.(25pt)":#Request_09 (Level 03):
-#                                    jump request_09
-#                                "Flash a nipple to a classmate. (25pt)." if daytime:#Request_10 (Level 03)
-#                                    jump request_10
-#                                "Cancel.":
-#                                    jump day_time_requests
-#                        else:
-#                            her "The Gryffindors are in the lead. I don't need to do this."
-#                            jump day_time_requests
-                                    
-#                    ###LEVEL 04###
-#                    "- Personal requests (lv.4)":
-#                        if slytherin > gryffindor or slytherin == gryffindor:
-#                            menu:
-#                                "Strip completely.(35pt)":#Request_11 (Level 04)
-#                                    jump request_11
-#                                "Play with her tits.(35pt)":#Request_12 (Level 04):
-#                                    jump request_12   
-#                                "Wear a see-through shirt.(35pt)" if daytime:#Request_13 (Level 04):
-#                                    jump request_13   
-#                                "wear Cum-soaked panties": #Request_14 (Level 04) #To be added later when ability to jerk off and cum on panties added.
-#                                    pass
-#                                "Flash a nipple to a teacher.(35pt)" if daytime:#Request_15 (Level 04):
-#                                    jump request_15   
-#                                "Cancel.":
-#                                    jump day_time_requests                    
-#                        else:
-#                            her "The Gryffindors are in the lead. I don't need to do this."
-#                            jump day_time_requests
-#                    ###LEVEL 05###
-#                    "- Personal requests (lv.5)":
-#                        if slytherin > gryffindor or slytherin == gryffindor:
-#                            menu:
-#                                "Finger her pussy.(45pt)":#Request_16 (Level 05)
-#                                    jump request_16
-#                                "Finger her butthole.(45pt)":#Request_17 (Level 05)
-#                                    jump request_17
-#                                "Handjob.(45pt)":#Request_18 (Level 05)
-#                                    jump request_18
-#                                "Rub your dick against her cheeks.(45pt)": #Request_19 (Level 05)
-#                                    jump request_19
-#                                "Grab a classmate's cock.(45pt)" if daytime: #Request_20 (Level 05)
-#                                    jump request_20
-#                                "Cancel.":
-#                                    jump day_time_requests
-#                        else:
-#                            her "The Gryffindors are in the lead. I don't need to do this."
-#                            jump day_time_requests
-                     
-#                    ###LEVEL 06###
-#                    "- Personal requests (lv.6)":
-#                        if slytherin > gryffindor or slytherin == gryffindor:
-#                            menu:
-#                                "Cum on tits.(55pt)":#Request_21 (Level 06)
-#                                    jump request_21
-#                                "Blowjob.(55pt)":#Request_22 (Level 06)
-#                                    jump request_22
-#                                "Give a handjob to a classmate.(55pt)" if daytime:#Request_23 (Level 06)
-#                                    jump request_23
-#                                "Flash your tits to a teacher.(55pt)" if daytime:#Request_24 (Level 06)
-#                                    jump request_24
-#                                "Cancel.":
-#                                    jump day_time_requests
-#                        else:
-#                            her "The Gryffindors are in the lead. I don't need to do this."
-#                            jump day_time_requests 
-                    
-#                    ###LEVEL 07###
-#                    "- Personal requests (lv.7)":
-#                        if slytherin > gryffindor or slytherin == gryffindor:
-#                            menu:
-#                                "Cum on face.(65pt)":#Request_25 (Level 07)
-#                                    jump request_25
-#                                "Cum in her mouth before class.(65pt)" if daytime:#Request_26 (Level 07)
-#                                    jump request_26
-#                                "Blow two classmates.(65pt)" if daytime:#Request_27 (Level 07)
-#                                    jump request_27
-#                                "Give a handjob to a teacher.(65pt)" if daytime:#Request_28 (Level 07)
-#                                    jump request_28
-#                                "Cancel.":
-#                                    jump day_time_requests
-#                        else:
-#                            her "The Gryffindors are in the lead. I don't need to do this."
-#                            jump day_time_requests  
-                            
-#                    ###LEVEL 08###
-#                    "- Personal requests (lv.8)":
-#                        if slytherin > gryffindor or slytherin == gryffindor:
-#                            menu:
-#                                "Sex.(75pt)":#Request_29 (Level 08)
-#                                    jump request_29
-#                                "Blow a teacher.(75pt)" if daytime: #Request_30 (Level 08)
-#                                    jump request_30
-#                                "Cancel.":
-#                                    jump day_time_requests
-#                        else:
-#                            her "The Gryffindors are in the lead. I don't need to do this."
-#                            jump day_time_requests 
-                    
-#                    ###LEVEL 09###
-#                    "- Personal requests (lv.9)":
-#                        if slytherin > gryffindor or slytherin == gryffindor:
-#                            menu:
-#                                "Anal sex.(85pt)" if not daytime:#Request_31 (Level 09)
-#                                    jump request_31
-#                                "Cancel.":
-#                                    jump day_time_requests
-#                        else:
-#                            her "The Gryffindors are in the lead. I don't need to do this."
-#                            jump day_time_requests 
-                    
-#                    ###LEVEL 10###
-#                    "- Personal requests (lv.10)":
-#                        if slytherin > gryffindor or slytherin == gryffindor:
-#                            menu:
-#                                "Wear a revealing outfit to class.(100pt)" if daytime:#Request_32 (Level 10)
-#                                    jump request_32
-#                                "Cum covered face.(100pt)" if daytime:#Request_33 (Level 10)
-#                                    jump request_33
-#                                "Cancel.":
-#                                    jump day_time_requests
-#                        else:
-#                            her "The Gryffindors are in the lead. I don't need to do this."
-#                            jump day_time_requests 
-                    
-                    
-                    
-                    "- Попросить уйти -":
-#                        if daytime:
-#                            play music "music/Brittle Rille.mp3" fadein 1 fadeout 1
-#                        else:
-#                            play music "music/Music for Manatees.mp3" fadein 1 fadeout 1
-                        $ menu_x = 0.5 #Menu position is back to default. (Center).
-                        if daytime:
-                            $ hermione_takes_classes = True
-                            if mad >=3 and mad <= 6:
-                                her "..............................."
-                            elif mad >=7:
-                                her "*Гм!*..."
-                            else:
-                                her "О, хорошо! Тогда я пойду на уроки."
-                            hide screen bld1
-                            $herView.hideQ() 
-                            hide screen blktone 
-                            hide screen hermione_02
-                            hide screen ctc
-                            with d3
-                            jump day_main_menu
-                        else:
-                            if mad >=3 and mad <= 6:
-                                her "..............................."
-                            elif mad >=7:
-                                her "Пф..."
-                            else:
-                                her "О, хорошо! Тогда я пойду спать."
-                            hide screen bld1
-                            $herView.hideQ()
-                            hide screen blktone 
-                            hide screen hermione_02
-                            hide screen ctc
-                            with d3
-                            $ hermione_sleeping = True
-                            jump night_main_menu
-                            
-                            
-            
+                jump hermione_approaching
+               
         "{color=#858585}- Позвать Снейпа -{/color}" if this.Has("snape_summon") and snape_busy:#hanging_with_snape
             ">Профессор Снейп недоступен."
             if daytime:
@@ -460,7 +106,9 @@ label door:
             play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
             jump summon_snape
         "- Ничего -":
-            jump day_main_menu
+            jump day_main_menu                
+                        
+
     
     
                 
@@ -470,8 +118,8 @@ label door:
 label request_01: #LV.1 (Whoring = 0 - 2)
     "Гермиона смотрит на вас с интересом и краснеет."
     "Вы провожаете Гермиону."
-    if whoring <= 2:
-        $ whoring +=1
+    if hermi.whoring <= 2:
+        $ hermi.whoring +=1
     $ gryffindor +=5
     "Гриффиндор получает 5 очков."
     if daytime:
@@ -486,8 +134,8 @@ label request_01: #LV.1 (Whoring = 0 - 2)
 label request_02:
     "Сильно краснея и неохотно Гермиона поднимает юбку и показывает вам свои трусики."
     "Вы провожаете Гермиону."
-    if whoring <= 2:
-        $ whoring +=1
+    if hermi.whoring <= 2:
+        $ hermi.whoring +=1
     $ gryffindor +=5
     "Гриффиндор получает 5 очков."
     if daytime:
@@ -503,8 +151,8 @@ label request_02_b:
     "Гермиона соглашается попытаться заигрывать с 3 одноклассниками."
     "Вы провожаете Гермиону."
     $ request_02_b = True
-    if whoring <= 2:
-        $ whoring +=1
+    if hermi.whoring <= 2:
+        $ hermi.whoring +=1
     $ gryffindor +=5
     "Гриффиндор получает 5 очков."
     if daytime:
@@ -526,8 +174,8 @@ label request_02_c:
     "Гермиона соглашается попробовать флиртовать с учителем."
     "Вы провожаете Гермиону."
     $ request_02_c = True
-    if whoring <= 2:
-        $ whoring +=1
+    if hermi.whoring <= 2:
+        $ hermi.whoring +=1
     $ gryffindor +=5
     "Гриффиндор получает 5 очков."
     if daytime:
@@ -549,15 +197,15 @@ label request_02_c_complete:
 ### LEVEL 02 ###    
 ###################REQUEST_03 (Level 02) (Available during daytime only).
 label request_03: #(Whoring = 3 - 5)
-    if whoring <=2:
+    if hermi.whoring <=2:
         jump too_much
         
-    if whoring >= 3: #Level 02
+    if hermi.whoring >= 3: #Level 02
         "Гермиона нерешительно стягивает свои трусики и дает их вам."
         "Вы провожаете Гермиону."
         $ request_03 = True #True when Hermione has no panties on.
-        if whoring <= 5:
-            $ whoring +=1
+        if hermi.whoring <= 5:
+            $ hermi.whoring +=1
         $ gryffindor +=15
         $ hermione_takes_classes = True
         "Гриффиндор получает 15 очков."
@@ -573,13 +221,13 @@ label request_03_complete:
 
 ###################REQUEST_04 (Level 02) (Touch tits's through fabric.)
 label request_04:
-    if whoring <=2:
+    if hermi.whoring <=2:
         jump too_much
-    if whoring >= 3: #Level 02
+    if hermi.whoring >= 3: #Level 02
         "Гермиона позволяет поласкать ее грудь."
         "Вы провожаете Гермиону."
-        if whoring <= 5:
-            $ whoring +=1
+        if hermi.whoring <= 5:
+            $ hermi.whoring +=1
         $ gryffindor +=15
         "Гриффиндор получает 15 очков."
         if daytime:
@@ -591,13 +239,13 @@ label request_04:
             
 ###################REQUEST_05 (Level 02) (Touch butt through fabric.)
 label request_05:
-    if whoring <=2:
+    if hermi.whoring <=2:
         jump too_much
-    if whoring >= 3: #Level 02
+    if hermi.whoring >= 3: #Level 02
         "Гермиона позволяет поласкать ее попку."
         "Вы провожаете Гермиону."
-        if whoring <= 5:
-            $ whoring +=1
+        if hermi.whoring <= 5:
+            $ hermi.whoring +=1
         $ gryffindor +=15
         "Гриффиндор получает 15 очков."
         if daytime:
@@ -609,14 +257,14 @@ label request_05:
 
 ###################REQUEST_06 (Level 02) (Flash panties to classmate.)
 label request_06:
-    if whoring <=2:
+    if hermi.whoring <=2:
         jump too_much
-    if whoring >= 3: #Level 02
+    if hermi.whoring >= 3: #Level 02
         "Гермиона соглашается попробовать \"посветить\" своими трусиками перед одноклассником."
         "Вы провожаете Гермиону."
         $ request_05 = True
-        if whoring <= 5:
-            $ whoring +=1
+        if hermi.whoring <= 5:
+            $ hermi.whoring +=1
         $ gryffindor +=15
         "Гриффиндор получает 15 очков."
         $ hermione_takes_classes = True
@@ -632,14 +280,14 @@ label request_05_complete:
 
 ###################REQUEST_07 (Level 02) (Flash panties to a teacher).(Daytime only).
 label request_07:
-    if whoring <=2:
+    if hermi.whoring <=2:
         jump too_much
-    if whoring >= 3: #Level 02
+    if hermi.whoring >= 3: #Level 02
         "Гермиона соглашается попробовать \"посветить\" своими трусиками перед учителем."
         "Вы провожаете Гермиону."
         $ request_06 = True
-        if whoring <= 5:
-            $ whoring +=1
+        if hermi.whoring <= 5:
+            $ hermi.whoring +=1
         $ gryffindor +=15
         "Гриффиндор получает 15 очков."
         $ hermione_takes_classes = True
@@ -657,12 +305,12 @@ label request_06_complete:
 ### LEVEL 03 ###
 ###################REQUEST_08 (Level 03) (Show me tits).
 label request_08: #LV.3 (Whoring = 6 - 8)
-    if whoring <=5:
+    if hermi.whoring <=5:
         jump too_much
     "Гермиона показывает вам свою грудь."
     "Вы провожаете Гермиону."
-    if whoring <= 8:
-        $ whoring +=1
+    if hermi.whoring <= 8:
+        $ hermi.whoring +=1
     $ gryffindor +=25
     "Гриффиндор получает 25 очков."
     if daytime:
@@ -674,12 +322,12 @@ label request_08: #LV.3 (Whoring = 6 - 8)
 
 ###################REQUEST_09 (Level 03) (Show me pussy).
 label request_09: #LV.3 (Whoring = 6 - 8)
-    if whoring <=5:
+    if hermi.whoring <=5:
         jump too_much
     "Гермиона показывает вам свою киску."
     "Вы провожаете Гермиону."
-    if whoring <= 8:
-        $ whoring +=1
+    if hermi.whoring <= 8:
+        $ hermi.whoring +=1
     $ gryffindor +=25
     "Гриффиндор получает 25 очков."
     if daytime:
@@ -691,13 +339,13 @@ label request_09: #LV.3 (Whoring = 6 - 8)
 
 ###################REQUEST_10 (Level 03) (25 pt.) (Flash nipple to a classmate). (Available during daytime only).
 label request_10:
-    if whoring <=5:
+    if hermi.whoring <=5:
         jump too_much
     "Гермиона соглашается попробовать показать свои соски однокласснику."
     "Вы провожаете Гермиону."
     $ request_10 = True 
-    if whoring <= 8:
-        $ whoring +=1
+    if hermi.whoring <= 8:
+        $ hermi.whoring +=1
     $ gryffindor +=25
     $ hermione_takes_classes = True
     "Гриффиндор получает 25 очков."
@@ -714,12 +362,12 @@ label request_10_complete:
 ### LEVEL 04 ###
 ###################REQUEST_11 (Level 04) (Get naked.) (Day/Night)
 label request_11: #LV.4 (Whoring = 9 - 11)
-    if whoring <=8:
+    if hermi.whoring <=8:
         jump too_much
     "Гермиона раздевается перед вами, а затем откладывает одежду назад."
     "Вы провожаете Гермиону."
-    if whoring <= 11:
-        $ whoring +=1
+    if hermi.whoring <= 11:
+        $ hermi.whoring +=1
     $ gryffindor +=35
     "Гриффиндор получает 35 очков."
     if daytime:
@@ -731,12 +379,12 @@ label request_11: #LV.4 (Whoring = 9 - 11)
 
 ###################REQUEST_12 (Level 04) (Play with her tits.) (Day/Night)
 label request_12: #LV.4 (Whoring = 9 - 11)
-    if whoring <=8:
+    if hermi.whoring <=8:
         jump too_much
     "Гермиона обнажает свою грудь. Вы немного играете с ними."
     "Вы провожаете Гермиону."
-    if whoring <= 11:
-        $ whoring +=1
+    if hermi.whoring <= 11:
+        $ hermi.whoring +=1
     $ gryffindor +=35
     "Гриффиндор получает 35 очков."
     if daytime:
@@ -748,13 +396,13 @@ label request_12: #LV.4 (Whoring = 9 - 11)
 
 ###################REQUEST_13 (Level 04) (35 pt.) (Wear see-though shirt to classes). (Available during daytime only).
 label request_13: #LV.4 (Whoring = 9 - 11)
-    if whoring <=8:
+    if hermi.whoring <=8:
         jump too_much
     "Гермиона соглашается надеть прозрачную рубашку и пойти в класс."
     "Вы провожаете Гермиону."
     $ request_13 = True 
-    if whoring <= 11:
-        $ whoring +=1
+    if hermi.whoring <= 11:
+        $ hermi.whoring +=1
     $ gryffindor +=35
     $ hermione_takes_classes = True
     "Гриффиндор получает 35 очков."
@@ -769,13 +417,13 @@ label request_13_complete:
 
 ###################REQUEST_15 (Level 04) (35 pt.) (Flash a nipple to a teacher). (Available during daytime only).
 label request_15: #LV.4 (Whoring = 9 - 11)
-    if whoring <=8:
+    if hermi.whoring <=8:
         jump too_much
     "Гермиона соглашается попробовать \"посветить\" сосками перед учителем."
     "Вы провожаете Гермиону."
     $ request_15 = True 
-    if whoring <= 11:
-        $ whoring +=1
+    if hermi.whoring <= 11:
+        $ hermi.whoring +=1
     $ gryffindor +=35
     $ hermione_takes_classes = True
     "Гриффиндор получает 35 очков."
@@ -792,12 +440,12 @@ label request_15_complete:
 ### LEVEL 05 ###   
 ###################REQUEST_16 (Level 05) (Finger her pussy) (Day/Night)
 label request_16: #LV.5 (Whoring = 12 - 14)
-    if whoring <=11:
+    if hermi.whoring <=11:
         jump too_much
     "Гермиона позволяет пощупать ее киску."
     "Вы провожаете Гермиону."
-    if whoring <= 14:
-        $ whoring +=1
+    if hermi.whoring <= 14:
+        $ hermi.whoring +=1
     $ gryffindor +=45
     "Гриффиндор получает 45 очков."
     if daytime:
@@ -809,12 +457,12 @@ label request_16: #LV.5 (Whoring = 12 - 14)
         
 ###################REQUEST_17 (Level 05) (Stick a finger up her but thole.) (Day/Night)
 label request_17: #LV.5 (Whoring = 12 - 14)
-    if whoring <=11:
+    if hermi.whoring <=11:
         jump too_much
     "Гермиона позволяет поводить палецем у входа в ее попку."
     "Вы провожаете Гермиону."
-    if whoring <= 14:
-        $ whoring +=1
+    if hermi.whoring <= 14:
+        $ hermi.whoring +=1
     $ gryffindor +=45
     "Гриффиндор получает 45 очков."
     if daytime:
@@ -827,12 +475,12 @@ label request_17: #LV.5 (Whoring = 12 - 14)
 
 ###################REQUEST_18 (Level 05) (Handjob) (Day/Night)
 label request_18: #LV.5 (Whoring = 12 - 14)
-    if whoring <=11:
+    if hermi.whoring <=11:
         jump too_much
     "Гермиона дрочит вам."
     "Вы провожаете Гермиону."
-    if whoring <= 14:
-        $ whoring +=1
+    if hermi.whoring <= 14:
+        $ hermi.whoring +=1
     $ gryffindor +=45
     "Гриффиндор получает 45 очков."
     if daytime:
@@ -844,12 +492,12 @@ label request_18: #LV.5 (Whoring = 12 - 14)
 
 ###################REQUEST_19 (Level 05) (Rub your dick against her cheeks.) (Day/Night)
 label request_19: #LV.5 (Whoring = 12 - 14)
-    if whoring <=11:
+    if hermi.whoring <=11:
         jump too_much
     "Гермиона сидит на месте, пока вы трете свой член о ее личико."
     "Вы провожаете Гермиону."
-    if whoring <= 14:
-        $ whoring +=1
+    if hermi.whoring <= 14:
+        $ hermi.whoring +=1
     $ gryffindor +=45
     "Гриффиндор получает 45 очков."
     if daytime:
@@ -861,13 +509,13 @@ label request_19: #LV.5 (Whoring = 12 - 14)
 
 ###################REQUEST_20 (Level 05) (45 pt.) (Grab a classmate's cock). (Available during daytime only).
 label request_20: #LV.5 (Whoring = 12 - 14)
-    if whoring <=11:
+    if hermi.whoring <=11:
         jump too_much
     "Гермиона соглашается попробовать cхватить одноклассника за член."
     "Вы провожаете Гермиону."
     $ request_20 = True 
-    if whoring <= 14:
-        $ whoring +=1
+    if hermi.whoring <= 14:
+        $ hermi.whoring +=1
     $ gryffindor +=45
     $ hermione_takes_classes = True
     "Гриффиндор получает 45 очков."
@@ -884,12 +532,12 @@ label request_20_complete:
 #As this request levels up, there are an option appears to offer some extra points if Hermione will put her clothes
 #on top of her sperm covered tits and go to classes like that.
 label request_21: #LV.6 (Whoring = 15 - 17)
-    if whoring <=14:
+    if hermi.whoring <=14:
         jump too_much
     "Гермиона обнажает свою грудь. Вы дрочите и кончая, заливаете спермой ее прелестные сиськи."
     "Вы провожаете Гермиону."
-    if whoring <= 17:
-        $ whoring +=1
+    if hermi.whoring <= 17:
+        $ hermi.whoring +=1
     $ gryffindor +=55
     $ hermione_takes_classes = True
     "Гриффиндор получает 55 очков."
@@ -902,12 +550,12 @@ label request_21: #LV.6 (Whoring = 15 - 17)
         
 ###################REQUEST_22 (Level 06) (55 pt.) (Blowjob). 
 label request_22: #LV.6 (Whoring = 15 - 17)
-    if whoring <=14:
+    if hermi.whoring <=14:
         jump too_much
     "Гермиона делает вам минет."
     "Вы провожаете Гермиону."
-    if whoring <= 17:
-        $ whoring +=1
+    if hermi.whoring <= 17:
+        $ hermi.whoring +=1
     $ gryffindor +=55
     $ hermione_takes_classes = True
     "Гриффиндор получает 55 очков."
@@ -920,13 +568,13 @@ label request_22: #LV.6 (Whoring = 15 - 17)
         
 ###################REQUEST_23 (Level 06) (55 pt.) (Give handjob to a classmate). (Available during daytime only).
 label request_23: #LV.6 (Whoring = 15 - 17)
-    if whoring <=14:
+    if hermi.whoring <=14:
         jump too_much
     "Гермиона соглашается попробовать подрочить однокласснику."
     "Вы провожаете Гермиону."
     $ request_23 = True 
-    if whoring <= 17:
-        $ whoring +=1
+    if hermi.whoring <= 17:
+        $ hermi.whoring +=1
     $ gryffindor +=55
     $ hermione_takes_classes = True
     "Гриффиндор получает 55 очков."
@@ -941,13 +589,13 @@ label request_23_complete:
 
 ###################REQUEST_24 (Level 06) (55 pt.) (Flash your tits to a teacher). (Available during daytime only).
 label request_24: #LV.6 (Whoring = 15 - 17)
-    if whoring <=14:
+    if hermi.whoring <=14:
         jump too_much
     "Гермиона соглашается попробовать и \"посветить\" грудью перед учителем."
     "Вы провожаете Гермиону."
     $ request_24 = True 
-    if whoring <= 17:
-        $ whoring +=1
+    if hermi.whoring <= 17:
+        $ hermi.whoring +=1
     $ gryffindor +=55
     $ hermione_takes_classes = True
     "Гриффиндор получает 55 очков."
@@ -962,12 +610,12 @@ label request_24_complete:
     
 ###################REQUEST_25 (Level 07) (65 pt.) (Cum on face). 
 label request_25: #LV.7 (Whoring = 18 - 20)
-    if whoring <=17:
+    if hermi.whoring <=17:
         jump too_much
     "Гермиона сидит на месте, пока вы дрочите на ее лицо."
     "Вы провожаете Гермиону."
-    if whoring <= 20:
-        $ whoring +=1
+    if hermi.whoring <= 20:
+        $ hermi.whoring +=1
     $ gryffindor +=65
     $ hermione_takes_classes = True
     "Гриффиндор получает 65 очков."
@@ -980,15 +628,15 @@ label request_25: #LV.7 (Whoring = 18 - 20)
         
 ###################REQUEST_26 (Level 07) (65 pt.) (Cum in open mouth before class). (Available during daytime only).
 label request_26: #LV.7 (Whoring = 18 - 20)
-    if whoring <=17:
+    if hermi.whoring <=17:
         jump too_much
     
     "Гермиона сидит с открытым ртом, пока вы дрочите и кончаете в него. Вы запретили ей глотать, до того, как она попадет в класс."
     "Вы провожаете Гермиону с полным ртом своей спермы."
     
     $ request_26 = True 
-    if whoring <= 20:
-        $ whoring +=1
+    if hermi.whoring <= 20:
+        $ hermi.whoring +=1
     $ gryffindor +=65
     $ hermione_takes_classes = True
     "Гриффиндор получает 65 очков."
@@ -1003,13 +651,13 @@ label request_26_complete:
 
 ###################REQUEST_27 (Level 07) (65 pt.) (Blow two classmates). (Available during daytime only).
 label request_27: #LV.7 (Whoring = 18 - 20)
-    if whoring <=17:
+    if hermi.whoring <=17:
         jump too_much
     "Гермиона соглашается попробовать отсосать двум одноклассникам во время занятий."
     "Вы провожаете Гермиону."
     $ request_27 = True 
-    if whoring <= 20:
-        $ whoring +=1
+    if hermi.whoring <= 20:
+        $ hermi.whoring +=1
     $ gryffindor +=65
     $ hermione_takes_classes = True
     "Гриффиндор получает 65 очков."
@@ -1024,13 +672,13 @@ label request_27_complete:
 
 ###################REQUEST_28 (Level 07) (65 pt.) (Give handjob to a teacher). (Available during daytime only).
 label request_28: #LV.7 (Whoring = 18 - 20)
-    if whoring <=17:
+    if hermi.whoring <=17:
         jump too_much
     "Гермиона соглашается попробовать и подрочить учителю во время занятий."
     "Вы провожаете Гермиону."
     $ request_28 = True 
-    if whoring <= 20:
-        $ whoring +=1
+    if hermi.whoring <= 20:
+        $ hermi.whoring +=1
     $ gryffindor +=65
     $ hermione_takes_classes = True
     "Гриффиндор получает 65 очков."
@@ -1047,15 +695,15 @@ label request_28_complete:
 ### LEVEL 08 ###
 ###################REQUEST_29 (Level 08) (75 pt.) (Sex). 
 label request_29: #LV.8 (Whoring = 21 - 23)
-    if whoring <=20:
+    if hermi.whoring <=20:
         jump too_much
     if daytime:
         "Вы занимаетесь сексом с Гермионой, после чего отправляете ее на занятия."
     else:
         "Вы занимаетесь сексом с Гермионой."
         "Вы провожаете Гермиону."
-    if whoring <= 23:
-        $ whoring +=1
+    if hermi.whoring <= 23:
+        $ hermi.whoring +=1
     $ gryffindor +=75
     "Гриффиндор получает 75 очков."
     if daytime:
@@ -1067,13 +715,13 @@ label request_29: #LV.8 (Whoring = 21 - 23)
 
 ###################REQUEST_30 (Level 08) (75 pt.) (Blow a teacher). (Available during daytime only).
 label request_30: #LV.8 (Whoring = 21 - 23)
-    if whoring <=20:
+    if hermi.whoring <=20:
         jump too_much
     "Гермиона соглашается попробовать и сосет у учителя."
     "Вы провожаете Гермиону."
     $ request_30 = True 
-    if whoring <= 23:
-        $ whoring +=1
+    if hermi.whoring <= 23:
+        $ hermi.whoring +=1
     $ gryffindor +=75
     $ hermione_takes_classes = True
     "Гриффиндор получает 75 очков."
@@ -1090,12 +738,12 @@ label request_30_complete:
 ### LEVEL 09 ###
 ###################REQUEST_31 (Level 09) (85 pt.) (Anal sex). (Nighttime)
 label request_31: #LV.9 (Whoring = 24 - 26)
-    if whoring <=23:
+    if hermi.whoring <=23:
         jump too_much
     "Вы занимаетесь анальным сексом с Гермионой"
     "Вы провожаете Гермиону."
-    if whoring <= 26:
-        $ whoring +=1
+    if hermi.whoring <= 26:
+        $ hermi.whoring +=1
     $ gryffindor +=85
     "Гриффиндор получает 85 очков."
     $ hermione_sleeping = True
@@ -1106,12 +754,12 @@ label request_31: #LV.9 (Whoring = 24 - 26)
 ### LEVEL 10 ###
 ###################REQUEST_32 (Level 10) (100 pt.) (Wear a very revealing outfit to class). (Daytime only)
 label request_32: #LV.10 (Whoring = 27 - 29)
-    if whoring <=26:
+    if hermi.whoring <=26:
         jump too_much
     "Гермиона надевает очень распутный наряд и идет на занятия."
     $ request_32 = True
-    if whoring <= 29:
-        $ whoring +=1
+    if hermi.whoring <= 29:
+        $ hermi.whoring +=1
     $ gryffindor +=100
     $ hermione_takes_classes = True
     "Гриффиндор получает 100 очков."
@@ -1124,14 +772,14 @@ label request_32_complete:
     her "О, хорошо. Тогда я пойду спать."
     return
 
-###################REQUEST_33 (Level 10) (100 pt.) THIS REQUEST IS NOW CAN ONLY BE ACCESSED THROUGH REQUEST_25 (CUM ON FACE) when whoring > 26. (Go to class with cum on your face). (Daytime only)
+###################REQUEST_33 (Level 10) (100 pt.) THIS REQUEST IS NOW CAN ONLY BE ACCESSED THROUGH REQUEST_25 (CUM ON FACE) when hermi.whoring > 26. (Go to class with cum on your face). (Daytime only)
 label request_33: #LV.10 (Whoring = 27 - 29)
-    if whoring <=26:
+    if hermi.whoring <=26:
         jump too_much
     "Вы кончаете на лицо Гермионы и отправляете ее на занятия."
     $ request_33 = True
-    if whoring <= 29:
-        $ whoring +=1
+    if hermi.whoring <= 29:
+        $ hermi.whoring +=1
     $ gryffindor +=100
     $ hermione_takes_classes = True
     "Гриффиндор получает 100 очков."
@@ -1181,7 +829,7 @@ label too_much:
     with Dissolve(.3)
     pause.5
     
-    $ mad += 7
+    $ hermi.liking -= 7
     
     ### MUSIC BLOCK ###
     if daytime:

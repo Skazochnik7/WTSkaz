@@ -16,7 +16,7 @@ label new_request_02_b:
     $herView.showQQ( "body_13.png", pos )
     her "Да?"
     
-    if request_02_b_points == 0 and whoring <= 5: ### LEVEL 01 and LEVEL 02
+    if request_02_b_points == 0 and hermi.whoring <= 5: ### LEVEL 01 and LEVEL 02
         ### LEVEL 01 ### <===============================================================FIRST EVENT!
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
         m "Что вы думаете насчет мальчиков из \"Слизерина\"?"
@@ -56,7 +56,7 @@ label new_request_02_b:
         call music_block
     
     else:
-        if whoring <= 2: ### LEVEL 01
+        if hermi.whoring <= 2: ### LEVEL 01
             m "Мне нужно, чтобы ты завела пару друзей в \"Слизерине\"."
             her "То есть, снова заигрывать со \"слизеринскими\" парнями?"
             m "Это именно то, что я хочу от вас сегодня, Мисс Грейнджер."
@@ -101,6 +101,9 @@ label new_request_02_b:
 
 
     $ hermione_takes_classes = True
+
+    $event.Finalize()    
+
     jump day_main_menu
    
         
@@ -136,7 +139,7 @@ label new_request_02_b_complete:
             m "Раскажите мне."
             show screen blktone
             with d3
-            if whoring >= 0 and whoring <= 2: ### LEVEL 01
+            if hermi.whoring >= 0 and hermi.whoring <= 2: ### LEVEL 01
                 if one_out_of_three == 1: ### EVENT (A)
                     
                     stop music fadeout 1.0
@@ -223,7 +226,7 @@ label new_request_02_b_complete:
                         "\"Задание провалено. Ты не получишь очки!\"":
                             stop music fadeout 1.0
                             $herView.hideshowQQ( "body_11.png", pos )
-                            $ mad +=15
+                            $ hermi.liking -=15
                             her "Вы не заплатите мне, сэр?"
                             $herView.hideshowQQ( "body_21.png", pos )
                             her "Но, вы обещали!"
@@ -266,7 +269,7 @@ label new_request_02_b_complete:
                     
                     
                     
-            elif whoring >= 3 and whoring <= 5: ### LEVEL 02
+            elif hermi.whoring >= 3 and hermi.whoring <= 5: ### LEVEL 02
                 if one_out_of_three == 1: ### EVENT (A)
                     stop music fadeout 1.0
                     $herView.hideQQ()
@@ -391,7 +394,7 @@ label new_request_02_b_complete:
                     m "Ладно, ладно, успокойся, девочка."
                     $herView.hideshowQQ( "body_74.png", pos )
 
-            elif whoring >= 6: # LEVEL 03 and higher.
+            elif hermi.whoring >= 6: # LEVEL 03 and higher.
                 if one_out_of_three == 1: ### EVENT (A)
                     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                     $herView.hideshowQQ( "body_75.png", pos )
@@ -499,7 +502,7 @@ label new_request_02_b_complete:
                             $herView.hideshowQQ( "body_74.png", pos )
 
                         "\"Рассказывай или потеряешь свои очки!\"":
-                            $ mad +=10
+                            $ hermi.liking -=10
                             $herView.hideshowQQ( "body_66.png", pos )
                             her "Сэр, пожалуйста, я не хочу об этом говорить."
                             m "Никто не заставляет вас, Мисс Грейнджер."
@@ -538,9 +541,11 @@ label new_request_02_b_complete:
     $ hermione_sleeping = True
     
     $ p_level_02_active = True #When turns TRUE public favors of level 02 become available. 
+
+    $event.Finalize()    
     
-    if whoring <= 2:
-        $ whoring +=1
+    if hermi.whoring <= 2:
+        $ hermi.whoring +=1
         
     call music_block
     return        

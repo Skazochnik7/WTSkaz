@@ -15,7 +15,7 @@ label new_request_02: #SHOW ME YOUR Трусики
     m "Ничего такого, на самом деле..."
     m "Я просто хочу, чтобы ты показала мне свои трусики."             
 
-    if IsFirstRun() and whoring <= 5: #First time this event taking place. and LEVEL 02.  
+    if IsFirstRun() and hermi.whoring <= 5: #First time this event taking place. and LEVEL 02.  
 #    if request_02 == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.  
 #        $ new_request_02_01 =  True #Hearts.
         $SetHearts(1)
@@ -53,13 +53,13 @@ label new_request_02: #SHOW ME YOUR Трусики
     hide screen bld1
     $herView.hideQ( d5 )
     $ menu_x = 0.5 #Default menu position restored.
-    if whoring <= 2:    #angry with pants
+    if hermi.whoring <= 2:    #angry with pants
         show screen hermione_lift_skirt_angry
         with d3
-    elif whoring <= 5:
+    elif hermi.whoring <= 5:
         show screen hermione_lift_skirt_normal #Hermione lifts her skirt WITH pants
         with d3
-    elif whoring >=6 and whoring<13:  # no panties
+    elif hermi.whoring >=6 and hermi.whoring<13:  # no panties
         show screen hermione_lift_skirt_no_panties
         with d3
     else: 
@@ -69,13 +69,13 @@ label new_request_02: #SHOW ME YOUR Трусики
     #play music "music/Under-the-Radar by PhobyAk.mp3" fadein 1 fadeout 1 
     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 
 
-    if whoring >= 0 and whoring <= 2: #LEVEL 01
+    if hermi.whoring >= 0 and hermi.whoring <= 2: #LEVEL 01
         $her_head_state = 8
         her_head_main "........................"
-    elif whoring >= 3 and whoring <= 5: #LEVEL 02
+    elif hermi.whoring >= 3 and hermi.whoring <= 5: #LEVEL 02
         $her_head_state = 14
         her_head_main "....................."
-    elif whoring >= 6 and whoring<13: #LEVEL 03 and up.
+    elif hermi.whoring >= 6 and hermi.whoring<13: #LEVEL 03 and up.
         $her_head_state = 18
         her_head_main ".........................."
         g4 "!!?"
@@ -85,13 +85,13 @@ label new_request_02: #SHOW ME YOUR Трусики
 
     # save previous state and add pose
     # add pose with lifted skirt
-    if whoring<13:
+    if hermi.whoring<13:
         $herView.data().saveState()
         #$herView.data().addPose( CharacterExItemSkirtLifted( herView.mPoseFolder, 'pose_skirt_up.png', G_Z_POSE ) )
         $herView.data().addItem( 'item_pose_lifted_skirt' )
         $ pos = POS_120
     
-    if whoring >= 0 and whoring <= 2: #LEVEL 01   <============================= Fist event.
+    if hermi.whoring >= 0 and hermi.whoring <= 2: #LEVEL 01   <============================= Fist event.
 #        $ new_request_02_01 =  True #Hearts.
 #        SetHearts(1)
 
@@ -120,7 +120,7 @@ label new_request_02: #SHOW ME YOUR Трусики
                 her "......................."
                
 
-    elif whoring >= 3 and whoring <= 5: #LEVEL 02  <====================================================================== SECOND EVENT!
+    elif hermi.whoring >= 3 and hermi.whoring <= 5: #LEVEL 02  <====================================================================== SECOND EVENT!
 #        $ new_request_02_02 =  True #Hearts.
         $SetHearts(2)
 
@@ -154,7 +154,7 @@ label new_request_02: #SHOW ME YOUR Трусики
                 her "Профессор, пожалуйста... Вы смущаете меня."
                 
 
-    elif whoring >= 6 and whoring<13: #LEVEL 04 and up. <====================================================================== FINAL EVENT! (No Трусики).
+    elif hermi.whoring >= 6 and hermi.whoring<13: #LEVEL 04 and up. <====================================================================== FINAL EVENT! (No Трусики).
 #        $ new_request_02_03 =  True #Hearts.
         $SetHearts(3)
 
@@ -187,14 +187,14 @@ label new_request_02: #SHOW ME YOUR Трусики
                         $herView.hideshowQQ( "body_60.png", pos )
                         her "Спасибо вам, сэр!"
                     "\"Категорически нет!\"":
-                        $ mad +=15
+                        $ hermi.liking -=15
                         $herView.hideshowQQ( "body_61.png", pos )
                         her ".............................."
                         $herView.hideshowQQ( "body_62.png", pos )
                         her "Не будьте так скупы, профессор."   
             "\"Отлично. Пять очков Гриффиндору!\"":
                 pass           
-    elif whoring >= 13: #Хотя бы один раз дрочила
+    elif hermi.whoring >= 13: #Хотя бы один раз дрочила
         $herView.hideshowQQ( "body_12.png", pos )
         her "Сэр, вы действительно позвали меня сюда из-за этих несчастных 5 очков?"
         her "Мне жалко тратить время на такую  услугу. Это для первокурок, сэр!"
@@ -311,7 +311,7 @@ label new_request_02: #SHOW ME YOUR Трусики
                                 her "...........................?"
                                 $herView.hideshowQQ( "body_56.png", pos )
                                 her "................................"
-                                if not end.IsEnding(const_ENDING_STRONG_GIRL) and whoring<14:
+                                if not end.IsEnding(const_ENDING_STRONG_GIRL) and hermi.whoring<14:
                                     her "Сэр, мне пора идти. У меня сейчас зельеварение, а профессор Снейп очень строг к опаздывающим..."               
                                     her "...если они из Гриффиндора."               
                                     m "Хорошо, мисс Грейнджер."
@@ -434,9 +434,11 @@ label new_request_02: #SHOW ME YOUR Трусики
 
 
 
-    if whoring <= 2:
-        $ whoring +=1
+    if hermi.whoring <= 2:
+        $ hermi.whoring +=1
 #    $ request_02 += 1
+
+    $event.Finalize()    
     if daytime:
         $ hermione_takes_classes = True
         jump day_main_menu

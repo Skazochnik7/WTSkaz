@@ -69,19 +69,19 @@ label want_to_rule:
             menu:  
                 m "..."
                 "\"Сначала покажи мне сиськи.\"":
-                    $ mad += 9
+                    $ hermi.liking -= 9
                     $ d_flag_01 = True
                     pass
                 "\"Сначала покажи мне свою киску.\"":
-                    $ mad += 9
+                    $ hermi.liking -= 9
                     $ d_flag_02 = True
                     pass
                 "\"Сначала разденься.\"":
-                    $ mad += 17
+                    $ hermi.liking -= 17
                     $ d_flag_03 = True
                     pass
                 "\"Тебе придется переспать со мной.\"" if not d_flag_04:
-                    $ mad += 17
+                    $ hermi.liking -= 17
                     $ d_flag_04 = True
                     $herView.hideQQ()
                     $herView.showQQ( "body_18.png", pos )
@@ -520,6 +520,7 @@ label want_to_rule:
     
     call music_block
     
+    $this.want_to_rule.Finalize()
     return
     
 #==========================
@@ -766,6 +767,8 @@ label against_the_rule:
     hide screen bld1
 
     stop bg_sounds #Stops playing the fire SFX.
+
+    $this.against_the_rule.Finalize()
    
     jump night_start
          
@@ -904,6 +907,8 @@ label crying_about_dress:
     $ hermione_takes_classes = True
     
     call music_block
+
+    $this.crying_about_dress.Finalize()    
     
     return 
     
@@ -1000,20 +1005,21 @@ label sorry_about_hesterics:
     with d3
     
     call music_block
-    
+    $this.sorry_about_hesterics.Finalize()
+
     return
     
     
 #=========================
 label giving_thre_dress:
 #    $ gave_the_dress = True #Turns True when Hermione has the dress.
-    $hermi.Items.Receive(hero.Items,"ball_dress",-1)
+    $hermi.Items.Receive(hero.Items,"ball_dress")
     $ days_without_an_event = 0
     $herView.hideQ()
     with d5
     
     
-    $ mad = 0
+    $ hermi.liking = 0
     stop music fadeout 1.0
     m "Вот... Это тебе..."
     $ the_gift = "03_hp/18_store/01.png" # DRESS.
@@ -1117,6 +1123,9 @@ label giving_thre_dress:
 
     call music_block
     
+    
+    $this.giving_thre_dress.Finalize()
+
     if daytime:
         $ hermione_takes_classes = True
         jump night_main_menu
@@ -1644,7 +1653,7 @@ label good_bye_snape:
         play music "music/Plaint.mp3" fadein 1 fadeout 1 #SAD CREDITS MUSIC.
         
         centered "{size=+7}{color=#cbcbcb}Поздравляем с завершением игры!{/color}{/size}\n\n\
-                  {size=+5}{color=#cbcbcb}Это концовка \"00\" из \"02\".{/color}{/size}"
+                  {size=+5}{color=#cbcbcb}Это концовка \"00\" из \"03\".{/color}{/size}"
         
         centered "{size=+7}{color=#cbcbcb}Спасибо за ваше то, что играли!{/color}{/size}\n\n\
                   {size=+5}{color=#cbcbcb}AKABUR 2014{/color}{/size}"
@@ -1715,6 +1724,8 @@ label good_bye_snape:
 
     hide screen end_u_4                                           #<---- SCREEN
     jump your_whore
+    
+    $this.good_bye_snape.Finalize()
     
     return
     

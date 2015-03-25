@@ -62,9 +62,9 @@ label cupboard:
                         hide screen points
                         $slytherin+=100
                         show screen points
-                    "ЧИТ: Гермиона больше не злиться на вас":
+                    "ЧИТ: Гермиона не злится на вас":
                         hide screen points
-                        $mad=0
+                        $hermi.liking=0
                         show screen points
                         "Готово можете проверить"
                     "ЧИТ: +100 золотых":
@@ -84,10 +84,14 @@ label cupboard:
                 $_scrollSection=0
                 jump sc_col
 
-
         "- Священные свитки. Часть II -" if not day == 1 and cataloug_found:
             label sc_col_men_2:
                 $_scrollSection=1
+                jump sc_col
+
+        "- Священные свитки. Часть III -" if not day == 1 and cataloug_found:
+            label sc_col_men_3:
+                $_scrollSection=2
                 jump sc_col
 
 
@@ -95,9 +99,9 @@ label cupboard:
                     $ choose = RunMenu()
                     python:
                         _itemCount=hero.Items.Count("scroll")
-                        for i in range(_scrollSection*15+1, _scrollSection*15+15):
-                            if i<=_itemCount:
-                                choose.AddItem("- C."+str(i)+": Священный свиток #"+str(i)+" -", 
+                        for i in range(_scrollSection*15, _scrollSection*15+15):
+                            if i<_itemCount:
+                                choose.AddItem("- C."+str(i+1)+": Священный свиток #"+str(i+1)+" -", 
                                     "menu_cupboard_scroll_show" , True, i)
                         choose.AddItem("- Ничего -", "cupboard", True, "")
                     $ choose.Show()
@@ -105,7 +109,7 @@ label cupboard:
 
                 label menu_cupboard_scroll_show:
 
-                    $ the_gift = "03_hp/19_extras/"+str(choose.choice).zfill(2)+".png"
+                    $ the_gift = "03_hp/19_extras/"+str(choose.choice+1).zfill(2)+".png"
  # SACRED SCROLL 01.
                     show screen gift
                     show screen ctc
@@ -114,7 +118,7 @@ label cupboard:
                     hide screen gift
                     hide screen ctc
                     with d3
-                    jump sc_col_men_1
+                    jump expression "sc_col_men_"+str((choose.choice)//15+1)
             
         "- Ничего -":
             jump day_main_menu
@@ -181,7 +185,7 @@ label rummaging:
         $arrProb={"candy":[2,2,2,0], "wine": [7,5,4,0], "chocolate":[1,1,0,4], "lingere":[1,1,0,1], "sexdoll":[1,1,1,1],
         "krum":[0,1,1,1],"owl":[0,0,4,4], "broom":[0,0,0,1]} #"gold":[8, 9, 8, 8]
 
-        $_level=GetStage(whoring, 0, 6, 4)-1
+        $_level=GetStage(hermi.whoring, 0, 4, 6)-1
         $_randValue=one_of_tw
         $_name="gold"
         python:

@@ -43,10 +43,13 @@ init python:
             RunMenu.current = self                        
             if self.text:
                 renpy.say(self.who, self.text, interact=False)
+#            renpy.say("","in1")
             if escLabel!=None:
                 if escText==None:
                     escText="- Ничего -"
-                self.AddItem(escText, escLabel, True, None)
+#                renpy.say("","in2")
+                self.AddItem(escText, escLabel, True, "")
+ #           renpy.say("","in3")
             renpy.call_screen(RunMenu.screen)
           
 

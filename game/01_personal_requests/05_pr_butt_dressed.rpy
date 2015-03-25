@@ -12,7 +12,7 @@ label new_request_05:
             jump new_personal_request
 
     
-    if whoring <=2:
+    if hermi.whoring <=2:
         jump too_much
         
 #    if whoring >= 3 and whoring <= 5:
@@ -25,16 +25,16 @@ label new_request_05:
 #        $ level = "04"
 #        $ new_request_05_03 = True # HEARTS.
 
-    $SetHearts(GetStage(whoring, 3, 3, 3))
+    $SetHearts(GetStage(hermi.whoring, 3, 3, 3))
 
         
         
-    if whoring >= 3 and whoring <= 5: # LEVEL 02 # Hermione is hesitant. <=================================================================================== FIRST EVENT.
+    if hermi.whoring >= 3 and hermi.whoring <= 5: # LEVEL 02 # Hermione is hesitant. <=================================================================================== FIRST EVENT.
         
         hide bld1
         with d3
         m "Подойди поближе, детка. Давайка разомнем твою сочную попку."
-        if IsFirstRun() and whoring <= 5: #First time
+        if IsFirstRun() and hermi.whoring <= 5: #First time
 #        if request_05_points == 0 and whoring <= 5: #First time
             stop music fadeout 5.0
             $her_head_state = 7
@@ -152,7 +152,7 @@ label new_request_05:
                                                 her_head_main "Просто больше не делайте этого, сэр..."
                                                 pass
                                             "\"Ты не получишь очков за это!\"":
-                                                $ mad += 30
+                                                $ hermi.liking -= 30
                                                 $her_head_state = 20
                                                 her_head_main "Ха! И плевать, сэр!"
                                                 ### Takes place aftre you refuse to pay her the очков.
@@ -178,7 +178,7 @@ label new_request_05:
                                                     $ hermione_sleeping = True
                                                     jump night_main_menu
                                             "\"Я вычту очки за это!\"":
-                                                $ mad += 20
+                                                $ hermi.liking -= 20
                                                 $her_head_state = 22
                                                 her_head_main "Вы серьезно!?"
                                                 $ gryffindor -=10
@@ -208,13 +208,13 @@ label new_request_05:
                                                 m ".............."
                                                 menu:
                                                     "\"Черт. Чувствую себя хреново...\"":
-                                                        $ mad -= 5
+                                                        $ hermi.liking += 5
                                                         m "Черт... Чувствую себя хреново..."
                                                         #m "But who could resist slapping that little behind of her's?"
                                                         m "Но кто бы смог устоять и не шлепнуть ее великолепную попку?"
                                                     #"\"She made me do this, that brat!\"":
                                                     "\"Эта девица, все из-за нее!\"":
-                                                        $ mad += 9
+                                                        $ hermi.liking -= 9
                                                         #m "She made me do this, that brat!"
                                                         #m "Acting all wounded now..."
                                                         #m "I bet she actually enjoyed the slapping and just won't admit it..."
@@ -382,7 +382,7 @@ label new_request_05:
                         ">Затем вы в последний раз сжиматете её попку."
                         her_head_main "....................."
                     "\"Открой глаза, или лишишься очков!\"":
-                        $ mad += 7
+                        $ hermi.liking -= 7
                         her_head_main "Арх! {size=-5}(Ах ты старый--{/size}"
                         m "Вы что-то сказали, Мисс Грейнджер?"
                         $her_head_state = 8
@@ -406,7 +406,7 @@ label new_request_05:
                         jump connection_of_rapes
     
         
-    elif whoring >= 6: # LEVEL 04 # Hermione is hesitant. <=================================================================================== SECOND EVENT.
+    elif hermi.whoring >= 6: # LEVEL 04 # Hermione is hesitant. <=================================================================================== SECOND EVENT.
 #        $ new_request_05_02 = True # HEARTS.
         hide screen bld1
         with d3
@@ -603,7 +603,7 @@ label new_request_05:
                         ">Затем вы в последний раз сжимаете их."
                         her_head_main "....................."
                     "\"Открой свои глаза или не получишь очков!\"":
-                        $ mad += 20
+                        $ hermi.liking -= 20
                         her_head_main "Арх! {size=-5}(Старый козел--{/size}"
                         m "Вы что-то сказали, Мисс Грейнджер?"
                         $her_head_state = 8
@@ -633,8 +633,8 @@ label new_request_05:
     
         
 label ending_of_screams_of_pleasure:
-    if whoring <= 5:
-        $ whoring +=1
+    if hermi.whoring <= 5:
+        $ hermi.whoring +=1
     show screen blkfade 
     with d5
     
@@ -688,7 +688,7 @@ label ending_of_screams_of_pleasure:
     show screen hermione_01_f #Hermione stands still.
     with Dissolve(.3)
     
-    if whoring >= 3 and whoring <= 5: #First level. Not happy.
+    if hermi.whoring >= 3 and hermi.whoring <= 5: #First level. Not happy.
         $her_head_state = 12
         her_head_main "..........................."
         
@@ -743,15 +743,15 @@ label screams_of_rapings:
             g4 "Ох, успокойся  девочка, я не насиловал тебя! Все что я сделал это--"
             with hpunch
             her_head_main "{size=+7}Вы изнасиловали меня!!!{/size}"
-            g4 "Великие пески пустыни, потише говори об изнасиловании!?"
+            g4 "Великие пески пустыни, потише об изнасиловании!"
             g4  "Кто-нибудь может услышать тебя!"
             her_head_main "Отлично! Я хочу чтобы они услышали!"
-            m "Почему ты досих пор недовольна? Я уже заплатил тебе!"
+            m "Почему ты до сих пор недовольна? Я уже заплатил тебе!"
             $her_head_state = 32
             her_head_main "Oх... ладно..."
             $her_head_state = 33
-            her_head_main "Но я вас ненавижу! Я ненавижу вас, профессор!"
-            $ mad +=30
+            her_head_main "Но я все равно вас ненавижу! Я ненавижу вас, профессор!!"
+            $ hermi.liking -=30
 
         "\"Ты блефуешь, девочка!\"":
             $her_head_state = 29
@@ -759,7 +759,7 @@ label screams_of_rapings:
             g4 "Делай что хочешь"
             g4 "Никакого изнасилования не было!"
             her_head_main "Я ненавижу вас, профессор!"
-            $ mad +=50
+            $ hermi.liking -=50
 
 
     hide screen bld1
@@ -781,7 +781,7 @@ label screams_of_rapings:
     show screen hermione_01_f #Hermione stands still.
     with Dissolve(.3)
 
-    if whoring >= 3 and whoring <= 5: #First level. Not happy.
+    if hermi.whoring >= 3 and hermi.whoring <= 5: #First level. Not happy.
         $her_head_state = 12
         her_head_main "..........................."
         
@@ -793,6 +793,7 @@ label screams_of_rapings:
     with Dissolve(.3)
     pause.5
 
+    $event.Finalize()    
     if daytime:
         $ hermione_takes_classes = True
         jump day_main_menu

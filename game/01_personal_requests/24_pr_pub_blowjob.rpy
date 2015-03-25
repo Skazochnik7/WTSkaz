@@ -25,7 +25,7 @@ label new_request_24: #LV.7 (Whoring = 18 - 20)
         stop music fadeout 1.0
         her "!!!"
         her "...ртом?"
-        if whoring <=17 or request_23_points <= 1: # Counts how many times you sent Hermione to give a handjob to a boy.
+        if hermi.whoring <=17 or request_23_points <= 1: # Counts how many times you sent Hermione to give a handjob to a boy.
             jump too_much
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
         m "Да, так это обычно и делается..."
@@ -60,14 +60,14 @@ label new_request_24: #LV.7 (Whoring = 18 - 20)
         her "........."
         
     else: # <================================================================================ NOT FIRST TIME
-        if whoring >= 18 and whoring <= 20: # LEVEL 07 FIRST EVENT.
+        if hermi.whoring >= 18 and hermi.whoring <= 20: # LEVEL 07 FIRST EVENT.
             m "Иди и сделай какому-нибудь счастливцу минет, девочка."
             $herView.hideshowQQ( "body_66.png", pos )
             her "......Опять?"
             m "Да, опять."
             $herView.hideshowQQ( "body_79.png", pos )
             her ".........."
-        elif whoring >= 21: # LEVEL 08+ SECOND EVENT.
+        elif hermi.whoring >= 21: # LEVEL 08+ SECOND EVENT.
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
             m "Мисс Грейнджер..."
             m "Вы верите в гороскоп?"
@@ -114,6 +114,8 @@ label new_request_24: #LV.7 (Whoring = 18 - 20)
     call music_block
 
     $ hermione_takes_classes = True
+    $event.Finalize()    
+
     jump day_main_menu
     
     
@@ -142,7 +144,7 @@ label new_request_24_complete:  # <=============================================
     $ pos = POS_370
     $ herView.data().saveState()
 
-    if whoring >= 18 and whoring <= 20: # LEVEL 07                    
+    if hermi.whoring >= 18 and hermi.whoring <= 20: # LEVEL 07                    
         if one_out_of_three == 1: ### EVENT (A)
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
             m "Ты знаешь правила, девочка. Начинай рассказывать."
@@ -249,7 +251,7 @@ label new_request_24_complete:  # <=============================================
             her "Меньшее, что я могу сделать для кого-то, кто, для разнообразия, отнесся ко мне с уважением..."
             m "В таком случае, ладно."
             
-    if whoring >= 21: # LEVEL 08 =+               
+    if hermi.whoring >= 21: # LEVEL 08 =+               
         if one_out_of_three == 1: ### EVENT (A)
             stop music fadeout 1.0
             # HERMIONE ALL MESSED UP, WITH RUNNING MASCARA.
@@ -440,6 +442,7 @@ label new_request_24_complete:  # <=============================================
 
     call music_block
     
+    $event.Finalize()    
     return
 
 

@@ -1,6 +1,6 @@
 ################### REQUEST_03 (Level 02) (Available during daytime only). "Give me your Трусики" ###############################
 label new_request_03: #(Whoring = 3 - 5)
-    if whoring <= 2:
+    if hermi.whoring <= 2:
         jump too_much
     $herView.hideQQ()
     
@@ -29,10 +29,9 @@ label new_request_03: #(Whoring = 3 - 5)
     
     
 #    if request_03_points == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.   <===================================== ONE TIME EVENT.
-    if IsFirstRun() and whoring <= 5: #First time this event taking place. and LEVEL 02.   <===================================== ONE TIME EVENT.
+    if IsFirstRun() and hermi.whoring <= 5: #First time this event taking place. and LEVEL 02.   <===================================== ONE TIME EVENT.
         stop music fadeout 10.0
 #        $ new_request_03_01 = True # HEARTS.
-        $SetHearts(1)
 
 #        $ request_03 += 1
         $herView.hideshowQQ( "body_11.png", pos )
@@ -102,14 +101,14 @@ label new_request_03: #(Whoring = 3 - 5)
 
     else: #<========================================================================================== FIRST EVENT!
 #        if request_03_points == 0 and whoring < 12:
-        if IsFirstRun() and whoring < 12:
+        if IsFirstRun() and hermi.whoring < 12:
             her "Эмм..."
             her " Это несколько неожиданно, сэр, но..."
         if not IsFirstRun():
             her "Снова, сэр?"
             m "Да, снова..."
         her "Вот..."
-        if whoring >= 12: #LEVEL 05
+        if hermi.whoring >= 12: #LEVEL 05
             $herView.hideQQ()
             ">Гермиона достает свои трусики из кармана..."
             m "Что?"
@@ -118,6 +117,12 @@ label new_request_03: #(Whoring = 3 - 5)
             m "Было ощущение?"
             $herView.hideshowQQ( "body_68.png", pos )
             her "Ну, если быть честной, то я теперь не всегда их надеваю..."
+            if hermi.whoring >= 15: #LEVEL 05
+                $herView.hideshowQQ( "body_78.png", pos )
+                her "Могут быть разные обстоятельства, и трусики будут только мешать."
+                m "Мешать?.."
+                $herView.hideshowQQ( "body_68.png", pos )
+                her "Ах, это неважно, сэр."
         else:
             $herView.hideQQ()
             ">Гермиона снимает трусики и отдает их вам..."
@@ -129,8 +134,8 @@ label new_request_03: #(Whoring = 3 - 5)
         
     label request_03_ends:
     $ request_03 = True #True when Hermione has no Трусики on.
-    if whoring <= 5:
-        $ whoring +=1
+    if hermi.whoring <= 5:
+        $ hermi.whoring +=1
         
     hide screen bld1
     $herView.hideQ()
@@ -157,7 +162,7 @@ label new_request_03: #(Whoring = 3 - 5)
     else:
         play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
     ### END OF BLOCK ###
-
+    $event.Finalize()
     jump day_main_menu
     
     
@@ -195,9 +200,8 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                 her "И моя оплата?"
                 m "Конечно."
         "\"Как прошел ваш день, Мисс Грейнджер?\"":
-            if  whoring <= 5: #LEVEL 02. EVENT LEVEL: 01
+            if  hermi.whoring <= 5: #LEVEL 02. EVENT LEVEL: 01
 #                $ new_request_03_01 = True # HEARTS.
-#                SetHearts(1)
 
                 $herView.hideQQ()
                 $ pos = POS_120
@@ -219,9 +223,8 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                     $herView.hideshowQQ( "body_31.png", pos )
                     her "И мои очки?"
                     m "Да, да..."
-            elif whoring >= 6 and whoring <= 8: #LEVEL 03. EVENT LEVEL 02.
+            elif hermi.whoring >= 6 and hermi.whoring <= 8: #LEVEL 03. EVENT LEVEL 02.
 #                $ new_request_03_02 = True # HEARTS.
-                $SetHearts(2)
 
                 $herView.hideQQ()
                 $ pos = POS_120
@@ -237,7 +240,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                 her "Я чувствовала себя не очень, так как была без белья..."
                 menu:
                     "\"Ах ты маленькая лицемерка!\"":
-                        $ mad +=5
+                        $ hermi.liking -=5
                         $herView.hideshowQQ( "body_14.png", pos )
                         her "Профессор?"
                         m "Только этим утром ты обменяла свои труски..."
@@ -267,18 +270,16 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                             jump panties_soaked_in_cum
                         else:
                             her "И мои очки."
-            elif whoring >= 9: #LEVEL 04. EVENT LEVEL 03.
+            elif hermi.whoring >= 9: #LEVEL 04. EVENT LEVEL 03.
 #                $ new_request_03_03 = True # HEARTS.
-                $SetHearts(3)
 
                 $herView.hideQQ()
                 $ pos = POS_120
                 $herView.showQQ( "body_16.png", pos )
                 her "Еще один обычный день в Хогвартсе..."
                 her "Ничего примечательного..."
-                if whoring>=15:
-                    $SetHearts(4)
-                    m "Отсутствие белья больше не доставляет вам неудобств, мисс Грейндер?"
+                if hermi.whoring>=15:
+                    m "Отсутствие белья больше не доставляет вам неудобств, мисс Грейнджер?"
                     $herView.hideshowQQ( "body_29.png", pos )
                     her "Неудобства, сэр? О чем вы... Ах, это!"
                     her "Ну мы же взрослые люди, профессор. Если девушка не носит белье, что в этом такого?..."
@@ -332,6 +333,12 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
 
     play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
 
+    if hermi.whoring<15:
+        $SetHearts(GetStage(hermi.whoring, 3, 3, 3), this.new_request_03)
+    else:
+        $SetHearts(4, this.new_request_03)
+
+    $event.Finalize()    
     return 
     
     
@@ -342,7 +349,7 @@ label panties_soaked_in_cum:
     $ she_knows_about_cum = False
     $ pos = POS_120
     
-    if whoring >= 3 and whoring <= 5: # LEVEL 02
+    if hermi.whoring >= 3 and hermi.whoring <= 5: # LEVEL 02
         $herView.hideshowQQ( "body_71.png", pos )
         her "Хм....?"
         $herView.hideshowQQ( "body_05.png", pos )
@@ -376,7 +383,7 @@ label panties_soaked_in_cum:
         her "Мне бы этого правда не хотелось, сэр..."
         menu:
             "\"Надень их или потеряешь очки!\"":
-                $ mad +=7
+                $ hermi.liking -=7
                 $herView.hideshowQQ( "body_72.png", pos )
                 her "Что?"
                 her "Профессор, вы шутите, так?"
@@ -403,7 +410,7 @@ label panties_soaked_in_cum:
                 her "......................"
             "\"Ну, как хочешь...\"":
                 pass
-    if whoring >= 6 and whoring <= 8: # LEVEL 03 (SECOND EVENT)
+    if hermi.whoring >= 6 and hermi.whoring <= 8: # LEVEL 03 (SECOND EVENT)
         $herView.hideshowQQ( "body_71.png", pos )
         her "Мои трусики..."
         $herView.hideshowQQ( "body_73.png", pos )
@@ -433,7 +440,7 @@ label panties_soaked_in_cum:
         her "(Забавное ощущение...)"
         $herView.hideshowQQ( "body_44.png", pos )
         her "Это все, сэр?"
-    if whoring >= 9: #LEVEL 04+ (THIRD EVENT)
+    if hermi.whoring >= 9: #LEVEL 04+ (THIRD EVENT)
         $herView.hideshowQQ( "body_71.png", pos )
         her "Мои трусики..."
         if not IsFirstRun():
@@ -486,7 +493,7 @@ label panties_soaked_in_cum:
         
         # NEW Branch :)
         $pos = POS_120
-        if she_knows_about_cum == True and whoring >= 12:
+        if she_knows_about_cum == True and hermi.whoring >= 12:
             $herView.showQQ( "body_58.png", pos )
             her "...Сэр?"
             m "Да?"
@@ -526,7 +533,7 @@ label panties_soaked_in_cum:
                     $herView.hideshowQQ( "body_45.png", pos )
 
                 "\"Я думаю, это грязно!\"":
-                    $mad += 15
+                    $hermi.liking -= 15
                     $herView.hideQQ()
                     $herView.data().loadState()
                     $herView.showQQ( "body_51.png", pos )
@@ -535,5 +542,4 @@ label panties_soaked_in_cum:
                     her "Мои очки, сэр!"
                     
                     
-
     jump back_from_panties

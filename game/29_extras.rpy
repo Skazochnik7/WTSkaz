@@ -18,6 +18,10 @@ label gallery:
             $_scrollSection=1
             jump volone 
             
+        "- Священные свитки. Часть III -":
+            $_scrollSection=2
+            jump volone 
+
 #        "- Gallery volume 02 -":
 #            jump volumetwo
         
@@ -98,8 +102,7 @@ label volone:
             if i<=_itemCount:
                 choose.AddItem("- C."+str(i)+": Священный свиток #"+str(i)+" -", 
                     "vol_description" , True, i)
-        choose.AddItem("- Ничего -", "after_cam", True, "")
-    $ choose.Show()
+    $ choose.Show("after_cam")
 
 label vol_description:
 
@@ -129,7 +132,7 @@ label vol_description:
     ["Я потратил прилично времени, чтобы дать Гермионе подходящую внешность...", "Версия \"A\" была моей первой попыткой. И она мне нравилась, пока я не начал ее ненавидеть...",
         "Версия \"B\" была моей второй попыткой. И она хороша. Но ее самоуверенные и полуагрессивные черты не совсем подходили героине...","Версия \C\" та, что прошла кастинг. Гермиона которую мы вырастили и о которой будем заботиться, я уверен."],
     ["Побочный квест, которого нет.", "Вам позволено жалеть, что торопили меня.","Если вы не торопили меня, вам позволено злиться на тех, кто торопил."],
-    ["Гермиона дарит свое тело Джинни...", "Это была бы запоминающаяся сцена..."],
+    ["Гермиона дарит свое тело Джину...", "Это была бы запоминающаяся сцена..."],
     ["Не ожидали, ага?", "Это все еще Гермиона, если вам любопытно."],
     [".................................", "Сайд-квест, конечно..."],
     ["Еще один сайд-квест...", "Мы много спорили с Dahr о нем...","Я был против квеста, но потом Dahr отправил мне картинки, чем заставил меня заткнуться."],
@@ -146,8 +149,9 @@ label vol_description:
     show image "03_hp/19_extras/"+str(choose.choice).zfill(2)+".png" with d3
     if commentaries:
         python:
-            for i in range(len(_descrs[choose.choice-1])):
-                renpy.say(a1,_descrs[choose.choice-1][i])
+            if _itemCount<2:
+                for i in range(len(_descrs[choose.choice-1])):
+                    renpy.say(a1,_descrs[choose.choice-1][i])
     show screen ctc
     pause
     hide screen ctc

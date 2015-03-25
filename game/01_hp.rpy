@@ -1,4 +1,5 @@
 label hp:
+
     stop music fadeout 1
 #    $ select = renpy.imagemap("screens/s2pot04.png", "screens/s2pot04b.png", [                                            
 #                                            (492, 400, 637, 600, "no"),
@@ -76,7 +77,7 @@ $ snape_friendship = 0 #Get's +1 after every evening spent is Snape's company.
 $ snape_events = 0 #Get's +1 point every time a special event with Snape happens. 
 
 
-$ level = "00" #Hermione's whoring level.
+#$ level = "00" #Hermione's whoring level.
 
 $ hermione_takes_classes = False #Turns True when Hermione becomes unavailable for summon after performing personal request in the morning.
 $ hermione_sleeping = False
@@ -85,7 +86,7 @@ $ hermione_sleeping = False
 
 $ tutoring_events = 0 #Get's +1 point every time a tutoring special event happens. 
 $ knowledge = 0
-$ whoring = 0 #Default: 0
+#$ whoring = 0 #Default: 0
 $ teachers_pet = 0
 $ classmates_pet = 0
 $ being_mean = 0 #+1 every time you are being mean to hermione.
@@ -183,7 +184,7 @@ $ s_reading_lvl = 0 #+1 When complete first book on speed reading. +1 again when
 
 ### MUGGLE ODDITIES ### =========================================================================
 $ order_placed = False #TRUE when and order has been placed on an item.
-$ days_in_delivery = 0 # +1 day, every day since the orer has been made (when order_placed = True).
+#$ days_in_delivery = 0 # +1 day, every day since the orer has been made (when order_placed = True).
 $ days_in_delivery2 = 0 # +1 day, every day since the orer has been made (when order_placed = True).
 $ package_is_here = False # Turns true when days_in_delivery >= 5. Package is displayed.
 
@@ -261,7 +262,12 @@ if this.event_05._finish2==4:
     $ door_examined = True
     $ fireplace_examined = True
     $ rum_times = 4
-
+    
+# QUESTS #==============================================================================================================================================
+$ zyablik_switch = 0
+### TUTORING QUEST ####
+$ teacher_jinn_quest = 0
+$ study_book_quest_counter = 0
 ###SCREENS### NO NEED FOR THIS ONE ANYMORE. (SHOWS WHORING THOUGH).
 screen statistics: #более подробно см. здесь http://www.renpy.org/doc/html/screens.html
     hbox: #горизонтальный «контейнер», где будет изображение золота и его количество
@@ -314,33 +320,33 @@ hide screen cloud_night_02 #NIGHT CLOUDS.
 hide screen cloud_night_03 #NIGHT CLOUDS.
 hide screen bld1 #You know what this is. Just making sure it doesn't get stuck.
  
-if whoring >= 0 and whoring <= 2:
-    $ level = "01"
-if whoring >= 3 and whoring <= 5:
-    $ level = "02"
-if whoring >= 6 and whoring <= 8:
-    $ level = "03"
-if whoring >= 9 and whoring <= 11:
-    $ level = "04"
-if whoring >= 12 and whoring <= 14:
-    $ level = "05"
+#if whoring >= 0 and whoring <= 2:
+#    $ level = "01"
+#if whoring >= 3 and whoring <= 5:
+#    $ level = "02"
+#if whoring >= 6 and whoring <= 8:
+#    $ level = "03"
+#if whoring >= 9 and whoring <= 11:
+#    $ level = "04"
+#if whoring >= 12 and whoring <= 14:
+#    $ level = "05"
     
-if whoring >= 15 and whoring <= 17:
-    $ level = "06"
+#if whoring >= 15 and whoring <= 17:
+#    $ level = "06"
     
-if whoring >= 18 and whoring <= 20:
-    $ level = "07"
+#if whoring >= 18 and whoring <= 20:
+#    $ level = "07"
     
-if whoring >= 21 and whoring <= 23:
-    $ level = "08"
+#if whoring >= 21 and whoring <= 23:
+#    $ level = "08"
     
-if whoring >= 24 and whoring <= 26:
-    $ level = "09"
+#if whoring >= 24 and whoring <= 26:
+#    $ level = "09"
     
-if whoring >= 27 and whoring <= 29:
-    $ level = "10"
+#if whoring >= 27 and whoring <= 29:
+#    $ level = "10"
 
-if whoring >= 12 and not touched_by_boy: #Turns true if sent Hermione to get touched by a boy at least once.
+if hermi.whoring >= 12 and not touched_by_boy: #Turns true if sent Hermione to get touched by a boy at least once.
     $ lock_public_favors = True #Turns True if reached whoring level 05 while public event "Touched by boy" never attempted. Locks public events.
 
 
@@ -388,19 +394,9 @@ if day_of_week == 7: #Counts days of the week. Everyday +1. When day_of_week = 7
 $ day_of_week += 1
 
 ### HERMIONE ###
-if mad >= 1:
-    $ mad -= 1
-
+# Ежеденевные изменения для всех персонажей
+$hermi.liking+=1
     
-
-### MUGGLE ODDITIES RELATED FLAGS ###
-#if order_placed: #TRUE when and order has been placed on an item.
-#    $ days_in_delivery +=1
-#    if days_in_delivery >= 3: # BY DEAFULT WAS 5. Changed for testing.
-#        $ package_is_here = True
-#        $ order_placed = False
-
-
 
 ### MUGGLE ODDITIES RELATED FLAGS ### VERSION TWO. This one randomizes delivery waiting days.
 if order_placed: #TRUE when and order has been placed on an item.
@@ -467,6 +463,12 @@ hide screen with_snape #Genie hangs out with Snape in front of the fireplace.
 hide screen with_snape_animated #Genie hangs out with Snape in front of the fireplace.
 if package_is_here:
     hide screen package
+
+
+
+
+
+
     
 
 show screen door   
@@ -511,6 +513,38 @@ with fade
 $ day +=1
 
 ### DAY EVENTS ###<============================================================================================================================================================
+
+#show ch_hem blink at Position(xpos=300, ypos=350, xanchor="center", yanchor="center") with Dissolve(.1)
+#pause 
+
+"Должно быть видно"
+python:
+
+    def hlebo(**kwargs):
+#        ui.frame()
+#        ui.image('03_hp/animation/h_walk_03.png')
+#        ui.close()
+#        renpy.pause(2)
+#        ui.image('03_hp/animation/h_walk_02.png')
+#        ui.close()
+#        renpy.pause(2)
+        return
+#        ui.vbox()
+#        ui.text("Test")
+#        ui.close()
+
+#    renpy.define_screen("hlebo", hlebo, "False", "2", tag=None, variant=None)
+    renpy.show_screen("chibiscreen")
+# Можно в функйии создающей экран добавлять картинки, но что если нужно создать последовательность картинок (через пауззу)?
+
+#    renpy.show_screen("hleboscreen")
+
+#    renpy.show("hermione_02", at_list=[Position(xalign=300,yalign=300)], zorder=2, tag="hermiona")
+    renpy.pause()
+    renpy.show_screen("hermione_02")
+    renpy.say("","Теперь не видно? но видно другое!")
+"Теперь не видно"
+
 
 
 
@@ -664,6 +698,12 @@ call points_changes #Makes changes in the Slytherin house points.
 call points_changes_gryffindor #Makes changes in the Gryffindor (And the rest of the houses) house points. (07_points_gry.rpy)
 # call snape_bonus # Not in use anymore.
 
+###QUEST SHIT###
+if teacher_jinn_quest == 5:
+    $ study_book_quest_counter += 1
+    
+if study_book_quest_counter == 3 and teacher_jinn_quest == 5:
+    jump event_16
 
 
 

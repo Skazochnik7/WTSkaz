@@ -195,6 +195,7 @@ label tutoring:
                 call hermione_leave_tutoring
              
             "Зяблик сжирает эту хрень!":
+                $ zyablik_switch = 1
                 g4 "Он вонзает свой острый, как бритва, клюв в тушу бедной твари!"
                 $herView.hideQQ()
                 $herView.showQQ( "body_18.png", pos )
@@ -292,6 +293,7 @@ label tutoring:
         m "..."
         m "Вряд ли я смогу обучать ее, сам ничего толком не зная об этом мире..."
         m "Думаю, мне стоит поговорить об этом со Снейпом."
+        $ teacher_jinn_quest = 1
 
         $herView.data().loadState()
         jump day_start    
@@ -300,63 +302,63 @@ label tutoring:
 
     # "You spend the evening tutoring Hermione. Hermione become a bit smarter."
     
-    elif knowledge >= 5 and tutoring_events == 0 and whoring >= 1:
+    elif knowledge >= 5 and tutoring_events == 0 and hermi.whoring >= 1:
         $ tutoring_events += 1
         "Event 01"
         
-    elif knowledge >= 10 and tutoring_events == 1 and whoring >= 2: #LEVEL 02
+    elif knowledge >= 10 and tutoring_events == 1 and hermi.whoring >= 2: #LEVEL 02
         $ tutoring_events += 1
         "Event 02"
         
-    elif knowledge >= 15 and tutoring_events == 2 and whoring >= 3: #LEVEL 03
+    elif knowledge >= 15 and tutoring_events == 2 and hermi.whoring >= 3: #LEVEL 03
         $ tutoring_events += 1
         "Event 03"
         
-    elif knowledge >= 20 and tutoring_events == 3 and whoring >= 4: #LEVEL 04
+    elif knowledge >= 20 and tutoring_events == 3 and hermi.whoring >= 4: #LEVEL 04
         $ tutoring_events += 1
         "Event 04"
         
-    elif knowledge >= 25 and tutoring_events == 4 and whoring >= 5: #LEVEL 05
+    elif knowledge >= 25 and tutoring_events == 4 and hermi.whoring >= 5: #LEVEL 05
         $ tutoring_events += 1
         "Event 05"
         
-    elif knowledge >= 30 and tutoring_events == 5 and whoring >= 7: #LEVEL 06
+    elif knowledge >= 30 and tutoring_events == 5 and hermi.whoring >= 7: #LEVEL 06
         $ tutoring_events += 1
         "Event 06"
         
-    elif knowledge >= 35 and tutoring_events == 6 and whoring >= 8: #LEVEL 07
+    elif knowledge >= 35 and tutoring_events == 6 and hermi.whoring >= 8: #LEVEL 07
         $ tutoring_events += 1
         "Event 07"
          
-    if knowledge >= 40 and tutoring_events == 7 and whoring >= 9: #LEVEL 08
+    if knowledge >= 40 and tutoring_events == 7 and hermi.whoring >= 9: #LEVEL 08
         $ tutoring_events += 1
         "Event 08"
         
-    elif knowledge >= 45 and tutoring_events == 8 and whoring >= 11: #LEVEL 09
+    elif knowledge >= 45 and tutoring_events == 8 and hermi.whoring >= 11: #LEVEL 09
         $ tutoring_events += 1
         "Event 09"
         
-    elif knowledge >= 50 and tutoring_events == 9 and whoring >= 13: #EVENT 10
+    elif knowledge >= 50 and tutoring_events == 9 and hermi.whoring >= 13: #EVENT 10
         $ tutoring_events += 1
         "Event 10"
         
-    elif knowledge >= 55 and tutoring_events == 10 and whoring >= 14: #EVENT 10
+    elif knowledge >= 55 and tutoring_events == 10 and hermi.whoring >= 14: #EVENT 10
         $ tutoring_events += 1
         "Event 11"
         
-    elif knowledge >= 60 and tutoring_events == 11 and whoring >= 16: #EVENT 11
+    elif knowledge >= 60 and tutoring_events == 11 and hermi.whoring >= 16: #EVENT 11
         $ tutoring_events += 1
         "Event 12"
          
-    elif knowledge >= 65 and tutoring_events == 12 and whoring >= 18: #EVENT 12
+    elif knowledge >= 65 and tutoring_events == 12 and hermi.whoring >= 18: #EVENT 12
         $ tutoring_events += 1
         "Event 13"
         
-    elif knowledge >= 70 and tutoring_events == 13 and whoring >= 20: #EVENT 13
+    elif knowledge >= 70 and tutoring_events == 13 and hermi.whoring >= 20: #EVENT 13
         $ tutoring_events += 1
         "Event 14"
         
-    elif knowledge >= 75 and tutoring_events == 14 and whoring >= 21: #EVENT 14
+    elif knowledge >= 75 and tutoring_events == 14 and hermi.whoring >= 21: #EVENT 14
         $ tutoring_events += 1
         "Event 15"
         

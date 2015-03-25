@@ -3724,26 +3724,33 @@ label test:
     
     show screen credits_chibi
     centered "{cps=20}{size=+5}{color=#ea91b0}-Тренер Ведьмы 1.3 (русская редакция)-{/color}{/size}\n\n\n\
-    {color=#e5e297}-\{Перевод Witch Trainer\}-{/color}\n\n\
+    {color=#e5e297}-\{Перевод Witch Trainer\}-{/color}\n\
     {color=#fff}\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=4}Nyarkohotep{/a}\n\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15155170}Discordnk90{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=8041771}maniac4a{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=4472572}Rio-Violente{/a}\n\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16957111}MrFrost1991{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=18304384}babaylolxz{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15281703}Borzsama{/a}\n\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=11908608}sn0rk95{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=3}Khan{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=2}Skazochnik{/a}\n\n\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=4}Nyarkohotep{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15155170}Discordnk90{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=8041771}maniac4a{/a}, \n\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=4472572}Rio-Violente{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=16957111}MrFrost1991{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=18304384}babaylolxz{/a}, {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=15281703}Borzsama{/a},\n\
+     {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=11908608}sn0rk95{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=3}Khan{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=2}Skazochnik{/a}\n\n\
     {color=#cbcbcb}Если кого-то забыли - простите ;){/color} \
-    \n\n\n\
-    {color=#e5e297}-\{Программирование:\}-{/color}\n\n\
+    \n\n\
+    {color=#e5e297}-\{Программирование:\}-{/color}\n\
     {color=#fff}\
-    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=68}Eskelsama{/a},\n\
-    {a=http://wtrus.ixbb.ru/profile.php?id=2}Skazochnik{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=65}i11idan{/a}\
-    \n\n\n\
-    {color=#e5e297}-\{Тексты новых ивентов:\}-{/color}\n\n\
+    {a=http://pornolab.net/forum/profile.php?mode=viewprofile&u=14141420}Ave_Fletch{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=68}Eskelsama{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=4}Nyarkohotep{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=2}Skazochnik{/a}\n\
+    \
+    \n\n\
+    {color=#e5e297}-\{Тексты, сценарии:\}-{/color}\n\
     {color=#fff}\
-    {a=http://wtrus.ixbb.ru/profile.php?id=4}Nyarkohotep{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=2}Skazochnik{/a}\n\n\
-    \n\n\n\
-    {color=#e5e297}-\{Теническая поддержка:\}-{/color}\n\n\
+    {a=http://wtrus.ixbb.ru/profile.php?id=4}Nyarkohotep{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=2}Skazochnik{/a}\n\
+    \n\n\
+    {color=#e5e297}-\{Техническая поддержка (форум):\}-{/color}\n\
     {color=#fff}\
-    {a=http://wtrus.ixbb.ru/profile.php?id=3}Khan{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=46}Dimon_Tools{/a}\n\n\
+    {a=http://wtrus.ixbb.ru/profile.php?id=3}Khan{/a}, {a=http://wtrus.ixbb.ru/profile.php?id=2}Skazochnik{/a}\n\
+    \n\n\
+    {size=-3}{color=#e5e297}-\{Дополнительно:\}-{/color}\n\
+    {color=#fff}\
+    {a=http://wtrus.ixbb.ru/profile.php?id=42}appo{/a} - программирование; {a=http://wtrus.ixbb.ru/profile.php?id=46}Dimon_Tools{/a} - корректура, тех.поддержка; {a=http://wtrus.ixbb.ru/profile.php?id=65}i11idan{/a} - программирование; {a=http://wtrus.ixbb.ru/profile.php?id=54}Lrm{/a} - программирование;{/size}\n\
+    \n\n\
+    {size=-5}{color=#e5e297}-\{Тестирование:\}-{/color}\n\
+    {color=#fff}\
+    BAPK, darg55, Fuhrick, suhi, Y-ART, Zilot{/color}{/size}\n\
     \n\n\n\
     "
 
@@ -4226,16 +4233,18 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     $ persistent.gold = 0
     $ persistent.gold = persistent.gold + gold
 
-
+#label test2:
+#    $hermi.Items.AddItem("miniskirt")
+#    $hero.Items.AddItem("wine",2)
     python:
-        persistent.ItemSet=dict()
+        persistent.itemSet=dict() 
 
         if hermi.Items.Any("miniskirt"):
-            persistent.itemSet.update("miniskirt", hermi.items.Count("miniskirt"))
+            persistent.itemSet.update({"miniskirt": hermi.Items.Count("miniskirt")})
  
         for o in hero.Items():
             if o.Name not in {"nets", "badge_01", "ball_dress"}:
-                persistent.itemSet.update(o.Name, hero.items.Count(o.Name))       
+                persistent.itemSet.update({o.Name: hero.Items.Count(o.Name)})       
 
 
 

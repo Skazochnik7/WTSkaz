@@ -1,26 +1,9 @@
 ﻿# тут инитим всякую фигню для персонажей и xml загрузки
 init python:
-    # declare variables
-    global Hermione_FB
-    global Hermione_OB
-    global Hermione_IB
-    global Hermione_SB
 
-    # initing variables
-    Hermione_FB = CharacterExFolderStorage()
-    Hermione_OB = CharacterExOrderStorage()
-    Hermione_IB = CharacterExItemStorage()
-    Hermione_SB = CharacterExSetStorage()
-
-    # initing creator
-    global Hermione_ItemCreator
-    Hermione_ItemCreator = CharacterExItemCreator( Hermione_IB, Hermione_SB, WTXmlLinker.gerHermioneLinkerKey() )
-
-    # fill variables
-    Hermione_FB.read( '00_ex/00_hermione_hxml/folders.hxml' )
-    Hermione_OB.read( '00_ex/00_hermione_hxml/zorders.hxml' )
-    Hermione_IB.read( '00_ex/00_hermione_hxml/items/', Hermione_FB, Hermione_OB )
-    Hermione_SB.read( '00_ex/00_hermione_hxml/sets/', Hermione_IB )
+    # create all stuff for hermione character
+    WTXmlLinker.prepareCharacterResources( 'hermione', 
+        '00_ex_characters', '00_ex_characters/00_hermione', '00_ex_characters/00_hermione' )
 
 
 init:
@@ -37,15 +20,101 @@ init:
         this=This()
         global event
 
+# Подключение модуля отладки 
     python:
         global debug
-    $debug=Debug(3)
+    $debug=Debug(0) # Если 0 - ничего не происходит, иначе сбрасывает значения перемнных в файл debug.txt
     $debug.SaveHeader()
 
-
-
-# Описание сценария от начала до открытия покупки сексуальных услуг
     python:
+# Описание предметов
+        itemDefaults=[
+        ("candy", "Чупа-чупс", 20, "03_hp/18_store/11.png", 
+            "Чупа-чупс. Взрослая конфета для детей или детская конфета для взрослых?", "gifts", None ),
+        ("chocolate", "Шоколад", 40, "03_hp/18_store/12.png", 
+            "Рецепт этого восхитительного молочного шоколада держится в секрете. (По слухам, он содержит сушеных фей).", "gifts", None ),
+        ("owl", "Плюшевая сова", 35, "03_hp/18_store/22.png", 
+            "Игрушечная сова, набитая перьями настоящей совы. Она такая мягкая!", "gifts", None ),
+        ("beer", "Сливочное пиво", 50, "03_hp/18_store/21.png", 
+            "Девушки не могут устоять перед этим вкусом. Поэтому всегда пользуются большим спросом среди мальчиков. \n {size=-4}. Предупреждение: употребление алкоголя не допускается несовершеннолетними, без присмотра взрослых {/size}", "gifts", None ),
+        ("mag1", "Обучающий журнал", 30, "03_hp/18_store/17.png", 
+            "Образовательный журнал. \nВерный спутник каждого изгоя.", "gifts", None ),
+        ("mag2", "Женский журнал", 45, "03_hp/18_store/18.png", 
+            "Женский журнал. \nВсе крутые девчонки читают их.", "gifts", None ),
+        ("mag3", "Журнал для взрослых", 60, "03_hp/18_store/19.png", 
+            "Ваш парень превращается в хорошего мальчика? \nВаш муж больше не использует вас по назначению?\nВсе, что вы ждали о отношениях, любви и сексе. В основном о сексе.", "gifts", None ),
+        ("mag4", "Порно журнал", 80, "03_hp/18_store/20.png", 
+            "Дайте их своей девушке, чтобы проверить ее, своей жене, чтобы постыдить ее и вашей дочери, чтобы избежать \"разговоров\".", "gifts", None ),
+        ("condoms", "Упаковка презервативов", 50, "03_hp/18_store/10.png", 
+            "\"Презервативы Розовый единорог\". \nПокажите всем однорогое существо!\n{size=-4}Может содержать слюну реального единорога.{/size}", "gifts", None ),
+        ("vibrator", "Вибратор", 55, "03_hp/18_store/13.png", 
+            "Великолепный, волшебный усиленный вибратор изготовлен из лозы дерева, с ядром жилы дракона.", "gifts", None ),
+        ("lubricant", "Банка лубриканта", 60, "03_hp/18_store/09.png", 
+            "Банка анальной смазки. Купите это любимому человеку - покажите, что вы заботитесь о нем/ней.", "gifts", None ),
+        ("ballgag", "Кляп и наручники", 70, "03_hp/18_store/15.png", 
+            "Кляп и манжеты, превратите свою вторую половинку в вашего сокамерника.", "gifts", None ),
+        ("plug", "Анальная пробка", 85, "03_hp/18_store/16.png", 
+            "Анальные пробки украшены настоящими хвостами. \nРазные размеры, чтобы удовлетворить экспертов, практиков и начинающих.", "gifts", None ),
+        ("strapon", "Страпон \"Фестрал\"", 200, "03_hp/18_store/14.png", 
+            "Cтрапон \"Фестрал\".\nКогда вы его увидите - потеряете дар речи.", "gifts", None ),
+        ("krum", "Постер Виктора Крама", 0, "03_hp/18_store/26.png", 
+            "Мастер по квиддичу, Виктор был выбран, чтобы играть за национальную сборную Болгарии по квиддичу. Несмотря на то, что он все еще ходит в школу, он по праву считается одним из лучших игроков в мире.", "cupboard", None ),
+        ("lingerie", "Сексуальное нижнее белье", 0, "03_hp/18_store/24.png", 
+            "Сексуальное нижнее белье \"Добрая Фея\". В постели она станет подобна императрице или сестрам Саббат.", "cupboard", None ),
+        ("broom", "Леди Спид Стик-2000", 0, "03_hp/18_store/25.png", 
+            "\"Леди Спид Стик-2000\", элегантный способ передвижения для страстных ведьм. Торговой маркой гарантируется полное удовлетворение от эффекта. Закажите одну штуку для вашей ведьмы, и она больше не будет использовать ее скучную старую метлу!", "cupboard", None ),
+        ("sexdoll", "Секс-кукла \"Джуанна\"", 0, "03_hp/18_store/23.png", 
+            "Секс-кукла \"Джуанна\"... Очень реалистичная. Выглядит почти как настоящий человек под каким-то заклинанием.", "cupboard", None ),
+        ("ball_dress", "Бальное платье", 1500, "03_hp/18_store/01.png", 
+            "Роскошное вечернее платье для особых случаев", "gears", None ),
+        ("badge_01", "Значок \"А.В.Н.Э.\"", 100, "03_hp/18_store/29.png", 
+            "Значок \"А.В.Н.Э.\". Симулируй заботу...", "gears", None ),
+        ("nets", "Ажурные чулки", 700, "03_hp/18_store/30.png", 
+            "Ажурные чулки. Вопреки распространенному мнению, они не были изобретены рыбаком.", "gears", None ),
+        ("miniskirt", "Школьная мини-юбка", 0, "03_hp/18_store/07.png", 
+            "Школьная мини-юбка. Резко улучшает оценки.", "gears", None ),
+        ("wine", "Вино Дамблдора", 0, "03_hp/18_store/27.png", 
+            "Бутылка из тайника профессора Дамблдора...", "cupboard", None ),
+        ("potions", "Неизвестное зелье", 0, "03_hp/18_store/32.png", 
+            "Какое-то зелье...", "cupboard", None ),
+        ("scroll", "Священный свиток", 30, "03_hp/18_store/31.png", 
+            "Священный свиток содержит тайные знания...", "scroll", None) # {"pic":"03_hp/19_extras/xx.png"} )
+
+        ]
+
+# Заполнение массива предметов
+        itemList=[]
+        for t in itemDefaults:
+            (s, _caption, _price, _img, _description, _block, _constVals)=t
+            SetArrayValue(s, "caption", _caption) 
+            SetArrayValue(s, "price", _price) 
+            SetArrayValue(s, "description", _description) 
+            SetArrayValue(s, "img", _img) 
+            SetArrayValue(s, "block", _block)
+            if _constVals!=None:
+                for o in _constVals:
+                    SetArrayValue(s, o, _constVals[o]) 
+            
+            itemList.append(RegEntry(Item(s, 0)))
+
+# Инициализация коллекций предметов
+        global itsDAHR
+        itsDAHR=RegEntry(ItemCollection("DAHR",{"gears":1, "gifts":3, "scroll":45}))
+
+        global itsOWL
+        itsOWL=RegEntry(ItemCollection("OWL"))
+
+# Инициализация персон
+        global hero
+        hero=RegEntry(Person("hero", "Джинн"))
+        global hermi
+        hermi=RegEntry(Person("hermi", "Гермиона"))
+
+
+
+
+# Создание объектов ивентов 
+# По сути - Описание сценария от начала до открытия покупки сексуальных услуг
         this.Where({"DAY"})     .AddStep("event_01",                 ready= lambda e: day == 1 and not bird_examined and not desk_examined and not cupboard_examined and not door_examined and not fireplace_examined )
         this.Where({"NIGHT"})   .AddStep("event_02",                 ready= lambda e: day == 1 )
         this                    .AddStep("event_03",                 ready= lambda e: day == 2 )
@@ -70,8 +139,6 @@ init:
         for s in li:
             this.AddEvent("new_request_"+s+"::"+li[s], points={"private"}, defVals={"heartCount": 0}) 
 
-#Where({"hearts"},s)
-
 # Отчеты Гермионы о публичных ивентах (за исключением 30_a, он - днем). Публичные ивенты состоят из 2-х частей. Днем - задание (обычный вызов из пункта меню) и отчет вечером 
 # Можно избавиться и от десятка переменных первоначальной версии, а прогресс хранить в специальном поле объекта Event, но это приведет к довольно серьезной правке кода, что чревато ошибками. 
 # Так что только убираем флажки можно/нельзя выполнять, а прогресс пусть остается во внешних переменных, как был
@@ -85,9 +152,7 @@ init:
             else:
                 this.AddEvent(s, points={"public"}) 
             s+="_complete"
-            #Поменял условие e._finishCount==e.prevInList._finishCount на e._finish2==e.prevInList._finish2 
-            #Почему-то раньше сбивался счетчик и завершение ивента начинало вызваться каждую ночь. В новой логике, сбитый счетчик к таким последствиям не приведет
-            this.Where({"NIGHT"}, s).AddStep(s,  done = lambda e: e._finish2==e.prevInList._finish2, defVals={"availChoices":{1,2,3}},
+            this.Where({"NIGHT"}, s).AddStep(s,  done = lambda e: e._finishCount>=e.prevInList._finishCount, defVals={"availChoices":{1,2,3}},
                 OnChange=lambda e, subKey, oldVal, newVal: OnValueChange(e, subKey, oldVal, newVal)  ) # После срабатывания предыдущего это условие done нарушается и ивент готов к запуску. Нет ограничений по кол-ву запусков
 
 
@@ -97,9 +162,9 @@ init:
 # Если флаг request_30_a установить (устанавливается при вызове request_30 ветка 1), запустится разово 
         this.Where({"DAY"},"new_request_30_complete_a").AddStep("new_request_30_complete_a", ready = lambda e: request_30_a) 
 
-        this.Where({"DAY"})     .AddStep("want_to_rule",             ready = lambda e: whoring >= 15) # Запустится, как только whoring превысит значение
+        this.Where({"DAY"})     .AddStep("want_to_rule",             ready = lambda e: hermi.whoring >= 15) # Запустится, как только whoring превысит значение
         this                    .AddStep("against_the_rule",         ready = lambda e: e.prev.IsAgo(2)) # Через два дня
-        this                    .AddStep("crying_about_dress",       ready = lambda e: whoring >= 18 and e.prev.IsAgo(5)) # Через 5 дней и при соответствующем уровне развращенности
+        this                    .AddStep("crying_about_dress",       ready = lambda e: hermi.whoring >= 18 and e.prev.IsAgo(5)) # Через 5 дней и при соответствующем уровне развращенности
         this                    .AddStep("sorry_about_hesterics") 
 
         this.Where({})          .AddStep("giving_thre_dress")
@@ -172,103 +237,9 @@ init:
         for e in this.List:
             exec("this."+e.Name+"=this.GetCall('"+e.Name+"')")
  
-
-        itemDefaults=[
-        ("candy", "Чупа-чупс", 20, "03_hp/18_store/11.png", 
-            "Чупа-чупс. Взрослая конфета для детей или детская конфета для взрослых?", "gifts", None ),
-        ("chocolate", "Шоколад", 40, "03_hp/18_store/12.png", 
-            "Рецепт этого восхитительного молочного шоколада держится в секрете. (По слухам, он содержит сушеных фей).", "gifts", None ),
-        ("owl", "Плюшевая сова", 35, "03_hp/18_store/22.png", 
-            "Игрушечная сова, набитая перьями настоящей совы. Она такая мягкая!", "gifts", None ),
-        ("beer", "Сливочное пиво", 50, "03_hp/18_store/21.png", 
-            "Девушки не могут устоять перед этим вкусом. Поэтому всегда пользуются большим спросом среди мальчиков. \n {size=-4}. Предупреждение: употребление алкоголя не допускается несовершеннолетними, без присмотра взрослых {/size}", "gifts", None ),
-        ("mag1", "Обучающий журнал", 30, "03_hp/18_store/17.png", 
-            "Образовательный журнал. \nВерный спутник каждого изгоя.", "gifts", None ),
-        ("mag2", "Женский журнал", 45, "03_hp/18_store/19.png", 
-            "Женский журнал. \nВсе крутые девчонки читают их.", "gifts", None ),
-        ("mag3", "Журнал для взрослых", 60, "03_hp/18_store/20.png", 
-            "Ваш парень превращается в хорошего мальчика? \nВаш муж больше не использует вас по назначению?\nВсе, что вы ждали о отношениях, любви и сексе. В основном о сексе.", "gifts", None ),
-        ("mag4", "Порно журнал", 80, "03_hp/18_store/20.png", 
-            "Дайте их своей девушке, чтобы проверить ее, своей жене, чтобы постыдить ее и вашей дочери, чтобы избежать \"разговоров\".", "gifts", None ),
-        ("condoms", "Упаковка презервативов", 50, "03_hp/18_store/10.png", 
-            "\"Презервативы Розовый единорог\". \nПокажите всем однорогое существо!\n{size=-4}Может содержать слюну реального единорога.{/size}", "gifts", None ),
-        ("vibrator", "Вибратор", 55, "03_hp/18_store/13.png", 
-            "Великолепный, волшебный усиленный вибратор изготовлен из лозы дерева, с ядром жилы дракона.", "gifts", None ),
-        ("lubricant", "Банка лубриканта", 60, "03_hp/18_store/09.png", 
-            "Банка анальной смазки. Купите это любимому человеку - покажите, что вы заботитесь о нем/ней.", "gifts", None ),
-        ("ballgag", "Кляп и наручники", 70, "03_hp/18_store/15.png", 
-            "Кляп и манжеты, превратите свою вторую половинку в вашего сокамерника.", "gifts", None ),
-        ("plug", "Анальная пробка", 85, "03_hp/18_store/16.png", 
-            "Анальные пробки украшены настоящими хвостами. \n Разные размеры, чтобы удовлетворить экспертов, практиков и начинающих.", "gifts", None ),
-        ("strapon", "Страпон \"Фестрал\"", 200, "03_hp/18_store/14.png", 
-            "Cтрапон \"Фестрал\".\nКогда вы его увидите - потеряете дар речи.", "gifts", None ),
-        ("krum", "Постер Виктора Крама", 0, "03_hp/18_store/26.png", 
-            "Мастер по квиддичу, Виктор был выбран, чтобы играть за национальную сборную Болгарии по квиддичу. Несмотря на то, что он все еще ходит в школу, он по праву считается одним из лучших игроков в мире.", "cupboard", None ),
-        ("lingerie", "Сексуальное нижнее белье", 0, "03_hp/18_store/24.png", 
-            "Сексуальное нижнее белье \"Добрая Фея\". В постели она станет подобна императрице или сестрам Саббат.", "cupboard", None ),
-        ("broom", "Леди Спид Стик-2000", 0, "03_hp/18_store/25.png", 
-            "\"Леди Спид Стик-2000\", элегантный способ передвижения для страстных ведьм. Торговой маркой гарантируется полное удовлетворение от эффекта. Закажите одну штуку для вашей ведьмы, и она больше не будет использовать ее скучную старую метлу!", "cupboard", None ),
-        ("sexdoll", "Секс-кукла \"Джуанна\"", 0, "03_hp/18_store/23.png", 
-            "Секс-кукла \"Джуанна\"... Очень реалистичная. Выглядит почти как настоящий человек под каким-то заклинанием.", "cupboard", None ),
-        ("ball_dress", "Бальное платье", 1500, "03_hp/18_store/01.png", 
-            "Роскошное вечернее платье для особых случаев", "gears", None ),
-        ("badge_01", "Значок \"А.В.Н.Э.\"", 100, "03_hp/18_store/29.png", 
-            "Значок \"А.В.Н.Э.\". Симулируй заботу...", "gears", None ),
-        ("nets", "Ажурные чулки", 700, "03_hp/18_store/30.png", 
-            "Ажурные чулки. Вопреки распространенному мнению, они не были изобретены рыбаком.", "gears", None ),
-        ("miniskirt", "Школьная мини-юбка", 0, "03_hp/18_store/07.png", 
-            "Школьная мини-юбка. Резко улучшает оценки.", "gears", None ),
-        ("wine", "Вино Дамблдора", 0, "03_hp/18_store/27.png", 
-            "Бутылка из тайника профессора Дамблдора...", "cupboard", None ),
-        ("potions", "Неизвестное зелье", 0, "03_hp/18_store/32.png", 
-            "Какое-то зелье...", "cupboard", None ),
-        ("scroll", "Священный свиток", 30, "03_hp/18_store/31.png", 
-            "Священный свиток содержит тайные знания...", "scroll", None) # {"pic":"03_hp/19_extras/xx.png"} )
-
-
-        ]
-
-
-
-        itemList=[]
-        for t in itemDefaults:
-            (s, _caption, _price, _img, _description, _block, _constVals)=t
-            SetArrayValue(s, "caption", _caption) 
-            SetArrayValue(s, "price", _price) 
-            SetArrayValue(s, "description", _description) 
-            SetArrayValue(s, "img", _img) 
-            SetArrayValue(s, "block", _block)
-            if _constVals!=None:
-                for o in _constVals:
-                    SetArrayValue(s, o, _constVals[o]) 
-            
-            itemList.append(RegEntry(Item(s, 0)))
-#            item=Item(s, 0, None)
-#            item._caption=_caption
-#            item._price=_price
-#            item._description=_description
-#            item._img=_img
-#            item._block=_block
-#            itemList.append(item)
-
-        global itsDAHR
-        itsDAHR=RegEntry(ItemCollection("DAHR",{"gears":1, "gifts":3, "scroll":30}))
-
-        global itsOWL
-        itsOWL=RegEntry(ItemCollection("OWL"))
-#        itsDAHR.Fill("cupboard")
-
-
-        global hero
-        hero=RegEntry(Person("hero", "Джинн"))
-        global hermi
-        hermi=RegEntry(Person("hermi", "Гермиона", {"whoring": 0, "mad": 0}))
-
-
-
-# Коснтанты лямбы, используются в меню
+# Константы лямбы, используются в меню предметов при определении их доступности
         fn0=lambda o: True
-        fn3=lambda o: whoring>=3
+        fn3=lambda o: hermi.whoring>=3
 
 
 # Включить обработку перехода по меткам (label). 
@@ -673,6 +644,7 @@ image ch_hem blink:
     "03_hp/animation/h_walk_01.png"
     pause 3
     repeat
+
     
 image snape_walk_01: #Default Snape walk animation. 
     "03_hp/09_snape_ani/snape_02.png"
@@ -4962,7 +4934,8 @@ label start:
         # dialogue-face view
         global herViewHead     
         
-    $ herData = CharacterExData( WTXmlLinker.gerHermioneLinkerKey() )
+    #$ herData = CharacterExData( WTXmlLinker.getHermioneLinkerKey() )
+    $ herData = CharacterExData( WTXmlLinker.getLinkerKey_hermione() )
     $ herData.clearState()
     
     $ herView = CharacterExView( 5, her, 'hermione' )
@@ -5048,7 +5021,7 @@ label start:
 
 
 ###HERMIONE STATS###
-    $ mad = 0 #Every day -1.
+#    $ mad = 0 #Every day -1.
 
     
 ### JERKING OFF FLAGS ###

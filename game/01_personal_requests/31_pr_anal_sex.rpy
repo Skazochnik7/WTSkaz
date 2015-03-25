@@ -26,7 +26,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
         $herView.hideshowQQ( "body_17.png", pos )
         her "Сэр..?"
         m "Насколько вы знакомы с термином \"Анальный секс\"?"
-        if whoring <=20:
+        if hermi.whoring <=20:
             jump too_much
         $herView.hideshowQQ( "body_79.png", pos )
         her "90 очков..."
@@ -1006,7 +1006,8 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
     hide screen blkfade
     with d3
  
-    jump new_request_08_finish
+    if event.Name=="new_request_08": 
+        jump new_request_08_finish
     m "Да, мисс Грейнджер, 90 очков \"Гриффиндору\"." 
     $ gryffindor +=90
     $herView.showQ( "body_141.png", pos )
@@ -1014,8 +1015,8 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
     with d3
     her "Спасибо, сэр..."
 
-    if whoring <= 23: # Level 08 <
-        $ whoring +=1
+    if hermi.whoring <= 23: # Level 08 <
+        $ hermi.whoring +=1
 
 #    if request_31_points == 0:
 #        $ new_request_31_01 = True # HEARTS.
@@ -1026,7 +1027,6 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
 
 
 #    $ request_31_points += 1
-    $SetHearts(GetStage(event._finishCount,1,1,1))
 
 
     hide screen bld1
@@ -1048,6 +1048,8 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
 
     call music_block
     
+    $event.Finalize()    
+    $SetHearts(GetStage(event._finishCount,1,3,1))
     if daytime:
         $ hermione_takes_classes = True
         jump night_main_menu

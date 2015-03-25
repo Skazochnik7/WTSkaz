@@ -17,13 +17,13 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
             $event.NotFinished()
             jump new_personal_request
     
-    if whoring <=8:
+    if hermi.whoring <=8:
         jump too_much
 
     $ pos = POS_140
     $ herView.data().saveState()
         
-    if IsFirstRun() and whoring <= 14: # LEVEL 05 (one level higher then level at which it unlocks - 04) # FIRST TIME.
+    if IsFirstRun() and hermi.whoring <= 14: # LEVEL 05 (one level higher then level at which it unlocks - 04) # FIRST TIME.
 #    if request_12_points == 0 and whoring <= 14: # LEVEL 05 (one level higher then level at which it unlocks - 04) # FIRST TIME.
         m "Мисс Грейнджер."
         $herView.hideshowQQ( "body_01.png", pos )
@@ -55,7 +55,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
 
 
     else: # Intro. Not first time.
-        if whoring >= 9 and whoring <= 14: # LEVEL 04 AND LEVEL 05 # NOT A WHORE YET.
+        if hermi.whoring >= 9 and hermi.whoring <= 14: # LEVEL 04 AND LEVEL 05 # NOT A WHORE YET.
             m "Мисс Грейнджер..."
             $herView.hideshowQQ( "body_01.png", pos )
             her "Сэр?"
@@ -68,7 +68,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
             $herView.hideshowQQ( "body_69.png", pos )
             her ".................."
             her "Ладно... Вы можете потрогать их немного..."
-        elif whoring >= 15: # LEVEL 06 and higher # NASTY WHORE.
+        elif hermi.whoring >= 15: # LEVEL 06 and higher # NASTY WHORE.
             m "Мисс Грейнджер..."
             
             $herView.hideshowQQ( "body_01.png", pos )
@@ -78,7 +78,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
             her "Конечно, сэр..."
     
 
-    label new_request_12_mainonly:
+
     $herView.hideQQ()
     hide screen blktone
     with d3
@@ -93,7 +93,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
     with Dissolve(1)
     pause.5
 
-
+    label new_request_12_mainonly:
     hide screen hermione_walk_01
     hide screen genie
     show screen ctc
@@ -142,7 +142,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
             
 
             
-            if whoring >= 9 and whoring <= 14: # LEVEL 04 AND LEVEL 05 # <=================================================================================== FIRST EVENT. (HERMIONE IS UNWILLING).
+            if hermi.whoring >= 9 and hermi.whoring <= 14: # LEVEL 04 AND LEVEL 05 # <=================================================================================== FIRST EVENT. (HERMIONE IS UNWILLING).
 
                 $herViewHead.showQ( "body_118.png", posHead )
                 her ".............................."
@@ -174,7 +174,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 her "Ааах..."
                 $herViewHead.hideQ()
                 m "Наслаждаетесь, мисс Грейнджер?"
-                if whoring >= 9 and whoring <= 11: # LEVEL 04 #  <=================================================================================== FIRST EVENT.
+                if hermi.whoring >= 9 and hermi.whoring <= 11: # LEVEL 04 #  <=================================================================================== FIRST EVENT.
                     $herViewHead.showQ( "body_120.png", posHead )
                     her "Сэр, я всего лишь делаю это--"
                     $herViewHead.hideQ()
@@ -273,7 +273,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                     hide screen groping_naked_tits
                     hide screen ctc
 
-            elif whoring >= 15: # LEVEL 06 and higher # <=================================================================================== THIRD EVENT. 
+            elif hermi.whoring >= 15: # LEVEL 06 and higher # <=================================================================================== THIRD EVENT. 
                
                 $herViewHead.showQ( "body_121.png", posHead )
                 her "Ах..."
@@ -391,7 +391,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
             pause.08
             hide screen white
             show screen bld1
-            if whoring >= 9 and whoring <= 11: # LEVEL 04 # <=================================================================================== FIRST EVENT. (HERMIONE IS UNWILLING).
+            if hermi.whoring >= 9 and hermi.whoring <= 11: # LEVEL 04 # <=================================================================================== FIRST EVENT. (HERMIONE IS UNWILLING).
                 $herView.hideQQ()
                 $herView.showQ( "182.png", pos )
                 her "!!!"
@@ -411,7 +411,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 show screen blkfade
                 with d3
                 # RUNS OFF
-                $ mad += 20
+                $ hermi.liking -= 20
                 m "............"
                 m "Ну, тогда никаких очков \"Гриффиндору\"..."
                 
@@ -426,7 +426,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
                 
                     
-            elif whoring >= 12 and whoring <= 14: # LEVEL 05 # <=================================================================================== SECOND EVENT.
+            elif hermi.whoring >= 12 and hermi.whoring <= 14: # LEVEL 05 # <=================================================================================== SECOND EVENT.
                 $herView.hideQQ()
                 $herView.showQ( "182.png", pos )
                 her "!!!"
@@ -465,7 +465,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 $herView.hideQQ()
                 jump no_smacking_tits #Jumps to usual tits molesting scene.
 
-            elif whoring >= 15: # LEVEL 06 and higher # <=================================================================================== THIRD EVENT. 
+            elif hermi.whoring >= 15: # LEVEL 06 and higher # <=================================================================================== THIRD EVENT. 
                 $herView.hideQQ()
                 $herView.showQ( "182.png", pos )
                 her "Ах!!!"
@@ -600,11 +600,11 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
     with d3
     her "Спасибо, Сэр..."
 
-    if whoring <= 11: # If still of level of unlocking - 04
-        $ whoring +=1
+    if hermi.whoring <= 11: # If still of level of unlocking - 04
+        $ hermi.whoring +=1
 
 #    $ request_12_points += 1
-    $SetHearts(GetStage(whoring,9,3,3))
+    $SetHearts(GetStage(hermi.whoring,9,3,3))
 
 
 #    if whoring >= 9 and whoring <= 11:
@@ -635,6 +635,9 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
 
     $ herView.data().loadState()
     call music_block
+
+    $event.Finalize()    
+
     if daytime:
         $ hermione_takes_classes = True
         jump night_main_menu

@@ -27,7 +27,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         her "Да, профессор?"
         m "Сегодня я планирую дать \"Гриффиндору\" 55 очков..."
         m "Если вы у меня отсосете..."
-        if whoring <=14: # LEVEL 05
+        if hermi.whoring <=14: # LEVEL 05
             jump too_much
         $herView.hideshowQQ( "body_87.png", pos )
         her "Ох..."
@@ -712,7 +712,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         menu:
             m "..."
             "\"Пожалуйста, заходите, Северус.\"":
-                $ mad = 30
+                $ hermi.liking -= 30
                 $herViewHead.showQ( "body_76.png", posHead )
                 stop music fadeout 1.0
                 her "(Сэр, нет!)"
@@ -1204,8 +1204,8 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
     with d3
     her "Спасибо, сэр..."
 
-    if whoring <= 17:
-        $ whoring +=1
+    if hermi.whoring <= 17:
+        $ hermi.whoring +=1
 
     
     
@@ -1217,7 +1217,6 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
 #        $ new_request_22_03 = True #  HEARTS
 
 #    $ request_22_points += 1
-    $SetHearts(GetStage(event._finishCount,1,1,1))
 
     hide screen bld1
     $herView.hideQ()
@@ -1238,6 +1237,8 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
     
     call music_block
     
+    $event.Finalize()    
+    $SetHearts(GetStage(event._finishCount,1,3,1))
     if daytime:
         $ hermione_takes_classes = True
         jump night_main_menu

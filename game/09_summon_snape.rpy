@@ -38,12 +38,19 @@ label summon_snape:
             $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
             #$ snape_busy = True
             jump snape_chitchat
+
+        "Купить зелье на букву \"Б\"" if teacher_jinn_quest == 2 and gold >= 7000:
+            jump snape_tutor_2
         "\"Отвиснуть.\"" if not daytime and not sfmax: # Turns TRUE when friendship with Snape been maxed out.
-            if one_of_ten == 10:
+        
+            if teacher_jinn_quest == 1:
+                jump snape_tutor_1
+                
+            elif one_of_ten == 10:
                 call not_today #Snape says: "I am busy tonight."
 #            elif snape_friendship >= 39 and whoring <= 5: # Whoring level <= 2. Makes sure you don't proceed after Date #6 until reached Whoring lvl 3.
 #                call not_today #Snape says: "I am busy tonight."
-            elif snape_friendship >= 88 and whoring <= 14: # Whoring level <= 5. Makes sure you don't proceed after Date #12 until reached Whoring lvl 6.
+            elif snape_friendship >= 88 and hermi.whoring <= 14: # hermi.whoring level <= 5. Makes sure you don't proceed after Date #12 until reached Whoring lvl 6.
                 call not_today #Snape says: "I am busy tonight."
             else:
                 pass
@@ -292,6 +299,7 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
 
     
 #    $ hermione_is_waiting_01 = True #Triggers another visit from Hermione. (Event_09)
+    $this.special_date_with_snape.Finalize()
     jump day_start
     
 #######################################################################################################################    
@@ -502,6 +510,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     hide screen bld1
     with d3
     $ days_without_an_event = 0 #Making sure next even will not start right away.
+    $this.special_date_with_snape_02.Finalize()
     jump day_start
    
    
