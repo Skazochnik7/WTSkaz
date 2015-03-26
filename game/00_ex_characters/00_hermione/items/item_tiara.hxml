@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>tiara</key>
+
+	<style name="default">
+		<frame>tiara.png</frame>
+		<folder>clothes</folder>
+		<zorder>headwear</zorder>
+	</style>
+</item>

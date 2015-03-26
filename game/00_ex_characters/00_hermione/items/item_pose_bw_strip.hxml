@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>pose</key>
+
+	<style name="default">
+		<frame>hermione_bw_strip.png</frame>
+		<folder>pose</folder>
+		<zorder>face + 1</zorder>
+	</style>
+</item>

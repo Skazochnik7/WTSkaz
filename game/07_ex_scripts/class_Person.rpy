@@ -3,11 +3,25 @@
 # Класс - обертка для словаря ивентов
     class Person(Entry):
         # constructor - Event initializing
-        def __init__( self, Name, caption, defVals=None):
+        def __init__( self, Name, caption, viewInfo=None, defVals=None):
             SetArrayValue(Name, "caption", caption) 
 
             if defVals==None:
                 defVals={"liking":0, "whoring":0}
+
+            if viewInfo!=None:
+                viewInfo["vData"].clearState()
+                viewInfo["view"].attach( viewInfo["vData"] )
+                viewInfo["head"].pushScreenTag( 'head' )
+                viewInfo["head"].attach( viewInfo["vData"] )
+
+
+                viewInfo["view"].data().addItemSet( viewInfo["view"].mUniqName+'_body' )
+                viewInfo["view"].data().addItemSet( viewInfo["view"].mUniqName+'_start_clothes' )
+                
+
+                defVals.update({"vData": viewInfo["vData"], "view": viewInfo["view"], "head": viewInfo["head"]})
+
 
             super(Person, self).__init__(Name=Name, Type="Person", defVals=defVals )
 
@@ -33,6 +47,13 @@
         def whoring(self, value):
             self.SetValue("whoring", value, minim=0)
 
+        @property
+        def view(self):
+            return self.GetValue("view")
+
+        @property
+        def head(self):
+            return self.GetValue("head")
 
 
 

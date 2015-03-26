@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>green_bikini</key>
+
+	<style name="default">
+		<frame>green_bikini.png</frame>
+		<folder>clothes</folder>
+		<zorder>panties</zorder>
+	</style>
+</item>

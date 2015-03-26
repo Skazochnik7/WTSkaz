@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>autograph</key>
+
+	<style name="default">
+		<frame>autograph.png</frame>
+		<folder>misc</folder>
+		<zorder>legs+1</zorder>
+		<parent>legs</parent>
+	</style>
+</item>

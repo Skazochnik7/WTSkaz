@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>tears</key>
+
+	<style name="default">
+		<frame>tears_01.png</frame>
+		<folder>misc</folder>
+		<zorder>face + 1</zorder>
+	</style>
+	<style name="01"> <!-- copy of default, just to simplify writing -->
+		<frame>tears_01.png</frame>
+	</style>
+	<style name="02">
+		<frame>tears_02.png</frame>
+	</style>
+	<style name="03">
+		<frame>tears_03.png</frame>
+	</style>
+	<style name="04">
+		<frame>tears_04.png</frame>
+	</style>
+</item>

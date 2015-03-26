@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>skirt</key>
+
+	<style name="default">
+		<frame>skirt_normal.png</frame>
+		<folder>clothes</folder>
+		<visible>1</visible>
+		<zorder>skirt</zorder>
+	</style>
+	<style name="short">
+		<frame>skirt_short.png</frame>
+		<folder>clothes</folder>
+	</style>
+</item>

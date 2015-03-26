@@ -4,6 +4,8 @@ init python:
     # create all stuff for hermione character
     WTXmlLinker.prepareCharacterResources( 'hermione', 
         '00_ex_characters', '00_ex_characters/00_hermione', '00_ex_characters/00_hermione' )
+    WTXmlLinker.prepareCharacterResources( 'daphne', 
+        '00_ex_characters', '00_ex_characters/01_daphne', '00_ex_characters/01_daphne' )
 
 
 init:
@@ -109,6 +111,13 @@ init:
         hero=RegEntry(Person("hero", "Джинн"))
         global hermi
         hermi=RegEntry(Person("hermi", "Гермиона"))
+        global daphne
+        daphne=RegEntry(Person("hermi", "Гермиона",
+            {"vData": CharacterExData( WTXmlLinker.getLinkerKey_daphne() ),
+            "view": CharacterExView( 5, daph, 'daphne' ),
+            "head": CharacterExView( 8, daph2, 'daphne_head' )
+
+            }))
 
 
 
@@ -4843,7 +4852,8 @@ init-2:
     $ vol = Character('Лорд Волдеморт', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ l = Character('Лола', color="#402313", window_right_padding=230, show_two_window=True, ctc="ctc3", ctc_position="fixed") #Text box used for "head only" speech. (Because it has padding).
     
-    
+    $ daph = Character('Дафна', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
+    $ daph2 = Character('Дафна', color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed") #Text box used for "head only" speech. (Because it has padding).    
 
 #-----------------------___HEADS___---------------------------------#
     
@@ -5146,6 +5156,13 @@ label start:
     $ dress_code = False # Turns TRUE when you gift the miniskirt. Unlocks the "dress code" button.
     
     show image "blackfade.png"
+
+    menu:
+        "Тестировать чибиков?":
+            jump test_daphna
+        "Продолжить запуск":
+            pass
+
     if persistent.game_complete: # Offer for game+
         menu:
             "Новая игра +" ">Хотите перенести все золото и имущество из предыдущей игры?"

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>hair_front</key>
+
+	<isSubitem>1</isSubitem>
+
+	<style name="default">
+		<frame>hair_normal_2.png</frame>
+		<folder>hair</folder>
+		<visible>1</visible>
+		<zorder>hair_front</zorder>
+	</style>
+</item>

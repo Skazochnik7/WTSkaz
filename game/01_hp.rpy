@@ -1,5 +1,4 @@
 label hp:
-
     stop music fadeout 1
 #    $ select = renpy.imagemap("screens/s2pot04.png", "screens/s2pot04b.png", [                                            
 #                                            (492, 400, 637, 600, "no"),
@@ -463,12 +462,6 @@ hide screen with_snape #Genie hangs out with Snape in front of the fireplace.
 hide screen with_snape_animated #Genie hangs out with Snape in front of the fireplace.
 if package_is_here:
     hide screen package
-
-
-
-
-
-
     
 
 show screen door   
@@ -514,39 +507,52 @@ $ day +=1
 
 ### DAY EVENTS ###<============================================================================================================================================================
 
-#show ch_hem blink at Position(xpos=300, ypos=350, xanchor="center", yanchor="center") with Dissolve(.1)
-#pause 
 
-"Должно быть видно"
-python:
+$ h_xpos=400
+$ h_ypos=-75
+    
+screen hermione_main: #Screen that shows a full sprite of HERMIONE.
+    #tag big_hermione
+    if not only_upper:
+        if legs_02: #Mini skirt.
+            add "03_hp/13_hermione_main/legs_02.png" xpos h_xpos ypos h_ypos
+        if not legs_02:
+            add "03_hp/13_hermione_main/legs_01.png" xpos h_xpos ypos h_ypos
+    add h_body xpos h_xpos ypos h_ypos
+    if autograph:
+        add "03_hp/13_hermione_main/auto.png" xpos h_xpos ypos h_ypos #Displays an autograph on her leg.
+    if sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
+        add "03_hp/13_hermione_main/auto_02.png" xpos h_xpos ypos h_ypos #Displays sperm.
+    if aftersperm: #Shows cum stains on Hermione's uniform.
+        add "03_hp/13_hermione_main/auto_03.png" xpos h_xpos ypos h_ypos #Displays sperm.
+    
+    if ne: # Desplays a fishnets in hermione_main screen.
+        if ne_01:
+            if flip:
+                add im.Flip("03_hp/13_hermione_main/nets.png", horizontal=True) xpos h_xpos ypos h_ypos # FISHNETS.
+                if not legs_02 and not only_upper: # Long skirt is on.
+                    add im.Flip("03_hp/13_hermione_main/patch.png", horizontal=True) xpos h_xpos ypos h_ypos # Patch
+            else:
+                add "03_hp/13_hermione_main/nets.png" xpos h_xpos ypos h_ypos # FISHNETS.
+                if not legs_02 and not only_upper: # Long skirt is on.
+                    add "03_hp/13_hermione_main/patch.png" xpos h_xpos ypos h_ypos # Patch
+    
+    if uni_sperm:
+        add u_sperm xpos h_xpos ypos h_ypos #Universal sperm.
+    if h_tears:
+        add u_tears_pic xpos h_xpos ypos h_ypos #Universal tears layer.
+    if robeon:
+        add "03_hp/13_hermione_main/robe.png" xpos h_xpos ypos h_ypos #The Robe.
+    if badges:
+        if ba_01:
+            add "03_hp/13_hermione_main/badge.png" xpos h_xpos ypos h_ypos #The Robe.
+    
+        
+        
+        
+    zorder hermione_main_zorder #(5) Otherwise candle light is shown on top.
 
-    def hlebo(**kwargs):
-#        ui.frame()
-#        ui.image('03_hp/animation/h_walk_03.png')
-#        ui.close()
-#        renpy.pause(2)
-#        ui.image('03_hp/animation/h_walk_02.png')
-#        ui.close()
-#        renpy.pause(2)
-        return
-#        ui.vbox()
-#        ui.text("Test")
-#        ui.close()
-
-#    renpy.define_screen("hlebo", hlebo, "False", "2", tag=None, variant=None)
-    renpy.show_screen("chibiscreen")
-# Можно в функйии создающей экран добавлять картинки, но что если нужно создать последовательность картинок (через пауззу)?
-
-#    renpy.show_screen("hleboscreen")
-
-#    renpy.show("hermione_02", at_list=[Position(xalign=300,yalign=300)], zorder=2, tag="hermiona")
-    renpy.pause()
-    renpy.show_screen("hermione_02")
-    renpy.say("","Теперь не видно? но видно другое!")
-"Теперь не видно"
-
-
-
+jump rcement
 
 
 $ this.RunStep("DAY")

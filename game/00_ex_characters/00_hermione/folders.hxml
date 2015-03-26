@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<!-- в этом файле будут хранится пути к папкам с частями тел -->
+<folders>
+	<folder name="body">00_ex_characters/00_hermione/graphics/body/</folder>
+    <folder name="clothes">00_ex_characters/00_hermione/graphics/clothes/</folder>
+    <folder name="face">00_ex_characters/00_hermione/graphics/face/</folder>
+    <folder name="pose">00_ex_characters/00_hermione/graphics/pose/</folder>
+    <folder name="misc">00_ex_characters/00_hermione/graphics/misc/</folder>
+    <folder name="hair">00_ex_characters/00_hermione/graphics/hair/</folder>
+</folders>

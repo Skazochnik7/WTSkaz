@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>tits</key>
+
+	<style name="default">
+		<frame>tits.png</frame>
+		<folder>body</folder>
+		<visible>1</visible>
+		<zorder>tits</zorder>
+		<parent>body</parent>
+		<shift></shift>
+		<transforms></transforms>
+		<hidelist></hidelist>
+		<actions></actions>
+	</style>
+</item>
