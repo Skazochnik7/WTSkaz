@@ -22,6 +22,11 @@
             renpy.hide_screen("chibiscreen")
             return
 
+        def emo(self, s):
+            _temp=s.split(" ")
+            for i in range(4):
+                daphne.view.data().setStyleKey( ['brows', 'eyes', 'blush', 'mouth'][i], _temp[i] )
+            return
 
 
 screen chibiscreen( aImgs, aTrans=None ):   

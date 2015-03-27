@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>blush</key>
+
+	<style name="default">
+		<frame>daphne_cheeks_blush0.png</frame>
+		<folder>face</folder>
+		<visible>1</visible>
+		<zorder>face</zorder>
+	</style>
+	<style name="0">
+		<frame>daphne_cheeks_blush0.png</frame>
+	</style>
+	<style name="1">
+		<frame>daphne_cheeks_blush1.png</frame>
+	</style>
+	<style name="2">
+		<frame>daphne_cheeks_blush2.png</frame>
+	</style>
+	<style name="3">
+		<frame>daphne_cheeks_blush3.png</frame>
+	</style>
+	
+</item>

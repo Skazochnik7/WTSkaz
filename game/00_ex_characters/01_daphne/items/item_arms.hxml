@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>arms</key>
+
+	<style name="default">
+		<frame>daphne_arms_onhips.png</frame>
+		<folder>pose</folder>
+		<visible>1</visible>
+		<zorder>hands</zorder>
+	</style>
+</item>

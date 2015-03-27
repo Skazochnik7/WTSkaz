@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>brows</key>
+
+	<style name="default">
+		<frame>daphne_brows_furrowedold.png</frame>
+		<folder>face</folder>
+		<visible>1</visible>
+		<zorder>face</zorder>
+	</style>
+	<style name="46">
+		<frame>daphne_brows_furrowedold.png</frame>
+	</style>
+	<style name="36">
+		<frame>daphne_brows_furrowed.png</frame>
+	</style>
+	<style name="55">
+		<frame>daphne_brows_narrowed.png</frame>
+	</style>
+	<style name="64">
+		<frame>daphne_brows_raised.png</frame>
+	</style>
+	
+</item>

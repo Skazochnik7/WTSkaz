@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>hair</key>
+
+	<style name="default">
+		<frame>daphne_hair_base.png</frame>
+		<folder>hair</folder>
+		<visible>1</visible>
+		<zorder>hair</zorder>
+		<parent>head</parent>
+	</style>
+</item>

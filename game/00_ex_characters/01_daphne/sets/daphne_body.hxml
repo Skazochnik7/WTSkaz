@@ -3,5 +3,14 @@
 <sets>
 	<set>
 		<item>item_body</item>
+		<item>item_head</item>
+		<item>item_brows</item>
+		<item>item_eyes</item>
+		<item>item_blush</item>
+		<item>item_mouth</item>
+		<item>item_hair</item>
+		<item>item_arms</item>
+		<item>item_hands</item>
+		<item>item_blush</item>
 	</set>
 </sets>

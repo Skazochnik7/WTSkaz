@@ -33,6 +33,12 @@
 
             return
 
+        def Face(self, s):
+            _temp=s.split(" ")
+            for i in range(4):
+                daphne.view.data().setStyleKey( ['brows', 'eyes', 'blush', 'mouth'][i], _temp[i] )
+            return
+
         @property
         def liking(self):
             return self.GetValue("liking")
