@@ -33,7 +33,7 @@
 
             return
 
-        def Face(self, s):
+        def SetFace(self, s):
             _temp=s.split(" ")
             for i in range(4):
                 daphne.view.data().setStyleKey( ['brows', 'eyes', 'blush', 'mouth'][i], _temp[i] )
