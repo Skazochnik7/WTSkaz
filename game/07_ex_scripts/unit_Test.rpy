@@ -4,7 +4,7 @@ label test_daphna:
 # Этот же код вызываем из блока start для начальной инициализации переменных
 #show ch_hem blink at Position(xpos=300, ypos=350, xanchor="center", yanchor="center") with Dissolve(.1)
 #pause 
-    $chibi=Chibi("daphna")
+#    $chibi=RegEntry(Chibi("daphne"))
     $ posHead = gMakePos( 390, -100 )
     $ posHead2 = gMakePos( 190, -100 )
 
@@ -13,9 +13,22 @@ label test_daphna:
             "Дафна 5 картинок":
     #            renpy.show_screen("chibiscreen")
     #            renpy.pause()
-                $chibi.Show(["daph walk"])
+#                $chibi.Show(["daph walk"])
+                pass
             "Дафна 6 картинок":
-                $chibi.Show(["daph walk2"])
+#                $chibi.Show(["daph walk2"])
+                pass
+            "Дафна Новый чиби":
+#                $daphne.ChibiTrans("daph walk", pos=(700,0))
+#                $daphne.ChibiTrans("daph walk", pos=(200,0), lag=20.0)
+                "0"
+                $daphne.chibi.TransPos("blink",x=400,y=0)
+                "1"
+                $daphne.chibi.Trans(["walk door walk", "blink", "walk neardesk walk"])
+                "2"
+#                $daphne.chibi.Trans(["walk neardesk walk"])
+#                "3"
+
             "По умолчанию":
                 $daphne.view.data().setStyleKey( 'mouth', 'default' )
                 $daphne.view.data().setStyleKey( 'eyes', 'default' )

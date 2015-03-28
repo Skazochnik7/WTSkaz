@@ -653,25 +653,25 @@ label snape_chitchat:
             $ s_sprite = "03_hp/10_snape_main/24.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            her "У тебя есть пара лишних презервативов?"
+            sna "У тебя есть пара лишних презервативов?"
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_25.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            her "У меня была полная пачка..."
+            sna "У меня была полная пачка..."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            her "...они кончились год назад..."
+            sna "...они кончились год назад..."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                                                            #SNAPE
             show screen snape_main                                                                                                                  #SNAPE
             with d3                                                                                                                                                   #SNAPE
-            her "Мне нравится, как ты изменил мою жизнь, приятель."
+            sna "Мне нравится, как ты изменил мою жизнь, приятель."
             hide screen snape_main                                                                                                                   #SNAPE
             with d3                                                                                                                                                  #SNAPE
             $ s_sprite = "03_hp/10_snape_main/23.png"                                                                            #SNAPE

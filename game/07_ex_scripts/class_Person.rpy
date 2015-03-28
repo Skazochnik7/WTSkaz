@@ -1,4 +1,6 @@
 ﻿init -997 python:
+
+
   
 # Класс - обертка для словаря ивентов
     class Person(Entry):
@@ -26,10 +28,7 @@
             super(Person, self).__init__(Name=Name, Type="Person", defVals=defVals )
 
             self.Items=RegEntry(ItemCollection("items"+self.Name))        # Это словарь сохраняемых аргументов
-#            if defVals
-#            self.defVals = {"Items": ItemCollection("items"+self.Name)}        # Это словарь сохраняемых аргументов
-#            if defVals!=None:
-#                self.defVals.update(defVals)
+            self.chibi=RegEntry(Chibi("chibi"+Name))
 
             return
 
@@ -38,6 +37,19 @@
             for i in range(4):
                 daphne.view.data().setStyleKey( ['brows', 'eyes', 'blush', 'mouth'][i], _temp[i] )
             return
+
+        def ChibiShow(self, images):
+            for o in images:
+#                if chibiTranses[o]
+                renpy.show_screen(Name+"screen", chibiTranses[o]["image"], None)
+                renpy.pause()
+            return
+
+        def ChibiTrans(self, image, trans=None):
+            renpy.show_screen(self.Name+"screen", image, trans)
+            renpy.pause()
+            return
+
 
         @property
         def liking(self):
@@ -60,6 +72,8 @@
         @property
         def head(self):
             return self.GetValue("head")
+
+
 
 
 
