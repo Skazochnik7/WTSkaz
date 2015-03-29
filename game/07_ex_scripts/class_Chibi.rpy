@@ -63,34 +63,14 @@
 
 
 
-screen chibiscreen( aImgs, x1=0, x2=0, y=0, lag=1.0 ):   
-    python:
-#        data = aData.values()
-#        data.sort( key = lambda item: item.zorder )
-        #for element in data:
-#            element._x_x_x_screen_pos = gSumPos( aPos, element.position )
-        data=[
-#        '03_hp/animation/h_walk_01.png', 
-#        '03_hp/animation/h_walk_02.png', 
-#        '03_hp/animation/h_walk_03.png',
-        "daph walk2"
-        ]
-        data=aImgs
-    for element in data:
-        add element at chibitrans(700, 200, 10.0) # Transform( pos = ( 500, 500 ) )  #at gSumPos( aPos, element.position )
+
+screen chibidaphnescreen( aImgs, x1=0, x2=0, y=0, lag=1.0 ):   
+    add aImgs at chibitrans(x1, x2, y, lag) #chibitrans(700, 200, 10.0) # Transform( pos = ( 500, 500 ) )  #at gSumPos( aPos, element.position )
 
 transform chibitrans(x1=0, x2=0, y=0, lag=1.0): 
     xpos x1 #координата X, из которой начинаем движение
     ypos y #высота, на которой проводим движение
     linear lag xpos x2 # опреация передвижения (скорость линейна )
-
-
-
-#transform chibitrans(pos1=(0,0), pos2=(0,0), lag=1.0): 
-#    xpos x #координата X, из которой начинаем движение
-#    ypos 0 #высота, на которой проводим движение
-#    linear v xpos x2 # опреация передвижения (скорость линейна )
-
 
 
 image chibidaphne blink:
@@ -180,16 +160,5 @@ image daph walk:
     pause.08
     repeat
 
-screen chibidaphnescreen( aImgs, x1=0, x2=0, y=0, lag=1.0 ):   
-    python:
-#        data=[
-#        '03_hp/animation/h_walk_01.png', 
-#        '03_hp/animation/h_walk_02.png', 
-#        '03_hp/animation/h_walk_03.png',
-#        "daph walk2"
-#        ]
-        data=aImgs
-    for element in data:
-        add aImgs at chibitrans(x1, x2, y, lag) #chibitrans(700, 200, 10.0) # Transform( pos = ( 500, 500 ) )  #at gSumPos( aPos, element.position )
         
 
