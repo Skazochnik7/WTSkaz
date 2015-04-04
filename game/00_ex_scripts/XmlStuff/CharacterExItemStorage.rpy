@@ -22,7 +22,8 @@
                         self._readFile( item, aFolderBase, aZOrderBase )
 
         def _readFile( self, aFilePath, aFolderBase, aZOrderBase ):
-            opened = ET.parse( renpy.loader.transfn( aFilePath ) )
+            f = renpy.file( aFilePath )
+            opened = ET.parse( f )
             root = opened.getroot()
             itemDesc = CharacterExDescriptionItem( root, aFolderBase, aZOrderBase )
             if not itemDesc.mName:

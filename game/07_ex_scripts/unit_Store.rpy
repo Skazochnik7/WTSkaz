@@ -37,7 +37,7 @@ init -999 python:
         return False
 
     def SetStoreValue(key, subkey, value):
-        debug.SaveString("SetStoreValue("+str(key)+", "+str(subkey)+", "+str(value), 3)
+#        debug.SaveString("SetStoreValue("+str(key)+", "+str(subkey)+", "+str(value), 3)
         if not IsStoreKey(key):
             elog.update({key: dict()})
         if not IsStoreSubKey(key, subkey):
@@ -48,7 +48,8 @@ init -999 python:
 # Намеренно не ставлю здесь проверок на наличие соответствующего поля. Разработчик должен проверять перед вызовом с помощью функций  IsStoreKey IsStoreSubKey
     def GetStoreValue(key, subkey):
         if IsStoreKey(key):
-            debug.SaveString("GetStoreValue("+str(key)+", "+str(subkey)+")="+str(elog[key].get(subkey)), 3)
+#            debug.SaveString("GetStoreValue("+str(key)+", "+str(subkey)+")="+str(elog[key].get(subkey)), 3)
+            pass
         else:
             debug.SaveString("GetStoreValue("+str(key)+", "+str(subkey)+")=НЕТ КЛЮЧА!", 3)
 
@@ -76,7 +77,7 @@ init -999 python:
         return False
 
     def SetArrayValue(key, subkey, value):
-        debug.SaveString("SetArrayValue("+str(key)+", "+str(subkey)+", "+str(value), 3)
+#        debug.SaveString("SetArrayValue("+str(key)+", "+str(subkey)+", "+str(value), 3)
         if not IsArrayKey(key):
             arr.update({key: dict()})
         if not IsArraySubKey(key, subkey):
@@ -111,6 +112,13 @@ init -999 python:
         entry.handle=len(entries)
         entries.append(entry)
         return entry
+
+    def GetEntriesByType(typeName):
+        __set=set()
+        for o in entries:
+            if o.Type==typeName:
+                __set.update({o})
+        return __set
 
     def InitEntryField(entry, subkey):
         exec "entries["+str(entry.handle)+"]._"+subkey+"=entries["+str(entry.handle)+"].GetValue('"+subkey+"')"

@@ -67,7 +67,7 @@ label cupboard:
                         $hermi.liking=0
                         show screen points
                         "Готово можете проверить"
-                    "ЧИТ: +100 золотых":
+                    "ЧИТ: +100 галеонов":
                         hide screen points
                         $gold+=100
                         show screen points

@@ -36,12 +36,6 @@
 
             return
 
-#        def Show(self, images):
-#            for o in images:
-#                renpy.show_screen("chibiscreen", [o], None)
-#                renpy.pause()
-#            return
-
         def Hide(self):
             renpy.hide_screen(Name+"screen")
             return

@@ -14,7 +14,8 @@
         # this should be called at the beginning of the game, path is the location of folders.xml file
         def read( self, aFolderFilePath ):
             self.mDataPath = aFolderFilePath
-            opened = ET.parse( renpy.loader.transfn( aFolderFilePath ) )
+            f = renpy.file( aFolderFilePath )
+            opened = ET.parse( f )
             root = opened.getroot()
             
             for child in root:

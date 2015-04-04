@@ -14,7 +14,8 @@
         # this should be called at the beginning of the game, path is the location of zorders.xml file
         def read( self, aOrderFilePath ):
             self.mDataPath = aOrderFilePath
-            opened = ET.parse( renpy.loader.transfn( aOrderFilePath ) )
+            f = renpy.file( aOrderFilePath )
+            opened = ET.parse( f )
             root = opened.getroot()
             
             for child in root:

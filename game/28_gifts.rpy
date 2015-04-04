@@ -26,8 +26,8 @@ label giving_miniskirt:
 #    $ gave_miniskirt = True #Turns True when Hermione has the miniskirt.
     $ days_without_an_event = 0
     $herView.hideQ( d5 )
-    $hermi.Items.AddItem("miniskirt")
-    
+    $hermi.Items.Receive(hero.Items,"miniskirt")
+
     $ hermi.liking = 0
     m "Вот... Это тебе..."
     $ the_gift = "03_hp/18_store/07.png" # Miniskirt.
@@ -402,7 +402,7 @@ label nets_take:
     
     
        
-label giving_lube: # JAR OF Анальный лубрикант.
+label giving_lubricant: # JAR OF Анальный лубрикант.
     $herView.hideQ( d5 )                                                                                                                                                                                                           #HERMIONE
     $ pos = POS_140
     

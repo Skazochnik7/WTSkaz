@@ -110,14 +110,16 @@ init:
         global hero
         hero=RegEntry(Person("hero", "Джинн"))
         global hermi
-        hermi=RegEntry(Person("hermi", "Гермиона"))
+        hermi=RegEntry(Person("hermi", "Гермиона", CharacterExData(WTXmlLinker.getLinkerKey_hermione()),
+            constVals={"pos_def": POS_140, "pos2_def": gMakePos( 390, 340 )}))
         global daphne
-        daphne=RegEntry(Person("hermi", "Гермиона",
-            {"vData": CharacterExData( WTXmlLinker.getLinkerKey_daphne() ),
-            "view": CharacterExView( 5, daph, 'daphne' ),
-            "head": CharacterExView( 8, daph2, 'daphne_head' )
-
-            }))
+        daphne=RegEntry(Person("daphne", "Дафна", CharacterExData( WTXmlLinker.getLinkerKey_daphne()), 
+            constVals={"pos_def": POS_140, "pos2_def": gMakePos( 390, 340 )}
+#            {"vData":  )},
+#            "view": CharacterExView( 5, daph, 'daphne' ),
+#            "head": CharacterExView( 8, daph2, 'daphne_head' )
+#            }
+            ))
 
 
 
@@ -4852,8 +4854,8 @@ init-2:
     $ vol = Character('Лорд Волдеморт', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ l = Character('Лола', color="#402313", window_right_padding=230, show_two_window=True, ctc="ctc3", ctc_position="fixed") #Text box used for "head only" speech. (Because it has padding).
     
-    $ daph = Character('Дафна', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
-    $ daph2 = Character('Дафна', color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed") #Text box used for "head only" speech. (Because it has padding).    
+#    $ daph = Character('Дафна', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
+#    $ daph2 = Character('Дафна', color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed") #Text box used for "head only" speech. (Because it has padding).    
 
 #-----------------------___HEADS___---------------------------------#
     
@@ -4930,6 +4932,16 @@ label start:
     init python:
          config.use_cpickle = False
 
+    # Ending class initialization
+    call Ending_constants
+    python:
+        global end
+    $ end = Ending ()
+
+    # Создание elog должно стоять перед вызовами GetValue, так что лучше его сделать сразу после метки start
+    call start_elog
+    call after_load
+
 
     call main_ex_CharacterExItem_constants
     python:
@@ -4942,41 +4954,27 @@ label start:
         # full-sized view
         global herView
         # dialogue-face view
-        global herViewHead     
+        global herViewHead  
+
+    $herData = hermi.GetValue("vData")    
+    $herView = hermi.body    
+    $herViewHead = hermi.head   
         
     #$ herData = CharacterExData( WTXmlLinker.getHermioneLinkerKey() )
-    $ herData = CharacterExData( WTXmlLinker.getLinkerKey_hermione() )
-    $ herData.clearState()
+#    $ herData = CharacterExData( WTXmlLinker.getLinkerKey_hermione() )
+#    $ herData.clearState()
     
-    $ herView = CharacterExView( 5, her, 'hermione' )
-    $ herView.attach( herData )
+#    $ herView = CharacterExView( 5, her, 'hermione' )
+#    $ herView.attach( herData )
     
-    $ herViewHead = CharacterExView( 8, her2, 'hermione_head' )
-    $ herViewHead.pushScreenTag( 'head' )
-    $ herViewHead.attach( herData )
-
-    # lets use saved stuff system, so now fill hermione items
-    #$ herView.data().addLegs( CharacterExItem( herView.mBodyFolder, "legs_universal.png", G_Z_LEGS ) )
-    #$ herView.data().addPanties( CharacterExItem( herView.mClothesFolder, "panties_normal.png", G_Z_PANTIES ) )
-    #$ herView.data().addSkirt( CharacterExItem( herView.mClothesFolder, "skirt_normal.png", G_Z_SKIRT ) )
-    #$ herView.data().addHands( CharacterExItem( herView.mBodyFolder, "hands_universal.png", G_Z_HANDS ) )
-    #$ herView.data().addBody( CharacterExItem( herView.mBodyFolder, "body.png", G_Z_BODY ) )
-    #$ herView.data().addTits( CharacterExItem( herView.mBodyFolder, "tits.png", G_Z_TITS ) )
-    #$ herView.data().addDress( CharacterExItemDress( herView.mClothesFolder, "dress_normal.png", G_Z_DRESS ) )
-    #$ herView.data().addFace( CharacterExItem( herView.mFaceFolder, "body_01.png", G_Z_FACE ) )
+#    $ herViewHead = CharacterExView( 8, her2, 'hermione_head' )
+#    $ herViewHead.pushScreenTag( 'head' )
+#    $ herViewHead.attach( herData )
 
     # test new stuff! load all this with two sets - body and clothes!
-    $herView.data().addItemSet( 'hermione_body' )
-    $herView.data().addItemSet( 'hermione_start_clothes' )
+#    $herView.data().addItemSet( 'hermione_body' )
+#    $herView.data().addItemSet( 'hermione_start_clothes' )
 
-    # Ending class initialization
-    call Ending_constants
-    python:
-        global end
-    $ end = Ending ()
-
-    call start_elog
-    call after_load
 
 
     $ gold = 0

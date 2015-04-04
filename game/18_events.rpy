@@ -3628,9 +3628,9 @@ label event_16: #Учебники доставлены
         $ s_sprite = "03_hp/10_snape_main/snape_03.png"                                                                            #SNAPE
         show screen s_head2  
         sna2 "..."
-        hide screen s_head2                                                                                                                                                #SNAPE
         $ s_sprite = "03_hp/10_snape_main/snape_17.png"                                                                            #SNAPE
         sna2 "Счастливого дня, Джинни."
+        hide screen s_head2                                                                                                                                                #SNAPE
         $ renpy.play('sounds/door.mp3')
         g4 "{size=-4}Вернииииись...{/size}"
         g4 "{size=-4}Предатель...{/size}"

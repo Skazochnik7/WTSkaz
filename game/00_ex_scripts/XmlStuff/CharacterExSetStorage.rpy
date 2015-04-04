@@ -38,7 +38,8 @@
                         self._readFile( item, aItemBase )
 
         def _readFile( self, aFilePath, aItemBase ):
-            opened = ET.parse( renpy.loader.transfn( aFilePath ) )
+            f = renpy.file( aFilePath )
+            opened = ET.parse( f )
             root = opened.getroot()
             for item in root:
                 if item.tag == 'set':

@@ -379,11 +379,14 @@ init python:
     build.classify('**~', None)
     build.classify('**.bak', None)
     build.classify('**/.**', None)
+    build.classify('**/_backup_and_src/**', None)
+    build.classify('**/FAQ_private/**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
     
     ## To archive files, classify them as 'archive'.
     
+    build.classify('game/**.hxml', 'archive')
     build.classify('game/**.png', 'archive')
     build.classify('game/**.jpg', 'archive')
     build.classify('game/**.ogg', 'archive')
