@@ -13,7 +13,6 @@
             if x==None:
                 x=self.x0
             self.Hide()
-            debug.SaveString(str(x)+" "+str(y)+" "+str(lag),3)
             renpy.show_screen(self.Name+"screen", self.Name+" "+image, self.x0, x, y, lag)
             renpy.pause(lag)
 
@@ -21,18 +20,16 @@
             self.y0=y
             return self
 
-        def Trans(self, images):
-#            self.__y=self.y0
-#            self.__x=self.x0
-#            self.__lag=None
-            for o in images:
+        def Trans(self, arg1, arg2=None, arg3=None, arg4=None, arg5=None):
+            self.__args=[arg1, arg2, arg3, arg4, arg5]
+
+            for o in self.__args:
+                if o==None:
+                    break
                 self.__pars=o.split(" ")
                 if len(self.__pars)>=2:
-                    self.__Pos(self.__pars[1])
+                    self.__State(self.__pars[1])
 
-#                if len(self.__pars)>=3:
-#                    self.__lag={"walk":abs(self.__x-self.x0)/20.0}[self.__pars[2]]
-                debug.SaveString(str(self.__x)+" "+str(self.x0)+" "+str(self.y0)+ " "+str(self.speed),3)
                 self.TransPos(self.__pars[0], self.__x, self.__y, abs(self.__x-self.x0)/self.speed)
             return self
 
@@ -40,14 +37,14 @@
             renpy.hide_screen(self.Name+"screen")
             return
 
-        def Pos(self, x=None, y=None, speed=None):
-            self.__Pos(x, y, speed)
+        def State(self, x=None, y=None, speed=None):
+            self.__State(x, y, speed)
             self.x0=self.__x
             self.y0=self.__y
             self.speed=self.__speed
             return self
 
-        def __Pos(self, x=None, y=None, speed=None):
+        def __State(self, x=None, y=None, speed=None):
             if isinstance( x, basestring ):
                 self.__x={"door":600,"center":400,"neardesk":200}[x]
                 self.__y={"door":0,"center":0,"neardesk":0}[x]

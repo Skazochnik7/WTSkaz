@@ -25,7 +25,7 @@ init:
 # Подключение модуля отладки 
     python:
         global debug
-    $debug=Debug(0) # Если 0 - ничего не происходит, иначе сбрасывает значения перемнных в файл debug.txt
+    $debug=Debug(3) # Если 0 - ничего не происходит, иначе сбрасывает значения перемнных в файл debug.txt
     $debug.SaveHeader()
 
     python:
@@ -114,7 +114,7 @@ init:
             constVals={"pos_def": POS_140, "pos2_def": gMakePos( 390, 340 )}))
         global daphne
         daphne=RegEntry(Person("daphne", "Дафна", CharacterExData( WTXmlLinker.getLinkerKey_daphne()), 
-            constVals={"pos_def": POS_140, "pos2_def": gMakePos( 390, 340 )}
+            constVals={"pos_def": POS_140, "pos2_def": gMakePos( 360, 300 )}
 #            {"vData":  )},
 #            "view": CharacterExView( 5, daph, 'daphne' ),
 #            "head": CharacterExView( 8, daph2, 'daphne_head' )

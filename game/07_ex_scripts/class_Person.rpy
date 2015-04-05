@@ -31,7 +31,7 @@
                 defVals["body"].data().addItemSet( Name+'_body' )
                 defVals["body"].data().addItemSet( Name+'_start_clothes' )
 
-            defVals.update({"face": None, "viewMode": 0})
+            defVals.update({"curchar": None, "viewMode": 0})
 
             super(Person, self).__init__(Name=Name, Type="Person", defVals=defVals, constVals=constVals )
 
@@ -41,49 +41,32 @@
             return
 
 
-        def __call__( self, text=None, face=None, viewMode=None):
-            # Обязательно будет параметр текст. Но для форматирования хорошо, чтобы если их нужно вывести два, то первым выводился face
-            if face!=None and text!=None: # т.е. введены два параметра
-                self.__temp=text
-                text=face
-                face=self.__temp
+        def __call__( self, arg1, arg2=None, arg3=None, arg4=None, arg5=None, arg6=None, arg7=None, arg8=None, arg9=None, arg10=None, arg11=None, arg12=None, arg13=None, arg14=None, arg15=None, arg16=None):
+            self.__args=[arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16]
+            for o in self.__args:
+                if o==None:
+                    break
+                if not isinstance( o, basestring ): # если не строка, значит Character
+                    self.curchar=o
+                else: # теперь столько строки
+                    if o[0]=="~": # если это фейс, то показать его
+                        self.Face(o.replace("~",""))    
 
-            if face!=None:
-                self.SetValue("face", face)
-                if isinstance( face, basestring ):
-                    self.Face(face)
-            else:
-                face=self.GetValue("face")
+                        if self.Name!="hero":
+                            if self.viewMode in {1, 3}:
+                                self.curchar=self.char2
+                            else:
+                                self.curchar=self.char
 
-            if viewMode==None:
-                viewMode=self.GetValue("viewMode")
-            else:
-                self.SetValue("viewMode", viewMode)
-
-            if self.Name!="hero":
-                self.body.hideQ()
-                self.head.hideQ()
-                if viewMode in {1, 3}:
-#                    self.pos = gMakePos( 390, 340 )
-                    self.head.showQ("", self.pos2)
-                if viewMode in {2, 3}:
-#                    self.pos = POS_140
-                    self.body.showQ("", self.pos)  
-
-                if isinstance( face, basestring ):
-                    if viewMode in {1, 3}:
-                        face=self.char2
+                        else:
+                            if viewMode==0:
+                                for o in GetEntriesByType("Person"):
+                                    if o.Name not in {"hero"}:
+                                        o.head.hideQ()
+                                    
                     else:
-                        face=self.char
-            else:
-                if viewMode==0:
-                    for o in GetEntriesByType("Person"):
-                        if o.Name not in {"hero"}:
-                            o.head.hideQ()
-
-
-            if text!=None:
-                renpy.say(face , text)
+                        renpy.say(self.curchar, o)
+                
             return
 
 
@@ -95,8 +78,6 @@
 
             return
 
-        def SetViewMode(self, value):
-            self.SetValue("viewMode", value)
 
 #        def ChibiShow(self, images):
 #            for o in images:
@@ -134,6 +115,28 @@
         @property
         def char2(self):
             return self.head.mCh
+
+        @property
+        def curchar(self):
+            return self.GetValue("curchar")
+        @curchar.setter
+        def curchar(self, value):
+            self.SetValue("curchar", value)
+
+        @property
+        def viewMode(self):
+            return self.GetValue("viewMode")
+        @viewMode.setter
+        def viewMode(self, value):
+            self.SetValue("viewMode", value)
+            if self.Name!="hero":
+                self.body.hideQ()
+                self.head.hideQ()
+                if self.viewMode in {1, 3}:
+                    self.head.showQ("", self.pos2)
+                if self.viewMode in {2, 3}:
+                    self.body.showQ("", self.pos)  
+
 
 
 
