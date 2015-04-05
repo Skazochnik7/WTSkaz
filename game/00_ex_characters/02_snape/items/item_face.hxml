@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>face</key>
+
+	<style name="default">
+		<frame>face_01.png</frame>
+		<folder>face</folder>
+		<visible>1</visible>
+		<zorder>face</zorder>
+		<parent>head</parent>
+	</style>
+	<style name="face_01">	<frame>snape_face_01.png</frame></style>
+	<style name="face_02">	<frame>snape_face_02.png</frame></style>
+	<style name="face_03">	<frame>snape_face_03.png</frame></style>
+	<style name="face_04">	<frame>snape_face_04.png</frame></style>
+	<style name="face_05">	<frame>snape_face_05.png</frame></style>
+	<style name="face_06">	<frame>snape_face_06.png</frame></style>
+	<style name="face_07">	<frame>snape_face_07.png</frame></style>
+	<style name="face_08">	<frame>snape_face_08.png</frame></style>
+	<style name="face_09">	<frame>snape_face_09.png</frame></style>
+	<style name="face_10">	<frame>snape_face_10.png</frame></style>
+	<style name="face_11">	<frame>snape_face_11.png</frame></style>
+	<style name="face_12">	<frame>snape_face_12.png</frame></style>
+	<style name="face_13">	<frame>snape_face_13.png</frame></style>
+	<style name="face_14">	<frame>snape_face_14.png</frame></style>
+	<style name="face_15">	<frame>snape_face_15.png</frame></style>
+	<style name="face_16">	<frame>snape_face_16.png</frame></style>
+	<style name="face_17">	<frame>snape_face_17.png</frame></style>
+	<style name="face_18">	<frame>snape_face_18.png</frame></style>
+	<style name="face_19">	<frame>snape_face_19.png</frame></style>
+	<style name="face_20">	<frame>snape_face_20.png</frame></style>
+	<style name="face_21">	<frame>snape_face_21.png</frame></style>
+	<style name="face_22">	<frame>snape_face_22.png</frame></style>
+	<style name="face_23">	<frame>snape_face_23.png</frame></style>
+	<style name="face_24">	<frame>snape_face_24.png</frame></style>
+	<style name="face_25">	<frame>snape_face_25.png</frame></style>
+	<style name="face_26">	<frame>snape_face_26.png</frame></style>
+	<style name="face_27">	<frame>snape_face_27.png</frame></style>
+	<style name="face_28">	<frame>snape_face_28.png</frame></style>
+	<style name="face_29">	<frame>snape_face_29.png</frame></style>
+	<style name="face_30">	<frame>snape_face_30.png</frame></style>
+	
+</item>

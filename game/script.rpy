@@ -6,6 +6,8 @@ init python:
         '00_ex_characters', '00_ex_characters/00_hermione', '00_ex_characters/00_hermione' )
     WTXmlLinker.prepareCharacterResources( 'daphne', 
         '00_ex_characters', '00_ex_characters/01_daphne', '00_ex_characters/01_daphne' )
+    WTXmlLinker.prepareCharacterResources( 'snape', 
+        '00_ex_characters', '00_ex_characters/02_snape', '00_ex_characters/02_snape' )
 
 
 init:
@@ -21,6 +23,8 @@ init:
         global this
         this=This()
         global event
+        global screens
+        screens=ScreenCollection()
 
 # Подключение модуля отладки 
     python:
@@ -120,6 +124,9 @@ init:
 #            "head": CharacterExView( 8, daph2, 'daphne_head' )
 #            }
             ))
+        global snape
+        snape=RegEntry(Person("snape", "Снейп", CharacterExData(WTXmlLinker.getLinkerKey_snape()),
+            constVals={"pos_def": POS_140, "pos2_def": gMakePos( 390, 340 )}))
 
 
 
@@ -182,6 +189,12 @@ init:
         this.Where({"NIGHT"})   .AddStep("good_bye_snape",           ready = lambda e: e.prev.IsAgo(2)) 
 
 # КОНЕЦ ГЛАВНОГО СЦЕНАРИЯ
+
+# ВЕТКА ДАФНЫ
+# Ветка включается при вызове общения Снейпа ночью после того, как отработает ивент со снейпом, где он хвалится как трахает студенток
+        this.Where({"SNAPE"},"daphne").AddStep("daphna_pre_01",        ready = lambda e: snape_events >= 6) 
+
+
 
 
 # Книги. Полный цикл от покупки в магазине Дахра до прочтения, до получения бонусов

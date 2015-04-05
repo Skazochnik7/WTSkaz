@@ -63,32 +63,51 @@
                                 for o in GetEntriesByType("Person"):
                                     if o.Name not in {"hero"}:
                                         o.head.hideQ()
-                                    
+
                     else:
-                        renpy.say(self.curchar, o)
+                        renpy.say(self.curchar, self.__Format(o))
                 
             return
 
 
         def Face(self, s):
 # При подключении Гермионы, поставить условие - если есть точка в параметре - значит это имя файла и нужно не стили менять, а грузить сразу файл лица
-            _temp=s.split(" ")
-            for i in range(4):
-                self.body.data().setStyleKey( ['brows', 'eyes', 'blush', 'mouth'][i], _temp[i] )
+            if not " " in s:
+                self.body.data().setStyleKey( "face", "face_"+s )
+            else:
+
+                self.__temp=s.split(" ")
+                for i in range(4):
+                    self.body.data().setStyleKey( ['brows', 'eyes', 'blush', 'mouth'][i], self.__temp[i] )
 
             return
 
 
-#        def ChibiShow(self, images):
-#            for o in images:
-#                renpy.show_screen(Name+"screen", chibiTranses[o]["image"], None)
-#                renpy.pause()
-#            return
+        def __Format(self, s):
+            self.__pars=s.split(" ")
+            debug.SaveString("Format: "+s, 3)
 
-#        def ChibiTrans(self, image, trans=None):
-#            renpy.show_screen(self.Name+"screen", image, trans)
-#            renpy.pause()
-#            return
+
+            s=""
+            for o in self.__pars:
+                self.__count=0
+                if len(o)>=2 and not o.isdigit():
+                    for h in o:
+                        if h.isalpha() and h.isupper():
+                           self.__count+=1
+                        if self.__count>=2:
+                            o="{size=+4}"+o+"{/size}"
+                            break
+#                    if o.isupper():
+#                        debug.SaveString("isupper: "+o, 3)
+                        
+                s+=o+" "
+            s=s.rstrip(" ")
+
+            if "#(" in s:
+                s=s.replace("#(","{size=-4}(") 
+                s=s.replace(")","){/size}") 
+            return s
 
 
         @property

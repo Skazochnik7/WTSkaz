@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>body</key>
+
+	<style name="default">
+		<frame>snape_main.png</frame>
+		<folder>body</folder>
+		<visible>1</visible>
+		<zorder>body</zorder>
+		<parent></parent>
+		<shift></shift>
+		<transforms></transforms>
+		<hidelist></hidelist>
+		<actions></actions>
+	</style>
+</item>
