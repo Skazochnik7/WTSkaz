@@ -42,6 +42,12 @@
 
 
         def __call__( self, text=None, face=None, viewMode=None):
+            # Обязательно будет параметр текст. Но для форматирования хорошо, чтобы если их нужно вывести два, то первым выводился face
+            if face!=None and text!=None: # т.е. введены два параметра
+                self.__temp=text
+                text=face
+                face=self.__temp
+
             if face!=None:
                 self.SetValue("face", face)
                 if isinstance( face, basestring ):
@@ -88,6 +94,9 @@
                 self.body.data().setStyleKey( ['brows', 'eyes', 'blush', 'mouth'][i], _temp[i] )
 
             return
+
+        def SetViewMode(self, value):
+            self.SetValue("viewMode", value)
 
 #        def ChibiShow(self, images):
 #            for o in images:

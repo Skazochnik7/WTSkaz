@@ -4,7 +4,7 @@
     class Chibi(Entry):
         # constructor - Chibi initializing
         def __init__( self, Name, defVals=None):
-            super(Chibi, self).__init__(Name=Name, Type="Chibi", defVals={"x0":0, "y0":0} )
+            super(Chibi, self).__init__(Name=Name, Type="Chibi", defVals={"x0":0, "y0":0, "speed":0.0} )
             return
 
         def TransPos(self, image, x=None, y=None, lag=0.0):
@@ -13,32 +13,56 @@
             if x==None:
                 x=self.x0
             self.Hide()
-            renpy.show_screen(Name+"screen", self.Name+" "+image, self.x0, x, y, lag)
+            debug.SaveString(str(x)+" "+str(y)+" "+str(lag),3)
+            renpy.show_screen(self.Name+"screen", self.Name+" "+image, self.x0, x, y, lag)
             renpy.pause(lag)
 
             self.x0=x
             self.y0=y
-            return
+            return self
 
         def Trans(self, images):
-            self.__y=None
-            self.__x=None
-            self.__lag=None
+#            self.__y=self.y0
+#            self.__x=self.x0
+#            self.__lag=None
             for o in images:
                 self.__pars=o.split(" ")
                 if len(self.__pars)>=2:
-                    self.__x={"door":600,"center":400,"neardesk":200}[self.__pars[1]] 
+                    self.__Pos(self.__pars[1])
 
-                if len(self.__pars)>=3:
-                    self.__lag={"walk":abs(self.__x-self.x0)/20.0}[self.__pars[2]]
-
-                self.TransPos(self.__pars[0], self.__x, self.__y, self.__lag)
-
-            return
+#                if len(self.__pars)>=3:
+#                    self.__lag={"walk":abs(self.__x-self.x0)/20.0}[self.__pars[2]]
+                debug.SaveString(str(self.__x)+" "+str(self.x0)+" "+str(self.y0)+ " "+str(self.speed),3)
+                self.TransPos(self.__pars[0], self.__x, self.__y, abs(self.__x-self.x0)/self.speed)
+            return self
 
         def Hide(self):
-            renpy.hide_screen(Name+"screen")
+            renpy.hide_screen(self.Name+"screen")
             return
+
+        def Pos(self, x=None, y=None, speed=None):
+            self.__Pos(x, y, speed)
+            self.x0=self.__x
+            self.y0=self.__y
+            self.speed=self.__speed
+            return self
+
+        def __Pos(self, x=None, y=None, speed=None):
+            if isinstance( x, basestring ):
+                self.__x={"door":600,"center":400,"neardesk":200}[x]
+                self.__y={"door":0,"center":0,"neardesk":0}[x]
+            else:
+                if x!=None:
+                    self.__x=x
+                if y!=None:
+                    self.__y=y
+            if isinstance( speed, basestring ):
+                self.__speed={"walk":20.0}[speed]
+            else:
+                if speed!=None:
+                    self.__speed=speed
+            return 
+
 
 
         @property
@@ -55,6 +79,13 @@
         def y0(self, value):
             self.SetValue("y0", value)
 
+        @property
+        def speed(self):
+            return self.GetValue("speed")
+        @speed.setter
+        def speed(self, value):
+            self.SetValue("speed", value)
+
 
 
 
@@ -69,29 +100,29 @@ transform chibitrans(x1=0, x2=0, y=0, lag=1.0):
 
 image chibidaphne blink:
     choice 12.0:
-        "03_hp/animation/h_walk_01.png"
+        "03_hp/24_daphne/dap_walk_a1.png"
         pause.4
     choice:
-        "03_hp/animation/h_walk_06.png"
+        "03_hp/24_daphne/dap_blink_a2.png"
         pause.08
     repeat
 
 image chibidaphne walk:
-    "03_hp/24_daphna/daf_walk_a1.png"
+    "03_hp/24_daphne/dap_walk_a1.png"
     pause.08
-    "03_hp/24_daphna/daf_walk_a2.png"
+    "03_hp/24_daphne/dap_walk_a2.png"
     pause.08
-    "03_hp/24_daphna/daf_walk_a3.png"
+    "03_hp/24_daphne/dap_walk_a3.png"
     pause.08
-    "03_hp/24_daphna/daf_walk_a2.png"
+    "03_hp/24_daphne/dap_walk_a2.png"
     pause.08
-    "03_hp/24_daphna/daf_walk_a1.png"
+    "03_hp/24_daphne/dap_walk_a1.png"
     pause.08
-    "03_hp/24_daphna/daf_walk_a4.png"
+    "03_hp/24_daphne/dap_walk_a4.png"
     pause.08
-    "03_hp/24_daphna/daf_walk_a5.png"
+    "03_hp/24_daphne/dap_walk_a5.png"
     pause.08
-    "03_hp/24_daphna/daf_walk_a4.png"
+    "03_hp/24_daphne/dap_walk_a4.png"
     pause.08
     repeat
 
