@@ -24,10 +24,10 @@
             self.__Action(names, True, transition, position)
             return
 
-        def ShowAndHide(self, name, lag, transition=None, position=None):
-            self.ScreensShow([name], transition)
+        def ShowHide(self, name, lag, transition=None, position=None):
+            self.Show([name], transition)
             renpy.pause(lag)
-            self.ScreensHide([name], transition)
+            self.Hide([name], transition)
 
         def Hide(self, names, transition=None, position=None):
             self.__Action(names, False, transition, position)

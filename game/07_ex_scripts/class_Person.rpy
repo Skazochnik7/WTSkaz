@@ -31,7 +31,7 @@
                 defVals["body"].data().addItemSet( Name+'_body' )
                 defVals["body"].data().addItemSet( Name+'_start_clothes' )
 
-            defVals.update({"curchar": None, "talkingView": "body-", })
+            defVals.update({"curchar": None, "talkingView": "body", })
 
             super(Person, self).__init__(Name=Name, Type="Person", defVals=defVals, constVals=constVals )
 
@@ -47,6 +47,7 @@
                         arg11=None, arg12=None, arg13=None, arg14=None, arg15=None, arg16=None, arg17=None, arg18=None, arg19=None, 
                         arg20=None, arg21=None, arg22=None, arg23=None, arg24=None):
             self.__args=[arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24]
+            self.__trans=d3
             for o in self.__args:
                 if o==None:
                     break
@@ -55,12 +56,16 @@
                 else: # теперь столько строки
                     if o[0]=="~": # если это фейс, то показать его
                         self.Face(o.replace("~",""))    
+                        self.Visibility(self._talkingView, True, self.__trans)
+#                        self.__trans=None
 
-                        if self.Name!="hero":
-                            if self.viewMode in {1, 3}:
-                                self.curchar=self.char2
-                            else:
-                                self.curchar=self.char
+#                        self.Visibility(self._talkingView)
+
+#                        if self.Name!="hero":
+#                            if self.viewMode in {1, 3}:
+#                                self.curchar=self.char2
+#                            else:
+#                                self.curchar=self.char
 
 #                        else:
 #                            if self.viewMode==0:
@@ -72,13 +77,10 @@
                         if self.Name=="hero": 
                             for p in GetEntriesByType("Person"):
                                 if p.Name not in {"hero"}:
-                                    if "body+" not in p.GetValue("talkingView"):
+                                    if "body+" not in p._talkingView:
                                         p.body.hideQ()
-                                    if "head+" not in p.GetValue("talkingView"):
+                                    if "head+" not in p._talkingView:
                                         p.head.hideQ()
-                        else:
-                            self.SetVisibility(self.talkingView, None)
-
                         renpy.say(self.curchar, self.__Format(o))
 
                 
@@ -132,19 +134,21 @@
             return s
 
 
-        def SetVisibility(self, talkingView=None, transition=None):
+        def Visibility(self, talkingView=None, isTalking=True, transition=None):
 #            self.talkingView=talkingView
 #            self.anothertalkingView=anothertalkingView
             self.SetValue("talkingView", talkingView)
             if self.Name!="hero":
-                if 'head' in talkingView: 
-                    self.head.showQ(None, self.pos2, transition)
+                if (isTalking and ('head' in self._talkingView)) or ('head+' in self._talkingView): 
+                        self.head.showQ(None, self.pos2, transition)
                 else:
                     self.head.hideQ(transition)
-                if 'body' in talkingView: 
-                    self.body.showQ(None, self.pos, transition)
+                    self.curchar=self.char
+                if (isTalking and ('body' in self._talkingView)) or ('body+' in self._talkingView):  
+                        self.body.showQ(None, self.pos, transition)
                 else:
                     self.body.hideQ(transition)
+                    self.curchar=self.char2
             return 
 
 

@@ -75,122 +75,170 @@ label event_00:
 #    pause
 
 
-    $snape.viewMode=3
-    $screens.Show("ctc", d3)
-    pause
+    $snape.Visibility("body", Dissolve(.5))
 
 #    hide screen ctc 
 #    who2 "Альбус...есть минута?" 
 #    hide screen snape_main 
 
-    $screens.Hide("ctc", d3)
-    $snape(who2,    "Альбус...есть минута?")
+    $screens.ShowHide("ctc", 0.0, d3)
+#    $screens.Hide("ctc", d3)
+    $snape("~01",    who2, "Альбус... есть минута?")
   
 #    m "{size=-3}(\"Альбус\"? Это, должно быть, мое имя, или это так люди этого мира приветствуют друг друга?){/size}"
-    $hero("#(\"Альбус\"? Это, должно быть, мое имя, или это так люди этого мира приветствуют друг друга?)",
-        "...")
+    $hero("#(\"Альбус\"? Это, должно быть, мое имя, или это так люди этого мира приветствуют друг друга?)")
 
     menu:
-#        m "..."
+#        $hero.curchar "..."
+        m "..."
 #        $hero("...")
         "\"На самом деле я немного занят.\"":
 #            $ s_sprite = "03_hp/10_snape_main/snape_04.png"
 #            show screen snape_main
 #            with d3
 #            who2 "Но ведь не постоянно?"
-            $snape("~snape_04", "Но ведь не постоянно?")                            
+            $snape("~04", who2, "Но ведь не постоянно?")                            
         "\"Конечно. Что там?\"":
             pass                       
         "\"И Альбус тоже.\"":
-            $ s_sprite = "03_hp/10_snape_main/snape_05.png"
-            show screen snape_main
-            with d3
-            who2 "Что?"
-            $ s_sprite = "03_hp/10_snape_main/snape_04.png"
-            who2 "Альбус, я не в настроении для ваших... издевательств."
+#            $ s_sprite = "03_hp/10_snape_main/snape_05.png"
+#            show screen snape_main
+#            with d3
+#            who2 "Что?"
+#            $ s_sprite = "03_hp/10_snape_main/snape_04.png"
+#            who2 "Альбус, я не в настроении для ваших... издевательств."
+            $snape("~05", who2, "Что?",
+                   "~04", who2, "Альбус, я не в настроении для ваших... издевательств.") 
         "\"Отведи меня к своему боссу.\"":
-            $ s_sprite = "03_hp/10_snape_main/snape_01.png"
-            show screen snape_main
-            with d3
-            who2 "Что?"
-            hide screen snape_main
-            with d3
-            $ s_sprite = "03_hp/10_snape_main/snape_01.png"
-            show screen snape_main
-            with d3
-            who2 "Хм...?"
-            who2 "Вы имели в виду министра магии?"
-            hide screen snape_main
-            with d3
-            $ s_sprite = "03_hp/10_snape_main/snape_03.png"
-            show screen snape_main
-            with d3
-            who2 "Я хотел бы избежать каких-либо дел с этими бюрократами..."
-            m "Ладно, проехали... Как я могу помочь тебе?"
+#            $ s_sprite = "03_hp/10_snape_main/snape_01.png"
+#            show screen snape_main
+#            with d3
+#            who2 "Что?"
+#            hide screen snape_main
+#            with d3
+#            $ s_sprite = "03_hp/10_snape_main/snape_01.png"
+#            show screen snape_main
+#            with d3
+#            who2 "Хм...?"
+#            who2 "Вы имели в виду министра магии?"
+#            hide screen snape_main
+#            with d3
+#            $ s_sprite = "03_hp/10_snape_main/snape_03.png"
+#            show screen snape_main
+#            with d3
+#            who2 "Я хотел бы избежать каких-либо дел с этими бюрократами..."
+#            m "Ладно, проехали... Как я могу помочь тебе?"
+
+            $snape("~01", who2, "Что?",
+                                "Хм...",
+                                "Вы имели в виду министра магии?",
+                   "~03", who2, "Я бы предпочел не иметь дел с этими бюрократами...")
+            $hero("Ладно, проехали... Как я могу помочь тебе?")
             
-    $ s_sprite = "03_hp/10_snape_main/snape_06.png"
-    who2 "У меня есть важный разговор к вам..."
-    who2 "Я думаю, нам стоит пересмотреть политику допуска." 
-    hide screen snape_main
-    with d2
-    m "................?"
-    $ s_sprite = "03_hp/10_snape_main/snape_03.png"
-    show screen snape_main
-    with d2
-    who2 "Половина моих...так называемых \"учеников\" не что иное, как раздражающие личинки, которые портят мне жизнь день ото дня"
-    hide screen snape_main
-    with d2
-    m "................"
-    $ s_sprite = "03_hp/10_snape_main/snape_07.png"
-    show screen snape_main
-    who2 "Большинство из них из \"Гриффиндора\", конечно же..." 
-    hide screen snape_main
-    with d2
-    m "......?"
-    show screen snape_main
-    who2 "Несчастные Уизли, шумная Грейнджер и, конечно же, герой всех несовершеннолетних правонарушителей...."
-    $ s_sprite = "03_hp/10_snape_main/snape_08.png"
-    who2 "{size=+3}Мальчишка Поттер!{/size}"
-    $ s_sprite = "03_hp/10_snape_main/snape_01.png"
-    who2 "Запомни мои слова, Альбус. \"Гриффиндор\" станет погибелью для это школы!"
-    hide screen snape_main
-    m "...................."
-    show screen snape_main
-    who2 "Многие из них не представляют абсолютно ничего!"
-    $ s_sprite = "03_hp/10_snape_main/snape_06.png"
-    who2 "И если этого не достаточно, то вот: они распространили разные слухи о преподавателях!"
-    who2 "В частности и о вашем покорном слуге..."
-    hide screen snape_main
-    m "......................"
-    $ s_sprite = "03_hp/10_snape_main/snape_05.png"
-    show screen snape_main
-    who2 "Вы ведь не верите в эти слухи, так, Альбус?"
-    hide screen snape_main
+#    $ s_sprite = "03_hp/10_snape_main/snape_06.png"
+#    who2 "У меня есть важный разговор к вам..."
+#    who2 "Я думаю, нам стоит пересмотреть политику допуска." 
+#    hide screen snape_main
+#    with d2
+#    m "................?"
+#    $ s_sprite = "03_hp/10_snape_main/snape_03.png"
+#    show screen snape_main
+#    with d2
+#    who2 "Половина моих...так называемых \"учеников\" не что иное, как раздражающие личинки, которые портят мне жизнь день ото дня"
+#    hide screen snape_main
+#    with d2
+#    m "................"
+#    $ s_sprite = "03_hp/10_snape_main/snape_07.png"
+#    show screen snape_main
+#    who2 "Большинство из них из \"Гриффиндора\", конечно же..." 
+#    hide screen snape_main
+#    with d2
+#    m "......?"
+
+    $snape("~06", who2, "У меня есть важный разговор к вам...",
+                        "Я думаю, нам стоит пересмотреть политику допуска.")
+    $hero("................?")
+    $snape("~03", who2, "Половина моих...так называемых \"учеников\" просто надоедливые личинки, которые портят каждый день моей жизни.")
+    $hero("................")
+    $snape("~07", who2, "Большинство из них из \"Гриффиндора\", конечно же...")
+    $hero("......?")
+
+
+#    show screen snape_main
+#    who2 "Несчастные Уизли, шумная Грейнджер и, конечно же, герой всех несовершеннолетних правонарушителей...."
+#    $ s_sprite = "03_hp/10_snape_main/snape_08.png"
+#    who2 "{size=+3}Мальчишка Поттер!{/size}"
+#    $ s_sprite = "03_hp/10_snape_main/snape_01.png"
+#    who2 "Запомни мои слова, Альбус. \"Гриффиндор\" станет погибелью для это школы!"
+#    hide screen snape_main
+#    m "...................."
+#    show screen snape_main
+#    who2 "Многие из них не представляют абсолютно ничего!"
+#    $ s_sprite = "03_hp/10_snape_main/snape_06.png"
+#    who2 "И если этого не достаточно, то вот: они распространили разные слухи о преподавателях!"
+#    who2 "В частности и о вашем покорном слуге..."
+#    hide screen snape_main
+#    m "......................"
+#    $ s_sprite = "03_hp/10_snape_main/snape_05.png"
+#    show screen snape_main
+#    who2 "Вы ведь не верите в эти слухи, так, Альбус?"
+#    hide screen snape_main
+
+    $snape(             "Несчастные Уизли, шумная Грейнджер и, конечно же, герой всех несовершеннолетних правонарушителей....",
+            "~08", who2,"МАЛЬЧИШКА ПОТТЕР!",
+            "~01", who2,"Запомни мои слова, Альбус. \"Гриффиндор\" станет погибелью для это школы!")
+    $hero("......................")
+
+    $snape(             "Большинство из них абсолютно ничего из себя не представляют!",
+            "~06", who2,"И мало того: они распространяют всякие грязные слухи о преподавателях!",
+                        "В том числе и о вашем покорном слуге...")
+    $hero("......................")
+    $snape("~05", who2,"Вы ведь не верите в эти слухи, правда, Альбус?")
+
+
+
+
+
+
     menu:
         m ".............."
         "\"Ну, нет конечно!\"":
-            $ s_sprite = "03_hp/10_snape_main/snape_09.png"
-            show screen snape_main
-            sna "Хорошо..."
-            sna "Вы знаете меня лучше, чем я сам. Меня бы не волновали такие вещи..."
+#            $ s_sprite = "03_hp/10_snape_main/snape_09.png"
+#            show screen snape_main
+#            sna "Хорошо..."
+#            sna "Вы знаете меня лучше, чем я сам. Меня бы не волновали такие вещи..."
+            $snape( "~09", who2,"Хорошо...",
+                                "Вы знаете меня лучше, чем я сам. Меня бы не волновали такие вещи...")
         "\"Не бывает дыма без огня.\"":
-            $ s_sprite = "03_hp/10_snape_main/snape_10.png"
-            show screen snape_main
-            who2 "Альбус!? Вы серьезно?!"
-            who2 "Я вам говорю, это все грязная ложь!"
-    hide screen snape_main
-    m "........................."
-    $ s_sprite = "03_hp/10_snape_main/snape_04.png"
-    show screen snape_main
-    who2 "Ну, эти жалкие дети достали меня сегодня, я думаю, что следует отдохнуть от всего сегодня."
-    $ s_sprite = "03_hp/10_snape_main/snape_09.png"
-    who2 "................"
+#            $ s_sprite = "03_hp/10_snape_main/snape_10.png"
+#            show screen snape_main
+#            who2 "Альбус!? Вы серьезно?!"
+#            who2 "Я вам говорю, это все грязная ложь!"
+            $snape( "~10", who2,"Альбус!? Вы серьезно?!",
+                                "Говорю вам, это все грязная ложь!")
+
+#    hide screen snape_main
+#    m "........................."
+#    $ s_sprite = "03_hp/10_snape_main/snape_04.png"
+#    show screen snape_main
+#    who2 "Ну, эти жалкие дети достали меня сегодня, я думаю, что следует отдохнуть от всего сегодня."
+#    $ s_sprite = "03_hp/10_snape_main/snape_09.png"
+#    who2 "................"
+    
+    $hero(".........................")
+    $snape( "~04", who2,"Ну, эти жалкие дети достали меня сегодня, я думаю, что следует отдохнуть от всего сегодня.",
+            "~09", who2,"................")
     
     stop music fadeout 1.0
+
     
-    hide screen snape_main
-    hide screen bld1
-    with d3
+#    hide screen snape_main
+
+#    hide screen bld1
+#    with d3
+    $screens.Hide(["bld1"], d3)
+
+
     $ walk_xpos=360 #Animation of walking chibi. (From desk) 360 
     $ walk_xpos2=610 #Coordinates of it's movement. (To the door) 610
     $ snapes_speed = 03.0 #The speed of moving the walking animation across the screen. Default - .03
@@ -210,58 +258,6 @@ label event_00:
     m "Нет, все это очень глупо..."
     a4 "Заткнись! Никто не понимает истинных гениев."
     
-#    who2 "Professor Dumbldore, do you have a minute?"
-#    m "{size=-3}(What? Another one?){/size}"
-#    who2 "Let me speak to him!"
-#    m "Excuse me?"
-#    who2 "Y-yes master..."
-#    who2 "Greetings to you, oh almighty genie..."
-#    with hpunch
-#    g4 "{size=+7}What the hell?!{/size}"
-#    g4 "{size=+7}Stay away from me, you demon!!!{/size}"
-#    g4 "{size=+7}Body snatchers are among us!\nI'm outta here!{/size}"
-#    m "...wait a second."
-#    m "How did you just call me?"
-#    who2 "An almighty genie. That is what you are, is it not?"
-#    g4 "How did you... Who the hell are you?"
-#    who2 "Oh, but of course. Forgive me my poor manners..."
-#    who2 "Master's name is Tom Riddle..."
-#    who2 "No! You sniveling maggot! we hate that name!"
-#    who2 "We want to be called Lord Voldemort!"
-#    who2 "Forgive me, master..."
-#    m "Ehm... mr. Lord--"
-#    with hpunch
-#    who2 "No! No! \"lord\" is not master's name, \"lord\" is master's title, you idiot!"
-#    who2 "Watch your tone, worm! That is an immortal being before you."
-#    who2 "He may look human, but his powers topple mine by far."
-#    who2 "Please take no offense, oh almighty one. My servant is quite dim."
-#    menu:
-#        m "..."
-#        "\"Does the sun take offense from an ant?\"":
-#            who2 "And yet it is prudent for an ant to know it's place, wouldn't you agree?"
-#        "\"Watch it, mortal! I'll smite you!\"":
-#            who2 "My humble apologies. The worthless servant shall be punished properly."
-#            who2 "M-master...?"
-#        "\"Apology accepted. What do you want?\"":
-#            who2 "You are unusually forgiving for a genie. But we shall not test your patience anymore..."
-            
-#    vol "Correct me if we are wrong, but you came to our world due to an accident..."
-#    m ".................."
-#    vol "And you find our world intriguing, do you not?"
-#    m "You have two faces growing out of your head. So yeah, colour me curious."
-#    who2 "Splendid..."
-#    who2 "In that case we want to make you an offer..."
-#    who2 "We...."
-#    who2 "We...."
-#    m "???"
-#    who2 "We are tired... Cover us..."
-#    who2 "Of course, master."
-#    m "What? What's going on?"
-#    vol "My apologies, oh immortal one. My master needs to rest now."
-#    vol "We will visit you again soon..."
-#    m "..................."
-#    g4 "What the....?"
-#    m "Ah, hell. May as well stay for one more day..."
     
     $ days_without_an_event = 0
     
