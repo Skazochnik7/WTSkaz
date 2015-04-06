@@ -31,9 +31,11 @@
                 defVals["body"].data().addItemSet( Name+'_body' )
                 defVals["body"].data().addItemSet( Name+'_start_clothes' )
 
-            defVals.update({"curchar": None, "viewMode": 0})
+            defVals.update({"curchar": None, "talkingView": "body-", })
 
             super(Person, self).__init__(Name=Name, Type="Person", defVals=defVals, constVals=constVals )
+
+#            self.LoadDefItemSets()
 
             self.Items=RegEntry(ItemCollection("items"+Name))        # Это словарь сохраняемых аргументов
             self.chibi=RegEntry(Chibi("chibi"+Name))
@@ -41,8 +43,10 @@
             return
 
 
-        def __call__( self, arg1, arg2=None, arg3=None, arg4=None, arg5=None, arg6=None, arg7=None, arg8=None, arg9=None, arg10=None, arg11=None, arg12=None, arg13=None, arg14=None, arg15=None, arg16=None):
-            self.__args=[arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16]
+        def __call__( self, arg1, arg2=None, arg3=None, arg4=None, arg5=None, arg6=None, arg7=None, arg8=None, arg9=None, arg10=None, 
+                        arg11=None, arg12=None, arg13=None, arg14=None, arg15=None, arg16=None, arg17=None, arg18=None, arg19=None, 
+                        arg20=None, arg21=None, arg22=None, arg23=None, arg24=None):
+            self.__args=[arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24]
             for o in self.__args:
                 if o==None:
                     break
@@ -58,14 +62,25 @@
                             else:
                                 self.curchar=self.char
 
-                        else:
-                            if viewMode==0:
-                                for o in GetEntriesByType("Person"):
-                                    if o.Name not in {"hero"}:
-                                        o.head.hideQ()
+#                        else:
+#                            if self.viewMode==0:
+#                                for o in GetEntriesByType("Person"):
+#                                    if o.Name not in {"hero"}:
+#                                        o.head.hideQ()
 
                     else:
+                        if self.Name=="hero": 
+                            for p in GetEntriesByType("Person"):
+                                if p.Name not in {"hero"}:
+                                    if "body+" not in p.GetValue("talkingView"):
+                                        p.body.hideQ()
+                                    if "head+" not in p.GetValue("talkingView"):
+                                        p.head.hideQ()
+                        else:
+                            self.SetVisibility(self.talkingView, None)
+
                         renpy.say(self.curchar, self.__Format(o))
+
                 
             return
 
@@ -83,9 +98,16 @@
             return
 
 
+
+        def LoadDefItemSets(self):
+            self.body.data().addItemSet( self.Name+'_body' )
+            self.body.data().addItemSet( self.Name+'_start_clothes' )
+            return
+
+
         def __Format(self, s):
             self.__pars=s.split(" ")
-            debug.SaveString("Format: "+s, 3)
+#            debug.SaveString("Format: "+s, 3)
 
 
             s=""
@@ -96,7 +118,7 @@
                         if h.isalpha() and h.isupper():
                            self.__count+=1
                         if self.__count>=2:
-                            o="{size=+4}"+o+"{/size}"
+                            o="{size=+5}"+o+"{/size}"
                             break
 #                    if o.isupper():
 #                        debug.SaveString("isupper: "+o, 3)
@@ -105,9 +127,26 @@
             s=s.rstrip(" ")
 
             if "#(" in s:
-                s=s.replace("#(","{size=-4}(") 
+                s=s.replace("#(","{size=-3}(") 
                 s=s.replace(")","){/size}") 
             return s
+
+
+        def SetVisibility(self, talkingView=None, transition=None):
+#            self.talkingView=talkingView
+#            self.anothertalkingView=anothertalkingView
+            self.SetValue("talkingView", talkingView)
+            if self.Name!="hero":
+                if 'head' in talkingView: 
+                    self.head.showQ(None, self.pos2, transition)
+                else:
+                    self.head.hideQ(transition)
+                if 'body' in talkingView: 
+                    self.body.showQ(None, self.pos, transition)
+                else:
+                    self.body.hideQ(transition)
+            return 
+
 
 
         @property
@@ -116,7 +155,7 @@
         @pos.setter
         def pos(self, value):
             self.SetValue("pos", value)
-            self.body.showQ("", GetValue(value))
+            self.body.showQ(None, GetValue(value))
 
         @property
         def pos2(self):
@@ -124,7 +163,7 @@
         @pos2.setter
         def pos2(self, value):
             self.SetValue("pos2", value)
-            self.head.showQ("", GetValue(value))
+            self.head.showQ(None, GetValue(value))
 
 
         @property
@@ -142,19 +181,20 @@
         def curchar(self, value):
             self.SetValue("curchar", value)
 
-        @property
-        def viewMode(self):
-            return self.GetValue("viewMode")
-        @viewMode.setter
-        def viewMode(self, value):
-            self.SetValue("viewMode", value)
-            if self.Name!="hero":
-                self.body.hideQ()
-                self.head.hideQ()
-                if self.viewMode in {1, 3}:
-                    self.head.showQ("", self.pos2)
-                if self.viewMode in {2, 3}:
-                    self.body.showQ("", self.pos)  
+#        @property
+#        def viewMode(self):
+#            return self.GetValue("viewMode")
+#        @viewMode.setter
+#        def viewMode(self, value):
+#            self.SetValue("viewMode", value)
+#            if self.Name!="hero":
+#                self.body.hideQ()
+#                self.head.hideQ()
+#                debug.SaveString("value: "+str(value), 3)
+#                if self.viewMode in {1, 3}:
+#                    self.head.showQ(None, self.pos2)
+#                if self.viewMode in {2, 3}:
+#                    self.body.showQ(None, self.pos)  
 
 
 

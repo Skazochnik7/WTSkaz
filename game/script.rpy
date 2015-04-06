@@ -5168,23 +5168,24 @@ label start:
     
     show image "blackfade.png"
 
-    menu:
-        "Тестировать чибиков?":
-            jump test_daphna
-        "Продолжить запуск":
-            pass
+#    menu:
+#        "Тестировать чибиков?":
+#            jump test_daphna
+#        "Продолжить запуск":
+#            pass
 
     if persistent.game_complete: # Offer for game+
         menu:
             "Новая игра +" ">Хотите перенести все золото и имущество из предыдущей игры?"
             "\"Да, пожалуйста.\"":
                 $ gold = gold + persistent.gold
-                ">[persistent.gold] золота было добавлено."
+                ">Добавлено: [persistent.gold] галеонов."
                 python:
                     if persistent.itemSet!=None:
                         for o in persistent.itemSet:
-                            renpy.say(">Предмет \""+o+"\": "+str(persistent.itemSet[o])+" шт. добавлено в ваше имущество")
-                            hero.Items.AddItem(o,_value)
+                            hero.Items.AddItem(o,persistent.itemSet[o])
+                            renpy.say("",">Добавлено: \""+hero.Items(o)._caption+"\" ("+str(hero.Items(o)._count)+" шт.)")
+                            
                 
             "\"Не нужно.\"":
                 pass

@@ -6,6 +6,7 @@
         _indI = 2
         _indS = 3
         _indC = 4
+        _indP = 5
         # this is the dictionary with the pairs: <string, array of objects >
         _mLinkerDictionary = {}
 
@@ -82,6 +83,7 @@
             var_FS = CharacterExFolderStorage()
             var_IS = CharacterExItemStorage()
             var_SS = CharacterExSetStorage()
+            var_PS = CharacterExPresetStorage()
             var_creator = CharacterExItemCreator( var_IS, var_SS, aKey )
 
             # fill variables
@@ -89,9 +91,10 @@
             var_FS.read( aItemsRootPath + '/folders.hxml' )
             var_IS.read( aItemsRootPath + '/items/', var_FS, var_OS )
             var_SS.read( aItemsRootPath + '/sets/', var_IS )
+            var_PS.read( aItemsRootPath + '/presets/' )
 
             # adds objects to linker dictionary
-            WTXmlLinker._mLinkerDictionary[ aKey ] = [ var_FS, var_OS, var_IS, var_SS, var_creator ]
+            WTXmlLinker._mLinkerDictionary[ aKey ] = [ var_FS, var_OS, var_IS, var_SS, var_creator, var_PS ]
 
             # create static function with name: getLinkerKey_aKey()
             execString = (
@@ -131,4 +134,10 @@
         def c( aKey ):
             if aKey in WTXmlLinker._mLinkerDictionary:
                 return WTXmlLinker._mLinkerDictionary[ aKey ][ WTXmlLinker._indC ]            
+            return None
+
+        @staticmethod
+        def p( aKey ):
+            if aKey in WTXmlLinker._mLinkerDictionary:
+                return WTXmlLinker._mLinkerDictionary[ aKey ][ WTXmlLinker._indP ]            
             return None

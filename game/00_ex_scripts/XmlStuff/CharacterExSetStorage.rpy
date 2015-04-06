@@ -27,7 +27,7 @@
             self.mSets.clear()
             self.mSetInfos.clear()
 
-        # this should be called at the beginning of the game, path is the location of zorders.xml file
+        # this should be called at the beginning of the game, start path is the directory where sets kept
         def read( self, aStartPath, aItemBase ):
             self.mDataPath = aStartPath
             fileList = renpy.list_files()

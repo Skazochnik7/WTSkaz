@@ -11,7 +11,7 @@
         def CLEAR( self ):
             self.mItems.clear()
 
-        # this should be called at the beginning of the game, path is the location of zorders.xml file
+        # this should be called at the beginning of the game, start path is the directory where items are kept
         def read( self, aStartPath, aFolderBase, aZOrderBase ):
             self.mDataPath = aStartPath
             fileList = renpy.list_files()

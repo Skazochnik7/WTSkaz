@@ -5,89 +5,100 @@ label event_00:
     
     #show screen snape_01 #OWL SITTING ON A PACKAGE.
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    show screen snape_01 #Snape stands still.
-    with Dissolve(.5)
-    pause.3
-    show screen bld1
-    with d3
-    g4 "{size=-3}(Туземная форма жизни!?){/size}"
-    hide screen bld1
-    with d3
-    $ tt_xpos=650
-    $ tt_ypos=180
-    show screen thought 
-    with Dissolve(.3)
-    pause 1
-    show screen bld1
-    with d3
-    m "{size=-3}(Выглядит, как человек...){/size}"
-    m "{size=-3}(Может быть, если я буду вести себя тихо, оно уйдет...?){/size}"
-    hide screen bld1
-    with d3
-    hide screen thought 
-    with Dissolve(.3)
-    
-    $ walk_xpos=610 #Animation of walking chibi. (From) 610
-    $ walk_xpos2=360 #Coordinates of it's movement. (To) 360
-    
-    
-    
-    $ snapes_speed = 04.0 #The speed of moving the walking animation across the screen.
-    show screen snape_walk_01 
-    pause 4
-    show screen snape_02 #Snape stands still.
-    pause.5
-    show screen bld1
-    with Dissolve(.3)
-    $ tt_xpos=300 #Defines position of the Snape's full length sprite.
-    $ tt_ypos=0
-    $ s_sprite = "03_hp/10_snape_main/snape_01.png"
-    show screen snape_main
-    show screen ctc
-    with Dissolve(.3)
-    pause
-    hide screen ctc 
-    who2 "Альбус...есть минута?" 
-    hide screen snape_main 
-    
-#    show screen ctc
-#    pause
-#    pat "I hate to ask but its been bugging me for awhile."
-#    pat "What is your Guesstimated time of completion for the game?"
-#    pat "No pressure to give an answer if you don't want to."
-#    show screen snape_main
-#    with d3
-#    sna "Mister silvarius..."
-#    sna "This is your first strike..."
-#    sna "If I hear this question from you again, then it will cost your house 100 points."
-    
-#    hide screen snape_main
-#    with d3
-#    show screen emo
-#    her "Professor... *gulp!* I-- I can't breathe!"
-#    hide screen emo
-#    show screen snape_main
-#    with d3
-#    sna "I will be with you in a moment, miss Granger..."
-#    hide screen snape_main
-#    with d3
-#    show screen emo
-#    her "!!!"
-#    hide screen emo
-#    show screen snape_main
-#    with d3
-#    sna "I hope we came to an understanding, here, mister silvarius."
-#    sna "Didn't we?"
-    
 
-    m "{size=-3}(\"Альбус\"? Это, должно быть, мое имя, или это так люди этого мира приветствуют друг друга?){/size}"
+#    show screen snape_01 #Snape stands still.
+#    with Dissolve(.5)
+#    pause.3
+#    show screen bld1
+#    with d3
+#    $screens.Show("snape_01", Dissolve(.5))
+
+
+    $snape.chibi.State("door").Trans("blink")
+    pause.3
+    $screens.Show("bld1", d3)
+
+#    g4 "{size=-3}(Туземная форма жизни!?){/size}"
+#    hide screen bld1
+#    with d3
+
+    $hero(g4, "#(Туземная форма жизни!?)")
+    $screens.Hide("bld1", d3)
+
+
+
+#    $ tt_xpos=650
+#    $ tt_ypos=180
+#    show screen thought 
+#    with Dissolve(.3)
+#    pause 1
+#    show screen bld1
+#    with d3
+#    m "{size=-3}(Выглядит, как человек...){/size}"
+#    m "{size=-3}(Может быть, если я буду вести себя тихо, оно уйдет...?){/size}"
+#    hide screen bld1
+#    with d3
+#    hide screen thought 
+#    with Dissolve(.3)
+
+    $screens.Show("thought", d3, Position(xpos=650, ypos=180))
+    pause 1
+    $screens.Show("bld1", d3)
+    $hero(m,    "#(Выглядит, как человек...)",
+                "#(Может быть, если я буду вести себя тихо, оно уйдет...?)")
+    $screens.Hide(["bld1", "thought"], d3)
+
+
+    $snape.LoadDefItemSets() # Эта функция просто перечитывает значения из xml. Актуальна, если что
+
+    
+#    $ walk_xpos=610 #Animation of walking chibi. (From) 610
+#    $ walk_xpos2=360 #Coordinates of it's movement. (To) 360
+    
+#    $ snapes_speed = 04.0 #The speed of moving the walking animation across the screen.
+#    show screen snape_walk_01 
+#    pause 4
+#    show screen snape_02 #Snape stands still.
+#    pause.5
+#    show screen bld1
+#    with Dissolve(.3)
+
+    $snape.chibi.Trans("go center", "blink")
+    $screens.Show("bld1", d3)
+
+#    $ tt_xpos=300 #Defines position of the Snape's full length sprite.
+#    $ tt_ypos=0
+#    $ s_sprite = "03_hp/10_snape_main/snape_01.png"
+#    show screen snape_main
+#    show screen ctc
+#    with Dissolve(.3)
+#    pause
+
+
+    $snape.viewMode=3
+    $screens.Show("ctc", d3)
+    pause
+
+#    hide screen ctc 
+#    who2 "Альбус...есть минута?" 
+#    hide screen snape_main 
+
+    $screens.Hide("ctc", d3)
+    $snape(who2,    "Альбус...есть минута?")
+  
+#    m "{size=-3}(\"Альбус\"? Это, должно быть, мое имя, или это так люди этого мира приветствуют друг друга?){/size}"
+    $hero("#(\"Альбус\"? Это, должно быть, мое имя, или это так люди этого мира приветствуют друг друга?)",
+        "...")
+
     menu:
-        m "..."
+#        m "..."
+#        $hero("...")
         "\"На самом деле я немного занят.\"":
-            $ s_sprite = "03_hp/10_snape_main/snape_04.png"
-            show screen snape_main
-            with d3
-            who2 "Но ведь не постоянно?"                            
+#            $ s_sprite = "03_hp/10_snape_main/snape_04.png"
+#            show screen snape_main
+#            with d3
+#            who2 "Но ведь не постоянно?"
+            $snape("~snape_04", "Но ведь не постоянно?")                            
         "\"Конечно. Что там?\"":
             pass                       
         "\"И Альбус тоже.\"":
@@ -265,28 +276,30 @@ label event_00:
 label event_01: #First event in the game. Gennie finds himself at the desk.
     
     
-    show screen bld1
-    with d3
-    m "..................?"
-    m "Ваше высочество?"
-    m "......................................................."
-    g4 "Я сделал это снова?"
-    g4 "Телепортировал себя непонятно куда..."
-    m "Что с этими ингредиентами?"
-    m "Они, кажется, мощнее, чем я думал."
-    m "Ну, не важно что это за место, дел у меня тут нет..."
-    m "Лучше обернуть заклинание вспять, иначе принцесса будет снова злиться на меня..."
-    m "....................."
-    m "Хотя..."
-    m "Есть в этом месте что-то странное... это..."
-    m "Оно наполненно...."
-    g4 "{size=+5}МАГИЕЙ?!{/size}"
-    m "Да... магия, я чувствую. Такая мощная и в то же время..."
-    m "...чужая."
-    m "Интересно..."
-    m "Я думаю, необходимо осмотреться здесь..."
-    hide screen bld1
-    with d3
+#    show screen bld1
+#    with d3
+    $screens.Show("bld1", d3)
+    $hero(m,    "..................?",
+                "Ваше высочество?",
+                ".......................................................",
+          g4,   "Я сделал это снова?", 
+                "Телепортировал себя непонятно куда...", 
+          m,    "Что с этими ингредиентами?", 
+                "Похоже, они мощнее, чем я думал.", 
+                "Ну, не важно что это за место, дел у меня тут нет...", 
+                "Лучше обернуть заклинание вспять, иначе принцесса будет снова злиться на меня...", 
+                ".....................", 
+                "Хотя...", 
+                "Есть в этом месте что-то странное... это...", 
+                "Оно наполненно....", 
+                "МАГИЕЙ?!", 
+                "Да... магия, я чувствую. Такая мощная и в то же время...", 
+                "...чужая.", 
+                "Интересно...", 
+                "Думаю, нужно здесь осмотреться..."      )
+    $screens.Hide("bld1", d3)
+#    hide screen bld1
+#    with d3
     $this.event_01.Finalize()
     return
 ###############################################################################################################################################################
@@ -294,12 +307,15 @@ label event_02:
     $ letters += 1 #Adds one letter in waiting list to be read. Displays owl with envelope.
     #$ mail_from_her = True #Comented out because replaced with $ letters += 1 
     play sound "sounds/owl.mp3"  #Quiet...
-    show screen owl
-    show screen bld1
-    with d3
-    m "Что? Сова?"
-    hide screen bld1
-    with d3
+#    show screen owl
+#    show screen bld1
+#    with d3
+#    m "Что? Сова?"
+#    hide screen bld1
+#    with d3
+    $screens.Show(["owl", "bld1"], d3)
+    $hero("Что? Сова?")
+    $screens.Hide("bld1", d3)
     return
     
 ###############################################################################################################################################################

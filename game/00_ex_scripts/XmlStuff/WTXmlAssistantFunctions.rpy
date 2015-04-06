@@ -80,6 +80,12 @@
         s.CLEAR()
         s.read( sPath, i )
 
+        # preset storage
+        p = WTXmlLinker.p( linkerKey )
+        sPath = p.mDataPath
+        p.CLEAR()
+        p.read( sPath )
+
     def wtxml_updateItems( aCharacterEx ):
         linkerKey = aCharacterEx.mLinkerKey
         keys = aCharacterEx.mItems.keys()

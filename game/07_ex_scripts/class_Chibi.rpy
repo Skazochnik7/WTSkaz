@@ -14,6 +14,8 @@
                 x=self.x0
             self.Hide()
             renpy.show_screen(self.Name+"screen", self.Name+" "+image, self.x0, x, y, lag)
+#            if transition is not None:
+            renpy.with_statement( d3, None, True )
             renpy.pause(lag)
 
             self.x0=x
@@ -30,11 +32,13 @@
                 if len(self.__pars)>=2:
                     self.__State(self.__pars[1])
 
-                self.TransPos(self.__pars[0], self.__x, self.__y, abs(self.__x-self.x0)/self.speed)
+                self.TransPos(self.__pars[0], self.__x, self.__y, 0.0 if self.speed==0.0 else abs(self.__x-self.x0)/self.speed)
             return self
 
         def Hide(self):
             renpy.hide_screen(self.Name+"screen")
+#            if transition is not None:
+            renpy.with_statement( d3, None, True )
             return
 
         def State(self, x=None, y=None, speed=None):
@@ -45,16 +49,19 @@
             return self
 
         def __State(self, x=None, y=None, speed=None):
+            self.__speed=self.speed
+            self.__x=self.x0
+            self.__y=self.y0
             if isinstance( x, basestring ):
-                self.__x={"door":600,"center":400,"neardesk":200}[x]
-                self.__y={"door":0,"center":0,"neardesk":0}[x]
+                self.__x={"door":610,"center":360,"neardesk":200}[x]
+                self.__y={"door":210,"center":210,"neardesk":0}[x]
             else:
                 if x!=None:
                     self.__x=x
                 if y!=None:
                     self.__y=y
             if isinstance( speed, basestring ):
-                self.__speed={"walk":20.0}[speed]
+                self.__speed={"go":20.0}[speed]
             else:
                 if speed!=None:
                     self.__speed=speed
@@ -104,7 +111,7 @@ image chibidaphne blink:
         pause.08
     repeat
 
-image chibidaphne walk:
+image chibidaphne go:
     "03_hp/24_daphne/dap_walk_a1.png"
     pause.08
     "03_hp/24_daphne/dap_walk_a2.png"
@@ -124,11 +131,6 @@ image chibidaphne walk:
     repeat
 
 
-
-
-
-
-
 image daph blink:
     choice 12.0:
         "03_hp/animation/h_walk_01.png"
@@ -139,48 +141,32 @@ image daph blink:
     repeat
 
 
+# СНЕЙП
+screen chibisnapescreen( aImgs, x1=0, x2=0, y=0, lag=1.0 ):   
+    add aImgs at chibitrans(x1, x2, y, lag) #chibitrans(700, 200, 10.0) # Transform( pos = ( 500, 500 ) )  #at gSumPos( aPos, element.position )
 
-image daph walk2:
-    "03_hp/24_daphna/daf_walk_a1.png"
-    pause.08
-    "03_hp/24_daphna/daf_walk_a2.png"
-    pause.08
-    "03_hp/24_daphna/daf_walk_a3.png"
-    pause.08
-    "03_hp/24_daphna/daf_walk_a35.png"
-    pause.08
-    "03_hp/24_daphna/daf_walk_a3.png"
-    pause.08
-    "03_hp/24_daphna/daf_walk_a2.png"
-    pause.08
-    "03_hp/24_daphna/daf_walk_a1.png"
-    pause.08
-    "03_hp/24_daphna/daf_walk_a4.png"
-    pause.08
-    "03_hp/24_daphna/daf_walk_a5.png"
-    pause.08
-    "03_hp/24_daphna/daf_walk_a4.png"
-    pause.08
+image chibisnape go: #Default Snape walk animation. 
+    "03_hp/09_snape_ani/snape_02.png"
+    pause.18
+    "03_hp/09_snape_ani/snape_03.png"
+    pause.18
+    "03_hp/09_snape_ani/snape_02.png"
+    pause.18
+    "03_hp/09_snape_ani/snape_05.png"
+    pause.18
     repeat
-
-image daph walk:
-    "03_hp/24_daphna/daf_walk_a1.png"
-    pause.08
-    "03_hp/24_daphna/daf_walk_a2.png"
-    pause.08
-    "03_hp/24_daphna/daf_walk_a3.png"
-    pause.08
-    "03_hp/24_daphna/daf_walk_a2.png"
-    pause.08
-    "03_hp/24_daphna/daf_walk_a1.png"
-    pause.08
-    "03_hp/24_daphna/daf_walk_a4.png"
-    pause.08
-    "03_hp/24_daphna/daf_walk_a5.png"
-    pause.08
-    "03_hp/24_daphna/daf_walk_a4.png"
-    pause.08
-    repeat
-
         
+image chibisnape goout: #Default Snape walk animation. 
+    im.Flip("03_hp/09_snape_ani/snape_02.png", horizontal=True)     
+    pause.18
+    im.Flip("03_hp/09_snape_ani/snape_03.png", horizontal=True)     
+    pause.18
+    im.Flip("03_hp/09_snape_ani/snape_02.png", horizontal=True)     
+    pause.18
+    im.Flip("03_hp/09_snape_ani/snape_05.png", horizontal=True)     
+    pause.18
+    repeat
+
+image chibisnape blink: #Snape stands still near the door.
+    "03_hp/09_snape_ani/snape_0130.png" #at Position(xpos=610, ypos=210)
 

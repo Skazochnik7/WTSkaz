@@ -92,13 +92,22 @@ init -998 python:
         ##########################################################              
         
         # show hermione screen with saved parameters
+        # if aFace doesn't have '.' in self, this function assumes that you want to apply a preset with name aFace
         def showQ( self, aFace, aPos, aTransition = None ):
             if aFace is not None:
-                # now just change image on existing face-item
-                face = self.mData.getItemKey( 'face' )
-                if face != None:
-                    face.changeImage( WTXmlLinker.f( self.mData.mLinkerKey ).get( 'face' ), aFace, True )
-                #self.mData.addFace( CharacterExItem( self.mFaceFolder, aFace, G_Z_FACE ) )
+                #check for ignoring preset recognition mechanic
+                if aFace.startswith('#'):
+                    # we don't want to check for presets - just apply the image
+                    aFace = aFace[1:]
+                    self.mData.updateItemFrameKey( 'face', aFace )
+                else:
+                    # check for preset
+                    if '.' not in aFace:
+                        # apply preset!
+                        self.mData.applyPreset( aFace )
+                    else:
+                        # now just change image on existing face-item
+                        self.mData.updateItemFrameKey( 'face', aFace )
 
             #renpy.show_screen( "CharacterExViewScreen", self.mItems, aPos )
             self._showView( self.mData.mItems, aPos )
@@ -127,13 +136,9 @@ init -998 python:
         # helper methods
         ##########################################################     
         
-        
         # additional function for face to pass only file name
         def addFaceName( self, aFace ):
-            face = self.mData.getItemKey( 'face' )
-            if face != None:
-                face.changeImage( WTXmlLinker.f( self.mData.mLinkerKey ).get( 'face' ), aFace, True )
-            #self.mData.addItem( 'face', CharacterExItem( self.mFaceFolder, aFace, G_Z_FACE ) )
+            self.mData.updateItemFrameKey( 'face', aFace )
 
         ##########################################################
         # DO NOT CALL CALL THESE METHODS FROM THE OUTER CODE! ONLY FROM THE CLASS, THEY'RE INNER!

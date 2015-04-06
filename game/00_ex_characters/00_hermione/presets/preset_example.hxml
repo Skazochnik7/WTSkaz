@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<presets>
+	<preset name="example">
+	<!-- possible combinations of params:
+		<item> <key></key> <frame></frame> </item>
+		<item> <key></key> <style></style> </item>
+		<item> <name></name> <frame></frame> </item>
+		<item> <name></name> <style></style> </item>
+	-->
+		<item> <key>face</key> <frame>body_23.png</frame> </item>
+		<item> <name>item_skirt</name> <style>short</style> </item>
+	</preset>
+
+	<!-- can be more that one -->
+
+	<preset name="example2">
+		<item> <key>face</key> <frame>body_99.png</frame> </item>
+		<item> <name>item_skirt</name> <style>default</style> </item>
+	</preset>
+</presets>

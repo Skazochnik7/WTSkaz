@@ -85,7 +85,7 @@
                     return item
             return None
 
-
+        #===================================================#
         # add additional stuff on hermione ( permanent )
         def addItemDirect( self, aKey, aCharacterExItem ):
             self._addItem( aKey, aCharacterExItem )
@@ -105,7 +105,7 @@
         def addItemSet( self, aSetName, aStyle = 'default' ):
             self._applyToSet( aSetName, __EData_Add, aStyle )
 
-
+        #===================================================#
         # delete item by key
         def delItemKey( self, aKey ):
             self._delItem( aKey )
@@ -118,7 +118,7 @@
         def delItemSet( self, aSetName ):
             self._applyToSet( aSetName, __EData_Remove )
 
-
+        #===================================================#
         # show item by key
         def showItemKey( self, aKey, aSource = 'game' ):
             self._showItem( aKey, aSource )
@@ -132,7 +132,7 @@
         def showItemSet( self, aSetName, aSource = 'game' ):
             self._applyToSet( aSetName, __EData_Show, aSource )
 
-
+        #===================================================#
         # hide item by key
         def hideItemKey( self, aKey, aSource = 'game' ):
             self._hideItem( aKey, aSource )
@@ -145,7 +145,7 @@
         def hideItemSet( self, aSetName, aSource = 'game' ):
             self._applyToSet( aSetName, __EData_Hide, aSource )
 
-
+        #===================================================#
         # try to apply the style to all items. Only items which has such style will be affected
         def setStyleAll( self, aStyleName ):
             for item in self.mItems.values():
@@ -164,7 +164,7 @@
         def setStyleSet( self, aSetName, aStyleName ):
             self._applyToSet( aSetName, __EData_Style, aStyleName )
 
-
+        #===================================================#
         # return True, if the item with such name exists in items on given position
         def checkItemKeyName( self, aKey, aName ):
             if aKey in self.mItems.keys():
@@ -186,7 +186,31 @@
             key = self._getItemKeyByName( aItemName )
             return self.checkItemKeyStyle( key, aStyleName )
 
+        #===================================================#
+        # calling this will change the frame of the item
+        # will be acted like we removed the item and added a new one (for actions of items)
+        def updateItemFrameKey( self, aKey, aNewFrameName, aNewFrameFolder = None ):
+            if aKey in self.mItems.keys(): 
+                item = self.mItems[ aKey ]
+                frameFolder = aNewFrameFolder
+                if frameFolder == None:
+                    frameFolder = item.mFileFolder
+                item.changeImage( frameFolder, aNewFrameName, True )
 
+        # as previous, but instead key of item - the name of item is used to find the necessary item
+        def updateItemFrameName( self, aItemName, aNewFrameName, aNewFrameFolder = None ):
+            key = self._getItemKeyByName( aItemName )
+            self.updateItemFrameKey( key, aNewFrameName, aNewFrameFolder )
+
+        #===================================================#
+        # call this to apply preset for current items
+        def applyPreset( self, aPresetName ):
+            arrPresData = WTXmlLinker.p( self.mLinkerKey ).get( aPresetName )
+            if arrPresData:
+                for data in arrPresData:
+                    self._applyPresetData( data )
+
+        #===================================================#
         # call this to remove all items from character mItems
         def clear( self ):
             self.mItems.clear()
@@ -396,7 +420,25 @@
                     if key != None:
                         self.setStyleItem( name, aStringParam )
                                 
-
+        ##########################################################  
         # return key of item by it's name
         def _getItemKeyByName( self, aItemName ):
             return WTXmlLinker.i( self.mLinkerKey ).getItemKey( aItemName )
+
+        ##########################################################  
+        # apply one item from preset
+        def _applyPresetData( self, aPresetData ):
+            key = None
+            if aPresetData.mKey != None:
+                key = aPresetData.mKey
+            elif aPresetData.mName != None:
+                key = self._getItemKeyByName( aPresetData.mName )
+
+            if key != None:
+                if key in self.mItems.keys():
+                    item = self.mItems[ key ]
+
+                    if aPresetData.mFrame != None:
+                        self.updateItemFrameKey( key, aPresetData.mFrame )
+                    elif aPresetData.mStyle != None:
+                        self.setStyleKey( key, aPresetData.mStyle )
