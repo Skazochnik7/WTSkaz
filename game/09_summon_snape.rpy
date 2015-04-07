@@ -57,13 +57,14 @@ label summon_snape:
                 $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
                 jump snape_dates
         "Ничего.":
+            label snape_nothing:
             stop music fadeout 1.0
             $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
             if daytime:
-                sna "Хорошо, тогда я вернусь к работе..."
+                sna "Ну что ж, тогда я вернусь к работе..."
                 play music "music/Brittle Rille.mp3" fadein 1 fadeout 1
             else: 
-                sna "В таком случае, доброй ночи."
+                sna "Эмм... тогда доброй ночи."
                 play music "music/Music for Manatees.mp3" fadein 1 fadeout 1
             $ snape_busy = True
             hide screen snape_02 #Snape stands still.
@@ -751,5 +752,5 @@ label not_today:
     elif one_out_of_three == 3:
         sna "К сожалению, у меня другие планы. Может быть, в другой раз?"
     
-    jump snape_ready
+    jump snape_nothing
 

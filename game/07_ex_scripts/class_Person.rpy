@@ -10,19 +10,16 @@
 
             if defVals==None:
                 defVals={"liking":0, "whoring":0}
+            else:
+                defVals.update({"liking":0, "whoring":0})
 
             if charData!=None:
                 charData.clearState()
-#                viewInfo["view"].attach( viewInfo["vData"] )
-#                viewInfo["head"].pushScreenTag( 'head' )
-#                viewInfo["head"].attach( viewInfo["vData"] )
-
                 defVals.update({"vData": charData, 
                     "body": CharacterExView( 5, 
                         Character(caption, color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed"), "body"+Name ), 
                     "head": CharacterExView( 8, 
-                        Character(caption, color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed"), "head"+Name ),
-                    "pos": constVals["pos_def"], "pos2": constVals["pos2_def"]
+                        Character(caption, color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed"), "head"+Name )
                     })
 
                 defVals["body"].attach( charData )
@@ -90,7 +87,10 @@
         def Face(self, s):
 # При подключении Гермионы, поставить условие - если есть точка в параметре - значит это имя файла и нужно не стили менять, а грузить сразу файл лица
             if not " " in s:
-                self.body.data().setStyleKey( "face", "face_"+s )
+                if "." in s:
+                    self.body.addFaceName( s )
+                else:
+                    self.body.data().setStyleKey( "face", "face_"+s )
             else:
 
                 self.__temp=s.split(" ")
@@ -134,7 +134,7 @@
             return s
 
 
-        def Visibility(self, talkingView=None, isTalking=True, transition=None):
+        def Visibility(self, talkingView=" ", isTalking=True, transition=None):
 #            self.talkingView=talkingView
 #            self.anothertalkingView=anothertalkingView
             self.SetValue("talkingView", talkingView)

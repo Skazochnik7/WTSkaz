@@ -5,8 +5,9 @@
     __EData_Hide = 3
     __EData_Style = 4
 
+    import re
+    from copy import deepcopy
 
-    from copy import deepcopy 
     class CharacterExData(store.object):
         # constructor - memorizing Character object
         def __init__( self, aLinkerKey ):
@@ -88,21 +89,31 @@
         #===================================================#
         # add additional stuff on hermione ( permanent )
         def addItemDirect( self, aKey, aCharacterExItem ):
+            # debug
+            CharacterExDebuger.Log( 'CharacterExData::addItemDirect: aKey = ' + aKey )
+            if not aCharacterExItem:
+                CharacterExDebuger.LogE( 'CharacterExData::addItemDirect: aCharacterExItem = None' )
             self._addItem( aKey, aCharacterExItem )
 
         # add item to character with specific key
         def addItemKey( self, aKey, aName, aStyle = 'default' ):
+            # debug
+            CharacterExDebuger.Log( 'CharacterExData::addItemKey: aKey = ' + aKey + ', aName = ' + aName + ', aStyle = ' + aStyle )
             newItem = WTXmlLinker.c( self.mLinkerKey ).create( aName, aStyle )
             if newItem[0] != None:
                 self.addItemDirect( aKey, newItem[0] )
 
         # add item to character, key info is get from item's data
         def addItem( self, aName, aStyle = 'default' ):
+            # debug
+            CharacterExDebuger.Log( 'CharacterExData::addItem: aName = ' + aName + ', aStyle = ' + aStyle )            
             newItem = WTXmlLinker.c( self.mLinkerKey ).create( aName, aStyle )
             if newItem[0] != None:
                 self.addItemDirect( newItem[0].mKey, newItem[0] )
 
         def addItemSet( self, aSetName, aStyle = 'default' ):
+            # debug
+            CharacterExDebuger.Log( 'CharacterExData::addItemSet: aSetName = ' + aSetName + ', aStyle = ' + aStyle )
             self._applyToSet( aSetName, __EData_Add, aStyle )
 
         #===================================================#
@@ -204,11 +215,16 @@
 
         #===================================================#
         # call this to apply preset for current items
-        def applyPreset( self, aPresetName ):
-            arrPresData = WTXmlLinker.p( self.mLinkerKey ).get( aPresetName )
-            if arrPresData:
-                for data in arrPresData:
-                    self._applyPresetData( data )
+        def applyPreset( self, aPresetName, aActualTemplateParams = None ):
+            preset = WTXmlLinker.p( self.mLinkerKey ).get( aPresetName )
+            if preset:
+                actualsArray = aActualTemplateParams
+                # if the actual params variable is string - split it into string array
+                if isinstance( aActualTemplateParams, basestring ):
+                    actualsArray = re.split( ',|\.| ', aActualTemplateParams )
+                presetItems = preset.getItems( actualsArray )
+                for item in presetItems:
+                    self._applyPresetItem( item )
 
         #===================================================#
         # call this to remove all items from character mItems
@@ -427,18 +443,18 @@
 
         ##########################################################  
         # apply one item from preset
-        def _applyPresetData( self, aPresetData ):
+        def _applyPresetItem( self, aPresetItem ):
             key = None
-            if aPresetData.mKey != None:
-                key = aPresetData.mKey
-            elif aPresetData.mName != None:
-                key = self._getItemKeyByName( aPresetData.mName )
+            if aPresetItem.mKey != None:
+                key = aPresetItem.mKey
+            elif aPresetItem.mName != None:
+                key = self._getItemKeyByName( aPresetItem.mName )
 
             if key != None:
                 if key in self.mItems.keys():
                     item = self.mItems[ key ]
 
-                    if aPresetData.mFrame != None:
-                        self.updateItemFrameKey( key, aPresetData.mFrame )
-                    elif aPresetData.mStyle != None:
-                        self.setStyleKey( key, aPresetData.mStyle )
+                    if aPresetItem.mFrame != None:
+                        self.updateItemFrameKey( key, aPresetItem.mFrame )
+                    elif aPresetItem.mStyle != None:
+                        self.setStyleKey( key, aPresetItem.mStyle )

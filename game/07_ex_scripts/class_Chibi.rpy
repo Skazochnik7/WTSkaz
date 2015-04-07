@@ -14,8 +14,8 @@
                 x=self.x0
             self.Hide()
             renpy.show_screen(self.Name+"screen", self.Name+" "+image, self.x0, x, y, lag)
-#            if transition is not None:
-            renpy.with_statement( d3, None, True )
+            if self.__transition is not None:
+                renpy.with_statement( self.__transition, None, True ) # Будет последняя использованная transition
             renpy.pause(lag)
 
             self.x0=x
@@ -24,21 +24,25 @@
 
         def Trans(self, arg1, arg2=None, arg3=None, arg4=None, arg5=None):
             self.__args=[arg1, arg2, arg3, arg4, arg5]
+            self.__transition=None
 
             for o in self.__args:
                 if o==None:
                     break
-                self.__pars=o.split(" ")
-                if len(self.__pars)>=2:
-                    self.__State(self.__pars[1])
+                if isinstance( o, basestring ):
+                    self.__pars=o.split(" ")
+                    if len(self.__pars)>=2:
+                        self.__State(self.__pars[1])
 
-                self.TransPos(self.__pars[0], self.__x, self.__y, 0.0 if self.speed==0.0 else abs(self.__x-self.x0)/self.speed)
+                    self.TransPos(self.__pars[0], self.__x, self.__y, 0.0 if self.speed==0.0 else abs(self.__x-self.x0)/self.__speed)
+                else:
+                    self.__transition=o
             return self
 
-        def Hide(self):
+        def Hide(self, transition=None):
             renpy.hide_screen(self.Name+"screen")
-#            if transition is not None:
-            renpy.with_statement( d3, None, True )
+            if transition is not None:
+                renpy.with_statement( transition, None, True )
             return
 
         def State(self, x=None, y=None, speed=None):
@@ -53,15 +57,15 @@
             self.__x=self.x0
             self.__y=self.y0
             if isinstance( x, basestring ):
-                self.__x={"door":610,"center":360,"neardesk":200}[x]
-                self.__y={"door":210,"center":210,"neardesk":0}[x]
+                self.__x=self.GetValue(x)[0]
+                self.__y=self.GetValue(x)[1]
             else:
                 if x!=None:
                     self.__x=x
                 if y!=None:
                     self.__y=y
             if isinstance( speed, basestring ):
-                self.__speed={"go":20.0}[speed]
+                self.__speed={"go":60.0}[speed]
             else:
                 if speed!=None:
                     self.__speed=speed
@@ -92,7 +96,7 @@
 
 
 
-
+# ДАФНА =========================
 screen chibidaphnescreen( aImgs, x1=0, x2=0, y=0, lag=1.0 ):   
     add aImgs at chibitrans(x1, x2, y, lag) #chibitrans(700, 200, 10.0) # Transform( pos = ( 500, 500 ) )  #at gSumPos( aPos, element.position )
 
@@ -141,7 +145,7 @@ image daph blink:
     repeat
 
 
-# СНЕЙП
+# СНЕЙП ======================
 screen chibisnapescreen( aImgs, x1=0, x2=0, y=0, lag=1.0 ):   
     add aImgs at chibitrans(x1, x2, y, lag) #chibitrans(700, 200, 10.0) # Transform( pos = ( 500, 500 ) )  #at gSumPos( aPos, element.position )
 
@@ -170,3 +174,62 @@ image chibisnape goout: #Default Snape walk animation.
 image chibisnape blink: #Snape stands still near the door.
     "03_hp/09_snape_ani/snape_0130.png" #at Position(xpos=610, ypos=210)
 
+
+# ГЕРМИОНА ======================
+screen chibihermionescreen( aImgs, x1=0, x2=0, y=0, lag=1.0 ):   
+    add aImgs at chibitrans(x1, x2, y, lag) #chibitrans(700, 200, 10.0) # Transform( pos = ( 500, 500 ) )  #at gSumPos( aPos, element.position )
+
+image chibihermione blink:
+    "03_hp/animation/h_walk_01.png"
+    pause 2
+    "03_hp/animation/h_walk_06.png"
+    pause.08
+    "03_hp/animation/h_walk_01.png"
+    pause 5
+    "03_hp/animation/h_walk_06.png"
+    pause.08
+    "03_hp/animation/h_walk_01.png"
+    pause.08
+    "03_hp/animation/h_walk_06.png"
+    pause.08
+    "03_hp/animation/h_walk_01.png"
+    pause 3
+    repeat
+
+image chibihermione go: #Default Snape walk animation. 
+    "03_hp/animation/h_walk_01.png"
+    pause.08
+    "03_hp/animation/h_walk_02.png"
+    pause.08
+    "03_hp/animation/h_walk_03.png"
+    pause.08
+    "03_hp/animation/h_walk_02.png"
+    pause.08
+    "03_hp/animation/h_walk_01.png"
+    pause.08
+    "03_hp/animation/h_walk_04.png"
+    pause.08
+    "03_hp/animation/h_walk_05.png"
+    pause.08
+    "03_hp/animation/h_walk_04.png"
+    pause.08
+    repeat
+        
+image chibihermione goout: #Default Snape walk animation. 
+    im.Flip("03_hp/animation/h_walk_01.png", horizontal=True)
+    pause.08
+    im.Flip("03_hp/animation/h_walk_02.png", horizontal=True)
+    pause.08
+    im.Flip("03_hp/animation/h_walk_03.png", horizontal=True)
+    pause.08
+    im.Flip("03_hp/animation/h_walk_02.png", horizontal=True)
+    pause.08
+    im.Flip("03_hp/animation/h_walk_01.png", horizontal=True)
+    pause.08
+    im.Flip("03_hp/animation/h_walk_04.png", horizontal=True)
+    pause.08
+    im.Flip("03_hp/animation/h_walk_05.png", horizontal=True)
+    pause.08
+    im.Flip("03_hp/animation/h_walk_04.png", horizontal=True)
+    pause.08
+    repeat 

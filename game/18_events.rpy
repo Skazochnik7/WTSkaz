@@ -6,259 +6,100 @@ label event_00:
     #show screen snape_01 #OWL SITTING ON A PACKAGE.
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
 
-#    show screen snape_01 #Snape stands still.
-#    with Dissolve(.5)
-#    pause.3
-#    show screen bld1
-#    with d3
-#    $screens.Show("snape_01", Dissolve(.5))
-
-
-    $snape.chibi.State("door").Trans("blink")
+    $snape.chibi.State("door", speed="go").Trans("blink")
     pause.3
     $screens.Show("bld1", d3)
 
-#    g4 "{size=-3}(Туземная форма жизни!?){/size}"
-#    hide screen bld1
-#    with d3
-
     $hero(g4, "#(Туземная форма жизни!?)")
+
     $screens.Hide("bld1", d3)
-
-
-
-#    $ tt_xpos=650
-#    $ tt_ypos=180
-#    show screen thought 
-#    with Dissolve(.3)
-#    pause 1
-#    show screen bld1
-#    with d3
-#    m "{size=-3}(Выглядит, как человек...){/size}"
-#    m "{size=-3}(Может быть, если я буду вести себя тихо, оно уйдет...?){/size}"
-#    hide screen bld1
-#    with d3
-#    hide screen thought 
-#    with Dissolve(.3)
-
     $screens.Show("thought", d3, Position(xpos=650, ypos=180))
     pause 1
     $screens.Show("bld1", d3)
+
     $hero(m,    "#(Выглядит, как человек...)",
                 "#(Может быть, если я буду вести себя тихо, оно уйдет...?)")
+
     $screens.Hide(["bld1", "thought"], d3)
 
-
-    $snape.LoadDefItemSets() # Эта функция просто перечитывает значения из xml. Актуальна, если что
-
-    
-#    $ walk_xpos=610 #Animation of walking chibi. (From) 610
-#    $ walk_xpos2=360 #Coordinates of it's movement. (To) 360
-    
-#    $ snapes_speed = 04.0 #The speed of moving the walking animation across the screen.
-#    show screen snape_walk_01 
-#    pause 4
-#    show screen snape_02 #Snape stands still.
-#    pause.5
-#    show screen bld1
-#    with Dissolve(.3)
+    $snape.LoadDefItemSets() # Эта функция просто перечитывает значения из xml. Актуальна, если что-то поменялось в наборах xml при отладке
 
     $snape.chibi.Trans("go center", "blink")
     $screens.Show("bld1", d3)
-
-#    $ tt_xpos=300 #Defines position of the Snape's full length sprite.
-#    $ tt_ypos=0
-#    $ s_sprite = "03_hp/10_snape_main/snape_01.png"
-#    show screen snape_main
-#    show screen ctc
-#    with Dissolve(.3)
-#    pause
-
-
     $snape.Visibility("body", Dissolve(.5))
-
-#    hide screen ctc 
-#    who2 "Альбус...есть минута?" 
-#    hide screen snape_main 
-
     $screens.ShowHide("ctc", 0.0, d3)
-#    $screens.Hide("ctc", d3)
+
     $snape("~01",    who2, "Альбус... есть минута?")
-  
-#    m "{size=-3}(\"Альбус\"? Это, должно быть, мое имя, или это так люди этого мира приветствуют друг друга?){/size}"
     $hero("#(\"Альбус\"? Это, должно быть, мое имя, или это так люди этого мира приветствуют друг друга?)")
 
     menu:
-#        $hero.curchar "..."
         m "..."
-#        $hero("...")
         "\"На самом деле я немного занят.\"":
-#            $ s_sprite = "03_hp/10_snape_main/snape_04.png"
-#            show screen snape_main
-#            with d3
-#            who2 "Но ведь не постоянно?"
             $snape("~04", who2, "Но ведь не постоянно?")                            
         "\"Конечно. Что там?\"":
             pass                       
         "\"И Альбус тоже.\"":
-#            $ s_sprite = "03_hp/10_snape_main/snape_05.png"
-#            show screen snape_main
-#            with d3
-#            who2 "Что?"
-#            $ s_sprite = "03_hp/10_snape_main/snape_04.png"
-#            who2 "Альбус, я не в настроении для ваших... издевательств."
             $snape("~05", who2, "Что?",
                    "~04", who2, "Альбус, я не в настроении для ваших... издевательств.") 
         "\"Отведи меня к своему боссу.\"":
-#            $ s_sprite = "03_hp/10_snape_main/snape_01.png"
-#            show screen snape_main
-#            with d3
-#            who2 "Что?"
-#            hide screen snape_main
-#            with d3
-#            $ s_sprite = "03_hp/10_snape_main/snape_01.png"
-#            show screen snape_main
-#            with d3
-#            who2 "Хм...?"
-#            who2 "Вы имели в виду министра магии?"
-#            hide screen snape_main
-#            with d3
-#            $ s_sprite = "03_hp/10_snape_main/snape_03.png"
-#            show screen snape_main
-#            with d3
-#            who2 "Я хотел бы избежать каких-либо дел с этими бюрократами..."
-#            m "Ладно, проехали... Как я могу помочь тебе?"
-
             $snape("~01", who2, "Что?",
                                 "Хм...",
                                 "Вы имели в виду министра магии?",
                    "~03", who2, "Я бы предпочел не иметь дел с этими бюрократами...")
-            $hero("Ладно, проехали... Как я могу помочь тебе?")
+            $hero("Ладно, проехали... Чем могу помочь?")
+
             
-#    $ s_sprite = "03_hp/10_snape_main/snape_06.png"
-#    who2 "У меня есть важный разговор к вам..."
-#    who2 "Я думаю, нам стоит пересмотреть политику допуска." 
-#    hide screen snape_main
-#    with d2
-#    m "................?"
-#    $ s_sprite = "03_hp/10_snape_main/snape_03.png"
-#    show screen snape_main
-#    with d2
-#    who2 "Половина моих...так называемых \"учеников\" не что иное, как раздражающие личинки, которые портят мне жизнь день ото дня"
-#    hide screen snape_main
-#    with d2
-#    m "................"
-#    $ s_sprite = "03_hp/10_snape_main/snape_07.png"
-#    show screen snape_main
-#    who2 "Большинство из них из \"Гриффиндора\", конечно же..." 
-#    hide screen snape_main
-#    with d2
-#    m "......?"
-
     $snape("~06", who2, "У меня есть важный разговор к вам...",
-                        "Я думаю, нам стоит пересмотреть политику допуска.")
-    $hero("................?")
-    $snape("~03", who2, "Половина моих...так называемых \"учеников\" просто надоедливые личинки, которые портят каждый день моей жизни.")
-    $hero("................")
-    $snape("~07", who2, "Большинство из них из \"Гриффиндора\", конечно же...")
-    $hero("......?")
-
-
-#    show screen snape_main
-#    who2 "Несчастные Уизли, шумная Грейнджер и, конечно же, герой всех несовершеннолетних правонарушителей...."
-#    $ s_sprite = "03_hp/10_snape_main/snape_08.png"
-#    who2 "{size=+3}Мальчишка Поттер!{/size}"
-#    $ s_sprite = "03_hp/10_snape_main/snape_01.png"
-#    who2 "Запомни мои слова, Альбус. \"Гриффиндор\" станет погибелью для это школы!"
-#    hide screen snape_main
-#    m "...................."
-#    show screen snape_main
-#    who2 "Многие из них не представляют абсолютно ничего!"
-#    $ s_sprite = "03_hp/10_snape_main/snape_06.png"
-#    who2 "И если этого не достаточно, то вот: они распространили разные слухи о преподавателях!"
-#    who2 "В частности и о вашем покорном слуге..."
-#    hide screen snape_main
-#    m "......................"
-#    $ s_sprite = "03_hp/10_snape_main/snape_05.png"
-#    show screen snape_main
-#    who2 "Вы ведь не верите в эти слухи, так, Альбус?"
-#    hide screen snape_main
-
-    $snape(             "Несчастные Уизли, шумная Грейнджер и, конечно же, герой всех несовершеннолетних правонарушителей....",
+                        "Я думаю, нам стоит пересмотреть условия приема и отчисления.")
+    $hero(              "................?")
+    $snape("~03", who2, "Половина моих...так называемых \"учеников\" просто надоедливые личинки, которые отравляют каждый день моей жизни.")
+    $hero(              "................")
+    $snape("~07", who2, "Почти все они из \"Гриффиндора\", конечно же...")
+    $hero(              "......?")
+    $snape( "~07", who2,"Жалкие Уизли, шумная Грейнджер и, конечно же, герой всех несовершеннолетних правонарушителей....",
             "~08", who2,"МАЛЬЧИШКА ПОТТЕР!",
-            "~01", who2,"Запомни мои слова, Альбус. \"Гриффиндор\" станет погибелью для это школы!")
-    $hero("......................")
+            "~01", who2,"Запомни мои слова, Альбус. \"Гриффиндор\" станет погибелью этой школы!")
+    $hero(              "......................")
 
-    $snape(             "Большинство из них абсолютно ничего из себя не представляют!",
-            "~06", who2,"И мало того: они распространяют всякие грязные слухи о преподавателях!",
-                        "В том числе и о вашем покорном слуге...")
-    $hero("......................")
-    $snape("~05", who2,"Вы ведь не верите в эти слухи, правда, Альбус?")
-
-
-
-
-
+    $snape( "~01", who2,"Как маги они - нули без палочки!",
+            "~06", who2,"Сидели бы себе тихо, но нет, они еще и распространяют грязные слухи о преподавателях!",
+                        "В том числе о вашем покорном слуге...")
+    $hero(              "......................")
+    $snape("~05", who2,"Вы ведь не верите этим слухам, правда, Альбус?")
 
     menu:
         m ".............."
         "\"Ну, нет конечно!\"":
-#            $ s_sprite = "03_hp/10_snape_main/snape_09.png"
-#            show screen snape_main
-#            sna "Хорошо..."
-#            sna "Вы знаете меня лучше, чем я сам. Меня бы не волновали такие вещи..."
             $snape( "~09", who2,"Хорошо...",
-                                "Вы знаете меня лучше, чем я сам. Меня бы не волновали такие вещи...")
+                                "Вы слишком хорошо меня знаете, чтобы верить в это... Мне не стоило переживать...")
         "\"Не бывает дыма без огня.\"":
-#            $ s_sprite = "03_hp/10_snape_main/snape_10.png"
-#            show screen snape_main
-#            who2 "Альбус!? Вы серьезно?!"
-#            who2 "Я вам говорю, это все грязная ложь!"
             $snape( "~10", who2,"Альбус!? Вы серьезно?!",
-                                "Говорю вам, это все грязная ложь!")
+                                "Это все грязная ложь, уверяю вас!")
 
-#    hide screen snape_main
-#    m "........................."
-#    $ s_sprite = "03_hp/10_snape_main/snape_04.png"
-#    show screen snape_main
-#    who2 "Ну, эти жалкие дети достали меня сегодня, я думаю, что следует отдохнуть от всего сегодня."
-#    $ s_sprite = "03_hp/10_snape_main/snape_09.png"
-#    who2 "................"
     
     $hero(".........................")
-    $snape( "~04", who2,"Ну, эти жалкие дети достали меня сегодня, я думаю, что следует отдохнуть от всего сегодня.",
+    $snape( "~04", who2,"Эти жалкие дети совершенно достали меня. Думаю, стоит отдохнуть от всего этого сегодня.",
             "~09", who2,"................")
     
+    $snape.Visibility("body", False, Dissolve(.5))
+
+
     stop music fadeout 1.0
-
-    
-#    hide screen snape_main
-
-#    hide screen bld1
-#    with d3
     $screens.Hide(["bld1"], d3)
-
-
-    $ walk_xpos=360 #Animation of walking chibi. (From desk) 360 
-    $ walk_xpos2=610 #Coordinates of it's movement. (To the door) 610
-    $ snapes_speed = 03.0 #The speed of moving the walking animation across the screen. Default - .03
-    show screen snape_walk_01_f 
-    pause 3
+    $snape.chibi.Trans("goout door")
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    hide screen snape_walk_01_f 
-    with d4
+    $snape.chibi.Hide(d4)
     pause.5
-    show screen bld1
-    with d3
-    m "Хм..."
-    m "И так, этот высокий задумчивый парень принял меня за другого...?"
-    m "Следовательно я, по всей вероятности, под действием маскирующего заклинания..."
-    m "........."
-    m "В свою очередь я - джинн, замаскированный под человека, который, в свою очередь, замаскирован под другого человека..."
-    m "Нет, все это очень глупо..."
-    a4 "Заткнись! Никто не понимает истинных гениев."
-    
-    
+    $screens.Show("bld1", d3)
+
+    $hero(  "Хм...",
+            "Итак, этот высокий задумчивый парень принял меня за другого...?",
+            "Следовательно я, по всей вероятности, под действием маскирующего заклинания...",
+            ".........",
+            "В свою очередь я - джинн, замаскированный под человека, который, в свою очередь, замаскирован под другого человека...",
+            "Нет, все это очень глупо...",
+        a4, "Заткнись! Никто не понимает истинных гениев.", m)
+
     $ days_without_an_event = 0
     
     $this.event_02.Finalize() # Сюда попадаем из ивента event_02
@@ -1301,110 +1142,145 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     pause 1
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
     "*Тук-тук-тук*"
-    m "Хах?"
+    $hero("Хах?")
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
     "*Тук-тук-тук*"
     pause.7
-    m "Кто-то стучит в дверь..."
-    m "Черт... Я должен избегать любых контактов с людьми!"
-    m "Хм... Каковы шансы, что это стучится не человек?"
-    m "Ага, достаточно малы..."
+
+    $hero("Кто-то стучит в дверь...",
+            "Черт... Я должен избегать любых контактов с людьми!",
+            "Хм... Каковы шансы, что это стучится не человек?",
+            "Ага, достаточно малы...")
+
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
     "*Тук-тук-тук*"
-    m "Настойчивый ублюдок..."
+
+    $hero("Настойчивый ублюдок...")
     $ d_flag_01 = False #When False Genie doesn't know Hermione's name.
     $ d_flag_02 = False #When TRUE Genie knows it's a girl knocking on the door.
+    $hermi(who)
     menu:
         m "..."
         "\"Кто это?\"":
             $ d_flag_01 = True
-            who "Это я, профессор..."
-            who "Гермиона Грейнджер. Могу я войти?"
-            m "{size=-4}(Это та девка, которая засыпала меня своими письмами...){/size}"
+            $hermi("Это я, профессор...",
+                         "Гермиона Грейнджер. Могу я войти?")
+            $hero("#(Это та девка, которая засыпала меня своими письмами...)")
+            $hermi(her)
             menu: 
                 m "..."
                 "\"Уходи, пожалуйста. Я занят.\"":
-                    her "Но, профессор, мне действительно нужно поговорить с вами..."
-                    m "..........................................."
-                    her "Профессор? Я вхожу!"
-                    m "{size=-4}(Дерьмо...){/size}"
+                    jump event_08_saygoout
                 "\"Да, да. Конечно входи.\"":
                     pass          
         "\"Входите!\"":
             pass
         "\"Уходи!\"":
+            label event_08_saygoout:
             $ d_flag_02 = True #When TRUE Genie knows it's a girl knocking on the door.
-            who "Но, профессор, мне действительно нужно поговорить с вами..."
-            m "..........................................."
-            who "Профессор? Я вхожу!"
-            m "{size=-4}(Дерьмо...){/size}"
+            $hermi("Но, профессор, мне действительно нужно поговорить с вами...")
+            $hero("...........................................")
+            $hermi("Профессор? Я вхожу!")
+            $hero("#(Дерьмо...)")
         "\"................\"":
-            $ d_flag_02 = True #When TRUE Genie knows it's a girl knocking on the door.
-            who "Профессор, вы здесь?"
-            m "{size=-4}(Уходи...){/size}"
-            who "Но, профессор, мне действительно нужно поговорить с вами..."
-            m "..........................................."
-            her "Профессор? Я вхожу!"
-            m "{size=-4}(Дерьмо...){/size}"
+            $hermi("Профессор, вы здесь?")
+            $hero("#(Уходи...)")
+            jump event_08_saygoout
 
 
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+
     $ hermione_chibi_xpos = 610
     $ hermione_chibi_ypos = 250
-    show screen hermione_02 #Hermione stands still.
-    with Dissolve(.5)
+#    show screen hermione_02 #Hermione stands still.
+#    with Dissolve(.5)
+    $hermi.chibi.State("door", speed="go").Trans(Dissolve(.5), "blink")
+    
+
     pause.3
     if not d_flag_01:
         m "?!!"
     if not d_flag_02: #When TRUE Genie knows it's a girl knocking on the door.
         m "{size=-3}(Девочка?){/size}"
         
-    play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
+    play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1
+
+
     $ walk_xpos=610 #Animation of walking chibi. (From)
     $ walk_xpos2=400 #Coordinates of it's movement. (To)
-    $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01 
-    pause 3
+#    $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
+#    show screen hermione_walk_01 
+#    pause 3
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+#    show screen hermione_02 #Hermione stands still.
+
+    $hermi.chibi.Trans("go center", "blink")
+
     pause.5
-    show screen bld1
-    with Dissolve(.3)
+#    show screen bld1
+#    with Dissolve(.3)
+    $screens.Show(d3, "bld1" )
+
     
     $ pos = POS_370
-    $herView.showQ( "body_01.png", pos )
-    show screen hermione_02
-    show screen ctc
-    with Dissolve(.3)
+#    $herView.showQ( "body_01.png", pos )
+#    show screen hermione_02
+#    $hermi("~body_01.png")
+#    "fvknc vjbcj"
+    $hermi.Visibility("body+", d3)
+
+#    $hermi("~body_01.png") #, "Вы ведь не верите этим слухам, правда, Альбус?")
+#    show screen ctc
+#    with Dissolve(.3)
+
+    $screens.Show(d3, "ctc")
     pause
-    $herView.hideshowQQ( "body_03.png", pos )
-    her "Доброе утро профессор."
+
+#    $herView.hideshowQQ( "body_03.png", pos )
+#    her "Доброе утро профессор."
+    $hermi("Доброе утро профессор.","~body_03.png")
     hide screen ctc
     menu:
         "\"Доброе утро... девочка.\"":
-            her "{size=-4}(\"Девочка\"?){/size}"
-            pass
+#            her "{size=-4}(\"Девочка\"?){/size}"
+#            pass
+            $hermi("#(\"Девочка\"?)")
         "\"Доброе утро, Гермиона.\"" if d_flag_01:
             pass
         "\"Доброе утро, Дитя.\"":
-            her "{size=-4}(\"Дитя\"...?){/size}"
+#            her "{size=-4}(\"Дитя\"...?){/size}"
+            $hermi("#(\"Дитя\"?)")
         "\"................................\"":
             pass
-    her "Я была очень занята, но сегодня утром у меня есть немного времени, чтобы встретится с вами, профессор."
-    her "Вы, наверное, знаете, почему я здесь."
-    $herView.hideshowQQ( "body_04.png", pos )
-    her "Тот вопрос, на который я безуспешно пыталась обратить Ваше внимание в последнее время..."
-    her "Я не могу понять, почему вы ничего не предпринимаете, чтобы остановить это!"
-    her "Это не может больше продолжаться!"
-    $herView.hideshowQQ( "body_02.png", pos )
-    her "Такого рода неравенство начинает сказываться на факультетах..."
-    her "Все потому, что мы более сплоченны, нежели остальные..."
-    her "Как вы думаете, это справедливо, что те кто заслуживают быть лидерами, отстают от других?"
-    her "Как вы думаете? Справедливо?"
-    $herView.hideshowQQ( "body_03.png", pos )
-    m "{size=-4}(Вы только посмотрите на эту миленькую девчушку){/size}"
-    m "{size=-4}(Только посмотрите ... Она восхитительна.){/size}"
-    m "{size=-4}(Черт, я не видел женщину целую неделю){/size}"
+#    her "Я была очень занята, но сегодня утром у меня есть немного времени, чтобы встретится с вами, профессор."
+#    her "Вы, наверное, знаете, почему я здесь."
+#    $herView.hideshowQQ( "body_04.png", pos )
+#    her "Тот вопрос, на который я безуспешно пыталась обратить Ваше внимание в последнее время..."
+#    her "Я не могу понять, почему вы ничего не предпринимаете, чтобы остановить это!"
+#    her "Это не может больше продолжаться!"
+#    $herView.hideshowQQ( "body_02.png", pos )
+#    her "Такого рода неравенство начинает сказываться на факультетах..."
+#    her "Все потому, что мы более сплоченны, нежели остальные..."
+#    her "Как вы думаете, это справедливо, что те кто заслуживают быть лидерами, отстают от других?"
+#    her "Как вы думаете? Справедливо?"
+#    $herView.hideshowQQ( "body_03.png", pos )
+#    m "{size=-4}(Вы только посмотрите на эту миленькую девчушку){/size}"
+#    m "{size=-4}(Только посмотрите ... Она восхитительна.){/size}"
+#    m "{size=-4}(Черт, я не видел женщину целую неделю){/size}"
+    $hermi(                 "Я была очень занята, но сегодня утром у меня есть немного времени, чтобы встретится с вами, профессор.",
+                            "Вы, наверное, знаете, почему я здесь.",
+            "~body_04.png", "Тот вопрос, на который я безуспешно пыталась обратить Ваше внимание в последнее время...",
+                            "Я не могу понять, почему вы ничего не предпринимаете, чтобы остановить это!",
+            "~body_02.png", "Такого рода неравенство начинает сказываться на факультетах...",
+                            "Все потому, что мы более сплоченны, нежели остальные...",
+                            "Как вы думаете, это справедливо, что те кто заслуживают быть лидерами, отстают от других?",
+                            "Как вы думаете? Справедливо?", 
+            "~body_03.png")
+    $hero("#(Вы только посмотрите на эту очаровашку!)",
+            "#(Только посмотрите ... Она восхитительна!)",
+            "#(Великие пески, я не видел женщину целую неделю!)")
+
+
     menu:
         "\"(Подрочить под столом, пока она говорит.)\"":
             $ jerk_off_session = True #Affects next conversation with Snape.
@@ -1413,52 +1289,81 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
             $ d_flag_01 = False #NOT JERKING OFF.
             pass
     if d_flag_01:
-        $herView.hideQ()
-        hide screen bld1
-        with d3
-        show screen blktone8
-        with d3
+#        $herView.hideQ()
+        $hermi.Visibility()
+#        hide screen bld1
+#        with d3
+        $screens.Hide("bld1", d3).Show(d3, "blktone8" )
+#        show screen blktone8
+#        with d3
         ">Вы опустили руки под стол и обхватили свой член..."
-        hide screen blktone8
-        with d3
-        hide screen genie
-        show screen genie_jerking_off
-        with d3
-    m "Да, продолжай, дорогая."
-    $herView.showQ( "body_05.png", pos )
-    show screen bld1
-    with d3
-    her "\"Да\"?! То есть это справедливо?"
-    m "О, конечно нет, я хотел сказать \"нет\". Но все равно продолжай..."
-    $herView.hideshowQQ( "body_03.png", pos )
-    her "Стало легче на душе. Я рада, что вы согласны со мной, профессор..."
-    $herView.hideshowQQ( "body_04.png", pos )
-    her "Как я уже говорила, это просто смешно, и я не могу поверить, что это происходит сейчас и с нами!"
+#        hide screen blktone8
+#        with d3
+#        hide screen genie
+        $screens.Hide(d3, "blktone8", None, "genie" ).Show(d3, "genie_jerking_off")
+
+#        show screen genie_jerking_off
+#        with d3
+
+#    m "Да, продолжай, дорогая."
+#    $herView.showQ( "body_05.png", pos )
+    $hero("Да, продолжай, дорогая.")
+#    show screen bld1
+#    with d3
+    $screens.Show(d3, "bld1" )
+
+#    her "\"Да\"?! То есть это справедливо?"
+#    m "О, конечно нет, я хотел сказать \"нет\". Но все равно продолжай..."
+#    $herView.hideshowQQ( "body_03.png", pos )
+#    her "Стало легче на душе. Я рада, что вы согласны со мной, профессор..."
+#    $herView.hideshowQQ( "body_04.png", pos )
+#    her "Как я уже говорила, это просто смешно, и я не могу поверить, что это происходит сейчас и с нами!"
+    $hermi.Visibility("body+")
+    $hermi("~body_05.png",  "\"Да\"?! То есть это справедливо?")
+    $hero(                  "О, конечно нет, я хотел сказать \"нет\". Но все равно продолжай...")
+    $hermi("~body_03.png",  "Стало легче на душе. Я рада, что вы согласны со мной, профессор...",
+           "~body_04.png",  "Как я уже говорила, это просто смешно, и я не могу поверить, что это происходит сейчас и с нами!")
+
     if d_flag_01:
-        $herView.hideQ()
-        hide screen bld1
-        show screen blktone8
-        with d3
+#        $herView.hideQ()
+        $hermi.Visibility()
+
+#        hide screen bld1
+#        show screen blktone8
+#        with d3
+
+        $screens.Hide("bld1").Show(d3, "blktone8")
+
         ">*Фап!* *Фап!* *Фап!*"
         ">Вы продолжаете дрочить свой член..."
-        hide screen blktone8
-        with d3
-        $ herView.showQ( None, pos )
-        show screen bld1
-        with d3
+#        hide screen blktone8
+#        with d3
+#        $ herView.showQ( None, pos )
+#        show screen bld1
+#        with d3
+        $screens.Hide(d3, "blktone8").Show(d3, "bld1")
+        $hermi.Visibility("body+")
     else:
         m "Понятно..."
-    her "Я хочу сказать, что поняла, если бы это произошло несколько сотен лет назад..."
-    her "Но мы давно прошли это, не так ли?"
+#    her "Я хочу сказать, что поняла, если бы это произошло несколько сотен лет назад..."
+#    her "Но мы давно прошли это, не так ли?"
+
+    $hermi("Я хочу сказать, что поняла, если бы это произошло несколько сотен лет назад...",
+           "Но мы давно прошли это, не так ли?")
+
     if d_flag_01:
-        g9 "{size=-4}(Вы только посмотрите на эти розовые щечки? Хочу потыкать в них своим членом.){/size}"
-        $herView.hideQ()
-        show screen blktone8
-        with d3
+#        g9 "{size=-4}(Вы только посмотрите на эти розовые щечки? Хочу потыкать в них своим членом.){/size}"
+#        $herView.hideQ()
+#        show screen blktone8
+#        with d3
+        $hero(g9, "#(Вы только посмотрите на эти розовые щечки? Хочу потыкать в них своим членом.)")
+        $hermi.Visibility()
+        $screens.Show(d3, "blktone8")
         ">Вы продолжаете дрочить..."
-        hide screen blktone8
-        $ herView.showQ( None, pos )
-        with d3
+#        hide screen blktone8
+#        $ herView.showQ( None, pos )
+#        with d3
+        $screens.Hide(d3, "blktone8")
     else:
         m "Эм... Я полагаю, что вы сделаете, то есть мы сделаем все, что нужно."
     her "Это навредит системе распределения очков для факультетов."

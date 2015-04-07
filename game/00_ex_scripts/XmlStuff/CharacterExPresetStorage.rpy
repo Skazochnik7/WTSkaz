@@ -1,29 +1,10 @@
 ﻿init -999 python:
     import xml.etree.ElementTree as ET
 
-    class CharacterExPresetData:
-         # constructor
-        def __init__( self ):
-            self.mKey = None
-            self.mName = None
-            self.mFrame = None
-            self.mStyle = None
-
-        def read( self, aElementRoot ):
-            for item in aElementRoot:
-                if item.tag == 'key':
-                    self.mKey = item.text
-                elif item.tag == 'name':
-                    self.mName = item.text
-                elif item.tag == 'frame':
-                    self.mFrame = item.text
-                elif item.tag == 'style':
-                    self.mStyle = item.text
-
     class CharacterExPresetStorage:
         # constructor
         def __init__( self ):
-           self.mPresets = {}  # map with ( string, array of CharacterExPresetData )
+           self.mPresets = {}  # map with ( string, CharacterExPreset )
            self.mDataPath = ""   # here we save the path, from where we've loaded data last time
 
         # call this to clear all loaded info
@@ -49,16 +30,15 @@
                     presetName = item.get( 'name' )
                     if not presetName:
                         presetName = wtxml_getFileNameFromPath( aFilePath )  #from WTXmlAssistansFunctions
-                    arr = []
-                    for elem in item:
-                        data = CharacterExPresetData()
-                        data.read( elem )
-                        arr.append( data )
-                    self.mPresets[ presetName ] = arr
+                    preset = CharacterExPreset()
+                    preset.read( item )
+                    self.mPresets[ presetName ] = preset
 
-        # return None or array of CharacterExPresetData
+        # return None or CharacterExPreset
         def get( self, aPresetName ):
             if aPresetName in self.mPresets.keys():
-                return self.mPresets[ aPresetName ] # this is an array
+                return self.mPresets[ aPresetName ]
             else:
+                # debug
+                CharacterExDebuger.LogE( 'CharacterExPresetStorage::get: cant find preset with aPresetName = ' + aPresetName )
                 return None

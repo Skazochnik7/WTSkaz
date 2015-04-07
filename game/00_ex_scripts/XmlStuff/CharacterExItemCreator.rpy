@@ -15,6 +15,8 @@
                         newItem.setStyle( aStyle )
                 return newItem
             else:
+                # debug
+                CharacterExDebuger.LogE( 'CharacterExItemCreator::createItem: cant create item with aItemName = ' + aItemName )
                 return None
 
         # here you pass the set name ( !!! SET NAME MUST BE WITHOUT * !!! )
@@ -30,6 +32,8 @@
                     resList.append( newItem )
                 return resList
             else:
+                # debug
+                CharacterExDebuger.LogE( 'CharacterExItemCreator::createSet: cant create set with aSetName = ' + aSetName )
                 return [None]
 
         # here you can pass item name or set name ( !!! SET NAME MUST START WITH * !!! )

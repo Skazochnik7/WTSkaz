@@ -93,8 +93,11 @@ init -998 python:
         
         # show hermione screen with saved parameters
         # if aFace doesn't have '.' in self, this function assumes that you want to apply a preset with name aFace
-        def showQ( self, aFace, aPos, aTransition = None ):
+        # also you may specify actual values list for preset with template
+        def showQ( self, aFace, aPos, aTransition = None, aPresetActualsList = None ):
             if aFace is not None:
+                # debug
+                CharacterExDebuger.Log( 'CharacterExView::showQ: aFace = ' + aFace )
                 #check for ignoring preset recognition mechanic
                 if aFace.startswith('#'):
                     # we don't want to check for presets - just apply the image
@@ -104,7 +107,7 @@ init -998 python:
                     # check for preset
                     if '.' not in aFace:
                         # apply preset!
-                        self.mData.applyPreset( aFace )
+                        self.mData.applyPreset( aFace, aPresetActualsList )
                     else:
                         # now just change image on existing face-item
                         self.mData.updateItemFrameKey( 'face', aFace )
@@ -121,8 +124,8 @@ init -998 python:
                 renpy.with_statement( aTransition )
                 
         # below is two methods to simplifying typing
-        def showQQ( self, aFace, aPos ):
-            self.showQ( aFace, aPos, d3 )
+        def showQQ( self, aFace, aPos, aPresetActualsList = None ):
+            self.showQ( aFace, aPos, d3, aPresetActualsList )
 
         def hideQQ( self ):
             self.hideQ( d3 )

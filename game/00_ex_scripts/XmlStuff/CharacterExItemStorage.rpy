@@ -36,6 +36,8 @@
             if aItemName in self.mItems.keys():
                 return self.mItems[ aItemName ]
             else:
+                # debug
+                CharacterExDebuger.LogE( 'CharacterExItemStorage::get: cant find item with aItemName = ' + aItemName )
                 return None
 
         # return ItemStyleDescription or None
@@ -46,8 +48,14 @@
                 if aStyleName in item.mStyles.keys():
                     return item.mStyles[ aStyleName ]
                 else:
+                    # debug
+                    CharacterExDebuger.LogE( 'CharacterExItemStorage::getItemStyle: cant find item with aItemName = ' + aItemName
+                        + ', aStyleName = ' + aStyleName )
                     return None
             else:
+                # debug
+                CharacterExDebuger.LogE( 'CharacterExItemStorage::getItemStyle: cant find item with aItemName = ' + aItemName
+                    + ', aStyleName = ' + aStyleName )
                 return None
 
         # return the key where the item should be added
@@ -56,5 +64,7 @@
                 item = self.mItems[ aItemName ]
                 return item.mKey
             else:
+                # debug
+                CharacterExDebuger.LogE( 'CharacterExItemStorage::getItemKey: cant find key for aItemName = ' + aItemName )
                 return ""
 

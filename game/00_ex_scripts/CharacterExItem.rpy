@@ -211,6 +211,8 @@ init -998 python:
         # used for face changing
         # aIsActLikeAdding - when set to true, will act as if this item was just added
         def changeImage( self, aImageFolder, aImageName, aIsActLikeAdding = False ):
+            # debug
+            CharacterExDebuger.Log( 'CharacterExItem::changeImage: aImageFolder = ' + aImageFolder + ', aImageName = ' + aImageName )
             self.mFileName = aImageName
             self.mFileFolder = aImageFolder
             self.image = aImageFolder + aImageName

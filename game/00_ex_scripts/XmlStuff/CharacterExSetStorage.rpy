@@ -60,6 +60,8 @@
             if aSetName in self.mSets.keys():
                 return self.mSets[ aSetName ]
             else:
+                # debug
+                CharacterExDebuger.LogE( 'CharacterExSetStorage::get: cant find set with aSetName = ' + aSetName )
                 return None
 
         # return None or setinfo
@@ -69,4 +71,6 @@
             if aSetName in self.mSetInfos.keys():
                 return self.mSetInfos[ aSetName ]
             else:
+                # debug
+                CharacterExDebuger.LogE( 'CharacterExSetStorage::get: cant find info for aSetName = ' + aSetName )
                 return None
