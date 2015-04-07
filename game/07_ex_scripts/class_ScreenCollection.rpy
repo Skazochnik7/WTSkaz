@@ -26,21 +26,42 @@
         def Show(self, arg1, arg2=None, arg3=None, arg4=None, arg5=None):
             return self.__Action([arg1, arg2, arg3, arg4, arg5], True, None)
 
-        def ShowHide(self, name, lag, transition=None):
-            self.Show(transition, name )
-            renpy.pause(lag)
-            self.Hide(transition, name )
+        def ShowHide(self, arg1, arg2, arg3=None):
+            if arg3==None:
+                self.__transition=None
+                self.__name=arg1
+                self.__lag=arg2
+            else:
+                self.__transition=arg1
+                self.__name=arg2
+                self.__lag=arg3
+
+            self.Show(self.__transition, self.__name )
+            renpy.pause(self.__lag)
+            self.Hide(self.__transition, self.__name )
             return self
 
         def Hide(self, arg1, arg2=None, arg3=None, arg4=None, arg5=None):
             return self.__Action([arg1, arg2, arg3, arg4, arg5], False, None)
 
         def ShowD3(self, arg1, arg2=None, arg3=None, arg4=None, arg5=None):
-            return self.__Action([d3, НЕ будет работать, наждо найти аналог d3 arg1, arg2, arg3, arg4, arg5], True, None)
+            return self.__Action([Dissolve(.3), arg1, arg2, arg3, arg4, arg5], True, None)
 
         def HideD3(self, arg1, arg2=None, arg3=None, arg4=None, arg5=None):
+            return self.__Action([Dissolve(.3), arg1, arg2, arg3, arg4, arg5], False, None)
 
+        def Pause(self, lag=0.0):
+            renpy.pause(self.__lag)
+            return self
 
-        def ShowPos(self, name, position, transition=None):
-            return self.__Action([transition, name], True, position)
+        def ShowPos(self, arg1, arg2, arg3=None):
+            if arg3==None:
+                self.__transition=None
+                self.__name=arg1
+                self.__pos=arg2
+            else:
+                self.__transition=arg1
+                self.__name=arg2
+                self.__pos=arg3
+            return self.__Action([self.__transition, self.__name], True, self.__pos)
 

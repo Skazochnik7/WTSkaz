@@ -6,28 +6,28 @@ label event_00:
     #show screen snape_01 #OWL SITTING ON A PACKAGE.
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
 
-    $snape.chibi.State("door", speed="go").Trans("blink")
+    $snape.chibi.State("door", speed="go").Trans(d3, "blink")
     pause.3
-    $screens.Show("bld1", d3)
+    $screens.ShowD3("bld1")
 
     $hero(g4, "#(Туземная форма жизни!?)")
 
     $screens.Hide("bld1", d3)
-    $screens.Show("thought", d3, Position(xpos=650, ypos=180))
+    $screens.ShowPos(d3, "thought", Position(xpos=650, ypos=180))
     pause 1
-    $screens.Show("bld1", d3)
+    $screens.ShowD3("bld1")
 
     $hero(m,    "#(Выглядит, как человек...)",
                 "#(Может быть, если я буду вести себя тихо, оно уйдет...?)")
 
-    $screens.Hide(["bld1", "thought"], d3)
+    $screens.HideD3("bld1", "thought")
 
     $snape.LoadDefItemSets() # Эта функция просто перечитывает значения из xml. Актуальна, если что-то поменялось в наборах xml при отладке
 
     $snape.chibi.Trans("go center", "blink")
-    $screens.Show("bld1", d3)
+    $screens.ShowD3("bld1")
     $snape.Visibility("body", Dissolve(.5))
-    $screens.ShowHide("ctc", 0.0, d3)
+    $screens.ShowHide(d3, "ctc", 0.0)
 
     $snape("~01",    who2, "Альбус... есть минута?")
     $hero("#(\"Альбус\"? Это, должно быть, мое имя, или это так люди этого мира приветствуют друг друга?)")
@@ -85,12 +85,12 @@ label event_00:
 
 
     stop music fadeout 1.0
-    $screens.Hide(["bld1"], d3)
+    $screens.HideD3("bld1")
     $snape.chibi.Trans("goout door")
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $snape.chibi.Hide(d4)
     pause.5
-    $screens.Show("bld1", d3)
+    $screens.ShowD3("bld1")
 
     $hero(  "Хм...",
             "Итак, этот высокий задумчивый парень принял меня за другого...?",
@@ -150,9 +150,9 @@ label event_02:
 #    m "Что? Сова?"
 #    hide screen bld1
 #    with d3
-    $screens.Show(["owl", "bld1"], d3)
+    $screens.ShowD3("owl", "bld1")
     $hero("Что? Сова?")
-    $screens.Hide("bld1", d3)
+    $screens.HideD3("bld1")
     return
     
 ###############################################################################################################################################################
@@ -1190,7 +1190,7 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
 
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
 
-    $ hermione_chibi_xpos = 610
+    $ hermione_chibi_xpos = 610  # Нельзя комментировать, используется в старом коде
     $ hermione_chibi_ypos = 250
 #    show screen hermione_02 #Hermione stands still.
 #    with Dissolve(.5)
@@ -1205,13 +1205,13 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
         
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1
 
-
+# Нельзя комментировать, используется в старом коде
     $ walk_xpos=610 #Animation of walking chibi. (From)
     $ walk_xpos2=400 #Coordinates of it's movement. (To)
 #    $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
 #    show screen hermione_walk_01 
 #    pause 3
-    $ hermione_chibi_xpos = 400 #Near the desk.
+#    $ hermione_chibi_xpos = 400 #Near the desk.
 #    show screen hermione_02 #Hermione stands still.
 
     $hermi.chibi.Trans("go center", "blink")
@@ -1219,27 +1219,28 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     pause.5
 #    show screen bld1
 #    with Dissolve(.3)
-    $screens.Show(d3, "bld1" )
+    $screens.ShowD3("bld1" )
 
     
-    $ pos = POS_370
-#    $herView.showQ( "body_01.png", pos )
+    $ pos = POS_370  # Присвоение не комментировать, будет использовать дальше в старом коде
+                        #    $herView.showQ( "body_01.png", pos )
+                        #    $herView.hideQ( )
+
 #    show screen hermione_02
-#    $hermi("~body_01.png")
-#    "fvknc vjbcj"
     $hermi.Visibility("body+", d3)
 
 #    $hermi("~body_01.png") #, "Вы ведь не верите этим слухам, правда, Альбус?")
 #    show screen ctc
 #    with Dissolve(.3)
 
-    $screens.Show(d3, "ctc")
+    $screens.ShowD3("ctc")
     pause
 
 #    $herView.hideshowQQ( "body_03.png", pos )
 #    her "Доброе утро профессор."
-    $hermi("Доброе утро профессор.","~body_03.png")
-    hide screen ctc
+    $hermi("Доброе утро, профессор.","~body_03.png")
+#    hide screen ctc
+    $screens.HideD3("ctc")
     menu:
         "\"Доброе утро... девочка.\"":
 #            her "{size=-4}(\"Девочка\"?){/size}"
@@ -1293,14 +1294,14 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
         $hermi.Visibility()
 #        hide screen bld1
 #        with d3
-        $screens.Hide("bld1", d3).Show(d3, "blktone8" )
+        $screens.HideD3("bld1").ShowD3( "blktone8" )
 #        show screen blktone8
 #        with d3
         ">Вы опустили руки под стол и обхватили свой член..."
 #        hide screen blktone8
 #        with d3
 #        hide screen genie
-        $screens.Hide(d3, "blktone8", None, "genie" ).Show(d3, "genie_jerking_off")
+        $screens.HideD3( "blktone8", None, "genie" ).ShowD3( "genie_jerking_off")
 
 #        show screen genie_jerking_off
 #        with d3
@@ -1310,7 +1311,7 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     $hero("Да, продолжай, дорогая.")
 #    show screen bld1
 #    with d3
-    $screens.Show(d3, "bld1" )
+    $screens.ShowD3( "bld1" )
 
 #    her "\"Да\"?! То есть это справедливо?"
 #    m "О, конечно нет, я хотел сказать \"нет\". Но все равно продолжай..."
@@ -1332,7 +1333,7 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
 #        show screen blktone8
 #        with d3
 
-        $screens.Hide("bld1").Show(d3, "blktone8")
+        $screens.Hide("bld1").ShowD3( "blktone8")
 
         ">*Фап!* *Фап!* *Фап!*"
         ">Вы продолжаете дрочить свой член..."
@@ -1341,15 +1342,15 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
 #        $ herView.showQ( None, pos )
 #        show screen bld1
 #        with d3
-        $screens.Hide(d3, "blktone8").Show(d3, "bld1")
+        $screens.HideD3( "blktone8").ShowD3( "bld1")
         $hermi.Visibility("body+")
     else:
         m "Понятно..."
 #    her "Я хочу сказать, что поняла, если бы это произошло несколько сотен лет назад..."
 #    her "Но мы давно прошли это, не так ли?"
 
-    $hermi("Я хочу сказать, что поняла, если бы это произошло несколько сотен лет назад...",
-           "Но мы давно прошли это, не так ли?")
+    $hermi("Я поняла бы, если бы это произошло несколько сотен лет назад...",
+           "Но мы сейчас не темные века, не так ли?")
 
     if d_flag_01:
 #        g9 "{size=-4}(Вы только посмотрите на эти розовые щечки? Хочу потыкать в них своим членом.){/size}"
@@ -1358,143 +1359,231 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
 #        with d3
         $hero(g9, "#(Вы только посмотрите на эти розовые щечки? Хочу потыкать в них своим членом.)")
         $hermi.Visibility()
-        $screens.Show(d3, "blktone8")
+        $screens.ShowD3( "blktone8")
         ">Вы продолжаете дрочить..."
 #        hide screen blktone8
 #        $ herView.showQ( None, pos )
 #        with d3
-        $screens.Hide(d3, "blktone8")
+        $screens.HideD3( "blktone8")
     else:
-        m "Эм... Я полагаю, что вы сделаете, то есть мы сделаем все, что нужно."
-    her "Это навредит системе распределения очков для факультетов."
-    her "Но и это не конец!"
-    her "Так же это навредит нашей системе образования..."
-    her "И что еще более важно - мотивация среди студентов неуклонно сокращается из-за этого!"
+#        m "Эм... Я полагаю, что вы сделаете, то есть мы сделаем все, что нужно."
+        $hero("Эм... Я полагаю, что вы сделаете, то есть, мы сделаем все, что нужно.")
+#    her "Это навредит системе распределения очков для факультетов."
+#    her "Но и это не конец!"
+#    her "Так же это навредит нашей системе образования..."
+#    her "И что еще более важно - мотивация среди студентов неуклонно сокращается из-за этого!"
+    $hermi(     "Это навредит системе распределения очков для факультетов.",
+                "И мало того!",
+                "Это навредит всей системе образования...",
+                "Из-за этого падает мотивация среди студентов!")
+#        m "{size=-4}(Посмотрите на эти огромные сиськи.){/size}"
+#        m "{size=-4}(Да... Я хочу зажать свой член между ними...){/size}"
     if d_flag_01:
-        m "{size=-4}(Посмотрите на эти огромные сиськи.){/size}"
-        m "{size=-4}(Да... Я хочу зажать свой член между ними...){/size}"
-    her "Как вы можете наблюдать, ситуация весьма тяжелая..."
-    $herView.hideshowQQ( "body_02.png", pos )
-    her "Но мы все еще можем уладить..."
-    her "Как сообщил представитель нашего Школьного Студентческого Совета..."
-    her "У меня есть пара предложений, как сделать это более эффективно."
+        $hero(  "#(Что за огромные сиськи!)",
+                "#(Да... Я хочу зажать свой член между ними...)")
+
+#    her "Как вы можете наблюдать, ситуация весьма тяжелая..."
+#    $herView.hideshowQQ( "body_02.png", pos )
+#    her "Но мы все еще можем уладить..."
+#    her "Как у представителя Школьного Студентческого Совета..."
+#    her "У меня есть пара предложений, как сделать это более эффективно."
+
+    $hermi(                 "Как видите, ситуация весьма тяжелая...",
+           "~body_02.png",  "Но мы все еще можем исправить...",
+                            "У меня, как у представителя Школьного Студентческого Совета...",
+                            "Есть пара предложений, как сделать это более эффективно.")
+
     if not d_flag_01:
-        m ".............."
-    her "Прежде всего, система очков для факультетов должна стать более сложной!"
-    $herView.hideshowQQ( "body_03.png", pos )
-    her "Вам нужно контролировать распределение очков чуть лучше, сэр."
+#        m ".............."
+        $hero ("..............")
+
+#    her "Прежде всего, система очков для факультетов должна стать более сложной!"
+#    $herView.hideshowQQ( "body_03.png", pos )
+#    her "Вам нужно контролировать распределение очков чуть лучше, сэр."
+    $hermi(             "Прежде всего, система очков для факультетов должна стать более сложной!",
+        "~body_03.png", "Вам нужно контролировать распределение очков чуть лучше, сэр.")        
     if d_flag_01:
-        g4 "{size=-4}(Да, шлюха... Грязная шлюха... Бьюсь об заклад, ты обожаешь сосать члены... Не так ли? Да, уверен в этом...){/size}"
-        $herView.hideQQ()
-        show screen blktone8
-        with d4
+#        g4 "{size=-4}(Да, шлюха... Грязная шлюха... Бьюсь об заклад, ты обожаешь сосать члены... Не так ли? Да, уверен в этом...){/size}"
+#        $herView.hideQQ()
+        $hero (g4, "#(Да, шлюха... Грязная шлюха... Бьюсь об заклад, ты обожаешь сосать члены... Не так ли? Да, уверен в этом...)")
+        $hermi.Visibility()
+        
+#        show screen blktone8
+#        with d4
+        $screens.Show(d4, "blktone8")
         ">Вы неистово надрачиваете свой твердейший член!"
-        hide screen blktone8 
-        with d4
-        $ herView.showQQ( "body_03.png", pos )
-    her "Конечно, вы согласны со мной, профессор, не так ли?"
+#        hide screen blktone8 
+#        with d4
+        $screens.Hide(d4, "blktone8")
+#        $ herView.showQQ( "body_03.png", pos )
+        $hermi.Visibility("body+")
+#    her "Конечно, вы согласны со мной, профессор, не так ли?"
+    $hermi("Вы ведь согласны со мной, профессор, не так ли?")
     if d_flag_01:
-        g4 "{size=-4}*Тяжело дыша*{/size}"
-        $herView.hideshowQQ( "body_07.png", pos )
-        her "Профессор...?"
-        g4 "{size=-4}(Дерьмо. О чем она только что говорила?){/size}"
-        g4 "Да, это так. Продолжай..."
-        her "Эм... И так, как я сказала..."
-        $herView.hideQQ()
-        m "{size=-4}(Ох... Отлично вздрочнул, но я уже близок к \"великому финалу\".){/size}" 
-        m "{size=-4}(Может быть мне стоит прекратить пока не произошло чего.){/size}"
+#        g4 "{size=-4}*Тяжело дыша*{/size}"
+#        $herView.hideshowQQ( "body_07.png", pos )
+#        her "Профессор...?"
+#        g4 "{size=-4}(Дерьмо. О чем она только что говорила?){/size}"
+#        g4 "Да, это так. Продолжай..."
+#        her "Эм... И так, как я сказала..."
+#        $herView.hideQQ()
+#        m "{size=-4}(Ох... Отлично вздрочнул, но я уже близок к \"великому финалу\".){/size}" 
+#        m "{size=-4}(Может быть мне стоит прекратить пока не произошло чего.){/size}"
+
+        $hero(g4,               "{size=-4}*Тяжело дыша*{/size}")
+        $hermi("~body_07.png",  "Профессор...?")
+        $hero(                  "#(Вот дерьмо. О чем она только что трещала?)",
+                                "Да, это так. Продолжай...")
+        $hermi(                 "Эм... Итак, как я сказала...")
+        $hermi.Visibility()
+        $hero(m,                "#(Ох... Отлично вздрочнул, но я уже близок к \"великому финалу\".)",
+                                "#(Может, мне стоит прекратить пока не произошло чего?)")
         menu:
             "\"(Да, думаю стоит послушать ее.)\"":
-                show screen genie
-                with d3
+#                show screen genie
+#                with d3
+                screens.ShowD3("genie")
                 $ d_flag_01 = False #NOT JERKING OFF ANY MORE.
-                pass
+#                pass
             "\"(Нет! Я должен закончить!)\"":
                 pass
     else:
-        m "{size=-4}(Должен ли я? Да плевать...){/size}"
-        m "Хм... Предполагаю, что должен..."
-        her "{size=-4}(\"Полагаете\"?){/size}"
-        her "{size=-4}(Почему-то профессор Дамблдор такой... равнодушный.){/size}"
-    $herView.hideshowQQ( "body_04.png", pos )
-    her "Еще одна мера, которую стоит принять - это более жестокий контроль за сотрудниками..."
-    her "Особенно за учителями..."
-    $herView.hideshowQQ( "body_03.png", pos )
-    her "Я надеюсь, что не переступаю черту, но некоторые учителя действительно требуют надзора..."
+#        m "{size=-4}(Должен ли я? Да плевать...){/size}"
+#        m "Хм... Предполагаю, что должен..."
+#        her "{size=-4}(\"Полагаете\"?){/size}"
+#        her "{size=-4}(Почему-то профессор Дамблдор такой... равнодушный.){/size}"
+        $hero(                  "#(Нужно ли мне контролировать? Да плевать...)",
+                                "Хм... Наверное нужно...")
+        $hermi(                 "#(Наверное?)",
+                                "#(Когда это профессор Дамблдор стал таким безразличным?...)")
+
+
+#    $herView.hideshowQQ( "body_04.png", pos )
+#    her "Еще одна мера, которую стоит принять - это более жестокий контроль за сотрудниками..."
+#    her "Особенно за учителями..."
+#    $herView.hideshowQQ( "body_03.png", pos )
+#    her "Я надеюсь, что не переступаю черту, но некоторые учителя действительно требуют надзора..."
+
+    $hermi("~body_04.png",  "Еще одна мера, которую стоит принять - это более жестокий контроль за сотрудниками...",
+                            "Особенно за преподавателями...",
+           "~body_03.png",  "Я надеюсь, что не переступаю черту, но некоторые преподаватели действительно требуют надзора...")
+
+
     if d_flag_01:
-        g4 "{size=-4}(Да! Ты маленькая шлюха! Тупая маленькая шлюха!) *Задыхаясь*{/size}"
+#        g4 "{size=-4}(Да! Ты маленькая шлюха! Тупая маленькая шлюха!) *Задыхаясь*{/size}"
+        $hero(g4,            "{size=-4}(Да! Ты маленькая шлюха! Тупая маленькая шлюха!) *Задыхаясь*{/size}")
     else:
-        m "......................."
-    $herView.hideshowQQ( "body_04.png", pos )
-    her "Я понимаю, что у вас нет времени на все это. Вы директор нашей школы, очень важный и занятой человек."
-    her "Временами, мне непросто быть лучшей ученицей, стоять на пьедестале..."
+#        m "......................."
+        $hero(m,            ".......................")
+#    $herView.hideshowQQ( "body_04.png", pos )
+#    her "Я понимаю, что у вас нет времени на все это. Вы директор академии, очень важный и занятой человек."
+#    her "Временами, мне непросто быть лучшей студенткой, это словно на пьедестале стоять..."
+    $hermi("~body_04.png",  "Я понимаю, что у вас нет времени на все это. Вы директор академии, очень важный и занятой человек.",
+                            "Временами, мне непросто быть лучшей студенткой, это словно на пьедестале стоять...")
+
     if d_flag_01:
 #        translators "{size=-4}(Здесь была игра слов \"hard on(тяжело)\" и \"hard-on(стояк)\") которую мы не смогли перевести. \nПростите нас :({/size}"
-        g4 "{size=-4}(Она сказала \"стояк\"!?) *задыхаясь*{/size}"
-    her "Но вы могли бы поручить эту задачу мне, и я справлюсь..."
-    her "Просто... просто внедрите вашу уверенность и твердость в меня!" 
+#        g4 "{size=-4}(Она сказала \"стояк\"!?) *задыхаясь*{/size}"
+        $hero(g4, "{size=-4}(Она сказала \"стояк\"!?) *задыхаясь*{/size}")
+#    her "Но вы могли бы поручить эту задачу мне, и я справлюсь..."
+#    her "Просто... просто внедрите вашу уверенность и твердость в меня!" 
+    $hermi(                 "Но вы могли бы поручить эту задачу мне, и я справлюсь...",
+                            "Просто... просто внедрите вашу уверенность и твердость в меня!" )
 
     if d_flag_01: 
-        $herView.hideshowQQ( "body_01.png", pos )
-        her "Да, сэр! Просто внедрите в меня!"
+#        $herView.hideshowQQ( "body_01.png", pos )
+#        her "Да, сэр! Просто внедрите это в меня!"
+        $hermi("~body_01.png", "Да, сэр! Просто внедрите это в меня!")
         stop music fadeout 1.0
-        show screen white 
-        pause.1
-        hide screen white
-        pause.2
-        show screen white 
-        pause .1
-        hide screen white
-        with hpunch
-        g4 "{size=-4}(О дерьмо, что она наделала!) *Аргх!*{/size}"
-        $herView.hideQQ()
-        hide screen bld1
-        with d3
-        show screen genie_jerking_sperm
-        with d3
-        pause 3
-        
-        show screen bld1
-        with d3
-        $ herView.showQQ( "body_18.png", pos )
-        her "Профессор!? Что происходит...?"
-        show screen genie_jerking_sperm_02
-        with d3
-        g4 "А... ДААААА.....!"
-        her "???"
-        g4 "*Тяжело дыша* Да! Да...."
-        show screen genie
-        #show screen genie_jerking_off
-        with d3
-        m "Да, девочка. Все именно так, как ты говоришь. Я позабочусь обо всем этом."
-    else:
-        m "Хорошо, я подумаю о твоем предложении. Обещаю."
-    $herView.hideshowQQ( "body_07.png", pos )
-    her "Правда?"
-    her "Хм..........."
-    play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
-    $herView.hideshowQQ( "body_04.png", pos )
-    her "Это обнадеживает. Спасибо, Профессор."
-    if d_flag_01:
-        m "Нет, нет. Спасибо тебе..."
-        $herView.hideshowQQ( "body_07.png", pos )
-        her "Хм..."
-    $herView.hideshowQQ( "body_04.png", pos )
-    her "Мои занятия вот-вот начнутся. Мне надо идти."
-    her "Спасибо, что уделили мне время..."
+#        show screen white 
+#        pause.1
+#        hide screen white
+#        pause.2
+#        show screen white 
+#        pause .1
+#        hide screen white
+#        with hpunch
 
-    hide screen bld1
-    $herView.hideQ()
-    with Dissolve(.3)
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+        $screens.ShowHide("white", 0.1).Pause(0.2).Show("white").Pause(0.1).Hide(hpunch,"white")
+
+#        g4 "{size=-4}(О дерьмо, что она наделала!) *Аргх!*{/size}"
+#        $herView.hideQQ()
+#        hide screen bld1
+#        with d3
+#        show screen genie_jerking_sperm
+#        with d3
+#        pause 3
+        
+#        show screen bld1
+#        with d3
+        $hero(g4, "{size=-4}(О дерьмо, что она наделала!) *Аргх!*{/size}")
+        $hermi.Visibility()
+        $screens.HideD3("bld1").ShowD3("genie_jerking_sperm").Pause(3.0).ShowD3("bld1")
+
+#        $ herView.showQQ( "body_18.png", pos )
+#        her "Профессор!? Что происходит...?"
+#        show screen genie_jerking_sperm_02
+#        with d3
+#        g4 "А... ДААААА.....!"
+#        her "???"
+#        g4 "*Тяжело дыша* Да! Да...."
+#        show screen genie
+#        with d3
+#        m "Да, девочка. Все именно так, как ты говоришь. Я позабочусь обо всем этом."
+        $hermi("~body_18.png", "Профессор!? Что происходит...?")
+        $screens.ShowD3("genie_jerking_sperm_02")
+        $hero(g4, "АА... ДААААА.....!")
+        $hermi("???")
+        $hero(g4, "*Тяжело дыша* Да! Да....")
+        $screens.ShowD3("genie")
+        $hero(g4, "Да, девочка. Все именно так, как ты говоришь. И я... позабочусь обо всем этом.")
+    else:
+#        m "Хорошо, я подумаю о твоем предложении. Обещаю."
+        $hero(m,       "Хорошо, я подумаю о твоем предложении. Обещаю.")   
+#    $herView.hideshowQQ( "body_07.png", pos )
+#    her "Правда?"
+#    her "Хм..........."
+
+    $hermi("~body_07.png",  "Правда?",
+                            "Хм...........")
+
+    play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
+#    $herView.hideshowQQ( "body_04.png", pos )
+#    her "Это обнадеживает. Спасибо, Профессор."
+    $hermi("~body_04.png",  "Это обнадеживает. Спасибо, Профессор.")
+
+    if d_flag_01:
+#        m "Нет, нет. Спасибо тебе..."
+#        $herView.hideshowQQ( "body_07.png", pos )
+#        her "Хм..."
+
+        $hero(m, "Нет, нет. Спасибо тебе...")
+        $hermi("~body_07.png",  "Хм...")
+
+#    $herView.hideshowQQ( "body_04.png", pos )
+#    her "Мои занятия вот-вот начнутся. Мне надо идти."
+#    her "Спасибо, что уделили мне время..."
+
+    $hermi("~body_04.png",  "Мои занятия вот-вот начнутся. Мне надо идти.",
+                            "Спасибо, что уделили мне время...")
+#    hide screen bld1
+#    $herView.hideQ()
+#    with Dissolve(.3)
+#    $ walk_xpos=400 #Animation of walking chibi. (From)
+#    $ walk_xpos2=610 #Coordinates of it's movement. (To)
+#    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+#    show screen hermione_walk_01_f 
+#    pause 2
+#    hide screen hermione_walk_01_f 
+    $screens.HideD3("bld1")
+    $hermi.Visibility()
+    $hermi.chibi.Trans("goout door").Hide(d3)    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
+#    with Dissolve(.3)
     pause.5
+
+
+
     if d_flag_01:
         m "{size=-4}(Это офигительно...) *Задыхаясь*{/size}"
         m "{size=-4}(Мои трусы просто уничтожены...){/size}"
