@@ -1067,7 +1067,7 @@ label your_whore:
         sna "И ваш пьедестал..."
 
         #$herViewHead.data().addItemKey( 'tiara', CharacterExItem( herViewHead.mClothesFolder, "tiara.png", G_Z_FACE + 1 ) )
-        $herViewHead.data().additem( 'item_tiara' )
+        $herViewHead.data().addItem( 'item_tiara' )
         $herViewHead.showQ( "body_160.png", posHead )
         her "Спасибо, профессор."
         $herViewHead.hideQ()

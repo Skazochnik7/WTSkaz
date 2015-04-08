@@ -64,7 +64,7 @@ label summon_snape:
                 sna "Ну что ж, тогда я вернусь к работе..."
                 play music "music/Brittle Rille.mp3" fadein 1 fadeout 1
             else: 
-                sna "Эмм... тогда доброй ночи."
+                sna "Эмм... если это все, тогда доброй ночи."
                 play music "music/Music for Manatees.mp3" fadein 1 fadeout 1
             $ snape_busy = True
             hide screen snape_02 #Snape stands still.

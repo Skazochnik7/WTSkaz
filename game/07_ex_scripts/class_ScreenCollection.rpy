@@ -50,8 +50,8 @@
         def HideD3(self, arg1, arg2=None, arg3=None, arg4=None, arg5=None):
             return self.__Action([Dissolve(.3), arg1, arg2, arg3, arg4, arg5], False, None)
 
-        def Pause(self, lag=0.0):
-            renpy.pause(self.__lag)
+        def Pause(self, lag=None):
+            renpy.pause(lag)
             return self
 
         def ShowPos(self, arg1, arg2, arg3=None):
