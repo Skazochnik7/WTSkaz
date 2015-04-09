@@ -107,6 +107,40 @@ init -992 python:
         return event._finishCount>=num-1
 
 
+    def StringFormat(s):
+        __pars=s.split(" ")
+
+        s=""
+        for o in __pars:
+            __count=0
+            if len(o)>=2 and not o.isdigit():
+                for h in o:
+                    if h.isalpha() and h.isupper():
+                       __count+=1
+                    if __count>=2:
+                        o="{size=+5}"+o+"{/size}"
+                        break
+                    
+            s+=o+" "
+        if s!=None:
+            s=s.strip(" ")
+
+        if "#(" in s: #  "Бла бла #(тралала) бла бла" => "Бла бла {size=-3}(тралала){/size} бла бла"
+            s=s.replace("#(","{size=-3}(") 
+            s=s.replace(")","){/size}") 
+        else:
+            if len(s)>1:
+                if s[0]=="#": #  "#Бла бла (тралала) бла бла" => "{size=-3}Бла бла (тралала) бла бла{/size}"
+                    s="{size=-3}"+s[1:]+"{/size}"
+            if len(s)>3:
+                if s[:2] in {"{-", "{+"}: #  "{-5}Бла бла (тралала) бла бла" => "{size=-5}Бла бла (тралала) бла бла{/size}"
+                    s="{size="+s[1:3]+s[3:]+"{/size}"
+
+
+        return s
+
+
+
 #    def OnJumpExecute(loc, target, expression):
 #        try:
 #            if s[0]!="_":

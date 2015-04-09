@@ -187,6 +187,7 @@ label rummaging:
 
         $_level=GetStage(hermi.whoring, 0, 4, 6)-1
         $_randValue=one_of_tw
+        $debug.SaveString(str(_randValue))
         $_name="gold"
         python:
             for o in arrProb:
@@ -194,6 +195,7 @@ label rummaging:
                 if _randValue<=0:
                     _name=o
 
+        $debug.SaveString(_name)
         $ renpy.play('sounds/win2.mp3')   #Not loud.
         if _name=="gold":
             $_gold=[gold1,gold2,gold3,gold4][_level]
@@ -207,11 +209,7 @@ label rummaging:
             $ the_gift=item._img
             $_caption=item._caption
 
-        show screen gift
-        with d3
-        ">Вы нашли предмет: \"[_caption]!\"" 
-        hide screen gift
-        with d3
+        $screens.ShowD3("gift").Say(">Вы нашли предмет: \"[_caption]!\"").HideD3("gift")
 
 
 

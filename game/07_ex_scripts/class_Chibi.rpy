@@ -7,6 +7,7 @@
             super(Chibi, self).__init__(Name=Name, Type="Chibi", defVals={"x0":0, "y0":0, "speed":0.0} )
             return
 
+# Показать чибика 
         def TransPos(self, image, x=None, y=None, lag=0.0):
             if y==None:
                 y=self.y0
@@ -22,6 +23,7 @@
             self.y0=y
             return self
 
+# Показать чибика в нескольких состояниях последовательно
         def Trans(self, arg1, arg2=None, arg3=None, arg4=None, arg5=None):
             self.__args=[arg1, arg2, arg3, arg4, arg5]
             self.__transition=None
@@ -39,12 +41,15 @@
                     self.__transition=o
             return self
 
+# Спрятать чибика
         def Hide(self, transition=None):
-            renpy.hide_screen(self.Name+"screen")
-            if transition is not None:
-                renpy.with_statement( transition, None, True )
+#            renpy.hide_screen(self.Name+"screen")
+#            if transition is not None:
+#                renpy.with_statement( transition, None, True )
+            screens.Hide(transition, self.Name+"screen")
             return
 
+# Задать состояние (обычно начальное)
         def State(self, x=None, y=None, speed=None):
             self.__State(x, y, speed)
             self.x0=self.__x
@@ -52,6 +57,7 @@
             self.speed=self.__speed
             return self
 
+# Внутренняя - не вызывается
         def __State(self, x=None, y=None, speed=None):
             self.__speed=self.speed
             self.__x=self.x0
@@ -65,7 +71,7 @@
                 if y!=None:
                     self.__y=y
             if isinstance( speed, basestring ):
-                self.__speed={"go":60.0}[speed]
+                self.__speed={"go":80.0}[speed]
             else:
                 if speed!=None:
                     self.__speed=speed

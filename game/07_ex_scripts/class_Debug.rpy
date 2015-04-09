@@ -19,7 +19,7 @@ init -990 python:
                 f1.close()
              
 
-        def SaveString(self, s, Level):
+        def SaveString(self, s, Level=3):
             if Level<=self.Level:
                 f1 = open(self.FileName, 'a')
                 s=s+"\n"

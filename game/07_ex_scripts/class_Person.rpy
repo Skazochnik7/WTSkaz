@@ -13,6 +13,7 @@
             else:
                 defVals.update({"liking":0, "whoring":0})
 
+# Инициализация объектов тела и головы
             if charData!=None:
                 charData.clearState()
                 defVals.update({"vData": charData, 
@@ -32,10 +33,8 @@
 
             super(Person, self).__init__(Name=Name, Type="Person", defVals=defVals, constVals=constVals )
 
-#            self.LoadDefItemSets()
-
-            self.Items=RegEntry(ItemCollection("items"+Name))        # Это словарь сохраняемых аргументов
-            self.chibi=RegEntry(Chibi("chibi"+Name))
+            self.Items=RegEntry(ItemCollection("items"+Name))        # Коллекция ивентов
+            self.chibi=RegEntry(Chibi("chibi"+Name))                # Чибик
 
             return
 
@@ -44,6 +43,7 @@
                         arg11=None, arg12=None, arg13=None, arg14=None, arg15=None, arg16=None, arg17=None, arg18=None, arg19=None, 
                         arg20=None, arg21=None, arg22=None, arg23=None, arg24=None):
             self.__args=[]
+# Разбираем исходный массив на элементы. На вход могут подаваться строки или Character             
             for o in [arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24]:
                 if o==None:
                     break
@@ -58,9 +58,13 @@
                                 self.__args.append(p.strip(" "))
                                 debug.SaveString("p.strip: "+str(p.strip(" ")), 3)
 
+# Разобрано, начинаем отображать
+
+# Если было не видимо - показать
             self.__trans=d3
             if not self.GetValue("Visible"):
                 self.Visibility(self._talkingView, True, self.__trans)
+# Если аргументы закончились - прервать                
             for o in self.__args:
                 if o==None:
                     break
@@ -68,28 +72,9 @@
                     self.curchar=o
                 else: # теперь столько строки
                     if o[0]=="~": # если это фейс, то показать его
-                        debug.SaveString("face: "+str(o), 3)
                         self.Face(o.replace("~",""))    
-#                        self.Visibility(self._talkingView, True, self.__trans)
-
-
-#                        self.__trans=None
-
-#                        self.Visibility(self._talkingView)
-
-#                        if self.Name!="hero":
-#                            if self.viewMode in {1, 3}:
-#                                self.curchar=self.char2
-#                            else:
-#                                self.curchar=self.char
-
-#                        else:
-#                            if self.viewMode==0:
-#                                for o in GetEntriesByType("Person"):
-#                                    if o.Name not in {"hero"}:
-#                                        o.head.hideQ()
-
                     else:
+# Если это герой, то скрыть всех персонажей, для которых не указано отбражаться при реплике героя                        
                         if self.Name=="hero": 
                             for p in GetEntriesByType("Person"):
                                 if p.Name not in {"hero"}:
@@ -98,15 +83,14 @@
                                         p.SetValue("Visible", False)
                                     if "head+" not in p._talkingView:
                                         p.head.hideQ()
-#                                        p.SetValue("Visible", False)
-                        renpy.say(self.curchar, self.__Format(o))
-
-                
+                        renpy.say(self.curchar, StringFormat(o))
             return self
 
-
+# Смена лица персонажа
         def Face(self, s):
-# При подключении Гермионы, поставить условие - если есть точка в параметре - значит это имя файла и нужно не стили менять, а грузить сразу файл лица
+# Если есть пробелы - значит это набор стилей бровей, глаз, щек и рта через пробел
+# Если нет пробелов - значит название стиля лица
+# Если есть точка - значит это имя файла
             if not " " in s:
                 if "." in s:
                     self.body.addFaceName( s )
@@ -120,65 +104,27 @@
 
             return
 
-        def Answer(self, pers): # Для конструкций типа   $hero("...").Answer(hermi("..."))
+        def Answer(self, pers): # Для конструкций типа   $hero("...").Answer(hermi("...")) - не факт, что будет удобно
             return self
 
 
-
-        def LoadDefItemSets(self):
+        def LoadDefItemSets(self): # Пригодилось только один раз - когда изначально подгрузился неправильный набор сетов, перегрузить его в процесс игры
             self.body.data().addItemSet( self.Name+'_body' )
             self.body.data().addItemSet( self.Name+'_start_clothes' )
             return
 
-
-        def __Format(self, s):
-            self.__pars=s.split(" ")
-#            debug.SaveString("Format: "+s, 3)
-
-
-            s=""
-            for o in self.__pars:
-                self.__count=0
-                if len(o)>=2 and not o.isdigit():
-                    for h in o:
-                        if h.isalpha() and h.isupper():
-                           self.__count+=1
-                        if self.__count>=2:
-                            o="{size=+5}"+o+"{/size}"
-                            break
-#                    if o.isupper():
-#                        debug.SaveString("isupper: "+o, 3)
-                        
-                s+=o+" "
-            if s!=None:
-                s=s.strip(" ")
-
-            if "#(" in s: #  "Бла бла #(тралала) бла бла" => "Бла бла {size=-3}(тралала){/size} бла бла"
-                s=s.replace("#(","{size=-3}(") 
-                s=s.replace(")","){/size}") 
-            else:
-                if len(s)>1:
-                    if s[0]=="#": #  "#Бла бла (тралала) бла бла" => "{size=-3}Бла бла (тралала) бла бла{/size}"
-                        s="{size=-3}"+s[1:]+"{/size}"
-                if len(s)>3:
-                    debug.SaveString("format.s[:2]: "+str(s[:2]), 3)
-                    if s[:2] in {"{-", "{+"}: #  "{-5}Бла бла (тралала) бла бла" => "{size=-5}Бла бла (тралала) бла бла{/size}"
-                        s="{size="+s[1:3]+s[3:]+"{/size}"
-
-            debug.SaveString("format: "+str(s), 3)
-
-            return s
-
-
-        def Visibility(self, talkingView=" ", isTalking=True, transition=None):
+# Задает видимость персоны. 
+# body+ - показывать тело всегда, без плюса только во время реплики, 
+# head+ - показывать тело всегда, без плюса только во время реплики
+# Например, строка: bodyhead  означает, что во время реплики необходимо показать и голову и тело. а когда говорит горой все скрывать
+# isTalking - если истина, то сразу показывать в режиме реплики
+        def Visibility(self, talkingView=" ", isTalking=True, transition=None): 
             self.SetValue("talkingView", talkingView)
             if self.Name!="hero":
                 if (isTalking and ('head' in self._talkingView)) or ('head+' in self._talkingView): 
                     self.head.showQ(None, self.pos2, transition)
-#                    self.SetValue("Visible", True)
                 else:
                     self.head.hideQ(transition)
-#                    self.SetValue("Visible", False)
                     self.curchar=self.char
                 if (isTalking and ('body' in self._talkingView)) or ('body+' in self._talkingView):  
                     self.body.showQ(None, self.pos, transition)
@@ -247,17 +193,4 @@
         def head(self):
             return self.GetValue("head")
 
-
-
-
-
-# При таком описании проперти объект корретно сохранялся/читался
-#        @property
-#        def liking(self):
-#            return self.GetValue("test")
-#        @liking.setter
-#        def liking(self, value):
-#            if renpy.store.whoring>0:
-#                renpy.store.whoring+=1
-#            self.SetValue("test", value)
 
