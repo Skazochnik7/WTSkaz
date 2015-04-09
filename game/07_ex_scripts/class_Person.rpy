@@ -43,7 +43,6 @@
         def __call__( self, arg1, arg2=None, arg3=None, arg4=None, arg5=None, arg6=None, arg7=None, arg8=None, arg9=None, arg10=None, 
                         arg11=None, arg12=None, arg13=None, arg14=None, arg15=None, arg16=None, arg17=None, arg18=None, arg19=None, 
                         arg20=None, arg21=None, arg22=None, arg23=None, arg24=None):
-#            self.__argstemp=[arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24]
             self.__args=[]
             for o in [arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24]:
                 if o==None:
@@ -103,7 +102,7 @@
                         renpy.say(self.curchar, self.__Format(o))
 
                 
-            return
+            return self
 
 
         def Face(self, s):
@@ -120,6 +119,9 @@
                     self.body.data().setStyleKey( ['brows', 'eyes', 'blush', 'mouth'][i], self.__temp[i] )
 
             return
+
+        def Answer(self, pers): # Для конструкций типа   $hero("...").Answer(hermi("..."))
+            return self
 
 
 
