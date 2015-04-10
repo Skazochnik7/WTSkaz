@@ -6,7 +6,10 @@
     class Person(Entry):
         # constructor 
         def __init__( self, Name, caption, charData=None, defVals=None, constVals=None):
-            SetArrayValue(Name, "caption", caption)
+            if constVals==None:
+                constVals={"caption": caption}
+            else:
+                constVals.update({"caption": caption})                
 
             if defVals==None:
                 defVals={"liking":0, "whoring":0}
@@ -118,10 +121,10 @@
 # head+ - показывать тело всегда, без плюса только во время реплики
 # Например, строка: bodyhead  означает, что во время реплики необходимо показать и голову и тело. а когда говорит горой все скрывать
 # isTalking - если истина, то сразу показывать в режиме реплики
-        def Visibility(self, talkingView=" ", isTalking=True, transition=None): 
+        def Visibility(self, talkingView=" ", isTalking=True, transition=None):
             self.SetValue("talkingView", talkingView)
             if self.Name!="hero":
-                if (isTalking and ('head' in self._talkingView)) or ('head+' in self._talkingView): 
+                if (isTalking and ('head' in self._talkingView)) or ('head+' in self._talkingView):
                     self.head.showQ(None, self.pos2, transition)
                 else:
                     self.head.hideQ(transition)
@@ -135,7 +138,19 @@
                     self.curchar=self.char2
             return self
 
+        def State(self, pos=None, pos2=None):
+            if pos!=None:
+                if isinstance( pos, basestring ):
+                    self.pos=self.GetValue("pos_"+pos)
+                else:
+                    self.pos=pos
+            if pos2!=None:
+                if isinstance( pos2, basestring ):
+                    self.pos2=self.GetValue("pos2_"+pos)
+                else:
+                    self.pos2=pos2
 
+            return self
 
         @property
         def pos(self):
@@ -143,7 +158,7 @@
         @pos.setter
         def pos(self, value):
             self.SetValue("pos", value)
-            self.body.showQ(None, GetValue(value))
+#            self.body.showQ(None, self.GetValue(value))
 
         @property
         def pos2(self):
@@ -151,7 +166,7 @@
         @pos2.setter
         def pos2(self, value):
             self.SetValue("pos2", value)
-            self.head.showQ(None, GetValue(value))
+#            self.head.showQ(None, self.GetValue(value))
 
 
         @property

@@ -7,15 +7,22 @@
             return 
 
 # Внутренняя - не вызывается
-        def __Action(self, name, isshow, position=None):
+        def __Action(self, name, isshow, position=None, par1=None, par2=None, par3=None):
             self.__transition=None
             for o in name:
                 if isinstance( o, basestring ):
                     if isshow:
-                        if position==None:
-                            renpy.show_screen( o )
-                        else:    
+                        if position!=None:
                             renpy.show_screen( o , position) 
+                        else:
+                            if par3!=None:
+                                renpy.show_screen( o , par1, par2, par3)
+                            elif par2!=None:
+                                renpy.show_screen( o , par1, par2)
+                            elif par1!=None:
+                                renpy.show_screen( o , par1)
+                            else:
+                                renpy.show_screen( o )
                     else:
                         renpy.hide_screen( o ) 
                     if self.__transition is not None:
@@ -26,8 +33,8 @@
 
 # Показать набор экранов и транзишинов. Внимание! Транзишин в строке запоминается и используется при показе последющих экранов. 
 # Он идет впереди названия экрана  например screens.Show(d3, "bld1")              
-        def Show(self, arg1, arg2=None, arg3=None, arg4=None, arg5=None):
-            return self.__Action([arg1, arg2, arg3, arg4, arg5], True, None)
+        def Show(self, arg1, arg2=None, arg3=None, arg4=None, arg5=None, par1=None, par2=None, par3=None):
+            return self.__Action([arg1, arg2, arg3, arg4, arg5], True, None, par1=None, par2=None, par3=None)
 
 # Показать экран, выдержать паузу и спрятать
         def ShowHide(self, arg1, arg2, arg3=None):
@@ -50,8 +57,8 @@
             return self.__Action([arg1, arg2, arg3, arg4, arg5], False, None)
 
 # Show, начиная с d3
-        def ShowD3(self, arg1, arg2=None, arg3=None, arg4=None, arg5=None):
-            return self.__Action([Dissolve(.3), arg1, arg2, arg3, arg4, arg5], True, None)
+        def ShowD3(self, arg1, arg2=None, arg3=None, arg4=None, arg5=None, par1=None, par2=None, par3=None):
+            return self.__Action([Dissolve(.3), arg1, arg2, arg3, arg4, arg5], True, None, par1=None, par2=None, par3=None)
 
 # Hide, начиная с d3
         def HideD3(self, arg1, arg2=None, arg3=None, arg4=None, arg5=None):

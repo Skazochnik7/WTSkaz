@@ -60,17 +60,23 @@ label summon_snape:
             label snape_nothing:
             stop music fadeout 1.0
             $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
+            $screens.Hide("snape_main")
+            $snape.State("door").Visibility("body")
             if daytime:
-                sna "Ну что ж, тогда я вернусь к работе..."
+                $snape("~06//.....//Ну что ж, пора вернуться к работе...")
                 play music "music/Brittle Rille.mp3" fadein 1 fadeout 1
             else: 
-                sna "Эмм... если это все, тогда доброй ночи."
+                $snape("~06//Эмм... если это все, тогда доброй ночи.")
                 play music "music/Music for Manatees.mp3" fadein 1 fadeout 1
+
             $ snape_busy = True
-            hide screen snape_02 #Snape stands still.
-            hide screen bld1
-            hide screen snape_main
-            with d3
+#            hide screen snape_02 #Snape stands still.
+#            hide screen bld1
+#            hide screen snape_main
+#            with d3
+
+            $screens.Hide("snape_02", "bld1", d3 )
+            $snape.Visibility(transition=d3)
             $ renpy.play('sounds/door.mp3') #Sound of a door opening.
             if daytime:
                 jump day_main_menu
@@ -674,72 +680,98 @@ label wine_first:
 
 
 label wine_not_first:
-    m "Смотри, что у меня есть!"
-    hide screen s_head2    
+#    m "Смотри, что у меня есть!"
+    $hero("Смотри, что у меня есть!")
+#    hide screen s_head2    
     pause.1
-    $ the_gift = "03_hp/18_store/27.png" # WINE.
-    show screen gift
-    with d3
-    ">Вы передаете Снейпу бутылку, которую нашли в шкафу..." 
-    hide screen gift
-    with d3
+#    $ the_gift = "03_hp/18_store/27.png" # WINE.
+#    show screen gift
+#    with d3
+#    ">Вы передаете Снейпу бутылку, которую нашли в шкафу..." 
+#    hide screen gift
+#    with d3
 #    $ wine -= 1
+
+    $screens.ShowD3("gift", par1=itsDAHR("wine")._img).Say(">Вы передаете Снейпу бутылку, которую нашли в шкафу...").HideD3("gift")
+
     $ s_head_xpos = 330 # x = 330,                                                                              # SNAPE
     $ s_head_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.       # SNAPE
-    $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                        # SNAPE
-    show screen s_head2                                                                                                 # SNAPE
-    sna "Еще одна?"
-    if one_of_ten == 1:
-        $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "Великолепно!"
-    elif one_of_ten == 2:
-        $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "Превосходно!"
-    elif one_of_ten == 3:
-        $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "Бесподобно!"
-    elif one_of_ten == 4:
-        $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "Отлично, мой друг!"
-    elif one_of_ten == 5:
-        $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "Ты нашел тайник Альбуса или это его личный винный погреб?"
-    elif one_of_ten == 6:
-        $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "В последнее время мне с трудом дается выпивка, но не эта!"
-    elif one_of_ten == 7:
-        $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "Отлично! Я уже чувствую себя менее напряженным!"
-    elif one_of_ten == 8:
-        $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "Становится все лучше и лучше!"
-    elif one_of_ten == 9:
-        $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "Серьезно, насколько велик этот тайник?"
-    elif one_of_ten == 2:
-        $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "Уверен, нами быть хорошо! Давай откупорим этого ублюдка!"
+#    $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                        # SNAPE
+#    show screen s_head2                                                                                                 # SNAPE
+#    sna "Еще одна?"
+    $snape("~05").Visibility("head")("Еще одна?")
+    $snape(RandFromSet({
+        "~02// Великолепно!",
+        "~02// Превосходно!",
+        "~02// Бесподобно!",
+        "~02// Отлично, мой друг!",
+        "~05// Ты нашел тайник Альбуса или это его личный винный погреб?",
+        "~02// В последнее время мне с трудом дается выпивка, но не эта!",
+        "~02// Отлично! Я уже чувствую себя менее напряженным!",
+        "~02// Становится все лучше и лучше!",
+        "~05// Серьезно, насколько велик этот тайник?",
+        "~02// Уверен, нами быть хорошо! Давай откупорим этого ублюдка!",
+        }))
+
+
+#    if one_of_ten == 1:
+#        $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
+#        show screen s_head2    
+#        sna2 "Великолепно!"
+#    elif one_of_ten == 2:
+#        $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
+#        show screen s_head2    
+#        sna2 "Превосходно!"
+#    elif one_of_ten == 3:
+#        $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
+#        show screen s_head2    
+#        sna2 "Бесподобно!"
+#    elif one_of_ten == 4:
+#        $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
+#        show screen s_head2    
+#        sna2 "Отлично, мой друг!"
+#    elif one_of_ten == 5:
+#        $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                        # SNAPE
+#        show screen s_head2    
+#        sna2 "Ты нашел тайник Альбуса или это его личный винный погреб?"
+#    elif one_of_ten == 6:
+#        $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
+#        show screen s_head2    
+#        sna2 "В последнее время мне с трудом дается выпивка, но не эта!"
+#    elif one_of_ten == 7:
+#        $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
+#        show screen s_head2    
+#        sna2 "Отлично! Я уже чувствую себя менее напряженным!"
+#    elif one_of_ten == 8:
+#        $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
+#        show screen s_head2    
+#        sna2 "Становится все лучше и лучше!"
+#    elif one_of_ten == 9:
+#        $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                        # SNAPE
+#        show screen s_head2    
+#        sna2 "Серьезно, насколько велик этот тайник?"
+#    elif one_of_ten == 2:
+#        $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                        # SNAPE
+#        show screen s_head2    
+#        sna2 "Уверен, нами быть хорошо! Давай откупорим этого ублюдка!"
     
-    hide screen s_head2 
-    show screen bld1
-    with d3
+#    hide screen s_head2 
+#    show screen bld1
+#    with d3
+
+    $snape.Visibility()
+    $screens.ShowD3("bld1")
+
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
-    hide screen notes
-    show screen notes
-    ">Ваши отношения с профессором Снейпом улучшились."
+
+#    hide screen notes
+#    show screen notes
+#    ">Ваши отношения с профессором Снейпом улучшились."
+#    hide screen bld1
+#    with d3
+
+    $screens.Hide("notes").Show("notes").Say(">Ваши отношения с профессором Снейпом улучшились.").HideD3("bld1")
     $ snape_friendship +=1
-    hide screen bld1
-    with d3
     return
     
     

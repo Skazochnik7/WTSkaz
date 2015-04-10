@@ -121,13 +121,13 @@ init:
 
         global daphne
         daphne=RegEntry(Person("daphne", "Дафна", CharacterExData( WTXmlLinker.getLinkerKey_daphne()), 
-            defVals={"pos": POS_140, "pos2": gMakePos( 390, 340 )}))
-        SetArrayValue("chibidaphne", "door", [610,210])
-        SetArrayValue("chibidaphne", "center", [610,210])
+            defVals={"pos": POS_140, "pos2": gMakePos( 390, 340 )}, constVals={"pos_door": POS_370, "pos_center": POS_140}))
+        SetArrayValue("chibidaphne", "door", [610,250])
+        SetArrayValue("chibidaphne", "center", [400,250])
 
         global snape
-        snape=RegEntry(Person("snape", "Снейп", CharacterExData(WTXmlLinker.getLinkerKey_snape()),
-            defVals={"pos": POS_140, "pos2": gMakePos( 390, 340 )}))
+        snape=RegEntry(Person("snape", "Северус Снейп", CharacterExData(WTXmlLinker.getLinkerKey_snape()),
+            defVals={"pos": POS_140, "pos2": gMakePos( 330, 380 )}, constVals={"pos_door": gMakePos( 350, 0 ), "pos_center": POS_140}))
         SetArrayValue("chibisnape", "door", [610,210])
         SetArrayValue("chibisnape", "center", [360,210])
 

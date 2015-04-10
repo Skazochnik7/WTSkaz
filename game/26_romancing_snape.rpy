@@ -156,7 +156,7 @@ label date_with_snape_04:
     show screen s_head2                                                                                                 # SNAPE
     sna "Эти образы будоражат мое воображение..."
     hide screen s_head2    
-    m "Что насчет альтернативной версии девченки Грейнджер?"
+    m "Что насчет альтернативной версии девчонки Грейнджер?"
     $ s_sprite = "03_hp/10_snape_main/snape_02.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
     sna2 "Да! Гермиона Грейнджер - мерзкая шлюха без достоинства! Да, мне это нравится!"
@@ -191,14 +191,14 @@ label date_with_snape_05:
     $ s_head_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.       # SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna2 "И так...какой план на этот вечер?"
+    sna2 "Итак...какой план на этот вечер?"
     sna2 "Эта девка досаждает тебе?"
     hide screen s_head2    
     menu:
         "\"Да уж. Она упряма.\"":
             $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                         # SNAPE
             show screen s_head2                                                                                                 # SNAPE
-            sna "Не удивительно..."
+            sna "Неудивительно..."
         "\"Нет, не очень...\"":
             $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                         # SNAPE
             show screen s_head2                                                                                                 # SNAPE
@@ -244,7 +244,7 @@ label date_with_snape_05:
 label date_with_snape_06:
     show screen bld1
     with d3
-    m "И так, расскажи мне еще о \"слизеринских\" шлюхах!"
+    m "Итак, расскажи мне еще о \"слизеринских\" шлюхах!"
     $ s_head_xpos = 330 # x = 330,                                                                              # SNAPE
     $ s_head_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.       # SNAPE
     $ s_sprite = "03_hp/10_snape_main/23.png"                                         # SNAPE
@@ -413,30 +413,30 @@ label date_with_snape_09:
     $ s_head_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.       # SNAPE
     $ s_sprite = "03_hp/10_snape_main/24.png"                                                     # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "...и так, после этого я вернусь в Россию"
+    sna "...итак, после этого я вернулся в Россию."
     hide screen s_head2  
     g4 "В Россию?"
     $ s_sprite = "03_hp/10_snape_main/snape_01.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "Но постой, это еще хуже."
+    sna "Погоди, будет еще хуже."
     $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "Очевидно, сейчас я говорю по русски."
+    sna "Теперь я бегло говорю по-русски."
     hide screen s_head2 
     g4 "Что, что?"
     $ s_sprite = "03_hp/10_snape_main/snape_06.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna2 "И я этот обычный парень, который живет в самой жопе России, полном старых, полуразрушенных зданий."
-    sna2 "И я пытаюсь заработать себе на жизнь, рисуя комиксы и делая игры на \"Ren'Py\"..."
+    sna2 "И я - обычный магл, который живет в этой жопе, в городе полном старых, полуразрушенных зданий."
+    sna2 "Я пытаюсь заработать себе на жизнь, рисуя комиксы и делая игры на \"Ren'Py\"..."
     $ s_sprite = "03_hp/10_snape_main/24.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
     sna2 "И это так странно, потому что я даже не знаю, что такое \"Ren'Py\"!"
     hide screen s_head2  
-    m "Хм...и что теперь?"
+    m "Хм...и что дальше?"
     $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna2 "Мда уж...месяцами сидеть на заднице."
-    sna2 "Тогда может и получится создать относительно хорошую и завершенную игру..."
+    sna2 "Ничего особенного... если месяцами сидишь на заднице..."
+    sna2 "Может и получится создать относительно успешную игру..."
     $ s_sprite = "03_hp/10_snape_main/24.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
     sna2 "В конце концов я начал делать неплохие деньги..."
@@ -446,6 +446,16 @@ label date_with_snape_09:
     $ s_sprite = "03_hp/10_snape_main/snape_04.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
     sna "Я проснулся..."
+    sna "И почувствовал себя..."
+    $ s_sprite = "03_hp/10_snape_main/snape_04.png"                                         # SNAPE
+    sna2 "...инфантильным неблагодарным мудаком."
+    g4 "Э-э... ты уверен? Насчет \"мудака\"?"
+    sna2 "А как назвать человека, который радостно берет у общества, страны и при этом поливает дерьмом это общество, страну и окружающих?"
+    m "Гм, действительно."
+    m " Но... м-м, почему инфантильным?"
+    sna2 "Ну, если тебе все так не нравится и тебе недодают, отправляйся туда, где додадут. Меняй свою жизнь, как взрослый человек. Но ты сидишь на попе и только исходишь на г...но."
+    m "......."
+    sna2 "И после этого я проснулся окончательно."
     $ s_sprite = "03_hp/10_snape_main/snape_09.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
     sna "...................."
@@ -455,22 +465,22 @@ label date_with_snape_09:
     show screen s_head2                                                                                                 # SNAPE
     sna "Как ты думаешь, что это означает?"
     hide screen s_head2  
-    m "Похоже на еще одну вставку Акабура."
+    m "До того как ты первый раз проснулся и плакался, что сидишь в жопе, похоже на еще одну вставку Акабура. А дальше похоже на вставку кого-то еще."
     $ s_sprite = "03_hp/10_snape_main/snape_05.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
     sna "Что?"
     hide screen s_head2  
-    m "..."
-    m "Глупости, замечтался, не более."
+    m "Просто не бери в голову."
+    m "Глупый сон, не более того."
     $ s_sprite = "03_hp/10_snape_main/snape_29.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "Как будто в кошмаре..."
+    sna "Было больше похоже на кошмар..."
     hide screen s_head2  
     pause.1
     show screen blktone
     with d3
     ">Профессор Снейп теперь больше доверяет вам..."
-    ">(До определенного момента он не думал делиться с вами этими странными снами)."
+    ">(До встречи с вами, он бы дважды подумал, прежде чем делиться с кем-то этими странными снами)."
     call sly_plus
     hide screen blktone
     hide screen bld1
