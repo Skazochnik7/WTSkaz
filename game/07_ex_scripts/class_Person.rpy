@@ -64,7 +64,7 @@
 # Разобрано, начинаем отображать
 
 # Если было не видимо - показать
-            self.__trans=d3
+            self.__trans=None #d3
             if not self.GetValue("Visible"):
                 self.Visibility(self._talkingView, True, self.__trans)
 # Если аргументы закончились - прервать                
@@ -81,11 +81,14 @@
                         if self.Name=="hero": 
                             for p in GetEntriesByType("Person"):
                                 if p.Name not in {"hero"}:
-                                    if "body+" not in p._talkingView:
-                                        p.body.hideQ()
-                                        p.SetValue("Visible", False)
-                                    if "head+" not in p._talkingView:
-                                        p.head.hideQ()
+                                    if p.GetValue("Visible"):
+                                        p.Visibility(p._talkingView, False, None)
+#                                    if "body+" not in p._talkingView:
+#                                        p.body.hideQ()
+#                                        p.SetValue("Visible", False)
+#                                    if "head+" not in p._talkingView:
+#                                        p.head.hideQ()
+#                                        p.SetValue("Visible", False)
                         renpy.say(self.curchar, StringFormat(o))
             return self
 
@@ -122,6 +125,7 @@
 # Например, строка: bodyhead  означает, что во время реплики необходимо показать и голову и тело. а когда говорит горой все скрывать
 # isTalking - если истина, то сразу показывать в режиме реплики
         def Visibility(self, talkingView=" ", isTalking=True, transition=None):
+            debug.SaveString(self.Name+" "+talkingView+" "+str(isTalking))
             self.SetValue("talkingView", talkingView)
             if self.Name!="hero":
                 if (isTalking and ('head' in self._talkingView)) or ('head+' in self._talkingView):
@@ -131,11 +135,18 @@
                     self.curchar=self.char
                 if (isTalking and ('body' in self._talkingView)) or ('body+' in self._talkingView):  
                     self.body.showQ(None, self.pos, transition)
-                    self.SetValue("Visible", True)
+#                    self.SetValue("Visible", True)
                 else:
                     self.body.hideQ(transition)
-                    self.SetValue("Visible", False)
+#                    self.SetValue("Visible", False)
                     self.curchar=self.char2
+
+                if isTalking:
+                    if len(talkingView)>1: # Если длина строки больше 1 значит она - не пробел и значит что-то теперь отображается
+                        self.SetValue("Visible", True)    
+                else:
+                    if not "+" in talkingView: # Если в строке нет плюса, значит сейчас все спрятано
+                        self.SetValue("Visible", False)
             return self
 
         def State(self, pos=None, pos2=None):
