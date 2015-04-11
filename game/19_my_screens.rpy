@@ -22,6 +22,20 @@ screen main_menu_01:
         idle "03_hp/05_props/02_cupboard.png"
         hover "03_hp/05_props/02_cupboard_02.png"
         action [Hide("main_menu_01"), Hide("animation_feather"), Jump("cupboard")]
+
+    imagebutton: # hat                                                                                 #############################      LRM_HAT         #####################
+        xpos 120 
+        ypos 280
+        focus_mask True
+        xanchor "center"
+        yanchor "center"
+        idle "03_hp/05_props/00_lrm_hat.png"
+        hover "03_hp/05_props/00_lrm_hat_1.png"
+#        hovered [Show("gui_tooltip", my_picture="exclaim_01", my_tt_xpos=130, my_tt_ypos=50) ] 
+#        unhovered [Hide("gui_tooltip")]
+        action [Hide("main_menu_01"), Jump("lrm_stats_00")]
+
+
         
     if package_is_here:
         imagebutton: # THE PACKAGE

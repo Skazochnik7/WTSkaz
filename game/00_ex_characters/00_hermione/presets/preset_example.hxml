@@ -2,13 +2,36 @@
 
 <presets>
 	<preset name="example">
+	<!-- this is a template block. here you specifiy phrases which will be replaced by actual params in runtime -->
+	<!-- you can enter more that one template, separate then with commas: <templates>TT,HH,SS,ZZzZZ</templates> -->
+	<!-- WARNING! spaces are also included into template string, so be carefull -->
+	<!-- just remember, that you will need to pass so many actual params as the templates count -->
+	<!-- for example, you can call template preset in next way:
+			for <templates>TT</templates>
+			herView.showQQ( 'example', POS_140, '23')
+			herView.showQQ( 'example', POS_140, ['23'])
+				from line:
+					<item> <key>face</key> <frame>body_TT.png</frame> </item>
+				will lead to line:
+					<item> <key>face</key> <frame>body_23.png</frame> </item>
+
+		and multiple template params example:
+			for <templates>TT,JJ,FF,CC</templates>
+			herView.showQQ( 'example', POS_140, 'body 1, 4.png')	#4 params: body, 1, 4, png
+			herView.showQQ( 'example', POS_140, ['body', '1', '4', 'png'] )
+				from line:
+					<item> <key>face</key> <frame>TT_JJFF.CC</frame> </item>
+				will lead to line:
+					<item> <key>face</key> <frame>body_14.png</frame> </item>
+	-->
+		<templates>TT</templates>
 	<!-- possible combinations of params:
 		<item> <key></key> <frame></frame> </item>
 		<item> <key></key> <style></style> </item>
 		<item> <name></name> <frame></frame> </item>
 		<item> <name></name> <style></style> </item>
 	-->
-		<item> <key>face</key> <frame>body_23.png</frame> </item>
+		<item> <key>face</key> <frame>body_TT.png</frame> </item>
 		<item> <name>item_skirt</name> <style>short</style> </item>
 	</preset>
 
