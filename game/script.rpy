@@ -121,13 +121,14 @@ init:
 
         global daphne
         daphne=RegEntry(Person("daphne", "Дафна", CharacterExData( WTXmlLinker.getLinkerKey_daphne()), 
-            defVals={"pos": POS_140, "pos2": gMakePos( 390, 340 )}, constVals={"pos_door": POS_370, "pos_center": POS_140}))
+            defVals={"pos": POS_140, "pos2": gMakePos( 340, 420 )}, constVals={"pos_door": POS_370, "pos_center": POS_140}))
         SetArrayValue("chibidaphne", "door", [610,250])
         SetArrayValue("chibidaphne", "center", [400,250])
 
         global snape
         snape=RegEntry(Person("snape", "Северус Снейп", CharacterExData(WTXmlLinker.getLinkerKey_snape()),
-            defVals={"pos": POS_140, "pos2": gMakePos( 330, 380 )}, constVals={"pos_door": gMakePos( 350, 0 ), "pos_center": POS_140}))
+            defVals={"pos": POS_140, "pos2": gMakePos( 340, 430 )}, 
+            constVals={"pos_door": gMakePos( 350, 0 ), "pos_doorleft": gMakePos( 300, 0 ), "pos_center": POS_140}))
         SetArrayValue("chibisnape", "door", [610,210])
         SetArrayValue("chibisnape", "center", [360,210])
 
@@ -195,7 +196,8 @@ init:
 
 # ВЕТКА ДАФНЫ
 # Ветка включается при вызове общения Снейпа ночью после того, как отработает ивент со снейпом, где он хвалится как трахает студенток
-        this.Where({"SNAPE"},"daphne").AddStep("daphna_pre_01",        ready = lambda e: snape_events >= 6) 
+        this.Where({"SNAPE"},"daphne").AddStep("daphne_pre_01",        ready = lambda e: snape_events >= 6) 
+        this.Where({"DAY"},"daphne").AddStep("daphne_pre_02",        ready = lambda e: e.prev.IsAgo(2)) 
 
 
 
@@ -4863,6 +4865,7 @@ init-2:
     
     ###HARRY POTTER CHARACTERS###
     $ translators = Character('Переводчик', color="#0089BE", show_two_window=True, ctc="ctc3", ctc_position="fixed")
+    $ skaz = Character('Сказочник', color="#0000FF")
     $ her = Character('Гермиона', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ her2 = Character('Гермиона', color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed") #Text box used for "head only" speech. (Because it has padding).
     $ sna = Character('Северус Снейп', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")

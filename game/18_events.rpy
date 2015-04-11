@@ -11,7 +11,7 @@ label event_00:
 
     $hero(g4, "#(Туземная форма жизни!?)")
 
-    $screens.HideD3("bld1").ShowPos(d3, "thought", Position(xpos=650, ypos=180)).Pause(1).ShowD3("bld1")
+    $screens.HideD3("bld1").ShowPos(d3, "thought", gMakePos( 650, 180 )).Pause(1).ShowD3("bld1")
 
     $hero(m,    "#(Выглядит, как человек...)// #(Может быть, если я буду вести себя тихо, оно уйдет...?)")
 
@@ -21,7 +21,7 @@ label event_00:
 
     $snape.chibi.Trans("go center", "blink")
     $screens.ShowD3("bld1")
-    $snape.Visibility("body", Dissolve(.5))
+    $snape.State("doorleft").Visibility("body", transition=Dissolve(.5))
     $screens.ShowHide(d3, "ctc", 0.0)
 
     $snape("~01",    who2, "Альбус... есть минута?")

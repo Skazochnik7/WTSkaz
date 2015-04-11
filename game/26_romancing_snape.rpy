@@ -760,7 +760,7 @@ label date_with_snape_14:
     sna "Что? Это произошло на самом деле."
     $ s_sprite = "03_hp/10_snape_main/snape_13.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna "Я наконец-то добил эту ведьму из \"Слизерина\"."
+    sna "Я наконец-то взял к ногтю эту ведьму из \"Слизерина\"."
     hide screen s_head2
     g9 "Круто!"
     $ s_sprite = "03_hp/10_snape_main/snape_13.png"                                         # SNAPE
@@ -773,7 +773,7 @@ label date_with_snape_14:
     show screen s_head2                                                                                                 # SNAPE
     sna "И я хочу сказать, это было действительно круто."
     hide screen s_head2
-    g9 "Что за девка!"
+    g9 "Да, девка что надо!"
     $ s_sprite = "03_hp/10_snape_main/snape_22.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
     sna "Именно!"
