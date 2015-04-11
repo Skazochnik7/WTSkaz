@@ -453,7 +453,7 @@ screen points: #House points screen.
 screen gift(__par=the_gift):
     zorder 5
     add "03_hp/18_store/00.png" 
-    add the_gift
+    add __par
     
 
 
