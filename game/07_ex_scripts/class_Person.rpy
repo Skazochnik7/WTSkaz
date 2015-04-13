@@ -106,7 +106,7 @@
 
                 self.__temp=s.split(" ")
                 for i in range(4):
-                    self.body.data().setStyleKey( ['brows', 'eyes', 'blush', 'mouth'][i], self.__temp[i] )
+                    self.body.data().setStyleKey( ['brows', 'eyes', 'blush', 'mouth'][i], ['brows', 'eyes', 'blush', 'mouth'][i]+"_"+self.__temp[i] )
 
             return
 
@@ -121,8 +121,8 @@
 
 # Задает видимость персоны. 
 # body+ - показывать тело всегда, без плюса только во время реплики, 
-# head+ - показывать тело всегда, без плюса только во время реплики
-# Например, строка: bodyhead  означает, что во время реплики необходимо показать и голову и тело. а когда говорит горой все скрывать
+# head+ - показывать голову всегда, без плюса только во время реплики
+# Например, строка: bodyhead  означает, что во время реплики необходимо показать и голову и тело. а когда говорит герой все скрывать
 # isTalking - если истина, то сразу показывать в режиме реплики
         def Visibility(self, talkingView=" ", isTalking=True, transition=None):
             debug.SaveString(self.Name+" "+talkingView+" "+str(isTalking))

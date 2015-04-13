@@ -9,40 +9,40 @@
 		<visible>1</visible>
 		<zorder>face</zorder>
 	</style>
-	<style name="def">
+	<style name="mouth_def">
+		<frame>daphne_mouth_neutral.png</frame>
+	</style>
+	<style name="mouth_smi">
 		<frame>daphne_mouth_smile.png</frame>
 	</style>
-	<style name="smi">
-		<frame>daphne_mouth_smile.png</frame>
-	</style>
-	<style name="ang">
+	<style name="mouth_ang">
 		<frame>daphne_mouth_angry.png</frame>
 	</style>
-	<style name="pur">
+	<style name="mouth_pur">
 		<frame>daphne_mouth_pursed.png</frame>
 	</style>
-	<style name="pou">
+	<style name="mouth_pou">
 		<frame>daphne_mouth_pout.png</frame>
 	</style>
-	<style name="ope">
+	<style name="mouth_ope">
 		<frame>daphne_mouth_open.png</frame>
 	</style>
-	<style name="opT">
+	<style name="mouth_opT">
 		<frame>daphne_mouth_opentongue.png</frame>
 	</style>
-	<style name="dis">
+	<style name="mouth_dis">
 		<frame>daphne_mouth_disgust.png</frame>
 	</style>
-	<style name="ehh">
+	<style name="mouth_ehh">
 		<frame>daphne_mouth_ehh.png</frame>
 	</style>
-	<style name="gri">
+	<style name="mouth_gri">
 		<frame>daphne_mouth_grin.png</frame>
 	</style>	
-	<style name="wo">
+	<style name="mouth_wo">
 		<frame>daphne_mouth_wo.png</frame>
 	</style>
-	<style name="woT">
+	<style name="mouth_woT">
 		<frame>daphne_mouth_wotongue.png</frame>
 	</style>
 	

@@ -9,16 +9,16 @@
 		<visible>1</visible>
 		<zorder>face</zorder>
 	</style>
-	<style name="0">
+	<style name="blush_0">
 		<frame>daphne_cheeks_blush0.png</frame>
 	</style>
-	<style name="1">
+	<style name="blush_1">
 		<frame>daphne_cheeks_blush1.png</frame>
 	</style>
-	<style name="2">
+	<style name="blush_2">
 		<frame>daphne_cheeks_blush2.png</frame>
 	</style>
-	<style name="3">
+	<style name="blush_3">
 		<frame>daphne_cheeks_blush3.png</frame>
 	</style>
 	

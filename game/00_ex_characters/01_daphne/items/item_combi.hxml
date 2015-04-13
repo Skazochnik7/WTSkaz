@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>combi</key>
+
+	<style name="default">
+		<frame>daphne_combi_handsonhip.png</frame>
+		<folder>clothes</folder>
+		<zorder>skirt</zorder>
+	</style>
+</item>

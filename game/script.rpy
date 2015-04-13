@@ -121,7 +121,7 @@ init:
 
         global daphne
         daphne=RegEntry(Person("daphne", "Дафна", CharacterExData( WTXmlLinker.getLinkerKey_daphne()), 
-            defVals={"pos": POS_140, "pos2": gMakePos( 340, 420 )}, constVals={"pos_door": POS_370, "pos_center": POS_140}))
+            defVals={"pos": POS_140, "pos2": gMakePos( 340, 420 )}, constVals={"pos_door": gMakePos( 460, -60 ), "pos_center": POS_140}))
         SetArrayValue("chibidaphne", "door", [610,250])
         SetArrayValue("chibidaphne", "center", [400,250])
 

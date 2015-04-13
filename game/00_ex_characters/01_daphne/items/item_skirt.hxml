@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>skirt</key>
+
+	<style name="default">
+		<frame>daphne_skirt.png</frame>
+		<folder>clothes</folder>
+		<zorder>skirt</zorder>
+	</style>
+</item>

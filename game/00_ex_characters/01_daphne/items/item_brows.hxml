@@ -9,16 +9,16 @@
 		<visible>1</visible>
 		<zorder>face</zorder>
 	</style>
-	<style name="46">
+	<style name="brows_46">
 		<frame>daphne_brows_furrowedold.png</frame>
 	</style>
-	<style name="36">
+	<style name="brows_36">
 		<frame>daphne_brows_furrowed.png</frame>
 	</style>
-	<style name="55">
+	<style name="brows_55">
 		<frame>daphne_brows_narrowed.png</frame>
 	</style>
-	<style name="64">
+	<style name="brows_64">
 		<frame>daphne_brows_raised.png</frame>
 	</style>
 	

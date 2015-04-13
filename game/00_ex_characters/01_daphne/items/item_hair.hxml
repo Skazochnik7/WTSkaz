@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>hair</key>
+	
+	<subitems>
+		<item>item_hair_sub_back</item>
+	</subitems>
+	
+	<style name="default">
+		<frame>daphne_hair_top.png</frame>
+		<folder>hair</folder>
+		<visible>1</visible>
+		<zorder>hair_top</zorder>
+		<parent>head</parent>
+	</style>
+</item>

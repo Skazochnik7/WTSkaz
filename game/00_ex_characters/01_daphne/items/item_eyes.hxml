@@ -10,70 +10,70 @@
 		<zorder>face</zorder>
 		<parent>head</parent>
 	</style>
-	<style name="00">
+	<style name="eyes_00">
 		<frame>daphne_eyes_normal.png</frame>
 	</style>
-	<style name="03">
+	<style name="eyes_03">
 		<frame>daphne_eyes_normalleft.png</frame>
 	</style>
-	<style name="01">
+	<style name="eyes_01">
 		<frame>daphne_eyes_normalright.png</frame>
 	</style>
-	<style name="02">
+	<style name="eyes_02">
 		<frame>daphne_eyes_normaldown.png</frame>
 	</style>
-	<style name="04">
+	<style name="eyes_04">
 		<frame>daphne_eyes_normalup.png</frame>
 	</style>
-	<style name="n0">
+	<style name="eyes_n0">
 		<frame>daphne_eyes_narrowforward.png</frame>
 	</style>
-	<style name="n2">
+	<style name="eyes_n2">
 		<frame>daphne_eyes_narrowleft.png</frame>
 	</style>
-	<style name="n1">
+	<style name="eyes_n1">
 		<frame>daphne_eyes_narrowright.png</frame>
 	</style>
-	<style name="n2">
+	<style name="eyes_n2">
 		<frame>daphne_eyes_narrowdown.png</frame>
 	</style>
-	<style name="n4">
+	<style name="eyes_n4">
 		<frame>daphne_eyes_narrowup.png</frame>
 	</style>
-	<style name="n-">
+	<style name="eyes_n-">
 		<frame>daphne_eyes_narrowlower.png</frame>
 	</style>	
-	<style name="w0">
+	<style name="eyes_w0">
 		<frame>daphne_eyes_wideforward.png</frame>
 	</style>
-	<style name="w3">
+	<style name="eyes_w3">
 		<frame>daphne_eyes_wideleft.png</frame>
 	</style>
-	<style name="w1">
+	<style name="eyes_w1">
 		<frame>daphne_eyes_wideright.png</frame>
 	</style>
-	<style name="w2">
+	<style name="eyes_w2">
 		<frame>daphne_eyes_widedown.png</frame>
 	</style>
-	<style name="w4">
+	<style name="eyes_w4">
 		<frame>daphne_eyes_wideup.png</frame>
 	</style>
-	<style name="c0">
+	<style name="eyes_c0">
 		<frame>daphne_eyes_closed.png</frame>
 	</style>
-	<style name="0+n">
+	<style name="eyes_0+n">
 		<frame>daphne_ears_normal+narrow.png</frame>
 	</style>
-	<style name="c+n">
+	<style name="eyes_c+n">
 		<frame>daphne_ears_closed+narrow.png</frame>
 	</style>
-	<style name="c-+n">
+	<style name="eyes_c-+n">
 		<frame>daphne_ears_closedlower+narrow.png</frame>
 	</style>
-	<style name="c-+0">
+	<style name="eyes_c-+0">
 		<frame>daphne_ears_closedlower+normal.png</frame>
 	</style>
-	<style name="c+0">
+	<style name="eyes_c+0">
 		<frame>daphne_ears_closed+normal.png</frame>
 	</style>	
 	
