@@ -122,8 +122,8 @@ init:
         global daphne
         daphne=RegEntry(Person("daphne", "Дафна", CharacterExData( WTXmlLinker.getLinkerKey_daphne()), 
             defVals={"pos": POS_140, "pos2": gMakePos( 340, 420 )}, constVals={"pos_door": gMakePos( 460, -60 ), "pos_center": POS_140}))
-        SetArrayValue("chibidaphne", "door", [610,250])
-        SetArrayValue("chibidaphne", "center", [400,250])
+        SetArrayValue("chibidaphne", "door", [610,220])
+        SetArrayValue("chibidaphne", "center", [370,220])
 
         global snape
         snape=RegEntry(Person("snape", "Северус Снейп", CharacterExData(WTXmlLinker.getLinkerKey_snape()),
@@ -195,9 +195,10 @@ init:
 # КОНЕЦ ГЛАВНОГО СЦЕНАРИЯ
 
 # ВЕТКА ДАФНЫ
-# Ветка включается при вызове общения Снейпа ночью после того, как отработает ивент со снейпом, где он хвалится как трахает студенток
+# Ветка включается при вызове Снейпа ночью после того, как отработает ивент со Cнейпом, где он хвалится как трахает студенток
         this.Where({"SNAPE"},"daphne").AddStep("daphne_pre_01",        ready = lambda e: snape_events >= 6) 
         this.Where({"DAY"},"daphne").AddStep("daphne_pre_02",        ready = lambda e: e.prev.IsAgo(2)) 
+        this.Where({"SNAPE", "CHITCHAT"},"daphne").AddStep("daphne_pre_03") 
 
 
 

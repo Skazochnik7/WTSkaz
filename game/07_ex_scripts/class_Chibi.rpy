@@ -141,6 +141,25 @@ image chibidaphne go:
     repeat
 
 
+image chibidaphne goout:
+    im.Flip("03_hp/24_daphne/dap_walk_a1.png", horizontal=True) 
+    pause.08
+    im.Flip("03_hp/24_daphne/dap_walk_a2.png", horizontal=True) 
+    pause.08
+    im.Flip("03_hp/24_daphne/dap_walk_a3.png", horizontal=True) 
+    pause.08
+    im.Flip("03_hp/24_daphne/dap_walk_a2.png", horizontal=True) 
+    pause.08
+    im.Flip("03_hp/24_daphne/dap_walk_a1.png", horizontal=True) 
+    pause.08
+    im.Flip("03_hp/24_daphne/dap_walk_a4.png", horizontal=True) 
+    pause.08
+    im.Flip("03_hp/24_daphne/dap_walk_a5.png", horizontal=True) 
+    pause.08
+    im.Flip("03_hp/24_daphne/dap_walk_a4.png", horizontal=True) 
+    pause.08
+    repeat
+
 image daph blink:
     choice 12.0:
         "03_hp/animation/h_walk_01.png"
