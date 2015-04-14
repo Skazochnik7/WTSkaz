@@ -117,8 +117,10 @@
 #    def IsRunNumberOrMore(num): # Это запуск номер num или последующий?
 #        return event._finishCount>=num-1 # было - num
 
-        def Finalize(self):
+        def Finalize(self, label=None):
             self.IncFinished()
+            if label != None:
+                renpy.jump(label)
             return
 
 

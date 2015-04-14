@@ -3790,6 +3790,7 @@ image heart:
 
 
 image side mage = "mage.png"
+image side mage1 = "mage1.png"
 image side mage2 = "mage2.png"
 image side mage3 = "mage3.png"
 image side mage4 = "mage4.png"
@@ -4777,6 +4778,7 @@ define pat = Character('silvarius2000',
 
 define s = Character(None, color="#402313", ctc="ctc3", ctc_position="fixed")
 define m = Character(None, window_left_padding=200, image="mage", color="#402313", ctc="ctc3", ctc_position="fixed")
+define g1 = Character(None, window_left_padding=200, image="mage1", color="#402313", ctc="ctc3", ctc_position="fixed")
 define g = Character(None, window_left_padding=300, image="mage2", color="#402313", ctc="ctc3", ctc_position="fixed")
 define g2 = Character(None, window_left_padding=300, image="mage3", color="#402313", ctc="ctc3", ctc_position="fixed")
 define g4 = Character(None, window_left_padding=200, image="mage4", color="#402313", ctc="ctc3", ctc_position="fixed")

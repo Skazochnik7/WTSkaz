@@ -69,6 +69,7 @@ label summon_snape:
                 $snape("~06//Эмм... если это все, тогда доброй ночи.")
                 play music "music/Music for Manatees.mp3" fadein 1 fadeout 1
 
+            label snape_nothing_exit:
             $ snape_busy = True
 #            hide screen snape_02 #Snape stands still.
 #            hide screen bld1
