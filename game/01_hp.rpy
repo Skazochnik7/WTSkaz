@@ -488,6 +488,8 @@ if package_is_here:
     show screen package
 show screen genie
 
+if this.IsStep("MAIL"):
+    $letters+=1
 if got_mail or mail_from_her or letters >= 1:
     play sound "sounds/owl.mp3"  #Quiet...
     show screen owl

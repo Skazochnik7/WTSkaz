@@ -199,6 +199,7 @@ init:
         this.Where({"SNAPE"},"daphne").AddStep("daphne_pre_01",        ready = lambda e: snape_events >= 6) 
         this.Where({"DAY"},"daphne").AddStep("daphne_pre_02",        ready = lambda e: e.prev.IsAgo(2)) 
         this.Where({"SNAPE", "CHITCHAT"},"daphne").AddStep("daphne_pre_03") 
+        this.Where({"MAIL"},"daphne").AddStep("daphne_pre_04") 
 
 
 

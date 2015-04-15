@@ -463,15 +463,26 @@ screen gift(__par=the_gift):
 
 
 
-screen letter:
+screen letter(par1=letter_text):
     zorder 4
     add "03_hp/11_misc/letter.png" at Position(xpos=200, ypos=30)  
-    hbox: #горизонтальный «контейнер», где будет изображение золота и его количество
+    hbox: 
         spacing 40 xpos 270 ypos 80 xmaximum 250#отступ для текста, если надо прямо в левом углу — убираем его        
-        text letter_text
+        text par1
 screen blkfade:
     zorder 5
     add "blackfade.png"
+
+screen letterbig(par1=letter_text):
+    zorder 4
+    add "03_hp/11_misc/letterbig.png" at Position(xpos=40, ypos=30)  
+    hbox: 
+        spacing 40 xpos 150 ypos 80 xmaximum 480#отступ для текста, если надо прямо в левом углу — убираем его        
+        text par1
+screen blkfade:
+    zorder 5
+    add "blackfade.png"
+
  
 screen jerkingimage:
     zorder jerk_zorder

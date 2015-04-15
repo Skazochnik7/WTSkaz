@@ -1,4 +1,7 @@
 label mail:
+
+    $ this.RunStep("MAIL")    
+
     if finished_report >= 1:
         $ letters -= 1 #Adds one letter in waiting list to be read. Displays owl with envelope.
         $ got_paycheck = False #When TRUE the paycheck is in the mail. Can't do paper work.
@@ -134,12 +137,15 @@ label mail_02: #Packages only. <================================================
 
     if evn!=None:
         $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ the_gift = evn._img #"03_hp/18_store/08.png" # Copper book of spirit.
-        show screen gift
-        with d3
-        ">Книга [evn._caption] была добавлена в Вашу коллекцию."
-        hide screen gift
-        with d3
+
+        $screens.ShowD3("gift", par1=evn._img).Say(">Книга [evn._caption] была добавлена в Вашу коллекцию.").HideD3("gift")
+
+#        $ the_gift = evn._img #"03_hp/18_store/08.png" # Copper book of spirit.
+#        show screen gift
+#        with d3
+#        ">Книга [evn._caption] была добавлена в Вашу коллекцию."
+#        hide screen gift
+#        with d3
         call screen main_menu_01  
 
 
@@ -155,16 +161,56 @@ label mail_02: #Packages only. <================================================
         $hero.Items.AddItem(item.Name, _count)  
         $itsOWL.Clear()
         $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ the_gift = item._img 
-        show screen gift
-        with d3
-        ">Добавлено к вашим вещам: [item._caption], [_count] шт. "
-        hide screen gift
-        with d3
+
+        $screens.ShowD3("gift", par1=item._img).Say(">Добавлено к вашим вещам: [item._caption], [_count] шт. ").HideD3("gift")
+
+#        $ the_gift = item._img 
+#        show screen gift
+#        with d3
+#        ">Добавлено к вашим вещам: [item._caption], [_count] шт. "
+#        hide screen gift
+#        with d3
         call screen main_menu_01
 
 
-    
+label daphne_pre_04: #Письмо родителей Дафны Дамблдору
+    $screens.Hide("owl").Show("owl_02")
+    $ letters -= 1
+
+    $__pages=["{size=-7}От: Оливии Гринграсс\nКому: Профессору Дамблдору\n\n{/size}"
+    "{size=-4}Профессор Дамблдор!\n\nМы с мужем серьезно обеспокоены тем, что наша дочь не получает достаточно внимания в Хогвартсе и до сих пор не заняла в нем подобающего положения.\n\n "
+    "Профессор Северус Снейп проинформировал нас, что вы, наконец-то, спохватились и вызвались давать ей частные уроки.\n\n Вы непозволительно долго шли к этому, профессор!\n\n "
+    "Надеемся, что ваши запоздалые действия возымеют хоть какой-то эффект...\n\n ",
+    "{size=-4}...Как вы знаете, в министерстве намечено очередное заседание по вопросам выделения фондов магическим учебным заведениям.\n\n "
+    "Информируем вас, что если вами не будет достигнут достаточный прогресс, Дафна будет переведена в Дурмштанг - в академию, где умеют ценить настоящих чистокровных магов.\n\n "
+    "Мы же в этом случае приложим все усилия, чтобы Хогвартс получил самое минимальное финансирование.{/size}\n\n "
+    "{size=-3}Без особой надежды на ваш успех,\nОливия Гринграсс.{/size}"]
+    $__pageIndex=0
+    label letterbig_newpage:
+    $screens.Show("letterbig", par1=__pages[__pageIndex])
+    $screens.Show("ctc", d3, "bld1").Pause()
+
+    menu:
+        "<<< Вернуться " if __pageIndex>0:
+            $__pageIndex-=1                
+            jump letterbig_newpage
+        " Продолжить >>>" if __pageIndex<len(__pages)-1:
+            $__pageIndex+=1
+            jump letterbig_newpage
+        "- Завершить -":
+            pass    
+    $screens.Hide("letterbig", "ctc", d3, "bld1")
+
+    $hero(g4, "{size=+5}Гре - {/size}{size=+3}ба - {/size}{size=+1}ны - {/size}{size=-1}е     {/size}{size=-3}пес - {/size}{size=-5}ки-и-и.......{/size}",
+        m,"Дружище Снейп опять что-то замутил, и я не уверен, что мне это нравится.//"
+        "Мне что теперь, учить ее занимать подобающее ей положение?// Если она у меня займет подобающее ЕЙ положение, оно не слишком понравится ее мамочке!//"
+        "Великие пески, придется все время трястись, чтобы не сболтнуть лишнего, и она не настучала родителям...//"
+        "Но чему ее учить, если я вообще ничего о ней не знаю?!")
+
+    $event.Finalize()
+
+    call screen main_menu_01
+
 
 
 
