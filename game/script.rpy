@@ -205,6 +205,7 @@ init:
         this.Where({"MAIL"},"daphne").AddStep("daphne_pre_04",        ready = lambda e: e.prev.IsAgo(3)) 
         this.Where({"SNAPE", "CHITCHAT"},"daphne").AddStep("daphne_pre_05") 
         this.Where({"HERMICHAT"},"daphne").AddStep("daphne_pre_06",   ready = lambda e: e._start2+2<=day) 
+        this.Where({"MAIL"},"daphne_pre_07").AddStep("daphne_pre_07", ready = lambda e: e.prevInList.prevInList.IsAgo(2)) 
 
 
 
