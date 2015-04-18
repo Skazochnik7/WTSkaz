@@ -115,13 +115,16 @@ init:
         hero=RegEntry(Person("hero", "Джинн"))
         global hermi
         hermi=RegEntry(Person("hermione", "Гермиона", CharacterExData(WTXmlLinker.getLinkerKey_hermione()),
-            defVals={"pos": POS_370, "pos2": gMakePos( 390, 340 )}))
+            defVals={"pos": POS_370, "pos2": gMakePos( 390, 340 ), 
+                "SCUKO_presented":False, "incomePercent":0, "pointsPerDaphneVisit":0}))
         SetArrayValue("chibihermione", "door", [610,250])
         SetArrayValue("chibihermione", "center", [400,250])
 
         global daphne
         daphne=RegEntry(Person("daphne", "Дафна", CharacterExData( WTXmlLinker.getLinkerKey_daphne()), 
-            defVals={"pos": POS_140, "pos2": gMakePos( 340, 420 )}, constVals={"pos_door": gMakePos( 460, -60 ), "pos_center": POS_140}))
+            defVals={"pos": POS_140, "pos2": gMakePos( 340, 420 ), 
+                "visitInterval":0}, 
+            constVals={"pos_door": gMakePos( 460, -60 ), "pos_center": POS_140}))
         SetArrayValue("chibidaphne", "door", [610,220])
         SetArrayValue("chibidaphne", "center", [370,220])
 
@@ -201,6 +204,7 @@ init:
         this.Where({"SNAPE", "CHITCHAT"},"daphne").AddStep("daphne_pre_03") 
         this.Where({"MAIL"},"daphne").AddStep("daphne_pre_04",        ready = lambda e: e.prev.IsAgo(3)) 
         this.Where({"SNAPE", "CHITCHAT"},"daphne").AddStep("daphne_pre_05") 
+        this.Where({"HERMICHAT"},"daphne").AddStep("daphne_pre_06",   ready = lambda e: e._start2+2<=day) 
 
 
 

@@ -69,7 +69,7 @@
                 self.Visibility(self._talkingView, True, self.__trans)
 # Если аргументы закончились - прервать                
             for o in self.__args:
-                if o==None:
+                if (o==None) or (o==""):
                     break
                 if not isinstance( o, basestring ): # если не строка, значит Character
                     self.curchar=o

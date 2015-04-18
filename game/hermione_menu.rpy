@@ -153,6 +153,7 @@ label hermione_approaching:
                 else: 
                     her "Пф!..."
 
+            label hermione_goout:
             hide screen bld1
             $herView.hideQ() 
             hide screen blktone 
@@ -181,6 +182,7 @@ label hermione_chat:
         
 ### CHITCHAT WITH HERMIONE ###
 label chit_chat_hermione:
+    $ this.RunStep("HERMICHAT")
     $ one_of_ten = renpy.random.randint(1, 10) #Generating one number out of three for various porpoises.
     $ pos = POS_410
     
