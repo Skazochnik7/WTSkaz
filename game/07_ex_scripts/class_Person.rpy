@@ -12,9 +12,9 @@
                 constVals.update({"caption": caption})                
 
             if defVals==None:
-                defVals={"liking":0, "whoring":0}
+                defVals={"liking":0, "whoring":0, "talkTime":0}
             else:
-                defVals.update({"liking":0, "whoring":0})
+                defVals.update({"liking":0, "whoring":0, "talkTime":0})
 
 # Инициализация объектов тела и головы
             if charData!=None:
@@ -162,6 +162,12 @@
                     self.pos2=pos2
 
             return self
+
+        def IsTalk(self):
+            return self.GetValue("talkTime")==day+(0 if daytime else 0.5) 
+
+        def CommitTalk(self):
+            return self.SetValue("talkTime", day+(0 if daytime else 0.5)) 
 
         @property
         def pos(self):

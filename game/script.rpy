@@ -123,7 +123,7 @@ init:
         global daphne
         daphne=RegEntry(Person("daphne", "Дафна", CharacterExData( WTXmlLinker.getLinkerKey_daphne()), 
             defVals={"pos": POS_140, "pos2": gMakePos( 340, 420 ), 
-                "visitInterval":0}, 
+                "visitInterval":0, "ApproachingId": "a" }, 
             constVals={"pos_door": gMakePos( 460, -60 ), "pos_center": POS_140}))
         SetArrayValue("chibidaphne", "door", [610,220])
         SetArrayValue("chibidaphne", "center", [370,220])
@@ -204,8 +204,11 @@ init:
         this.Where({"SNAPE", "CHITCHAT"},"daphne").AddStep("daphne_pre_03") 
         this.Where({"MAIL"},"daphne").AddStep("daphne_pre_04",        ready = lambda e: e.prev.IsAgo(3)) 
         this.Where({"SNAPE", "CHITCHAT"},"daphne").AddStep("daphne_pre_05") 
-        this.Where({"HERMICHAT"},"daphne").AddStep("daphne_pre_06",   ready = lambda e: e._start2+2<=day) 
-        this.Where({"MAIL"},"daphne_pre_07").AddStep("daphne_pre_07", ready = lambda e: e.prevInList.prevInList.IsAgo(2)) 
+        this.Where({"MAIL"},"daphne_pre_06").AddStep("daphne_pre_06", ready = lambda e: e.prevInList.IsAgo(2)) 
+        this.Where({"HERMICHAT"},"daphne").AddStep("daphne_pre_07",   ready = lambda e: e._start2+2<=day)
+# Будет стартовать через день, пока не завершится daphne_pre_finish
+        this.Where({"DAY"},"daphne").AddStep("daphne_pre_finish_starter",        ready = lambda e: e.prev.IsAgo(2) and e._start2+2<=day, done = this.daphne_pre_finish.IsDone()) 
+        this.Where({"DAPHNECHAT"},"daphne_pre_finish").AddStep("daphne_pre_finish") 
 
 
 
