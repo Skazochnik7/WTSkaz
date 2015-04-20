@@ -123,7 +123,7 @@ init:
         global daphne
         daphne=RegEntry(Person("daphne", "Дафна", CharacterExData( WTXmlLinker.getLinkerKey_daphne()), 
             defVals={"pos": POS_140, "pos2": gMakePos( 340, 420 ), 
-                "visitInterval":0, "ApproachingId": "a" }, 
+                "visitInterval":0, "outward": "a" }, 
             constVals={"pos_door": gMakePos( 460, -60 ), "pos_center": POS_140}))
         SetArrayValue("chibidaphne", "door", [610,220])
         SetArrayValue("chibidaphne", "center", [370,220])
@@ -207,8 +207,8 @@ init:
         this.Where({"MAIL"},"daphne_pre_06").AddStep("daphne_pre_06", ready = lambda e: e.prevInList.IsAgo(2)) 
         this.Where({"HERMICHAT"},"daphne").AddStep("daphne_pre_07",   ready = lambda e: e._start2+2<=day)
 # Будет стартовать через день, пока не завершится daphne_pre_finish
-        this.Where({"DAY"},"daphne").AddStep("daphne_pre_finish_starter",        ready = lambda e: e.prev.IsAgo(2) and e._start2+2<=day, done = this.daphne_pre_finish.IsDone()) 
-        this.Where({"DAPHNECHAT"},"daphne_pre_finish").AddStep("daphne_pre_finish") 
+        this.Where({"DAY"},"daphne").AddStep("daphne_pre_finish",     ready = lambda e: (e.prev.IsAgo(2) and e._start2+2<=day)) 
+#        this.Where({"DAPHNECHAT"},"daphne_pre_finish").AddStep("daphne_pre_finish") 
 
 
 
@@ -289,8 +289,19 @@ init:
     
 
 
+    __set={"daphne":{"animations":{"go", "goout", "blink"}, "outwards":{"a", "b", "c"}}, ""}
 
 
+    $renpy.image("dap11", Animation("03_hp/24_daphne/dap_walk_a1.png", .08,
+#    image dap11=  Animation("03_hp/24_daphne/dap_walk_a1.png", 3.25,
+                                "03_hp/24_daphne/dap_walk_a2.png", .08,
+                                "03_hp/24_daphne/dap_walk_a3.png", .08,
+                                "03_hp/24_daphne/dap_walk_a2.png", .08,
+                                "03_hp/24_daphne/dap_walk_a1.png", .08,
+                                "03_hp/24_daphne/dap_walk_a4.png", .08,
+                                "03_hp/24_daphne/dap_walk_a5.png", .08,
+                                "03_hp/24_daphne/dap_walk_a4.png", .08
+                                ))
 
     
     $ commentaries = False # In the GALLERY turns commentaries ON and OFF. 

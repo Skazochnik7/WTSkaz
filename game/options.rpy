@@ -384,18 +384,22 @@ init python:
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
     
-    ## To archive files, classify them as 'archive'.
     
-    build.classify('game/**.hxml', 'archive')
+    build.archive("scripts", "all")
+    build.archive("hxml", "all")
+    ## To archive files, classify them as 'archive'.
     build.classify('game/**.png', 'archive')
     build.classify('game/**.jpg', 'archive')
     build.classify('game/**.ogg', 'archive')
     build.classify('game/**.mp3', 'archive')
     build.classify('game/**.wav', 'archive')
-    build.classify('game/**.rpy', 'archive')
-    build.classify('game/**.rpyc', 'archive')
     build.classify('game/**.TTF', 'archive')
     build.classify('game/**.aif', 'archive')
+    
+    build.classify('game/**.hxml', 'hxml')
+
+    build.classify('game/**.rpy', 'scripts')
+    build.classify('game/**.rpyc', 'scripts')
    
 
     ## Files matching documentation patterns are duplicated in a mac app

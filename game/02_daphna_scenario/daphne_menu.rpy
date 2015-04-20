@@ -4,7 +4,6 @@ label daphne_approaching(isKnocking=False):
          
     $ menu_x = 0.2 #Menu is moved to the left side.
 #    $ pos = POS_410
-    if 
                 
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
 #    $ hermione_chibi_xpos = 400 #Near the desk.
@@ -42,8 +41,8 @@ label daphne_approaching(isKnocking=False):
                 jump daphne_main_menu
 
         "- Тренировка -" if this.daphne_pre_finish.IsFinished():#buying_favors_from_hermione_unlocked:
+            python:
                 if daphne.liking<0:
-                    python:
                         for t in [
                         (-2, "Мне жаль, профессор, может быть в другой раз..."),
                         (-9, "Мне не хочется сегодня...\nМожет быть через пару дней..."),
@@ -56,13 +55,11 @@ label daphne_approaching(isKnocking=False):
                             if daphne.liking>=_val:
                                 renpy.say(her, _text)
                                 break
-                    else:
-                        menu:
-                            "Сокурсницы":
-                                pass
-                            "Покажись":
-                                pass
-                jump daphne_main_menu
+                else:
+                    choose = RunMenu()
+                    choose.AddItem("- Сокурсницы", True, "имя ивента")
+                    choose.AddItem("- Покажись!", True, "имя ивента")
+                    choose.Show("daphne_main_menu") 
        
         
         

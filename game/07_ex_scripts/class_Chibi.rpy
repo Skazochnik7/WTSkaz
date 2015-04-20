@@ -14,7 +14,11 @@
             if x==None:
                 x=self.x0
             self.Hide()
-            renpy.show_screen(self.Name+"screen", self.Name+" "+image, self.x0, x, y, lag)
+            if image=="dap11":
+#                renpy.say("","near")
+                renpy.show_screen(self.Name+"screen", "dap11", self.x0, x, y, lag)
+            else:
+                renpy.show_screen(self.Name+"screen", self.Name+" "+image, self.x0, x, y, lag)
             if self.__transition is not None:
                 renpy.with_statement( self.__transition, None, True ) # Будет последняя использованная transition
             renpy.pause(lag)
@@ -168,6 +172,8 @@ image daph blink:
         "03_hp/animation/h_walk_06.png"
         pause.08
     repeat
+
+
 
 
 # СНЕЙП ======================
