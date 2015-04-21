@@ -99,6 +99,7 @@ label new_request_30_complete: # <==============================================
         $ request_30 = False 
         $ hermione_sleeping = True
         $ request_30_a = True #Turns True when hermione fails to show up after her "Fuck a classmate" favour. Runs an event next morning.
+        $event.Finalize()    
         return
         # NEXT MORNING
         

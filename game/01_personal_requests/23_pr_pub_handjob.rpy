@@ -637,7 +637,7 @@ label new_request_23_complete: # <==============================================
                 m "Уверяю тебя, это не та вещь, о какой парень с радостью растреплет своей сестре."
                 $herView.hideshowQQ( "body_140.png", pos )
                 her "Серьезно?"
-                m "Не буть глупой."
+                m "Не будь глупой."
                 $herView.hideshowQQ( "body_23.png", pos )
                 her "Хм..."
                 $herView.hideshowQQ( "body_19.png", pos )

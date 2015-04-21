@@ -25,6 +25,8 @@ init:
         global event
         global screens
         screens=ScreenCollection()
+        global choose
+        choose=None
 
 # Подключение модуля отладки 
     python:
@@ -207,7 +209,7 @@ init:
         this.Where({"MAIL"},"daphne_pre_06").AddStep("daphne_pre_06", ready = lambda e: e.prevInList.IsAgo(2)) 
         this.Where({"HERMICHAT"},"daphne").AddStep("daphne_pre_07",   ready = lambda e: e._start2+2<=day)
 # Будет стартовать через день, пока не завершится daphne_pre_finish
-        this.Where({"DAY"},"daphne").AddStep("daphne_pre_finish",     ready = lambda e: (e.prev.IsAgo(2) and e._start2+2<=day)) 
+        this.Where({"DAY"},"daphne").AddStep("daphne_pre_finish",     ready = lambda e: (e.prev.IsAgo(2) and e._start2+2<=day), done=lambda e: e._finishCount>=4) 
 #        this.Where({"DAPHNECHAT"},"daphne_pre_finish").AddStep("daphne_pre_finish") 
 
 
@@ -289,19 +291,6 @@ init:
     
 
 
-    __set={"daphne":{"animations":{"go", "goout", "blink"}, "outwards":{"a", "b", "c"}}, ""}
-
-
-    $renpy.image("dap11", Animation("03_hp/24_daphne/dap_walk_a1.png", .08,
-#    image dap11=  Animation("03_hp/24_daphne/dap_walk_a1.png", 3.25,
-                                "03_hp/24_daphne/dap_walk_a2.png", .08,
-                                "03_hp/24_daphne/dap_walk_a3.png", .08,
-                                "03_hp/24_daphne/dap_walk_a2.png", .08,
-                                "03_hp/24_daphne/dap_walk_a1.png", .08,
-                                "03_hp/24_daphne/dap_walk_a4.png", .08,
-                                "03_hp/24_daphne/dap_walk_a5.png", .08,
-                                "03_hp/24_daphne/dap_walk_a4.png", .08
-                                ))
 
     
     $ commentaries = False # In the GALLERY turns commentaries ON and OFF. 

@@ -105,6 +105,16 @@ label door:
         "- Позвать Снейпа -" if this.Has("snape_summon") and not snape_busy:#hanging_with_snape
             play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
             jump summon_snape
+
+        "- Позвать Дафну -" if this.Has("daphne_pre_finish"):
+            play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
+            jump daphne_approaching
+
+        "- Позвать Текст -" if this.Has("daphne_pre_finish"):
+            play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
+            jump daphne_approaching
+
+
         "- Ничего -":
             jump day_main_menu                
                         

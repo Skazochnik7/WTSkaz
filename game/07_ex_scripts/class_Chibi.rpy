@@ -14,11 +14,7 @@
             if x==None:
                 x=self.x0
             self.Hide()
-            if image=="dap11":
-#                renpy.say("","near")
-                renpy.show_screen(self.Name+"screen", "dap11", self.x0, x, y, lag)
-            else:
-                renpy.show_screen(self.Name+"screen", self.Name+" "+image, self.x0, x, y, lag)
+            renpy.show_screen(self.Name+"screen", self.Name+" "+image, self.x0, x, y, lag)
             if self.__transition is not None:
                 renpy.with_statement( self.__transition, None, True ) # Будет последняя использованная transition
             renpy.pause(lag)

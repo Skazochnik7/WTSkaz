@@ -1,4 +1,14 @@
 init -992 python:
+
+#    __show_tooltip=None
+#    def show_tooltip(st, at):
+#        if __show_tooltip!=None:
+#           __show_tooltip="03_hp/24_daphne/dap_walk_a1.png" 
+#        if __show_tooltip=="03_hp/24_daphne/dap_walk_a1.png" :
+#            return tooltip, .5
+#        else:
+#            return Null(), .5
+
   
 # Класс - тот же EventCollection , только со специфическим объявлениями
     class This(EventCollection): # Код специфический для игры, все в этом классе
@@ -138,6 +148,7 @@ init -992 python:
 
 
         return s
+
 
 
 

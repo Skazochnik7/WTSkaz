@@ -17,8 +17,10 @@ init python:
         def __init__(self,
             text=None,
             who=None,
-            items=None):
+            items=None,
+            runCall=False):
     
+            self.runCall=runCall
             self.choice=None
             self.Clear()
             if items!=None:
@@ -74,7 +76,7 @@ screen display:
                 if i.isActive:
 
                     button:
-                        action [Function(this, sName=i.objName), Function(RunMenu.current.SetCurrentMenuItem, sName=i.objName),  Jump(i.label) ]
+                        action [Function(this, sName=i.objName), Function(RunMenu.current.SetCurrentMenuItem, sName=i.objName), Jump(i.label) if not RunMenu.current.runCall else Function(renpy.call, i.label)] #Jump(i.label) if runCall else Call(i.label)]
                         style "menu_choice_button"
 
                         text i.caption style "menu_choice"
