@@ -13,19 +13,19 @@ label daphne_approaching(isKnocking=False):
 
     python:
         for t in [
-            (0, "body_01.png", her, "Да, профессор?"),
-            (-2, "body_03.png", "", ">Похоже, Гермиона по-прежнему немного расстроена вами..."),
-            (-9, "body_03.png", "", ">Вы расстроили Гермиону."),
-            (-19, "body_09.png", "", ">Гермиона очень расстроена вами."),
-            (-39, "body_05.png", "", ">Гермиона злится на вас."),
-            (-49, "body_47.png", "", ">Гермиона очень злится на вас."),
-            (-59, "body_47.png", "", ">Гермиона гневается на вас."),
-            (-100, "body_47.png", "", ">Гермиона ненавидит вас.")
+            (0, ["daphne:> Да, профессор?"]),
+            (-2, ["daphne:> body_03.png", ">Похоже, Дафна по-прежнему немного расстроена вами..."]),
+            (-9, ["daphne:> body_03.png", ">Вы расстроили Гермиону."]),
+            (-19, ["daphne:> body_03.png", ">Гермиона очень расстроена вами."]),
+            (-39, ["daphne:> body_03.png", ">Гермиона злится на вас."]),
+            (-49, ["daphne:> body_03.png", ">Гермиона очень злится на вас."]),
+            (-59, ["daphne:> body_03.png", ">Гермиона гневается на вас."]),
+            (-100, ["daphne:> body_03.png", ">Гермиона ненавидит вас."])
             ]:
-            (_val, _img, _char, _text)=t
-            if hermi.liking>=_val:
-                herView.showQQ( _img, pos )
-                renpy.say(_char, _text)
+            (_val, _texts)=t
+            if daphne.liking>=_val:
+                for s in _texts:
+                    say(s)
                 break
 
 
@@ -53,11 +53,11 @@ label daphne_approaching(isKnocking=False):
                         ]:
                             (_val, _text)=t
                             if daphne.liking>=_val:
-                                renpy.say(her, _text)
+                                daphne(_text)
                                 break
                 else:
                     choose = RunMenu()
-                    choose.AddItem("- Сокурсницы", True, "имя ивента")
+                    choose.AddItem("- О девушках", True, "dap_request_01")
                     choose.AddItem("- Покажись!", True, "имя ивента")
                     choose.Show("daphne_main_menu") 
        

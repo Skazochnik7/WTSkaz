@@ -576,7 +576,6 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 jump no_smacking_tits #Jumps to usual tits molesting scene.
 
     
-    $ gryffindor += current_payout #35
     hide screen h_c_u
     hide screen g_c_u
     hide screen g_c_c_u # Genie's sperm. Universal.
@@ -591,7 +590,10 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
     pause.1
     hide screen blkfade
     with d3
-    
+    if event.Name=="new_request_04":
+        jump new_request_04_finish
+
+    $ gryffindor += current_payout #35
     stop music fadeout 1.0
     m "Да, мисс Грейнджер. 35 очков \"Гриффиндору\"." 
     $ gryffindor +=35

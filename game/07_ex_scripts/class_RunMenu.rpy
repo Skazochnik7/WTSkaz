@@ -9,18 +9,16 @@ init python:
             self.objName=objName
     
     class RunMenu(store.object):
-#        chose = None
         current = None
         screen = "display"
-#        event = None
         
         def __init__(self,
             text=None,
             who=None,
-            items=None,
-            runCall=False):
+            items=None):
+#            ,runCall=False 
     
-            self.runCall=runCall
+#            self.runCall=runCall
             self.choice=None
             self.Clear()
             if items!=None:
@@ -76,7 +74,8 @@ screen display:
                 if i.isActive:
 
                     button:
-                        action [Function(this, sName=i.objName), Function(RunMenu.current.SetCurrentMenuItem, sName=i.objName), Jump(i.label) if not RunMenu.current.runCall else Function(renpy.call, i.label)] #Jump(i.label) if runCall else Call(i.label)]
+# Если пытаться по нажатию кнопки сделать не jump, а call, чтобы вернуться по окончанию выполнения блока, то все срабатывает корректно, но затем, если сохранить, то сохранение не читается сохранение, оставил только механизм Jump                   
+                        action [Function(this, sName=i.objName), Function(RunMenu.current.SetCurrentMenuItem, sName=i.objName), Jump(i.label)] # if not RunMenu.current.runCall else Function(renpy.call, i.label)] 
                         style "menu_choice_button"
 
                         text i.caption style "menu_choice"

@@ -116,6 +116,13 @@ init -992 python:
     def IsRunNumberOrMore(num): # Это запуск номер num или последующий?
         return event._finishCount>=num-1
 
+    def say(formatstring):
+        if ":>" in formatstring:
+            __temp=formatstring.split(":>")
+            __person=entries[__temp[0]]
+            __person(formatstring)
+        else:
+            screens.Say(formatstring)
 
     def StringFormat(s):
         __pars=s.split(" ")
