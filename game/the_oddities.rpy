@@ -4,7 +4,7 @@ label menu_dahr_book:
         for e in this.List:
             if e.GetValue("block")==_block: # Нужно ставить GetValue("block")  а не _block - у ивента такого объекта может не быть
                 choose.AddItem("- Книга: "+e._caption+" - "+("{image=check_08.png}" if e._status>-2 else "{image=check_07.png}"), 
-                    "menu_dahre_book_2", True, e.Name)
+                    "menu_dahre_book_2", e.Name)
 
     $ choose.Show("the_oddities")
 
@@ -46,7 +46,7 @@ label menu_dahr_gifts_and_gears:
 #            elif _block=="gears" and o._block=="gears": 
                 if o._block==_block:
                     choose.AddItem("- "+o._caption+" - ("+str(o._price)+" гал.) -" if _temp and itsDAHR.Count(o.Name)>0 else "{color=#858585}- Товар временно отсутствует -{/color}", 
-                        "menu_dahr_gift_order" if _temp else "out" , True, o.Name)
+                        "menu_dahr_gift_order" if _temp else "out", o.Name)
 
     $ choose.Show("the_oddities") 
 

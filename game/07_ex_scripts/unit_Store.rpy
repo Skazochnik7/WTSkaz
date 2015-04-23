@@ -113,6 +113,13 @@ init -999 python:
         entries.append(entry)
         return entry
 
+    def GetEntry(Name):
+        for o in entries:
+            if o.Name==Name:
+                return o
+        return None
+
+
     def GetEntriesByType(typeName):
         __set=set()
         for o in entries:

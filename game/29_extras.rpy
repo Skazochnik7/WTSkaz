@@ -101,7 +101,7 @@ label volone:
         for i in range(_scrollSection*15+1, _scrollSection*15+15):
             if i<=_itemCount:
                 choose.AddItem("- C."+str(i)+": Священный свиток #"+str(i)+" -", 
-                    "vol_description" , True, i)
+                    "vol_description" , i)
     $ choose.Show("after_cam")
 
 label vol_description:

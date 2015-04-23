@@ -1,9 +1,12 @@
-label daphne_giving_pre():
-    $item=itsDAHR(choose.choice)
-    $daphne_giving_return="daphne_pre_finish_menu"
-    jump daphne_giving
+#label daphne_giving_pre():
+#    $item=itsDAHR(choose.choice)
+#    $daphne_giving_return="daphne_pre_finish_menu"
+#    jump daphne_giving
 
-label daphne_giving: Переходит через меню, значит можно в меню добавить адрес ухода в ничего и не использовать вспомогательную, а сразу заходить по этой метке и разбирать переменные менею
+label daphne_giving: #Переходит через меню, значит можно в меню добавить адрес ухода в ничего и не использовать вспомогательную, а сразу заходить по этой метке и разбирать переменные менею
+    $item=itsDAHR(choose.choice)
+    $daphne_giving_return=choose.escLabel
+
     $daphne.Items.Receive(hero.Items, item.Name)
     if item.Name=="wine":
         pass

@@ -119,8 +119,8 @@ init -992 python:
     def say(formatstring):
         if ":>" in formatstring:
             __temp=formatstring.split(":>")
-            __person=entries[__temp[0]]
-            __person(formatstring)
+            __person=GetEntry(__temp[0])
+            __person(__temp[1])
         else:
             screens.Say(formatstring)
 

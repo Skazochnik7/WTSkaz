@@ -31,7 +31,7 @@ init:
 # Подключение модуля отладки 
     python:
         global debug
-    $debug=Debug(0) # Если 0 - ничего не происходит, иначе сбрасывает значения перемнных в файл debug.txt
+    $debug=Debug(3) # Если 0 - ничего не происходит, иначе сбрасывает значения перемнных в файл debug.txt
     $debug.SaveHeader()
 
     python:
@@ -210,7 +210,26 @@ init:
         this.Where({"HERMICHAT"},"daphne").AddStep("daphne_pre_07",   ready = lambda e: e._start2+2<=day)
 # Будет стартовать через день, пока не завершится daphne_pre_finish
         this.Where({"DAY"},"daphne").AddStep("daphne_pre_finish",     ready = lambda e: (e.prev.IsAgo(2) and e._start2+2<=day), done=lambda e: e._finishCount>=4) 
-#        this.Where({"DAPHNECHAT"},"daphne_pre_finish").AddStep("daphne_pre_finish") 
+
+
+Внимание! Нужно полное время. не только день. По идее должно быть что-то в таком духе finish2Day 35 finish2Hour 17 finish2Min finish2Time: 351700  Хранить только 351700
+И функция текущего времени и функция сравнения curDay curTime curHour
+        this.AddEvent("daphne_approaching") # Это просто для счетчика вызывалась ли Дафна сегодня (ну и для отладки может помочь)
+
+# Поскольку точка "DAPHENTER" предваряет вызов меню и ивентов ниже, никаких дополнительных условий в ивентах меню не требуется
+        this.Where({"DAPHENTER"},"dap_interlude_02").AddStep("dap_interlude_02", ready=lambda e: this.dap_request_02._finishCount>=1)
+
+        li={"02":"\"Покажись!\""}
+        for s in li:
+                this.AddEvent("dap_request_"+s+"::"+li[s], points={"daphne_private"}, constVals={"eventPlan":"#(Становится жарковато. Предложу ей что-нибудь снять...)"}, defVals={"heartCount": 0}) 
+
+        li={"01":"\"Расскажи о девушках\""}
+        for s in li:
+            __s="dap_request_"+s
+            this.AddEvent(__s+"::"+li[s], points={"daphne_public"}, constVals={"eventPlan":"#(Я расспрошу ее о ее подружках...)"})
+            __s+="_complete"
+            this.Where({"NIGHT"}, __s).AddStep(__s,  done = lambda e: e._finishCount>=e.prevInList._finishCount, # После срабатывания предыдущего это условие done нарушается и ивент готов к запуску. Нет ограничений по кол-ву запусков
+                OnChange=lambda e, subKey, oldVal, newVal: OnValueChange(e, subKey, oldVal, newVal)  ) 
 
 
 

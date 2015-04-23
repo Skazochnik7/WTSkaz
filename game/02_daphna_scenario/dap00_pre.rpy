@@ -376,6 +376,7 @@ label daphne_pre_finish: #LV.1 (Whoring = 0 - 2)
 
     $daphne.State(pos="door").Visibility("body+")("~55 00 1 smi// Добрый день, профессор Дамблдор.") 
 
+    $daphne_pre_menu_text=None # текст, который будет говорить джин в конце
 #    label daphne_pre_finish_menu:
     if event._finishCount==0: # Первый раз
         $daphne("~55 00 1 def// Родители прислали мне сову, что вы будете со мной заниматься.// Чтобы я заняла соответствующую позицию в Хогвартсе.") 
@@ -455,14 +456,14 @@ label daphne_pre_finish: #LV.1 (Whoring = 0 - 2)
         $hero  ("Отлично, мисс Гринграсс, и все-таки отдохните сегодня. Я вызову вас, чтобы мы могли приступить к настоящим занятим.// Думаю, вы заслуживаете подарка.")  
         $event.Finalize()
 
+    label daphne_pre_menu(sayText=daphne_pre_menu_text):
     menu:
         "- Дать ей подарок на прощание-":
             python:
                 choose = RunMenu()
                 for o in hero.Items():
                     if not o.Name in {"scroll"}:
-                        choose.AddItem("- "+o._caption+" -", 
-                            "daphne_giving_pre" , True, o.Name)
+                        choose.AddItem("- "+o._caption+" -", "daphne_giving", o.Name)
 
                 choose.Show("daphne_pre_finish_menu")
 
@@ -483,7 +484,10 @@ label daphne_pre_finish: #LV.1 (Whoring = 0 - 2)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     pause.5
 
-    $hero("...................................")
+    if sayText!=None:
+        $say(sayText)
+
+#    $hero("...................................")
 
     return
 

@@ -31,10 +31,9 @@ label cupboard:
                 $ choose = RunMenu()
                 python:
                     for o in hero.Items():
-                            choose.AddItem("- "+o._caption+" ("+str(hero.Items.Count(o.Name))+") -", 
-                                "menu_cupboard_description" , True, o.Name)
+                            choose.AddItem("- "+o._caption+" ("+str(hero.Items.Count(o.Name))+") -", "menu_cupboard_description" , o.Name)
                     if  day>1: 
-                        choose.AddItem("Помощь", "cheat_help", True, "")
+                        choose.AddItem("Помощь", "cheat_help", "")
 #                    choose.AddItem("- Ничего -", "cupboard", True, "")
 
                 $ choose.Show("cupboard")
@@ -101,10 +100,8 @@ label cupboard:
                         _itemCount=hero.Items.Count("scroll")
                         for i in range(_scrollSection*15, _scrollSection*15+15):
                             if i<_itemCount:
-                                choose.AddItem("- C."+str(i+1)+": Священный свиток #"+str(i+1)+" -", 
-                                    "menu_cupboard_scroll_show" , True, i)
-                        choose.AddItem("- Ничего -", "cupboard", True, "")
-                    $ choose.Show()
+                                choose.AddItem("- C."+str(i+1)+": Священный свиток #"+str(i+1)+" -", "menu_cupboard_scroll_show" , i)
+                    $ choose.Show("cupboard")
 
 
                 label menu_cupboard_scroll_show:

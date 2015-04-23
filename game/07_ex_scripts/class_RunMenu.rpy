@@ -2,7 +2,7 @@ init python:
     
    
     class MenuItem(store.object):
-        def __init__(self, caption, label, isActive, objName):            
+        def __init__(self, caption, label, objName, isActive):            
             self.caption = caption
             self.label = label
             self.isActive = isActive
@@ -11,7 +11,7 @@ init python:
     class RunMenu(store.object):
         current = None
         screen = "display"
-        
+
         def __init__(self,
             text=None,
             who=None,
@@ -29,8 +29,10 @@ init python:
                 if who:
                     self.who = who                                
             
-        def AddItem(self, caption=None, label=None, isActive=True, evn=None):
-            self.items.append(MenuItem(caption, label, isActive, evn))
+        def AddItem(self, caption=None, label=None,  objName=None):#, isActive=True,):
+            if objName==None:
+                objName=label
+            self.items.append(MenuItem(caption, label, objName, True))
             
         def Clear(self):
             self.items = [ ]
@@ -40,16 +42,15 @@ init python:
         def Show(self,
             escLabel=None,
             escText=None):
+            self.escLabel=escLabel
             RunMenu.current = self                        
             if self.text:
                 renpy.say(self.who, self.text, interact=False)
-#            renpy.say("","in1")
+
             if escLabel!=None:
                 if escText==None:
                     escText="- Ничего -"
-#                renpy.say("","in2")
-                self.AddItem(escText, escLabel, True, "")
- #           renpy.say("","in3")
+                self.AddItem(escText, escLabel, "")
             renpy.call_screen(RunMenu.screen)
           
 
@@ -75,7 +76,7 @@ screen display:
 
                     button:
 # Если пытаться по нажатию кнопки сделать не jump, а call, чтобы вернуться по окончанию выполнения блока, то все срабатывает корректно, но затем, если сохранить, то сохранение не читается сохранение, оставил только механизм Jump                   
-                        action [Function(this, sName=i.objName), Function(RunMenu.current.SetCurrentMenuItem, sName=i.objName), Jump(i.label)] # if not RunMenu.current.runCall else Function(renpy.call, i.label)] 
+                        action [Function(this, sName=i.objName), Function(RunMenu.current.SetCurrentMenuItem, sName=i.objName), Jump(i.label) if i.label!=None else Return()] # if not RunMenu.current.runCall else Function(renpy.call, i.label)] 
                         style "menu_choice_button"
 
                         text i.caption style "menu_choice"

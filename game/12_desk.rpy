@@ -1,17 +1,13 @@
 label menu_reading_book:
-    $choose=None
-    if choose==None:
-        $ choose = RunMenu()
-    else:
-        $choose.Clear()
+
+    $ choose = RunMenu()
     python:
         for e in this.List:
             if e.GetValue("block")==_block and e._status>=0: # Нужно ставить GetValue("block")  а не _block - у ивента такого объекта может не быть
                 choose.AddItem("- Книга: "+e._caption+" - "+("{image=check_08.png}" if e.IsDone() else ""), 
-                    "reading_book_done" if e.IsDone() else "menu_reading_book_2", True, e.Name)
-        choose.AddItem("- Ничего -", "books_list", True, "")
+                    "reading_book_done" if e.IsDone() else "menu_reading_book_2", e.Name)
 
-    $ choose.Show()
+    $ choose.Show("books_list")
 
     label menu_reading_book_2:
         $ the_gift = event._img#"03_hp/18_store/08.png" # Copper book of spirit.
