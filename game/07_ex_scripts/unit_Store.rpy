@@ -40,10 +40,14 @@ init -999 python:
 #        debug.SaveString("SetStoreValue("+str(key)+", "+str(subkey)+", "+str(value), 3)
         if not IsStoreKey(key):
             elog.update({key: dict()})
+
+        __SetStoreValue_oldvalue=GetStoreValue(key, subkey)
+
         if not IsStoreSubKey(key, subkey):
             elog[key].update({subkey: value})
         else:
             elog[key][subkey]=value
+        OnChangeStoreValue(key, subkey, __SetStoreValue_oldvalue, value) # Перехватываем все изменения
 
 # Намеренно не ставлю здесь проверок на наличие соответствующего поля. Разработчик должен проверять перед вызовом с помощью функций  IsStoreKey IsStoreSubKey
     def GetStoreValue(key, subkey):
@@ -153,9 +157,18 @@ init -999 python:
             __list=GetArrayAllSubKeys(o.Name)
             for subkey in __list:
 # Нельзя создавать переменные для лямбда- RenPy их пытается записать при сохранении и возвращает ошибку               
-                if not subkey in ["ready", "done", "onChange"]:
+                if not subkey in ["ready", "done"]:
                     InitEntryField(o, subkey)
+        storeInitialized=True
 
 
-
+    def OnChangeStoreValue(key, subkey, oldvalue, newvalue):
+        __entry=GetEntry(key)        
+        if __entry.Type=="Event":
+# Если заключено соглашение с Гермионой, то после каждой встречи с Дафной Гриффиндор получает 10 очков
+            if (__entry.GetValue("members")!=None):
+                if ("daphne" in __entry.GetValue("members")) and (subkey=="finishCount") and (newvalue>(0 if oldvalue==None else oldvalue)):
+                    if hermi._pointsPerDaphneVisit>0:
+                        Say("По вашему соглашению с Гермионой Гриффиндор получает 10 очков")
+                        renpy.store.gryffindor+=10
 

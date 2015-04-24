@@ -27,6 +27,8 @@ init:
         screens=ScreenCollection()
         global choose
         choose=None
+        global time
+        time=Time()
 
 # Подключение модуля отладки 
     python:
@@ -125,7 +127,7 @@ init:
         global daphne
         daphne=RegEntry(Person("daphne", "Дафна", CharacterExData( WTXmlLinker.getLinkerKey_daphne()), 
             defVals={"pos": POS_140, "pos2": gMakePos( 340, 420 ), 
-                "visitInterval":0, "outward": "a" }, 
+                "visitInterval":1, "outward": "a" }, 
             constVals={"pos_door": gMakePos( 460, -60 ), "pos_center": POS_140}))
         SetArrayValue("chibidaphne", "door", [610,220])
         SetArrayValue("chibidaphne", "center", [370,220])
@@ -174,13 +176,11 @@ init:
             s="new_request_"+s
             # 3-й ивент добавляем здесь, он должен по порядку идти перед завершающим
             if s=="new_request_03": 
-                this.AddEvent(s+"::\"Вор трусиков\"", points={"private"}, defVals={"heartCount": 0}, 
-                OnChange=lambda e, subKey, oldVal, newVal: OnValueChange(e, subKey, oldVal, newVal))
+                this.AddEvent(s+"::\"Вор трусиков\"", points={"private"}, defVals={"heartCount": 0})
             else:
                 this.AddEvent(s, points={"public"}) 
             s+="_complete"
-            this.Where({"NIGHT"}, s).AddStep(s,  done = lambda e: e._finishCount>=e.prevInList._finishCount, defVals={"availChoices":{1,2,3}},
-                OnChange=lambda e, subKey, oldVal, newVal: OnValueChange(e, subKey, oldVal, newVal)  ) # После срабатывания предыдущего это условие done нарушается и ивент готов к запуску. Нет ограничений по кол-ву запусков
+            this.Where({"NIGHT"}, s).AddStep(s,  done = lambda e: e._finishCount>=e.prevInList._finishCount) 
 
 
 # Следующее событие (первый раз трахнуться с одноклассниками) НЕ помещено в главный сценарий. 
@@ -209,27 +209,24 @@ init:
         this.Where({"MAIL"},"daphne_pre_06").AddStep("daphne_pre_06", ready = lambda e: e.prevInList.IsAgo(2)) 
         this.Where({"HERMICHAT"},"daphne").AddStep("daphne_pre_07",   ready = lambda e: e._start2+2<=day)
 # Будет стартовать через день, пока не завершится daphne_pre_finish
-        this.Where({"DAY"},"daphne").AddStep("daphne_pre_finish",     ready = lambda e: (e.prev.IsAgo(2) and e._start2+2<=day), done=lambda e: e._finishCount>=4) 
+        this.Where({"DAY"},"daphne").AddStep("daphne_pre_finish",     ready = lambda e: (e.prev.IsAgo(2) and e._start2+2<=day), done=lambda e: e._finishCount>=4, constVals={"members":{"daphne"}}) 
 
 
-Внимание! Нужно полное время. не только день. По идее должно быть что-то в таком духе finish2Day 35 finish2Hour 17 finish2Min finish2Time: 351700  Хранить только 351700
-И функция текущего времени и функция сравнения curDay curTime curHour
-        this.AddEvent("daphne_approaching") # Это просто для счетчика вызывалась ли Дафна сегодня (ну и для отладки может помочь)
+        this.AddEvent("daphne_approaching", constVals={"members":{"daphne"}}) # Это просто для счетчика вызывалась ли Дафна сегодня (ну и для отладки может помочь)
 
 # Поскольку точка "DAPHENTER" предваряет вызов меню и ивентов ниже, никаких дополнительных условий в ивентах меню не требуется
-        this.Where({"DAPHENTER"},"dap_interlude_02").AddStep("dap_interlude_02", ready=lambda e: this.dap_request_02._finishCount>=1)
+        this.Where({"DAPHENTER"},"dap_interlude_02").AddStep("dap_interlude_02", ready=lambda e: this.dap_request_02._finishCount>=1,constVals={"members":{"daphne"}})
 
-        li={"02":"\"Покажись!\""}
+        li={"02":["\"Покажись!\"","#(Становится жарковато. Предложу ей что-нибудь снять...)"]}
         for s in li:
-                this.AddEvent("dap_request_"+s+"::"+li[s], points={"daphne_private"}, constVals={"eventPlan":"#(Становится жарковато. Предложу ей что-нибудь снять...)"}, defVals={"heartCount": 0}) 
+                this.AddEvent("dap_request_"+s+"::"+li[s][0], points={"daphne_private"}, constVals={"eventPlan":li[s][1], "members":{"daphne"}}, defVals={"heartCount": 0}) 
 
-        li={"01":"\"Расскажи о девушках\""}
+        li={"01":["\"Расскажи о девушках\"","#(Я расспрошу ее о ее подружках...)"]}
         for s in li:
             __s="dap_request_"+s
-            this.AddEvent(__s+"::"+li[s], points={"daphne_public"}, constVals={"eventPlan":"#(Я расспрошу ее о ее подружках...)"})
+            this.AddEvent(__s+"::"+li[s][0], points={"daphne_public"}, constVals={"eventPlan":li[s][1], "members":{"daphne"}})
             __s+="_complete"
-            this.Where({"NIGHT"}, __s).AddStep(__s,  done = lambda e: e._finishCount>=e.prevInList._finishCount, # После срабатывания предыдущего это условие done нарушается и ивент готов к запуску. Нет ограничений по кол-ву запусков
-                OnChange=lambda e, subKey, oldVal, newVal: OnValueChange(e, subKey, oldVal, newVal)  ) 
+            this.Where({"NIGHT"}, __s).AddStep(__s,  done = lambda e: e._finishCount>=e.prevInList._finishCount) 
 
 
 

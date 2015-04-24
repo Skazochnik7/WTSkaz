@@ -22,7 +22,8 @@ init -990 python:
         def SaveString(self, s, Level=3):
             if Level<=self.Level:
                 f1 = open(self.FileName, 'a')
-                s=s+"\n"
+                s=s.encode('utf8')+"\n"
+
                 f1.write(s)
                 f1.close()
 

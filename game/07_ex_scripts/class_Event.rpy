@@ -3,7 +3,7 @@
 # Класс - обертка для словаря ивентов
     class Event(Entry):
         # constructor - Event initializing
-        def __init__( self, sFullName, scenario, points, ready, done, OnChange, defVals, constVals):
+        def __init__( self, sFullName, scenario, points, ready, done, defVals, constVals):
             alter=None
             caption=None
             self.Name=sFullName
@@ -15,7 +15,7 @@
 
             super(Event, self).__init__(Name=self.Name, Type="Event", defVals=defVals, constVals=constVals )
 
-            self.defVals = {"startCount": 0, "finishCount": 0, "start1": -1, "start2": -1, "finish1": -1, "finish2": -1, "bakfinish1": -1, "bakfinish2": -1}        # Это словарь доп. аргументов по умолчанию
+            self.defVals = {"startCount": 0, "finishCount": 0, "start1": -1, "start2": -1, "finish1": -1, "finish2": -1, "finish2Time": 0, "start2Time": 0}        # Это словарь доп. аргументов по умолчанию
             if defVals!=None:
                 self.defVals.update(defVals)
 
@@ -25,7 +25,6 @@
 
             SetArrayValue(self.Name, "ready", ready) 
             SetArrayValue(self.Name, "done", done) 
-            SetArrayValue(self.Name, "onChange", OnChange) # Если функция задана, она запустится при изменении какого-нибудь параметра
             SetArrayValue(self.Name, "alter", alter) 
             SetArrayValue(self.Name, "caption", caption) 
             SetArrayValue(self.Name, "points", points) 
@@ -52,17 +51,19 @@
             if self.GetValue("start1")==-1:
                 self.SetValue("start1", day)
             self.SetValue("start2", day)
+            self.SetValue("start2Time", time.stamp)
             self.SetValue("startCount", self.GetValue("startCount")+1)
             return
 
 # Логгировать завершение ивента
         def IncFinished( self ):
 # Запомнить значения дат finish для отката на случай, если ивент будет начат и прерван.             
-            self.SetValue("bakfinish1", self.GetValue("finish1"))
-            self.SetValue("bakfinish2", self.GetValue("finish2"))
+#            self.SetValue("bakfinish1", self.GetValue("finish1"))
+#            self.SetValue("bakfinish2", self.GetValue("finish2"))
             if self.GetValue("finish1")==-1:
                 self.SetValue("finish1", day)
             self.SetValue("finish2", day)
+            self.SetValue("finish2Time", time.stamp)
             self.IncValue("finishCount", 1)
             return
 
@@ -76,8 +77,11 @@
 
 
 # Завершено iDays назад или ранее?
-        def IsAgo( self, iDays ):
-            return self.IsExec(iDays, "finish2")
+        def IsAgo( self, interval, intervalType=None ):
+            if intervalType==None:
+                return self.IsExec(interval, "finish2")
+            else:
+                time.IsPassed(self.GetValue("finish2Time"), interval, intervalType)
 
 # Истина, если выполняется одно из условий:
 #   Условие __done не задано, но при этом ивент завершен хотя бы раз (IsFinished)

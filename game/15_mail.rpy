@@ -23,8 +23,13 @@ label mail:
         hide screen bld1
         hide screen ctc
             
+
         $ finished_report = 0
 
+        if (hermi._incomePercent>0):
+            $dgold=dgold*hermi._incomePercent//100
+            $gold-=dgold
+            "> Согласно вашему соглашению с Гермионой [dgold] галеонов ([hermi._incomePercent]%%) перечисляются на ее счет"
         call screen main_menu_01
     
     

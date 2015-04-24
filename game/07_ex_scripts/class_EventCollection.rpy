@@ -38,13 +38,13 @@
             return self
 
 # Внимание! Не проверяется на наличие в списке одноименных! Необходимо внимательно описывать секцию Init
-        def AddStep( self, sFullName, ready=None, done=None, OnChange=None, defVals=None, constVals=None):
+        def AddStep( self, sFullName, ready=None, done=None, defVals=None, constVals=None):
 # Необходимо делать копию, иначе скопируется просто ссылка на объект            
-            self.AddEvent(sFullName, self.scenario, self.points.copy(), ready, done, OnChange, defVals, constVals)
+            self.AddEvent(sFullName, self.scenario, self.points.copy(), ready, done, defVals, constVals)
 
 
 # Внимание! Не проверяется на наличие в списке одноименных! Необходимо внимательно описывать секцию Init
-        def AddEvent( self, sFullName, scenario=None, points={}, ready=None, done=None, OnChange=None, defVals=None, constVals=None):
+        def AddEvent( self, sFullName, scenario=None, points={}, ready=None, done=None, defVals=None, constVals=None):
             prev=None
             prevInList=None
 
@@ -55,7 +55,7 @@
                 if e.GetValue("scenario")==scenario:
                     prev=e
 
-            self.List.append(RegEntry(Event(sFullName, scenario, points, ready, done, OnChange, defVals, constVals)))
+            self.List.append(RegEntry(Event(sFullName, scenario, points, ready, done, defVals, constVals)))
 # Нужно ставить не max(self.List), а self.List[len(self.List)-1] , max почему-то выдает предыдущее значение    ?!
             if prev!=None: prev.next=self.List[len(self.List)-1]
             self.List[len(self.List)-1].prev=prev
@@ -93,6 +93,16 @@
                 e.Run()
 
 
+        def GetTime(self, sStartFinishMode, scenario=None, points=None):
+            self.__stamp=0
+            for e in self.List:
+                debug.SaveString(e.Name+": "+str(e._scenario)+" "+str(e._points))
+                if scenario==None or scenario==e._scenario:
+                    if points==None or points.intersection(e._points)!={}:
+                        if e.GetValue(sStartFinishMode+"Time")>self.__stamp:
+#                            debug.SaveString(e.Name+": "+str(e.GetValue(what+"Time")))
+                            self.__stamp=e.GetValue(sStartFinishMode+"Time")
+            return self.__stamp
 
 
 

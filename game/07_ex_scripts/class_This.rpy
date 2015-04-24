@@ -91,13 +91,13 @@ init -992 python:
         if int(value/step)+1>=levelCount: return levelCount
         return int(value/step)+1
 
-    def OnValueChange(e, subKey, oldVal, newVal):
-        if ("NIGHT" in e._points): # Если вторая половина публичной услуги - произвести случайный выбор варианта
-            s="one_out_of_three=RandFromSet(_e._availChoices)" 
-            if e.Name=="new_request_30_complete":
-                s="one_out_of_three=RandFromSet(_e._availChoices,{1})"
-            Execute(e,s, subKey=="startCount")  
-        return
+#    def OnValueChange(e, subKey, oldVal, newVal):
+#        if ("NIGHT" in e._points): # Если вторая половина публичной услуги - произвести случайный выбор варианта
+#            s="one_out_of_three=RandFromSet(_e._availChoices)" 
+#            if e.Name=="new_request_30_complete":
+#                s="one_out_of_three=RandFromSet(_e._availChoices,{1})"
+#            Execute(e,s, subKey=="startCount")  
+#        return
 
     def SetHearts(heartCount, _event=None): # Установить количество сердечек текущему ивенту
         if _event==None:
@@ -116,7 +116,7 @@ init -992 python:
     def IsRunNumberOrMore(num): # Это запуск номер num или последующий?
         return event._finishCount>=num-1
 
-    def say(formatstring):
+    def Say(formatstring):
         if ":>" in formatstring:
             __temp=formatstring.split(":>")
             __person=GetEntry(__temp[0])

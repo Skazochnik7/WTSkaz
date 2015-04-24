@@ -26,7 +26,7 @@ label daphne_approaching(isKnocking=False):
             (_val, _texts)=t
             if daphne.liking>=_val:
                 for s in _texts:
-                    say(s)
+                    Say(s)
                 break
 
 
@@ -63,7 +63,7 @@ label daphne_approaching(isKnocking=False):
                     python:
                         for o in this.List:
                             if o._points!=None:
-                                if ("daphne_public" in o._points or "daphne_private" in  o._points):
+                                if (("daphne_public" in o._points and daytime) or "daphne_private" in  o._points):
                                     choose.AddItem(str(o._caption), None, o.Name)        
                         choose.Show("daphne_main_menu")
 
@@ -79,7 +79,11 @@ label daphne_approaching(isKnocking=False):
                     call daphne_pre_menu(_return)
 
 # Завершение ивента, который исполнялся 
-                    $event.Finalize("day_start" if daytime else "night_start")    
+                    if event._scenario==None: 
+                        $event.Finalize("day_main_menu" if daytime else "night_main_menu")    
+                    else:
+                        $event.Finalize("night_start" if daytime else "day_start")    
+
                      
         
         
