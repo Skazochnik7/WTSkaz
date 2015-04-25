@@ -12,6 +12,9 @@
 	<style name="mouth_def">
 		<frame>daphne_mouth_neutral.png</frame>
 	</style>
+	<style name="mouth_neuz">
+		<frame>daphne_mouth_neutral_Z.png</frame>
+	</style>
 	<style name="mouth_smi">
 		<frame>daphne_mouth_smile.png</frame>
 	</style>
@@ -21,11 +24,17 @@
 	<style name="mouth_pur">
 		<frame>daphne_mouth_pursed.png</frame>
 	</style>
+	<style name="mouth_priz">
+		<frame>daphne_mouth_prim_Z.png</frame>
+	</style>
 	<style name="mouth_pou">
 		<frame>daphne_mouth_pout.png</frame>
 	</style>
 	<style name="mouth_ope">
 		<frame>daphne_mouth_open.png</frame>
+	</style>
+	<style name="mouth_halfz">
+		<frame>daphne_mouth_halfopen_Z.png</frame>
 	</style>
 	<style name="mouth_opT">
 		<frame>daphne_mouth_opentongue.png</frame>
@@ -33,8 +42,14 @@
 	<style name="mouth_dis">
 		<frame>daphne_mouth_disgust.png</frame>
 	</style>
+	<style name="mouth_disz">
+		<frame>daphne_mouth_disgust_Z.png</frame>
+	</style>
 	<style name="mouth_ehh">
 		<frame>daphne_mouth_ehh.png</frame>
+	</style>
+	<style name="mouth_ehhz">
+		<frame>daphne_mouth_ehh_Z.png</frame>
 	</style>
 	<style name="mouth_gri">
 		<frame>daphne_mouth_grin.png</frame>

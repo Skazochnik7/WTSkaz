@@ -21,5 +21,11 @@
 	<style name="brows_64">
 		<frame>daphne_brows_raised.png</frame>
 	</style>
+	<style name="brows_11">
+		<frame>daphne_brows_narrowed1_Z.png</frame>
+	</style>
+	<style name="brows_22">
+		<frame>daphne_brows_narrowed2_Z.png</frame>
+	</style>
 	
 </item>
