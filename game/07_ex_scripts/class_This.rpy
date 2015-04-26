@@ -85,6 +85,10 @@ init -992 python:
             availSet-={o}                
         return o
 
+    def Sign(value):
+        return (value>0)-(value<0)
+
+
     def GetStage(value, minValue, levelCount=3, step=3): # Получить фазу в которой находится прохождение ивента. 0 - невозможно пройти, дальше - уровни
         value=value-minValue
         if value<0: return 0
