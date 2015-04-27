@@ -8,4 +8,8 @@
 		<folder>clothes</folder>
 		<zorder>skirt</zorder>
 	</style>
+	<style name="skirt_cheer_long">
+		<frame>daphne_cheer_skirt_long.png</frame>
+	</style>
+
 </item>

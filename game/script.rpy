@@ -118,7 +118,10 @@ init:
 
 # Инициализация персон
         global hero
-        hero=RegEntry(Person("hero", "Джинн"))
+        hero=RegEntry(Person("hero", "Джинн"),
+            defVals={"perfumeused": 0}
+            )
+
         global hermi
         hermi=RegEntry(Person("hermione", "Гермиона", CharacterExData(WTXmlLinker.getLinkerKey_hermione()),
             defVals={"pos": POS_370, "pos2": gMakePos( 390, 340 ), 

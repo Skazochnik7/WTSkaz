@@ -563,7 +563,7 @@ label giving_perfume(IsSmell=False): # perfume
             "\"Возьми эти духи в подарок\"":
                 "> Выдаете духи Гермионе"
                 $hermi("Спасибо, сэр!")
-                hermi.IncValue("liking",5) # +10 баллов, при этом отношение может стать положительным
+                $hermi.IncValue("liking",5) # +10 баллов, при этом отношение может стать положительным
                 call happy #Message that says that Hermione's mood has improved.
 
 

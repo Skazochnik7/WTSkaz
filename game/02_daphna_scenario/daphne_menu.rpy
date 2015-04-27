@@ -10,6 +10,7 @@ label daphne_approaching(isKnocking=False):
 #    show screen hermione_02 #Hermione stands still.
 #    show screen bld1
 #    with d3
+#    $daphne.LoadDefItemSets()
     $daphne.Visibility("body", False)
 
     python:

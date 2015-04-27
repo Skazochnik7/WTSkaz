@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>bra</key>
+
+	<style name="default">
+		<frame>daphne_cheer_bikini_top.png</frame>
+		<folder>clothes</folder>
+		<zorder>panties</zorder>
+	</style>
+
+
+</item>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<item>
+	<key>sleeves</key>
+
+	<style name="default">
+		<frame>daphne_cheer_sleeves_handsonhips.png</frame>
+		<folder>clothes</folder>
+		<visible>1</visible>
+		<zorder>skirt</zorder>
+	</style>
+</item>

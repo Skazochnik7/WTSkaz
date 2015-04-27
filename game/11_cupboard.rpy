@@ -32,7 +32,7 @@ label cupboard:
                 python:
                     for o in hero.Items():
                             choose.AddItem("- "+o._caption+" ("+str(hero.Items.Count(o.Name))+") -", "menu_cupboard_description" , o.Name)
-                    if  day>1: 
+                    if  day>4: 
                         choose.AddItem("Помощь", "cheat_help", "")
 #                    choose.AddItem("- Ничего -", "cupboard", True, "")
 
@@ -44,6 +44,11 @@ label cupboard:
                 show screen gift
                 with d3
                 ">[item._description]"
+                if item.Name="perfume":
+                    "> Вы как-то уже пробовали понюхать эти духи, и нашли их отвратительными."
+                    "> Но может быть вы ошиблись? Вы прыскаете из пузырька..."
+                    "> Какая гадость! Ваше первое впечатление оказалось верным..."
+                    $hero.SetValue("perfumeused", time.stamp)
                 hide screen gift
                 with d3
                 jump possessions                
@@ -71,7 +76,7 @@ label cupboard:
                         $gold+=100
                         show screen points
                     "Прохождение":
-                        "Прохождение и ответы часто встречающиеся вопросы можно найти {a=http://wtrus.ixbb.ru/viewtopic.php?id=3}ЗДЕСЬ{/a}. "
+                        "Прохождение и ответы на частые вопросы можно найти {a=http://wtrus.ixbb.ru/viewtopic.php?id=3}ЗДЕСЬ{/a}. "
 
                     "- Ничего -":
                         jump cupboard

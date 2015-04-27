@@ -114,9 +114,27 @@
             return self
 
 
+        def ItemSetsCustomize(self, sets, isClear=True): 
+            if isClear:
+                self.data.mItems.clear() # Удалить все итемы
+            for o in sets:
+                self.body.data().addItemSet( self.Name+'_'+o )
+
+        def ItemsCustomize(self, update=None, delete=None): 
+            if delete!=None:
+                for o in delete:
+                    self.data().delItem( 'item_'+o )
+
+            if update!=None:
+                for o in update:
+                    oo=o.split(":")
+                    self.data.addItem('item_'+oo[0], "default" if len(oo)==1 else oo[0]+"_"+oo[1])
+
+
         def LoadDefItemSets(self): # Пригодилось только один раз - когда изначально подгрузился неправильный набор сетов, перегрузить его в процесс игры
-            self.body.data().addItemSet( self.Name+'_body' )
-            self.body.data().addItemSet( self.Name+'_start_clothes' )
+            self.ItemSetsCustomize({"body", "start_clothes"}, True)
+#            self.body.data().addItemSet( self.Name+'_body' )
+#            self.body.data().addItemSet( self.Name+'_start_clothes' )
             return
 
 # Задает видимость персоны. 
@@ -185,6 +203,10 @@
             self.SetValue("pos2", value)
 #            self.head.showQ(None, self.GetValue(value))
 
+
+        @property
+        def data(self):
+            return self.body.data()
 
         @property
         def char(self):

@@ -29,6 +29,8 @@ label hermione_approaching:
                 break
 
 
+    $ this.RunStep("HERMIENTER")      
+
 
     label hermione_main_menu:
     menu:
