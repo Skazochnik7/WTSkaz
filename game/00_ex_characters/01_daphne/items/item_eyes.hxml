@@ -19,6 +19,9 @@
 	<style name="eyes_n0">
 		<frame>daphne_eyes_narrowforward_Z.png</frame>
 	</style>	
+	<style name="eyes_n2">
+		<frame>daphne_eyes_narrowforwarddown_Z.png</frame>
+	</style>	
     <style name="eyes_s0">
 		<frame>daphne_eyes_strongnarrowforward_Z.png</frame>
 	</style>

@@ -22,7 +22,7 @@ label event_00:
     $snape.chibi.Trans("go center", "blink")
     $screens.ShowD3("bld1")
     $snape.State("doorleft").Visibility("body", transition=Dissolve(.5))
-    $screens.ShowHide(d3, "ctc", None)
+    $screens.ShowHide(d3, "ctc", 0.0)
 
     $snape("~01",    who2, "Альбус... есть минута?")
     $hero("#(\"Альбус\"? Это, должно быть, мое имя, или это так люди этого мира приветствуют друг друга?)")

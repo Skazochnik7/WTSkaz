@@ -9,11 +9,14 @@
 		<visible>1</visible>
 		<zorder>face</zorder>
 	</style>
+	<style name="brows_26">
+		<frame>daphne_brows_narrowed2_ZS.png</frame>
+	</style>
+	<style name="brows_37">
+		<frame>daphne_brows_narrowed_ZS.png</frame>
+	</style>
 	<style name="brows_46">
 		<frame>daphne_brows_furrowedold.png</frame>
-	</style>
-	<style name="brows_36">
-		<frame>daphne_brows_furrowed.png</frame>
 	</style>
 	<style name="brows_55">
 		<frame>daphne_brows_narrowed.png</frame>
@@ -21,11 +24,8 @@
 	<style name="brows_64">
 		<frame>daphne_brows_raised.png</frame>
 	</style>
-	<style name="brows_11">
-		<frame>daphne_brows_narrowed1_Z.png</frame>
+	<style name="brows_73">
+		<frame>daphne_brows_furrowed.png</frame>
 	</style>
-	<style name="brows_22">
-		<frame>daphne_brows_narrowed2_Z.png</frame>
-	</style>
-	
+
 </item>

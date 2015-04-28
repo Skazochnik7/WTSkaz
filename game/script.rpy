@@ -118,14 +118,15 @@ init:
 
 # Инициализация персон
         global hero
-        hero=RegEntry(Person("hero", "Джинн"),
-            defVals={"perfumeused": 0}
+        hero=RegEntry(Person("hero", "Джинн", 
+            defVals={"perfumeused": 0})           
             )
 
         global hermi
         hermi=RegEntry(Person("hermione", "Гермиона", CharacterExData(WTXmlLinker.getLinkerKey_hermione()),
-            defVals={"pos": POS_370, "pos2": gMakePos( 390, 340 ), 
-                "SCUKO_presented":False, "incomePercent":0, "pointsPerDaphneVisit":0}))
+            defVals={"pos": POS_410, "pos2": gMakePos( 390, 340 ), 
+                "SCUKO_presented":False, "incomePercent":0, "pointsPerDaphneVisit":0},
+                constVals={"pos_door": gMakePos( 410, 0 ), "pos_doorleft": gMakePos( 370, 0 )}))        
         SetArrayValue("chibihermione", "door", [610,250])
         SetArrayValue("chibihermione", "center", [400,250])
 
@@ -193,6 +194,8 @@ init:
 # Однако в списке событий предшествует последующим - сделано для того, чтобы если событие может выполняться, оно имело приоритет перед оставшимися
 # Если флаг request_30_a установить (устанавливается при вызове request_30 ветка 1), запустится разово 
         this.Where({"DAY"},"new_request_30_complete_a").AddStep("new_request_30_complete_a", ready = lambda e: request_30_a) 
+# Аналогичное событие, которое может никогда не произойти - Герми уловила запах духов        
+        this.Where({"HERMIENTER"},"giving_perfume").AddStep("giving_perfume", ready = lambda e: hero._perfumeused==time.stamp) 
 
         this.Where({"DAY"})     .AddStep("want_to_rule",             ready = lambda e: hermi.whoring >= 15) # Запустится, как только whoring превысит значение
         this                    .AddStep("against_the_rule",         ready = lambda e: e.prev.IsAgo(2)) # Через два дня

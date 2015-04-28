@@ -16,6 +16,7 @@
             self.mTransforms = {} # map of transform descriptions
             self.mHideList = [] # array of strings
             self.mActions = []  # array of actions descriptions
+            self.mSubItems = [] # aray with names of subitems for the style
 
         def __init__( self, aElementRoot, aStyleName, aItemName, aIsSubitem, aFolderBase, aOrderBase ):
             self.mName = aItemName
@@ -29,7 +30,8 @@
             self.mTransforms = None # map of transform descriptions
             self.mHideList = None # array of strings
             self.mActions = None  # array of actions descriptions
-            
+            self.mSubItems = None # aray with names of subitems for the style
+
             if aStyleName == 'default':
                 self._fillValuesForDefault()
 
@@ -67,9 +69,13 @@
                 elif child.tag == 'actions':
                     if not aIsSubitem:
                         if self.mActions == None:
-                                self.mActions = []
+                            self.mActions = []
                         for actSingle in child:
                             self.mActions.append( CharacterExDescriptionAction( actSingle, aFolderBase, aOrderBase ) )
+
+                elif child.tag == 'subitems':
+                    if not aIsSubitem:
+                        self._readSubItemsList( child )
 
         def _readParentStyles( self, child ):
             if self.mParentStyles == None:
@@ -80,6 +86,11 @@
             if self.mHideList == None:
                 self.mHideList = []
             wtxml_readList( child, self.mHideList ) # from WTXmlAssistantFunctions
+
+        def _readSubItemsList( self, child ):
+            if self.mSubItems == None:
+                self.mSubItems = []
+            wtxml_readList( child, self.mSubItems ) # from WTXmlAssistantFunctions
 
         def _readShift( self, child ):
             if child.text != '':

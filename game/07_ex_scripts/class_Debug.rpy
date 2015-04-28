@@ -58,8 +58,10 @@ init -990 python:
             s=f1.read()
 #            self.SaveString(s)
             f1.close()
-            self.SaveString(str(Execute(None,s)))
+#            self.SaveString(str(Execute(None,s)))
+            Execute(None,s)
             return s
 
-
+    def le():
+        return debug.LoadExecute()
 

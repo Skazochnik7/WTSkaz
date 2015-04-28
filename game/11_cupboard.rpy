@@ -1,4 +1,6 @@
 label cupboard:
+    $ menu_x = 0.5 
+
     menu:
         "- Осмотреть шкаф -" if not cupboard_examined:
             $ cupboard_examined = True
@@ -44,8 +46,8 @@ label cupboard:
                 show screen gift
                 with d3
                 ">[item._description]"
-                if item.Name="perfume":
-                    "> Вы как-то уже пробовали понюхать эти духи, и нашли их отвратительными."
+                if item.Name=="perfume":
+                    "> Вы пробовали понюхать эти духи при получении, и нашли их отвратительными."
                     "> Но может быть вы ошиблись? Вы прыскаете из пузырька..."
                     "> Какая гадость! Ваше первое впечатление оказалось верным..."
                     $hero.SetValue("perfumeused", time.stamp)

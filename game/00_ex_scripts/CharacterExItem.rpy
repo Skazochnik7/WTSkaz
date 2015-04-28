@@ -47,6 +47,7 @@ init -998 python:
             # or if we hide the owner, subitem will also be hidden and so on
             self.mIsSubitem = False
             self.mSubitems = [] # list of keys of subitems
+            self.mSubitemsStyle = [] # list of keys of subitems of current style
 
             self.mKey = ""
             self.mName = ""
@@ -126,6 +127,8 @@ init -998 python:
 
             item.mIsSubitem = aItem.mIsSubitem
             item.mSubitems = list( aItem.mSubitems )
+            # subitems for current style only
+            item.mSubitemsStyle = list( aItem.mSubitemsStyle )
 
             # public
             item.zorder = aItem.zorder
@@ -413,6 +416,12 @@ init -998 python:
             if desc.mIsVisible != None:
                 self.setIsVisible( bool(desc.mIsVisible) )
 
+            # read subitems for this style
+            if desc.mSubItems != None:
+                del self.mSubitemsStyle[:]
+                for elem in desc.mSubItems:
+                    self.mSubitemsStyle.append( elem )
+
             if desc.mHideList != None:
                 del self.mHideList[:]
                 for elem in desc.mHideList:
@@ -448,6 +457,10 @@ init -998 python:
                 # and we should apply all owner's transforms
                 for tr in self.mOwnerTransforms.values():
                     self.image = tr.apply( self.image )
+                # add subitems of this style
+                if not self.mIsSubitem:
+                    for styleSubitem in self.mSubitemsStyle:
+                        self.mOwner.addItem( styleSubitem )
 
         def _discardCurrentStyle( self ):
             # say to owner that we are changing the style
@@ -459,6 +472,10 @@ init -998 python:
             # show need-to-hide items
             if self.mOwner != None:
                 self._showFromHideList()
+                # remove subitems of this style
+                if not self.mIsSubitem:
+                    for styleSubitem in self.mSubitemsStyle:
+                        self.mOwner.delItem( styleSubitem )
 
         ##########################################################
         def _showFromHideList( self ):
