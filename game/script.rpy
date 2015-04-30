@@ -133,7 +133,7 @@ init:
         global daphne
         daphne=RegEntry(Person("daphne", "Дафна", CharacterExData( WTXmlLinker.getLinkerKey_daphne()), 
             defVals={"pos": POS_140, "pos2": gMakePos( 340, 420 ), 
-                "visitInterval":1, "outward": "a" }, 
+                "visitInterval":1}, 
             constVals={"pos_door": gMakePos( 460, -60 ), "pos_center": POS_140}))
         SetArrayValue("chibidaphne", "door", [610,220])
         SetArrayValue("chibidaphne", "center", [370,220])
@@ -144,7 +144,6 @@ init:
             constVals={"pos_door": gMakePos( 350, 0 ), "pos_doorleft": gMakePos( 300, 0 ), "pos_center": POS_140}))
         SetArrayValue("chibisnape", "door", [610,210])
         SetArrayValue("chibisnape", "center", [360,210])
-
 
 
 
@@ -308,8 +307,11 @@ init:
         fn3=lambda o: hermi.whoring>=3
 
 
+    call daphne_images_init
+
 # Включить обработку перехода по меткам (label). 
     $onLabelExecute=lambda s: OnLabelExecute(s)
+
 
 #    $renpy.game.onJumpExecute=lambda name, target,expression: OnJumpExecute(name, target,expression)
     

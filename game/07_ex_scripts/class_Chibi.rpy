@@ -4,7 +4,7 @@
     class Chibi(Entry):
         # constructor - Chibi initializing
         def __init__( self, Name, defVals=None):
-            super(Chibi, self).__init__(Name=Name, Type="Chibi", defVals={"x0":0, "y0":0, "speed":0.0} )
+            super(Chibi, self).__init__(Name=Name, Type="Chibi", defVals={"x0":0, "y0":0, "speed":0.0, "appearance":None} )
             return
 
 # Показать чибика 
@@ -14,7 +14,8 @@
             if x==None:
                 x=self.x0
             self.Hide()
-            renpy.show_screen(self.Name+"screen", self.Name+" "+image, self.x0, x, y, lag)
+#            debug.SaveString(self._appearence+"::"+self.Name+" "+("" if self._appearence==None else self._appearence+" ")+image)
+            renpy.show_screen(self.Name+"screen", self.Name+" "+("" if self._appearance==None else self._appearance+" ")+image, self.x0, x, y, lag)
             if self.__transition is not None:
                 renpy.with_statement( self.__transition, None, True ) # Будет последняя использованная transition
             renpy.pause(lag)
@@ -112,62 +113,54 @@ transform chibitrans(x1=0, x2=0, y=0, lag=1.0):
     linear lag xpos x2 # опреация передвижения (скорость линейна )
 
 
-image chibidaphne blink:
-    choice 12.0:
-        "03_hp/24_daphne/dap_walk_a1.png"
-        pause.4
-    choice:
-        "03_hp/24_daphne/dap_blink_a2.png"
-        pause.08
-    repeat
+#image chibidaphne blink:
+#    choice 12.0:
+#        "03_hp/24_daphne/dap_walk_a1.png"
+#        pause.4
+#    choice:
+#        "03_hp/24_daphne/dap_blink_a2.png"
+#        pause.08
+#    repeat
 
-image chibidaphne go:
-    "03_hp/24_daphne/dap_walk_a1.png"
-    pause.08
-    "03_hp/24_daphne/dap_walk_a2.png"
-    pause.08
-    "03_hp/24_daphne/dap_walk_a3.png"
-    pause.08
-    "03_hp/24_daphne/dap_walk_a2.png"
-    pause.08
-    "03_hp/24_daphne/dap_walk_a1.png"
-    pause.08
-    "03_hp/24_daphne/dap_walk_a4.png"
-    pause.08
-    "03_hp/24_daphne/dap_walk_a5.png"
-    pause.08
-    "03_hp/24_daphne/dap_walk_a4.png"
-    pause.08
-    repeat
+#image chibidaphne go:
+#    "03_hp/24_daphne/dap_walk_a1.png"
+#    pause.08
+#    "03_hp/24_daphne/dap_walk_a2.png"
+#    pause.08
+#    "03_hp/24_daphne/dap_walk_a3.png"
+#    pause.08
+#    "03_hp/24_daphne/dap_walk_a2.png"
+#    pause.08
+#    "03_hp/24_daphne/dap_walk_a1.png"
+#    pause.08
+#    "03_hp/24_daphne/dap_walk_a4.png"
+#    pause.08
+#    "03_hp/24_daphne/dap_walk_a5.png"
+#    pause.08
+#    "03_hp/24_daphne/dap_walk_a4.png"
+#    pause.08
+#    repeat
 
 
-image chibidaphne goout:
-    im.Flip("03_hp/24_daphne/dap_walk_a1.png", horizontal=True) 
-    pause.08
-    im.Flip("03_hp/24_daphne/dap_walk_a2.png", horizontal=True) 
-    pause.08
-    im.Flip("03_hp/24_daphne/dap_walk_a3.png", horizontal=True) 
-    pause.08
-    im.Flip("03_hp/24_daphne/dap_walk_a2.png", horizontal=True) 
-    pause.08
-    im.Flip("03_hp/24_daphne/dap_walk_a1.png", horizontal=True) 
-    pause.08
-    im.Flip("03_hp/24_daphne/dap_walk_a4.png", horizontal=True) 
-    pause.08
-    im.Flip("03_hp/24_daphne/dap_walk_a5.png", horizontal=True) 
-    pause.08
-    im.Flip("03_hp/24_daphne/dap_walk_a4.png", horizontal=True) 
-    pause.08
-    repeat
+#image chibidaphne goout:
+#    im.Flip("03_hp/24_daphne/dap_walk_a1.png", horizontal=True) 
+#    pause.08
+#    im.Flip("03_hp/24_daphne/dap_walk_a2.png", horizontal=True) 
+#    pause.08
+#    im.Flip("03_hp/24_daphne/dap_walk_a3.png", horizontal=True) 
+#    pause.08
+#    im.Flip("03_hp/24_daphne/dap_walk_a2.png", horizontal=True) 
+#    pause.08
+#    im.Flip("03_hp/24_daphne/dap_walk_a1.png", horizontal=True) 
+#    pause.08
+#    im.Flip("03_hp/24_daphne/dap_walk_a4.png", horizontal=True) 
+#    pause.08
+#    im.Flip("03_hp/24_daphne/dap_walk_a5.png", horizontal=True) 
+#    pause.08
+#    im.Flip("03_hp/24_daphne/dap_walk_a4.png", horizontal=True) 
+#    pause.08
+#    repeat
 
-image daph blink:
-    choice 12.0:
-        "03_hp/animation/h_walk_01.png"
-        pause.4
-    choice:
-        "03_hp/animation/h_walk_06.png"
-        pause.08
-    repeat
 
 
 

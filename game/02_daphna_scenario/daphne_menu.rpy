@@ -88,11 +88,11 @@ label daphne_approaching(isKnocking=False):
                      
         
         
-        "- Дать ей подарок -" if not gifted:
+        "- Дать ей подарок -" if not daphne.IsGift():
             $ choose = RunMenu()
             python:
                 for o in hero.Items():
-                    if not o.Name in {"scroll"}:
+                    if not o.Name in {"scroll", "ball_dress"}:
                         choose.AddItem("- "+o._caption+" -", 
                             "daphne_giving" , o.Name)
 
@@ -102,31 +102,31 @@ label daphne_approaching(isKnocking=False):
                     
         
 
-            
-        "- Гардероб -" if dress_code:
-            python:
-                if daphne.liking<0:
-                    for t in [
-                    (-2, "Мне жаль, профессор, может быть в другой раз..."),
-                    (-9, "Мне не хочется сегодня...\nМожет быть через пару дней..."),
-                    (-19, "Нет, спасибо...."),
-                    (-29, "После того, что вы сделали?\nЯ так не думаю..."),
-                    (-39, "Вы серьезно!?"),
-                    (-100, "Это какая-то ваша пошлая шутка?!\nПосле того, что вы сделали, я не хочу повторять это!")
-                    ]:
-                        (_val, _text)=t
-                        if daphne.liking>=_val:
-                            renpy.say(her, _text)
-                            break
-                else:
-                    choose = RunMenu()
-                    for o in daphne.Items():
-                        if o.Name in {"badge_01", "nets", "miniskirt"}:
-                            choose.AddItem("- "+("Надеть" if o._status==0 else "Снять")+" "+o._caption+" -", 
-                                "daphne_item_"+("on" if o._status==0 else "off"), True, o.Name)
+# Пока комментировать? сделать в следующих версиях
+#        "- Гардероб -" if dress_code:
+#            python:
+#                if daphne.liking<0:
+#                    for t in [
+#                    (-2, "Мне жаль, профессор, может быть в другой раз..."),
+#                    (-9, "Мне не хочется сегодня...\nМожет быть через пару дней..."),
+#                    (-19, "Нет, спасибо...."),
+#                    (-29, "После того, что вы сделали?\nЯ так не думаю..."),
+#                    (-39, "Вы серьезно!?"),
+#                    (-100, "Это какая-то ваша пошлая шутка?!\nПосле того, что вы сделали, я не хочу повторять это!")
+#                    ]:
+#                        (_val, _text)=t
+#                        if daphne.liking>=_val:
+#                            renpy.say(her, _text)
+#                            break
+#                else:
+#                    choose = RunMenu()
+#                    for o in daphne.Items():
+#                        if o.Name in {"badge_01", "nets", "miniskirt"}:
+#                            choose.AddItem("- "+("Надеть" if o._status==0 else "Снять")+" "+o._caption+" -", 
+#                                "daphne_item_"+("on" if o._status==0 else "off"), True, o.Name)
 
-                    choose.Show("daphne_main_menu")                            
-            jump daphne_main_menu            
+#                    choose.Show("daphne_main_menu")                            
+#            jump daphne_main_menu            
 
 
 
@@ -169,7 +169,7 @@ label daphne_approaching(isKnocking=False):
        
 
         
-### CHITCHAT WITH HERMIONE ###
+### CHITCHAT WITH DAPHNE ###
 label daphne_chat:
     $ this.RunStep("DAPHNECHAT")
 
