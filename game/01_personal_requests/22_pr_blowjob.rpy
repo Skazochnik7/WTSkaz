@@ -81,7 +81,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         her "*Хлюп* *Чавк!* *Хлюп!*"
         m "Даа..."
         if (event.Name=="new_request_08") and end.IsEnding(const_ENDING_STRONG_GIRL):
-            $MusicStart("Supergirl",0.3)                                   
+            $music.Start("Supergirl")                                   
             $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
             $ hermione_chibi_ypos = 10
             $ h_c_u_pic = "hand_ani"
@@ -132,7 +132,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
             her "Ну как вам, сэр?"
             $herViewHead.hideQ()
             m "Для начала неплохо, девочка..."
-            $MusicStop()
+            $music()
             play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
 
         m "Теперь, попробуй глубже..."

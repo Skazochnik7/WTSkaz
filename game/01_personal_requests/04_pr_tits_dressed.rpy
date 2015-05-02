@@ -298,7 +298,7 @@ label new_request_04:
                         $hermi.liking -=30
                         jump new_request_04_finish
                     else:
-                        $MusicStart("Supergirl",0.3)                                   
+                        $music.Start("Supergirl")                                   
                         $herView.showQQ( "body_50.png", pos )
                         her "Эти ваши шутки, профессор..."
                         $herView.showQQ( "body_61.png", pos )
@@ -380,7 +380,7 @@ label new_request_04:
         $her_head_state = 4
         her_head_main "................"
     else:
-        $MusicStop()
+        $music()
     
     hide screen blkfade 
     with d3

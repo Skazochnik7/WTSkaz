@@ -1174,6 +1174,7 @@ label new_request_32_complete:
     
 ### MUSIC BLOCK ###
 label music_block:
+    $music()
     if daytime:
         play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 # DAY MUSIC
     else:

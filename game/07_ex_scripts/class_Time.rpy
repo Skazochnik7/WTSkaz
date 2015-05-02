@@ -25,13 +25,13 @@ init -999 python:
             return stamp-self.Day(stamp)*10000-self.Hour(stamp)*100
 
         def IsPassed(self, oldstamp, interval, intervalType="h"):
-            self.__min=(self.Day(self.stamp)-self.Day(oldstamp))*3600+(self.Hour(self.stamp)-self.Hour(oldstamp))*60+(self.Minute(self.stamp)-self.Minute(oldstamp))
+            self.__min=(self.Day(self.stamp)-self.Day(oldstamp))*24*60+(self.Hour(self.stamp)-self.Hour(oldstamp))*60+(self.Minute(self.stamp)-self.Minute(oldstamp))
             if intervalType=="m":
                 return self.__min>=interval
             elif intervalType=="h":
                 return self.__min/60>=interval
             elif intervalType=="d":
-                return self.__min/3600>=interval
+                return self.__min/(24*60)>=interval
             return None
 
         def IsAllFinishedAgo(self, interval, intervalType="h", scenario=None, points=None ):

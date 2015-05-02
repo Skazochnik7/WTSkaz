@@ -170,6 +170,8 @@ label hermione_approaching:
                 jump night_main_menu
 
 label hermione_chat:
+    if not teacher_jinn_quest in {3,4}:
+        jump chit_chat_hermione
     menu:
         "Спросить насчет учебников" if teacher_jinn_quest == 3:
             jump hermione_bookbuying

@@ -469,7 +469,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                                     #pause 3
                                     pause
                                     
-                                    $MusicStart("Supergirl")                                   
+                                    $music("Supergirl")                                   
                                     show screen bld1
                                     with d3
                                     $herView.showQQ( "body_64.png", pos )
@@ -518,7 +518,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                                     her "...................."
                                     hide screen genie_jerking_sperm_02
                                     with d3
-                                    $MusicStop()
+                                    $music()
 
 
 

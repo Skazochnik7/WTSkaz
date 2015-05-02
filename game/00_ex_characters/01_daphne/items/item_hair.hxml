@@ -11,7 +11,7 @@
 		<frame>daphne_hair_top.png</frame>
 		<folder>hair</folder>
 		<visible>1</visible>
-		<zorder>hair_top</zorder>
+		<zorder>hair_front</zorder>
 		<parent>head</parent>
 	</style>
 </item>

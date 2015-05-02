@@ -7,7 +7,7 @@
 		<frame>daphne_brows_furrowedold.png</frame>
 		<folder>face</folder>
 		<visible>1</visible>
-		<zorder>face</zorder>
+		<zorder>hair</zorder> <!-- Not face - zorder face on hair_front -->
 	</style>
 	<style name="brows_26">
 		<frame>daphne_brows_narrowed2_ZS.png</frame>

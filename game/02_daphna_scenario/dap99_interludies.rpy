@@ -2,6 +2,7 @@
 ### LEVEL 01 ###                
 ###################REQUEST_01 JUST STAND THERE.
 label dap_interlude_02: #LV.1 (Whoring = 0 - 2)
+    $daphne.ItemsCustomize(update={"stockings"}, chibi="c")
 
     $daphne.State(pos="door").Visibility("body+")("~55 00 1 def// Добрый день, профессор Дамблдор.") 
     $hero("Мисс?// Что это с вами? На вас столько одежды...")

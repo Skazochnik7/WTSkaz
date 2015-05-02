@@ -1,13 +1,11 @@
 #label daphne_giving_pre():
 #    $item=itsDAHR(choose.choice)
 #    $daphne_giving_return="daphne_pre_finish_menu"
-#    jump daphne_giving
+#    jump daphne_givingf
 
 label daphne_giving: #Переходит через меню, значит можно в меню добавить адрес ухода в ничего и не использовать вспомогательную, а сразу заходить по этой метке и разбирать переменные менею
     $item=itsDAHR(choose.choice)
     $daphne_giving_return=choose.escLabel
-
-    $Say(item.Name)
 
     if item.Name=="wine":
         if daphne.whoring<=3:
@@ -143,7 +141,7 @@ label daphne_giving: #Переходит через меню, значит мо�
 
     if item.Name=="nets":
         if daphne.whoring<=6:
-            $daphne("~55 00 1 smi// Довольная приятная вещица, сэр (хотя я видела и получше).... Спасибо!")
+            $daphne("~55 00 1 smi// Довольная приятная вещица, сэр (хотя я видала и получше).... Спасибо!")
             call daphne_changeliking(+5)
 
     if item.Name=="miniskirt":
@@ -177,7 +175,7 @@ label daphne_changeliking(__liking):
     if __liking>=0:
         $daphne.Items.Receive(hero.Items, item.Name)
 
-    $daphne.Visibility()
+#    $daphne.Visibility()
     if __liking<0:
         ">Настроение Дафны ухудшилось...\n>Дафна {size=+5}злится{/size} на вас..."
     elif __liking==0:

@@ -395,6 +395,7 @@ $ day_of_week += 1
 ### HERMIONE ###
 # Ежеденевные изменения для всех персонажей
 $hermi.liking+=1
+$daphne.liking+=1
     
 
 ### MUGGLE ODDITIES RELATED FLAGS ### VERSION TWO. This one randomizes delivery waiting days.

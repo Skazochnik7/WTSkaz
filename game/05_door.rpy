@@ -106,7 +106,7 @@ label door:
             play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
             jump summon_snape
 
-        "- {color=#858585}- Позвать Дафну -{/color} -" if this.Has("daphne_pre_finish") and (not time.IsAllStartedAgo(daphne._visitInterval, points={"daphne_private","daphne_public"})):
+        "{color=#858585}- Позвать Дафну -{/color}" if this.Has("daphne_pre_finish") and (not time.IsAllStartedAgo(daphne._visitInterval, points={"daphne_private","daphne_public"})):
             $screens.ShowD3("bld1")
             if daphne._visitInterval>1:
                 "> У вас соглашение с Гермионой - вы не можете вызывать Дафну чаще, чем раз в [daphne._visitInterval] часов."

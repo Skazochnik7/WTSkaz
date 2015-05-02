@@ -3,7 +3,7 @@
 ###################REQUEST_01 JUST STAND THERE.
 label dap_request_01: #LV.1 (Whoring = 0 - 2)
 
-    play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
+    $music("Daphne Theme")
 
     if IsRunNumber(1):
 #    if daphne.whoring<3:
@@ -32,6 +32,7 @@ label dap_request_01: #LV.1 (Whoring = 0 - 2)
         $daphne("~55 00 1 neu// Пока не все, сэр.")
         $hero("Тогда вперед, жду вас вечером с отчетом.")
 
+    $music()
     return
 
 
@@ -116,5 +117,4 @@ label dap_request_01_complete:
             "Впрочем, поскольку вы усердно работали, думаю, будет неправильно оставить вас без подарка.")
 
     $daphne.whoring=daphne._finishCount
-    call daphne_pre_menu(None)
-    return event.Finalize()
+    return 

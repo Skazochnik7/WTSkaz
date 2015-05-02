@@ -2524,6 +2524,7 @@ label your_whore:
         m "Давай, девчонка, возьми себя в руки!"
         $herViewHead.showQ( "body_178.png", posHead )
         if end.IsEnding(const_ENDING_STRONG_GIRL):
+            $music("Supergirl")
             her2 "Простите, сэр. Я пыталась не стать конченной шлюхой перед этими уродами, хотя знала, что вам нравится, чтобы я была именно шлюхой."
             her2 "Но, видно, против природы не пойдешь и все вышло, как вы любите."
             her2 "Мне ведь получилось вам угодить, сэр?"
@@ -2625,7 +2626,7 @@ label your_whore:
             $herViewHead.showQ( "body_179.png", posHead )
             #$ h_body = "03_hp/13_hermione_main/body_176.png" # HERMIONE
             her "Счастливого пути, сэр..."
-            $MusicStop()
+            $music()
         else:
             her "Я... Я... Что?"
             her "Я не понимаю... Я..."

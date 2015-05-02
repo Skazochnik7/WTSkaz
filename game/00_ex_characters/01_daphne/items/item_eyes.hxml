@@ -7,7 +7,7 @@
 		<frame>daphne_eyes_normal_Z.png</frame>
 		<folder>face</folder>
 		<visible>1</visible>
-		<zorder>face</zorder>
+		<zorder>hair-1</zorder>
 		<parent>head</parent>
 	</style>
 	<style name="eyes_00">
