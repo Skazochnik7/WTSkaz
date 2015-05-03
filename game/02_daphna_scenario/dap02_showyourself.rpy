@@ -14,7 +14,7 @@ label dap_request_02: #LV.1 (Whoring = 0 - 2)
         $hero("Я-то? Замечтался о... о проблемах факультета, да...",
             m," Нет-нет, не нужно ничего такого сложного \"ходить, лежать\"... Просто уменьшим количество вашей одежды.")
         $daphne("~37 c0 1 dis// Одежды, сэр? Но... я и сейчас в такой одежде, что мама посчитала бы это одеждой шлюхи!")
-        $hero("Мисс Гринграсс, на конкурсе не будет вашей мамы, но будет жюри, члены которого которые ожидают увидеть конкурсанток в подходящих нарядах.// Вы, конечно, можете выйти на подиум в, как это по-рюсски... v tulup.//"
+        $hero("Мисс Гринграсс, на конкурсе не будет вашей мамы, но будет жюри, которое ожидает увидеть конкурсанток в подходящих нарядах.// Вы, конечно, можете выйти на подиум в, как это по-рюсски... v tulup.//"
          "Но вряд ли ваш стиль оценят. На вас должно оставаться минимум одежды, чтобы члены жюри отметили вашу внешность.")
         $daphne("~73 c0 1 pri// О, сэр. Это... это ужасно. Меня будут рассматривать, как породистую ... лошадь!")
         $hero("#Хе-хе. Вариант \"суку\" мне нравился больше.")
@@ -26,9 +26,10 @@ label dap_request_02: #LV.1 (Whoring = 0 - 2)
 
         $screens.Show(Dissolve(1), "blkfade") #Completely black screen.
         $daphne.ItemsCustomize(delete={"sleeves"}, chibi="c")
-        $daphne.chibi.SetValue("appearance","c")
+#        $daphne.chibi.SetValue("appearance","c")
         pause.5
         $screens.Hide(Dissolve(1), "blkfade") #Completely black screen.
+        $screens.Show("ctc").Pause().Hide("ctc")
 
         $hero("У вас симпатичные руки, мисс Гринграсс, я никогда не видел их обнаженными.")
         $daphne("~73 00 2 ang// Ох, сэр, пожалуйста.")
@@ -43,10 +44,12 @@ label dap_request_02: #LV.1 (Whoring = 0 - 2)
         $hero("Или! Вам надо избавиться еще от одной детали одежды.")
         $daphne("~46 00 2 ehh// Отлично, давно хотела снять эти чулки, в них я выгляжу по-уродски.")
 
-        $screens.Show(Dissolve(1), blkfade) #Completely black screen.
-        $daphne.ItemsCustomize(delete={"stockings"}, chibi="d")
+        $screens.Show(Dissolve(1), "blkfade") #Completely black screen.
+        $daphne.ItemsCustomize(delete={"stockings"}, chibi="c")
         pause.5
-        $screens.Hide(Dissolve(1), blkfade) #Completely black screen.
+        $screens.Hide(Dissolve(1), "blkfade") #Completely black screen.
+        $screens.Show("ctc").Pause().Hide("ctc")
+
 
         $hero("Вот это энтузиазм! Вам следует сохранять его, мисс, пока вы будете снимать всю остальную одежду.")
         $daphne("~46 w0 1 ehh// ВСЮ?...")
@@ -57,10 +60,11 @@ label dap_request_02: #LV.1 (Whoring = 0 - 2)
         $hero("Отнюдь, мисс, нам предстоит еще долгий путь. Пора избавиться от еще одной вещи.")
         $daphne("~55 00 1 pou// Ну... ладно.//~55 01 1 pou// Тогда я сниму лифчик. Отвернитесь, сэр!//~55 01 2 pou// Хотя нет, лучше я сама отвернусь.")
 
-        $screens.Show(Dissolve(1), blkfade) #Completely black screen.
+        $screens.Show(Dissolve(1), "blkfade") #Completely black screen.
         $daphne.ItemsCustomize(delete={"bra"}, update={"combi:cheer_topbase_withnipples"}, chibi="e")
         pause.5
-        $screens.Hide(Dissolve(1), blkfade) 
+        $screens.Hide(Dissolve(1), "blkfade") 
+        $screens.Show("ctc").Pause().Hide("ctc")
 
         $hero("Гхм, вы решили показать мне ваши стоящие соски? Я оценил, они превосходны!")
         $daphne("~37 00 2 ope// Что?! Сэр!")
@@ -70,13 +74,14 @@ label dap_request_02: #LV.1 (Whoring = 0 - 2)
         $daphne("~26 00 3 dis// Сэр, это просто за гранью!!! Я немедленно пожалуюсь родителям!")
         $hero("Которым вы даже не сообщили, что пытаетесь стать Мисс Хогвартс?//"
             "Они ведь не читают \"пророка\", не так ли?//"
-            "Полагаю, вы хотели торжественно вернуться с победой, либо сохранить в тайне, если провалитесь."
+            "Полагаю, вы хотели торжественно вернуться с победой, либо сохранить в тайне, если провалитесь.//"
             "Но вряд ли, девушка, от миссис Гринграсс удастся скрыть, если вы со свистом вылетите в первом туре.//"
             "Ваши недруги на факультете об этом позаботятся.//")
         $daphne("~37 01 3 dis// ........................")
         $hero("Конечно, как поступить, решать вам. Ну а подарок вам я все равно приготовил.")
         $daphne.liking-=15
 
-    $daphne.whoring=event._finishCount
+    if daphne.whoring<=2:
+        $daphne.whoring=event._finishCount+1
     return
 

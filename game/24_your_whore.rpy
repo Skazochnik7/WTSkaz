@@ -3751,11 +3751,15 @@ label test:
     \n\n\
     {size=-3}{color=#e5e297}-\{Дополнительно:\}-{/color}\n\
     {color=#fff}\
-    {a=http://wtrus.ixbb.ru/profile.php?id=42}appo{/a} - программирование; {a=http://wtrus.ixbb.ru/profile.php?id=65}i11idan{/a} - программирование; {a=http://wtrus.ixbb.ru/profile.php?id=54}Lrm{/a} - программирование;{/size}\n\
+    {a=http://wtrus.ixbb.ru/profile.php?id=54}Lrm{/a} - программирование;{/size}{a=http://wtrus.ixbb.ru/profile.php?id=269}qwert{/a} - корректура \n\
     \n\n\
     {size=-5}{color=#e5e297}-\{Тестирование:\}-{/color}\n\
     {color=#fff}\
     BAPK, darg55, Fuhrick, suhi, Y-ART, Zilot{/color}{/size}\n\
+    \n\n\
+    {size=-7}{color=#e5e297}-\{На ранних этапах игры участие также принимали:\}-{/color}\n\
+    {color=#fff}\
+    appo, Dimon_Tools, illidan{/color}{/size}\n\
     \n\n\n\
     "
 

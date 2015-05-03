@@ -514,7 +514,6 @@ label daphne_pre_finish: #LV.1 (Whoring = 0 - 2)
         $event.Finalize()
 
     label daphne_pre_menu(sayText=daphne_pre_menu_text):
-    $music()
     $item=None
     menu:
         "- Дать ей подарок на прощание-":
@@ -537,6 +536,7 @@ label daphne_pre_finish: #LV.1 (Whoring = 0 - 2)
 
 
     label daphne_pre_finish_menu:
+    $music()
     if item==None:
         $daphne("~55 01 1 pri// #Пообещал подарок и где он? Скряга...") #Почему-то не срабатывает рот? проверить
         $daphne.liking-=5

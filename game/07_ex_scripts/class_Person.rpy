@@ -119,6 +119,7 @@
                 self.data.mItems.clear() # Удалить все итемы
             for o in sets:
                 self.body.data().addItemSet( self.Name+'_'+o )
+            return self
 
         def ItemsCustomize(self, update=None, delete=None, chibi=None): 
             if delete!=None:
@@ -132,6 +133,7 @@
 
             if chibi!=None:
                 self.chibi.SetValue("appearance",chibi)
+            return self
 
 
         def LoadDefItemSets(self): # Пригодилось только один раз - когда изначально подгрузился неправильный набор сетов, перегрузить его в процесс игры
@@ -185,16 +187,16 @@
             return self
 
         def IsTalk(self):
-            return self.GetValue("talkTime")==day+(0 if daytime else 0.5) 
+            return self.GetValue("talkTime")==time.stamp
 
         def CommitTalk(self):
-            return self.SetValue("talkTime", day+(0 if daytime else 0.5)) 
+            return self.SetValue("talkTime", time.stamp) 
 
         def IsGift(self):
-            return self.GetValue("giftTime")==day+(0 if daytime else 0.5) 
+            return self.GetValue("giftTime")==time.stamp 
 
         def CommitGift(self):
-            return self.SetValue("giftTime", day+(0 if daytime else 0.5)) 
+            return self.SetValue("giftTime", time.stamp) 
 
         @property
         def pos(self):
