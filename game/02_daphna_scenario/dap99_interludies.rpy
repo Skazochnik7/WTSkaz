@@ -4,6 +4,8 @@
 label dap_interlude_02: #LV.1 (Whoring = 0 - 2)
     $daphne.ItemsCustomize(update={"stockings", "sleeves"}, chibi="d")
 
+    $daphne.chibi.State("center").Trans(d4, "blink")
+
     $daphne.State(pos="door").Visibility("body+")
     $screens.Show("ctc").Pause().Hide("ctc")
     $daphne("~55 00 1 def// Добрый день, профессор Дамблдор.")
@@ -34,6 +36,6 @@ label dap_interlude_02: #LV.1 (Whoring = 0 - 2)
     $screens.Hide(Dissolve(1), "blkfade") #Completely black screen.
     $screens.Show("ctc").Pause().Hide("ctc")
 
-    $hero("Вот. Теперь другое дело.")
+    $hero("Вот. Теперь другое дело...// Мисс! У вас странно мечтательный вид, вы меня слышите?")
 
     $event.Finalize("daphne_approaching") # возвращается в глвное меню

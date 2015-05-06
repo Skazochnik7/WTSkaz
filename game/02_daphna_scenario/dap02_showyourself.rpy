@@ -45,7 +45,7 @@ label dap_request_02: #LV.1 (Whoring = 0 - 2)
         $daphne("~46 00 2 ehh// Отлично, давно хотела снять эти чулки, в них я выгляжу по-уродски.")
 
         $screens.Show(Dissolve(1), "blkfade") #Completely black screen.
-        $daphne.ItemsCustomize(delete={"stockings"}, chibi="c")
+        $daphne.ItemsCustomize(delete={"stockings"}, chibi="a")
         pause.5
         $screens.Hide(Dissolve(1), "blkfade") #Completely black screen.
         $screens.Show("ctc").Pause().Hide("ctc")
@@ -61,7 +61,7 @@ label dap_request_02: #LV.1 (Whoring = 0 - 2)
         $daphne("~55 00 1 pou// Ну... ладно.//~55 01 1 pou// Тогда я сниму лифчик. Отвернитесь, сэр!//~55 01 2 pou// Хотя нет, лучше я сама отвернусь.")
 
         $screens.Show(Dissolve(1), "blkfade") #Completely black screen.
-        $daphne.ItemsCustomize(delete={"bra"}, update={"combi:cheer_topbase_withnipples"}, chibi="e")
+        $daphne.ItemsCustomize(delete={"bra"}, update={"combi:cheer_topbase_withnipples"}, chibi="f")
         pause.5
         $screens.Hide(Dissolve(1), "blkfade") 
         $screens.Show("ctc").Pause().Hide("ctc")

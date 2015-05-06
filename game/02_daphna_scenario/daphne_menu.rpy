@@ -14,9 +14,12 @@ label daphne_approaching(isKnocking=False):
 
 #    if this.IsStep("DAPHENTER"):
     $this.RunStep("DAPHENTER")  
+
+    $daphne.chibi.State("center").Trans(d4, "blink")
     
 
     $daphne.Visibility("body+", False)
+
 
     python:
         for t in [
