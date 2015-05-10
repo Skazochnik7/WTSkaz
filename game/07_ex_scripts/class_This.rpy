@@ -28,11 +28,11 @@ init -992 python:
                 renpy.store.event=e
             return e
 
-        def GetObjectByName(Name):
-            o=this.GetCall(Name)
-            if o!=None:
-                return this(Name)
-            return itemDefaults.get(Name)
+#        def GetObjectByName(Name):
+#            o=this.GetCall(Name)
+#            if o!=None:
+#                return this(Name)
+#            return itemDefaults.get(Name)
 
 
 

@@ -547,7 +547,7 @@ label giving_perfume: # perfume
             "> После нескольких безуспешных попыток схватить уворачивающийся флакончик, вы решаете отказаться от этой идеи, чтобы не выглядеть полным идиотом.")
     else:
         $hermi.Visibility("body+")
-        $hermi("~body_15.png// Сэр... Это запах...")
+        $hermi("~body_15.png// Сэр... Этот запах...")
         $hero("Какой запах?")
         $hermi("~body_13.png// У вас башне пахнет... совсем как... это мне напоминает времена, когда я была маленькой.")
         if hermi.Items("perfume")._count==0:
@@ -571,6 +571,7 @@ label giving_perfume: # perfume
 
             "\"Я рад, что тебе понравилось\"":
                 pass
+        $hermi.Visibility()
 
     $ pos = POS_370
     $herView.showQQ( None, pos )

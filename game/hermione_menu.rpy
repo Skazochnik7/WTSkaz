@@ -91,7 +91,7 @@ label hermione_approaching:
         
 
             
-        "- Гардероб -" if dress_code:
+        "- Гардероб -" if dress_code and this.Has("her_wants_buy"):
             if hermi.liking==0:
                 menu:
                     

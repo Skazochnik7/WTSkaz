@@ -13,7 +13,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
             show screen blktone
             with d3
             pass
-        "\"(Нет, не сейчас.)\"":
+        "\"(Нет, не сейчас)\"":
             $event.NotFinished()
             jump new_personal_request
     
@@ -32,7 +32,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
         $herView.hideshowQQ( "body_02.png", pos )
         her "Эм... Ладно..."
         her "Какой, сэр?"
-        m "Ну, как на счет того, чтобы ты подошла ко мне поближе и дала бы мне полапать твою грудь...?"
+        m "Ну, как насчет того, чтобы ты подошла ко мне поближе и дала бы мне полапать твою грудь...?"
         $herView.hideshowQQ( "body_31.png", pos )
         her "!!!"
         m "Я бы хотел её потрогать."
@@ -73,7 +73,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
             
             $herView.hideshowQQ( "body_01.png", pos )
             her "Сэр?"
-            m "Я могу поиграть с вашей грудью немного?"
+            m "Я могу немного поиграть с вашей грудью?"
             $herView.hideshowQQ( "body_78.png", pos )
             her "Конечно, сэр..."
     
@@ -154,7 +154,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 m "Вам нравится, когда я сжимаю их так?"
                 $herViewHead.showQ( "body_120.png", posHead )
                 her2 "Извините, сэр, но вы меня путаете с пошлыми развратными девчонками, я не такая..."
-                her2 "Я позволила вам трогать мою грудь лишь потому, что вы заплатите мне за это..."
+                her2 "Я позволила вам трогать мою грудь лишь потому, что вы мне заплатите..."
                 her "Не потому, что мне нравится это..."
                 $herViewHead.hideQ()
                 m "Ясно..."
@@ -176,7 +176,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 m "Наслаждаетесь, мисс Грейнджер?"
                 if hermi.whoring >= 9 and hermi.whoring <= 11: # LEVEL 04 #  <=================================================================================== FIRST EVENT.
                     $herViewHead.showQ( "body_120.png", posHead )
-                    her "Сэр, я всего лишь делаю это--"
+                    her "Сэр, я всего лишь выполняю ваше задание..."
                     $herViewHead.hideQ()
                     show screen blktone
                     with d3
@@ -186,12 +186,12 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                     $herViewHead.showQ( "body_132.png", posHead )
                     her "Ах..."
                     $herViewHead.hideQ()
-                    m "Скажи мне, что тебе нравится, девчонка!"
+                    m "Скажи, что тебе это нравится, девчонка!"
                     $herViewHead.showQ( "body_131.png", posHead )
-                    her "Сэр, я позволила вам делать так, только потому--"
+                    her "Сэр, я позволила вам делать так, только потому..."
                     $herViewHead.hideQ()
                     m "Знаю, знаю...."
-                    m "Ты начинаешь говорить как сломанный магнитофон."
+                    m "Похоже, у тебя пластинку заело..."
                     $herViewHead.showQ( "body_79.png", posHead )
                     her "...."
                     $herViewHead.hideQ()
@@ -218,7 +218,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                     $herViewHead.showQ( "body_31.png", posHead )
                     her "Ах... Сэр..."
                     $herViewHead.hideQ()
-                    m "Что? Тебе нравится это, правда?"
+                    m "Что? Тебе нравится, правда?"
                     $herViewHead.showQ( "body_31.png", posHead )
                     her "Нет... Я..."
                     $herViewHead.hideQ()
@@ -247,7 +247,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                     $herViewHead.showQ( "body_117.png", posHead )
                     her "Нич... ничего, сэр..."
                     $herViewHead.hideQ()
-                    m "А я думаю, как раз кое что...."
+                    m "А я думаю, как раз кое-что..."
                     m "Я думаю, тебе нравится, когда я сжимаю твои сиськи и играю с ними."      
                     $herViewHead.showQ( "body_118.png", posHead )
                     her "Сэр, пожалуйста..."
@@ -359,9 +359,9 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 $herViewHead.showQ( "body_139.png", posHead )
                 her "Я... не то, чтобы \"хочу\"... "
                 $herViewHead.showQ( "body_138.png", posHead )
-                her "Но, если вы настаиваете...."
+                her "Но, если вы настаиваете..."
                 $herViewHead.hideQ()
-                m "Конечно, я настаиваю... видимо."
+                m "Конечно, я настаиваю,.. видимо..."
                 $herViewHead.showQ( "body_138.png", posHead )
                 her "Ах..."
                 $herViewHead.hideQ()
@@ -384,7 +384,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
         "- Шлепнуть по ней -":
             $herView.hideQ()
             with d5
-            ">Вы громко и мощно шлепнули грудь Гермионы!"
+            ">Вы с размаху шлепнули по груди Гермионы!"
             $ renpy.play('sounds/slap.mp3') #SLAP!
             show screen white
             with hpunch
@@ -398,7 +398,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 $herView.hideQQ()
                 $herView.showQ( "183.png", pos )
                 her "Ау! Это больно! *Хнык!*"
-                m "Но тебе это всё равно нравится?"
+                m "Но тебе всё равно нравится?"
                 $herView.hideQQ()
                 $herView.showQ( "body_81.png", pos )
                 her "Мне правда... должно \"нравится\" это, сэр..?"
@@ -406,7 +406,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 $herView.hideQQ()
                 $herView.showQQ( "184.png", pos )
                 stop music fadeout 1.0
-                her "Вы чокнутый и сумасшедший старик!"
+                her "Вы - чокнутый старый извращенец!"
                 $herView.hideQQ()
                 show screen blkfade
                 with d3
@@ -433,12 +433,12 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 $herView.hideQQ()
                 $herView.showQ( "183.png", pos )
                 her "Ау!"
-                her "Зачем вы так делаете, сэр?"
-                m "Хммм... мне показалось это хорошей идеей..."
+                her "Зачем вы так поступаете, сэр?"
+                m "Хммм... мне это показалось хорошей идеей..."
                 m "Тебе нравится?"
                 $herView.hideQQ()
                 $herView.showQ( "body_83.png", pos )
-                her "...Конечно нет, сэр."
+                her "...Конечно, нет, сэр."
                 m "Тогда давай попробуем ещё раз."
                 $herView.hideQQ()
                 $herView.showQ( "body_82.png", pos )
@@ -481,7 +481,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 $herView.hideQQ()
                 show screen blktone8
                 with d3
-                ">Вы ещё раз смачно шлепнули грудь Гермионы!"
+                ">Вы ещё раз смачно шлепнули по груди Гермионы!"
                 hide screen blktone8
                 with d3
                 $ renpy.play('sounds/slap.mp3') #SLAP!
@@ -516,7 +516,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 pause.05
                 hide screen white
                 pause.3
-                ">Сиськи Гермионы прыгают как шарики..."
+                ">Сиськи Гермионы прыгают, как мячики..."
                 hide screen blktone8
                 with d5
                 $herView.hideQQ()
@@ -561,7 +561,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 her "Вы уверены, сэр?"
                 m "Да. Поверь мне, я знаю."
                 $herView.hideQQ()
-                ">Вы начали снова шлепать её грудь!"
+                ">Вы начали снова шлепать по её груди!"
                 $ renpy.play('sounds/slap.mp3') #SLAP!
                 show screen white
                 with hpunch
@@ -572,7 +572,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 $herView.showQQ( "187.png", pos )
                 her "Да-да... да... Спасибо, сэр."
                 $herView.hideQQ()
-                m "Ну что-ж... Достаточно со шлепками на сегодня..."
+                m "Ну что ж... На сегодня достаточно ..."
                 jump no_smacking_tits #Jumps to usual tits molesting scene.
 
     

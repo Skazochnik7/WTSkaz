@@ -218,7 +218,7 @@ init:
         this.Where({"MAIL"},"daphne_pre_06").AddStep("daphne_pre_06", ready = lambda e: e.prevInList.IsAgo(2)) 
         this.Where({"HERMICHAT"},"daphne").AddStep("daphne_pre_07",   ready = lambda e: e._start2+2<=day)
 # Будет стартовать через день, пока не завершится daphne_pre_finish
-        this.Where({"DAY"},"daphne").AddStep("daphne_pre_finish",     ready = lambda e: (e.prev.IsAgo(2) and e._start2+2<=day), done=lambda e: e._finishCount>=4, constVals={"members":{"daphne"}}) 
+        this.Where({"DAY"},"daphne").AddStep("daphne_pre_finish",     ready = lambda e: (e.prev.prevInList.IsFinished() and e.prev.IsAgo(2) and e._start2+3<=day), done=lambda e: e._finishCount>=4, constVals={"members":{"daphne"}}) 
 
 
         this.AddEvent("daphne_approaching", constVals={"members":{"daphne"}}) # Это просто для счетчика вызывалась ли Дафна сегодня (ну и для отладки может помочь)

@@ -50,10 +50,10 @@
 
             InitEntryField(self, subkey)
 
-            if IsArrayKey("onChange"): # Если подключена обработка на изменение
-                fn=GetArrayValue(self.Name,"onChange")
-                if fn!=None:
-                    fn(self, subkey, oldVal, value)
+#            if IsArrayKey("onChange"): # Если подключена обработка на изменение
+#                fn=GetArrayValue(self.Name,"onChange")
+#                if fn!=None:
+#                    fn(self, subkey, oldVal, value)
             return value
 
         def IncValue(self, subkey, incVal, minim=None, maxim=None):

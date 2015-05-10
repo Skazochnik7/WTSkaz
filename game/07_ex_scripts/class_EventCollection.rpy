@@ -23,13 +23,13 @@
             return None
 
 
-        def InitStart( self ):
-            for e in self.List:
-                e.InitStart()
+#        def InitStart( self ):
+#            for e in self.List:
+#                e.InitStart()
 
-        def InitTempVars(self):                
-            for e in self.List:
-                e.InitTempVars()
+#        def InitTempVars(self):                
+#            for e in self.List:
+#                e.InitTempVars()
 
         def Where(self,points, scenario=""):
             self.scenario=scenario

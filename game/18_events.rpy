@@ -940,7 +940,7 @@ label event_07: #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
     with d3                                                                                                                                                                  #SNAPE
     sna "Ты закончил?"
     m "Да..."
-    m "Серьезно, я сомневаюсь, что это пойдет мне напользу"
+    m "Серьезно, я сомневаюсь, что это пойдет мне на пользу."
     hide screen snape_main                                                                                                                                  #SNAPE
     with d3                                                                                                                                                                  #SNAPE
     $ s_sprite = "03_hp/10_snape_main/snape_01.png"                                                                               #SNAPE
@@ -3275,6 +3275,7 @@ label event_16: #Учебники доставлены
         $ s_sprite = "03_hp/10_snape_main/snape_03.png"                                                                            #SNAPE
         show screen s_head2
         sna2 "Я не хочу подскользнуться на... этом и проломить себе череп."
+        hide screen s_head2 
         m "Конечно, нет проблем."
         $ renpy.play('sounds/door.mp3')
         m "..."

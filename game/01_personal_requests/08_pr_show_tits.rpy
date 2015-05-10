@@ -15,7 +15,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
             show screen blktone
             with d3
             pass
-        "\"(Не сейчас.)\"":
+        "\"(Не сейчас)\"":
             $event.NotFinished()
             jump new_personal_request
     
@@ -38,14 +38,14 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
         
         $herView.showQQ( "body_03.png", pos )
         her "Да, сэр..."
-        m "Сколько очков будет стоить посмотреть на твои сиськи?"
+        m "Сколько стоит посмотреть на твои сиськи?"
         $herView.hideshowQQ( "body_14.png", pos )
         stop music fadeout 1.0
         her "Сколько стоит посмотреть на...?"
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
         $herView.hideshowQQ( "body_30.png", pos )
         her "Профессор Дамблдор!"
-        m "Хм... Я думал, вашему факультету пригодились бы дополнительные очки..."
+        m "Хм... Я думал, вашему факультету пригодятся дополнительные очки..."
         m "Но, видимо, я ошибался..."
         $herView.hideshowQQ( "body_31.png", pos )
         her ".........?"
@@ -56,10 +56,10 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
         $herView.hideshowQQ( "body_33.png", pos )
         her "200 очков, сэр."
         m "Если я дам вам 200 очков, Мисс Грейнджер..."
-        m "Вы оголите свою грудь и покажите свои дыньки?"
+        m "Вы оголите грудь и покажете свои дыньки?"
         $herView.hideshowQQ( "body_47.png", pos )
         her "Профессор Дамблдор! Не надо так выражаться!"
-        her "Я думаю, я лучше пойду..."
+        her "Думаю, я лучше пойду..."
         menu:
             "\"Стой. 200 очков твои. Показывай!\"":
                 $ current_payout = 200 #Used when haggling about price of th favor.
@@ -88,10 +88,10 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         $ current_payout = 100 #Used when haggling about price of th favor.
                         her "................."
                         her "Так и быть... за сто баллов..."
-                    "\"25 очков - моё финальное предложение!\"":
+                    "\"25 очков - окончательная цена!\"":
                         her "..............."
                         her "Ну, так и быть..."
-            "\"Отлично, вали. Мне пофиг..\"":
+            "\"Отлично, вали. Мне пофиг...\"":
                 $hermi.liking -= 12
                 her "Арх!"
                 call music_block
@@ -116,7 +116,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
         m "Хм..."
         $her_head_state = 12
         her_head_main "{size=-5}(Ох, я ведь еще никому не позволяла смотреть на мои...){/size}"
-        m "Подойди ближе, девочка, дай мне лучше рассмотреть..."
+        m "Подойди ближе, девочка, дай как следует рассмотреть..."
         $her_head_state = 4
         her_head_main "............"
         
@@ -127,7 +127,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
         with Dissolve(1)
         pause.5
         ">Гермиона медленно подходит к вам."
-        ">С каждым шагом её сиськи покачиваются..."
+        ">её сиськи покачиваются в такт шагам..."
        
         hide screen hermione_04 #Stands with tits out.
         hide screen genie
@@ -185,7 +185,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
             show screen bld1
             with d3
             m "Хм..."
-            m "Подойди ближе, девочка, дай лучше рассмотреть их..."
+            m "Подойди ближе, девочка, дай получше рассмотреть их..."
             hide screen bld1
             with d3
             show screen blkfade #Completely black screen.
@@ -227,7 +227,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
             m "Конечно..."
             if hermi.whoring >= 15:
                 $herView.hideshowQQ( "body_09.png", pos )
-                her "Сэр, мы оба знаем, что вам интереснее, не просто смотреть, а делать кое-что еще..."
+                her "Сэр, мы оба знаем, что вам интереснее не просто смотреть, а делать кое-что еще..."
                 m "Может быть это {size=+4}ВАМ{/size} интересно, мисс Грейнджер, чтобы я делал кое-что еще?"
                 $herView.hideshowQQ( "body_17.png", pos )
                 her "Сэр, не будем играть в игры. Мне нужны очки для факультета, вам нужны сексуальные услуги."
@@ -237,7 +237,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 her "Что?.. {size=+4}СЭР!{/size} Я говорю о том, чтобы заработать очки!"
                 m "Ох, простите, а я было подумал..."
                 $herView.hideshowQQ( "body_51.png", pos )
-                her "Вы подумали неправильно! Я никогда не опущусь до этого!"
+                her "Вы подумали неправильно! Я никогда не опущусь до такого!"
                 m "Ну хорошо, мисс, если речь идет о том, чтобы заработать побольше очков..."
                 $herView.hideshowQQ( "body_47.png", pos )
                 her "Только об этом и идет, сэр!"
@@ -248,7 +248,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                     m "В смысле, я потрогаю ее своим членом..."
                     $herView.hideshowQQ( "body_48.png", pos )
                     her "Но, сэр! Что вы такое... Я не имела в виду..." 
-                    m "Не имели в виду? А за что по-вашему я должен давать вам больше очков? За рождественскую песенку?"
+                    m "Не имели в виду? А за что, по-вашему, я должен давать вам больше очков? За рождественскую песенку?"
                     $herView.hideshowQQ( "body_32.png", pos )
                     her "Но я не готова, это слишком!"
                     m "Зачем же тогда вы мне морочите голову, мисс, рассказывая, что хотите заработать побольше очков?"
@@ -257,7 +257,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                     m "То есть, вы теперь указываете мне, девушка, за что вам платить?"
                     m "Вы знаете, мисс, я неравнодушен к Гриффиндору..." 
                     m "Но из-за ваших капризов начинаю серьезно подумывать, не ошибся ли я в вас?"
-                    m "Может, мне позвать кого-нибудь из слизеринок? Наверняка, они более преданны факультету."
+                    m "Может, мне позвать кого-нибудь из слизеринок? Наверняка, они более преданы факультету."
                     m "Да! Отличная идея. Мисс Грейнджер, будьте любезны, пригласите профессоры Снейпа." 
                     m "Наверняка он порекомендует мне {size=+4}ДОСТОЙНУЮ{/size} кандидатку."
                     $herView.hideshowQQ( "body_117.png", pos )
@@ -342,7 +342,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
             show screen bld1
             with d3
             m "Хм..."
-            m "Подойди ближе, девочка, дай лучше рассмотреть их..."
+            m "Подойди ближе, девочка, дай получше рассмотреть их..."
             hide screen bld1
             with d3
             show screen blkfade #Completely black screen.
@@ -404,10 +404,10 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 her_head_main "Нет, сэр, пожалуйста! Вы не должны..."
                 m "Это не займет много времени, просто стой."
                 $her_head_state = 24
-                her_head_main "Сэр, Я не соглашалась на это!"
+                her_head_main "Сэр, я не соглашалась на это!"
                 with hpunch
                 $her_head_state = 23
-                her_head_main "Вы должны отпустите меня сейчас же!!!"
+                her_head_main "Вы должны отпустить меня сейчас же!!!"
                 show screen blkfade
                 with d5
                 ">Гермиона отстраняется от вас и спешно прикрывается."
@@ -432,7 +432,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 m "Вы провалились, Мисс Грейнджер..."
                 $her_head_state = 19
                 her_head_main "Гр.................."
-                her_head_main "{size=-5}(Гори в аду, ты, ущербный старый---{/size}"
+                her_head_main "{size=-5}(Гори в аду, ты, ущербный старый...{/size}"
                 $ hermi.liking -= 22
                 call music_block
                 jump loadState_and_could_not_flirt
@@ -458,10 +458,10 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 $her_head_state = 4
                 her_head_main "Я не соглашалась на это, сэр..."
                 her_head_main "Я не думаю, что вы должны..."
-                m "Тебе не нравиться...?"
+                m "Тебе не нравится?.."
                 $her_head_state = 12
                 her_head_main "Что?"
-                m "Тебе не нравиться, как я играю и сжимаю твои сиськи?"
+                m "Тебе не нравится, как я играю и сжимаю твои сиськи?"
                 her_head_main "..............."
                 m "Признайся, тебе это приятно..."
                 her_head_main "{size=-5}(Так странно видеть мои сиськи у кого-то в руках...){/size}"
@@ -515,9 +515,9 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 her_head_main "ах...{image=textheart.png}"
                 $her_head_state = 12
                 her_head_main " Я не соглашалась на это..."
-                m "Но тебе это нравиться, не так ли?"
+                m "Но тебе это нравится, не так ли?"
                 $her_head_state = 13
-                her_head_main "Несовсем, сэр!{image=textheart.png}"
+                her_head_main "Не совсем, сэр!{image=textheart.png}"
                 show screen blktone
                 with d3
                 ">Вы несколько раз сжимаете её сиськи..."
@@ -539,21 +539,21 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 with d3
                 $her_head_state = 37
                 her_head_main "сэр... остановитесь..."
-                m "Почему? Потому что тебе это очень нравиться?"
+                m "Почему? Потому что тебе это очень нравится?"
                 $her_head_state = 18
                 her_head_main "Нет, это не так..."
                 $her_head_state = 17
                 her_head_main "Я считаю..."
                 show screen blktone8
                 with d3
-                ">Вы тянете сиськи в противоположных направлениях, а затем стягиваете их вместе..."
+                ">Вы тянете сиськи в разные стороны, а затем стягиваете их вместе..."
                 hide screen blktone8
                 with d3
                 $her_head_state = 38
-                her_head_main "Aх...{image=textheart.png} сэр, я действительно должна идти..."
+                her_head_main "Aх...{image=textheart.png} сэр... я, действительно, должна идти..."
                 if daytime:
                     $her_head_state = 17
-                    her_head_main "Хорошо... скоро начнуться уроки..."
+                    her_head_main "Хорошо... скоро начнутся уроки..."
                 else:
                     her_head_main "Уже поздно..."
                 m "Ну, хорошо..."
@@ -585,11 +585,11 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 pause
                 menu:
                     "- Одобрительно кивнуть -":
-                        ">Вы смотрите на ее сиськи и киваете в знак одобрения..."
+                        ">Вы смотрите на ее сиськи и одобрительно киваете..."
                         her "......................"
-                    "- Отрицательно трясти головой -":
+                    "- Показать разочарование -":
                         $ hermi.liking -= 3
-                        ">Вы смотрите на сиськи девушки, а затем в разочаровании трясете головой..."
+                        ">Вы смотрите на сиськи девушки, а затем разочарованно качаете головой..."
                         her ".....................?"
             elif hermi.whoring >= 9 and hermi.whoring <= 11: # LEVEL 04 # <=================================================================================== SECOND EVENT.
                 pause
@@ -597,7 +597,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                     "\"У тебя отличные сиськи.\"":
                         $herView.hideshowQQ( "body_83.png", pos )
                         pause
-                        her "Спасибо--"
+                        her "Спасибо..."
                         $herView.hideshowQQ( "body_82.png", pos )
                         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                         her "..........."
@@ -667,21 +667,21 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 
                 show screen bld1
                 with d3
-                ">Вы пялитись на сиськи Гермионы голодными глазами..."
+                ">Вы пялитесь на сиськи Гермионы голодными глазами..."
                 $her_head_state = 13
                 her_head_main "Профессор, что вы...?"
                 ">Вы продолжаете дрочить свой член..."
                 $her_head_state = 12
                 her_head_main "Профессор, нет..."
-                her_head_main "Вы должны... Убрать это..."
-                m "Хватит трепетать девочка. Я же не трогаю тебя?"
+                her_head_main "Вы должны... убрать это..."
+                m "Успокойся, девочка. Я же не трогаю тебя?"
                 $her_head_state = 19
                 her_head_main "Но..."
                 $her_head_state = 20
                 her_head_main "Но я не соглашалась на это!"
                 $her_head_state = 19
                 her_head_main "Я..."
-                her_head_main "Я думаю, мне лучше уйти!"
+                her_head_main "думаю, мне лучше уйти!"
                 menu:
                     "\"Уйдешь сейчас - не получишь очков!\"":
                         $her_head_state = 21
@@ -690,7 +690,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         $her_head_state = 25
                         her_head_main ".........."
                         $her_head_state = 24
-                        her_head_main "Я не собираюсь показывать вам больше, профессор!"
+                        her_head_main "Я не желаю продолжать, профессор!"
                         show screen blkfade
                         with d3
                         ">Гермиона оттолкнула вас и прикрылась..."
@@ -730,7 +730,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 with d3
                 $her_head_state = 30
                 her_head_main "Профессор?"
-                ">Вы смотрите на сиськи Гермионы с голодными глазами..."
+                ">Вы смотрите на сиськи Гермионы голодными глазами..."
                 hide screen hermione_walk_01
                 hide screen genie
                 hide screen bld1
@@ -748,7 +748,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 m "Чего ты жалуешься, девочка?"
                 m "Я не трогаю тебя..."
                 her_head_main "Да, но вы трогаете себя, сэр."
-                ">Вы подняли темп..."
+                ">Вы увеличиваете темп..."
                 m "Просто стой, девочка."
                 m "Скоро я закончу."
                 her_head_main ".................."
@@ -769,19 +769,19 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 $her_head_state = 8
                 her_head_main "Не передо мной, сэр..."
                 m "Хорошо..."
-                m "Ах, ты, маленькая шлюшка. Ты дикая шлюшка!"
+                m "Ах, ты, маленькая шлюшка. Ты - дикая шлюшка!"
                 $her_head_state = 19
                 her_head_main "......................."
-                "Вы начали дрочить свой член еще быстрее..."
+                "Вы начали дрочить еще быстрее..."
                 g4 "Да, ты знаешь что это! Да!"
                 her_head_main "................"
                 show screen blkfade 
                 with d3
                 ">Вы собираетесь кончить..."
                 menu:
-                    "- Сдержаться, как и обещали -":
+                    "- Сдержаться, как обещали -":
                         g4 "Ох, отлично..."
-                        g4 "Я думаю, стоит остановиться..."
+                        g4 "думаю, стоит остановиться..."
                         $her_head_state = 15
                         her_head_main "..............."
                         ">Гермиона прикрыла груди..."
@@ -789,7 +789,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         #play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                         g4 "Aргх! Ты шлюшка!"
                         $her_head_state = 21
-                        her_head_main "Профе-- ??"
+                        her_head_main "Профе??.."
                         show screen white 
                         pause.1
                         hide screen white
@@ -817,7 +817,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         with d3
                         $her_head_state = 10
                         her_head_main "Профессор, как вы могли...?"
-                        m "Ох, это было очень классно..."
+                        m "Ох, это было классно..."
                         show screen blktone8
                         with d3
 
@@ -831,7 +831,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         m "Не беспокойся, я дам тебе очки факультета, девочка."
                         m "Ты сделала мне хорошо."
                         her "................"
-                        her "Мне нужно очистить себя..."
+                        her "Мне нужно привести себя в порядок..."
                         $herView.hideQQ()
                         show screen blkfade
                         with d3
@@ -854,7 +854,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         $herView.showQQ( "body_47.png", pos )
                         pause
                         #play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                        her "Как вы могли сделать это, сэр?!"
+                        her "Как вы могли, сэр?!"
                         her "Вы дали слово!"
                         $herView.hideQQ()
                         $ hermi.liking -= 45
@@ -866,7 +866,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 with d3
                 $her_head_state = 6
                 her_head_main "Профессор?"
-                ">Вы смотрите на сиськи Гермионы с голодными глазами..."
+                ">Вы смотрите на сиськи Гермионы голодными глазами..."
                 hide screen hermione_walk_01
                 hide screen genie
                 hide screen bld1
@@ -902,7 +902,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 her_head_main "Не кончать..."
                 her_head_main "Не передо мной, сэр..."
                 m "Хорошо..."
-                m "Ах, ты, маленькая шлюшка. Ты грязная шлюшка!"
+                m "Ах, ты, маленькая шлюшка. Ты - грязная шлюшка!"
                 $her_head_state = 12
                 her_head_main "......................."
                 ">Вы начинаете дрочить еще быстрее..."
@@ -917,14 +917,14 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         g4 "Ох, ладно..."
                         g4 "Думаю, лучше остановиться..."
                         her_head_main "..............."
-                        her_head_main "Эм... Я читала, что это плохо для мужчин, сэр..."
+                        her_head_main "Эм... Я читала, что это вредно для мужчин, сэр..."
                         m "А?"
                         $her_head_state = 13
-                        her_head_main "Это плохо для вашего здоровья - сдерживать себя..."
+                        her_head_main "Это вредит вашему здоровью - сдерживать себя..."
                         $her_head_state = 12
                         her_head_main "Eм..."
                         $her_head_state = 14
-                        her_head_main "Если вы хотите, вы можете--"
+                        her_head_main "Если хотите, вы можете..."
                         g4 "Aргх! Ты шлюшка!"
                         $her_head_state = 7
                         her_head_main "???"
@@ -948,14 +948,14 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         show screen bld1
                         with d3
                         $her_head_state = 9
-                        her_head_main "Профессор, я не имела в виду, что вы можете ... кончить на меня, сэр..."
+                        her_head_main "Профессор, я не имела в виду, что вы можете... кончить на меня, сэр..."
                         g4 "Ох, это здорово, да..."
                         $ no_blinking = False #When True - blinking animation is not displayed. 
                         hide screen jerking_off_cum
                         with d3
                         $her_head_state = 18
                         her_head_main "Ну, что сделано, то сделано, я полагаю..."
-                        m "Ох, это было очень классно..."
+                        m "Ох, это было классно..."
                         show screen blktone8
                         with d3
 
@@ -969,7 +969,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         $herView.hideshowQQ( "body_84.png", pos )
                         her "Спасибо, сэр."
                         $herView.hideshowQQ( "body_83.png", pos )
-                        her "Теперь мне нужно очистить себя..."
+                        her "мне нужно привести себя в порядок..."
                         pause
                         $herView.hideQQ()
                         show screen blkfade
@@ -1037,7 +1037,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         $herView.hideshowQQ( "body_84.png", pos )
                         her "Спасибо, сэр."
                         $herView.hideshowQQ( "body_83.png", pos )
-                        her "Теперь я должна себя очистить..."
+                        her "Мне надо привести себя в порядок..."
                         pause
                         $herView.hideQQ()
                         show screen blkfade
@@ -1096,9 +1096,9 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
     her ".................."
     her "Спасибо, сэр..."
     if daytime:
-        her "Теперь, если Вы не возражаете, я пойду. Мои занятия начинаются."
+        her "Теперь, если Вы не возражаете, я пойду. Мои занятия сейчас начнутся."
     else:
-        her" Я лучше пойду сейчас. Пока не слишком поздно..."
+        her" Я лучше пойду. Пока не слишком поздно..."
     
 #    if whoring >= 6 and whoring <= 8:
 #        $ level = "03"
@@ -1127,7 +1127,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
         
     if hermi.whoring >= 6 and hermi.whoring <= 8: # LEVEL 03 # <=================================================================================== FIRST EVENT.    
         $her_head_state = 12
-        her_head_main "(Как унизительно... кем я стала...?)"
+        her_head_main "(Как унизительно... кем я стала?..)"
         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
         hide screen hermione_01_f #Hermione stands still.
         with Dissolve(.3)
@@ -1140,7 +1140,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
         $her_head_state = 6
         her_head_main "{size=-5}(Как унизительно...){/size}"
         $her_head_state = 24
-        her_head_main "{size=-5}(Нет, Гермиона, ты глупая девочка!){/size}"
+        her_head_main "{size=-5}(Нет, Гермиона, глупая девочка!){/size}"
         her_head_main "{size=-5}(Мы делаем это, чтобы защитить честь нашего факультета!){/size}"
         $her_head_state = 19
         her_head_main "................................."

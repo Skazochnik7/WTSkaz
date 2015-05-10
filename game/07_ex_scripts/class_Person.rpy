@@ -121,7 +121,7 @@
                 self.body.data().addItemSet( self.Name+'_'+o )
             return self
 
-        def ItemsCustomize(self, update=None, delete=None, chibi=None): 
+        def ItemsCustomize(self, update=None, delete=None): # chibi=None): 
             if delete!=None:
                 for o in delete:
                     self.data.delItem( 'item_'+o )
@@ -131,8 +131,9 @@
                     oo=o.split(":")
                     self.data.addItem('item_'+oo[0], "default" if len(oo)==1 else oo[0]+"_"+oo[1])
 
-            if chibi!=None:
-                self.chibi.SetValue("appearance",chibi)
+#            if chibi!=None:
+#                self.chibi.appearance=chibi
+
             return self
 
 

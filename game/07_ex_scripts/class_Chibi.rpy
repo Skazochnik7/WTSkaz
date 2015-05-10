@@ -4,7 +4,7 @@
     class Chibi(Entry):
         # constructor - Chibi initializing
         def __init__( self, Name, defVals=None):
-            super(Chibi, self).__init__(Name=Name, Type="Chibi", defVals={"x0":0, "y0":0, "speed":0.0, "appearance":None} )
+            super(Chibi, self).__init__(Name=Name, Type="Chibi", defVals={"x0":0, "y0":0, "speed":0.0, "appearance":None, "image":"blink"} )
             return
 
 # Показать чибика 
@@ -14,8 +14,8 @@
             if x==None:
                 x=self.x0
             self.Hide()
-#            debug.SaveString(self._appearence+"::"+self.Name+" "+("" if self._appearence==None else self._appearence+" ")+image)
             renpy.show_screen(self.Name+"screen", self.Name+" "+("" if self._appearance==None else self._appearance+" ")+image, self.x0, x, y, lag)
+            self.SetValue("image",image)
             if self.__transition is not None:
                 renpy.with_statement( self.__transition, None, True ) # Будет последняя использованная transition
             renpy.pause(lag)
@@ -48,14 +48,21 @@
 #            if transition is not None:
 #                renpy.with_statement( transition, None, True )
             screens.Hide(transition, self.Name+"screen")
-            return
+            return self
 
 # Задать состояние (обычно начальное)
-        def State(self, x=None, y=None, speed=None):
-            self.__State(x, y, speed)
-            self.x0=self.__x
-            self.y0=self.__y
-            self.speed=self.__speed
+        def State(self, x=None, y=None, speed=None, appearance=None):
+            if appearance!=None:
+                self.appearance=appearance
+            if x!=None:
+                self.__State(x, y, speed)
+                self.x0=self.__x
+                self.y0=self.__y
+                self.speed=self.__speed
+            return self
+
+        def Refresh(self):
+            self.Trans(self._image)
             return self
 
 # Внутренняя - не вызывается
@@ -101,10 +108,18 @@
         def speed(self, value):
             self.SetValue("speed", value)
 
+        @property
+        def appearance(self):
+            return self.GetValue("appearance")
+        @speed.setter
+        def appearance(self, value):
+            self.SetValue("appearance", value)
+
 
 
 # ДАФНА =========================
 screen chibidaphnescreen( aImgs, x1=0, x2=0, y=0, lag=1.0 ):   
+    zorder 2
     add aImgs at chibitrans(x1, x2, y, lag) #chibitrans(700, 200, 10.0) # Transform( pos = ( 500, 500 ) )  #at gSumPos( aPos, element.position )
 
 transform chibitrans(x1=0, x2=0, y=0, lag=1.0): 
@@ -167,6 +182,7 @@ transform chibitrans(x1=0, x2=0, y=0, lag=1.0):
 
 # СНЕЙП ======================
 screen chibisnapescreen( aImgs, x1=0, x2=0, y=0, lag=1.0 ):   
+    zorder 2
     add aImgs at chibitrans(x1, x2, y, lag) #chibitrans(700, 200, 10.0) # Transform( pos = ( 500, 500 ) )  #at gSumPos( aPos, element.position )
 
 image chibisnape go: #Default Snape walk animation. 
@@ -197,6 +213,7 @@ image chibisnape blink: #Snape stands still near the door.
 
 # ГЕРМИОНА ======================
 screen chibihermionescreen( aImgs, x1=0, x2=0, y=0, lag=1.0 ):   
+    zorder 2
     add aImgs at chibitrans(x1, x2, y, lag) #chibitrans(700, 200, 10.0) # Transform( pos = ( 500, 500 ) )  #at gSumPos( aPos, element.position )
 
 image chibihermione blink:

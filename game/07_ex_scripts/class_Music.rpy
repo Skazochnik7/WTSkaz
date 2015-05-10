@@ -36,8 +36,8 @@ init -999 python:
             return
 
         def Stop(self):
-            renpy.music.stop(fadeout=2.0)
-            renpy.pause(2.1)
+            renpy.music.stop(fadeout=1.0)
+            renpy.pause(1.1)
             return
 
 #        def MusicVolumeReset(self):

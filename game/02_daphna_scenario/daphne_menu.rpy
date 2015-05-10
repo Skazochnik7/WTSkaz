@@ -13,26 +13,44 @@ label daphne_approaching(isKnocking=False):
 #    $daphne.LoadDefItemSets()
 
 #    if this.IsStep("DAPHENTER"):
-    $this.RunStep("DAPHENTER")  
-    
+    if hero._perfumeused==time.stamp:
+        $daphne.chibi.State("center").Trans(d4, "blink")
+        $daphne.Visibility("body+", False)
+        $daphne("~55 01 1 dis// Сэр... Агхм... Простите, но...")
+        $hero("Да, девочка?")
+        $daphne("~55 00 1 dis// Чем тут у вас несет?...")
+        $hero("?!")
+        $daphne("~55 s0 1 dis// Вы что тут, крыс травили?!// Я не могу ни секунды здесь оставаться!")
+        $daphne.liking-=5
+        $daphne.Visibility(transition=d3).chibi.Trans("goout door").Hide(d3)    
+        $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+        pause.5
+        call music_block
+# Завершение ивента, который исполнялся 
+        jump expression ["day_main_menu", "night_main_menu"][1-daytime]   
 
+
+    $this.RunStep("DAPHENTER")  
+
+    $daphne.chibi.State("center").Trans(d4, "blink")
     $daphne.Visibility("body+", False)
+
 
     python:
         for t in [
-            (0, ["daphne:> ~55 00 1 def// Да, профессор?"]),
-            (-2, [">Похоже, Дафна по-прежнему немного расстроена вами..."]),
-            (-9, [">Вы расстроили Дафну."]),
-            (-19, [">Дафна очень расстроена вами."]),
-            (-39, [">Дафна злится на вас."]),
-            (-49, [">Дафна очень злится на вас."]),
-            (-59, [">Дафна гневается на вас."]),
-            (-100, [">Дафна ненавидит вас."])
+            (0, ["~55 00 1 def// Да, профессор?"]),
+            (-2, ["~55 00 1 neu// >Похоже, Дафна по-прежнему немного расстроена вами..."]),
+            (-9, ["~55 00 1 pri// >Вы расстроили Дафну."]),
+            (-19, ["~37 00 1 pri// >Дафна очень расстроена вами."]),
+            (-39, ["~26 00 1 dis// >Дафна злится на вас."]),
+            (-49, ["~26 00 1 dis// >Дафна очень злится на вас."]),
+            (-59, ["~26 s0 1 dis// >Дафна гневается на вас."]),
+            (-100, ["~26 s0 1 dis// >Дафна ненавидит вас."])
             ]:
             (_val, _texts)=t
             if daphne.liking>=_val:
                 for s in _texts:
-                    Say(s)
+                    daphne(s)
                 break
 
     
@@ -44,19 +62,19 @@ label daphne_approaching(isKnocking=False):
             if daphne.liking >= -7:
                 jump daphne_chat
             else:
-                $daphne("Мне нечего сказать вам...")    
+                $daphne("~37 00 1 pri// Мне нечего сказать вам...")    
                 jump daphne_main_menu
 
         "- Тренировка -" if this.daphne_pre_finish.IsFinished():#buying_favors_from_hermione_unlocked:
             if daphne.liking<0:
                 python:
                         for t in [
-                        (-2, "Мне жаль, профессор, может быть в другой раз..."),
-                        (-9, "Мне не хочется сегодня...\nМожет быть через пару дней..."),
-                        (-19, "Нет, спасибо...."),
-                        (-29, "После того, что вы сделали?\nЯ так не думаю..."),
-                        (-39, "Вы серьезно!?"),
-                        (-100, "Это какая-то ваша пошлая шутка?!\nПосле того, что вы сделали, я не хочу повторять это!")
+                        (-2, "~55 00 1 neu// Мне жаль, профессор, может быть в другой раз..."),
+                        (-9, "~55 00 1 pri// Мне не хочется сегодня...\nМожет быть через пару дней..."),
+                        (-19, "~37 00 1 pri// Нет, спасибо...."),
+                        (-29, "~26 00 1 dis// После того, что вы сделали?\nЯ так не думаю..."),
+                        (-39, "~26 00 1 dis// Вы серьезно!?"),
+                        (-100, "~26 s0 1 dis// Это какая-то ваша пошлая шутка?!\nПосле того, что вы сделали, я не хочу повторять это!")
                         ]:
                             (_val, _text)=t
                             if daphne.liking>=_val:
@@ -176,6 +194,7 @@ label daphne_approaching(isKnocking=False):
 #            with d3
 
             $daphne.Visibility()
+            $daphne.chibi.Hide()
             $screens.Hide("bld1", "blktone", d3, "ctc")
 
             if daytime:
